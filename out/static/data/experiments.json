@@ -1,0 +1,90 @@
+[
+  {
+    "head": "Prototype",
+    "featured": true,
+    "name": "Active Learner",
+    "description": "An interactive visualization of active learning data labeling strategies for supervised machine learning.",
+    "url": "https://activelearner.fastforwardlabs.com",
+    "image_url": "http://feed.grantcuster.com/static/images/feed/clip3-1554232754113.gif"
+  },
+  {
+    "head": "Library",
+    "featured": false,
+    "name": "Handtrack.js",
+    "description": "Handtrack.js is a library for prototyping realtime hand detection (bounding box), directly in the browser.",
+    "url": "https://github.com/victordibia/handtrack.js",
+    "image_url": "https://github.com/victordibia/handtrack.js/raw/master/demo/images/bossflip.gif"
+  },
+  {
+    "head": "Demo",
+    "featured": false,
+    "name": "UMAP Explorer",
+    "description": "An interactive UMAP visualization of the MNIST data set.",
+    "url": "https://grantcuster.github.io/umap-explorer",
+    "image_url": "http://feed.grantcuster.com/static/images/feed/umap_zoom-1547839236092.gif"
+  },
+  {
+    "head": "Demo",
+    "featured": false,
+    "name": "Active Learning with Logistic Regression",
+    "description": "A toy example about logistic regression and different active learning strategies.",
+    "url": "https://observablehq.com/@cjwallace/an-invitation-to-active-learning",
+    "image_url": "https://blog.fastforwardlabs.com/images/editor_uploads/2019-04-04-171937-uncertainty_sampling_observable_fast.gif"
+  },
+  {
+    "head": "Prototype",
+    "featured": true,
+    "name": "Turbofan Tycoon",
+    "description": "See if you have what it takes to make it as a turbofan factory owner in our federated learning prototype.",
+    "url": "https://turbofan.fastforwardlabs.com",
+    "image_url": "https://blog.fastforwardlabs.com/images/editor_uploads/2018-12-07-163940-turbofan_even_shorter.gif"
+  },
+  {
+    "head": "Prototype",
+    "featured": true,
+    "name": "Probabilistic Real Estate",
+    "description": "A probabilistic programming prototype that predicts future real estate prices across New York City boroughs and neighborhoods.",
+    "url": "http://fastforwardlabs.github.io/pre",
+    "image_url": "https://blog.fastforwardlabs.com/images/2017/05/probability_mode.png"
+  },
+  {
+    "head": "Prototype",
+    "featured": true,
+    "name": "Brief Preview",
+    "description": "Brief uses neural networks to score and highlight the most interesting sentences within any article.",
+    "url": "http://fastforwardlabs.github.io/brief/",
+    "image_url": "http://feed.grantcuster.com/static/images/feed/Screen%20Shot%202016-03-28%20at%205.27.49%20PM-1459200536036.png"
+  },
+  {
+    "head": "Tutorial",
+    "featured": false,
+    "name": "Using three.js for 2D Data Visualization",
+    "description": "An interactive notebook about using three.js to render tens of thousands of points.",
+    "url": "https://observablehq.com/@grantcuster/using-three-js-for-2d-data-visualization",
+    "image_url": "https://blog.fastforwardlabs.com/images/2018/03/Screen_Shot_2018_03_06_at_10_53_16_AM-1520351645421.png"
+  },
+  {
+    "head": "Demo",
+    "featured": false,
+    "name": "Encartopedia",
+    "description": "Encartopedia visualizes Wikipedia topic clusters and plots your journey through them.",
+    "url": "http://encartopedia.fastforwardlabs.com",
+    "image_url": "https://blog.fastforwardlabs.com/images/2017/08/enc-ui.png"
+  },
+  {
+    "head": "Demo",
+    "featured": false,
+    "name": "Visualizing the Taste of a Community of Cinephiles",
+    "description": "An interactive visualization that uses T-SNE to cluster movies together based on user ratings.",
+    "url": "http://fastforwardlabs.github.io/cinephile_tsne/",
+    "image_url": "http://fastforwardlabs.github.io/cinephile_tsne/images/Cover.png"
+  },
+  {
+    "head": "Demo",
+    "featured": false,
+    "name": "Luhn Method Demo",
+    "description": "An interactive demonstration of using the Luhn method for summarization.",
+    "url": "http://fastforwardlabs.github.io/luhn/",
+    "image_url": "http://fastforwardlabs.github.io/cinephile_tsne/images/Cover.png"
+  }
+]
