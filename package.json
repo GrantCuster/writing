@@ -1,0 +1,27 @@
+{
+  "name": "fastforward",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "binpack-2d": "^1.4.1",
+    "chroma-js": "^2.0.3",
+    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "lodash": "^4.17.11",
+    "maxrects-packer": "^2.0.2",
+    "next": "^8.0.4",
+    "packery": "^2.1.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
