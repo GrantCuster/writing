@@ -18,7 +18,6 @@ collections:
             name: experiments
             widget: list
             fields:
-              - {lable: Name,  name: name, widget: string}
               - {label: Head, name: head, widget: string}
               - {label: Featured, name: featured, widget: boolean}
               - {label: Description, name: description, widget: text}
