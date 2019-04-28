@@ -1,7 +1,7 @@
 {
   "experiments": [
     {
-      "name": "Active Learner Test",
+      "name": "Active Learner",
       "head": "Prototype",
       "featured": true,
       "description": "An interactive visualization of active learning data labeling strategies for supervised machine learning.",
