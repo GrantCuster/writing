@@ -91,7 +91,7 @@ class Item extends React.Component {
               width: (b.width / 4) * 3,
               width: b.width,
               height: b.height - top_height - bottom_height,
-              backgroundImage: `url(${e.image_url})`,
+              backgroundImage: `url(${e.image})`,
               backgroundPosition: 'center center',
               backgroundSize: 'cover',
             }}
