@@ -13,9 +13,9 @@ collections:
       - label: "Experiments page"
         name: "experiments page"
         file: "data/experiments.json"
-        - label: Experiments
-          name: experiments
-          widget: list
-          fields:
-            - {label: Name, name: name, widget: string}
-            - {label: Address, name: address, widget: string}
+          - label: Experiments
+            name: experiments
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Address, name: address, widget: string}
