@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+  repo: fastforwardlabs/exp
+  site_domain: agitated-galileo-3985d1
+
+media_folder: "static/images/uploads" # Media files will be stored in the repo under images/uploads
+
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Experiments page"
+        name: "experiments page"
+        file: "data/experiments.json"
+        - label: Experiments
+          name: experiments
+          widget: list
+          fields:
+            - {label: Name, name: name, widget: string}
+            - {label: Address, name: address, widget: string}

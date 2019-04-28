@@ -7,21 +7,12 @@ import FFuture from '../parts/FFuture'
 import ExpGrid from '../parts/ExpGrid'
 import { debounce } from 'lodash'
 import * as chroma from 'chroma-js'
+import experiments from '../data/experiments.json'
 
 let font_size = 16
 let line_height = 1.5
 
-const dev = process.env.NODE_ENV !== 'production'
-const server = dev
-  ? 'http://localhost:3000'
-  : 'https://your_deployment.server.com'
-
 class Index extends React.Component {
-  static async getInitialProps({ req }) {
-    const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
-    return { userAgent }
-  }
-
   constructor(props) {
     super(props)
     var now = new Date()
@@ -71,8 +62,9 @@ class Index extends React.Component {
   }
 
   render() {
-    let { experiments } = this.props
-    let { ww, optimal, hex } = this.state
+    console.log(experiments)
+
+    let { ww, wh, optimal, hex } = this.state
 
     let grem = font_size * line_height
 
@@ -146,6 +138,8 @@ class Index extends React.Component {
 
     let svg_scale = 35 / (cap + grem / 8)
 
+    let rounded_wh = Math.floor(wh / grem) * grem
+
     return (
       <div>
         <Head>
@@ -154,7 +148,7 @@ class Index extends React.Component {
             href="static/fonts/Inter-Regular.woff2?v=3.5"
             as="font"
             type="font/woff2"
-            crossorigin="*"
+            crossOrigin="*"
           />
         </Head>
         <style jsx global>{`
@@ -212,6 +206,7 @@ class Index extends React.Component {
                 top: 0,
                 width: ww,
                 height: '100vh',
+                zIndex: -1,
                 display: 'none',
               }}
             >
@@ -224,7 +219,7 @@ class Index extends React.Component {
                     top: 0,
                     width: column_width,
                     height: '100vh',
-                    outline: 'solid 1px blue',
+                    outline: 'solid 1px rgba(0,0,0,0.1)',
                   }}
                 />
               ))}
@@ -250,8 +245,6 @@ class Index extends React.Component {
                   Cloudera Fast Forward
                 </div>
                 <svg
-                  width="36"
-                  height="36"
                   viewBox="0 0 36 36"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -304,8 +297,54 @@ class Index extends React.Component {
               }}
             >
               <div style={{ position: 'relative' }}>
-                <Hd width={ww} align="t" stroke={fs * styles.stroke_mult} />
+                <Hd width={ww} align="b" stroke={fs * styles.stroke_mult} />
               </div>
+            </div>
+
+            <div
+              style={{
+                position: 'absolute',
+                left: 0,
+                top: grem * 2,
+                height: grem * 4,
+              }}
+            >
+              {false
+                ? experiments.map((e, i) => {
+                    let b = packed.boxes[i]
+                    let new_width = grem * 6
+                    let new_height = grem * 8
+                    return (
+                      <div
+                        style={{
+                          position: 'absolute',
+                          left: Math.round((b.x / ww) * new_width),
+                          top: Math.round(
+                            (b.y / packed.container.height) * new_height
+                          ),
+                          width: Math.round((b.width / ww) * new_width),
+                          height: Math.round(
+                            (b.height / packed.container.height) * new_height
+                          ),
+                          backgroundImage: `url(${e.image_url})`,
+                          backgroundPosition: 'center center',
+                          backgroundSize: 'cover',
+                          float: 'left',
+                        }}
+                      />
+                    )
+                  })
+                : null}
+              <div
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  height: grem * 4,
+                  filter: 'grayscale(100%)',
+                  width: ww,
+                }}
+              />
             </div>
             <div
               style={{
@@ -315,6 +354,9 @@ class Index extends React.Component {
                 fontSize: fs * 3,
                 lineHeight: 1,
                 paddingTop: grem / 2,
+                marginTop: grem / 2,
+                position: 'relative',
+                background: 'white',
               }}
             >
               Experiments
@@ -323,6 +365,8 @@ class Index extends React.Component {
               style={{
                 ...center_text,
                 padding: grem / 2,
+                background: 'white',
+                position: 'relative',
                 ...fs_normal,
               }}
             >
@@ -375,29 +419,20 @@ class Index extends React.Component {
             <div
               style={{
                 position: 'relative',
-                paddingTop: grem / 2,
+                paddingTop: grem,
               }}
             >
               <Hd width={ww} align="b" stroke={fs * styles.stroke_mult} />
             </div>
             <div
               style={{
-                paddingTop: grem,
+                paddingTop: grem / 2,
               }}
             />
           </div>
         ) : null}
       </div>
     )
-  }
-}
-
-Index.getInitialProps = async function() {
-  const res = await fetch(server + '/static/data/experiments.json')
-  const data = await res.json()
-
-  return {
-    experiments: data,
   }
 }
 
