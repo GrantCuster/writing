@@ -7,7 +7,7 @@ import FFuture from '../parts/FFuture'
 import ExpGrid from '../parts/ExpGrid'
 import { debounce } from 'lodash'
 import * as chroma from 'chroma-js'
-import experiments from '../data/experiments.json'
+import { experiments } from '../data/experiments.json'
 
 let font_size = 16
 let line_height = 1.5
