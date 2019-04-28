@@ -19,8 +19,8 @@ collections:
             widget: list
             fields:
               - {label: Head, name: head, widget: string}
-                {label: Featured, name: featured, widget: boolean}
-                {label: Description, name: description, widget: text}
-                {label: URL, name: url, widget: string}
-                {label: "Image URL", name: image_url, widget: string}
+              - {label: Featured, name: featured, widget: boolean}
+              - {label: Description, name: description, widget: text}
+              - {label: URL, name: url, widget: string}
+              - {label: "Image URL", name: image_url, widget: string}
 
