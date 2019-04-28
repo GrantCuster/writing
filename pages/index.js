@@ -326,7 +326,7 @@ class Index extends React.Component {
                           height: Math.round(
                             (b.height / packed.container.height) * new_height
                           ),
-                          backgroundImage: `url(${e.image_url})`,
+                          backgroundImage: `url(${e.image})`,
                           backgroundPosition: 'center center',
                           backgroundSize: 'cover',
                           float: 'left',
