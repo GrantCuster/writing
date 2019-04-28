@@ -1,93 +1,13 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
 
-/***/ "./data/experiments.js":
-/*!*****************************!*\
-  !*** ./data/experiments.js ***!
-  \*****************************/
-/*! exports provided: experiments */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./data/experiments.json":
+/*!*******************************!*\
+  !*** ./data/experiments.json ***!
+  \*******************************/
+/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, default */
+/***/ (function(module) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "experiments", function() { return experiments; });
-var experiments = [{
-  head: 'Prototype',
-  featured: true,
-  name: 'Active Learner',
-  description: 'An interactive visualization of active learning data labeling strategies for supervised machine learning.',
-  url: 'https://activelearner.fastforwardlabs.com',
-  image_url: 'http://feed.grantcuster.com/static/images/feed/clip3-1554232754113.gif'
-}, {
-  head: 'Library',
-  featured: false,
-  name: 'Handtrack.js',
-  description: 'Handtrack.js is a library for prototyping realtime hand detection (bounding box), directly in the browser.',
-  url: 'https://github.com/victordibia/handtrack.js',
-  image_url: 'https://github.com/victordibia/handtrack.js/raw/master/demo/images/bossflip.gif'
-}, {
-  head: 'Demo',
-  featured: false,
-  name: 'UMAP Explorer',
-  description: 'An interactive UMAP visualization of the MNIST data set.',
-  url: 'https://grantcuster.github.io/umap-explorer',
-  image_url: 'http://feed.grantcuster.com/static/images/feed/umap_zoom-1547839236092.gif'
-}, {
-  head: 'Demo',
-  featured: false,
-  name: 'Active Learning with Logistic Regression',
-  description: 'A toy example about logistic regression and different active learning strategies.',
-  url: 'https://observablehq.com/@cjwallace/an-invitation-to-active-learning',
-  image_url: 'https://blog.fastforwardlabs.com/images/editor_uploads/2019-04-04-171937-uncertainty_sampling_observable_fast.gif'
-}, {
-  head: 'Prototype',
-  featured: true,
-  name: 'Turbofan Tycoon',
-  description: 'See if you have what it takes to make it as a turbofan factory owner in our federated learning prototype.',
-  url: 'https://turbofan.fastforwardlabs.com',
-  image_url: 'https://blog.fastforwardlabs.com/images/editor_uploads/2018-12-07-163940-turbofan_even_shorter.gif'
-}, {
-  head: 'Prototype',
-  featured: true,
-  name: 'Probabilistic Real Estate',
-  description: 'A probabilistic programming prototype that predicts future real estate prices across New York City boroughs and neighborhoods.',
-  url: 'http://fastforwardlabs.github.io/pre',
-  image_url: 'https://blog.fastforwardlabs.com/images/2017/05/probability_mode.png'
-}, {
-  head: 'Prototype',
-  featured: true,
-  name: 'Brief Preview',
-  description: 'Brief uses neural networks to score and highlight the most interesting sentences within any article.',
-  url: 'http://fastforwardlabs.github.io/brief/',
-  image_url: 'http://feed.grantcuster.com/static/images/feed/Screen%20Shot%202016-03-28%20at%205.27.49%20PM-1459200536036.png'
-}, {
-  head: 'Tutorial',
-  featured: false,
-  name: 'Using three.js for 2D Data Visualization',
-  description: 'An interactive notebook about using three.js to render tens of thousands of points.',
-  url: 'https://observablehq.com/@grantcuster/using-three-js-for-2d-data-visualization',
-  image_url: 'https://blog.fastforwardlabs.com/images/2018/03/Screen_Shot_2018_03_06_at_10_53_16_AM-1520351645421.png'
-}, {
-  head: 'Demo',
-  featured: false,
-  name: 'Encartopedia',
-  description: 'Encartopedia visualizes Wikipedia topic clusters and plots your journey through them.',
-  url: 'http://encartopedia.fastforwardlabs.com',
-  image_url: 'https://blog.fastforwardlabs.com/images/2017/08/enc-ui.png'
-}, {
-  head: 'Demo',
-  featured: false,
-  name: 'Visualizing the Taste of a Community of Cinephiles',
-  description: 'An interactive visualization that uses T-SNE to cluster movies together based on user ratings.',
-  url: 'http://fastforwardlabs.github.io/cinephile_tsne/',
-  image_url: 'http://fastforwardlabs.github.io/cinephile_tsne/images/Cover.png'
-}, {
-  head: 'Demo',
-  featured: false,
-  name: 'Luhn Method Demo',
-  description: 'An interactive demonstration of using the Luhn method for summarization.',
-  url: 'http://fastforwardlabs.github.io/luhn/',
-  image_url: 'http://fastforwardlabs.github.io/cinephile_tsne/images/Cover.png'
-}];
+module.exports = [{"head":"Prototype","featured":true,"name":"Active Learner","description":"An interactive visualization of active learning data labeling strategies for supervised machine learning.","url":"https://activelearner.fastforwardlabs.com","image_url":"http://feed.grantcuster.com/static/images/feed/clip3-1554232754113.gif"},{"head":"Library","featured":false,"name":"Handtrack.js","description":"Handtrack.js is a library for prototyping realtime hand detection (bounding box), directly in the browser.","url":"https://github.com/victordibia/handtrack.js","image_url":"https://github.com/victordibia/handtrack.js/raw/master/demo/images/bossflip.gif"},{"head":"Demo","featured":false,"name":"UMAP Explorer","description":"An interactive UMAP visualization of the MNIST data set.","url":"https://grantcuster.github.io/umap-explorer","image_url":"http://feed.grantcuster.com/static/images/feed/umap_zoom-1547839236092.gif"},{"head":"Demo","featured":false,"name":"Active Learning with Logistic Regression","description":"A toy example about logistic regression and different active learning strategies.","url":"https://observablehq.com/@cjwallace/an-invitation-to-active-learning","image_url":"https://blog.fastforwardlabs.com/images/editor_uploads/2019-04-04-171937-uncertainty_sampling_observable_fast.gif"},{"head":"Prototype","featured":true,"name":"Turbofan Tycoon","description":"See if you have what it takes to make it as a turbofan factory owner in our federated learning prototype.","url":"https://turbofan.fastforwardlabs.com","image_url":"https://blog.fastforwardlabs.com/images/editor_uploads/2018-12-07-163940-turbofan_even_shorter.gif"},{"head":"Prototype","featured":true,"name":"Probabilistic Real Estate","description":"A probabilistic programming prototype that predicts future real estate prices across New York City boroughs and neighborhoods.","url":"http://fastforwardlabs.github.io/pre","image_url":"https://blog.fastforwardlabs.com/images/2017/05/probability_mode.png"},{"head":"Prototype","featured":true,"name":"Brief Preview","description":"Brief uses neural networks to score and highlight the most interesting sentences within any article.","url":"http://fastforwardlabs.github.io/brief/","image_url":"http://feed.grantcuster.com/static/images/feed/Screen%20Shot%202016-03-28%20at%205.27.49%20PM-1459200536036.png"},{"head":"Tutorial","featured":false,"name":"Using three.js for 2D Data Visualization","description":"An interactive notebook about using three.js to render tens of thousands of points.","url":"https://observablehq.com/@grantcuster/using-three-js-for-2d-data-visualization","image_url":"https://blog.fastforwardlabs.com/images/2018/03/Screen_Shot_2018_03_06_at_10_53_16_AM-1520351645421.png"},{"head":"Demo","featured":false,"name":"Encartopedia","description":"Encartopedia visualizes Wikipedia topic clusters and plots your journey through them.","url":"http://encartopedia.fastforwardlabs.com","image_url":"https://blog.fastforwardlabs.com/images/2017/08/enc-ui.png"},{"head":"Demo","featured":false,"name":"Visualizing the Taste of a Community of Cinephiles","description":"An interactive visualization that uses T-SNE to cluster movies together based on user ratings.","url":"http://fastforwardlabs.github.io/cinephile_tsne/","image_url":"http://fastforwardlabs.github.io/cinephile_tsne/images/Cover.png"}];
 
 /***/ }),
 
@@ -25116,34 +25036,33 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _parts_Dividers__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../parts/Dividers */ "./parts/Dividers.js");
-/* harmony import */ var _parts_Utils__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../parts/Utils */ "./parts/Utils.js");
-/* harmony import */ var _parts_Binpack_2d_port__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../parts/Binpack-2d-port */ "./parts/Binpack-2d-port.js");
-/* harmony import */ var _parts_FFuture__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../parts/FFuture */ "./parts/FFuture.js");
-/* harmony import */ var _parts_ExpGrid__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../parts/ExpGrid */ "./parts/ExpGrid.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var chroma_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! chroma-js */ "./node_modules/chroma-js/chroma.js");
-/* harmony import */ var chroma_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(chroma_js__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _data_experiments__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../data/experiments */ "./data/experiments.js");
-
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/toConsumableArray */ "./node_modules/@babel/runtime-corejs2/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _parts_Dividers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../parts/Dividers */ "./parts/Dividers.js");
+/* harmony import */ var _parts_Utils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../parts/Utils */ "./parts/Utils.js");
+/* harmony import */ var _parts_Binpack_2d_port__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../parts/Binpack-2d-port */ "./parts/Binpack-2d-port.js");
+/* harmony import */ var _parts_FFuture__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../parts/FFuture */ "./parts/FFuture.js");
+/* harmony import */ var _parts_ExpGrid__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../parts/ExpGrid */ "./parts/ExpGrid.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var chroma_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! chroma-js */ "./node_modules/chroma-js/chroma.js");
+/* harmony import */ var chroma_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(chroma_js__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _data_experiments_json__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../data/experiments.json */ "./data/experiments.json");
+var _data_experiments_json__WEBPACK_IMPORTED_MODULE_19___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../data/experiments.json */ "./data/experiments.json", 1);
 
 
 
@@ -25171,14 +25090,14 @@ var line_height = 1.5;
 var Index =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_8__["default"])(Index, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(Index, _React$Component);
 
   function Index(props) {
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Index);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Index);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(Index).call(this, props));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Index).call(this, props));
     var now = new Date();
     var start = new Date(now.getFullYear(), 0, 0);
     var diff = now - start + (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000 * 24;
@@ -25187,14 +25106,14 @@ function (_React$Component) {
     _this.state = {
       ww: 0,
       optimal: null,
-      hex: chroma_js__WEBPACK_IMPORTED_MODULE_19__["hcl"](Math.floor(day_in_year / 365 * 360), 60, 80)
+      hex: chroma_js__WEBPACK_IMPORTED_MODULE_18__["hcl"](Math.floor(day_in_year / 365 * 360), 60, 80)
     };
-    _this.setSize = _this.setSize.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__["default"])(_this));
-    _this.setSize = Object(lodash__WEBPACK_IMPORTED_MODULE_18__["debounce"])(_this.setSize, 100);
+    _this.setSize = _this.setSize.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
+    _this.setSize = Object(lodash__WEBPACK_IMPORTED_MODULE_17__["debounce"])(_this.setSize, 100);
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(Index, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Index, [{
     key: "setSize",
     value: function setSize() {
       var canvas = document.createElement('canvas');
@@ -25221,10 +25140,10 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _React$createElement;
-
+      console.log(_data_experiments_json__WEBPACK_IMPORTED_MODULE_19__);
       var _this$state = this.state,
           ww = _this$state.ww,
+          wh = _this$state.wh,
           optimal = _this$state.optimal,
           hex = _this$state.hex;
       var grem = font_size * line_height;
@@ -25261,7 +25180,7 @@ function (_React$Component) {
       };
       var target_height = grem * 12;
       var spacer = grem;
-      var sized_experiments = _data_experiments__WEBPACK_IMPORTED_MODULE_20__["experiments"].map(function (e) {
+      var sized_experiments = _data_experiments_json__WEBPACK_IMPORTED_MODULE_19__.map(function (e) {
         var w = Math.round(column_width * 2 - spacer);
         var h = Math.round(target_height);
 
@@ -25278,7 +25197,7 @@ function (_React$Component) {
         }
       });
       var avail = ww - offset * 2;
-      var packed = Object(_parts_Binpack_2d_port__WEBPACK_IMPORTED_MODULE_15__["pack"])({
+      var packed = Object(_parts_Binpack_2d_port__WEBPACK_IMPORTED_MODULE_14__["pack"])({
         width: avail,
         height: Infinity
       }, sized_experiments, spacer);
@@ -25287,59 +25206,61 @@ function (_React$Component) {
         fontSize: fs
       };
       var svg_scale = 35 / (cap + grem / 8);
-      return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+      var rounded_wh = Math.floor(wh / grem) * grem;
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 144
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_12___default.a, {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_11___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141
+          lineNumber: 145
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("link", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("link", {
         rel: "preload",
         href: "static/fonts/Inter-Regular.woff2?v=3.5",
         as: "font",
         type: "font/woff2",
         crossOrigin: "*",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142
+          lineNumber: 146
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a, {
         id: "384580974",
         dynamic: [hex, font_size, line_height, grem / 2],
         __self: this
-      }, "@font-face{font-family:'Interi';font-style:normal;font-weight:400;src:url('static/fonts/Inter-Regular.woff2?v=3.5') format('woff2'), url('static/fonts/Inter-Regular.woff?v=3.5') format('woff');}@font-face{font-family:'Interi';font-style:italic;font-weight:400;src:url('static/fonts/Inter-Italic.woff2?v=3.5') format('woff2'), url('static/fonts/Inter-Italic.woff?v=3.5') format('woff');}:root{--background:".concat(hex, ";}*{box-sizing:border-box;}html{font-family:'Interi',serif;font-size:").concat(font_size, "px;line-height:").concat(line_height, ";text-rendering:optimizelegibility;font-feature-settings:'kern';font-kerning:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}body{margin:0;overflow-x:hidden;}a{color:inherit;-webkit-text-decoration:underline;text-decoration:underline;}.hover_box:hover{-webkit-transition:box-shadow 0.05s linear;transition:box-shadow 0.05s linear;box-shadow:0 0 ").concat(grem / 2, "px rgba(0,0,0,0.4);}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmFzdGZvcndhcmQvcGFnZXMvaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBcUoyQixBQUd1RCxBQUdyQixBQU9BLEFBT0MsQUFHTSxBQVVuQixBQUlLLEFBSXFCLFNBUGpCLEtBSVEsT0EvQlIsQUFPQSxDQU9wQixLQUcyQyxBQVczQyxZQTNCa0IsQUFPQSxHQVhsQixhQU0rRCxBQU9ELGFBUW5CLE1BYzNDLElBR21FLCtCQWhCL0IsK0JBaUJwQyxHQWhCK0IsNkJBQ1QsUUFWdEIsRUFQQSxVQWtCcUMsbUNBQ0Qsa0NBQ3BDIiwiZmlsZSI6Ii9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmFzdGZvcndhcmQvcGFnZXMvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgZmV0Y2ggZnJvbSAnaXNvbW9ycGhpYy11bmZldGNoJ1xuaW1wb3J0IEhlYWQgZnJvbSAnbmV4dC9oZWFkJ1xuaW1wb3J0IHsgSGQsIFZkLCBSZWN0LCBGZGl2IH0gZnJvbSAnLi4vcGFydHMvRGl2aWRlcnMnXG5pbXBvcnQgeyBzdHlsZXMsIHAgfSBmcm9tICcuLi9wYXJ0cy9VdGlscydcbmltcG9ydCB7IHBhY2sgfSBmcm9tICcuLi9wYXJ0cy9CaW5wYWNrLTJkLXBvcnQnXG5pbXBvcnQgRkZ1dHVyZSBmcm9tICcuLi9wYXJ0cy9GRnV0dXJlJ1xuaW1wb3J0IEV4cEdyaWQgZnJvbSAnLi4vcGFydHMvRXhwR3JpZCdcbmltcG9ydCB7IGRlYm91bmNlIH0gZnJvbSAnbG9kYXNoJ1xuaW1wb3J0ICogYXMgY2hyb21hIGZyb20gJ2Nocm9tYS1qcydcbmltcG9ydCB7IGV4cGVyaW1lbnRzIH0gZnJvbSAnLi4vZGF0YS9leHBlcmltZW50cydcblxubGV0IGZvbnRfc2l6ZSA9IDE2XG5sZXQgbGluZV9oZWlnaHQgPSAxLjVcblxuY2xhc3MgSW5kZXggZXh0ZW5kcyBSZWFjdC5Db21wb25lbnQge1xuICBjb25zdHJ1Y3Rvcihwcm9wcykge1xuICAgIHN1cGVyKHByb3BzKVxuICAgIHZhciBub3cgPSBuZXcgRGF0ZSgpXG4gICAgdmFyIHN0YXJ0ID0gbmV3IERhdGUobm93LmdldEZ1bGxZZWFyKCksIDAsIDApXG4gICAgdmFyIGRpZmYgPVxuICAgICAgbm93IC1cbiAgICAgIHN0YXJ0ICtcbiAgICAgIChzdGFydC5nZXRUaW1lem9uZU9mZnNldCgpIC0gbm93LmdldFRpbWV6b25lT2Zmc2V0KCkpICogNjAgKiAxMDAwICogMjRcbiAgICB2YXIgb25lRGF5ID0gMTAwMCAqIDYwICogNjAgKiAyNFxuICAgIHZhciBkYXlfaW5feWVhciA9IE1hdGguZmxvb3IoZGlmZiAvIG9uZURheSlcblxuICAgIHRoaXMuc3RhdGUgPSB7XG4gICAgICB3dzogMCxcbiAgICAgIG9wdGltYWw6IG51bGwsXG4gICAgICBoZXg6IGNocm9tYS5oY2woTWF0aC5mbG9vcigoZGF5X2luX3llYXIgLyAzNjUpICogMzYwKSwgNjAsIDgwKSxcbiAgICB9XG4gICAgdGhpcy5zZXRTaXplID0gdGhpcy5zZXRTaXplLmJpbmQodGhpcylcbiAgICB0aGlzLnNldFNpemUgPSBkZWJvdW5jZSh0aGlzLnNldFNpemUsIDEwMClcbiAgfVxuXG4gIHNldFNpemUoKSB7XG4gICAgbGV0IGNhbnZhcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2NhbnZhcycpXG4gICAgbGV0IGN0eCA9IGNhbnZhcy5nZXRDb250ZXh0KCcyZCcpXG4gICAgY3R4LmZvbnQgPSBgbm9ybWFsICR7Zm9udF9zaXplfXB4IEludGVyaWBcbiAgICBsZXQgd2lkdGggPSBjdHgubWVhc3VyZVRleHQoXG4gICAgICAndGhvdXNhbmQgd3JpdGVycy4gV2l0aCBvdmVyIGEgbWlsbGlvbiBwZW9wbGUgZnJvbSB2YXJpb3VzIGZpZWxkcyB3b3JraW5nJ1xuICAgICkud2lkdGhcbiAgICB3aW5kb3cucmF0aW8gPSBNYXRoLm1heCh3aW5kb3cuaW5uZXJXaWR0aCAvIHdpZHRoLCAxKVxuXG4gICAgdGhpcy5zZXRTdGF0ZShcbiAgICAgIHtcbiAgICAgICAgd3c6IHdpbmRvdy5pbm5lcldpZHRoLFxuICAgICAgICB3aDogd2luZG93LmlubmVySGVpZ2h0LFxuICAgICAgICBvcHRpbWFsOiB3aWR0aCArIGZvbnRfc2l6ZSAqIGxpbmVfaGVpZ2h0LFxuICAgICAgfSxcbiAgICAgICgpID0+IHt9XG4gICAgKVxuICB9XG5cbiAgY29tcG9uZW50RGlkTW91bnQoKSB7XG4gICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ3Jlc2l6ZScsIHRoaXMuc2V0U2l6ZSlcbiAgICB0aGlzLnNldFNpemUoKVxuICAgIGxldCBtZSA9IHRoaXNcbiAgICBkb2N1bWVudC5mb250cy5yZWFkeS50aGVuKGZ1bmN0aW9uKCkge1xuICAgICAgbWUuc2V0U2l6ZSgpXG4gICAgfSlcbiAgfVxuXG4gIHJlbmRlcigpIHtcbiAgICBsZXQgeyB3dywgb3B0aW1hbCwgaGV4IH0gPSB0aGlzLnN0YXRlXG5cbiAgICBsZXQgZ3JlbSA9IGZvbnRfc2l6ZSAqIGxpbmVfaGVpZ2h0XG5cbiAgICBsZXQgZGl2aXNpb25zID0gNFxuXG4gICAgbGV0IHRhcmdldF93aWR0aCA9IG9wdGltYWwgLyBkaXZpc2lvbnNcbiAgICBsZXQgY29sdW1ucyA9IE1hdGguZmxvb3Iod3cgLyB0YXJnZXRfd2lkdGgpXG4gICAgbGV0IG9nX2NvbHVtbnMgPSBNYXRoLmZsb29yKHd3IC8gdGFyZ2V0X3dpZHRoKVxuICAgIGxldCBjb2x1bW5fd2lkdGggPSB3dyAvIGNvbHVtbnNcblxuICAgIGxldCBvZmZzZXQgPSAwXG4gICAgbGV0IGV2ZW4gPSBjb2x1bW5zICUgMiA9PT0gMFxuICAgIGlmICghZXZlbikge1xuICAgICAgY29sdW1ucyA9IGNvbHVtbnMgLSAxXG4gICAgICBvZmZzZXQgPSBjb2x1bW5fd2lkdGggLyAyXG4gICAgfVxuXG4gICAgbGV0IG9wdGltX3dpZHRoID0gY29sdW1uX3dpZHRoICogZGl2aXNpb25zXG4gICAgbGV0IG9wdGltX2xlZnQgPSAoY29sdW1ucyAvIDIgLSBkaXZpc2lvbnMgLyAyKSAqIGNvbHVtbl93aWR0aCArIG9mZnNldFxuXG4gICAgbGV0IHJhdGlvID0gY29sdW1uX3dpZHRoIC8gdGFyZ2V0X3dpZHRoXG5cbiAgICBpZiAoY29sdW1ucyA8IGRpdmlzaW9ucykge1xuICAgICAgb2Zmc2V0ID0gMFxuICAgICAgY29sdW1ucyA9IDJcbiAgICAgIGNvbHVtbl93aWR0aCA9IHd3IC8gMlxuICAgICAgb3B0aW1fd2lkdGggPSBjb2x1bW5fd2lkdGggKiAyXG4gICAgICBvcHRpbV9sZWZ0ID0gMFxuICAgICAgcmF0aW8gPSAxXG4gICAgfVxuXG4gICAgbGV0IGZzID0gZm9udF9zaXplICogcmF0aW9cblxuICAgIGxldCBjZW50ZXJfdGV4dCA9IHtcbiAgICAgIHdpZHRoOiBvcHRpbV93aWR0aCxcbiAgICAgIG1hcmdpbkxlZnQ6IG9wdGltX2xlZnQsXG4gICAgfVxuXG4gICAgbGV0IHRhcmdldF9oZWlnaHQgPSBncmVtICogMTJcbiAgICBsZXQgc3BhY2VyID0gZ3JlbVxuXG4gICAgbGV0IHNpemVkX2V4cGVyaW1lbnRzID0gZXhwZXJpbWVudHMubWFwKGUgPT4ge1xuICAgICAgbGV0IHcgPSBNYXRoLnJvdW5kKGNvbHVtbl93aWR0aCAqIDIgLSBzcGFjZXIpXG4gICAgICBsZXQgaCA9IE1hdGgucm91bmQodGFyZ2V0X2hlaWdodClcbiAgICAgIGlmIChlLmZlYXR1cmVkID09PSB0cnVlKSB7XG4gICAgICAgIHJldHVybiB7XG4gICAgICAgICAgd2lkdGg6IE1hdGgubWluKHcgKiAyICsgc3BhY2VyLCB3dyAtIHNwYWNlciksXG4gICAgICAgICAgaGVpZ2h0OiBoICogMiArIHNwYWNlcixcbiAgICAgICAgfVxuICAgICAgfSBlbHNlIHtcbiAgICAgICAgcmV0dXJuIHtcbiAgICAgICAgICB3aWR0aDogTWF0aC5taW4odywgd3cgLSBzcGFjZXIpLFxuICAgICAgICAgIGhlaWdodDogaCxcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH0pXG5cbiAgICBsZXQgYXZhaWwgPSB3dyAtIG9mZnNldCAqIDJcblxuICAgIGxldCBwYWNrZWQgPSBwYWNrKFxuICAgICAgeyB3aWR0aDogYXZhaWwsIGhlaWdodDogSW5maW5pdHkgfSxcbiAgICAgIHNpemVkX2V4cGVyaW1lbnRzLFxuICAgICAgc3BhY2VyXG4gICAgKVxuXG4gICAgbGV0IGNhcCA9IGdyZW0gKiAoMjA0OCAvIDI4MTYpXG5cbiAgICBsZXQgZnNfbm9ybWFsID0ge1xuICAgICAgZm9udFNpemU6IGZzLFxuICAgIH1cblxuICAgIGxldCBzdmdfc2NhbGUgPSAzNSAvIChjYXAgKyBncmVtIC8gOClcblxuICAgIHJldHVybiAoXG4gICAgICA8ZGl2PlxuICAgICAgICA8SGVhZD5cbiAgICAgICAgICA8bGlua1xuICAgICAgICAgICAgcmVsPVwicHJlbG9hZFwiXG4gICAgICAgICAgICBocmVmPVwic3RhdGljL2ZvbnRzL0ludGVyLVJlZ3VsYXIud29mZjI/dj0zLjVcIlxuICAgICAgICAgICAgYXM9XCJmb250XCJcbiAgICAgICAgICAgIHR5cGU9XCJmb250L3dvZmYyXCJcbiAgICAgICAgICAgIGNyb3NzT3JpZ2luPVwiKlwiXG4gICAgICAgICAgLz5cbiAgICAgICAgPC9IZWFkPlxuICAgICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAgIDpyb290IHtcbiAgICAgICAgICAgIC0tYmFja2dyb3VuZDogJHtoZXh9O1xuICAgICAgICAgIH1cbiAgICAgICAgICBAZm9udC1mYWNlIHtcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnSW50ZXJpJztcbiAgICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgICAgICAgICBzcmM6IHVybCgnc3RhdGljL2ZvbnRzL0ludGVyLVJlZ3VsYXIud29mZjI/dj0zLjUnKSBmb3JtYXQoJ3dvZmYyJyksXG4gICAgICAgICAgICAgIHVybCgnc3RhdGljL2ZvbnRzL0ludGVyLVJlZ3VsYXIud29mZj92PTMuNScpIGZvcm1hdCgnd29mZicpO1xuICAgICAgICAgIH1cbiAgICAgICAgICBAZm9udC1mYWNlIHtcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnSW50ZXJpJztcbiAgICAgICAgICAgIGZvbnQtc3R5bGU6IGl0YWxpYztcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgICAgICAgICBzcmM6IHVybCgnc3RhdGljL2ZvbnRzL0ludGVyLUl0YWxpYy53b2ZmMj92PTMuNScpIGZvcm1hdCgnd29mZjInKSxcbiAgICAgICAgICAgICAgdXJsKCdzdGF0aWMvZm9udHMvSW50ZXItSXRhbGljLndvZmY/dj0zLjUnKSBmb3JtYXQoJ3dvZmYnKTtcbiAgICAgICAgICB9XG4gICAgICAgICAgKiB7XG4gICAgICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgICAgICAgIH1cbiAgICAgICAgICBodG1sIHtcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnSW50ZXJpJywgc2VyaWY7XG4gICAgICAgICAgICBmb250LXNpemU6ICR7Zm9udF9zaXplfXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6ICR7bGluZV9oZWlnaHR9O1xuICAgICAgICAgICAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplbGVnaWJpbGl0eTtcbiAgICAgICAgICAgIGZvbnQtZmVhdHVyZS1zZXR0aW5nczogJ2tlcm4nO1xuICAgICAgICAgICAgZm9udC1rZXJuaW5nOiBub3JtYWw7XG4gICAgICAgICAgICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgICAgICAgICAgIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XG4gICAgICAgICAgfVxuICAgICAgICAgIGJvZHkge1xuICAgICAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICAgICAgb3ZlcmZsb3cteDogaGlkZGVuO1xuICAgICAgICAgIH1cbiAgICAgICAgICBhIHtcbiAgICAgICAgICAgIGNvbG9yOiBpbmhlcml0O1xuICAgICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XG4gICAgICAgICAgfVxuICAgICAgICAgIC5ob3Zlcl9ib3g6aG92ZXIge1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogYm94LXNoYWRvdyAwLjA1cyBsaW5lYXI7XG4gICAgICAgICAgICBib3gtc2hhZG93OiAwIDAgJHtncmVtIC8gMn1weCByZ2JhKDAsIDAsIDAsIDAuNCk7XG4gICAgICAgICAgfVxuICAgICAgICAgIC5ob3Zlcl9ib3g6aG92ZXIgLmhvdmVyX25hbWUge1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICB7b3B0aW1hbCAhPT0gbnVsbCA/IChcbiAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAnZml4ZWQnLFxuICAgICAgICAgICAgICAgIGxlZnQ6IDAsXG4gICAgICAgICAgICAgICAgdG9wOiAwLFxuICAgICAgICAgICAgICAgIHdpZHRoOiB3dyxcbiAgICAgICAgICAgICAgICBoZWlnaHQ6ICcxMDB2aCcsXG4gICAgICAgICAgICAgICAgZGlzcGxheTogJ25vbmUnLFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICB7Wy4uLkFycmF5KGNvbHVtbnMpXS5tYXAoKG4sIGkpID0+IChcbiAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICBrZXk9e2l9XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ2Fic29sdXRlJyxcbiAgICAgICAgICAgICAgICAgICAgbGVmdDogaSAqIGNvbHVtbl93aWR0aCArIG9mZnNldCxcbiAgICAgICAgICAgICAgICAgICAgdG9wOiAwLFxuICAgICAgICAgICAgICAgICAgICB3aWR0aDogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6ICcxMDB2aCcsXG4gICAgICAgICAgICAgICAgICAgIG91dGxpbmU6ICdzb2xpZCAxcHggYmx1ZScsXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgc3R5bGU9e3sgcG9zaXRpb246ICdmaXhlZCcsIGxlZnQ6IDAsIGJvdHRvbTogMCwgZGlzcGxheTogJ25vbmUnIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIDxkaXY+b2dfY29sdW1uczoge29nX2NvbHVtbnN9PC9kaXY+XG4gICAgICAgICAgICAgIDxkaXY+e2V2ZW4gPyAnZXZlbicgOiAnb2RkJ308L2Rpdj5cbiAgICAgICAgICAgICAgPGRpdj5mb250IHNpemU6IHtmc308L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgIHBhZGRpbmc6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgIGRpc3BsYXk6ICdmbGV4JyxcbiAgICAgICAgICAgICAgICBqdXN0aWZ5Q29udGVudDogJ3NwYWNlLWJldHdlZW4nLFxuICAgICAgICAgICAgICAgIC4uLmZzX25vcm1hbCxcbiAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IHBhZGRpbmdMZWZ0OiBncmVtICogMS4yNSB9fT5cbiAgICAgICAgICAgICAgICAgIENsb3VkZXJhIEZhc3QgRm9yd2FyZFxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDxzdmdcbiAgICAgICAgICAgICAgICAgIHdpZHRoPVwiMzZcIlxuICAgICAgICAgICAgICAgICAgaGVpZ2h0PVwiMzZcIlxuICAgICAgICAgICAgICAgICAgdmlld0JveD1cIjAgMCAzNiAzNlwiXG4gICAgICAgICAgICAgICAgICBmaWxsPVwibm9uZVwiXG4gICAgICAgICAgICAgICAgICB4bWxucz1cImh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnXCJcbiAgICAgICAgICAgICAgICAgIHdpZHRoPXtjYXAgKyBncmVtIC8gOH1cbiAgICAgICAgICAgICAgICAgIGhlaWdodD17Y2FwICsgZ3JlbSAvIDh9XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ2Fic29sdXRlJyxcbiAgICAgICAgICAgICAgICAgICAgbGVmdDogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAgIHRvcDogZ3JlbSAvIDIgKyAoZ3JlbSAtIGNhcCkgLyAyIC0gZ3JlbSAvIDE2LFxuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICA8cGF0aFxuICAgICAgICAgICAgICAgICAgICBkPVwiTTE4IDE4TDEgMVYzNUwxOCAxOFpcIlxuICAgICAgICAgICAgICAgICAgICBzdHJva2U9XCJibGFja1wiXG4gICAgICAgICAgICAgICAgICAgIHN0cm9rZVdpZHRoPXtmcyAqIHN0eWxlcy5zdHJva2VfbXVsdCAqIHN2Z19zY2FsZX1cbiAgICAgICAgICAgICAgICAgICAgc3Ryb2tlTGluZWpvaW49XCJiZXZlbFwiXG4gICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgPHBhdGhcbiAgICAgICAgICAgICAgICAgICAgZD1cIk0zNSAxOEwxOCAxVjM1TDM1IDE4WlwiXG4gICAgICAgICAgICAgICAgICAgIHN0cm9rZT1cImJsYWNrXCJcbiAgICAgICAgICAgICAgICAgICAgc3Ryb2tlV2lkdGg9e2ZzICogc3R5bGVzLnN0cm9rZV9tdWx0ICogc3ZnX3NjYWxlfVxuICAgICAgICAgICAgICAgICAgICBzdHJva2VMaW5lam9pbj1cImJldmVsXCJcbiAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICA8cGF0aFxuICAgICAgICAgICAgICAgICAgICBkPVwiTTEgMUgzNVYxOEgxVjFaXCJcbiAgICAgICAgICAgICAgICAgICAgc3Ryb2tlV2lkdGg9e2ZzICogc3R5bGVzLnN0cm9rZV9tdWx0ICogc3ZnX3NjYWxlfVxuICAgICAgICAgICAgICAgICAgICBzdHJva2U9XCJibGFja1wiXG4gICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgPHBhdGhcbiAgICAgICAgICAgICAgICAgICAgZD1cIk0xIDE4SDM1VjM1SDFWMThaXCJcbiAgICAgICAgICAgICAgICAgICAgc3Ryb2tlV2lkdGg9e2ZzICogc3R5bGVzLnN0cm9rZV9tdWx0ICogc3ZnX3NjYWxlfVxuICAgICAgICAgICAgICAgICAgICBzdHJva2U9XCJibGFja1wiXG4gICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgIDwvc3ZnPlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcgfX0+XG4gICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBtYXJnaW5SaWdodDogZ3JlbSAvIDIgfX0+XG4gICAgICAgICAgICAgICAgICA8YSBocmVmPVwiI1wiPk1haW48L2E+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17e319PlxuICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cIiNcIj5CbG9nPC9hPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgIHBhZGRpbmc6IDAsXG4gICAgICAgICAgICAgICAgcGFkZGluZ0JvdHRvbTogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgcG9zaXRpb246ICdyZWxhdGl2ZScsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgcG9zaXRpb246ICdyZWxhdGl2ZScgfX0+XG4gICAgICAgICAgICAgICAgPEhkIHdpZHRoPXt3d30gYWxpZ249XCJ0XCIgc3Ryb2tlPXtmcyAqIHN0eWxlcy5zdHJva2VfbXVsdH0gLz5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAuLi5jZW50ZXJfdGV4dCxcbiAgICAgICAgICAgICAgICBwYWRkaW5nTGVmdDogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgcGFkZGluZ1JpZ2h0OiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAzLFxuICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEsXG4gICAgICAgICAgICAgICAgcGFkZGluZ1RvcDogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIEV4cGVyaW1lbnRzXG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAuLi5jZW50ZXJfdGV4dCxcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICAuLi5mc19ub3JtYWwsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIE1hY2hpbmUgbGVhcm5pbmcgdmlzdWFsaXphdGlvbnMgYW5kIGNvZGVcbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgcGFkZGluZzogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgcGFkZGluZ0xlZnQ6IGdyZW0gLyAyICsgb2Zmc2V0LFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICA8RXhwR3JpZFxuICAgICAgICAgICAgICAgIHdpZHRoPXt3d31cbiAgICAgICAgICAgICAgICBncmVtPXtncmVtfVxuICAgICAgICAgICAgICAgIGV4cGVyaW1lbnRzPXtleHBlcmltZW50c31cbiAgICAgICAgICAgICAgICBwYWNrZWQ9e3BhY2tlZH1cbiAgICAgICAgICAgICAgICBzcGFjZXI9e3NwYWNlcn1cbiAgICAgICAgICAgICAgICB0YXJnZXRfaGVpZ2h0PXt0YXJnZXRfaGVpZ2h0fVxuICAgICAgICAgICAgICAgIGZzPXtmc31cbiAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgLi4uY2VudGVyX3RleHQsXG4gICAgICAgICAgICAgICAgZm9udFNpemU6IGZzICogMixcbiAgICAgICAgICAgICAgICBsaW5lSGVpZ2h0OiAxLjI1LFxuICAgICAgICAgICAgICAgIHBhZGRpbmc6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgIHBhZGRpbmdCb3R0b206IDAsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIEFib3V0XG4gICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgIC4uLmNlbnRlcl90ZXh0LFxuICAgICAgICAgICAgICAgIHBhZGRpbmc6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgIC4uLmZzX25vcm1hbCxcbiAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgQ2xvdWRlcmEgRmFzdCBGb3J3YXJkIGlzIGFuIGFwcGxpZWQgbWFjaGluZSBsZWFybmluZyByZXNlYXJjaFxuICAgICAgICAgICAgICBncm91cC4gV2UgaGVscCBvcmdhbml6YXRpb25zIHJlY29nbml6ZSBhbmQgZGV2ZWxvcCBuZXcgcHJvZHVjdCBhbmRcbiAgICAgICAgICAgICAgYnVzaW5lc3Mgb3Bwb3J0dW5pdGllcyB0aHJvdWdoIGVtZXJnaW5nIHRlY2hub2xvZ2llcy57JyAnfVxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IC4uLmNlbnRlcl90ZXh0LCBwYWRkaW5nOiBncmVtIC8gMiwgcGFkZGluZ1RvcDogMCB9fT5cbiAgICAgICAgICAgICAgPGEgaHJlZj1cIiNcIj5MZWFybiBtb3JlIGFib3V0IHdvcmtpbmcgd2l0aCB1cy48L2E+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICBwYWRkaW5nVG9wOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgPEhkIHdpZHRoPXt3d30gYWxpZ249XCJiXCIgc3Ryb2tlPXtmcyAqIHN0eWxlcy5zdHJva2VfbXVsdH0gLz5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgIHBhZGRpbmdUb3A6IGdyZW0sXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAvPlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICApIDogbnVsbH1cbiAgICAgIDwvZGl2PlxuICAgIClcbiAgfVxufVxuXG5leHBvcnQgZGVmYXVsdCBJbmRleFxuIl19 */\n/*@ sourceURL=/Users/grant.custer/Sites/fastforward/pages/index.js */")), optimal !== null ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+      }, "@font-face{font-family:'Interi';font-style:normal;font-weight:400;src:url('static/fonts/Inter-Regular.woff2?v=3.5') format('woff2'), url('static/fonts/Inter-Regular.woff?v=3.5') format('woff');}@font-face{font-family:'Interi';font-style:italic;font-weight:400;src:url('static/fonts/Inter-Italic.woff2?v=3.5') format('woff2'), url('static/fonts/Inter-Italic.woff?v=3.5') format('woff');}:root{--background:".concat(hex, ";}*{box-sizing:border-box;}html{font-family:'Interi',serif;font-size:").concat(font_size, "px;line-height:").concat(line_height, ";text-rendering:optimizelegibility;font-feature-settings:'kern';font-kerning:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}body{margin:0;overflow-x:hidden;}a{color:inherit;-webkit-text-decoration:underline;text-decoration:underline;}.hover_box:hover{-webkit-transition:box-shadow 0.05s linear;transition:box-shadow 0.05s linear;box-shadow:0 0 ").concat(grem / 2, "px rgba(0,0,0,0.4);}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmFzdGZvcndhcmQvcGFnZXMvaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBeUoyQixBQUd1RCxBQUdyQixBQU9BLEFBT0MsQUFHTSxBQVVuQixBQUlLLEFBSXFCLFNBUGpCLEtBSVEsT0EvQlIsQUFPQSxDQU9wQixLQUcyQyxBQVczQyxZQTNCa0IsQUFPQSxHQVhsQixhQU0rRCxBQU9ELGFBUW5CLE1BYzNDLElBR21FLCtCQWhCL0IsK0JBaUJwQyxHQWhCK0IsNkJBQ1QsUUFWdEIsRUFQQSxVQWtCcUMsbUNBQ0Qsa0NBQ3BDIiwiZmlsZSI6Ii9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmFzdGZvcndhcmQvcGFnZXMvaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgZmV0Y2ggZnJvbSAnaXNvbW9ycGhpYy11bmZldGNoJ1xuaW1wb3J0IEhlYWQgZnJvbSAnbmV4dC9oZWFkJ1xuaW1wb3J0IHsgSGQsIFZkLCBSZWN0LCBGZGl2IH0gZnJvbSAnLi4vcGFydHMvRGl2aWRlcnMnXG5pbXBvcnQgeyBzdHlsZXMsIHAgfSBmcm9tICcuLi9wYXJ0cy9VdGlscydcbmltcG9ydCB7IHBhY2sgfSBmcm9tICcuLi9wYXJ0cy9CaW5wYWNrLTJkLXBvcnQnXG5pbXBvcnQgRkZ1dHVyZSBmcm9tICcuLi9wYXJ0cy9GRnV0dXJlJ1xuaW1wb3J0IEV4cEdyaWQgZnJvbSAnLi4vcGFydHMvRXhwR3JpZCdcbmltcG9ydCB7IGRlYm91bmNlIH0gZnJvbSAnbG9kYXNoJ1xuaW1wb3J0ICogYXMgY2hyb21hIGZyb20gJ2Nocm9tYS1qcydcbmltcG9ydCBleHBlcmltZW50cyBmcm9tICcuLi9kYXRhL2V4cGVyaW1lbnRzLmpzb24nXG5cbmxldCBmb250X3NpemUgPSAxNlxubGV0IGxpbmVfaGVpZ2h0ID0gMS41XG5cbmNsYXNzIEluZGV4IGV4dGVuZHMgUmVhY3QuQ29tcG9uZW50IHtcbiAgY29uc3RydWN0b3IocHJvcHMpIHtcbiAgICBzdXBlcihwcm9wcylcbiAgICB2YXIgbm93ID0gbmV3IERhdGUoKVxuICAgIHZhciBzdGFydCA9IG5ldyBEYXRlKG5vdy5nZXRGdWxsWWVhcigpLCAwLCAwKVxuICAgIHZhciBkaWZmID1cbiAgICAgIG5vdyAtXG4gICAgICBzdGFydCArXG4gICAgICAoc3RhcnQuZ2V0VGltZXpvbmVPZmZzZXQoKSAtIG5vdy5nZXRUaW1lem9uZU9mZnNldCgpKSAqIDYwICogMTAwMCAqIDI0XG4gICAgdmFyIG9uZURheSA9IDEwMDAgKiA2MCAqIDYwICogMjRcbiAgICB2YXIgZGF5X2luX3llYXIgPSBNYXRoLmZsb29yKGRpZmYgLyBvbmVEYXkpXG5cbiAgICB0aGlzLnN0YXRlID0ge1xuICAgICAgd3c6IDAsXG4gICAgICBvcHRpbWFsOiBudWxsLFxuICAgICAgaGV4OiBjaHJvbWEuaGNsKE1hdGguZmxvb3IoKGRheV9pbl95ZWFyIC8gMzY1KSAqIDM2MCksIDYwLCA4MCksXG4gICAgfVxuICAgIHRoaXMuc2V0U2l6ZSA9IHRoaXMuc2V0U2l6ZS5iaW5kKHRoaXMpXG4gICAgdGhpcy5zZXRTaXplID0gZGVib3VuY2UodGhpcy5zZXRTaXplLCAxMDApXG4gIH1cblxuICBzZXRTaXplKCkge1xuICAgIGxldCBjYW52YXMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdjYW52YXMnKVxuICAgIGxldCBjdHggPSBjYW52YXMuZ2V0Q29udGV4dCgnMmQnKVxuICAgIGN0eC5mb250ID0gYG5vcm1hbCAke2ZvbnRfc2l6ZX1weCBJbnRlcmlgXG4gICAgbGV0IHdpZHRoID0gY3R4Lm1lYXN1cmVUZXh0KFxuICAgICAgJ3Rob3VzYW5kIHdyaXRlcnMuIFdpdGggb3ZlciBhIG1pbGxpb24gcGVvcGxlIGZyb20gdmFyaW91cyBmaWVsZHMgd29ya2luZydcbiAgICApLndpZHRoXG4gICAgd2luZG93LnJhdGlvID0gTWF0aC5tYXgod2luZG93LmlubmVyV2lkdGggLyB3aWR0aCwgMSlcblxuICAgIHRoaXMuc2V0U3RhdGUoXG4gICAgICB7XG4gICAgICAgIHd3OiB3aW5kb3cuaW5uZXJXaWR0aCxcbiAgICAgICAgd2g6IHdpbmRvdy5pbm5lckhlaWdodCxcbiAgICAgICAgb3B0aW1hbDogd2lkdGggKyBmb250X3NpemUgKiBsaW5lX2hlaWdodCxcbiAgICAgIH0sXG4gICAgICAoKSA9PiB7fVxuICAgIClcbiAgfVxuXG4gIGNvbXBvbmVudERpZE1vdW50KCkge1xuICAgIHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKCdyZXNpemUnLCB0aGlzLnNldFNpemUpXG4gICAgdGhpcy5zZXRTaXplKClcbiAgICBsZXQgbWUgPSB0aGlzXG4gICAgZG9jdW1lbnQuZm9udHMucmVhZHkudGhlbihmdW5jdGlvbigpIHtcbiAgICAgIG1lLnNldFNpemUoKVxuICAgIH0pXG4gIH1cblxuICByZW5kZXIoKSB7XG4gICAgY29uc29sZS5sb2coZXhwZXJpbWVudHMpXG5cbiAgICBsZXQgeyB3dywgd2gsIG9wdGltYWwsIGhleCB9ID0gdGhpcy5zdGF0ZVxuXG4gICAgbGV0IGdyZW0gPSBmb250X3NpemUgKiBsaW5lX2hlaWdodFxuXG4gICAgbGV0IGRpdmlzaW9ucyA9IDRcblxuICAgIGxldCB0YXJnZXRfd2lkdGggPSBvcHRpbWFsIC8gZGl2aXNpb25zXG4gICAgbGV0IGNvbHVtbnMgPSBNYXRoLmZsb29yKHd3IC8gdGFyZ2V0X3dpZHRoKVxuICAgIGxldCBvZ19jb2x1bW5zID0gTWF0aC5mbG9vcih3dyAvIHRhcmdldF93aWR0aClcbiAgICBsZXQgY29sdW1uX3dpZHRoID0gd3cgLyBjb2x1bW5zXG5cbiAgICBsZXQgb2Zmc2V0ID0gMFxuICAgIGxldCBldmVuID0gY29sdW1ucyAlIDIgPT09IDBcbiAgICBpZiAoIWV2ZW4pIHtcbiAgICAgIGNvbHVtbnMgPSBjb2x1bW5zIC0gMVxuICAgICAgb2Zmc2V0ID0gY29sdW1uX3dpZHRoIC8gMlxuICAgIH1cblxuICAgIGxldCBvcHRpbV93aWR0aCA9IGNvbHVtbl93aWR0aCAqIGRpdmlzaW9uc1xuICAgIGxldCBvcHRpbV9sZWZ0ID0gKGNvbHVtbnMgLyAyIC0gZGl2aXNpb25zIC8gMikgKiBjb2x1bW5fd2lkdGggKyBvZmZzZXRcblxuICAgIGxldCByYXRpbyA9IGNvbHVtbl93aWR0aCAvIHRhcmdldF93aWR0aFxuXG4gICAgaWYgKGNvbHVtbnMgPCBkaXZpc2lvbnMpIHtcbiAgICAgIG9mZnNldCA9IDBcbiAgICAgIGNvbHVtbnMgPSAyXG4gICAgICBjb2x1bW5fd2lkdGggPSB3dyAvIDJcbiAgICAgIG9wdGltX3dpZHRoID0gY29sdW1uX3dpZHRoICogMlxuICAgICAgb3B0aW1fbGVmdCA9IDBcbiAgICAgIHJhdGlvID0gMVxuICAgIH1cblxuICAgIGxldCBmcyA9IGZvbnRfc2l6ZSAqIHJhdGlvXG5cbiAgICBsZXQgY2VudGVyX3RleHQgPSB7XG4gICAgICB3aWR0aDogb3B0aW1fd2lkdGgsXG4gICAgICBtYXJnaW5MZWZ0OiBvcHRpbV9sZWZ0LFxuICAgIH1cblxuICAgIGxldCB0YXJnZXRfaGVpZ2h0ID0gZ3JlbSAqIDEyXG4gICAgbGV0IHNwYWNlciA9IGdyZW1cblxuICAgIGxldCBzaXplZF9leHBlcmltZW50cyA9IGV4cGVyaW1lbnRzLm1hcChlID0+IHtcbiAgICAgIGxldCB3ID0gTWF0aC5yb3VuZChjb2x1bW5fd2lkdGggKiAyIC0gc3BhY2VyKVxuICAgICAgbGV0IGggPSBNYXRoLnJvdW5kKHRhcmdldF9oZWlnaHQpXG4gICAgICBpZiAoZS5mZWF0dXJlZCA9PT0gdHJ1ZSkge1xuICAgICAgICByZXR1cm4ge1xuICAgICAgICAgIHdpZHRoOiBNYXRoLm1pbih3ICogMiArIHNwYWNlciwgd3cgLSBzcGFjZXIpLFxuICAgICAgICAgIGhlaWdodDogaCAqIDIgKyBzcGFjZXIsXG4gICAgICAgIH1cbiAgICAgIH0gZWxzZSB7XG4gICAgICAgIHJldHVybiB7XG4gICAgICAgICAgd2lkdGg6IE1hdGgubWluKHcsIHd3IC0gc3BhY2VyKSxcbiAgICAgICAgICBoZWlnaHQ6IGgsXG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9KVxuXG4gICAgbGV0IGF2YWlsID0gd3cgLSBvZmZzZXQgKiAyXG5cbiAgICBsZXQgcGFja2VkID0gcGFjayhcbiAgICAgIHsgd2lkdGg6IGF2YWlsLCBoZWlnaHQ6IEluZmluaXR5IH0sXG4gICAgICBzaXplZF9leHBlcmltZW50cyxcbiAgICAgIHNwYWNlclxuICAgIClcblxuICAgIGxldCBjYXAgPSBncmVtICogKDIwNDggLyAyODE2KVxuXG4gICAgbGV0IGZzX25vcm1hbCA9IHtcbiAgICAgIGZvbnRTaXplOiBmcyxcbiAgICB9XG5cbiAgICBsZXQgc3ZnX3NjYWxlID0gMzUgLyAoY2FwICsgZ3JlbSAvIDgpXG5cbiAgICBsZXQgcm91bmRlZF93aCA9IE1hdGguZmxvb3Iod2ggLyBncmVtKSAqIGdyZW1cblxuICAgIHJldHVybiAoXG4gICAgICA8ZGl2PlxuICAgICAgICA8SGVhZD5cbiAgICAgICAgICA8bGlua1xuICAgICAgICAgICAgcmVsPVwicHJlbG9hZFwiXG4gICAgICAgICAgICBocmVmPVwic3RhdGljL2ZvbnRzL0ludGVyLVJlZ3VsYXIud29mZjI/dj0zLjVcIlxuICAgICAgICAgICAgYXM9XCJmb250XCJcbiAgICAgICAgICAgIHR5cGU9XCJmb250L3dvZmYyXCJcbiAgICAgICAgICAgIGNyb3NzT3JpZ2luPVwiKlwiXG4gICAgICAgICAgLz5cbiAgICAgICAgPC9IZWFkPlxuICAgICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAgIDpyb290IHtcbiAgICAgICAgICAgIC0tYmFja2dyb3VuZDogJHtoZXh9O1xuICAgICAgICAgIH1cbiAgICAgICAgICBAZm9udC1mYWNlIHtcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnSW50ZXJpJztcbiAgICAgICAgICAgIGZvbnQtc3R5bGU6IG5vcm1hbDtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgICAgICAgICBzcmM6IHVybCgnc3RhdGljL2ZvbnRzL0ludGVyLVJlZ3VsYXIud29mZjI/dj0zLjUnKSBmb3JtYXQoJ3dvZmYyJyksXG4gICAgICAgICAgICAgIHVybCgnc3RhdGljL2ZvbnRzL0ludGVyLVJlZ3VsYXIud29mZj92PTMuNScpIGZvcm1hdCgnd29mZicpO1xuICAgICAgICAgIH1cbiAgICAgICAgICBAZm9udC1mYWNlIHtcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnSW50ZXJpJztcbiAgICAgICAgICAgIGZvbnQtc3R5bGU6IGl0YWxpYztcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgICAgICAgICBzcmM6IHVybCgnc3RhdGljL2ZvbnRzL0ludGVyLUl0YWxpYy53b2ZmMj92PTMuNScpIGZvcm1hdCgnd29mZjInKSxcbiAgICAgICAgICAgICAgdXJsKCdzdGF0aWMvZm9udHMvSW50ZXItSXRhbGljLndvZmY/dj0zLjUnKSBmb3JtYXQoJ3dvZmYnKTtcbiAgICAgICAgICB9XG4gICAgICAgICAgKiB7XG4gICAgICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94O1xuICAgICAgICAgIH1cbiAgICAgICAgICBodG1sIHtcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnSW50ZXJpJywgc2VyaWY7XG4gICAgICAgICAgICBmb250LXNpemU6ICR7Zm9udF9zaXplfXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6ICR7bGluZV9oZWlnaHR9O1xuICAgICAgICAgICAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplbGVnaWJpbGl0eTtcbiAgICAgICAgICAgIGZvbnQtZmVhdHVyZS1zZXR0aW5nczogJ2tlcm4nO1xuICAgICAgICAgICAgZm9udC1rZXJuaW5nOiBub3JtYWw7XG4gICAgICAgICAgICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgICAgICAgICAgIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XG4gICAgICAgICAgfVxuICAgICAgICAgIGJvZHkge1xuICAgICAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICAgICAgb3ZlcmZsb3cteDogaGlkZGVuO1xuICAgICAgICAgIH1cbiAgICAgICAgICBhIHtcbiAgICAgICAgICAgIGNvbG9yOiBpbmhlcml0O1xuICAgICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7XG4gICAgICAgICAgfVxuICAgICAgICAgIC5ob3Zlcl9ib3g6aG92ZXIge1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogYm94LXNoYWRvdyAwLjA1cyBsaW5lYXI7XG4gICAgICAgICAgICBib3gtc2hhZG93OiAwIDAgJHtncmVtIC8gMn1weCByZ2JhKDAsIDAsIDAsIDAuNCk7XG4gICAgICAgICAgfVxuICAgICAgICAgIC5ob3Zlcl9ib3g6aG92ZXIgLmhvdmVyX25hbWUge1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICB7b3B0aW1hbCAhPT0gbnVsbCA/IChcbiAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAnZml4ZWQnLFxuICAgICAgICAgICAgICAgIGxlZnQ6IDAsXG4gICAgICAgICAgICAgICAgdG9wOiAwLFxuICAgICAgICAgICAgICAgIHdpZHRoOiB3dyxcbiAgICAgICAgICAgICAgICBoZWlnaHQ6ICcxMDB2aCcsXG4gICAgICAgICAgICAgICAgekluZGV4OiAtMSxcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiAnbm9uZScsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIHtbLi4uQXJyYXkoY29sdW1ucyldLm1hcCgobiwgaSkgPT4gKFxuICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgIGtleT17aX1cbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAnYWJzb2x1dGUnLFxuICAgICAgICAgICAgICAgICAgICBsZWZ0OiBpICogY29sdW1uX3dpZHRoICsgb2Zmc2V0LFxuICAgICAgICAgICAgICAgICAgICB0b3A6IDAsXG4gICAgICAgICAgICAgICAgICAgIHdpZHRoOiBjb2x1bW5fd2lkdGgsXG4gICAgICAgICAgICAgICAgICAgIGhlaWdodDogJzEwMHZoJyxcbiAgICAgICAgICAgICAgICAgICAgb3V0bGluZTogJ3NvbGlkIDFweCByZ2JhKDAsMCwwLDAuMSknLFxuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIHN0eWxlPXt7IHBvc2l0aW9uOiAnZml4ZWQnLCBsZWZ0OiAwLCBib3R0b206IDAsIGRpc3BsYXk6ICdub25lJyB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICA8ZGl2Pm9nX2NvbHVtbnM6IHtvZ19jb2x1bW5zfTwvZGl2PlxuICAgICAgICAgICAgICA8ZGl2PntldmVuID8gJ2V2ZW4nIDogJ29kZCd9PC9kaXY+XG4gICAgICAgICAgICAgIDxkaXY+Zm9udCBzaXplOiB7ZnN9PC9kaXY+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICBwYWRkaW5nOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiAnZmxleCcsXG4gICAgICAgICAgICAgICAganVzdGlmeUNvbnRlbnQ6ICdzcGFjZS1iZXR3ZWVuJyxcbiAgICAgICAgICAgICAgICAuLi5mc19ub3JtYWwsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBwYWRkaW5nTGVmdDogZ3JlbSAqIDEuMjUgfX0+XG4gICAgICAgICAgICAgICAgICBDbG91ZGVyYSBGYXN0IEZvcndhcmRcbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8c3ZnXG4gICAgICAgICAgICAgICAgICB2aWV3Qm94PVwiMCAwIDM2IDM2XCJcbiAgICAgICAgICAgICAgICAgIGZpbGw9XCJub25lXCJcbiAgICAgICAgICAgICAgICAgIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIlxuICAgICAgICAgICAgICAgICAgd2lkdGg9e2NhcCArIGdyZW0gLyA4fVxuICAgICAgICAgICAgICAgICAgaGVpZ2h0PXtjYXAgKyBncmVtIC8gOH1cbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAnYWJzb2x1dGUnLFxuICAgICAgICAgICAgICAgICAgICBsZWZ0OiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgICAgdG9wOiBncmVtIC8gMiArIChncmVtIC0gY2FwKSAvIDIgLSBncmVtIC8gMTYsXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIDxwYXRoXG4gICAgICAgICAgICAgICAgICAgIGQ9XCJNMTggMThMMSAxVjM1TDE4IDE4WlwiXG4gICAgICAgICAgICAgICAgICAgIHN0cm9rZT1cImJsYWNrXCJcbiAgICAgICAgICAgICAgICAgICAgc3Ryb2tlV2lkdGg9e2ZzICogc3R5bGVzLnN0cm9rZV9tdWx0ICogc3ZnX3NjYWxlfVxuICAgICAgICAgICAgICAgICAgICBzdHJva2VMaW5lam9pbj1cImJldmVsXCJcbiAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICA8cGF0aFxuICAgICAgICAgICAgICAgICAgICBkPVwiTTM1IDE4TDE4IDFWMzVMMzUgMThaXCJcbiAgICAgICAgICAgICAgICAgICAgc3Ryb2tlPVwiYmxhY2tcIlxuICAgICAgICAgICAgICAgICAgICBzdHJva2VXaWR0aD17ZnMgKiBzdHlsZXMuc3Ryb2tlX211bHQgKiBzdmdfc2NhbGV9XG4gICAgICAgICAgICAgICAgICAgIHN0cm9rZUxpbmVqb2luPVwiYmV2ZWxcIlxuICAgICAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgICAgIDxwYXRoXG4gICAgICAgICAgICAgICAgICAgIGQ9XCJNMSAxSDM1VjE4SDFWMVpcIlxuICAgICAgICAgICAgICAgICAgICBzdHJva2VXaWR0aD17ZnMgKiBzdHlsZXMuc3Ryb2tlX211bHQgKiBzdmdfc2NhbGV9XG4gICAgICAgICAgICAgICAgICAgIHN0cm9rZT1cImJsYWNrXCJcbiAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICA8cGF0aFxuICAgICAgICAgICAgICAgICAgICBkPVwiTTEgMThIMzVWMzVIMVYxOFpcIlxuICAgICAgICAgICAgICAgICAgICBzdHJva2VXaWR0aD17ZnMgKiBzdHlsZXMuc3Ryb2tlX211bHQgKiBzdmdfc2NhbGV9XG4gICAgICAgICAgICAgICAgICAgIHN0cm9rZT1cImJsYWNrXCJcbiAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgPC9zdmc+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IGRpc3BsYXk6ICdmbGV4JyB9fT5cbiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IG1hcmdpblJpZ2h0OiBncmVtIC8gMiB9fT5cbiAgICAgICAgICAgICAgICAgIDxhIGhyZWY9XCIjXCI+TWFpbjwvYT5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7fX0+XG4gICAgICAgICAgICAgICAgICA8YSBocmVmPVwiI1wiPkJsb2c8L2E+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgcGFkZGluZzogMCxcbiAgICAgICAgICAgICAgICBwYWRkaW5nQm90dG9tOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBwb3NpdGlvbjogJ3JlbGF0aXZlJyB9fT5cbiAgICAgICAgICAgICAgICA8SGQgd2lkdGg9e3d3fSBhbGlnbj1cImJcIiBzdHJva2U9e2ZzICogc3R5bGVzLnN0cm9rZV9tdWx0fSAvPlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgcG9zaXRpb246ICdhYnNvbHV0ZScsXG4gICAgICAgICAgICAgICAgbGVmdDogMCxcbiAgICAgICAgICAgICAgICB0b3A6IGdyZW0gKiAyLFxuICAgICAgICAgICAgICAgIGhlaWdodDogZ3JlbSAqIDQsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIHtmYWxzZVxuICAgICAgICAgICAgICAgID8gZXhwZXJpbWVudHMubWFwKChlLCBpKSA9PiB7XG4gICAgICAgICAgICAgICAgICAgIGxldCBiID0gcGFja2VkLmJveGVzW2ldXG4gICAgICAgICAgICAgICAgICAgIGxldCBuZXdfd2lkdGggPSBncmVtICogNlxuICAgICAgICAgICAgICAgICAgICBsZXQgbmV3X2hlaWdodCA9IGdyZW0gKiA4XG4gICAgICAgICAgICAgICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcG9zaXRpb246ICdhYnNvbHV0ZScsXG4gICAgICAgICAgICAgICAgICAgICAgICAgIGxlZnQ6IE1hdGgucm91bmQoKGIueCAvIHd3KSAqIG5ld193aWR0aCksXG4gICAgICAgICAgICAgICAgICAgICAgICAgIHRvcDogTWF0aC5yb3VuZChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAoYi55IC8gcGFja2VkLmNvbnRhaW5lci5oZWlnaHQpICogbmV3X2hlaWdodFxuICAgICAgICAgICAgICAgICAgICAgICAgICApLFxuICAgICAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogTWF0aC5yb3VuZCgoYi53aWR0aCAvIHd3KSAqIG5ld193aWR0aCksXG4gICAgICAgICAgICAgICAgICAgICAgICAgIGhlaWdodDogTWF0aC5yb3VuZChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAoYi5oZWlnaHQgLyBwYWNrZWQuY29udGFpbmVyLmhlaWdodCkgKiBuZXdfaGVpZ2h0XG4gICAgICAgICAgICAgICAgICAgICAgICAgICksXG4gICAgICAgICAgICAgICAgICAgICAgICAgIGJhY2tncm91bmRJbWFnZTogYHVybCgke2UuaW1hZ2VfdXJsfSlgLFxuICAgICAgICAgICAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kUG9zaXRpb246ICdjZW50ZXIgY2VudGVyJyxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZFNpemU6ICdjb3ZlcicsXG4gICAgICAgICAgICAgICAgICAgICAgICAgIGZsb2F0OiAnbGVmdCcsXG4gICAgICAgICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICAgIClcbiAgICAgICAgICAgICAgICAgIH0pXG4gICAgICAgICAgICAgICAgOiBudWxsfVxuICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAnYWJzb2x1dGUnLFxuICAgICAgICAgICAgICAgICAgbGVmdDogMCxcbiAgICAgICAgICAgICAgICAgIHRvcDogMCxcbiAgICAgICAgICAgICAgICAgIGhlaWdodDogZ3JlbSAqIDQsXG4gICAgICAgICAgICAgICAgICBmaWx0ZXI6ICdncmF5c2NhbGUoMTAwJSknLFxuICAgICAgICAgICAgICAgICAgd2lkdGg6IHd3LFxuICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAuLi5jZW50ZXJfdGV4dCxcbiAgICAgICAgICAgICAgICBwYWRkaW5nTGVmdDogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgcGFkZGluZ1JpZ2h0OiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAzLFxuICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEsXG4gICAgICAgICAgICAgICAgcGFkZGluZ1RvcDogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgbWFyZ2luVG9wOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiAnd2hpdGUnLFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICBFeHBlcmltZW50c1xuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgLi4uY2VudGVyX3RleHQsXG4gICAgICAgICAgICAgICAgcGFkZGluZzogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZDogJ3doaXRlJyxcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAuLi5mc19ub3JtYWwsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIE1hY2hpbmUgbGVhcm5pbmcgdmlzdWFsaXphdGlvbnMgYW5kIGNvZGVcbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgcGFkZGluZzogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgcGFkZGluZ0xlZnQ6IGdyZW0gLyAyICsgb2Zmc2V0LFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICA8RXhwR3JpZFxuICAgICAgICAgICAgICAgIHdpZHRoPXt3d31cbiAgICAgICAgICAgICAgICBncmVtPXtncmVtfVxuICAgICAgICAgICAgICAgIGV4cGVyaW1lbnRzPXtleHBlcmltZW50c31cbiAgICAgICAgICAgICAgICBwYWNrZWQ9e3BhY2tlZH1cbiAgICAgICAgICAgICAgICBzcGFjZXI9e3NwYWNlcn1cbiAgICAgICAgICAgICAgICB0YXJnZXRfaGVpZ2h0PXt0YXJnZXRfaGVpZ2h0fVxuICAgICAgICAgICAgICAgIGZzPXtmc31cbiAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgLi4uY2VudGVyX3RleHQsXG4gICAgICAgICAgICAgICAgZm9udFNpemU6IGZzICogMixcbiAgICAgICAgICAgICAgICBsaW5lSGVpZ2h0OiAxLjI1LFxuICAgICAgICAgICAgICAgIHBhZGRpbmc6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgIHBhZGRpbmdCb3R0b206IDAsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICA+XG4gICAgICAgICAgICAgIEFib3V0XG4gICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgIC4uLmNlbnRlcl90ZXh0LFxuICAgICAgICAgICAgICAgIHBhZGRpbmc6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgIC4uLmZzX25vcm1hbCxcbiAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgQ2xvdWRlcmEgRmFzdCBGb3J3YXJkIGlzIGFuIGFwcGxpZWQgbWFjaGluZSBsZWFybmluZyByZXNlYXJjaFxuICAgICAgICAgICAgICBncm91cC4gV2UgaGVscCBvcmdhbml6YXRpb25zIHJlY29nbml6ZSBhbmQgZGV2ZWxvcCBuZXcgcHJvZHVjdCBhbmRcbiAgICAgICAgICAgICAgYnVzaW5lc3Mgb3Bwb3J0dW5pdGllcyB0aHJvdWdoIGVtZXJnaW5nIHRlY2hub2xvZ2llcy57JyAnfVxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IC4uLmNlbnRlcl90ZXh0LCBwYWRkaW5nOiBncmVtIC8gMiwgcGFkZGluZ1RvcDogMCB9fT5cbiAgICAgICAgICAgICAgPGEgaHJlZj1cIiNcIj5MZWFybiBtb3JlIGFib3V0IHdvcmtpbmcgd2l0aCB1cy48L2E+XG4gICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICBwYWRkaW5nVG9wOiBncmVtLFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICA8SGQgd2lkdGg9e3d3fSBhbGlnbj1cImJcIiBzdHJva2U9e2ZzICogc3R5bGVzLnN0cm9rZV9tdWx0fSAvPlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgcGFkZGluZ1RvcDogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAvPlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICApIDogbnVsbH1cbiAgICAgIDwvZGl2PlxuICAgIClcbiAgfVxufVxuXG5leHBvcnQgZGVmYXVsdCBJbmRleFxuIl19 */\n/*@ sourceURL=/Users/grant.custer/Sites/fastforward/pages/index.js */")), optimal !== null ? react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197
+          lineNumber: 201
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           position: 'fixed',
           left: 0,
           top: 0,
           width: ww,
           height: '100vh',
+          zIndex: -1,
           display: 'none'
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198
+          lineNumber: 202
         },
         __self: this
-      }, Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_2__["default"])(Array(columns)).map(function (n, i) {
-        return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      }, Object(_babel_runtime_corejs2_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_1__["default"])(Array(columns)).map(function (n, i) {
+        return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
           key: i,
           style: {
             position: 'absolute',
@@ -25347,326 +25268,363 @@ function (_React$Component) {
             top: 0,
             width: column_width,
             height: '100vh',
-            outline: 'solid 1px blue'
+            outline: 'solid 1px rgba(0,0,0,0.1)'
           },
-          className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+          className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 209
+            lineNumber: 214
           },
           __self: this
         });
-      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           position: 'fixed',
           left: 0,
           bottom: 0,
           display: 'none'
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 223
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 226
-        },
-        __self: this
-      }, "og_columns: ", og_columns), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 227
-        },
-        __self: this
-      }, even ? 'even' : 'odd'), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 228
         },
         __self: this
-      }, "font size: ", fs)), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 231
+        },
+        __self: this
+      }, "og_columns: ", og_columns), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 232
+        },
+        __self: this
+      }, even ? 'even' : 'odd'), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 233
+        },
+        __self: this
+      }, "font size: ", fs)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
           padding: grem / 2,
           display: 'flex',
           justifyContent: 'space-between'
         }, fs_normal),
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 230
+          lineNumber: 235
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238
+          lineNumber: 243
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           paddingLeft: grem * 1.25
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239
+          lineNumber: 244
         },
         __self: this
-      }, "Cloudera Fast Forward"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("svg", (_React$createElement = {
-        width: "36",
-        height: "36",
+      }, "Cloudera Fast Forward"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("svg", {
         viewBox: "0 0 36 36",
         fill: "none",
-        xmlns: "http://www.w3.org/2000/svg"
-      }, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$createElement, "width", cap + grem / 8), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$createElement, "height", cap + grem / 8), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$createElement, "style", {
-        position: 'absolute',
-        left: grem / 2,
-        top: grem / 2 + (grem - cap) / 2 - grem / 16
-      }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$createElement, "className", styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]])), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$createElement, "__source", {
-        fileName: _jsxFileName,
-        lineNumber: 242
-      }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_React$createElement, "__self", this), _React$createElement), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("path", {
+        xmlns: "http://www.w3.org/2000/svg",
+        width: cap + grem / 8,
+        height: cap + grem / 8,
+        style: {
+          position: 'absolute',
+          left: grem / 2,
+          top: grem / 2 + (grem - cap) / 2 - grem / 16
+        },
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 247
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("path", {
         d: "M18 18L1 1V35L18 18Z",
         stroke: "black",
-        strokeWidth: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_14__["styles"].stroke_mult * svg_scale,
+        strokeWidth: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_13__["styles"].stroke_mult * svg_scale,
         strokeLinejoin: "bevel",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 256
+          lineNumber: 259
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("path", {
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("path", {
         d: "M35 18L18 1V35L35 18Z",
         stroke: "black",
-        strokeWidth: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_14__["styles"].stroke_mult * svg_scale,
+        strokeWidth: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_13__["styles"].stroke_mult * svg_scale,
         strokeLinejoin: "bevel",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 262
+          lineNumber: 265
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("path", {
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("path", {
         d: "M1 1H35V18H1V1Z",
-        strokeWidth: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_14__["styles"].stroke_mult * svg_scale,
+        strokeWidth: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_13__["styles"].stroke_mult * svg_scale,
         stroke: "black",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 268
+          lineNumber: 271
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("path", {
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("path", {
         d: "M1 18H35V35H1V18Z",
-        strokeWidth: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_14__["styles"].stroke_mult * svg_scale,
+        strokeWidth: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_13__["styles"].stroke_mult * svg_scale,
         stroke: "black",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 273
+          lineNumber: 276
         },
         __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           display: 'flex'
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 280
+          lineNumber: 283
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           marginRight: grem / 2
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 281
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", {
-        href: "#",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 282
-        },
-        __self: this
-      }, "Main")), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        style: {},
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 284
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         href: "#",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 285
         },
         __self: this
-      }, "Blog")))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      }, "Main")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: {},
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 287
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
+        href: "#",
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 288
+        },
+        __self: this
+      }, "Blog")))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           padding: 0,
           paddingBottom: grem / 2,
           position: 'relative'
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 289
+          lineNumber: 292
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           position: 'relative'
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 296
+          lineNumber: 299
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_13__["Hd"], {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_12__["Hd"], {
         width: ww,
-        align: "t",
-        stroke: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_14__["styles"].stroke_mult,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 297
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, center_text, {
-          paddingLeft: grem / 2,
-          paddingRight: grem / 2,
-          fontSize: fs * 3,
-          lineHeight: 1,
-          paddingTop: grem / 2
-        }),
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        align: "b",
+        stroke: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_13__["styles"].stroke_mult,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 300
         },
         __self: this
-      }, "Experiments"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, center_text, {
-          padding: grem / 2
-        }, fs_normal),
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+      }))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: {
+          position: 'absolute',
+          left: 0,
+          top: grem * 2,
+          height: grem * 4
+        },
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 312
+          lineNumber: 304
         },
         __self: this
-      }, "Machine learning visualizations and code"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      }, false ? undefined : null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: {
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          height: grem * 4,
+          filter: 'grayscale(100%)',
+          width: ww
+        },
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 338
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, center_text, {
+          paddingLeft: grem / 2,
+          paddingRight: grem / 2,
+          fontSize: fs * 3,
+          lineHeight: 1,
+          paddingTop: grem / 2,
+          marginTop: grem / 2,
+          position: 'relative',
+          background: 'white'
+        }),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 349
+        },
+        __self: this
+      }, "Experiments"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, center_text, {
+          padding: grem / 2,
+          background: 'white',
+          position: 'relative'
+        }, fs_normal),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 364
+        },
+        __self: this
+      }, "Machine learning visualizations and code"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           padding: grem / 2,
           paddingLeft: grem / 2 + offset
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 322
+          lineNumber: 376
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_parts_ExpGrid__WEBPACK_IMPORTED_MODULE_17__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_parts_ExpGrid__WEBPACK_IMPORTED_MODULE_16__["default"], {
         width: ww,
         grem: grem,
-        experiments: _data_experiments__WEBPACK_IMPORTED_MODULE_20__["experiments"],
+        experiments: _data_experiments_json__WEBPACK_IMPORTED_MODULE_19__,
         packed: packed,
         spacer: spacer,
         target_height: target_height,
         fs: fs,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 328
+          lineNumber: 382
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, center_text, {
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, center_text, {
           fontSize: fs * 2,
           lineHeight: 1.25,
           padding: grem / 2,
           paddingBottom: 0
         }),
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 339
+          lineNumber: 393
         },
         __self: this
-      }, "About"), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, center_text, {
+      }, "About"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, center_text, {
           padding: grem / 2
         }, fs_normal),
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 351
+          lineNumber: 405
         },
         __self: this
-      }, "Cloudera Fast Forward is an applied machine learning research group. We help organizations recognize and develop new product and business opportunities through emerging technologies.", ' '), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, center_text, {
+      }, "Cloudera Fast Forward is an applied machine learning research group. We help organizations recognize and develop new product and business opportunities through emerging technologies.", ' '), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, center_text, {
           padding: grem / 2,
           paddingTop: 0
         }),
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 362
+          lineNumber: 416
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         href: "#",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 363
+          lineNumber: 417
         },
         __self: this
-      }, "Learn more about working with us.")), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+      }, "Learn more about working with us.")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           position: 'relative',
-          paddingTop: grem / 2
-        },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 365
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_13__["Hd"], {
-        width: ww,
-        align: "b",
-        stroke: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_14__["styles"].stroke_mult,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 371
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        style: {
           paddingTop: grem
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_9___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 373
+          lineNumber: 419
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_12__["Hd"], {
+        width: ww,
+        align: "b",
+        stroke: fs * _parts_Utils__WEBPACK_IMPORTED_MODULE_13__["styles"].stroke_mult,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 425
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: {
+          paddingTop: grem / 2
+        },
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["384580974", [hex, font_size, line_height, grem / 2]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 427
         },
         __self: this
       })) : null);
@@ -25674,7 +25632,7 @@ function (_React$Component) {
   }]);
 
   return Index;
-}(react__WEBPACK_IMPORTED_MODULE_10___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_9___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
 
