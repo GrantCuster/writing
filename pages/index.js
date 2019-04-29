@@ -93,7 +93,7 @@ class Index extends React.Component {
 
     let fs = font_size * ratio
 
-    let grem = Math.round(fs * line_height)
+    let grem = Math.round(fs * line_height * 100) / 100
 
     let center_text = {
       width: optim_width,
@@ -102,7 +102,7 @@ class Index extends React.Component {
 
     let target_height = grem * 12
 
-    let spacer = grem
+    let spacer = Math.round(grem)
 
     let sized_experiments = experiments.map(e => {
       let w = Math.round(column_width * 2 - spacer)
@@ -123,7 +123,7 @@ class Index extends React.Component {
     let avail = ww - offset * 2
 
     let packed = pack(
-      { width: avail, height: Infinity },
+      { width: avail + 1, height: Infinity },
       sized_experiments,
       spacer
     )

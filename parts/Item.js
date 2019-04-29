@@ -66,9 +66,9 @@ class Item extends React.Component {
         style={{
           position: 'absolute',
           display: 'block',
-          left: b.x,
+          left: !e.featured && columns === 2 ? b.x : b.x,
           top: b.y,
-          width: b.width,
+          width: !e.featured && columns === 2 ? b.width - grem * 2 : b.width,
           height: b.height,
           textDecoration: 'none',
           background: 'var(--lighter_background)',
@@ -83,8 +83,8 @@ class Item extends React.Component {
               position: 'absolute',
               left: 0,
               top: top_height,
-              width: (b.width / 4) * 3,
-              width: b.width,
+              width:
+                !e.featured && columns === 2 ? b.width - grem * 2 : b.width,
               height: b.height - top_height - bottom_height,
               backgroundImage: `url(${e.image})`,
               backgroundPosition: 'center center',
@@ -132,6 +132,7 @@ class Item extends React.Component {
             position: 'absolute',
             bottom: 0,
             fontSize: fs,
+            width: '100%',
           }}
         >
           <div ref={this.bottom}>
@@ -157,7 +158,7 @@ class Item extends React.Component {
                 <div
                   style={{
                     textDecoration: 'underline',
-                    width: b.width - grem,
+                    width: '100%',
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
