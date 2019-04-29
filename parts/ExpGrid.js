@@ -41,9 +41,8 @@ class ExpGrid extends React.Component {
                 experiments={experiments}
                 width={width}
                 st={st}
-                iratio={Math.max(b.width / this.props.sentence_width, 1)}
-                iratio={1}
                 fs={this.props.fs}
+                font_kick={this.props.font_kick}
               />
             ))}
           </div>

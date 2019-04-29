@@ -28,6 +28,7 @@ class Index extends React.Component {
       ww: 0,
       optimal: null,
       hex: chroma.hcl(Math.floor((day_in_year / 365) * 360), 60, 80),
+      font_kick: 0,
     }
     this.setSize = this.setSize.bind(this)
     this.setSize = debounce(this.setSize, 100)
@@ -56,17 +57,11 @@ class Index extends React.Component {
     window.addEventListener('resize', this.setSize)
     this.setSize()
     let me = this
-    document.fonts.ready.then(function() {
-      me.setSize()
-    })
+    document.fonts.ready.then(function() {})
   }
 
   render() {
-    console.log(experiments)
-
     let { ww, wh, optimal, hex } = this.state
-
-    let grem = font_size * line_height
 
     let divisions = 4
 
@@ -97,6 +92,8 @@ class Index extends React.Component {
     }
 
     let fs = font_size * ratio
+
+    let grem = Math.round(fs * line_height * 100) / 100
 
     let center_text = {
       width: optim_width,
@@ -136,7 +133,8 @@ class Index extends React.Component {
       fontSize: fs,
     }
 
-    let svg_scale = 35 / (cap + grem / 8)
+    let svg_scale = 38 / grem
+    let ff_stroke = fs * styles.stroke_mult * svg_scale
 
     let rounded_wh = Math.floor(wh / grem) * grem
 
@@ -152,9 +150,6 @@ class Index extends React.Component {
           />
         </Head>
         <style jsx global>{`
-          :root {
-            --background: ${hex};
-          }
           @font-face {
             font-family: 'Interi';
             font-style: normal;
@@ -174,8 +169,8 @@ class Index extends React.Component {
           }
           html {
             font-family: 'Interi', serif;
-            font-size: ${font_size}px;
-            line-height: ${line_height};
+            font-size: 16px;
+            line-height: 1.5;
             text-rendering: optimizelegibility;
             font-feature-settings: 'kern';
             font-kerning: normal;
@@ -192,11 +187,15 @@ class Index extends React.Component {
           }
           .hover_box:hover {
             transition: box-shadow 0.05s linear;
-            box-shadow: 0 0 ${grem / 2}px rgba(0, 0, 0, 0.4);
-          }
-          .hover_box:hover .hover_name {
           }
         `}</style>
+        <style jsx global>{`
+          .hover_box:hover {
+            transition: box-shadow 0.05s linear;
+            box-shadow: 0 0 ${grem / 2}px rgba(0, 0, 0, 0.4);
+          }
+        `}</style>
+
         {optimal !== null ? (
           <div>
             <div
@@ -235,22 +234,60 @@ class Index extends React.Component {
             <div
               style={{
                 padding: grem / 2,
-                paddingLeft: grem * 5,
+                paddingLeft: grem * 1.5,
                 display: 'flex',
                 justifyContent: 'space-between',
                 ...fs_normal,
               }}
             >
-              <img
-                src="/static/images/cloudera-fast-forward.png"
-                style={{
-                  height: grem * (9 / 16),
-                  position: 'absolute',
-                  left: grem / 2,
-                  top: (grem * 2 - grem * (9 / 16)) / 2,
-                }}
-              />
-              Fast Forward
+              <div>
+                <svg
+                  width="38"
+                  height="38"
+                  viewBox="0 0 38 38"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{
+                    position: 'absolute',
+                    left: grem / 2,
+                    top: grem / 2,
+                    width: grem,
+                    height: grem,
+                  }}
+                >
+                  <rect width="38" height="38" fill="white" />
+                  <path
+                    d="M19 19L2 2V36L19 19Z"
+                    stroke="black"
+                    strokeWidth={ff_stroke}
+                    strokeLinejoin="bevel"
+                  />
+                  <path
+                    d="M36 19L19 2V36L36 19Z"
+                    stroke="black"
+                    strokeWidth={ff_stroke}
+                    strokeLinejoin="bevel"
+                  />
+                  <path
+                    d="M2 2H36V19H2V2Z"
+                    stroke="black"
+                    strokeWidth={ff_stroke}
+                  />
+                  <path
+                    d="M2 19H36V36H2V19Z"
+                    stroke="black"
+                    strokeWidth={ff_stroke}
+                  />
+                </svg>
+                <div
+                  style={{
+                    position: 'relative',
+                    padding: p(0, grem * (3 / 8)),
+                  }}
+                >
+                  Cloudera Fast Forward
+                </div>
+              </div>
               <div style={{ display: 'flex' }}>
                 <div style={{ marginRight: grem / 2 }}>
                   <a href="#">Main</a>
@@ -358,6 +395,7 @@ class Index extends React.Component {
                 spacer={spacer}
                 target_height={target_height}
                 fs={fs}
+                font_kick={this.state.font_kick}
               />
             </div>
 

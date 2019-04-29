@@ -30,40 +30,35 @@ class Item extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.width !== this.props.width) {
+    if (
+      prevProps.width !== this.props.width ||
+      prevProps.grem !== this.props.grem ||
+      prevProps.font_kick !== this.props.font_kick
+    ) {
       this.setTopHeight()
       this.setBottomHeight()
     }
   }
 
   setTopHeight() {
-    let height = this.top.current.clientHeight
+    let height = this.top.current.getBoundingClientRect().height
     this.setState({ top_height: height })
   }
 
   setBottomHeight() {
-    let height = this.bottom.current.clientHeight
+    let height = this.bottom.current.getBoundingClientRect().height
     this.setState({ bottom_height: height })
   }
 
   render() {
-    let { fs, b, i, grem, spacer, experiments, width, st, iratio } = this.props
+    let { fs, b, i, grem, spacer, experiments, width, st } = this.props
 
     let { top_height, bottom_height } = this.state
     let e = experiments[i]
-    let dstyle = e.featured ? {} : small_style
-    let display_link
+
+    let display_link = 'test'
     if (e.url) {
       display_link = e.url.replace(/^.*:\/\//i, '')
-    }
-    let adjuster = e.featured ? 8 * grem : 4 * grem
-    iratio = 1
-
-    let igrem = iratio * styles.font_size * styles.line_height
-
-    if (i === 1) {
-      console.log(this.state)
-      console.log(experiments[i])
     }
 
     return (
@@ -138,48 +133,47 @@ class Item extends React.Component {
             bottom: 0,
             fontSize: fs,
           }}
-          ref={this.bottom}
         >
-          <div
-            style={{
-              position: 'absolute',
-              left: 0,
-              bottom: 0,
-              height: bottom_height,
-              width: 10,
-              background: 'red',
-              display: 'none',
-            }}
-          />
-          <Hd width="100%" align="t" stroke={fs * styles.stroke_mult} />
-          <div
-            style={{
-              padding: p(igrem / 2, 0),
-              fontSize: e.featured ? fs : fs * 0.875,
-              lineHeight: 1.5,
-            }}
-          >
-            <div style={{ padding: p(0, grem / 2) }}>{e.description}</div>
-            <div style={{ position: 'relative', padding: p(0, grem / 2) }}>
-              <div
-                style={{
-                  textDecoration: 'underline',
-                  width: b.width - grem,
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                }}
-              >
-                <span className="">{display_link}</span>
+          <div ref={this.bottom}>
+            <div
+              style={{
+                position: 'absolute',
+                left: 0,
+                bottom: 0,
+                height: bottom_height,
+                width: 10,
+              }}
+            />
+            <Hd width="100%" align="t" stroke={fs * styles.stroke_mult} />
+            <div
+              style={{
+                padding: p(grem / 2, 0),
+                fontSize: e.featured ? fs : fs * 0.875,
+                lineHeight: 1.5,
+              }}
+            >
+              <div style={{ padding: p(0, grem / 2) }}>{e.description}</div>
+              <div style={{ position: 'relative', padding: p(0, grem / 2) }}>
+                <div
+                  style={{
+                    textDecoration: 'underline',
+                    width: b.width - grem,
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                  }}
+                >
+                  <span className="">{display_link}</span>
+                </div>
               </div>
             </div>
+            <Hd
+              style={{ display: 'none' }}
+              width={b.width}
+              align="t"
+              miter="extend"
+            />
           </div>
-          <Hd
-            style={{ display: 'none' }}
-            width={b.width}
-            align="t"
-            miter="extend"
-          />
         </div>
         <div
           style={{
