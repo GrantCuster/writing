@@ -235,51 +235,22 @@ class Index extends React.Component {
             <div
               style={{
                 padding: grem / 2,
+                paddingLeft: grem * 5,
                 display: 'flex',
                 justifyContent: 'space-between',
                 ...fs_normal,
               }}
             >
-              <div>
-                <div style={{ paddingLeft: grem * 1.25 }}>
-                  Cloudera Fast Forward
-                </div>
-                <svg
-                  viewBox="0 0 36 36"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={cap + grem / 8}
-                  height={cap + grem / 8}
-                  style={{
-                    position: 'absolute',
-                    left: grem / 2,
-                    top: grem / 2 + (grem - cap) / 2 - grem / 16,
-                  }}
-                >
-                  <path
-                    d="M18 18L1 1V35L18 18Z"
-                    stroke="black"
-                    strokeWidth={fs * styles.stroke_mult * svg_scale}
-                    strokeLinejoin="bevel"
-                  />
-                  <path
-                    d="M35 18L18 1V35L35 18Z"
-                    stroke="black"
-                    strokeWidth={fs * styles.stroke_mult * svg_scale}
-                    strokeLinejoin="bevel"
-                  />
-                  <path
-                    d="M1 1H35V18H1V1Z"
-                    strokeWidth={fs * styles.stroke_mult * svg_scale}
-                    stroke="black"
-                  />
-                  <path
-                    d="M1 18H35V35H1V18Z"
-                    strokeWidth={fs * styles.stroke_mult * svg_scale}
-                    stroke="black"
-                  />
-                </svg>
-              </div>
+              <img
+                src="/static/images/cloudera-fast-forward.png"
+                style={{
+                  height: grem * (9 / 16),
+                  position: 'absolute',
+                  left: grem / 2,
+                  top: (grem * 2 - grem * (9 / 16)) / 2,
+                }}
+              />
+              Fast Forward
               <div style={{ display: 'flex' }}>
                 <div style={{ marginRight: grem / 2 }}>
                   <a href="#">Main</a>
