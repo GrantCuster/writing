@@ -93,7 +93,7 @@ class Index extends React.Component {
 
     let fs = font_size * ratio
 
-    let grem = Math.round(fs * line_height * 100) / 100
+    let grem = Math.round(fs * line_height)
 
     let center_text = {
       width: optim_width,
@@ -101,6 +101,7 @@ class Index extends React.Component {
     }
 
     let target_height = grem * 12
+
     let spacer = grem
 
     let sized_experiments = experiments.map(e => {
@@ -109,7 +110,7 @@ class Index extends React.Component {
       if (e.featured === true) {
         return {
           width: Math.min(w * 2 + spacer, ww - spacer),
-          height: h * 2 + spacer,
+          height: columns === 2 ? h * 1.5 : h * 2 + spacer,
         }
       } else {
         return {
@@ -290,10 +291,12 @@ class Index extends React.Component {
               </div>
               <div style={{ display: 'flex' }}>
                 <div style={{ marginRight: grem / 2 }}>
-                  <a href="#">Main</a>
+                  <a href="https://www.cloudera.com/products/fast-forward-labs-research.html">
+                    Main
+                  </a>
                 </div>
                 <div style={{}}>
-                  <a href="#">Blog</a>
+                  <a href="https://blog.fastforwardlabs.com/">Blog</a>
                 </div>
               </div>
             </div>
@@ -396,6 +399,7 @@ class Index extends React.Component {
                 target_height={target_height}
                 fs={fs}
                 font_kick={this.state.font_kick}
+                columns={columns}
               />
             </div>
 
@@ -423,7 +427,9 @@ class Index extends React.Component {
               business opportunities through emerging technologies.{' '}
             </div>
             <div style={{ ...center_text, padding: grem / 2, paddingTop: 0 }}>
-              <a href="#">Learn more about working with us.</a>
+              <a href="https://www.cloudera.com/products/fast-forward-labs-research.html">
+                Learn more about working with us.
+              </a>
             </div>
             <div
               style={{

@@ -19,6 +19,7 @@ class ExpGrid extends React.Component {
       spacer,
       target_height,
       stacked,
+      columns,
       st,
     } = this.props
 
@@ -40,6 +41,7 @@ class ExpGrid extends React.Component {
                 grem={grem}
                 experiments={experiments}
                 width={width}
+                columns={columns}
                 st={st}
                 fs={this.props.fs}
                 font_kick={this.props.font_kick}

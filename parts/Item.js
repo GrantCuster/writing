@@ -51,7 +51,7 @@ class Item extends React.Component {
   }
 
   render() {
-    let { fs, b, i, grem, spacer, experiments, width, st } = this.props
+    let { fs, b, i, grem, spacer, experiments, columns, width, st } = this.props
 
     let { top_height, bottom_height } = this.state
     let e = experiments[i]
@@ -148,7 +148,7 @@ class Item extends React.Component {
             <div
               style={{
                 padding: p(grem / 2, 0),
-                fontSize: e.featured ? fs : fs * 0.875,
+                fontSize: e.featured ? fs : columns === 2 ? fs : fs * 0.875,
                 lineHeight: 1.5,
               }}
             >
