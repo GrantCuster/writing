@@ -78,7 +78,7 @@
       "featured": false,
       "description": "An interactive visualization that uses T-SNE to cluster movies together based on user ratings.",
       "url": "http://fastforwardlabs.github.io/cinephile_tsne/",
-      "image": "/static/images/uploads/umap_zoom-1547839236.gif"
+      "image": "/static/images/uploads/cinephiles.gif"
     }
   ]
 }
