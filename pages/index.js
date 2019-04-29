@@ -133,7 +133,7 @@ class Index extends React.Component {
       fontSize: fs,
     }
 
-    let svg_scale = 38 / grem
+    let svg_scale = 38 / cap
     let ff_stroke = fs * styles.stroke_mult * svg_scale
 
     let rounded_wh = Math.floor(wh / grem) * grem
@@ -234,7 +234,7 @@ class Index extends React.Component {
             <div
               style={{
                 padding: grem / 2,
-                paddingLeft: grem * 1.5,
+                paddingLeft: grem / 2 + cap,
                 display: 'flex',
                 justifyContent: 'space-between',
                 ...fs_normal,
@@ -250,9 +250,9 @@ class Index extends React.Component {
                   style={{
                     position: 'absolute',
                     left: grem / 2,
-                    top: grem / 2,
-                    width: grem,
-                    height: grem,
+                    top: (grem * 2 - cap - grem / 16) / 2,
+                    width: cap + grem / 16,
+                    height: cap + grem / 16,
                   }}
                 >
                   <rect width="38" height="38" fill="white" />
