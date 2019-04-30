@@ -29,6 +29,9 @@ class Index extends React.Component {
       optimal: null,
       hex: chroma.hcl(Math.floor((day_in_year / 365) * 360), 60, 80),
       font_kick: 0,
+      mode: 'light',
+      grid: 'hide',
+      grid_canvas: null,
     }
     this.setSize = this.setSize.bind(this)
     this.setSize = debounce(this.setSize, 100)
@@ -56,12 +59,18 @@ class Index extends React.Component {
   componentDidMount() {
     window.addEventListener('resize', this.setSize)
     this.setSize()
-    let me = this
+
     document.fonts.ready.then(function() {})
+
+    let mode_value = localStorage.getItem('mode') || 'light'
+    let grid_value = localStorage.getItem('grid') || 'hide'
+
+    let canvas = document.createElement('canvas')
+    this.setState({ grid_canvas: canvas, mode: mode_value, grid: grid_value })
   }
 
   render() {
-    let { ww, wh, optimal, hex } = this.state
+    let { ww, wh, optimal, hex, mode, grid, grid_canvas } = this.state
 
     let divisions = 4
 
@@ -93,7 +102,7 @@ class Index extends React.Component {
 
     let fs = font_size * ratio
 
-    let grem = Math.round(fs * line_height * 100) / 100
+    let grem = fs * line_height
 
     let center_text = {
       width: optim_width,
@@ -105,8 +114,8 @@ class Index extends React.Component {
     let spacer = Math.round(grem)
 
     let sized_experiments = experiments.map(e => {
-      let w = Math.round(column_width * 2 - spacer)
-      let h = Math.round(target_height)
+      let w = column_width * 2 - spacer
+      let h = target_height
       if (e.featured === true) {
         return {
           width: Math.min(w * 2 + spacer, ww - spacer),
@@ -138,6 +147,25 @@ class Index extends React.Component {
     let ff_stroke = fs * styles.stroke_mult * svg_scale
 
     let rounded_wh = Math.floor(wh / grem) * grem
+
+    let stroke_color = mode === 'dark' ? 'rgba(255,255,255,0.8)' : '#000'
+    let logo_stroke = mode === 'dark' ? 'rgba(255,255,255,1)' : '#000'
+
+    let render_canvas = null
+    let c_width = column_width
+    let c_height = grem
+    if (grid_canvas !== null) {
+      render_canvas = grid_canvas
+      render_canvas.width = c_width + 0.5
+      render_canvas.height = c_height + 0.5
+      let ctx = render_canvas.getContext('2d')
+      ctx.fillStyle = mode === 'dark' ? '#333' : '#ddd'
+      ctx.fillRect(0, 0, 1, c_height)
+      let bd = 2
+      for (let i = 0; i < bd; i++) {
+        ctx.fillRect(0, (i * grem) / bd, c_width, 1)
+      }
+    }
 
     return (
       <div>
@@ -189,16 +217,49 @@ class Index extends React.Component {
           .hover_box:hover {
             transition: box-shadow 0.05s linear;
           }
+          button {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            text-decoration: underline;
+            cursor: pointer;
+            color: inherit;
+          }
+        `}</style>
+        <style jsx global>{`
+          html {
+            background: ${mode === 'dark' ? '#111' : '#fff'};
+            color: ${mode === 'dark' ? '#fff' : '#000'};
+          }
         `}</style>
         <style jsx global>{`
           .hover_box:hover {
-            transition: box-shadow 0.05s linear;
-            box-shadow: 0 0 ${grem / 2}px rgba(0, 0, 0, 0.4);
+            box-shadow: ${mode === 'dark'
+              ? `0 0 ${grem / 2}px rgba(255, 255, 255, 0.8)`
+              : `0 0 ${grem / 2}px rgba(0, 0, 0, 0.4)`};
           }
         `}</style>
 
         {optimal !== null ? (
-          <div>
+          <div style={{ position: 'relative' }}>
+            <div
+              style={{
+                display: grid === 'show' ? 'block' : 'none',
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                right: 0,
+                bottom: 0,
+                backgroundImage: `url(${render_canvas.toDataURL()})`,
+                backgroundPosition: `${offset - 0.5}px -0.5px`,
+                backgroundSize: `${c_width}px ${c_height}px`,
+                zIndex: -1,
+              }}
+            />
             <div
               style={{
                 position: 'fixed',
@@ -219,7 +280,7 @@ class Index extends React.Component {
                     top: 0,
                     width: column_width,
                     height: '100vh',
-                    outline: 'solid 1px rgba(0,0,0,0.1)',
+                    outline: 'solid 1px red',
                   }}
                 />
               ))}
@@ -256,28 +317,27 @@ class Index extends React.Component {
                     height: cap + grem / 16,
                   }}
                 >
-                  <rect width="38" height="38" fill="white" />
                   <path
                     d="M19 19L2 2V36L19 19Z"
-                    stroke="black"
+                    stroke={logo_stroke}
                     strokeWidth={ff_stroke}
                     strokeLinejoin="bevel"
                   />
                   <path
                     d="M36 19L19 2V36L36 19Z"
-                    stroke="black"
+                    stroke={logo_stroke}
                     strokeWidth={ff_stroke}
                     strokeLinejoin="bevel"
                   />
                   <path
                     d="M2 2H36V19H2V2Z"
-                    stroke="black"
+                    stroke={logo_stroke}
                     strokeWidth={ff_stroke}
                   />
                   <path
                     d="M2 19H36V36H2V19Z"
-                    stroke="black"
                     strokeWidth={ff_stroke}
+                    stroke={logo_stroke}
                   />
                 </svg>
                 <div
@@ -308,7 +368,12 @@ class Index extends React.Component {
               }}
             >
               <div style={{ position: 'relative' }}>
-                <Hd width={ww} align="b" stroke={fs * styles.stroke_mult} />
+                <Hd
+                  width={ww}
+                  align="b"
+                  color={stroke_color}
+                  stroke={fs * styles.stroke_mult}
+                />
               </div>
             </div>
 
@@ -367,7 +432,6 @@ class Index extends React.Component {
                 paddingTop: grem / 2,
                 marginTop: grem / 2,
                 position: 'relative',
-                background: 'white',
               }}
             >
               Experiments
@@ -376,7 +440,6 @@ class Index extends React.Component {
               style={{
                 ...center_text,
                 padding: grem / 2,
-                background: 'white',
                 position: 'relative',
                 ...fs_normal,
               }}
@@ -400,6 +463,7 @@ class Index extends React.Component {
                 fs={fs}
                 font_kick={this.state.font_kick}
                 columns={columns}
+                stroke_color={stroke_color}
               />
             </div>
 
@@ -437,13 +501,90 @@ class Index extends React.Component {
                 paddingTop: grem,
               }}
             >
-              <Hd width={ww} align="b" stroke={fs * styles.stroke_mult} />
+              <Hd
+                width={ww}
+                color={stroke_color}
+                align="b"
+                stroke={fs * styles.stroke_mult}
+              />
             </div>
             <div
               style={{
-                paddingTop: grem / 2,
+                padding: grem / 2,
+                display: 'flex',
+                flexWrap: 'wrap',
               }}
-            />
+            >
+              <div style={{ marginRight: grem / 4, display: 'flex' }}>
+                <div style={{ marginRight: grem / 4 }}>Screen:</div>
+                <div style={{ marginRight: grem / 4 }}>
+                  {ww}w{wh}h
+                </div>
+              </div>
+
+              <div style={{ marginRight: grem / 4, display: 'flex' }}>
+                <div style={{ marginRight: grem / 4 }}>Mode:</div>
+                <div style={{ marginRight: grem / 4 }}>
+                  {mode === 'light' ? (
+                    'Light'
+                  ) : (
+                    <button
+                      onClick={() => {
+                        window.localStorage.setItem('mode', 'light')
+                        this.setState({ mode: 'light' })
+                      }}
+                    >
+                      Light
+                    </button>
+                  )}
+                </div>
+                <div style={{ marginRight: grem / 4 }}>
+                  {mode === 'dark' ? (
+                    'Dark'
+                  ) : (
+                    <button
+                      onClick={() => {
+                        window.localStorage.setItem('mode', 'dark')
+                        this.setState({ mode: 'dark' })
+                      }}
+                    >
+                      Dark
+                    </button>
+                  )}
+                </div>
+              </div>
+              <div style={{ marginRight: grem / 4, display: 'flex' }}>
+                <div style={{ marginRight: grem / 4 }}>Grid:</div>
+                <div style={{ marginRight: grem / 4 }}>
+                  {grid === 'show' ? (
+                    'Show'
+                  ) : (
+                    <button
+                      onClick={() => {
+                        window.localStorage.setItem('grid', 'show')
+                        this.setState({ grid: 'show' })
+                      }}
+                    >
+                      Show
+                    </button>
+                  )}
+                </div>
+                <div style={{ marginRight: grem / 4 }}>
+                  {grid === 'hide' ? (
+                    'Hide'
+                  ) : (
+                    <button
+                      onClick={() => {
+                        window.localStorage.setItem('grid', 'hide')
+                        this.setState({ grid: 'hide' })
+                      }}
+                    >
+                      Hide
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         ) : null}
       </div>

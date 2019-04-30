@@ -51,7 +51,18 @@ class Item extends React.Component {
   }
 
   render() {
-    let { fs, b, i, grem, spacer, experiments, columns, width, st } = this.props
+    let {
+      fs,
+      b,
+      i,
+      grem,
+      spacer,
+      experiments,
+      columns,
+      width,
+      st,
+      stroke_color,
+    } = this.props
 
     let { top_height, bottom_height } = this.state
     let e = experiments[i]
@@ -66,13 +77,11 @@ class Item extends React.Component {
         style={{
           position: 'absolute',
           display: 'block',
-          left: !e.featured && columns === 2 ? b.x : b.x,
+          left: b.x,
           top: b.y,
-          width: !e.featured && columns === 2 ? b.width - grem * 2 : b.width,
+          width: b.width,
           height: b.height,
           textDecoration: 'none',
-          background: 'var(--lighter_background)',
-          background: 'white',
         }}
         className="hover_box"
         href={e.url}
@@ -83,8 +92,7 @@ class Item extends React.Component {
               position: 'absolute',
               left: 0,
               top: top_height,
-              width:
-                !e.featured && columns === 2 ? b.width - grem * 2 : b.width,
+              width: b.width,
               height: b.height - top_height - bottom_height,
               backgroundImage: `url(${e.image})`,
               backgroundPosition: 'center center',
@@ -124,7 +132,12 @@ class Item extends React.Component {
             >
               <span className="hover_name">{e.name}</span>
             </div>
-            <Hd width="100%" align="b" stroke={fs * styles.stroke_mult} />
+            <Hd
+              width="100%"
+              align="b"
+              color={stroke_color}
+              stroke={fs * styles.stroke_mult}
+            />
           </div>
         </div>
         <div
@@ -145,7 +158,12 @@ class Item extends React.Component {
                 width: 10,
               }}
             />
-            <Hd width="100%" align="t" stroke={fs * styles.stroke_mult} />
+            <Hd
+              width="100%"
+              align="t"
+              color={stroke_color}
+              stroke={fs * styles.stroke_mult}
+            />
             <div
               style={{
                 padding: p(grem / 2, 0),
@@ -184,7 +202,6 @@ class Item extends React.Component {
             width: b.width,
             height: b.height,
             pointerEvents: 'none',
-            background: 'var(--lighter_background)',
             mixBlendMode: 'darken',
             display: 'none',
           }}
@@ -202,7 +219,12 @@ class Item extends React.Component {
             boxShadow: `0 0 ${grem * 0.5}px rgba(0,0,0,0.4)`,
           }}
         />
-        <Rect width="100%" height="100%" stroke={fs * styles.stroke_mult} />
+        <Rect
+          width="100%"
+          height="100%"
+          color={stroke_color}
+          stroke={fs * styles.stroke_mult}
+        />
       </a>
     )
   }

@@ -49,6 +49,7 @@ export let Hd = ({
   style,
   miter = 'butt',
   stroke = 1,
+  color = 'black',
 }) => {
   let s = styles.font_size * styles.stroke_mult * stroke
   s = stroke
@@ -59,22 +60,18 @@ export let Hd = ({
   let adjust = 0
   if (miter === 'extend') adjust = sc / 4
 
-  if (typeof width === 'string') {
-    width = `calc(${width} + ${stroke * 2}px)`
-  } else {
-    width = width + stroke * 2
-  }
+  let test = (2 / stroke) * 100
 
   return (
     <div
       style={{
         position: 'absolute',
-        left: -stroke,
+        left: 0,
         width: width,
         height: 2,
         transform: `scaleY(${stroke / 2})`,
-        transformOrigin: '0% 50%',
-        background: 'black',
+        transformOrigin: 'center center',
+        background: color,
         ...alignment,
         ...style,
       }}
@@ -131,6 +128,7 @@ export let Rect_dep = ({
   style,
   miter = 'butt',
   stroke = 1,
+  color = 'black',
 }) => {
   let s = styles.font_size * styles.stroke_mult * stroke
   s = stroke
@@ -176,80 +174,26 @@ export let Rect = ({
   style,
   miter = 'butt',
   stroke = 1,
+  color = 'black',
 }) => {
-  let og_width = width
-  if (typeof width === 'string') {
-    width = `calc(${width} + ${stroke * 2}px)`
-  } else {
-    width = width + stroke * 2
-  }
-  let og_height = height
-  if (typeof height === 'string') {
-    height = `calc(${height} + ${stroke * 2}px)`
-  } else {
-    height = height + stroke * 2
-  }
+  // double and scale down
+  // for stroke to be 2
+  let test = (2 / stroke) * 100
+
   return (
     <div
       style={{
         position: 'absolute',
-        left: 0,
-        top: 0,
-        height: og_height,
-        width: og_width,
-        pointerEvents: 'none',
+        right: '-' + (test - 100) / 2 + '%',
+        top: '-' + (test - 100) / 2 + '%',
+        height: 'calc(' + test + '% + 0px)',
+        width: 'calc(' + test + '% + 0px)',
+        transform: `scale(${stroke / 2})`,
+        transformOrigin: 'center center',
+        border: `solid 2px ${color}`,
         ...style,
       }}
-    >
-      <div
-        style={{
-          position: 'absolute',
-          left: -stroke,
-          top: -2,
-          width: width,
-          height: 2,
-          transform: `scaleY(${stroke / 2})`,
-          transformOrigin: '0% 100%',
-          background: 'black',
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          right: -2,
-          top: -stroke,
-          height: height,
-          width: 2,
-          transform: `scaleX(${stroke / 2})`,
-          transformOrigin: '0% 0%',
-          background: 'black',
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          left: -stroke,
-          bottom: -2,
-          width: width,
-          height: 2,
-          transform: `scaleY(${stroke / 2})`,
-          transformOrigin: '0% 0%',
-          background: 'black',
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          left: -2,
-          top: -stroke,
-          height: height,
-          width: 2,
-          transform: `scaleX(${stroke / 2})`,
-          transformOrigin: '100% 0%',
-          background: 'black',
-        }}
-      />
-    </div>
+    />
   )
 }
 

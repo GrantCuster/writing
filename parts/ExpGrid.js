@@ -45,6 +45,7 @@ class ExpGrid extends React.Component {
                 st={st}
                 fs={this.props.fs}
                 font_kick={this.props.font_kick}
+                stroke_color={this.props.stroke_color}
               />
             ))}
           </div>
