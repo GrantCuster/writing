@@ -84,7 +84,7 @@
       "name": "Luhn Method Demo",
       "head": "Demo",
       "featured": false,
-      "description": "A demo of a method for automatically summarizing documents. This method, from 1958, provides a foundation for understanding modern auto-summarization techniques.",
+      "description": "Luhn's method, from 1958, provides a foundation for understanding modern auto-summarization techniques.",
       "url": "http://fastforwardlabs.github.io/luhn/",
       "image": "/static/images/uploads/luhn.gif"
     }
