@@ -79,6 +79,14 @@
       "description": "An interactive visualization that uses T-SNE to cluster movies together based on user ratings.",
       "url": "http://fastforwardlabs.github.io/cinephile_tsne/",
       "image": "/static/images/uploads/cinephiles.gif"
+    },
+    {
+      "name": "Luhn Method Demo",
+      "head": "Demo",
+      "featured": false,
+      "description": "A demo of a method for automatically summarizing documents. This method, from 1958, provides a foundation for understanding modern auto-summarization techniques.",
+      "url": "http://fastforwardlabs.github.io/luhn/",
+      "image": "/static/images/uploads/luhn.gif"
     }
   ]
 }
