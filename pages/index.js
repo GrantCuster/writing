@@ -97,8 +97,8 @@ class Index extends React.Component {
 
     let target_height = grem * 12
     let sized_experiments = experiments.map(e => {
-      let w = column_width * 2 - spacer
-      let h = target_height
+      let w = Math.round(column_width * 2 - spacer)
+      let h = Math.round(target_height)
       if (e.featured === true) {
         return {
           width: Math.min(w * 2 + spacer, ww - spacer),
