@@ -1,12 +1,10 @@
 import fetch from 'isomorphic-unfetch'
 import Head from 'next/head'
-import { Hd, Vd, Rect, Fdiv } from '../parts/Dividers'
+import { Hd, Vd, Rect } from '../parts/Dividers'
 import { styles, p } from '../parts/Utils'
 import { pack } from '../parts/Binpack-2d-port'
-import FFuture from '../parts/FFuture'
 import ExpGrid from '../parts/ExpGrid'
 import { debounce } from 'lodash'
-import * as chroma from 'chroma-js'
 import { experiments } from '../data/experiments.json'
 
 let font_size = 16
@@ -15,23 +13,12 @@ let line_height = 1.5
 class Index extends React.Component {
   constructor(props) {
     super(props)
-    var now = new Date()
-    var start = new Date(now.getFullYear(), 0, 0)
-    var diff =
-      now -
-      start +
-      (start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000 * 24
-    var oneDay = 1000 * 60 * 60 * 24
-    var day_in_year = Math.floor(diff / oneDay)
-
     this.state = {
       ww: 0,
       optimal: null,
-      hex: chroma.hcl(Math.floor((day_in_year / 365) * 360), 60, 80),
-      font_kick: 0,
+      grid_canvas: null,
       mode: 'light',
       grid: 'hide',
-      grid_canvas: null,
     }
     this.setSize = this.setSize.bind(this)
     this.setSize = debounce(this.setSize, 100)
@@ -40,7 +27,7 @@ class Index extends React.Component {
   setSize() {
     let canvas = document.createElement('canvas')
     let ctx = canvas.getContext('2d')
-    ctx.font = `normal ${font_size}px Interi`
+    ctx.font = `normal ${font_size}px Inter`
     let width = ctx.measureText(
       'thousand writers. With over a million people from various fields working'
     ).width
@@ -60,8 +47,6 @@ class Index extends React.Component {
     window.addEventListener('resize', this.setSize)
     this.setSize()
 
-    document.fonts.ready.then(function() {})
-
     let mode_value = localStorage.getItem('mode') || 'light'
     let grid_value = localStorage.getItem('grid') || 'hide'
 
@@ -70,13 +55,12 @@ class Index extends React.Component {
   }
 
   render() {
-    let { ww, wh, optimal, hex, mode, grid, grid_canvas } = this.state
+    let { ww, wh, optimal, mode, grid, grid_canvas } = this.state
 
     let divisions = 4
 
     let target_width = optimal / divisions
     let columns = Math.floor(ww / target_width)
-    let og_columns = Math.floor(ww / target_width)
     let column_width = ww / columns
 
     let offset = 0
@@ -100,8 +84,8 @@ class Index extends React.Component {
       ratio = 1
     }
 
+    // Adjust grem
     let fs = font_size * ratio
-
     let grem = fs * line_height
 
     let center_text = {
@@ -109,10 +93,9 @@ class Index extends React.Component {
       marginLeft: optim_left,
     }
 
-    let target_height = grem * 12
-
     let spacer = Math.round(grem)
 
+    let target_height = grem * 12
     let sized_experiments = experiments.map(e => {
       let w = column_width * 2 - spacer
       let h = target_height
@@ -132,7 +115,7 @@ class Index extends React.Component {
     let avail = ww - offset * 2
 
     let packed = pack(
-      { width: avail + 1, height: Infinity },
+      { width: avail, height: Infinity },
       sized_experiments,
       spacer
     )
@@ -146,11 +129,10 @@ class Index extends React.Component {
     let svg_scale = 38 / cap
     let ff_stroke = fs * styles.stroke_mult * svg_scale
 
-    let rounded_wh = Math.floor(wh / grem) * grem
-
     let stroke_color = mode === 'dark' ? 'rgba(255,255,255,0.8)' : '#000'
     let logo_stroke = mode === 'dark' ? 'rgba(255,255,255,1)' : '#000'
 
+    // Background grid
     let render_canvas = null
     let c_width = column_width
     let c_height = grem
@@ -180,14 +162,14 @@ class Index extends React.Component {
         </Head>
         <style jsx global>{`
           @font-face {
-            font-family: 'Interi';
+            font-family: 'Inter';
             font-style: normal;
             font-weight: 400;
             src: url('static/fonts/Inter-Regular.woff2?v=3.5') format('woff2'),
               url('static/fonts/Inter-Regular.woff?v=3.5') format('woff');
           }
           @font-face {
-            font-family: 'Interi';
+            font-family: 'Inter';
             font-style: italic;
             font-weight: 400;
             src: url('static/fonts/Inter-Italic.woff2?v=3.5') format('woff2'),
@@ -197,9 +179,9 @@ class Index extends React.Component {
             box-sizing: border-box;
           }
           html {
-            font-family: 'Interi', serif;
-            font-size: 16px;
-            line-height: 1.5;
+            font-family: 'Inter', serif;
+            font-size: ${font_size}px;
+            line-height: ${font_size * line_height}px;
             text-rendering: optimizelegibility;
             font-feature-settings: 'kern';
             font-kerning: normal;
@@ -208,7 +190,6 @@ class Index extends React.Component {
           }
           body {
             margin: 0;
-            overflow-x: hidden;
           }
           a {
             color: inherit;
@@ -258,41 +239,10 @@ class Index extends React.Component {
                 backgroundPosition: `${offset - 0.5}px -0.5px`,
                 backgroundSize: `${c_width}px ${c_height}px`,
                 zIndex: -1,
+                pointerEvents: 'none',
               }}
             />
-            <div
-              style={{
-                position: 'fixed',
-                left: 0,
-                top: 0,
-                width: ww,
-                height: '100vh',
-                zIndex: -1,
-                display: 'none',
-              }}
-            >
-              {[...Array(columns)].map((n, i) => (
-                <div
-                  key={i}
-                  style={{
-                    position: 'absolute',
-                    left: i * column_width + offset,
-                    top: 0,
-                    width: column_width,
-                    height: '100vh',
-                    outline: 'solid 1px red',
-                  }}
-                />
-              ))}
-            </div>
 
-            <div
-              style={{ position: 'fixed', left: 0, bottom: 0, display: 'none' }}
-            >
-              <div>og_columns: {og_columns}</div>
-              <div>{even ? 'even' : 'odd'}</div>
-              <div>font size: {fs}</div>
-            </div>
             <div
               style={{
                 padding: grem / 2,
@@ -360,6 +310,7 @@ class Index extends React.Component {
                 </div>
               </div>
             </div>
+
             <div
               style={{
                 padding: 0,
@@ -377,51 +328,6 @@ class Index extends React.Component {
               </div>
             </div>
 
-            <div
-              style={{
-                position: 'absolute',
-                left: 0,
-                top: grem * 2,
-                height: grem * 4,
-              }}
-            >
-              {false
-                ? experiments.map((e, i) => {
-                    let b = packed.boxes[i]
-                    let new_width = grem * 6
-                    let new_height = grem * 8
-                    return (
-                      <div
-                        style={{
-                          position: 'absolute',
-                          left: Math.round((b.x / ww) * new_width),
-                          top: Math.round(
-                            (b.y / packed.container.height) * new_height
-                          ),
-                          width: Math.round((b.width / ww) * new_width),
-                          height: Math.round(
-                            (b.height / packed.container.height) * new_height
-                          ),
-                          backgroundImage: `url(${e.image})`,
-                          backgroundPosition: 'center center',
-                          backgroundSize: 'cover',
-                          float: 'left',
-                        }}
-                      />
-                    )
-                  })
-                : null}
-              <div
-                style={{
-                  position: 'absolute',
-                  left: 0,
-                  top: 0,
-                  height: grem * 4,
-                  filter: 'grayscale(100%)',
-                  width: ww,
-                }}
-              />
-            </div>
             <div
               style={{
                 ...center_text,
@@ -478,7 +384,6 @@ class Index extends React.Component {
             >
               About
             </div>
-
             <div
               style={{
                 ...center_text,

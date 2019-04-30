@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  styles,
-  p,
-  track,
-  sizeMap,
-  small_style,
-  smaller_style,
-} from '../parts/Utils'
+import { styles, p } from '../parts/Utils'
 import { Hd, Vd, Rect } from './Dividers'
 
 class Item extends React.Component {
@@ -32,8 +25,7 @@ class Item extends React.Component {
   componentDidUpdate(prevProps) {
     if (
       prevProps.width !== this.props.width ||
-      prevProps.grem !== this.props.grem ||
-      prevProps.font_kick !== this.props.font_kick
+      prevProps.grem !== this.props.grem
     ) {
       this.setTopHeight()
       this.setBottomHeight()
@@ -60,14 +52,13 @@ class Item extends React.Component {
       experiments,
       columns,
       width,
-      st,
       stroke_color,
     } = this.props
 
     let { top_height, bottom_height } = this.state
     let e = experiments[i]
 
-    let display_link = 'test'
+    let display_link = ''
     if (e.url) {
       display_link = e.url.replace(/^.*:\/\//i, '')
     }
@@ -186,39 +177,9 @@ class Item extends React.Component {
                 </div>
               </div>
             </div>
-            <Hd
-              style={{ display: 'none' }}
-              width={b.width}
-              align="t"
-              miter="extend"
-            />
+            <Hd style={{ display: 'none' }} width={b.width} align="t" />
           </div>
         </div>
-        <div
-          style={{
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            width: b.width,
-            height: b.height,
-            pointerEvents: 'none',
-            mixBlendMode: 'darken',
-            display: 'none',
-          }}
-        />
-        <div
-          className="color2"
-          style={{
-            display: 'none',
-            position: 'absolute',
-            left: (-grem / 2) * 0,
-            top: (-grem / 2) * 0,
-            width: b.width + (grem * 0) / 2,
-            height: b.height + (grem * 0) / 2,
-            pointerEvents: 'none',
-            boxShadow: `0 0 ${grem * 0.5}px rgba(0,0,0,0.4)`,
-          }}
-        />
         <Rect
           width="100%"
           height="100%"
