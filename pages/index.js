@@ -98,7 +98,7 @@ class Index extends React.Component {
     let target_height = grem * 12
     let sized_experiments = experiments.map(e => {
       let w = Math.round(column_width * 2 - spacer)
-      let h = Math.round(target_height)
+      let h = target_height
       if (e.featured === true) {
         return {
           width: Math.min(w * 2 + spacer, ww - spacer),
@@ -190,6 +190,7 @@ class Index extends React.Component {
           }
           body {
             margin: 0;
+            overflow-x: hidden;
           }
           a {
             color: inherit;
@@ -350,7 +351,11 @@ class Index extends React.Component {
                 ...fs_normal,
               }}
             >
-              Machine learning visualizations and code
+              Machine learning visualizations and code by{' '}
+              <a href="https://www.cloudera.com/products/fast-forward-labs-research.html">
+                Cloudera Fast Forward
+              </a>
+              .
             </div>
 
             <div

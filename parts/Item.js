@@ -177,7 +177,6 @@ class Item extends React.Component {
                 </div>
               </div>
             </div>
-            <Hd style={{ display: 'none' }} width={b.width} align="t" />
           </div>
         </div>
         <Rect
