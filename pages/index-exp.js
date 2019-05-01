@@ -75,16 +75,13 @@ class Index extends React.Component {
 
     let ratio = column_width / target_width
 
-    let stacked = false
     if (columns < divisions) {
       offset = 0
-      columns = divisions
-      column_width = ww / divisions
-      optim_width = column_width * divisions
+      columns = 2
+      column_width = ww / 2
+      optim_width = column_width * 2
       optim_left = 0
-      grem = grem / 2
       ratio = 1
-      stacked = true
     }
 
     // Adjust grem
@@ -97,11 +94,6 @@ class Index extends React.Component {
     }
 
     let spacer = Math.round(grem)
-    if (stacked) {
-      fs = font_size * 0.875
-      grem = fs * line_height
-      spacer = Math.round(grem / 2)
-    }
 
     let target_height = grem * 12
     let sized_experiments = experiments.map(e => {
@@ -109,12 +101,12 @@ class Index extends React.Component {
       let h = target_height
       if (e.featured === true) {
         return {
-          width: w * 2 + spacer,
-          height: columns === 4 ? h * 1.5 : h * 2 + spacer,
+          width: Math.min(w * 2 + spacer, ww - spacer),
+          height: columns === 2 ? h * 1.5 : h * 2 + spacer,
         }
       } else {
         return {
-          width: w,
+          width: Math.min(w, ww - spacer),
           height: h,
         }
       }
@@ -132,7 +124,6 @@ class Index extends React.Component {
 
     let fs_normal = {
       fontSize: fs,
-      lineHeight: line_height,
     }
 
     let svg_scale = 38 / cap
@@ -228,10 +219,27 @@ class Index extends React.Component {
           }
         `}</style>
         <style jsx global>{`
-          .hover_box:hover {
+          .hover_box-dep:hover {
             box-shadow: ${mode === 'dark'
               ? `0 0 ${grem / 2}px rgba(255, 255, 255, 0.8)`
               : `0 0 ${grem / 2}px rgba(0, 0, 0, 0.4)`};
+          }
+          .box-holder {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 0.1s linear;
+          }
+          .box-holder:hover {
+            left: -${grem / 2}px;
+            top: -${grem / 2}px;
+            width: calc(100% + ${grem / 1}px);
+            height: calc(100% + ${grem / 1}px);
+          }
+          .hover_box:hover .hover_name {
+            text-decoration: underline;
           }
         `}</style>
 
@@ -272,7 +280,7 @@ class Index extends React.Component {
                   style={{
                     position: 'absolute',
                     left: grem / 2,
-                    top: (grem * 2 - (cap + grem / 16)) / 2,
+                    top: (grem * 2 - cap - grem / 16) / 2,
                     width: cap + grem / 16,
                     height: cap + grem / 16,
                   }}
@@ -348,10 +356,225 @@ class Index extends React.Component {
                 paddingTop: grem / 2,
                 marginTop: grem / 2,
                 position: 'relative',
+                marginBottom: grem / 2,
               }}
             >
-              Experiments
+              Blog
             </div>
+
+            <div
+              style={{
+                position: 'relative',
+              }}
+            >
+              <div
+                style={{
+                  ...center_text,
+                  padding: grem / 2,
+                  position: 'relative',
+                  ...fs_normal,
+                }}
+              >
+                <div
+                  style={{
+                    position: 'relative',
+                    height: target_height * 2 + grem,
+                    width: column_width * 2 - grem / 2 + 1,
+                  }}
+                >
+                  <Rect
+                    width="100%"
+                    height="100%"
+                    stroke={fs * styles.stroke_mult}
+                  />
+                  <div style={{ position: 'relative', padding: grem / 2 }}>
+                    <div
+                      style={{
+                        position: 'relative',
+                        fontSize: fs * (3 / 4),
+                        letterSpacing: '0.03em',
+                        textTransform: 'uppercase',
+                        lineHeight: 1,
+                        paddingBottom: grem / 4,
+                        paddingTop: grem,
+                      }}
+                    >
+                      Report
+                    </div>
+                    <div
+                      style={{
+                        fontSize: fs * 2,
+                        lineHeight: 1.25,
+                        position: 'relative',
+                      }}
+                    >
+                      Learning with Limited Labeled Data
+                    </div>
+                    <Hd
+                      width="100%"
+                      height="100%"
+                      align="b"
+                      stroke={fs * styles.stroke_mult}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      position: 'absolute',
+                      width: '100%',
+                      height: grem * 9.5,
+                      left: 0,
+                      top: grem * 7.675,
+                      backgroundImage: `url(https://clients.fastforwardlabs.com/static/images/ffreports/ff10-01.png)`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center right',
+                      zIndex: -1,
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      fontSize: fs * 0.875,
+                      lineHeight: 1.5,
+
+                      padding: grem / 2,
+                      bottom: 0,
+                      left: 0,
+                      width: '100%',
+                    }}
+                  >
+                    Being able to learn with limited labeled data relaxes the
+                    stringent labeled data requirement for supervised machine
+                    learning. This report focuses on active learning, a
+                    technique that relies on collaboration between machines and
+                    humans to label smartly.
+                    <Hd
+                      width="100%"
+                      height="100%"
+                      align="t"
+                      stroke={fs * styles.stroke_mult}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                style={{
+                  padding: grem / 2,
+                  position: 'absolute',
+                  top: 0,
+                  left:
+                    Math.floor(columns / 2) * column_width + offset - grem / 2,
+                  ...fs_normal,
+                }}
+              >
+                <div
+                  style={{
+                    position: 'relative',
+                    height: target_height * 2 + grem,
+                    width: column_width * 2 - grem / 2,
+                  }}
+                >
+                  <Rect
+                    width="100%"
+                    height="100%"
+                    stroke={fs * styles.stroke_mult}
+                  />
+                  <div
+                    style={{
+                      background: '#e56593',
+                      position: 'absolute',
+                      right: 0,
+                      fontSize: fs * (3 / 4),
+                      letterSpacing: '0.03em',
+                      textTransform: 'uppercase',
+                      lineHeight: 1,
+                      padding: p(grem / 4, grem / 2),
+                      width: '200%',
+                      paddingTop: grem * (3 / 8),
+                    }}
+                  >
+                    FF10
+                    <Rect
+                      width="100%"
+                      height="100%"
+                      stroke={fs * styles.stroke_mult}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      position: 'relative',
+                      padding: grem / 2,
+
+                      height: grem * 7.675,
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: 'relative',
+                        fontSize: fs * (3 / 4),
+                        letterSpacing: '0.03em',
+                        textTransform: 'uppercase',
+                        lineHeight: 1,
+                        paddingBottom: grem / 4,
+                        paddingTop: grem,
+                      }}
+                    >
+                      Prototype
+                    </div>
+                    <div
+                      style={{
+                        fontSize: fs * 2,
+                        lineHeight: 1.25,
+                        position: 'relative',
+                      }}
+                    >
+                      Active Learner
+                    </div>
+                    <Hd
+                      width="100%"
+                      height="100%"
+                      align="b"
+                      stroke={fs * styles.stroke_mult}
+                    />
+                  </div>
+
+                  <div
+                    style={{
+                      position: 'absolute',
+                      width: '100%',
+                      height: grem * 17.25,
+                      left: 0,
+                      top: grem * 4.25,
+                      backgroundImage: `url(/static/images/uploads/active-learner-short.gif)`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center center',
+                      zIndex: -1,
+                    }}
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      fontSize: fs * 0.875,
+                      lineHeight: 1.5,
+                      padding: grem / 2,
+                      bottom: 0,
+                      left: 0,
+                      width: '100%',
+                    }}
+                  >
+                    An interactive visualization of active learning data
+                    labeling strategies for supervised machine learning.{' '}
+                    <Hd
+                      width="100%"
+                      height="100%"
+                      align="t"
+                      stroke={fs * styles.stroke_mult}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div
               style={{
                 ...center_text,
@@ -360,17 +583,88 @@ class Index extends React.Component {
                 ...fs_normal,
               }}
             >
-              Machine learning visualizations and code by{' '}
-              <a href="https://www.cloudera.com/products/fast-forward-labs-research.html">
-                Cloudera Fast Forward
-              </a>
-              .
+              <div
+                style={{
+                  position: 'relative',
+                  padding: grem / 2,
+                  height: target_height / 2 - grem / 2,
+                }}
+              >
+                <Rect
+                  width="100%"
+                  height="100%"
+                  stroke={fs * styles.stroke_mult}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    right: 0,
+                    top: 0,
+                    width: column_width,
+                    height: '100%',
+                    backgroundImage: `url(${experiments[0].image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center center',
+                  }}
+                />
+
+                <div
+                  style={{
+                    paddingRight: column_width,
+                    position: 'relative',
+                  }}
+                >
+                  <div
+                    style={{
+                      position: 'relative',
+                      fontSize: fs * (3 / 4),
+                      letterSpacing: '0.03em',
+                      textTransform: 'uppercase',
+                      lineHeight: 1,
+                      paddingBottom: grem / 4,
+                    }}
+                  >
+                    Post
+                  </div>
+
+                  <div style={{ fontSize: fs * 1.5, lineHeight: 1.25 }}>
+                    An Invitation to Active Learning
+                  </div>
+                  <div
+                    style={{
+                      fontSize: fs * 0.875,
+                      lineHeight: 1.5,
+                      paddingTop: grem / 4,
+                      height: grem * 2,
+                      overflow: 'hidden',
+                    }}
+                  >
+                    Many interesting learning problems exist in places where
+                    labeled data is limited. As such, much thought has been
+                    spent on how best to learn from limited labeled data. One
+                    obvious answer is simply to collect more data. That is
+                    valid, but for some applications, data is difficult or
+                    expensive to collect. If we will collect more data, we ought
+                    at least be smart about the data we collect. This motivates
+                    active learning, which provides strategies for learning in
+                    this scenario.
+                  </div>
+                  <div
+                    style={{
+                      fontSize: fs * 0.875,
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    <a href="#">...read more</a>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div
               style={{
-                padding: p(grem / 2, 0),
-                paddingLeft: offset + spacer / 2,
+                padding: grem / 2,
+                paddingLeft: grem / 2 + offset,
               }}
             >
               <ExpGrid
@@ -389,19 +683,19 @@ class Index extends React.Component {
 
             <div
               style={{
+                ...center_text,
                 fontSize: fs * 2,
                 lineHeight: 1.25,
                 padding: grem / 2,
                 paddingBottom: 0,
-                ...center_text,
               }}
             >
               About
             </div>
             <div
               style={{
-                padding: grem / 2,
                 ...center_text,
+                padding: grem / 2,
                 ...fs_normal,
               }}
             >
@@ -409,14 +703,7 @@ class Index extends React.Component {
               group. We help organizations recognize and develop new product and
               business opportunities through emerging technologies.{' '}
             </div>
-            <div
-              style={{
-                ...center_text,
-                padding: grem / 2,
-                paddingTop: 0,
-                ...fs_normal,
-              }}
-            >
+            <div style={{ ...center_text, padding: grem / 2, paddingTop: 0 }}>
               <a href="https://www.cloudera.com/products/fast-forward-labs-research.html">
                 Learn more about working with us.
               </a>
@@ -439,7 +726,6 @@ class Index extends React.Component {
                 padding: grem / 2,
                 display: 'flex',
                 flexWrap: 'wrap',
-                ...fs_normal,
               }}
             >
               <div style={{ marginRight: grem / 4, display: 'flex' }}>

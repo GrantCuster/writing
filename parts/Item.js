@@ -115,7 +115,11 @@ class Item extends React.Component {
           <div style={{ position: 'relative' }}>
             <div
               style={{
-                fontSize: e.featured ? fs * 2 : fs * 1.5,
+                fontSize: e.featured
+                  ? fs * 2
+                  : columns === 4
+                  ? fs * 1.25
+                  : fs * 1.5,
                 position: 'relative',
                 padding: p(grem / 4, grem / 2, grem / 2, grem / 2),
                 lineHeight: 1.25,
