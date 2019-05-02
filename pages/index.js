@@ -98,7 +98,7 @@ class Index extends React.Component {
       marginLeft: optim_left,
     }
 
-    let spacer = Math.round(grem / 2)
+    let spacer = Math.round(grem)
     if (stacked) {
       fs = font_size * 0.875
       grem = fs * line_height
@@ -159,6 +159,8 @@ class Index extends React.Component {
         ctx.fillRect(0, (i * grem) / bd, c_width, 1)
       }
     }
+
+    console.log(spacer)
 
     return (
       <div>
@@ -421,7 +423,8 @@ class Index extends React.Component {
 
             <div
               style={{
-                padding: p(grem / 2, 0),
+                paddingTop: grem / 2,
+                paddingBottom: grem / 2,
                 paddingLeft: offset + spacer / 2,
               }}
             >
