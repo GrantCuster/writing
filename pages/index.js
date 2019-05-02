@@ -100,7 +100,7 @@ class Index extends React.Component {
 
     let spacer = Math.round(grem)
     if (stacked) {
-      fs = font_size * 0.875
+      fs = font_size * 1
       grem = fs * line_height
       spacer = Math.round(grem / 2)
     }

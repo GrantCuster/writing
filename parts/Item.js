@@ -162,7 +162,11 @@ class Item extends React.Component {
             <div
               style={{
                 padding: p(grem / 2, 0),
-                fontSize: e.featured ? fs : columns === 2 ? fs : fs * 0.875,
+                fontSize: e.featured
+                  ? fs
+                  : columns === 4
+                  ? fs * 0.75
+                  : fs * 0.875,
                 lineHeight: 1.5,
               }}
             >
