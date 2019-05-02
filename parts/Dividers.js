@@ -184,12 +184,14 @@ export let Rect = ({
     <div
       style={{
         position: 'absolute',
-        right: '-' + (test - 100) / 2 + '%',
+        left: '-' + (test - 100) / 2 + '%',
+        left: -1,
         top: '-' + (test - 100) / 2 + '%',
-        height: 'calc(' + test + '% + 0px)',
-        width: 'calc(' + test + '% + 0px)',
+        top: -1,
+        height: 'calc(' + test + '% + 2px)',
+        width: 'calc(' + test + '% + 2px)',
         transform: `scale(${stroke / 2})`,
-        transformOrigin: 'center center',
+        transformOrigin: 'left top',
         border: `solid 2px ${color}`,
         ...style,
       }}
