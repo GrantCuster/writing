@@ -62,8 +62,8 @@ class Index extends React.Component {
     let ogrem = font_size * line_height
 
     let target_width = optimal / divisions
-    let columns = Math.floor(ww / target_width)
-    let column_width = ww / columns
+    let columns = Math.floor((ww - ogrem) / target_width)
+    let column_width = (ww - ogrem) / columns
 
     let offset = 0
     let even = columns % 2 === 0
@@ -81,7 +81,7 @@ class Index extends React.Component {
     if (columns < divisions) {
       offset = 0
       columns = divisions
-      column_width = ww / divisions
+      column_width = (ww - ogrem) / divisions
       optim_width = column_width * divisions
       optim_left = 0
       grem = grem / 2
@@ -122,7 +122,7 @@ class Index extends React.Component {
       }
     })
 
-    let avail = ww - offset * 2
+    let avail = ww - offset * 2 - ogrem
 
     let packed = pack(
       { width: avail, height: Infinity },
@@ -280,7 +280,7 @@ class Index extends React.Component {
                 right: 0,
                 bottom: 0,
                 backgroundImage: `url(${render_canvas.toDataURL()})`,
-                backgroundPosition: `${offset - 0.5}px -0.5px`,
+                backgroundPosition: `${offset + ogrem / 2 - 0.5}px -0.5px`,
                 backgroundSize: `${c_width}px ${c_height}px`,
                 zIndex: -1,
                 pointerEvents: 'none',
@@ -392,90 +392,93 @@ class Index extends React.Component {
               </div>
             </div>
 
-            <div
-              style={{
-                ...center_text,
-                paddingLeft: grem / 2,
-                paddingRight: grem / 2,
-                fontSize: fs * 3,
-                lineHeight: 1,
-                paddingTop: grem / 2,
-                marginTop: grem / 2,
-                position: 'relative',
-              }}
-            >
-              Experiments
-            </div>
-            <div
-              style={{
-                ...center_text,
-                padding: grem / 2,
-                position: 'relative',
-                ...fs_normal,
-              }}
-            >
-              Machine learning visualizations and code by{' '}
-              <a href="https://www.cloudera.com/products/fast-forward-labs-research.html">
-                Cloudera Fast Forward
-              </a>
-              .
+            <div style={{ paddingLeft: ogrem / 2, paddingRight: ogrem / 2 }}>
+              <div
+                style={{
+                  ...center_text,
+                  paddingLeft: grem / 2,
+                  paddingRight: grem / 2,
+                  fontSize: fs * 3,
+                  lineHeight: 1,
+                  paddingTop: grem / 2,
+                  marginTop: grem / 2,
+                  position: 'relative',
+                }}
+              >
+                Experiments
+              </div>
+              <div
+                style={{
+                  ...center_text,
+                  padding: grem / 2,
+                  position: 'relative',
+                  ...fs_normal,
+                }}
+              >
+                Machine learning visualizations and code by{' '}
+                <a href="https://www.cloudera.com/products/fast-forward-labs-research.html">
+                  Cloudera Fast Forward
+                </a>
+                .
+              </div>
+
+              <div
+                style={{
+                  paddingTop: grem / 2,
+                  paddingBottom: grem / 2,
+                  paddingLeft: offset + spacer / 2,
+                }}
+              >
+                <ExpGrid
+                  width={ww}
+                  grem={grem}
+                  experiments={experiments}
+                  packed={packed}
+                  spacer={spacer}
+                  target_height={target_height}
+                  fs={fs}
+                  font_kick={this.state.font_kick}
+                  columns={columns}
+                  stroke_color={stroke_color}
+                />
+              </div>
+
+              <div
+                style={{
+                  fontSize: fs * 2,
+                  lineHeight: 1.25,
+                  padding: grem / 2,
+                  paddingBottom: 0,
+                  ...center_text,
+                }}
+              >
+                About
+              </div>
+              <div
+                style={{
+                  padding: grem / 2,
+                  ...center_text,
+                  ...fs_normal,
+                }}
+              >
+                Cloudera Fast Forward is an applied machine learning research
+                group. We help organizations recognize and develop new product
+                and business opportunities through emerging technologies.{' '}
+              </div>
+              <div
+                style={{
+                  ...center_text,
+                  padding: grem / 2,
+                  paddingTop: 0,
+                  ...fs_normal,
+                }}
+              >
+                <a href="https://www.cloudera.com/products/fast-forward-labs-research.html">
+                  Learn more about working with us.
+                </a>
+              </div>
             </div>
 
-            <div
-              style={{
-                paddingTop: grem / 2,
-                paddingBottom: grem / 2,
-                paddingLeft: offset + spacer / 2,
-              }}
-            >
-              <ExpGrid
-                width={ww}
-                grem={grem}
-                experiments={experiments}
-                packed={packed}
-                spacer={spacer}
-                target_height={target_height}
-                fs={fs}
-                font_kick={this.state.font_kick}
-                columns={columns}
-                stroke_color={stroke_color}
-              />
-            </div>
-
-            <div
-              style={{
-                fontSize: fs * 2,
-                lineHeight: 1.25,
-                padding: grem / 2,
-                paddingBottom: 0,
-                ...center_text,
-              }}
-            >
-              About
-            </div>
-            <div
-              style={{
-                padding: grem / 2,
-                ...center_text,
-                ...fs_normal,
-              }}
-            >
-              Cloudera Fast Forward is an applied machine learning research
-              group. We help organizations recognize and develop new product and
-              business opportunities through emerging technologies.{' '}
-            </div>
-            <div
-              style={{
-                ...center_text,
-                padding: grem / 2,
-                paddingTop: 0,
-                ...fs_normal,
-              }}
-            >
-              <a href="https://www.cloudera.com/products/fast-forward-labs-research.html">
-                Learn more about working with us.
-              </a>
-            </div>
             <div
               style={{
                 position: 'relative',
