@@ -59,6 +59,8 @@ class Index extends React.Component {
 
     let divisions = 4
 
+    let ogrem = font_size * line_height
+
     let target_width = optimal / divisions
     let columns = Math.floor(ww / target_width)
     let column_width = ww / columns
@@ -96,7 +98,7 @@ class Index extends React.Component {
       marginLeft: optim_left,
     }
 
-    let spacer = Math.round(grem)
+    let spacer = Math.round(grem / 2)
     if (stacked) {
       fs = font_size * 0.875
       grem = fs * line_height
