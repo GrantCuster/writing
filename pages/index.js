@@ -137,7 +137,7 @@ class Index extends React.Component {
       lineHeight: line_height,
     }
 
-    let svg_scale = 48 / grem
+    let svg_scale = 48 / (cap + grem / 8)
     let ff_stroke = fs * styles.stroke_mult * svg_scale
 
     let stroke_color = mode === 'dark' ? 'rgba(255,255,255,0.8)' : '#000'
@@ -490,7 +490,12 @@ class Index extends React.Component {
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <div
                 style={{
-                  padding: p(grem / 2, 0, grem / 2, grem / 2),
+                  padding: p(
+                    grem / 2 + (grem - (cap + grem / 8)) / 2,
+                    0,
+                    grem / 2,
+                    grem / 2 + (grem - (cap + grem / 8)) / 2
+                  ),
                   height: grem * 2,
                 }}
               >
@@ -501,8 +506,8 @@ class Index extends React.Component {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   style={{
-                    height: grem,
-                    width: grem,
+                    height: cap + grem / 8,
+                    width: cap + grem / 8,
                     lineHeight: 0,
                   }}
                 >

@@ -365,6 +365,7 @@ class Index extends React.Component {
             <div
               style={{
                 position: 'relative',
+                display: 'none',
               }}
             >
               <div
@@ -587,7 +588,7 @@ class Index extends React.Component {
                 style={{
                   position: 'relative',
                   padding: grem / 2,
-                  height: target_height / 2 - grem / 2,
+                  height: target_height / 2,
                 }}
               >
                 <Rect
