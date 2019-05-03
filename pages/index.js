@@ -108,7 +108,7 @@ class Index extends React.Component {
     let target_height = grem * 12
     let sized_experiments = experiments.map(e => {
       let w = Math.round(column_width * 2 - spacer)
-      let h = target_height
+      let h = Math.round(target_height * 1) / 1
       if (e.featured === true) {
         return {
           width: w * 2 + spacer,
@@ -137,7 +137,7 @@ class Index extends React.Component {
       lineHeight: line_height,
     }
 
-    let svg_scale = 19 / cap
+    let svg_scale = 48 / grem
     let ff_stroke = fs * styles.stroke_mult * svg_scale
 
     let stroke_color = mode === 'dark' ? 'rgba(255,255,255,0.8)' : '#000'
@@ -375,8 +375,7 @@ class Index extends React.Component {
 
             <div
               style={{
-                padding: 0,
-                paddingBottom: grem / 2,
+                padding: p(0, 0, grem / 2, 0),
                 position: 'relative',
               }}
             >
@@ -445,8 +444,7 @@ class Index extends React.Component {
                 style={{
                   fontSize: fs * 2,
                   lineHeight: 1.25,
-                  padding: grem / 2,
-                  paddingBottom: 0,
+                  padding: p(grem / 2, grem / 2, 0, grem / 2),
                   ...center_text,
                 }}
               >
@@ -466,8 +464,7 @@ class Index extends React.Component {
               <div
                 style={{
                   ...center_text,
-                  padding: grem / 2,
-                  paddingTop: 0,
+                  padding: p(0, grem / 2, grem / 2, grem / 2),
                   ...fs_normal,
                 }}
               >
@@ -490,82 +487,134 @@ class Index extends React.Component {
                 stroke={fs * styles.stroke_mult}
               />
             </div>
-            <div
-              style={{
-                padding: grem / 2,
-                display: 'flex',
-                flexWrap: 'wrap',
-                ...fs_normal,
-              }}
-            >
-              <div style={{ marginRight: grem * (1 / 2) }}>↳ </div>
-              <div style={{ marginRight: grem / 4, display: 'flex' }}>
-                <div style={{ marginRight: grem / 4 }}>Screen:</div>
-                <div style={{ marginRight: grem / 4 }}>
-                  {ww}w{wh}h
-                </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div
+                style={{
+                  padding: p(grem / 2, 0, grem / 2, grem / 2),
+                  height: grem * 2,
+                }}
+              >
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{
+                    height: grem,
+                    width: grem,
+                    lineHeight: 0,
+                  }}
+                >
+                  <rect
+                    x="3"
+                    y="3"
+                    width="42"
+                    height="42"
+                    stroke={logo_stroke}
+                    stroke-width={ff_stroke}
+                  />
+                  <path
+                    d="M3 24H45"
+                    stroke={logo_stroke}
+                    stroke-width={ff_stroke}
+                  />
+                  <path
+                    d="M24 3L24 45"
+                    stroke={logo_stroke}
+                    stroke-width={ff_stroke}
+                  />
+                  <path
+                    d="M3 3L24 24L3 45"
+                    stroke={logo_stroke}
+                    stroke-linejoin="bevel"
+                    stroke-width={ff_stroke}
+                  />
+                  <path
+                    d="M24 3L45 24L24 45"
+                    stroke={logo_stroke}
+                    stroke-linejoin="bevel"
+                    stroke-width={ff_stroke}
+                  />
+                </svg>
               </div>
 
-              <div style={{ marginRight: grem / 4, display: 'flex' }}>
-                <div style={{ marginRight: grem / 4 }}>Mode:</div>
-                <div style={{ marginRight: grem / 4 }}>
-                  {mode === 'light' ? (
-                    'Light'
-                  ) : (
-                    <button
-                      onClick={() => {
-                        window.localStorage.setItem('mode', 'light')
-                        this.setState({ mode: 'light' })
-                      }}
-                    >
-                      Light
-                    </button>
-                  )}
+              <div
+                style={{
+                  padding: grem / 2,
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  ...fs_normal,
+                }}
+              >
+                <div style={{ marginRight: grem / 4, display: 'flex' }}>
+                  <div style={{ marginRight: grem / 4 }}>Screen:</div>
+                  <div style={{ marginRight: grem / 4 }}>
+                    {ww}w{wh}h
+                  </div>
                 </div>
-                <div style={{ marginRight: grem / 4 }}>
-                  {mode === 'dark' ? (
-                    'Dark'
-                  ) : (
-                    <button
-                      onClick={() => {
-                        window.localStorage.setItem('mode', 'dark')
-                        this.setState({ mode: 'dark' })
-                      }}
-                    >
-                      Dark
-                    </button>
-                  )}
+
+                <div style={{ marginRight: grem / 4, display: 'flex' }}>
+                  <div style={{ marginRight: grem / 4 }}>Mode:</div>
+                  <div style={{ marginRight: grem / 4 }}>
+                    {mode === 'light' ? (
+                      'Light'
+                    ) : (
+                      <button
+                        onClick={() => {
+                          window.localStorage.setItem('mode', 'light')
+                          this.setState({ mode: 'light' })
+                        }}
+                      >
+                        Light
+                      </button>
+                    )}
+                  </div>
+                  <div style={{ marginRight: grem / 4 }}>
+                    {mode === 'dark' ? (
+                      'Dark'
+                    ) : (
+                      <button
+                        onClick={() => {
+                          window.localStorage.setItem('mode', 'dark')
+                          this.setState({ mode: 'dark' })
+                        }}
+                      >
+                        Dark
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
-              <div style={{ marginRight: grem / 4, display: 'flex' }}>
-                <div style={{ marginRight: grem / 4 }}>Grid:</div>
-                <div style={{ marginRight: grem / 4 }}>
-                  {grid === 'show' ? (
-                    'Show'
-                  ) : (
-                    <button
-                      onClick={() => {
-                        window.localStorage.setItem('grid', 'show')
-                        this.setState({ grid: 'show' })
-                      }}
-                    >
-                      Show
-                    </button>
-                  )}
-                </div>
-                <div style={{ marginRight: grem / 4 }}>
-                  {grid === 'hide' ? (
-                    'Hide'
-                  ) : (
-                    <button
-                      onClick={() => {
-                        window.localStorage.setItem('grid', 'hide')
-                        this.setState({ grid: 'hide' })
-                      }}
-                    >
-                      Hide
-                    </button>
-                  )}
+                <div style={{ display: 'flex' }}>
+                  <div style={{ marginRight: grem / 4 }}>Grid:</div>
+                  <div style={{ marginRight: grem / 4 }}>
+                    {grid === 'show' ? (
+                      'Show'
+                    ) : (
+                      <button
+                        onClick={() => {
+                          window.localStorage.setItem('grid', 'show')
+                          this.setState({ grid: 'show' })
+                        }}
+                      >
+                        Show
+                      </button>
+                    )}
+                  </div>
+                  <div style={{}}>
+                    {grid === 'hide' ? (
+                      'Hide'
+                    ) : (
+                      <button
+                        onClick={() => {
+                          window.localStorage.setItem('grid', 'hide')
+                          this.setState({ grid: 'hide' })
+                        }}
+                      >
+                        Hide
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
