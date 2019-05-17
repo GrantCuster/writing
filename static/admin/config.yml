@@ -23,5 +23,5 @@ collections:
               - {label: Featured, name: featured, widget: boolean}
               - {label: Description, name: description, widget: text}
               - {label: URL, name: url, widget: string}
-              - {label: "Image URL", name: image_url, widget: string}
+              - {label: Image, name: image, widget: image}
 
