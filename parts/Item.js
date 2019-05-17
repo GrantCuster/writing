@@ -85,6 +85,7 @@ class Item extends React.Component {
               top: top_height,
               width: b.width,
               height: b.height - top_height - bottom_height,
+              backgroundColor: '#dfdfdf',
               backgroundImage: `url(${e.image})`,
               backgroundPosition: 'center center',
               backgroundSize: 'cover',

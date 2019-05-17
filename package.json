@@ -5,25 +5,38 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
+    "dev": "node ./build_post_index && next",
     "start": "next start",
     "build": "next build",
-    "export": "next export",
+    "export": "node ./build_post_index && next build && next export",
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mdx-js/loader": "^1.0.16",
+    "@next/mdx": "^8.1.0",
+    "@zeit/next-mdx": "^1.2.0",
     "binpack-2d": "^1.4.1",
     "chroma-js": "^2.0.3",
+    "gray-matter": "^4.0.2",
+    "html-excerpt": "^0.1.0",
     "isomorphic-fetch": "^2.2.1",
     "isomorphic-unfetch": "^3.0.0",
     "json-loader": "^0.5.7",
     "lodash": "^4.17.11",
     "maxrects-packer": "^2.0.2",
     "next": "^8.0.4",
+    "next-mdx-frontmatter": "^0.0.3",
     "packery": "^2.1.2",
+    "prism-react-renderer": "^0.1.6",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-truncate": "^2.4.0",
+    "react-truncate-forked": "^2.3.13",
+    "remove-markdown": "^0.3.0",
+    "rss": "^1.2.2",
+    "stringify-object": "^3.3.0",
+    "underscore.string": "^3.3.5"
   }
 }
