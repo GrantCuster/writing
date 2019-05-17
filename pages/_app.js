@@ -1,7 +1,7 @@
 import App, { Container } from 'next/app'
 import { PostLayout } from '../parts/Layout'
 import React from 'react'
-import { font_size, line_height, font_min, sm } from '../../exp/parts/Static'
+import { font_size, line_height, font_min, sm } from '../parts/Static'
 import { debounce } from 'lodash'
 import Header from '../parts/Header'
 
