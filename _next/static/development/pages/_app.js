@@ -1,26 +1,5 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_app.js"],{
 
-/***/ "../exp/parts/Static.js":
-/*!******************************!*\
-  !*** ../exp/parts/Static.js ***!
-  \******************************/
-/*! exports provided: font_size, font_min, line_height, sm */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "font_size", function() { return font_size; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "font_min", function() { return font_min; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "line_height", function() { return line_height; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sm", function() { return sm; });
-let font_size = 18
-let font_min = 16
-let line_height = 1.5
-let sm = 0.07
-
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/array/from.js ***!
@@ -25830,6 +25809,3009 @@ module.exports = function shimAssign() {
 
 /***/ }),
 
+/***/ "./node_modules/prism-react-renderer/es/components/Highlight.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/prism-react-renderer/es/components/Highlight.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_normalizeTokens__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/normalizeTokens */ "./node_modules/prism-react-renderer/es/utils/normalizeTokens.js");
+/* harmony import */ var _utils_themeToDict__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/themeToDict */ "./node_modules/prism-react-renderer/es/utils/themeToDict.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+
+
+
+
+var Highlight =
+/*#__PURE__*/
+function (_Component) {
+  _inheritsLoose(Highlight, _Component);
+
+  function Highlight() {
+    var _this;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+    _this.prevTheme = void 0;
+    _this.prevLanguage = void 0;
+    _this.themeDict = void 0;
+
+    _this.getThemeDict = function (props) {
+      if (_this.themeDict !== undefined && props.theme === _this.prevTheme && props.language === _this.prevLanguage) {
+        return _this.themeDict;
+      }
+
+      _this.prevTheme = props.theme;
+      _this.prevLanguage = props.language;
+      var themeDict = props.theme ? Object(_utils_themeToDict__WEBPACK_IMPORTED_MODULE_2__["default"])(props.theme, props.language) : undefined;
+      return _this.themeDict = themeDict;
+    };
+
+    _this.getLineProps = function (_ref) {
+      var key = _ref.key,
+          className = _ref.className,
+          style = _ref.style,
+          line = _ref.line,
+          rest = _objectWithoutPropertiesLoose(_ref, ["key", "className", "style", "line"]);
+
+      var output = _extends({}, rest, {
+        className: "token-line",
+        style: undefined,
+        key: undefined
+      });
+
+      var themeDict = _this.getThemeDict(_this.props);
+
+      if (themeDict !== undefined) {
+        output.style = themeDict.plain;
+      }
+
+      if (style !== undefined) {
+        output.style = output.style !== undefined ? _extends({}, output.style, style) : style;
+      }
+
+      if (key !== undefined) output.key = key;
+      if (className) output.className += " " + className;
+      return output;
+    };
+
+    _this.getStyleForToken = function (_ref2) {
+      var types = _ref2.types,
+          empty = _ref2.empty;
+      var typesSize = types.length;
+
+      var themeDict = _this.getThemeDict(_this.props);
+
+      if (themeDict === undefined) {
+        return undefined;
+      } else if (typesSize === 1 && types[0] === "plain") {
+        return empty ? {
+          display: "inline-block"
+        } : undefined;
+      } else if (typesSize === 1 && !empty) {
+        return themeDict[types[0]];
+      }
+
+      var baseStyle = empty ? {
+        display: "inline-block"
+      } : {}; // $FlowFixMe
+
+      var typeStyles = types.map(function (type) {
+        return themeDict[type];
+      });
+      return Object.assign.apply(Object, [baseStyle].concat(typeStyles));
+    };
+
+    _this.getTokenProps = function (_ref3) {
+      var key = _ref3.key,
+          className = _ref3.className,
+          style = _ref3.style,
+          token = _ref3.token,
+          rest = _objectWithoutPropertiesLoose(_ref3, ["key", "className", "style", "token"]);
+
+      var output = _extends({}, rest, {
+        className: "token " + token.types.join(" "),
+        children: token.content,
+        style: _this.getStyleForToken(token),
+        key: undefined
+      });
+
+      if (style !== undefined) {
+        output.style = output.style !== undefined ? _extends({}, output.style, style) : style;
+      }
+
+      if (key !== undefined) output.key = key;
+      if (className) output.className += " " + className;
+      return output;
+    };
+
+    return _this;
+  }
+
+  var _proto = Highlight.prototype;
+
+  _proto.render = function render() {
+    var _this$props = this.props,
+        Prism = _this$props.Prism,
+        language = _this$props.language,
+        code = _this$props.code,
+        children = _this$props.children;
+    var themeDict = this.getThemeDict(this.props);
+    var grammar = Prism.languages[language];
+    var mixedTokens = grammar !== undefined ? Prism.tokenize(code, grammar, language) : [code];
+    var tokens = Object(_utils_normalizeTokens__WEBPACK_IMPORTED_MODULE_1__["default"])(mixedTokens);
+    return children({
+      tokens: tokens,
+      className: "prism-code language-" + language,
+      style: themeDict !== undefined ? themeDict.root : {},
+      getLineProps: this.getLineProps,
+      getTokenProps: this.getTokenProps
+    });
+  };
+
+  return Highlight;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Highlight);
+
+/***/ }),
+
+/***/ "./node_modules/prism-react-renderer/es/defaultProps.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/prism-react-renderer/es/defaultProps.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vendor_prism__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/prism */ "./node_modules/prism-react-renderer/es/vendor/prism/index.js");
+/* harmony import */ var _themes_duotoneDark__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../themes/duotoneDark */ "./node_modules/prism-react-renderer/themes/duotoneDark.js");
+/* harmony import */ var _themes_duotoneDark__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_themes_duotoneDark__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var defaultProps = {
+  // $FlowFixMe
+  Prism: _vendor_prism__WEBPACK_IMPORTED_MODULE_0__["default"],
+  theme: _themes_duotoneDark__WEBPACK_IMPORTED_MODULE_1___default.a
+};
+/* harmony default export */ __webpack_exports__["default"] = (defaultProps);
+
+/***/ }),
+
+/***/ "./node_modules/prism-react-renderer/es/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/prism-react-renderer/es/index.js ***!
+  \*******************************************************/
+/*! exports provided: Prism, defaultProps, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _vendor_prism__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/prism */ "./node_modules/prism-react-renderer/es/vendor/prism/index.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Prism", function() { return _vendor_prism__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _defaultProps__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./defaultProps */ "./node_modules/prism-react-renderer/es/defaultProps.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "defaultProps", function() { return _defaultProps__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony import */ var _components_Highlight__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Highlight */ "./node_modules/prism-react-renderer/es/components/Highlight.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_components_Highlight__WEBPACK_IMPORTED_MODULE_2__["default"]);
+
+/***/ }),
+
+/***/ "./node_modules/prism-react-renderer/es/utils/normalizeTokens.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/prism-react-renderer/es/utils/normalizeTokens.js ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var newlineRe = /\r\n|\r|\n/; // Empty lines need to contain a single empty token, denoted with { empty: true }
+
+var normalizeEmptyLines = function normalizeEmptyLines(line) {
+  if (line.length === 0) {
+    line.push({
+      types: ["plain"],
+      content: "",
+      empty: true
+    });
+  } else if (line.length === 1 && line[0].content === "") {
+    line[0].empty = true;
+  }
+}; // Takes an array of Prism's tokens and groups them by line, turning plain
+// strings into tokens as well. Tokens can become recursive in some cases,
+// which means that their types are concatenated. Plain-string tokens however
+// are always of type "plain".
+// This is not recursive to avoid exceeding the call-stack limit, since it's unclear
+// how nested Prism's tokens can become
+
+
+var normalizeTokens = function normalizeTokens(tokens) {
+  var typeArrStack = [[]];
+  var tokenArrStack = [tokens];
+  var tokenArrIndexStack = [0];
+  var tokenArrSizeStack = [tokens.length];
+  var i = 0;
+  var stackIndex = 0;
+  var currentLine = [];
+  var acc = [currentLine];
+
+  while (stackIndex > -1) {
+    while ((i = tokenArrIndexStack[stackIndex]++) < tokenArrSizeStack[stackIndex]) {
+      var content = void 0;
+      var types = typeArrStack[stackIndex];
+      var tokenArr = tokenArrStack[stackIndex];
+      var token = tokenArr[i]; // Determine content and append type to types if necessary
+
+      if (typeof token === "string") {
+        types = stackIndex > 0 ? types : ["plain"];
+        content = token;
+      } else {
+        types = types[0] === token.type ? types : types.concat(token.type);
+        content = token.content;
+      } // If token.content is an array, increase the stack depth and repeat this while-loop
+
+
+      if (typeof content !== "string") {
+        stackIndex++;
+        typeArrStack.push(types);
+        tokenArrStack.push(content);
+        tokenArrIndexStack.push(0);
+        tokenArrSizeStack.push(content.length);
+        continue;
+      } // Split by newlines
+
+
+      var splitByNewlines = content.split(newlineRe);
+      var newlineCount = splitByNewlines.length;
+      currentLine.push({
+        types: types,
+        content: splitByNewlines[0]
+      }); // Create a new line for each string on a new line
+
+      for (var _i = 1; _i < newlineCount; _i++) {
+        normalizeEmptyLines(currentLine);
+        acc.push(currentLine = []);
+        currentLine.push({
+          types: types,
+          content: splitByNewlines[_i]
+        });
+      }
+    } // Decreate the stack depth
+
+
+    stackIndex--;
+    typeArrStack.pop();
+    tokenArrStack.pop();
+    tokenArrIndexStack.pop();
+    tokenArrSizeStack.pop();
+  }
+
+  normalizeEmptyLines(currentLine);
+  return acc;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (normalizeTokens);
+
+/***/ }),
+
+/***/ "./node_modules/prism-react-renderer/es/utils/themeToDict.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/prism-react-renderer/es/utils/themeToDict.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var themeToDict = function themeToDict(theme, language) {
+  var plain = theme.plain; // $FlowFixMe
+
+  var base = Object.create(null);
+  var themeDict = theme.styles.reduce(function (acc, themeEntry) {
+    var types = themeEntry.types,
+        languages = themeEntry.languages,
+        style = themeEntry.style;
+
+    if (languages && !languages.includes(language)) {
+      return acc;
+    }
+
+    themeEntry.types.forEach(function (type) {
+      // $FlowFixMe
+      var accStyle = _extends({}, acc[type], style);
+
+      acc[type] = accStyle;
+    });
+    return acc;
+  }, base); // $FlowFixMe
+
+  themeDict.root = plain; // $FlowFixMe
+
+  themeDict.plain = _extends({}, plain, {
+    backgroundColor: null
+  });
+  return themeDict;
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (themeToDict);
+
+/***/ }),
+
+/***/ "./node_modules/prism-react-renderer/es/vendor/prism/index.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/prism-react-renderer/es/vendor/prism/index.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _prism_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./prism-core */ "./node_modules/prism-react-renderer/es/vendor/prism/prism-core.js");
+/* harmony import */ var _prism_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_prism_core__WEBPACK_IMPORTED_MODULE_0__);
+
+
+/* This content is auto-generated to include some prismjs language components: */
+
+/* "prismjs/components/prism-markup" */
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup = {
+  'comment': /<!--[\s\S]*?-->/,
+  'prolog': /<\?[\s\S]+?\?>/,
+  'doctype': /<!DOCTYPE[\s\S]+?>/i,
+  'cdata': /<!\[CDATA\[[\s\S]*?]]>/i,
+  'tag': {
+    pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+))?)*\s*\/?>/i,
+    greedy: true,
+    inside: {
+      'tag': {
+        pattern: /^<\/?[^\s>\/]+/i,
+        inside: {
+          'punctuation': /^<\/?/,
+          'namespace': /^[^\s>\/:]+:/
+        }
+      },
+      'attr-value': {
+        pattern: /=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+)/i,
+        inside: {
+          'punctuation': [/^=/, {
+            pattern: /(^|[^\\])["']/,
+            lookbehind: true
+          }]
+        }
+      },
+      'punctuation': /\/?>/,
+      'attr-name': {
+        pattern: /[^\s>\/]+/,
+        inside: {
+          'namespace': /^[^\s>\/:]+:/
+        }
+      }
+    }
+  },
+  'entity': /&#?[\da-z]{1,8};/i
+};
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup['tag'].inside['attr-value'].inside['entity'] = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup['entity']; // Plugin to make entity title show the real entity, idea by Roman Komarov
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.hooks.add('wrap', function (env) {
+  if (env.type === 'entity') {
+    env.attributes['title'] = env.content.replace(/&amp;/, '&');
+  }
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.xml = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup;
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.html = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup;
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.mathml = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup;
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.svg = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup;
+/* "prismjs/components/prism-bash" */
+
+(function (Prism) {
+  var insideString = {
+    variable: [// Arithmetic Environment
+    {
+      pattern: /\$?\(\([\s\S]+?\)\)/,
+      inside: {
+        // If there is a $ sign at the beginning highlight $(( and )) as variable
+        variable: [{
+          pattern: /(^\$\(\([\s\S]+)\)\)/,
+          lookbehind: true
+        }, /^\$\(\(/],
+        number: /\b0x[\dA-Fa-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:[Ee]-?\d+)?/,
+        // Operators according to https://www.gnu.org/software/bash/manual/bashref.html#Shell-Arithmetic
+        operator: /--?|-=|\+\+?|\+=|!=?|~|\*\*?|\*=|\/=?|%=?|<<=?|>>=?|<=?|>=?|==?|&&?|&=|\^=?|\|\|?|\|=|\?|:/,
+        // If there is no $ sign at the beginning highlight (( and )) as punctuation
+        punctuation: /\(\(?|\)\)?|,|;/
+      }
+    }, // Command Substitution
+    {
+      pattern: /\$\([^)]+\)|`[^`]+`/,
+      greedy: true,
+      inside: {
+        variable: /^\$\(|^`|\)$|`$/
+      }
+    }, /\$(?:[\w#?*!@]+|\{[^}]+\})/i]
+  };
+  Prism.languages.bash = {
+    'shebang': {
+      pattern: /^#!\s*\/bin\/bash|^#!\s*\/bin\/sh/,
+      alias: 'important'
+    },
+    'comment': {
+      pattern: /(^|[^"{\\])#.*/,
+      lookbehind: true
+    },
+    'string': [//Support for Here-Documents https://en.wikipedia.org/wiki/Here_document
+    {
+      pattern: /((?:^|[^<])<<\s*)["']?(\w+?)["']?\s*\r?\n(?:[\s\S])*?\r?\n\2/,
+      lookbehind: true,
+      greedy: true,
+      inside: insideString
+    }, {
+      pattern: /(["'])(?:\\[\s\S]|\$\([^)]+\)|`[^`]+`|(?!\1)[^\\])*\1/,
+      greedy: true,
+      inside: insideString
+    }],
+    'variable': insideString.variable,
+    // Originally based on http://ss64.com/bash/
+    'function': {
+      pattern: /(^|[\s;|&])(?:alias|apropos|apt-get|aptitude|aspell|awk|basename|bash|bc|bg|builtin|bzip2|cal|cat|cd|cfdisk|chgrp|chmod|chown|chroot|chkconfig|cksum|clear|cmp|comm|command|cp|cron|crontab|csplit|curl|cut|date|dc|dd|ddrescue|df|diff|diff3|dig|dir|dircolors|dirname|dirs|dmesg|du|egrep|eject|enable|env|ethtool|eval|exec|expand|expect|export|expr|fdformat|fdisk|fg|fgrep|file|find|fmt|fold|format|free|fsck|ftp|fuser|gawk|getopts|git|grep|groupadd|groupdel|groupmod|groups|gzip|hash|head|help|hg|history|hostname|htop|iconv|id|ifconfig|ifdown|ifup|import|install|jobs|join|kill|killall|less|link|ln|locate|logname|logout|look|lpc|lpr|lprint|lprintd|lprintq|lprm|ls|lsof|make|man|mkdir|mkfifo|mkisofs|mknod|more|most|mount|mtools|mtr|mv|mmv|nano|netstat|nice|nl|nohup|notify-send|npm|nslookup|open|op|passwd|paste|pathchk|ping|pkill|popd|pr|printcap|printenv|printf|ps|pushd|pv|pwd|quota|quotacheck|quotactl|ram|rar|rcp|read|readarray|readonly|reboot|rename|renice|remsync|rev|rm|rmdir|rsync|screen|scp|sdiff|sed|seq|service|sftp|shift|shopt|shutdown|sleep|slocate|sort|source|split|ssh|stat|strace|su|sudo|sum|suspend|sync|tail|tar|tee|test|time|timeout|times|touch|top|traceroute|trap|tr|tsort|tty|type|ulimit|umask|umount|unalias|uname|unexpand|uniq|units|unrar|unshar|uptime|useradd|userdel|usermod|users|uuencode|uudecode|v|vdir|vi|vmstat|wait|watch|wc|wget|whereis|which|who|whoami|write|xargs|xdg-open|yes|zip)(?=$|[\s;|&])/,
+      lookbehind: true
+    },
+    'keyword': {
+      pattern: /(^|[\s;|&])(?:let|:|\.|if|then|else|elif|fi|for|break|continue|while|in|case|function|select|do|done|until|echo|exit|return|set|declare)(?=$|[\s;|&])/,
+      lookbehind: true
+    },
+    'boolean': {
+      pattern: /(^|[\s;|&])(?:true|false)(?=$|[\s;|&])/,
+      lookbehind: true
+    },
+    'operator': /&&?|\|\|?|==?|!=?|<<<?|>>|<=?|>=?|=~/,
+    'punctuation': /\$?\(\(?|\)\)?|\.\.|[{}[\];]/
+  };
+  var inside = insideString.variable[1].inside;
+  inside.string = Prism.languages.bash.string;
+  inside['function'] = Prism.languages.bash['function'];
+  inside.keyword = Prism.languages.bash.keyword;
+  inside['boolean'] = Prism.languages.bash['boolean'];
+  inside.operator = Prism.languages.bash.operator;
+  inside.punctuation = Prism.languages.bash.punctuation;
+  Prism.languages.shell = Prism.languages.bash;
+})(_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a);
+/* "prismjs/components/prism-clike" */
+
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.clike = {
+  'comment': [{
+    pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,
+    lookbehind: true
+  }, {
+    pattern: /(^|[^\\:])\/\/.*/,
+    lookbehind: true,
+    greedy: true
+  }],
+  'string': {
+    pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+    greedy: true
+  },
+  'class-name': {
+    pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[\w.\\]+/i,
+    lookbehind: true,
+    inside: {
+      punctuation: /[.\\]/
+    }
+  },
+  'keyword': /\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,
+  'boolean': /\b(?:true|false)\b/,
+  'function': /[a-z0-9_]+(?=\()/i,
+  'number': /\b0x[\da-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i,
+  'operator': /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,
+  'punctuation': /[{}[\];(),.:]/
+};
+/* "prismjs/components/prism-c" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.c = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('clike', {
+  'keyword': /\b(?:_Alignas|_Alignof|_Atomic|_Bool|_Complex|_Generic|_Imaginary|_Noreturn|_Static_assert|_Thread_local|asm|typeof|inline|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while)\b/,
+  'operator': /-[>-]?|\+\+?|!=?|<<?=?|>>?=?|==?|&&?|\|\|?|[~^%?*\/]/,
+  'number': /(?:\b0x[\da-f]+|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?)[ful]*/i
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('c', 'string', {
+  'macro': {
+    // allow for multiline macro definitions
+    // spaces after the # character compile fine with gcc
+    pattern: /(^\s*)#\s*[a-z]+(?:[^\r\n\\]|\\(?:\r\n|[\s\S]))*/im,
+    lookbehind: true,
+    alias: 'property',
+    inside: {
+      // highlight the path of the include statement as a string
+      'string': {
+        pattern: /(#\s*include\s*)(?:<.+?>|("|')(?:\\?.)+?\2)/,
+        lookbehind: true
+      },
+      // highlight macro directives as keywords
+      'directive': {
+        pattern: /(#\s*)\b(?:define|defined|elif|else|endif|error|ifdef|ifndef|if|import|include|line|pragma|undef|using)\b/,
+        lookbehind: true,
+        alias: 'keyword'
+      }
+    }
+  },
+  // highlight predefined macros as constants
+  'constant': /\b(?:__FILE__|__LINE__|__DATE__|__TIME__|__TIMESTAMP__|__func__|EOF|NULL|SEEK_CUR|SEEK_END|SEEK_SET|stdin|stdout|stderr)\b/
+});
+delete _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.c['class-name'];
+delete _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.c['boolean'];
+/* "prismjs/components/prism-cpp" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.cpp = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('c', {
+  'keyword': /\b(?:alignas|alignof|asm|auto|bool|break|case|catch|char|char16_t|char32_t|class|compl|const|constexpr|const_cast|continue|decltype|default|delete|do|double|dynamic_cast|else|enum|explicit|export|extern|float|for|friend|goto|if|inline|int|int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|long|mutable|namespace|new|noexcept|nullptr|operator|private|protected|public|register|reinterpret_cast|return|short|signed|sizeof|static|static_assert|static_cast|struct|switch|template|this|thread_local|throw|try|typedef|typeid|typename|union|unsigned|using|virtual|void|volatile|wchar_t|while)\b/,
+  'boolean': /\b(?:true|false)\b/,
+  'operator': /--?|\+\+?|!=?|<{1,2}=?|>{1,2}=?|->|:{1,2}|={1,2}|\^|~|%|&{1,2}|\|\|?|\?|\*|\/|\b(?:and|and_eq|bitand|bitor|not|not_eq|or|or_eq|xor|xor_eq)\b/
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('cpp', 'keyword', {
+  'class-name': {
+    pattern: /(class\s+)\w+/i,
+    lookbehind: true
+  }
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('cpp', 'string', {
+  'raw-string': {
+    pattern: /R"([^()\\ ]{0,16})\([\s\S]*?\)\1"/,
+    alias: 'string',
+    greedy: true
+  }
+});
+/* "prismjs/components/prism-css" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.css = {
+  'comment': /\/\*[\s\S]*?\*\//,
+  'atrule': {
+    pattern: /@[\w-]+?.*?(?:;|(?=\s*\{))/i,
+    inside: {
+      'rule': /@[\w-]+/ // See rest below
+
+    }
+  },
+  'url': /url\((?:(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,
+  'selector': /[^{}\s][^{};]*?(?=\s*\{)/,
+  'string': {
+    pattern: /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+    greedy: true
+  },
+  'property': /[-_a-z\xA0-\uFFFF][-\w\xA0-\uFFFF]*(?=\s*:)/i,
+  'important': /\B!important\b/i,
+  'function': /[-a-z0-9]+(?=\()/i,
+  'punctuation': /[(){};:]/
+};
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.css['atrule'].inside.rest = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.css;
+
+if (_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup) {
+  _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('markup', 'tag', {
+    'style': {
+      pattern: /(<style[\s\S]*?>)[\s\S]*?(?=<\/style>)/i,
+      lookbehind: true,
+      inside: _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.css,
+      alias: 'language-css',
+      greedy: true
+    }
+  });
+  _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('inside', 'attr-value', {
+    'style-attr': {
+      pattern: /\s*style=("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/i,
+      inside: {
+        'attr-name': {
+          pattern: /^\s*style/i,
+          inside: _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup.tag.inside
+        },
+        'punctuation': /^\s*=\s*['"]|['"]\s*$/,
+        'attr-value': {
+          pattern: /.+/i,
+          inside: _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.css
+        }
+      },
+      alias: 'language-css'
+    }
+  }, _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup.tag);
+}
+/* "prismjs/components/prism-javascript" */
+
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.javascript = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('clike', {
+  'keyword': /\b(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,
+  'number': /\b(?:0[xX][\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+|NaN|Infinity)\b|(?:\b\d+\.?\d*|\B\.\d+)(?:[Ee][+-]?\d+)?/,
+  // Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
+  'function': /[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*\()/i,
+  'operator': /-[-=]?|\+[+=]?|!=?=?|<<?=?|>>?>?=?|=(?:==?|>)?|&[&=]?|\|[|=]?|\*\*?=?|\/=?|~|\^=?|%=?|\?|\.{3}/
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('javascript', 'keyword', {
+  'regex': {
+    pattern: /((?:^|[^$\w\xA0-\uFFFF."'\])\s])\s*)\/(\[[^\]\r\n]+]|\\.|[^/\\\[\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})\]]))/,
+    lookbehind: true,
+    greedy: true
+  },
+  // This must be declared before keyword because we use "function" inside the look-forward
+  'function-variable': {
+    pattern: /[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*(?=\s*=\s*(?:function\b|(?:\([^()]*\)|[_$a-z\xA0-\uFFFF][$\w\xA0-\uFFFF]*)\s*=>))/i,
+    alias: 'function'
+  },
+  'constant': /\b[A-Z][A-Z\d_]*\b/
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('javascript', 'string', {
+  'template-string': {
+    pattern: /`(?:\\[\s\S]|\${[^}]+}|[^\\`])*`/,
+    greedy: true,
+    inside: {
+      'interpolation': {
+        pattern: /\${[^}]+}/,
+        inside: {
+          'interpolation-punctuation': {
+            pattern: /^\${|}$/,
+            alias: 'punctuation'
+          },
+          rest: null // See below
+
+        }
+      },
+      'string': /[\s\S]+/
+    }
+  }
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.javascript['template-string'].inside['interpolation'].inside.rest = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.javascript;
+
+if (_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup) {
+  _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('markup', 'tag', {
+    'script': {
+      pattern: /(<script[\s\S]*?>)[\s\S]*?(?=<\/script>)/i,
+      lookbehind: true,
+      inside: _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.javascript,
+      alias: 'language-javascript',
+      greedy: true
+    }
+  });
+}
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.js = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.javascript;
+/* "prismjs/components/prism-jsx" */
+
+(function (Prism) {
+  var javascript = Prism.util.clone(Prism.languages.javascript);
+  Prism.languages.jsx = Prism.languages.extend('markup', javascript);
+  Prism.languages.jsx.tag.pattern = /<\/?(?:[\w.:-]+\s*(?:\s+(?:[\w.:-]+(?:=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s{'">=]+|\{(?:\{(?:\{[^}]*\}|[^{}])*\}|[^{}])+\}))?|\{\.{3}[a-z_$][\w$]*(?:\.[a-z_$][\w$]*)*\}))*\s*\/?)?>/i;
+  Prism.languages.jsx.tag.inside['tag'].pattern = /^<\/?[^\s>\/]*/i;
+  Prism.languages.jsx.tag.inside['attr-value'].pattern = /=(?!\{)(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">]+)/i;
+  Prism.languages.insertBefore('inside', 'attr-name', {
+    'spread': {
+      pattern: /\{\.{3}[a-z_$][\w$]*(?:\.[a-z_$][\w$]*)*\}/,
+      inside: {
+        'punctuation': /\.{3}|[{}.]/,
+        'attr-value': /\w+/
+      }
+    }
+  }, Prism.languages.jsx.tag);
+  Prism.languages.insertBefore('inside', 'attr-value', {
+    'script': {
+      // Allow for two levels of nesting
+      pattern: /=(\{(?:\{(?:\{[^}]*\}|[^}])*\}|[^}])+\})/i,
+      inside: {
+        'script-punctuation': {
+          pattern: /^=(?={)/,
+          alias: 'punctuation'
+        },
+        rest: Prism.languages.jsx
+      },
+      'alias': 'language-javascript'
+    }
+  }, Prism.languages.jsx.tag); // The following will handle plain text inside tags
+
+  var stringifyToken = function stringifyToken(token) {
+    if (!token) {
+      return '';
+    }
+
+    if (typeof token === 'string') {
+      return token;
+    }
+
+    if (typeof token.content === 'string') {
+      return token.content;
+    }
+
+    return token.content.map(stringifyToken).join('');
+  };
+
+  var walkTokens = function walkTokens(tokens) {
+    var openedTags = [];
+
+    for (var i = 0; i < tokens.length; i++) {
+      var token = tokens[i];
+      var notTagNorBrace = false;
+
+      if (typeof token !== 'string') {
+        if (token.type === 'tag' && token.content[0] && token.content[0].type === 'tag') {
+          // We found a tag, now find its kind
+          if (token.content[0].content[0].content === '</') {
+            // Closing tag
+            if (openedTags.length > 0 && openedTags[openedTags.length - 1].tagName === stringifyToken(token.content[0].content[1])) {
+              // Pop matching opening tag
+              openedTags.pop();
+            }
+          } else {
+            if (token.content[token.content.length - 1].content === '/>') {} else {
+              // Opening tag
+              openedTags.push({
+                tagName: stringifyToken(token.content[0].content[1]),
+                openedBraces: 0
+              });
+            }
+          }
+        } else if (openedTags.length > 0 && token.type === 'punctuation' && token.content === '{') {
+          // Here we might have entered a JSX context inside a tag
+          openedTags[openedTags.length - 1].openedBraces++;
+        } else if (openedTags.length > 0 && openedTags[openedTags.length - 1].openedBraces > 0 && token.type === 'punctuation' && token.content === '}') {
+          // Here we might have left a JSX context inside a tag
+          openedTags[openedTags.length - 1].openedBraces--;
+        } else {
+          notTagNorBrace = true;
+        }
+      }
+
+      if (notTagNorBrace || typeof token === 'string') {
+        if (openedTags.length > 0 && openedTags[openedTags.length - 1].openedBraces === 0) {
+          // Here we are inside a tag, and not inside a JSX context.
+          // That's plain text: drop any tokens matched.
+          var plainText = stringifyToken(token); // And merge text with adjacent text
+
+          if (i < tokens.length - 1 && (typeof tokens[i + 1] === 'string' || tokens[i + 1].type === 'plain-text')) {
+            plainText += stringifyToken(tokens[i + 1]);
+            tokens.splice(i + 1, 1);
+          }
+
+          if (i > 0 && (typeof tokens[i - 1] === 'string' || tokens[i - 1].type === 'plain-text')) {
+            plainText = stringifyToken(tokens[i - 1]) + plainText;
+            tokens.splice(i - 1, 1);
+            i--;
+          }
+
+          tokens[i] = new Prism.Token('plain-text', plainText, null, plainText);
+        }
+      }
+
+      if (token.content && typeof token.content !== 'string') {
+        walkTokens(token.content);
+      }
+    }
+  };
+
+  Prism.hooks.add('after-tokenize', function (env) {
+    if (env.language !== 'jsx' && env.language !== 'tsx') {
+      return;
+    }
+
+    walkTokens(env.tokens);
+  });
+})(_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a);
+/* "prismjs/components/prism-coffeescript" */
+
+
+(function (Prism) {
+  // Ignore comments starting with { to privilege string interpolation highlighting
+  var comment = /#(?!\{).+/,
+      interpolation = {
+    pattern: /#\{[^}]+\}/,
+    alias: 'variable'
+  };
+  Prism.languages.coffeescript = Prism.languages.extend('javascript', {
+    'comment': comment,
+    'string': [// Strings are multiline
+    {
+      pattern: /'(?:\\[\s\S]|[^\\'])*'/,
+      greedy: true
+    }, {
+      // Strings are multiline
+      pattern: /"(?:\\[\s\S]|[^\\"])*"/,
+      greedy: true,
+      inside: {
+        'interpolation': interpolation
+      }
+    }],
+    'keyword': /\b(?:and|break|by|catch|class|continue|debugger|delete|do|each|else|extend|extends|false|finally|for|if|in|instanceof|is|isnt|let|loop|namespace|new|no|not|null|of|off|on|or|own|return|super|switch|then|this|throw|true|try|typeof|undefined|unless|until|when|while|window|with|yes|yield)\b/,
+    'class-member': {
+      pattern: /@(?!\d)\w+/,
+      alias: 'variable'
+    }
+  });
+  Prism.languages.insertBefore('coffeescript', 'comment', {
+    'multiline-comment': {
+      pattern: /###[\s\S]+?###/,
+      alias: 'comment'
+    },
+    // Block regexp can contain comments and interpolation
+    'block-regex': {
+      pattern: /\/{3}[\s\S]*?\/{3}/,
+      alias: 'regex',
+      inside: {
+        'comment': comment,
+        'interpolation': interpolation
+      }
+    }
+  });
+  Prism.languages.insertBefore('coffeescript', 'string', {
+    'inline-javascript': {
+      pattern: /`(?:\\[\s\S]|[^\\`])*`/,
+      inside: {
+        'delimiter': {
+          pattern: /^`|`$/,
+          alias: 'punctuation'
+        },
+        rest: Prism.languages.javascript
+      }
+    },
+    // Block strings
+    'multiline-string': [{
+      pattern: /'''[\s\S]*?'''/,
+      greedy: true,
+      alias: 'string'
+    }, {
+      pattern: /"""[\s\S]*?"""/,
+      greedy: true,
+      alias: 'string',
+      inside: {
+        interpolation: interpolation
+      }
+    }]
+  });
+  Prism.languages.insertBefore('coffeescript', 'keyword', {
+    // Object property
+    'property': /(?!\d)\w+(?=\s*:(?!:))/
+  });
+  delete Prism.languages.coffeescript['template-string'];
+})(_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a);
+/* "prismjs/components/prism-actionscript" */
+
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.actionscript = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('javascript', {
+  'keyword': /\b(?:as|break|case|catch|class|const|default|delete|do|else|extends|finally|for|function|if|implements|import|in|instanceof|interface|internal|is|native|new|null|package|private|protected|public|return|super|switch|this|throw|try|typeof|use|var|void|while|with|dynamic|each|final|get|include|namespace|native|override|set|static)\b/,
+  'operator': /\+\+|--|(?:[+\-*\/%^]|&&?|\|\|?|<<?|>>?>?|[!=]=?)=?|[~?@]/
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.actionscript['class-name'].alias = 'function';
+
+if (_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup) {
+  _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('actionscript', 'string', {
+    'xml': {
+      pattern: /(^|[^.])<\/?\w+(?:\s+[^\s>\/=]+=("|')(?:\\[\s\S]|(?!\2)[^\\])*\2)*\s*\/?>/,
+      lookbehind: true,
+      inside: {
+        rest: _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup
+      }
+    }
+  });
+}
+/* "prismjs/components/prism-css-extras" */
+
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.css.selector = {
+  pattern: /[^{}\s][^{}]*(?=\s*\{)/,
+  inside: {
+    'pseudo-element': /:(?:after|before|first-letter|first-line|selection)|::[-\w]+/,
+    'pseudo-class': /:[-\w]+(?:\(.*\))?/,
+    'class': /\.[-:.\w]+/,
+    'id': /#[-:.\w]+/,
+    'attribute': /\[[^\]]+\]/
+  }
+};
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('css', 'function', {
+  'hexcode': /#[\da-f]{3,8}/i,
+  'entity': /\\[\da-f]{1,8}/i,
+  'number': /[\d%.]+/
+});
+/* "prismjs/components/prism-diff" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.diff = {
+  'coord': [// Match all kinds of coord lines (prefixed by "+++", "---" or "***").
+  /^(?:\*{3}|-{3}|\+{3}).*$/m, // Match "@@ ... @@" coord lines in unified diff.
+  /^@@.*@@$/m, // Match coord lines in normal diff (starts with a number).
+  /^\d+.*$/m],
+  // Match inserted and deleted lines. Support both +/- and >/< styles.
+  'deleted': /^[-<].*$/m,
+  'inserted': /^[+>].*$/m,
+  // Match "different" lines (prefixed with "!") in context diff.
+  'diff': {
+    'pattern': /^!(?!!).+$/m,
+    'alias': 'important'
+  }
+};
+/* "prismjs/components/prism-docker" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.docker = {
+  'keyword': {
+    pattern: /(^\s*)(?:ADD|ARG|CMD|COPY|ENTRYPOINT|ENV|EXPOSE|FROM|HEALTHCHECK|LABEL|MAINTAINER|ONBUILD|RUN|SHELL|STOPSIGNAL|USER|VOLUME|WORKDIR)(?=\s)/mi,
+    lookbehind: true
+  },
+  'string': /("|')(?:(?!\1)[^\\\r\n]|\\(?:\r\n|[\s\S]))*\1/,
+  'comment': /#.*/,
+  'punctuation': /---|\.\.\.|[:[\]{}\-,|>?]/
+};
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.dockerfile = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.docker;
+/* "prismjs/components/prism-elixir" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.elixir = {
+  'comment': {
+    pattern: /#.*/m,
+    lookbehind: true
+  },
+  // ~r"""foo""" (multi-line), ~r'''foo''' (multi-line), ~r/foo/, ~r|foo|, ~r"foo", ~r'foo', ~r(foo), ~r[foo], ~r{foo}, ~r<foo>
+  'regex': {
+    pattern: /~[rR](?:("""|''')(?:\\[\s\S]|(?!\1)[^\\])+\1|([\/|"'])(?:\\.|(?!\2)[^\\\r\n])+\2|\((?:\\.|[^\\)\r\n])+\)|\[(?:\\.|[^\\\]\r\n])+\]|\{(?:\\.|[^\\}\r\n])+\}|<(?:\\.|[^\\>\r\n])+>)[uismxfr]*/,
+    greedy: true
+  },
+  'string': [{
+    // ~s"""foo""" (multi-line), ~s'''foo''' (multi-line), ~s/foo/, ~s|foo|, ~s"foo", ~s'foo', ~s(foo), ~s[foo], ~s{foo} (with interpolation care), ~s<foo>
+    pattern: /~[cCsSwW](?:("""|''')(?:\\[\s\S]|(?!\1)[^\\])+\1|([\/|"'])(?:\\.|(?!\2)[^\\\r\n])+\2|\((?:\\.|[^\\)\r\n])+\)|\[(?:\\.|[^\\\]\r\n])+\]|\{(?:\\.|#\{[^}]+\}|[^\\}\r\n])+\}|<(?:\\.|[^\\>\r\n])+>)[csa]?/,
+    greedy: true,
+    inside: {}
+  }, {
+    pattern: /("""|''')[\s\S]*?\1/,
+    greedy: true,
+    inside: {}
+  }, {
+    // Multi-line strings are allowed
+    pattern: /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+    greedy: true,
+    inside: {}
+  }],
+  'atom': {
+    // Look-behind prevents bad highlighting of the :: operator
+    pattern: /(^|[^:]):\w+/,
+    lookbehind: true,
+    alias: 'symbol'
+  },
+  // Look-ahead prevents bad highlighting of the :: operator
+  'attr-name': /\w+:(?!:)/,
+  'capture': {
+    // Look-behind prevents bad highlighting of the && operator
+    pattern: /(^|[^&])&(?:[^&\s\d()][^\s()]*|(?=\())/,
+    lookbehind: true,
+    alias: 'function'
+  },
+  'argument': {
+    // Look-behind prevents bad highlighting of the && operator
+    pattern: /(^|[^&])&\d+/,
+    lookbehind: true,
+    alias: 'variable'
+  },
+  'attribute': {
+    pattern: /@\w+/,
+    alias: 'variable'
+  },
+  'number': /\b(?:0[box][a-f\d_]+|\d[\d_]*)(?:\.[\d_]+)?(?:e[+-]?[\d_]+)?\b/i,
+  'keyword': /\b(?:after|alias|and|case|catch|cond|def(?:callback|exception|impl|module|p|protocol|struct)?|do|else|end|fn|for|if|import|not|or|require|rescue|try|unless|use|when)\b/,
+  'boolean': /\b(?:true|false|nil)\b/,
+  'operator': [/\bin\b|&&?|\|[|>]?|\\\\|::|\.\.\.?|\+\+?|-[->]?|<[-=>]|>=|!==?|\B!|=(?:==?|[>~])?|[*\/^]/, {
+    // We don't want to match <<
+    pattern: /([^<])<(?!<)/,
+    lookbehind: true
+  }, {
+    // We don't want to match >>
+    pattern: /([^>])>(?!>)/,
+    lookbehind: true
+  }],
+  'punctuation': /<<|>>|[.,%\[\]{}()]/
+};
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.elixir.string.forEach(function (o) {
+  o.inside = {
+    'interpolation': {
+      pattern: /#\{[^}]+\}/,
+      inside: {
+        'delimiter': {
+          pattern: /^#\{|\}$/,
+          alias: 'punctuation'
+        },
+        rest: _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.elixir
+      }
+    }
+  };
+});
+/* "prismjs/components/prism-erlang" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.erlang = {
+  'comment': /%.+/,
+  'string': {
+    pattern: /"(?:\\.|[^\\"\r\n])*"/,
+    greedy: true
+  },
+  'quoted-function': {
+    pattern: /'(?:\\.|[^\\'\r\n])+'(?=\()/,
+    alias: 'function'
+  },
+  'quoted-atom': {
+    pattern: /'(?:\\.|[^\\'\r\n])+'/,
+    alias: 'atom'
+  },
+  'boolean': /\b(?:true|false)\b/,
+  'keyword': /\b(?:fun|when|case|of|end|if|receive|after|try|catch)\b/,
+  'number': [/\$\\?./, /\d+#[a-z0-9]+/i, /(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?/i],
+  'function': /\b[a-z][\w@]*(?=\()/,
+  'variable': {
+    // Look-behind is used to prevent wrong highlighting of atoms containing "@"
+    pattern: /(^|[^@])(?:\b|\?)[A-Z_][\w@]*/,
+    lookbehind: true
+  },
+  'operator': [/[=\/<>:]=|=[:\/]=|\+\+?|--?|[=*\/!]|\b(?:bnot|div|rem|band|bor|bxor|bsl|bsr|not|and|or|xor|orelse|andalso)\b/, {
+    // We don't want to match <<
+    pattern: /(^|[^<])<(?!<)/,
+    lookbehind: true
+  }, {
+    // We don't want to match >>
+    pattern: /(^|[^>])>(?!>)/,
+    lookbehind: true
+  }],
+  'atom': /\b[a-z][\w@]*/,
+  'punctuation': /[()[\]{}:;,.#|]|<<|>>/
+};
+/* "prismjs/components/prism-git" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.git = {
+  /*
+   * A simple one line comment like in a git status command
+   * For instance:
+   * $ git status
+   * # On branch infinite-scroll
+   * # Your branch and 'origin/sharedBranches/frontendTeam/infinite-scroll' have diverged,
+   * # and have 1 and 2 different commits each, respectively.
+   * nothing to commit (working directory clean)
+   */
+  'comment': /^#.*/m,
+
+  /*
+   * Regexp to match the changed lines in a git diff output. Check the example below.
+   */
+  'deleted': /^[-–].*/m,
+  'inserted': /^\+.*/m,
+
+  /*
+   * a string (double and simple quote)
+   */
+  'string': /("|')(?:\\.|(?!\1)[^\\\r\n])*\1/m,
+
+  /*
+   * a git command. It starts with a random prompt finishing by a $, then "git" then some other parameters
+   * For instance:
+   * $ git add file.txt
+   */
+  'command': {
+    pattern: /^.*\$ git .*$/m,
+    inside: {
+      /*
+       * A git command can contain a parameter starting by a single or a double dash followed by a string
+       * For instance:
+       * $ git diff --cached
+       * $ git log -p
+       */
+      'parameter': /\s--?\w+/m
+    }
+  },
+
+  /*
+   * Coordinates displayed in a git diff command
+   * For instance:
+   * $ git diff
+   * diff --git file.txt file.txt
+   * index 6214953..1d54a52 100644
+   * --- file.txt
+   * +++ file.txt
+   * @@ -1 +1,2 @@
+   * -Here's my tetx file
+   * +Here's my text file
+   * +And this is the second line
+   */
+  'coord': /^@@.*@@$/m,
+
+  /*
+   * Match a "commit [SHA1]" line in a git log output.
+   * For instance:
+   * $ git log
+   * commit a11a14ef7e26f2ca62d4b35eac455ce636d0dc09
+   * Author: lgiraudel
+   * Date:   Mon Feb 17 11:18:34 2014 +0100
+   *
+   *     Add of a new line
+   */
+  'commit_sha1': /^commit \w{40}$/m
+};
+/* "prismjs/components/prism-go" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.go = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('clike', {
+  'keyword': /\b(?:break|case|chan|const|continue|default|defer|else|fallthrough|for|func|go(?:to)?|if|import|interface|map|package|range|return|select|struct|switch|type|var)\b/,
+  'builtin': /\b(?:bool|byte|complex(?:64|128)|error|float(?:32|64)|rune|string|u?int(?:8|16|32|64)?|uintptr|append|cap|close|complex|copy|delete|imag|len|make|new|panic|print(?:ln)?|real|recover)\b/,
+  'boolean': /\b(?:_|iota|nil|true|false)\b/,
+  'operator': /[*\/%^!=]=?|\+[=+]?|-[=-]?|\|[=|]?|&(?:=|&|\^=?)?|>(?:>=?|=)?|<(?:<=?|=|-)?|:=|\.\.\./,
+  'number': /(?:\b0x[a-f\d]+|(?:\b\d+\.?\d*|\B\.\d+)(?:e[-+]?\d+)?)i?/i,
+  'string': {
+    pattern: /(["'`])(\\[\s\S]|(?!\1)[^\\])*\1/,
+    greedy: true
+  }
+});
+delete _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.go['class-name'];
+/* "prismjs/components/prism-graphql" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.graphql = {
+  'comment': /#.*/,
+  'string': {
+    pattern: /"(?:\\.|[^\\"\r\n])*"/,
+    greedy: true
+  },
+  'number': /(?:\B-|\b)\d+(?:\.\d+)?(?:e[+-]?\d+)?\b/i,
+  'boolean': /\b(?:true|false)\b/,
+  'variable': /\$[a-z_]\w*/i,
+  'directive': {
+    pattern: /@[a-z_]\w*/i,
+    alias: 'function'
+  },
+  'attr-name': /[a-z_]\w*(?=\s*:)/i,
+  'keyword': [{
+    pattern: /(fragment\s+(?!on)[a-z_]\w*\s+|\.{3}\s*)on\b/,
+    lookbehind: true
+  }, /\b(?:query|fragment|mutation)\b/],
+  'operator': /!|=|\.{3}/,
+  'punctuation': /[!(){}\[\]:=,]/
+};
+/* "prismjs/components/prism-markup-templating" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages['markup-templating'] = {};
+Object.defineProperties(_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages['markup-templating'], {
+  buildPlaceholders: {
+    // Tokenize all inline templating expressions matching placeholderPattern
+    // If the replaceFilter function is provided, it will be called with every match.
+    // If it returns false, the match will not be replaced.
+    value: function value(env, language, placeholderPattern, replaceFilter) {
+      if (env.language !== language) {
+        return;
+      }
+
+      env.tokenStack = [];
+      env.code = env.code.replace(placeholderPattern, function (match) {
+        if (typeof replaceFilter === 'function' && !replaceFilter(match)) {
+          return match;
+        }
+
+        var i = env.tokenStack.length; // Check for existing strings
+
+        while (env.code.indexOf('___' + language.toUpperCase() + i + '___') !== -1) {
+          ++i;
+        } // Create a sparse array
+
+
+        env.tokenStack[i] = match;
+        return '___' + language.toUpperCase() + i + '___';
+      }); // Switch the grammar to markup
+
+      env.grammar = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markup;
+    }
+  },
+  tokenizePlaceholders: {
+    // Replace placeholders with proper tokens after tokenizing
+    value: function value(env, language) {
+      if (env.language !== language || !env.tokenStack) {
+        return;
+      } // Switch the grammar back
+
+
+      env.grammar = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages[language];
+      var j = 0;
+      var keys = Object.keys(env.tokenStack);
+
+      var walkTokens = function walkTokens(tokens) {
+        if (j >= keys.length) {
+          return;
+        }
+
+        for (var i = 0; i < tokens.length; i++) {
+          var token = tokens[i];
+
+          if (typeof token === 'string' || token.content && typeof token.content === 'string') {
+            var k = keys[j];
+            var t = env.tokenStack[k];
+            var s = typeof token === 'string' ? token : token.content;
+            var index = s.indexOf('___' + language.toUpperCase() + k + '___');
+
+            if (index > -1) {
+              ++j;
+              var before = s.substring(0, index);
+              var middle = new _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.Token(language, _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.tokenize(t, env.grammar, language), 'language-' + language, t);
+              var after = s.substring(index + ('___' + language.toUpperCase() + k + '___').length);
+              var replacement;
+
+              if (before || after) {
+                replacement = [before, middle, after].filter(function (v) {
+                  return !!v;
+                });
+                walkTokens(replacement);
+              } else {
+                replacement = middle;
+              }
+
+              if (typeof token === 'string') {
+                Array.prototype.splice.apply(tokens, [i, 1].concat(replacement));
+              } else {
+                token.content = replacement;
+              }
+
+              if (j >= keys.length) {
+                break;
+              }
+            }
+          } else if (token.content && typeof token.content !== 'string') {
+            walkTokens(token.content);
+          }
+        }
+      };
+
+      walkTokens(env.tokens);
+    }
+  }
+});
+/* "prismjs/components/prism-handlebars" */
+
+(function (Prism) {
+  Prism.languages.handlebars = {
+    'comment': /\{\{![\s\S]*?\}\}/,
+    'delimiter': {
+      pattern: /^\{\{\{?|\}\}\}?$/i,
+      alias: 'punctuation'
+    },
+    'string': /(["'])(?:\\.|(?!\1)[^\\\r\n])*\1/,
+    'number': /\b0x[\dA-Fa-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:[Ee][+-]?\d+)?/,
+    'boolean': /\b(?:true|false)\b/,
+    'block': {
+      pattern: /^(\s*~?\s*)[#\/]\S+?(?=\s*~?\s*$|\s)/i,
+      lookbehind: true,
+      alias: 'keyword'
+    },
+    'brackets': {
+      pattern: /\[[^\]]+\]/,
+      inside: {
+        punctuation: /\[|\]/,
+        variable: /[\s\S]+/
+      }
+    },
+    'punctuation': /[!"#%&'()*+,.\/;<=>@\[\\\]^`{|}~]/,
+    'variable': /[^!"#%&'()*+,.\/;<=>@\[\\\]^`{|}~\s]+/
+  };
+  Prism.hooks.add('before-tokenize', function (env) {
+    var handlebarsPattern = /\{\{\{[\s\S]+?\}\}\}|\{\{[\s\S]+?\}\}/g;
+    Prism.languages['markup-templating'].buildPlaceholders(env, 'handlebars', handlebarsPattern);
+  });
+  Prism.hooks.add('after-tokenize', function (env) {
+    Prism.languages['markup-templating'].tokenizePlaceholders(env, 'handlebars');
+  });
+})(_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a);
+/* "prismjs/components/prism-haskell" */
+
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.haskell = {
+  'comment': {
+    pattern: /(^|[^-!#$%*+=?&@|~.:<>^\\\/])(?:--[^-!#$%*+=?&@|~.:<>^\\\/].*|{-[\s\S]*?-})/m,
+    lookbehind: true
+  },
+  'char': /'(?:[^\\']|\\(?:[abfnrtv\\"'&]|\^[A-Z@[\]^_]|NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|\d+|o[0-7]+|x[0-9a-fA-F]+))'/,
+  'string': {
+    pattern: /"(?:[^\\"]|\\(?:[abfnrtv\\"'&]|\^[A-Z@[\]^_]|NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC1|DC2|DC3|DC4|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|SP|DEL|\d+|o[0-7]+|x[0-9a-fA-F]+)|\\\s+\\)*"/,
+    greedy: true
+  },
+  'keyword': /\b(?:case|class|data|deriving|do|else|if|in|infixl|infixr|instance|let|module|newtype|of|primitive|then|type|where)\b/,
+  'import_statement': {
+    // The imported or hidden names are not included in this import
+    // statement. This is because we want to highlight those exactly like
+    // we do for the names in the program.
+    pattern: /((?:\r?\n|\r|^)\s*)import\s+(?:qualified\s+)?(?:[A-Z][\w']*)(?:\.[A-Z][\w']*)*(?:\s+as\s+(?:[A-Z][_a-zA-Z0-9']*)(?:\.[A-Z][\w']*)*)?(?:\s+hiding\b)?/m,
+    lookbehind: true,
+    inside: {
+      'keyword': /\b(?:import|qualified|as|hiding)\b/
+    }
+  },
+  // These are builtin variables only. Constructors are highlighted later as a constant.
+  'builtin': /\b(?:abs|acos|acosh|all|and|any|appendFile|approxRational|asTypeOf|asin|asinh|atan|atan2|atanh|basicIORun|break|catch|ceiling|chr|compare|concat|concatMap|const|cos|cosh|curry|cycle|decodeFloat|denominator|digitToInt|div|divMod|drop|dropWhile|either|elem|encodeFloat|enumFrom|enumFromThen|enumFromThenTo|enumFromTo|error|even|exp|exponent|fail|filter|flip|floatDigits|floatRadix|floatRange|floor|fmap|foldl|foldl1|foldr|foldr1|fromDouble|fromEnum|fromInt|fromInteger|fromIntegral|fromRational|fst|gcd|getChar|getContents|getLine|group|head|id|inRange|index|init|intToDigit|interact|ioError|isAlpha|isAlphaNum|isAscii|isControl|isDenormalized|isDigit|isHexDigit|isIEEE|isInfinite|isLower|isNaN|isNegativeZero|isOctDigit|isPrint|isSpace|isUpper|iterate|last|lcm|length|lex|lexDigits|lexLitChar|lines|log|logBase|lookup|map|mapM|mapM_|max|maxBound|maximum|maybe|min|minBound|minimum|mod|negate|not|notElem|null|numerator|odd|or|ord|otherwise|pack|pi|pred|primExitWith|print|product|properFraction|putChar|putStr|putStrLn|quot|quotRem|range|rangeSize|read|readDec|readFile|readFloat|readHex|readIO|readInt|readList|readLitChar|readLn|readOct|readParen|readSigned|reads|readsPrec|realToFrac|recip|rem|repeat|replicate|return|reverse|round|scaleFloat|scanl|scanl1|scanr|scanr1|seq|sequence|sequence_|show|showChar|showInt|showList|showLitChar|showParen|showSigned|showString|shows|showsPrec|significand|signum|sin|sinh|snd|sort|span|splitAt|sqrt|subtract|succ|sum|tail|take|takeWhile|tan|tanh|threadToIOResult|toEnum|toInt|toInteger|toLower|toRational|toUpper|truncate|uncurry|undefined|unlines|until|unwords|unzip|unzip3|userError|words|writeFile|zip|zip3|zipWith|zipWith3)\b/,
+  // decimal integers and floating point numbers | octal integers | hexadecimal integers
+  'number': /\b(?:\d+(?:\.\d+)?(?:e[+-]?\d+)?|0o[0-7]+|0x[0-9a-f]+)\b/i,
+  // Most of this is needed because of the meaning of a single '.'.
+  // If it stands alone freely, it is the function composition.
+  // It may also be a separator between a module name and an identifier => no
+  // operator. If it comes together with other special characters it is an
+  // operator too.
+  'operator': /\s\.\s|[-!#$%*+=?&@|~.:<>^\\\/]*\.[-!#$%*+=?&@|~.:<>^\\\/]+|[-!#$%*+=?&@|~.:<>^\\\/]+\.[-!#$%*+=?&@|~.:<>^\\\/]*|[-!#$%*+=?&@|~:<>^\\\/]+|`([A-Z][\w']*\.)*[_a-z][\w']*`/,
+  // In Haskell, nearly everything is a variable, do not highlight these.
+  'hvariable': /\b(?:[A-Z][\w']*\.)*[_a-z][\w']*\b/,
+  'constant': /\b(?:[A-Z][\w']*\.)*[A-Z][\w']*\b/,
+  'punctuation': /[{}[\];(),.:]/
+};
+/* "prismjs/components/prism-java" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.java = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('clike', {
+  'keyword': /\b(?:abstract|continue|for|new|switch|assert|default|goto|package|synchronized|boolean|do|if|private|this|break|double|implements|protected|throw|byte|else|import|public|throws|case|enum|instanceof|return|transient|catch|extends|int|short|try|char|final|interface|static|void|class|finally|long|strictfp|volatile|const|float|native|super|while)\b/,
+  'number': /\b0b[01]+\b|\b0x[\da-f]*\.?[\da-fp-]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:e[+-]?\d+)?[df]?/i,
+  'operator': {
+    pattern: /(^|[^.])(?:\+[+=]?|-[-=]?|!=?|<<?=?|>>?>?=?|==?|&[&=]?|\|[|=]?|\*=?|\/=?|%=?|\^=?|[?:~])/m,
+    lookbehind: true
+  }
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('java', 'function', {
+  'annotation': {
+    alias: 'punctuation',
+    pattern: /(^|[^.])@\w+/,
+    lookbehind: true
+  }
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('java', 'class-name', {
+  'generics': {
+    pattern: /<\s*\w+(?:\.\w+)?(?:\s*,\s*\w+(?:\.\w+)?)*>/i,
+    alias: 'function',
+    inside: {
+      keyword: _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.java.keyword,
+      punctuation: /[<>(),.:]/
+    }
+  }
+});
+/* "prismjs/components/prism-json" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.json = {
+  'property': /"(?:\\.|[^\\"\r\n])*"(?=\s*:)/i,
+  'string': {
+    pattern: /"(?:\\.|[^\\"\r\n])*"(?!\s*:)/,
+    greedy: true
+  },
+  'number': /\b0x[\dA-Fa-f]+\b|(?:\b\d+\.?\d*|\B\.\d+)(?:[Ee][+-]?\d+)?/,
+  'punctuation': /[{}[\]);,]/,
+  'operator': /:/g,
+  'boolean': /\b(?:true|false)\b/i,
+  'null': /\bnull\b/i
+};
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.jsonp = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.json;
+/* "prismjs/components/prism-latex" */
+
+(function (Prism) {
+  var funcPattern = /\\(?:[^a-z()[\]]|[a-z*]+)/i,
+      insideEqu = {
+    'equation-command': {
+      pattern: funcPattern,
+      alias: 'regex'
+    }
+  };
+  Prism.languages.latex = {
+    'comment': /%.*/m,
+    // the verbatim environment prints whitespace to the document
+    'cdata': {
+      pattern: /(\\begin\{((?:verbatim|lstlisting)\*?)\})[\s\S]*?(?=\\end\{\2\})/,
+      lookbehind: true
+    },
+
+    /*
+     * equations can be between $ $ or \( \) or \[ \]
+     * (all are multiline)
+     */
+    'equation': [{
+      pattern: /\$(?:\\[\s\S]|[^\\$])*\$|\\\([\s\S]*?\\\)|\\\[[\s\S]*?\\\]/,
+      inside: insideEqu,
+      alias: 'string'
+    }, {
+      pattern: /(\\begin\{((?:equation|math|eqnarray|align|multline|gather)\*?)\})[\s\S]*?(?=\\end\{\2\})/,
+      lookbehind: true,
+      inside: insideEqu,
+      alias: 'string'
+    }],
+
+    /*
+     * arguments which are keywords or references are highlighted
+     * as keywords
+     */
+    'keyword': {
+      pattern: /(\\(?:begin|end|ref|cite|label|usepackage|documentclass)(?:\[[^\]]+\])?\{)[^}]+(?=\})/,
+      lookbehind: true
+    },
+    'url': {
+      pattern: /(\\url\{)[^}]+(?=\})/,
+      lookbehind: true
+    },
+
+    /*
+     * section or chapter headlines are highlighted as bold so that
+     * they stand out more
+     */
+    'headline': {
+      pattern: /(\\(?:part|chapter|section|subsection|frametitle|subsubsection|paragraph|subparagraph|subsubparagraph|subsubsubparagraph)\*?(?:\[[^\]]+\])?\{)[^}]+(?=\}(?:\[[^\]]+\])?)/,
+      lookbehind: true,
+      alias: 'class-name'
+    },
+    'function': {
+      pattern: funcPattern,
+      alias: 'selector'
+    },
+    'punctuation': /[[\]{}&]/
+  };
+})(_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a);
+/* "prismjs/components/prism-less" */
+
+/* FIXME :
+ :extend() is not handled specifically : its highlighting is buggy.
+ Mixin usage must be inside a ruleset to be highlighted.
+ At-rules (e.g. import) containing interpolations are buggy.
+ Detached rulesets are highlighted as at-rules.
+ A comment before a mixin usage prevents the latter to be properly highlighted.
+ */
+
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.less = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('css', {
+  'comment': [/\/\*[\s\S]*?\*\//, {
+    pattern: /(^|[^\\])\/\/.*/,
+    lookbehind: true
+  }],
+  'atrule': {
+    pattern: /@[\w-]+?(?:\([^{}]+\)|[^(){};])*?(?=\s*\{)/i,
+    inside: {
+      'punctuation': /[:()]/
+    }
+  },
+  // selectors and mixins are considered the same
+  'selector': {
+    pattern: /(?:@\{[\w-]+\}|[^{};\s@])(?:@\{[\w-]+\}|\([^{}]*\)|[^{};@])*?(?=\s*\{)/,
+    inside: {
+      // mixin parameters
+      'variable': /@+[\w-]+/
+    }
+  },
+  'property': /(?:@\{[\w-]+\}|[\w-])+(?:\+_?)?(?=\s*:)/i,
+  'punctuation': /[{}();:,]/,
+  'operator': /[+\-*\/]/
+}); // Invert function and punctuation positions
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('less', 'punctuation', {
+  'function': _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.less.function
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('less', 'property', {
+  'variable': [// Variable declaration (the colon must be consumed!)
+  {
+    pattern: /@[\w-]+\s*:/,
+    inside: {
+      "punctuation": /:/
+    }
+  }, // Variable usage
+  /@@?[\w-]+/],
+  'mixin-usage': {
+    pattern: /([{;]\s*)[.#](?!\d)[\w-]+.*?(?=[(;])/,
+    lookbehind: true,
+    alias: 'function'
+  }
+});
+/* "prismjs/components/prism-makefile" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.makefile = {
+  'comment': {
+    pattern: /(^|[^\\])#(?:\\(?:\r\n|[\s\S])|[^\\\r\n])*/,
+    lookbehind: true
+  },
+  'string': {
+    pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+    greedy: true
+  },
+  // Built-in target names
+  'builtin': /\.[A-Z][^:#=\s]+(?=\s*:(?!=))/,
+  // Targets
+  'symbol': {
+    pattern: /^[^:=\r\n]+(?=\s*:(?!=))/m,
+    inside: {
+      'variable': /\$+(?:[^(){}:#=\s]+|(?=[({]))/
+    }
+  },
+  'variable': /\$+(?:[^(){}:#=\s]+|\([@*%<^+?][DF]\)|(?=[({]))/,
+  'keyword': [// Directives
+  /-include\b|\b(?:define|else|endef|endif|export|ifn?def|ifn?eq|include|override|private|sinclude|undefine|unexport|vpath)\b/, // Functions
+  {
+    pattern: /(\()(?:addsuffix|abspath|and|basename|call|dir|error|eval|file|filter(?:-out)?|findstring|firstword|flavor|foreach|guile|if|info|join|lastword|load|notdir|or|origin|patsubst|realpath|shell|sort|strip|subst|suffix|value|warning|wildcard|word(?:s|list)?)(?=[ \t])/,
+    lookbehind: true
+  }],
+  'operator': /(?:::|[?:+!])?=|[|@]/,
+  'punctuation': /[:;(){}]/
+};
+/* "prismjs/components/prism-markdown" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markdown = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('markup', {});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('markdown', 'prolog', {
+  'blockquote': {
+    // > ...
+    pattern: /^>(?:[\t ]*>)*/m,
+    alias: 'punctuation'
+  },
+  'code': [{
+    // Prefixed by 4 spaces or 1 tab
+    pattern: /^(?: {4}|\t).+/m,
+    alias: 'keyword'
+  }, {
+    // `code`
+    // ``code``
+    pattern: /``.+?``|`[^`\n]+`/,
+    alias: 'keyword'
+  }],
+  'title': [{
+    // title 1
+    // =======
+    // title 2
+    // -------
+    pattern: /\w+.*(?:\r?\n|\r)(?:==+|--+)/,
+    alias: 'important',
+    inside: {
+      punctuation: /==+$|--+$/
+    }
+  }, {
+    // # title 1
+    // ###### title 6
+    pattern: /(^\s*)#+.+/m,
+    lookbehind: true,
+    alias: 'important',
+    inside: {
+      punctuation: /^#+|#+$/
+    }
+  }],
+  'hr': {
+    // ***
+    // ---
+    // * * *
+    // -----------
+    pattern: /(^\s*)([*-])(?:[\t ]*\2){2,}(?=\s*$)/m,
+    lookbehind: true,
+    alias: 'punctuation'
+  },
+  'list': {
+    // * item
+    // + item
+    // - item
+    // 1. item
+    pattern: /(^\s*)(?:[*+-]|\d+\.)(?=[\t ].)/m,
+    lookbehind: true,
+    alias: 'punctuation'
+  },
+  'url-reference': {
+    // [id]: http://example.com "Optional title"
+    // [id]: http://example.com 'Optional title'
+    // [id]: http://example.com (Optional title)
+    // [id]: <http://example.com> "Optional title"
+    pattern: /!?\[[^\]]+\]:[\t ]+(?:\S+|<(?:\\.|[^>\\])+>)(?:[\t ]+(?:"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\((?:\\.|[^)\\])*\)))?/,
+    inside: {
+      'variable': {
+        pattern: /^(!?\[)[^\]]+/,
+        lookbehind: true
+      },
+      'string': /(?:"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\((?:\\.|[^)\\])*\))$/,
+      'punctuation': /^[\[\]!:]|[<>]/
+    },
+    alias: 'url'
+  },
+  'bold': {
+    // **strong**
+    // __strong__
+    // Allow only one line break
+    pattern: /(^|[^\\])(\*\*|__)(?:(?:\r?\n|\r)(?!\r?\n|\r)|.)+?\2/,
+    lookbehind: true,
+    inside: {
+      'punctuation': /^\*\*|^__|\*\*$|__$/
+    }
+  },
+  'italic': {
+    // *em*
+    // _em_
+    // Allow only one line break
+    pattern: /(^|[^\\])([*_])(?:(?:\r?\n|\r)(?!\r?\n|\r)|.)+?\2/,
+    lookbehind: true,
+    inside: {
+      'punctuation': /^[*_]|[*_]$/
+    }
+  },
+  'url': {
+    // [example](http://example.com "Optional title")
+    // [example] [id]
+    pattern: /!?\[[^\]]+\](?:\([^\s)]+(?:[\t ]+"(?:\\.|[^"\\])*")?\)| ?\[[^\]\n]*\])/,
+    inside: {
+      'variable': {
+        pattern: /(!?\[)[^\]]+(?=\]$)/,
+        lookbehind: true
+      },
+      'string': {
+        pattern: /"(?:\\.|[^"\\])*"(?=\)$)/
+      }
+    }
+  }
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markdown['bold'].inside['url'] = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markdown['url'];
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markdown['italic'].inside['url'] = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markdown['url'];
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markdown['bold'].inside['italic'] = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markdown['italic'];
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markdown['italic'].inside['bold'] = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.markdown['bold'];
+/* "prismjs/components/prism-objectivec" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.objectivec = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('c', {
+  'keyword': /\b(?:asm|typeof|inline|auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while|in|self|super)\b|(?:@interface|@end|@implementation|@protocol|@class|@public|@protected|@private|@property|@try|@catch|@finally|@throw|@synthesize|@dynamic|@selector)\b/,
+  'string': /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1|@"(?:\\(?:\r\n|[\s\S])|[^"\\\r\n])*"/,
+  'operator': /-[->]?|\+\+?|!=?|<<?=?|>>?=?|==?|&&?|\|\|?|[~^%?*\/@]/
+});
+/* "prismjs/components/prism-ocaml" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.ocaml = {
+  'comment': /\(\*[\s\S]*?\*\)/,
+  'string': [{
+    pattern: /"(?:\\.|[^\\\r\n"])*"/,
+    greedy: true
+  }, {
+    pattern: /(['`])(?:\\(?:\d+|x[\da-f]+|.)|(?!\1)[^\\\r\n])\1/i,
+    greedy: true
+  }],
+  'number': /\b(?:0x[\da-f][\da-f_]+|(?:0[bo])?\d[\d_]*\.?[\d_]*(?:e[+-]?[\d_]+)?)/i,
+  'type': {
+    pattern: /\B['`]\w*/,
+    alias: 'variable'
+  },
+  'directive': {
+    pattern: /\B#\w+/,
+    alias: 'function'
+  },
+  'keyword': /\b(?:as|assert|begin|class|constraint|do|done|downto|else|end|exception|external|for|fun|function|functor|if|in|include|inherit|initializer|lazy|let|match|method|module|mutable|new|object|of|open|prefix|private|rec|then|sig|struct|to|try|type|val|value|virtual|where|while|with)\b/,
+  'boolean': /\b(?:false|true)\b/,
+  // Custom operators are allowed
+  'operator': /:=|[=<>@^|&+\-*\/$%!?~][!$%&*+\-.\/:<=>?@^|~]*|\b(?:and|asr|land|lor|lxor|lsl|lsr|mod|nor|or)\b/,
+  'punctuation': /[(){}\[\]|_.,:;]/
+};
+/* "prismjs/components/prism-php" */
+
+/**
+ * Original by Aaron Harun: http://aahacreative.com/2012/07/31/php-syntax-highlighting-prism/
+ * Modified by Miles Johnson: http://milesj.me
+ *
+ * Supports the following:
+ * 		- Extends clike syntax
+ * 		- Support for PHP 5.3+ (namespaces, traits, generators, etc)
+ * 		- Smarter constant and function matching
+ *
+ * Adds the following new token classes:
+ * 		constant, delimiter, variable, function, package
+ */
+
+(function (Prism) {
+  Prism.languages.php = Prism.languages.extend('clike', {
+    'keyword': /\b(?:and|or|xor|array|as|break|case|cfunction|class|const|continue|declare|default|die|do|else|elseif|enddeclare|endfor|endforeach|endif|endswitch|endwhile|extends|for|foreach|function|include|include_once|global|if|new|return|static|switch|use|require|require_once|var|while|abstract|interface|public|implements|private|protected|parent|throw|null|echo|print|trait|namespace|final|yield|goto|instanceof|finally|try|catch)\b/i,
+    'constant': /\b[A-Z0-9_]{2,}\b/,
+    'comment': {
+      pattern: /(^|[^\\])(?:\/\*[\s\S]*?\*\/|\/\/.*)/,
+      lookbehind: true
+    }
+  });
+  Prism.languages.insertBefore('php', 'string', {
+    'shell-comment': {
+      pattern: /(^|[^\\])#.*/,
+      lookbehind: true,
+      alias: 'comment'
+    }
+  });
+  Prism.languages.insertBefore('php', 'keyword', {
+    'delimiter': {
+      pattern: /\?>|<\?(?:php|=)?/i,
+      alias: 'important'
+    },
+    'variable': /\$+(?:\w+\b|(?={))/i,
+    'package': {
+      pattern: /(\\|namespace\s+|use\s+)[\w\\]+/,
+      lookbehind: true,
+      inside: {
+        punctuation: /\\/
+      }
+    }
+  }); // Must be defined after the function pattern
+
+  Prism.languages.insertBefore('php', 'operator', {
+    'property': {
+      pattern: /(->)[\w]+/,
+      lookbehind: true
+    }
+  });
+  Prism.languages.insertBefore('php', 'string', {
+    'nowdoc-string': {
+      pattern: /<<<'([^']+)'(?:\r\n?|\n)(?:.*(?:\r\n?|\n))*?\1;/,
+      greedy: true,
+      alias: 'string',
+      inside: {
+        'delimiter': {
+          pattern: /^<<<'[^']+'|[a-z_]\w*;$/i,
+          alias: 'symbol',
+          inside: {
+            'punctuation': /^<<<'?|[';]$/
+          }
+        }
+      }
+    },
+    'heredoc-string': {
+      pattern: /<<<(?:"([^"]+)"(?:\r\n?|\n)(?:.*(?:\r\n?|\n))*?\1;|([a-z_]\w*)(?:\r\n?|\n)(?:.*(?:\r\n?|\n))*?\2;)/i,
+      greedy: true,
+      alias: 'string',
+      inside: {
+        'delimiter': {
+          pattern: /^<<<(?:"[^"]+"|[a-z_]\w*)|[a-z_]\w*;$/i,
+          alias: 'symbol',
+          inside: {
+            'punctuation': /^<<<"?|[";]$/
+          }
+        },
+        'interpolation': null // See below
+
+      }
+    },
+    'single-quoted-string': {
+      pattern: /'(?:\\[\s\S]|[^\\'])*'/,
+      greedy: true,
+      alias: 'string'
+    },
+    'double-quoted-string': {
+      pattern: /"(?:\\[\s\S]|[^\\"])*"/,
+      greedy: true,
+      alias: 'string',
+      inside: {
+        'interpolation': null // See below
+
+      }
+    }
+  }); // The different types of PHP strings "replace" the C-like standard string
+
+  delete Prism.languages.php['string'];
+  var string_interpolation = {
+    pattern: /{\$(?:{(?:{[^{}]+}|[^{}]+)}|[^{}])+}|(^|[^\\{])\$+(?:\w+(?:\[.+?]|->\w+)*)/,
+    lookbehind: true,
+    inside: {
+      rest: Prism.languages.php
+    }
+  };
+  Prism.languages.php['heredoc-string'].inside['interpolation'] = string_interpolation;
+  Prism.languages.php['double-quoted-string'].inside['interpolation'] = string_interpolation;
+  Prism.hooks.add('before-tokenize', function (env) {
+    if (!/(?:<\?php|<\?)/ig.test(env.code)) {
+      return;
+    }
+
+    var phpPattern = /(?:<\?php|<\?)[\s\S]*?(?:\?>|$)/ig;
+    Prism.languages['markup-templating'].buildPlaceholders(env, 'php', phpPattern);
+  });
+  Prism.hooks.add('after-tokenize', function (env) {
+    Prism.languages['markup-templating'].tokenizePlaceholders(env, 'php');
+  });
+})(_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a);
+/* "prismjs/components/prism-php-extras" */
+
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('php', 'variable', {
+  'this': /\$this\b/,
+  'global': /\$(?:_(?:SERVER|GET|POST|FILES|REQUEST|SESSION|ENV|COOKIE)|GLOBALS|HTTP_RAW_POST_DATA|argc|argv|php_errormsg|http_response_header)\b/,
+  'scope': {
+    pattern: /\b[\w\\]+::/,
+    inside: {
+      keyword: /static|self|parent/,
+      punctuation: /::|\\/
+    }
+  }
+});
+/* "prismjs/components/prism-python" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.python = {
+  'comment': {
+    pattern: /(^|[^\\])#.*/,
+    lookbehind: true
+  },
+  'triple-quoted-string': {
+    pattern: /("""|''')[\s\S]+?\1/,
+    greedy: true,
+    alias: 'string'
+  },
+  'string': {
+    pattern: /("|')(?:\\.|(?!\1)[^\\\r\n])*\1/,
+    greedy: true
+  },
+  'function': {
+    pattern: /((?:^|\s)def[ \t]+)[a-zA-Z_]\w*(?=\s*\()/g,
+    lookbehind: true
+  },
+  'class-name': {
+    pattern: /(\bclass\s+)\w+/i,
+    lookbehind: true
+  },
+  'keyword': /\b(?:as|assert|async|await|break|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|nonlocal|pass|print|raise|return|try|while|with|yield)\b/,
+  'builtin': /\b(?:__import__|abs|all|any|apply|ascii|basestring|bin|bool|buffer|bytearray|bytes|callable|chr|classmethod|cmp|coerce|compile|complex|delattr|dict|dir|divmod|enumerate|eval|execfile|file|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|intern|isinstance|issubclass|iter|len|list|locals|long|map|max|memoryview|min|next|object|oct|open|ord|pow|property|range|raw_input|reduce|reload|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|unichr|unicode|vars|xrange|zip)\b/,
+  'boolean': /\b(?:True|False|None)\b/,
+  'number': /(?:\b(?=\d)|\B(?=\.))(?:0[bo])?(?:(?:\d|0x[\da-f])[\da-f]*\.?\d*|\.\d+)(?:e[+-]?\d+)?j?\b/i,
+  'operator': /[-+%=]=?|!=|\*\*?=?|\/\/?=?|<[<=>]?|>[=>]?|[&|^~]|\b(?:or|and|not)\b/,
+  'punctuation': /[{}[\];(),.:]/
+};
+/* "prismjs/components/prism-reason" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.reason = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('clike', {
+  'comment': {
+    pattern: /(^|[^\\])\/\*[\s\S]*?\*\//,
+    lookbehind: true
+  },
+  'string': {
+    pattern: /"(?:\\(?:\r\n|[\s\S])|[^\\\r\n"])*"/,
+    greedy: true
+  },
+  // 'class-name' must be matched *after* 'constructor' defined below
+  'class-name': /\b[A-Z]\w*/,
+  'keyword': /\b(?:and|as|assert|begin|class|constraint|do|done|downto|else|end|exception|external|for|fun|function|functor|if|in|include|inherit|initializer|lazy|let|method|module|mutable|new|nonrec|object|of|open|or|private|rec|sig|struct|switch|then|to|try|type|val|virtual|when|while|with)\b/,
+  'operator': /\.{3}|:[:=]|=(?:==?|>)?|<=?|>=?|[|^?'#!~`]|[+\-*\/]\.?|\b(?:mod|land|lor|lxor|lsl|lsr|asr)\b/
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('reason', 'class-name', {
+  'character': {
+    pattern: /'(?:\\x[\da-f]{2}|\\o[0-3][0-7][0-7]|\\\d{3}|\\.|[^'\\\r\n])'/,
+    alias: 'string'
+  },
+  'constructor': {
+    // Negative look-ahead prevents from matching things like String.capitalize
+    pattern: /\b[A-Z]\w*\b(?!\s*\.)/,
+    alias: 'variable'
+  },
+  'label': {
+    pattern: /\b[a-z]\w*(?=::)/,
+    alias: 'symbol'
+  }
+}); // We can't match functions property, so let's not even try.
+
+delete _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.reason.function;
+/* "prismjs/components/prism-ruby" */
+
+/**
+ * Original by Samuel Flores
+ *
+ * Adds the following new token classes:
+ * 		constant, builtin, variable, symbol, regex
+ */
+
+(function (Prism) {
+  Prism.languages.ruby = Prism.languages.extend('clike', {
+    'comment': [/#.*/, {
+      pattern: /^=begin(?:\r?\n|\r)(?:.*(?:\r?\n|\r))*?=end/m,
+      greedy: true
+    }],
+    'keyword': /\b(?:alias|and|BEGIN|begin|break|case|class|def|define_method|defined|do|each|else|elsif|END|end|ensure|false|for|if|in|module|new|next|nil|not|or|protected|private|public|raise|redo|require|rescue|retry|return|self|super|then|throw|true|undef|unless|until|when|while|yield)\b/
+  });
+  var interpolation = {
+    pattern: /#\{[^}]+\}/,
+    inside: {
+      'delimiter': {
+        pattern: /^#\{|\}$/,
+        alias: 'tag'
+      },
+      rest: Prism.languages.ruby
+    }
+  };
+  Prism.languages.insertBefore('ruby', 'keyword', {
+    'regex': [{
+      pattern: /%r([^a-zA-Z0-9\s{(\[<])(?:(?!\1)[^\\]|\\[\s\S])*\1[gim]{0,3}/,
+      greedy: true,
+      inside: {
+        'interpolation': interpolation
+      }
+    }, {
+      pattern: /%r\((?:[^()\\]|\\[\s\S])*\)[gim]{0,3}/,
+      greedy: true,
+      inside: {
+        'interpolation': interpolation
+      }
+    }, {
+      // Here we need to specifically allow interpolation
+      pattern: /%r\{(?:[^#{}\\]|#(?:\{[^}]+\})?|\\[\s\S])*\}[gim]{0,3}/,
+      greedy: true,
+      inside: {
+        'interpolation': interpolation
+      }
+    }, {
+      pattern: /%r\[(?:[^\[\]\\]|\\[\s\S])*\][gim]{0,3}/,
+      greedy: true,
+      inside: {
+        'interpolation': interpolation
+      }
+    }, {
+      pattern: /%r<(?:[^<>\\]|\\[\s\S])*>[gim]{0,3}/,
+      greedy: true,
+      inside: {
+        'interpolation': interpolation
+      }
+    }, {
+      pattern: /(^|[^/])\/(?!\/)(\[.+?]|\\.|[^/\\\r\n])+\/[gim]{0,3}(?=\s*($|[\r\n,.;})]))/,
+      lookbehind: true,
+      greedy: true
+    }],
+    'variable': /[@$]+[a-zA-Z_]\w*(?:[?!]|\b)/,
+    'symbol': {
+      pattern: /(^|[^:]):[a-zA-Z_]\w*(?:[?!]|\b)/,
+      lookbehind: true
+    }
+  });
+  Prism.languages.insertBefore('ruby', 'number', {
+    'builtin': /\b(?:Array|Bignum|Binding|Class|Continuation|Dir|Exception|FalseClass|File|Stat|Fixnum|Float|Hash|Integer|IO|MatchData|Method|Module|NilClass|Numeric|Object|Proc|Range|Regexp|String|Struct|TMS|Symbol|ThreadGroup|Thread|Time|TrueClass)\b/,
+    'constant': /\b[A-Z]\w*(?:[?!]|\b)/
+  });
+  Prism.languages.ruby.string = [{
+    pattern: /%[qQiIwWxs]?([^a-zA-Z0-9\s{(\[<])(?:(?!\1)[^\\]|\\[\s\S])*\1/,
+    greedy: true,
+    inside: {
+      'interpolation': interpolation
+    }
+  }, {
+    pattern: /%[qQiIwWxs]?\((?:[^()\\]|\\[\s\S])*\)/,
+    greedy: true,
+    inside: {
+      'interpolation': interpolation
+    }
+  }, {
+    // Here we need to specifically allow interpolation
+    pattern: /%[qQiIwWxs]?\{(?:[^#{}\\]|#(?:\{[^}]+\})?|\\[\s\S])*\}/,
+    greedy: true,
+    inside: {
+      'interpolation': interpolation
+    }
+  }, {
+    pattern: /%[qQiIwWxs]?\[(?:[^\[\]\\]|\\[\s\S])*\]/,
+    greedy: true,
+    inside: {
+      'interpolation': interpolation
+    }
+  }, {
+    pattern: /%[qQiIwWxs]?<(?:[^<>\\]|\\[\s\S])*>/,
+    greedy: true,
+    inside: {
+      'interpolation': interpolation
+    }
+  }, {
+    pattern: /("|')(?:#\{[^}]+\}|\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+    greedy: true,
+    inside: {
+      'interpolation': interpolation
+    }
+  }];
+})(_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a);
+/* "prismjs/components/prism-rust" */
+
+/* TODO
+	Add support for Markdown notation inside doc comments
+	Add support for nested block comments...
+	Match closure params even when not followed by dash or brace
+	Add better support for macro definition
+*/
+
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.rust = {
+  'comment': [{
+    pattern: /(^|[^\\])\/\*[\s\S]*?\*\//,
+    lookbehind: true
+  }, {
+    pattern: /(^|[^\\:])\/\/.*/,
+    lookbehind: true
+  }],
+  'string': [{
+    pattern: /b?r(#*)"(?:\\.|(?!"\1)[^\\\r\n])*"\1/,
+    greedy: true
+  }, {
+    pattern: /b?"(?:\\.|[^\\\r\n"])*"/,
+    greedy: true
+  }],
+  'char': {
+    pattern: /b?'(?:\\(?:x[0-7][\da-fA-F]|u{(?:[\da-fA-F]_*){1,6}|.)|[^\\\r\n\t'])'/,
+    alias: 'string'
+  },
+  'lifetime-annotation': {
+    pattern: /'[^\s>']+/,
+    alias: 'symbol'
+  },
+  'keyword': /\b(?:abstract|alignof|as|be|box|break|const|continue|crate|do|else|enum|extern|false|final|fn|for|if|impl|in|let|loop|match|mod|move|mut|offsetof|once|override|priv|pub|pure|ref|return|sizeof|static|self|struct|super|true|trait|type|typeof|unsafe|unsized|use|virtual|where|while|yield)\b/,
+  'attribute': {
+    pattern: /#!?\[.+?\]/,
+    greedy: true,
+    alias: 'attr-name'
+  },
+  'function': [/\w+(?=\s*\()/, // Macros can use parens or brackets
+  /\w+!(?=\s*\(|\[)/],
+  'macro-rules': {
+    pattern: /\w+!/,
+    alias: 'function'
+  },
+  // Hex, oct, bin, dec numbers with visual separators and type suffix
+  'number': /\b(?:0x[\dA-Fa-f](?:_?[\dA-Fa-f])*|0o[0-7](?:_?[0-7])*|0b[01](?:_?[01])*|(\d(?:_?\d)*)?\.?\d(?:_?\d)*(?:[Ee][+-]?\d+)?)(?:_?(?:[iu](?:8|16|32|64)?|f32|f64))?\b/,
+  // Closure params should not be confused with bitwise OR |
+  'closure-params': {
+    pattern: /\|[^|]*\|(?=\s*[{-])/,
+    inside: {
+      'punctuation': /[|:,]/,
+      'operator': /[&*]/
+    }
+  },
+  'punctuation': /[{}[\];(),:]|\.+|->/,
+  'operator': /[-+*\/%!^]=?|=[=>]?|@|&[&=]?|\|[|=]?|<<?=?|>>?=?/
+};
+/* "prismjs/components/prism-sass" */
+
+(function (Prism) {
+  Prism.languages.sass = Prism.languages.extend('css', {
+    // Sass comments don't need to be closed, only indented
+    'comment': {
+      pattern: /^([ \t]*)\/[\/*].*(?:(?:\r?\n|\r)\1[ \t]+.+)*/m,
+      lookbehind: true
+    }
+  });
+  Prism.languages.insertBefore('sass', 'atrule', {
+    // We want to consume the whole line
+    'atrule-line': {
+      // Includes support for = and + shortcuts
+      pattern: /^(?:[ \t]*)[@+=].+/m,
+      inside: {
+        'atrule': /(?:@[\w-]+|[+=])/m
+      }
+    }
+  });
+  delete Prism.languages.sass.atrule;
+  var variable = /\$[-\w]+|#\{\$[-\w]+\}/;
+  var operator = [/[+*\/%]|[=!]=|<=?|>=?|\b(?:and|or|not)\b/, {
+    pattern: /(\s+)-(?=\s)/,
+    lookbehind: true
+  }];
+  Prism.languages.insertBefore('sass', 'property', {
+    // We want to consume the whole line
+    'variable-line': {
+      pattern: /^[ \t]*\$.+/m,
+      inside: {
+        'punctuation': /:/,
+        'variable': variable,
+        'operator': operator
+      }
+    },
+    // We want to consume the whole line
+    'property-line': {
+      pattern: /^[ \t]*(?:[^:\s]+ *:.*|:[^:\s]+.*)/m,
+      inside: {
+        'property': [/[^:\s]+(?=\s*:)/, {
+          pattern: /(:)[^:\s]+/,
+          lookbehind: true
+        }],
+        'punctuation': /:/,
+        'variable': variable,
+        'operator': operator,
+        'important': Prism.languages.sass.important
+      }
+    }
+  });
+  delete Prism.languages.sass.property;
+  delete Prism.languages.sass.important; // Now that whole lines for other patterns are consumed,
+  // what's left should be selectors
+
+  delete Prism.languages.sass.selector;
+  Prism.languages.insertBefore('sass', 'punctuation', {
+    'selector': {
+      pattern: /([ \t]*)\S(?:,?[^,\r\n]+)*(?:,(?:\r?\n|\r)\1[ \t]+\S(?:,?[^,\r\n]+)*)*/,
+      lookbehind: true
+    }
+  });
+})(_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a);
+/* "prismjs/components/prism-scss" */
+
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.scss = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('css', {
+  'comment': {
+    pattern: /(^|[^\\])(?:\/\*[\s\S]*?\*\/|\/\/.*)/,
+    lookbehind: true
+  },
+  'atrule': {
+    pattern: /@[\w-]+(?:\([^()]+\)|[^(])*?(?=\s+[{;])/,
+    inside: {
+      'rule': /@[\w-]+/ // See rest below
+
+    }
+  },
+  // url, compassified
+  'url': /(?:[-a-z]+-)*url(?=\()/i,
+  // CSS selector regex is not appropriate for Sass
+  // since there can be lot more things (var, @ directive, nesting..)
+  // a selector must start at the end of a property or after a brace (end of other rules or nesting)
+  // it can contain some characters that aren't used for defining rules or end of selector, & (parent selector), or interpolated variable
+  // the end of a selector is found when there is no rules in it ( {} or {\s}) or if there is a property (because an interpolated var
+  // can "pass" as a selector- e.g: proper#{$erty})
+  // this one was hard to do, so please be careful if you edit this one :)
+  'selector': {
+    // Initial look-ahead is used to prevent matching of blank selectors
+    pattern: /(?=\S)[^@;{}()]?(?:[^@;{}()]|&|#\{\$[-\w]+\})+(?=\s*\{(?:\}|\s|[^}]+[:{][^}]+))/m,
+    inside: {
+      'parent': {
+        pattern: /&/,
+        alias: 'important'
+      },
+      'placeholder': /%[-\w]+/,
+      'variable': /\$[-\w]+|#\{\$[-\w]+\}/
+    }
+  }
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('scss', 'atrule', {
+  'keyword': [/@(?:if|else(?: if)?|for|each|while|import|extend|debug|warn|mixin|include|function|return|content)/i, {
+    pattern: /( +)(?:from|through)(?= )/,
+    lookbehind: true
+  }]
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.scss.property = {
+  pattern: /(?:[\w-]|\$[-\w]+|#\{\$[-\w]+\})+(?=\s*:)/i,
+  inside: {
+    'variable': /\$[-\w]+|#\{\$[-\w]+\}/
+  }
+};
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('scss', 'important', {
+  // var and interpolated vars
+  'variable': /\$[-\w]+|#\{\$[-\w]+\}/
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.insertBefore('scss', 'function', {
+  'placeholder': {
+    pattern: /%[-\w]+/,
+    alias: 'selector'
+  },
+  'statement': {
+    pattern: /\B!(?:default|optional)\b/i,
+    alias: 'keyword'
+  },
+  'boolean': /\b(?:true|false)\b/,
+  'null': /\bnull\b/,
+  'operator': {
+    pattern: /(\s)(?:[-+*\/%]|[=!]=|<=?|>=?|and|or|not)(?=\s)/,
+    lookbehind: true
+  }
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.scss['atrule'].inside.rest = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.scss;
+/* "prismjs/components/prism-sql" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.sql = {
+  'comment': {
+    pattern: /(^|[^\\])(?:\/\*[\s\S]*?\*\/|(?:--|\/\/|#).*)/,
+    lookbehind: true
+  },
+  'string': {
+    pattern: /(^|[^@\\])("|')(?:\\[\s\S]|(?!\2)[^\\])*\2/,
+    greedy: true,
+    lookbehind: true
+  },
+  'variable': /@[\w.$]+|@(["'`])(?:\\[\s\S]|(?!\1)[^\\])+\1/,
+  'function': /\b(?:AVG|COUNT|FIRST|FORMAT|LAST|LCASE|LEN|MAX|MID|MIN|MOD|NOW|ROUND|SUM|UCASE)(?=\s*\()/i,
+  // Should we highlight user defined functions too?
+  'keyword': /\b(?:ACTION|ADD|AFTER|ALGORITHM|ALL|ALTER|ANALYZE|ANY|APPLY|AS|ASC|AUTHORIZATION|AUTO_INCREMENT|BACKUP|BDB|BEGIN|BERKELEYDB|BIGINT|BINARY|BIT|BLOB|BOOL|BOOLEAN|BREAK|BROWSE|BTREE|BULK|BY|CALL|CASCADED?|CASE|CHAIN|CHAR(?:ACTER|SET)?|CHECK(?:POINT)?|CLOSE|CLUSTERED|COALESCE|COLLATE|COLUMNS?|COMMENT|COMMIT(?:TED)?|COMPUTE|CONNECT|CONSISTENT|CONSTRAINT|CONTAINS(?:TABLE)?|CONTINUE|CONVERT|CREATE|CROSS|CURRENT(?:_DATE|_TIME|_TIMESTAMP|_USER)?|CURSOR|CYCLE|DATA(?:BASES?)?|DATE(?:TIME)?|DAY|DBCC|DEALLOCATE|DEC|DECIMAL|DECLARE|DEFAULT|DEFINER|DELAYED|DELETE|DELIMITERS?|DENY|DESC|DESCRIBE|DETERMINISTIC|DISABLE|DISCARD|DISK|DISTINCT|DISTINCTROW|DISTRIBUTED|DO|DOUBLE|DROP|DUMMY|DUMP(?:FILE)?|DUPLICATE|ELSE(?:IF)?|ENABLE|ENCLOSED|END|ENGINE|ENUM|ERRLVL|ERRORS|ESCAPED?|EXCEPT|EXEC(?:UTE)?|EXISTS|EXIT|EXPLAIN|EXTENDED|FETCH|FIELDS|FILE|FILLFACTOR|FIRST|FIXED|FLOAT|FOLLOWING|FOR(?: EACH ROW)?|FORCE|FOREIGN|FREETEXT(?:TABLE)?|FROM|FULL|FUNCTION|GEOMETRY(?:COLLECTION)?|GLOBAL|GOTO|GRANT|GROUP|HANDLER|HASH|HAVING|HOLDLOCK|HOUR|IDENTITY(?:_INSERT|COL)?|IF|IGNORE|IMPORT|INDEX|INFILE|INNER|INNODB|INOUT|INSERT|INT|INTEGER|INTERSECT|INTERVAL|INTO|INVOKER|ISOLATION|ITERATE|JOIN|KEYS?|KILL|LANGUAGE|LAST|LEAVE|LEFT|LEVEL|LIMIT|LINENO|LINES|LINESTRING|LOAD|LOCAL|LOCK|LONG(?:BLOB|TEXT)|LOOP|MATCH(?:ED)?|MEDIUM(?:BLOB|INT|TEXT)|MERGE|MIDDLEINT|MINUTE|MODE|MODIFIES|MODIFY|MONTH|MULTI(?:LINESTRING|POINT|POLYGON)|NATIONAL|NATURAL|NCHAR|NEXT|NO|NONCLUSTERED|NULLIF|NUMERIC|OFF?|OFFSETS?|ON|OPEN(?:DATASOURCE|QUERY|ROWSET)?|OPTIMIZE|OPTION(?:ALLY)?|ORDER|OUT(?:ER|FILE)?|OVER|PARTIAL|PARTITION|PERCENT|PIVOT|PLAN|POINT|POLYGON|PRECEDING|PRECISION|PREPARE|PREV|PRIMARY|PRINT|PRIVILEGES|PROC(?:EDURE)?|PUBLIC|PURGE|QUICK|RAISERROR|READS?|REAL|RECONFIGURE|REFERENCES|RELEASE|RENAME|REPEAT(?:ABLE)?|REPLACE|REPLICATION|REQUIRE|RESIGNAL|RESTORE|RESTRICT|RETURNS?|REVOKE|RIGHT|ROLLBACK|ROUTINE|ROW(?:COUNT|GUIDCOL|S)?|RTREE|RULE|SAVE(?:POINT)?|SCHEMA|SECOND|SELECT|SERIAL(?:IZABLE)?|SESSION(?:_USER)?|SET(?:USER)?|SHARE|SHOW|SHUTDOWN|SIMPLE|SMALLINT|SNAPSHOT|SOME|SONAME|SQL|START(?:ING)?|STATISTICS|STATUS|STRIPED|SYSTEM_USER|TABLES?|TABLESPACE|TEMP(?:ORARY|TABLE)?|TERMINATED|TEXT(?:SIZE)?|THEN|TIME(?:STAMP)?|TINY(?:BLOB|INT|TEXT)|TOP?|TRAN(?:SACTIONS?)?|TRIGGER|TRUNCATE|TSEQUAL|TYPES?|UNBOUNDED|UNCOMMITTED|UNDEFINED|UNION|UNIQUE|UNLOCK|UNPIVOT|UNSIGNED|UPDATE(?:TEXT)?|USAGE|USE|USER|USING|VALUES?|VAR(?:BINARY|CHAR|CHARACTER|YING)|VIEW|WAITFOR|WARNINGS|WHEN|WHERE|WHILE|WITH(?: ROLLUP|IN)?|WORK|WRITE(?:TEXT)?|YEAR)\b/i,
+  'boolean': /\b(?:TRUE|FALSE|NULL)\b/i,
+  'number': /\b0x[\da-f]+\b|\b\d+\.?\d*|\B\.\d+\b/i,
+  'operator': /[-+*\/=%^~]|&&?|\|\|?|!=?|<(?:=>?|<|>)?|>[>=]?|\b(?:AND|BETWEEN|IN|LIKE|NOT|OR|IS|DIV|REGEXP|RLIKE|SOUNDS LIKE|XOR)\b/i,
+  'punctuation': /[;[\]()`,.]/
+};
+/* "prismjs/components/prism-stylus" */
+
+(function (Prism) {
+  var inside = {
+    'url': /url\((["']?).*?\1\)/i,
+    'string': {
+      pattern: /("|')(?:(?!\1)[^\\\r\n]|\\(?:\r\n|[\s\S]))*\1/,
+      greedy: true
+    },
+    'interpolation': null,
+    // See below
+    'func': null,
+    // See below
+    'important': /\B!(?:important|optional)\b/i,
+    'keyword': {
+      pattern: /(^|\s+)(?:(?:if|else|for|return|unless)(?=\s+|$)|@[\w-]+)/,
+      lookbehind: true
+    },
+    'hexcode': /#[\da-f]{3,6}/i,
+    'number': /\b\d+(?:\.\d+)?%?/,
+    'boolean': /\b(?:true|false)\b/,
+    'operator': [// We want non-word chars around "-" because it is
+    // accepted in property names.
+    /~|[+!\/%<>?=]=?|[-:]=|\*[*=]?|\.+|&&|\|\||\B-\B|\b(?:and|in|is(?: a| defined| not|nt)?|not|or)\b/],
+    'punctuation': /[{}()\[\];:,]/
+  };
+  inside['interpolation'] = {
+    pattern: /\{[^\r\n}:]+\}/,
+    alias: 'variable',
+    inside: {
+      'delimiter': {
+        pattern: /^{|}$/,
+        alias: 'punctuation'
+      },
+      rest: inside
+    }
+  };
+  inside['func'] = {
+    pattern: /[\w-]+\([^)]*\).*/,
+    inside: {
+      'function': /^[^(]+/,
+      rest: inside
+    }
+  };
+  Prism.languages.stylus = {
+    'comment': {
+      pattern: /(^|[^\\])(\/\*[\s\S]*?\*\/|\/\/.*)/,
+      lookbehind: true
+    },
+    'atrule-declaration': {
+      pattern: /(^\s*)@.+/m,
+      lookbehind: true,
+      inside: {
+        'atrule': /^@[\w-]+/,
+        rest: inside
+      }
+    },
+    'variable-declaration': {
+      pattern: /(^[ \t]*)[\w$-]+\s*.?=[ \t]*(?:(?:\{[^}]*\}|.+)|$)/m,
+      lookbehind: true,
+      inside: {
+        'variable': /^\S+/,
+        rest: inside
+      }
+    },
+    'statement': {
+      pattern: /(^[ \t]*)(?:if|else|for|return|unless)[ \t]+.+/m,
+      lookbehind: true,
+      inside: {
+        keyword: /^\S+/,
+        rest: inside
+      }
+    },
+    // A property/value pair cannot end with a comma or a brace
+    // It cannot have indented content unless it ended with a semicolon
+    'property-declaration': {
+      pattern: /((?:^|\{)([ \t]*))(?:[\w-]|\{[^}\r\n]+\})+(?:\s*:\s*|[ \t]+)[^{\r\n]*(?:;|[^{\r\n,](?=$)(?!(\r?\n|\r)(?:\{|\2[ \t]+)))/m,
+      lookbehind: true,
+      inside: {
+        'property': {
+          pattern: /^[^\s:]+/,
+          inside: {
+            'interpolation': inside.interpolation
+          }
+        },
+        rest: inside
+      }
+    },
+    // A selector can contain parentheses only as part of a pseudo-element
+    // It can span multiple lines.
+    // It must end with a comma or an accolade or have indented content.
+    'selector': {
+      pattern: /(^[ \t]*)(?:(?=\S)(?:[^{}\r\n:()]|::?[\w-]+(?:\([^)\r\n]*\))?|\{[^}\r\n]+\})+)(?:(?:\r?\n|\r)(?:\1(?:(?=\S)(?:[^{}\r\n:()]|::?[\w-]+(?:\([^)\r\n]*\))?|\{[^}\r\n]+\})+)))*(?:,$|\{|(?=(?:\r?\n|\r)(?:\{|\1[ \t]+)))/m,
+      lookbehind: true,
+      inside: {
+        'interpolation': inside.interpolation,
+        'punctuation': /[{},]/
+      }
+    },
+    'func': inside.func,
+    'string': inside.string,
+    'interpolation': inside.interpolation,
+    'punctuation': /[{}()\[\];:.]/
+  };
+})(_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a);
+/* "prismjs/components/prism-swift" */
+// issues: nested multiline comments
+
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.swift = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('clike', {
+  'string': {
+    pattern: /("|')(\\(?:\((?:[^()]|\([^)]+\))+\)|\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+    greedy: true,
+    inside: {
+      'interpolation': {
+        pattern: /\\\((?:[^()]|\([^)]+\))+\)/,
+        inside: {
+          delimiter: {
+            pattern: /^\\\(|\)$/,
+            alias: 'variable' // See rest below
+
+          }
+        }
+      }
+    }
+  },
+  'keyword': /\b(?:as|associativity|break|case|catch|class|continue|convenience|default|defer|deinit|didSet|do|dynamic(?:Type)?|else|enum|extension|fallthrough|final|for|func|get|guard|if|import|in|infix|init|inout|internal|is|lazy|left|let|mutating|new|none|nonmutating|operator|optional|override|postfix|precedence|prefix|private|protocol|public|repeat|required|rethrows|return|right|safe|self|Self|set|static|struct|subscript|super|switch|throws?|try|Type|typealias|unowned|unsafe|var|weak|where|while|willSet|__(?:COLUMN__|FILE__|FUNCTION__|LINE__))\b/,
+  'number': /\b(?:[\d_]+(?:\.[\de_]+)?|0x[a-f0-9_]+(?:\.[a-f0-9p_]+)?|0b[01_]+|0o[0-7_]+)\b/i,
+  'constant': /\b(?:nil|[A-Z_]{2,}|k[A-Z][A-Za-z_]+)\b/,
+  'atrule': /@\b(?:IB(?:Outlet|Designable|Action|Inspectable)|class_protocol|exported|noreturn|NS(?:Copying|Managed)|objc|UIApplicationMain|auto_closure)\b/,
+  'builtin': /\b(?:[A-Z]\S+|abs|advance|alignof(?:Value)?|assert|contains|count(?:Elements)?|debugPrint(?:ln)?|distance|drop(?:First|Last)|dump|enumerate|equal|filter|find|first|getVaList|indices|isEmpty|join|last|lexicographicalCompare|map|max(?:Element)?|min(?:Element)?|numericCast|overlaps|partition|print(?:ln)?|reduce|reflect|reverse|sizeof(?:Value)?|sort(?:ed)?|split|startsWith|stride(?:of(?:Value)?)?|suffix|swap|toDebugString|toString|transcode|underestimateCount|unsafeBitCast|with(?:ExtendedLifetime|Unsafe(?:MutablePointers?|Pointers?)|VaList))\b/
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.swift['string'].inside['interpolation'].inside.rest = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.swift;
+/* "prismjs/components/prism-typescript" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.typescript = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.extend('javascript', {
+  // From JavaScript Prism keyword list and TypeScript language spec: https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md#221-reserved-words
+  'keyword': /\b(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield|module|declare|constructor|namespace|abstract|require|type)\b/,
+  'builtin': /\b(?:string|Function|any|number|boolean|Array|symbol|console)\b/
+});
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.ts = _prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.typescript;
+/* "prismjs/components/prism-vim" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.vim = {
+  'string': /"(?:[^"\\\r\n]|\\.)*"|'(?:[^'\r\n]|'')*'/,
+  'comment': /".*/,
+  'function': /\w+(?=\()/,
+  'keyword': /\b(?:ab|abbreviate|abc|abclear|abo|aboveleft|al|all|arga|argadd|argd|argdelete|argdo|arge|argedit|argg|argglobal|argl|arglocal|ar|args|argu|argument|as|ascii|bad|badd|ba|ball|bd|bdelete|be|bel|belowright|bf|bfirst|bl|blast|bm|bmodified|bn|bnext|bN|bNext|bo|botright|bp|bprevious|brea|break|breaka|breakadd|breakd|breakdel|breakl|breaklist|br|brewind|bro|browse|bufdo|b|buffer|buffers|bun|bunload|bw|bwipeout|ca|cabbrev|cabc|cabclear|caddb|caddbuffer|cad|caddexpr|caddf|caddfile|cal|call|cat|catch|cb|cbuffer|cc|ccl|cclose|cd|ce|center|cex|cexpr|cf|cfile|cfir|cfirst|cgetb|cgetbuffer|cgete|cgetexpr|cg|cgetfile|c|change|changes|chd|chdir|che|checkpath|checkt|checktime|cla|clast|cl|clist|clo|close|cmapc|cmapclear|cnew|cnewer|cn|cnext|cN|cNext|cnf|cnfile|cNfcNfile|cnorea|cnoreabbrev|col|colder|colo|colorscheme|comc|comclear|comp|compiler|conf|confirm|con|continue|cope|copen|co|copy|cpf|cpfile|cp|cprevious|cq|cquit|cr|crewind|cuna|cunabbrev|cu|cunmap|cw|cwindow|debugg|debuggreedy|delc|delcommand|d|delete|delf|delfunction|delm|delmarks|diffg|diffget|diffoff|diffpatch|diffpu|diffput|diffsplit|diffthis|diffu|diffupdate|dig|digraphs|di|display|dj|djump|dl|dlist|dr|drop|ds|dsearch|dsp|dsplit|earlier|echoe|echoerr|echom|echomsg|echon|e|edit|el|else|elsei|elseif|em|emenu|endfo|endfor|endf|endfunction|endfun|en|endif|endt|endtry|endw|endwhile|ene|enew|ex|exi|exit|exu|exusage|f|file|files|filetype|fina|finally|fin|find|fini|finish|fir|first|fix|fixdel|fo|fold|foldc|foldclose|folddoc|folddoclosed|foldd|folddoopen|foldo|foldopen|for|fu|fun|function|go|goto|gr|grep|grepa|grepadd|ha|hardcopy|h|help|helpf|helpfind|helpg|helpgrep|helpt|helptags|hid|hide|his|history|ia|iabbrev|iabc|iabclear|if|ij|ijump|il|ilist|imapc|imapclear|in|inorea|inoreabbrev|isearch|isp|isplit|iuna|iunabbrev|iu|iunmap|j|join|ju|jumps|k|keepalt|keepj|keepjumps|kee|keepmarks|laddb|laddbuffer|lad|laddexpr|laddf|laddfile|lan|language|la|last|later|lb|lbuffer|lc|lcd|lch|lchdir|lcl|lclose|let|left|lefta|leftabove|lex|lexpr|lf|lfile|lfir|lfirst|lgetb|lgetbuffer|lgete|lgetexpr|lg|lgetfile|lgr|lgrep|lgrepa|lgrepadd|lh|lhelpgrep|l|list|ll|lla|llast|lli|llist|lmak|lmake|lm|lmap|lmapc|lmapclear|lnew|lnewer|lne|lnext|lN|lNext|lnf|lnfile|lNf|lNfile|ln|lnoremap|lo|loadview|loc|lockmarks|lockv|lockvar|lol|lolder|lop|lopen|lpf|lpfile|lp|lprevious|lr|lrewind|ls|lt|ltag|lu|lunmap|lv|lvimgrep|lvimgrepa|lvimgrepadd|lw|lwindow|mak|make|ma|mark|marks|mat|match|menut|menutranslate|mk|mkexrc|mks|mksession|mksp|mkspell|mkvie|mkview|mkv|mkvimrc|mod|mode|m|move|mzf|mzfile|mz|mzscheme|nbkey|new|n|next|N|Next|nmapc|nmapclear|noh|nohlsearch|norea|noreabbrev|nu|number|nun|nunmap|omapc|omapclear|on|only|o|open|opt|options|ou|ounmap|pc|pclose|ped|pedit|pe|perl|perld|perldo|po|pop|popu|popup|pp|ppop|pre|preserve|prev|previous|p|print|P|Print|profd|profdel|prof|profile|promptf|promptfind|promptr|promptrepl|ps|psearch|pta|ptag|ptf|ptfirst|ptj|ptjump|ptl|ptlast|ptn|ptnext|ptN|ptNext|ptp|ptprevious|ptr|ptrewind|pts|ptselect|pu|put|pw|pwd|pyf|pyfile|py|python|qa|qall|q|quit|quita|quitall|r|read|rec|recover|redi|redir|red|redo|redr|redraw|redraws|redrawstatus|reg|registers|res|resize|ret|retab|retu|return|rew|rewind|ri|right|rightb|rightbelow|rub|ruby|rubyd|rubydo|rubyf|rubyfile|ru|runtime|rv|rviminfo|sal|sall|san|sandbox|sa|sargument|sav|saveas|sba|sball|sbf|sbfirst|sbl|sblast|sbm|sbmodified|sbn|sbnext|sbN|sbNext|sbp|sbprevious|sbr|sbrewind|sb|sbuffer|scripte|scriptencoding|scrip|scriptnames|se|set|setf|setfiletype|setg|setglobal|setl|setlocal|sf|sfind|sfir|sfirst|sh|shell|sign|sil|silent|sim|simalt|sla|slast|sl|sleep|sm|smagic|sm|smap|smapc|smapclear|sme|smenu|sn|snext|sN|sNext|sni|sniff|sno|snomagic|snor|snoremap|snoreme|snoremenu|sor|sort|so|source|spelld|spelldump|spe|spellgood|spelli|spellinfo|spellr|spellrepall|spellu|spellundo|spellw|spellwrong|sp|split|spr|sprevious|sre|srewind|sta|stag|startg|startgreplace|star|startinsert|startr|startreplace|stj|stjump|st|stop|stopi|stopinsert|sts|stselect|sun|sunhide|sunm|sunmap|sus|suspend|sv|sview|syncbind|t|tab|tabc|tabclose|tabd|tabdo|tabe|tabedit|tabf|tabfind|tabfir|tabfirst|tabl|tablast|tabm|tabmove|tabnew|tabn|tabnext|tabN|tabNext|tabo|tabonly|tabp|tabprevious|tabr|tabrewind|tabs|ta|tag|tags|tc|tcl|tcld|tcldo|tclf|tclfile|te|tearoff|tf|tfirst|th|throw|tj|tjump|tl|tlast|tm|tm|tmenu|tn|tnext|tN|tNext|to|topleft|tp|tprevious|tr|trewind|try|ts|tselect|tu|tu|tunmenu|una|unabbreviate|u|undo|undoj|undojoin|undol|undolist|unh|unhide|unlet|unlo|unlockvar|unm|unmap|up|update|verb|verbose|ve|version|vert|vertical|vie|view|vim|vimgrep|vimgrepa|vimgrepadd|vi|visual|viu|viusage|vmapc|vmapclear|vne|vnew|vs|vsplit|vu|vunmap|wa|wall|wh|while|winc|wincmd|windo|winp|winpos|win|winsize|wn|wnext|wN|wNext|wp|wprevious|wq|wqa|wqall|w|write|ws|wsverb|wv|wviminfo|X|xa|xall|x|xit|xm|xmap|xmapc|xmapclear|xme|xmenu|XMLent|XMLns|xn|xnoremap|xnoreme|xnoremenu|xu|xunmap|y|yank)\b/,
+  'builtin': /\b(?:autocmd|acd|ai|akm|aleph|allowrevins|altkeymap|ambiwidth|ambw|anti|antialias|arab|arabic|arabicshape|ari|arshape|autochdir|autoindent|autoread|autowrite|autowriteall|aw|awa|background|backspace|backup|backupcopy|backupdir|backupext|backupskip|balloondelay|ballooneval|balloonexpr|bdir|bdlay|beval|bex|bexpr|bg|bh|bin|binary|biosk|bioskey|bk|bkc|bomb|breakat|brk|browsedir|bs|bsdir|bsk|bt|bufhidden|buflisted|buftype|casemap|ccv|cdpath|cedit|cfu|ch|charconvert|ci|cin|cindent|cink|cinkeys|cino|cinoptions|cinw|cinwords|clipboard|cmdheight|cmdwinheight|cmp|cms|columns|com|comments|commentstring|compatible|complete|completefunc|completeopt|consk|conskey|copyindent|cot|cpo|cpoptions|cpt|cscopepathcomp|cscopeprg|cscopequickfix|cscopetag|cscopetagorder|cscopeverbose|cspc|csprg|csqf|cst|csto|csverb|cuc|cul|cursorcolumn|cursorline|cwh|debug|deco|def|define|delcombine|dex|dg|dict|dictionary|diff|diffexpr|diffopt|digraph|dip|dir|directory|dy|ea|ead|eadirection|eb|ed|edcompatible|ef|efm|ei|ek|enc|encoding|endofline|eol|ep|equalalways|equalprg|errorbells|errorfile|errorformat|esckeys|et|eventignore|expandtab|exrc|fcl|fcs|fdc|fde|fdi|fdl|fdls|fdm|fdn|fdo|fdt|fen|fenc|fencs|fex|ff|ffs|fileencoding|fileencodings|fileformat|fileformats|fillchars|fk|fkmap|flp|fml|fmr|foldcolumn|foldenable|foldexpr|foldignore|foldlevel|foldlevelstart|foldmarker|foldmethod|foldminlines|foldnestmax|foldtext|formatexpr|formatlistpat|formatoptions|formatprg|fp|fs|fsync|ft|gcr|gd|gdefault|gfm|gfn|gfs|gfw|ghr|gp|grepformat|grepprg|gtl|gtt|guicursor|guifont|guifontset|guifontwide|guiheadroom|guioptions|guipty|guitablabel|guitabtooltip|helpfile|helpheight|helplang|hf|hh|hi|hidden|highlight|hk|hkmap|hkmapp|hkp|hl|hlg|hls|hlsearch|ic|icon|iconstring|ignorecase|im|imactivatekey|imak|imc|imcmdline|imd|imdisable|imi|iminsert|ims|imsearch|inc|include|includeexpr|incsearch|inde|indentexpr|indentkeys|indk|inex|inf|infercase|insertmode|isf|isfname|isi|isident|isk|iskeyword|isprint|joinspaces|js|key|keymap|keymodel|keywordprg|km|kmp|kp|langmap|langmenu|laststatus|lazyredraw|lbr|lcs|linebreak|lines|linespace|lisp|lispwords|listchars|loadplugins|lpl|lsp|lz|macatsui|magic|makeef|makeprg|matchpairs|matchtime|maxcombine|maxfuncdepth|maxmapdepth|maxmem|maxmempattern|maxmemtot|mco|mef|menuitems|mfd|mh|mis|mkspellmem|ml|mls|mm|mmd|mmp|mmt|modeline|modelines|modifiable|modified|more|mouse|mousef|mousefocus|mousehide|mousem|mousemodel|mouses|mouseshape|mouset|mousetime|mp|mps|msm|mzq|mzquantum|nf|nrformats|numberwidth|nuw|odev|oft|ofu|omnifunc|opendevice|operatorfunc|opfunc|osfiletype|pa|para|paragraphs|paste|pastetoggle|patchexpr|patchmode|path|pdev|penc|pex|pexpr|pfn|ph|pheader|pi|pm|pmbcs|pmbfn|popt|preserveindent|previewheight|previewwindow|printdevice|printencoding|printexpr|printfont|printheader|printmbcharset|printmbfont|printoptions|prompt|pt|pumheight|pvh|pvw|qe|quoteescape|readonly|remap|report|restorescreen|revins|rightleft|rightleftcmd|rl|rlc|ro|rs|rtp|ruf|ruler|rulerformat|runtimepath|sbo|sc|scb|scr|scroll|scrollbind|scrolljump|scrolloff|scrollopt|scs|sect|sections|secure|sel|selection|selectmode|sessionoptions|sft|shcf|shellcmdflag|shellpipe|shellquote|shellredir|shellslash|shelltemp|shelltype|shellxquote|shiftround|shiftwidth|shm|shortmess|shortname|showbreak|showcmd|showfulltag|showmatch|showmode|showtabline|shq|si|sidescroll|sidescrolloff|siso|sj|slm|smartcase|smartindent|smarttab|smc|smd|softtabstop|sol|spc|spell|spellcapcheck|spellfile|spelllang|spellsuggest|spf|spl|splitbelow|splitright|sps|sr|srr|ss|ssl|ssop|stal|startofline|statusline|stl|stmp|su|sua|suffixes|suffixesadd|sw|swapfile|swapsync|swb|swf|switchbuf|sws|sxq|syn|synmaxcol|syntax|tabline|tabpagemax|tabstop|tagbsearch|taglength|tagrelative|tagstack|tal|tb|tbi|tbidi|tbis|tbs|tenc|term|termbidi|termencoding|terse|textauto|textmode|textwidth|tgst|thesaurus|tildeop|timeout|timeoutlen|title|titlelen|titleold|titlestring|toolbar|toolbariconsize|top|tpm|tsl|tsr|ttimeout|ttimeoutlen|ttm|tty|ttybuiltin|ttyfast|ttym|ttymouse|ttyscroll|ttytype|tw|tx|uc|ul|undolevels|updatecount|updatetime|ut|vb|vbs|vdir|verbosefile|vfile|viewdir|viewoptions|viminfo|virtualedit|visualbell|vop|wak|warn|wb|wc|wcm|wd|weirdinvert|wfh|wfw|whichwrap|wi|wig|wildchar|wildcharm|wildignore|wildmenu|wildmode|wildoptions|wim|winaltkeys|window|winfixheight|winfixwidth|winheight|winminheight|winminwidth|winwidth|wiv|wiw|wm|wmh|wmnu|wmw|wop|wrap|wrapmargin|wrapscan|writeany|writebackup|writedelay|ww|noacd|noai|noakm|noallowrevins|noaltkeymap|noanti|noantialias|noar|noarab|noarabic|noarabicshape|noari|noarshape|noautochdir|noautoindent|noautoread|noautowrite|noautowriteall|noaw|noawa|nobackup|noballooneval|nobeval|nobin|nobinary|nobiosk|nobioskey|nobk|nobl|nobomb|nobuflisted|nocf|noci|nocin|nocindent|nocompatible|noconfirm|noconsk|noconskey|nocopyindent|nocp|nocscopetag|nocscopeverbose|nocst|nocsverb|nocuc|nocul|nocursorcolumn|nocursorline|nodeco|nodelcombine|nodg|nodiff|nodigraph|nodisable|noea|noeb|noed|noedcompatible|noek|noendofline|noeol|noequalalways|noerrorbells|noesckeys|noet|noex|noexpandtab|noexrc|nofen|nofk|nofkmap|nofoldenable|nogd|nogdefault|noguipty|nohid|nohidden|nohk|nohkmap|nohkmapp|nohkp|nohls|noic|noicon|noignorecase|noim|noimc|noimcmdline|noimd|noincsearch|noinf|noinfercase|noinsertmode|nois|nojoinspaces|nojs|nolazyredraw|nolbr|nolinebreak|nolisp|nolist|noloadplugins|nolpl|nolz|noma|nomacatsui|nomagic|nomh|noml|nomod|nomodeline|nomodifiable|nomodified|nomore|nomousef|nomousefocus|nomousehide|nonu|nonumber|noodev|noopendevice|nopaste|nopi|nopreserveindent|nopreviewwindow|noprompt|nopvw|noreadonly|noremap|norestorescreen|norevins|nori|norightleft|norightleftcmd|norl|norlc|noro|nors|noru|noruler|nosb|nosc|noscb|noscrollbind|noscs|nosecure|nosft|noshellslash|noshelltemp|noshiftround|noshortname|noshowcmd|noshowfulltag|noshowmatch|noshowmode|nosi|nosm|nosmartcase|nosmartindent|nosmarttab|nosmd|nosn|nosol|nospell|nosplitbelow|nosplitright|nospr|nosr|nossl|nosta|nostartofline|nostmp|noswapfile|noswf|nota|notagbsearch|notagrelative|notagstack|notbi|notbidi|notbs|notermbidi|noterse|notextauto|notextmode|notf|notgst|notildeop|notimeout|notitle|noto|notop|notr|nottimeout|nottybuiltin|nottyfast|notx|novb|novisualbell|nowa|nowarn|nowb|noweirdinvert|nowfh|nowfw|nowildmenu|nowinfixheight|nowinfixwidth|nowiv|nowmnu|nowrap|nowrapscan|nowrite|nowriteany|nowritebackup|nows|invacd|invai|invakm|invallowrevins|invaltkeymap|invanti|invantialias|invar|invarab|invarabic|invarabicshape|invari|invarshape|invautochdir|invautoindent|invautoread|invautowrite|invautowriteall|invaw|invawa|invbackup|invballooneval|invbeval|invbin|invbinary|invbiosk|invbioskey|invbk|invbl|invbomb|invbuflisted|invcf|invci|invcin|invcindent|invcompatible|invconfirm|invconsk|invconskey|invcopyindent|invcp|invcscopetag|invcscopeverbose|invcst|invcsverb|invcuc|invcul|invcursorcolumn|invcursorline|invdeco|invdelcombine|invdg|invdiff|invdigraph|invdisable|invea|inveb|inved|invedcompatible|invek|invendofline|inveol|invequalalways|inverrorbells|invesckeys|invet|invex|invexpandtab|invexrc|invfen|invfk|invfkmap|invfoldenable|invgd|invgdefault|invguipty|invhid|invhidden|invhk|invhkmap|invhkmapp|invhkp|invhls|invhlsearch|invic|invicon|invignorecase|invim|invimc|invimcmdline|invimd|invincsearch|invinf|invinfercase|invinsertmode|invis|invjoinspaces|invjs|invlazyredraw|invlbr|invlinebreak|invlisp|invlist|invloadplugins|invlpl|invlz|invma|invmacatsui|invmagic|invmh|invml|invmod|invmodeline|invmodifiable|invmodified|invmore|invmousef|invmousefocus|invmousehide|invnu|invnumber|invodev|invopendevice|invpaste|invpi|invpreserveindent|invpreviewwindow|invprompt|invpvw|invreadonly|invremap|invrestorescreen|invrevins|invri|invrightleft|invrightleftcmd|invrl|invrlc|invro|invrs|invru|invruler|invsb|invsc|invscb|invscrollbind|invscs|invsecure|invsft|invshellslash|invshelltemp|invshiftround|invshortname|invshowcmd|invshowfulltag|invshowmatch|invshowmode|invsi|invsm|invsmartcase|invsmartindent|invsmarttab|invsmd|invsn|invsol|invspell|invsplitbelow|invsplitright|invspr|invsr|invssl|invsta|invstartofline|invstmp|invswapfile|invswf|invta|invtagbsearch|invtagrelative|invtagstack|invtbi|invtbidi|invtbs|invtermbidi|invterse|invtextauto|invtextmode|invtf|invtgst|invtildeop|invtimeout|invtitle|invto|invtop|invtr|invttimeout|invttybuiltin|invttyfast|invtx|invvb|invvisualbell|invwa|invwarn|invwb|invweirdinvert|invwfh|invwfw|invwildmenu|invwinfixheight|invwinfixwidth|invwiv|invwmnu|invwrap|invwrapscan|invwrite|invwriteany|invwritebackup|invws|t_AB|t_AF|t_al|t_AL|t_bc|t_cd|t_ce|t_Ce|t_cl|t_cm|t_Co|t_cs|t_Cs|t_CS|t_CV|t_da|t_db|t_dl|t_DL|t_EI|t_F1|t_F2|t_F3|t_F4|t_F5|t_F6|t_F7|t_F8|t_F9|t_fs|t_IE|t_IS|t_k1|t_K1|t_k2|t_k3|t_K3|t_k4|t_K4|t_k5|t_K5|t_k6|t_K6|t_k7|t_K7|t_k8|t_K8|t_k9|t_K9|t_KA|t_kb|t_kB|t_KB|t_KC|t_kd|t_kD|t_KD|t_ke|t_KE|t_KF|t_KG|t_kh|t_KH|t_kI|t_KI|t_KJ|t_KK|t_kl|t_KL|t_kN|t_kP|t_kr|t_ks|t_ku|t_le|t_mb|t_md|t_me|t_mr|t_ms|t_nd|t_op|t_RI|t_RV|t_Sb|t_se|t_Sf|t_SI|t_so|t_sr|t_te|t_ti|t_ts|t_ue|t_us|t_ut|t_vb|t_ve|t_vi|t_vs|t_WP|t_WS|t_xs|t_ZH|t_ZR)\b/,
+  'number': /\b(?:0x[\da-f]+|\d+(?:\.\d+)?)\b/i,
+  'operator': /\|\||&&|[-+.]=?|[=!](?:[=~][#?]?)?|[<>]=?[#?]?|[*\/%?]|\b(?:is(?:not)?)\b/,
+  'punctuation': /[{}[\](),;:]/
+};
+/* "prismjs/components/prism-yaml" */
+
+_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a.languages.yaml = {
+  'scalar': {
+    pattern: /([\-:]\s*(?:![^\s]+)?[ \t]*[|>])[ \t]*(?:((?:\r?\n|\r)[ \t]+)[^\r\n]+(?:\2[^\r\n]+)*)/,
+    lookbehind: true,
+    alias: 'string'
+  },
+  'comment': /#.*/,
+  'key': {
+    pattern: /(\s*(?:^|[:\-,[{\r\n?])[ \t]*(?:![^\s]+)?[ \t]*)[^\r\n{[\]},#\s]+?(?=\s*:\s)/,
+    lookbehind: true,
+    alias: 'atrule'
+  },
+  'directive': {
+    pattern: /(^[ \t]*)%.+/m,
+    lookbehind: true,
+    alias: 'important'
+  },
+  'datetime': {
+    pattern: /([:\-,[{]\s*(?:![^\s]+)?[ \t]*)(?:\d{4}-\d\d?-\d\d?(?:[tT]|[ \t]+)\d\d?:\d{2}:\d{2}(?:\.\d*)?[ \t]*(?:Z|[-+]\d\d?(?::\d{2})?)?|\d{4}-\d{2}-\d{2}|\d\d?:\d{2}(?::\d{2}(?:\.\d*)?)?)(?=[ \t]*(?:$|,|]|}))/m,
+    lookbehind: true,
+    alias: 'number'
+  },
+  'boolean': {
+    pattern: /([:\-,[{]\s*(?:![^\s]+)?[ \t]*)(?:true|false)[ \t]*(?=$|,|]|})/im,
+    lookbehind: true,
+    alias: 'important'
+  },
+  'null': {
+    pattern: /([:\-,[{]\s*(?:![^\s]+)?[ \t]*)(?:null|~)[ \t]*(?=$|,|]|})/im,
+    lookbehind: true,
+    alias: 'important'
+  },
+  'string': {
+    pattern: /([:\-,[{]\s*(?:![^\s]+)?[ \t]*)("|')(?:(?!\2)[^\\\r\n]|\\.)*\2(?=[ \t]*(?:$|,|]|}))/m,
+    lookbehind: true,
+    greedy: true
+  },
+  'number': {
+    pattern: /([:\-,[{]\s*(?:![^\s]+)?[ \t]*)[+-]?(?:0x[\da-f]+|0o[0-7]+|(?:\d+\.?\d*|\.?\d+)(?:e[+-]?\d+)?|\.inf|\.nan)[ \t]*(?=$|,|]|})/im,
+    lookbehind: true
+  },
+  'tag': /![^\s]+/,
+  'important': /[&*][\w]+/,
+  'punctuation': /---|[:[\]{}\-,|>?]|\.\.\./
+};
+/* harmony default export */ __webpack_exports__["default"] = (_prism_core__WEBPACK_IMPORTED_MODULE_0___default.a);
+
+/***/ }),
+
+/***/ "./node_modules/prism-react-renderer/es/vendor/prism/prism-core.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/prism-react-renderer/es/vendor/prism/prism-core.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ * MIT license http://www.opensource.org/licenses/mit-license.php/
+ * @author Lea Verou http://lea.verou.me
+ */
+
+/**
+ * prism-react-renderer:
+ * This file has been modified to remove:
+ * - globals and window dependency
+ * - worker support
+ * - highlightAll and other element dependent methods
+ * - _.hooks helpers
+ * - UMD/node-specific hacks
+ * It has also been run through prettier
+ */
+var Prism = function () {
+  // Private helper vars
+  var lang = /\blang(?:uage)?-([\w-]+)\b/i;
+  var uniqueId = 0;
+  var _ = {
+    util: {
+      encode: function encode(tokens) {
+        if (tokens instanceof Token) {
+          return new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);
+        } else if (_.util.type(tokens) === "Array") {
+          return tokens.map(_.util.encode);
+        } else {
+          return tokens.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");
+        }
+      },
+      type: function type(o) {
+        return Object.prototype.toString.call(o).match(/\[object (\w+)\]/)[1];
+      },
+      objId: function objId(obj) {
+        if (!obj["__id"]) {
+          Object.defineProperty(obj, "__id", {
+            value: ++uniqueId
+          });
+        }
+
+        return obj["__id"];
+      },
+      // Deep clone a language definition (e.g. to extend it)
+      clone: function clone(o, visited) {
+        var type = _.util.type(o);
+
+        visited = visited || {};
+
+        switch (type) {
+          case "Object":
+            if (visited[_.util.objId(o)]) {
+              return visited[_.util.objId(o)];
+            }
+
+            var clone = {};
+            visited[_.util.objId(o)] = clone;
+
+            for (var key in o) {
+              if (o.hasOwnProperty(key)) {
+                clone[key] = _.util.clone(o[key], visited);
+              }
+            }
+
+            return clone;
+
+          case "Array":
+            if (visited[_.util.objId(o)]) {
+              return visited[_.util.objId(o)];
+            }
+
+            var clone = [];
+            visited[_.util.objId(o)] = clone;
+            o.forEach(function (v, i) {
+              clone[i] = _.util.clone(v, visited);
+            });
+            return clone;
+        }
+
+        return o;
+      }
+    },
+    languages: {
+      extend: function extend(id, redef) {
+        var lang = _.util.clone(_.languages[id]);
+
+        for (var key in redef) {
+          lang[key] = redef[key];
+        }
+
+        return lang;
+      },
+
+      /**
+       * Insert a token before another token in a language literal
+       * As this needs to recreate the object (we cannot actually insert before keys in object literals),
+       * we cannot just provide an object, we need anobject and a key.
+       * @param inside The key (or language id) of the parent
+       * @param before The key to insert before. If not provided, the function appends instead.
+       * @param insert Object with the key/value pairs to insert
+       * @param root The object that contains `inside`. If equal to Prism.languages, it can be omitted.
+       */
+      insertBefore: function insertBefore(inside, before, insert, root) {
+        root = root || _.languages;
+        var grammar = root[inside];
+
+        if (arguments.length == 2) {
+          insert = arguments[1];
+
+          for (var newToken in insert) {
+            if (insert.hasOwnProperty(newToken)) {
+              grammar[newToken] = insert[newToken];
+            }
+          }
+
+          return grammar;
+        }
+
+        var ret = {};
+
+        for (var token in grammar) {
+          if (grammar.hasOwnProperty(token)) {
+            if (token == before) {
+              for (var newToken in insert) {
+                if (insert.hasOwnProperty(newToken)) {
+                  ret[newToken] = insert[newToken];
+                }
+              }
+            }
+
+            ret[token] = grammar[token];
+          }
+        } // Update references in other language definitions
+
+
+        _.languages.DFS(_.languages, function (key, value) {
+          if (value === root[inside] && key != inside) {
+            this[key] = ret;
+          }
+        });
+
+        return root[inside] = ret;
+      },
+      // Traverse a language definition with Depth First Search
+      DFS: function DFS(o, callback, type, visited) {
+        visited = visited || {};
+
+        for (var i in o) {
+          if (o.hasOwnProperty(i)) {
+            callback.call(o, i, o[i], type || i);
+
+            if (_.util.type(o[i]) === "Object" && !visited[_.util.objId(o[i])]) {
+              visited[_.util.objId(o[i])] = true;
+
+              _.languages.DFS(o[i], callback, null, visited);
+            } else if (_.util.type(o[i]) === "Array" && !visited[_.util.objId(o[i])]) {
+              visited[_.util.objId(o[i])] = true;
+
+              _.languages.DFS(o[i], callback, i, visited);
+            }
+          }
+        }
+      }
+    },
+    plugins: {},
+    highlight: function highlight(text, grammar, language) {
+      var env = {
+        code: text,
+        grammar: grammar,
+        language: language
+      };
+      env.tokens = _.tokenize(env.code, env.grammar);
+      return Token.stringify(_.util.encode(env.tokens), env.language);
+    },
+    matchGrammar: function matchGrammar(text, strarr, grammar, index, startPos, oneshot, target) {
+      var Token = _.Token;
+
+      for (var token in grammar) {
+        if (!grammar.hasOwnProperty(token) || !grammar[token]) {
+          continue;
+        }
+
+        if (token == target) {
+          return;
+        }
+
+        var patterns = grammar[token];
+        patterns = _.util.type(patterns) === "Array" ? patterns : [patterns];
+
+        for (var j = 0; j < patterns.length; ++j) {
+          var pattern = patterns[j],
+              inside = pattern.inside,
+              lookbehind = !!pattern.lookbehind,
+              greedy = !!pattern.greedy,
+              lookbehindLength = 0,
+              alias = pattern.alias;
+
+          if (greedy && !pattern.pattern.global) {
+            // Without the global flag, lastIndex won't work
+            var flags = pattern.pattern.toString().match(/[imuy]*$/)[0];
+            pattern.pattern = RegExp(pattern.pattern.source, flags + "g");
+          }
+
+          pattern = pattern.pattern || pattern; // Don’t cache length as it changes during the loop
+
+          for (var i = index, pos = startPos; i < strarr.length; pos += strarr[i].length, ++i) {
+            var str = strarr[i];
+
+            if (strarr.length > text.length) {
+              // Something went terribly wrong, ABORT, ABORT!
+              return;
+            }
+
+            if (str instanceof Token) {
+              continue;
+            }
+
+            if (greedy && i != strarr.length - 1) {
+              pattern.lastIndex = pos;
+              var match = pattern.exec(text);
+
+              if (!match) {
+                break;
+              }
+
+              var from = match.index + (lookbehind ? match[1].length : 0),
+                  to = match.index + match[0].length,
+                  k = i,
+                  p = pos;
+
+              for (var len = strarr.length; k < len && (p < to || !strarr[k].type && !strarr[k - 1].greedy); ++k) {
+                p += strarr[k].length; // Move the index i to the element in strarr that is closest to from
+
+                if (from >= p) {
+                  ++i;
+                  pos = p;
+                }
+              } // If strarr[i] is a Token, then the match starts inside another Token, which is invalid
+
+
+              if (strarr[i] instanceof Token) {
+                continue;
+              } // Number of tokens to delete and replace with the new match
+
+
+              delNum = k - i;
+              str = text.slice(pos, p);
+              match.index -= pos;
+            } else {
+              pattern.lastIndex = 0;
+              var match = pattern.exec(str),
+                  delNum = 1;
+            }
+
+            if (!match) {
+              if (oneshot) {
+                break;
+              }
+
+              continue;
+            }
+
+            if (lookbehind) {
+              lookbehindLength = match[1] ? match[1].length : 0;
+            }
+
+            var from = match.index + lookbehindLength,
+                match = match[0].slice(lookbehindLength),
+                to = from + match.length,
+                before = str.slice(0, from),
+                after = str.slice(to);
+            var args = [i, delNum];
+
+            if (before) {
+              ++i;
+              pos += before.length;
+              args.push(before);
+            }
+
+            var wrapped = new Token(token, inside ? _.tokenize(match, inside) : match, alias, match, greedy);
+            args.push(wrapped);
+
+            if (after) {
+              args.push(after);
+            }
+
+            Array.prototype.splice.apply(strarr, args);
+            if (delNum != 1) _.matchGrammar(text, strarr, grammar, i, pos, true, token);
+            if (oneshot) break;
+          }
+        }
+      }
+    },
+    hooks: {
+      add: function add() {}
+    },
+    tokenize: function tokenize(text, grammar, language) {
+      var strarr = [text];
+      var rest = grammar.rest;
+
+      if (rest) {
+        for (var token in rest) {
+          grammar[token] = rest[token];
+        }
+
+        delete grammar.rest;
+      }
+
+      _.matchGrammar(text, strarr, grammar, 0, 0, false);
+
+      return strarr;
+    }
+  };
+
+  var Token = _.Token = function (type, content, alias, matchedStr, greedy) {
+    this.type = type;
+    this.content = content;
+    this.alias = alias; // Copy of the full string this token was created from
+
+    this.length = (matchedStr || "").length | 0;
+    this.greedy = !!greedy;
+  };
+
+  Token.stringify = function (o, language, parent) {
+    if (typeof o == "string") {
+      return o;
+    }
+
+    if (_.util.type(o) === "Array") {
+      return o.map(function (element) {
+        return Token.stringify(element, language, o);
+      }).join("");
+    }
+
+    var env = {
+      type: o.type,
+      content: Token.stringify(o.content, language, parent),
+      tag: "span",
+      classes: ["token", o.type],
+      attributes: {},
+      language: language,
+      parent: parent
+    };
+
+    if (o.alias) {
+      var aliases = _.util.type(o.alias) === "Array" ? o.alias : [o.alias];
+      Array.prototype.push.apply(env.classes, aliases);
+    }
+
+    var attributes = Object.keys(env.attributes).map(function (name) {
+      return name + '="' + (env.attributes[name] || "").replace(/"/g, "&quot;") + '"';
+    }).join(" ");
+    return "<" + env.tag + ' class="' + env.classes.join(" ") + '"' + (attributes ? " " + attributes : "") + ">" + env.content + "</" + env.tag + ">";
+  };
+
+  return _;
+}();
+
+module.exports = Prism;
+Prism.default = Prism;
+
+/***/ }),
+
+/***/ "./node_modules/prism-react-renderer/themes/duotoneDark.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/prism-react-renderer/themes/duotoneDark.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// @flow
+// Duotone Dark
+// Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
+// Conversion: Bram de Haan (http://atelierbram.github.io/Base2Tone-prism/output/prism/prism-base2tone-evening-dark.css)
+// Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
+
+/*:: import type { PrismTheme } from '../src/types' */
+
+var theme /*: PrismTheme */ = {
+  plain: {
+    backgroundColor: "#2a2734",
+    color: "#9a86fd"
+  },
+  styles: [
+    {
+      types: ["comment", "prolog", "doctype", "cdata", "punctuation"],
+      style: {
+        color: "#6c6783"
+      }
+    },
+    {
+      types: ["namespace"],
+      style: {
+        opacity: 0.7
+      }
+    },
+    {
+      types: ["tag", "operator", "number"],
+      style: {
+        color: "#e09142"
+      }
+    },
+    {
+      types: ["property", "function"],
+      style: {
+        color: "#9a86fd"
+      }
+    },
+    {
+      types: ["tag-id", "selector", "atrule-id"],
+      style: {
+        color: "#eeebff"
+      }
+    },
+    {
+      types: ["attr-name"],
+      style: {
+        color: "#c4b9fe"
+      }
+    },
+    {
+      types: [
+        "boolean",
+        "string",
+        "entity",
+        "url",
+        "attr-value",
+        "keyword",
+        "control",
+        "directive",
+        "unit",
+        "statement",
+        "regex",
+        "at-rule",
+        "placeholder",
+        "variable"
+      ],
+      style: {
+        color: "#ffcc99"
+      }
+    },
+    {
+      types: ["deleted"],
+      style: {
+        textDecorationLine: "line-through"
+      }
+    },
+    {
+      types: ["inserted"],
+      style: {
+        textDecorationLine: "underline"
+      }
+    },
+    {
+      types: ["italic"],
+      style: {
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["important", "bold"],
+      style: {
+        fontWeight: "bold"
+      }
+    },
+    {
+      types: ["important"],
+      style: {
+        color: "#c4b9fe"
+      }
+    }
+  ]
+};
+
+module.exports = theme;
+
+
+/***/ }),
+
+/***/ "./node_modules/prism-react-renderer/themes/nightOwl.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/prism-react-renderer/themes/nightOwl.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// @flow
+// Original: https://github.com/sdras/night-owl-vscode-theme
+// Converted automatically using ./tools/themeFromVsCode
+
+/*:: import type { PrismTheme } from '../src/types' */
+
+var theme /*: PrismTheme */ = {
+  plain: {
+    color: "#d6deeb",
+    backgroundColor: "#011627"
+  },
+  styles: [
+    {
+      types: ["changed"],
+      style: {
+        color: "rgb(162, 191, 252)",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["deleted"],
+      style: {
+        color: "rgba(239, 83, 80, 0.56)",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["inserted", "attr-name"],
+      style: {
+        color: "rgb(173, 219, 103)",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["comment"],
+      style: {
+        color: "rgb(99, 119, 119)",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["string", "url"],
+      style: {
+        color: "rgb(173, 219, 103)"
+      }
+    },
+    {
+      types: ["variable"],
+      style: {
+        color: "rgb(214, 222, 235)"
+      }
+    },
+    {
+      types: ["number"],
+      style: {
+        color: "rgb(247, 140, 108)"
+      }
+    },
+    {
+      types: ["builtin", "char", "constant", "function"],
+      style: {
+        color: "rgb(130, 170, 255)"
+      }
+    },
+    {
+      // This was manually added after the auto-generation
+      // so that punctuations are not italicised
+      types: ["punctuation"],
+      style: {
+        color: "rgb(199, 146, 234)",
+      }
+    },
+    {
+      types: ["selector", "doctype"],
+      style: {
+        color: "rgb(199, 146, 234)",
+        fontStyle: "italic"
+      }
+    },
+    {
+      types: ["class-name"],
+      style: {
+        color: "rgb(255, 203, 139)"
+      }
+    },
+    {
+      types: ["tag", "operator", "keyword"],
+      style: {
+        color: "rgb(127, 219, 202)"
+      }
+    },
+    {
+      types: ["boolean"],
+      style: {
+        color: "rgb(255, 88, 116)"
+      }
+    },
+    {
+      types: ["property"],
+      style: {
+        color: "rgb(128, 203, 196)"
+      }
+    },
+    {
+      types: ["namespace"],
+      style: {
+        color: "rgb(178, 204, 214)"
+      }
+    }
+  ]
+};
+
+module.exports = theme;
+
+
+/***/ }),
+
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -30274,7 +33256,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_Layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../parts/Layout */ "./parts/Layout.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../exp/parts/Static */ "../exp/parts/Static.js");
+/* harmony import */ var _parts_Static__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../parts/Static */ "./parts/Static.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../parts/Header */ "./parts/Header.js");
@@ -30324,12 +33306,12 @@ function (_App) {
     value: function setSize() {
       var canvas = document.createElement('canvas');
       var ctx = canvas.getContext('2d');
-      ctx.font = "normal ".concat(_exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], "px Inter");
+      ctx.font = "normal ".concat(_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], "px Inter");
       var width = ctx.measureText('thousand writers. With over a million people from various fields working').width;
       this.setState({
         ww: window.innerWidth,
         wh: window.innerHeight,
-        optimal: width + _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"] // optimal: 633.50244140625,
+        optimal: width + _parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"] // optimal: 633.50244140625,
 
       }, function () {});
     }
@@ -30363,21 +33345,21 @@ function (_App) {
           pageProps = _this$props.pageProps;
       var pathname = this.props.router.pathname;
       var is_post = pathname.startsWith('/posts/');
-      var ogrem = _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"];
-      var afs = _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"];
-      var font_ratio = optimal / _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"];
+      var ogrem = _parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"];
+      var afs = _parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"];
+      var font_ratio = optimal / _parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"];
 
       if (ww - ogrem < optimal) {
         var aspect_font = (ww - ogrem) / font_ratio;
 
-        if (aspect_font > _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_min"]) {
+        if (aspect_font > _parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_min"]) {
           afs = aspect_font;
         } else {
-          afs = _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_min"];
+          afs = _parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_min"];
         }
       }
 
-      ogrem = afs * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"];
+      ogrem = afs * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"];
       var divisions = 4;
       var target_width = optimal / divisions;
       var columns = Math.floor((ww - ogrem) / target_width);
@@ -30408,19 +33390,19 @@ function (_App) {
 
 
       var fs = afs * ratio;
-      var grem = fs * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"];
+      var grem = fs * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"];
       var center_text = {
         width: optim_width,
         marginLeft: optim_center_left
       };
       var ofsn = {
         fontSize: afs,
-        lineHeight: _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"] // font-size normal
+        lineHeight: _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"] // font-size normal
 
       };
       var fsn = {
         fontSize: fs,
-        lineHeight: _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"]
+        lineHeight: _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"]
       };
       var logo_stroke = 'black';
       var ocap = ogrem * (2048 / 2816);
@@ -30440,26 +33422,25 @@ function (_App) {
         cap: cap,
         optim_width: optim_width
       };
-      console.log(grid_props);
       return react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_8__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150
+          lineNumber: 148
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a, {
-        id: "1356236813",
-        dynamic: [_exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"]],
+        id: "3937940525",
+        dynamic: [_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], _parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"]],
         __self: this
-      }, "*{box-sizing:border-box;}html{font-family:'Inter',serif;font-size:".concat(_exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], "px;line-height:").concat(_exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], "px;text-rendering:optimizelegibility;font-feature-settings:'kern';font-kerning:normal;font-feature-settings:'ss02' 1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}body{margin:0;overflow-x:hidden;}a{color:inherit;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.025s linear;transition:opacity 0.025s linear;}a:hover{opacity:0.75;}a.no-hover:hover{opacity:1;}.hover_box_overlay{opacity:0;-webkit-transition:opacity 0.025s linear;transition:opacity 0.025s linear;}.hover_box:hover .hover_box_overlay{opacity:1;}a.gray-backer{-webkit-transition:background 0.05s linear;transition:background 0.05s linear;}a.gray-backer:hover{background:#f3f3f3;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmZncmlkcy9mYXN0Zm9yd2FyZC9wYWdlcy9fYXBwLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXNKMkIsQUFHbUMsQUFHSyxBQVdsQixBQUlLLEFBS0QsQUFHSCxBQUdBLEFBSUEsQUFHeUIsQUFHaEIsU0F4QkQsQ0FZcEIsQUFHbUMsQUFJbkMsR0FWQSxDQUx1QixLQXFCdkIsR0F2Q0EsSUFHMkMsQ0FZM0MscUNBSW1DLEdBZlUsV0FnQzdDLE1BTkEsMEJBekJvQyw0QkFlcEMsTUFkK0IsNkJBQ1Qsb0JBQ1csK0JBQ0ksbUNBQ0Qsa0NBQ3BDIiwiZmlsZSI6Ii9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmZncmlkcy9mYXN0Zm9yd2FyZC9wYWdlcy9fYXBwLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IEFwcCwgeyBDb250YWluZXIgfSBmcm9tICduZXh0L2FwcCdcbmltcG9ydCB7IFBvc3RMYXlvdXQgfSBmcm9tICcuLi9wYXJ0cy9MYXlvdXQnXG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXG5pbXBvcnQgeyBmb250X3NpemUsIGxpbmVfaGVpZ2h0LCBmb250X21pbiwgc20gfSBmcm9tICcuLi8uLi9leHAvcGFydHMvU3RhdGljJ1xuaW1wb3J0IHsgZGVib3VuY2UgfSBmcm9tICdsb2Rhc2gnXG5pbXBvcnQgSGVhZGVyIGZyb20gJy4uL3BhcnRzL0hlYWRlcidcblxuLy8gT3ZlcnJpZGUgdGhlIEFwcCBjbGFzcyB0byBwdXQgbGF5b3V0IGNvbXBvbmVudCBhcm91bmQgdGhlIHBhZ2UgY29udGVudHNcbi8vIGh0dHBzOi8vZ2l0aHViLmNvbS96ZWl0L25leHQuanMjY3VzdG9tLWFwcFxuXG5leHBvcnQgZGVmYXVsdCBjbGFzcyBNeUFwcCBleHRlbmRzIEFwcCB7XG4gIGNvbnN0cnVjdG9yKHByb3BzKSB7XG4gICAgc3VwZXIocHJvcHMpXG4gICAgdGhpcy5zdGF0ZSA9IHtcbiAgICAgIHd3OiAwLFxuICAgICAgb3B0aW1hbDogbnVsbCxcbiAgICAgIGdyaWRfY2FudmFzOiBudWxsLFxuICAgICAgbW9kZTogJ2xpZ2h0JyxcbiAgICAgIGdyaWQ6ICdoaWRlJyxcbiAgICAgIHNob3dpbmdfcG9zdHM6IDI1LFxuICAgIH1cbiAgICB0aGlzLnNldFNpemUgPSB0aGlzLnNldFNpemUuYmluZCh0aGlzKVxuICAgIHRoaXMuc2V0U2l6ZSA9IGRlYm91bmNlKHRoaXMuc2V0U2l6ZSwgMTAwKVxuICB9XG5cbiAgc2V0U2l6ZSgpIHtcbiAgICBsZXQgY2FudmFzID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnY2FudmFzJylcbiAgICBsZXQgY3R4ID0gY2FudmFzLmdldENvbnRleHQoJzJkJylcbiAgICBjdHguZm9udCA9IGBub3JtYWwgJHtmb250X3NpemV9cHggSW50ZXJgXG4gICAgbGV0IHdpZHRoID0gY3R4Lm1lYXN1cmVUZXh0KFxuICAgICAgJ3Rob3VzYW5kIHdyaXRlcnMuIFdpdGggb3ZlciBhIG1pbGxpb24gcGVvcGxlIGZyb20gdmFyaW91cyBmaWVsZHMgd29ya2luZydcbiAgICApLndpZHRoXG4gICAgdGhpcy5zZXRTdGF0ZShcbiAgICAgIHtcbiAgICAgICAgd3c6IHdpbmRvdy5pbm5lcldpZHRoLFxuICAgICAgICB3aDogd2luZG93LmlubmVySGVpZ2h0LFxuICAgICAgICBvcHRpbWFsOiB3aWR0aCArIGZvbnRfc2l6ZSAqIGxpbmVfaGVpZ2h0LFxuICAgICAgICAvLyBvcHRpbWFsOiA2MzMuNTAyNDQxNDA2MjUsXG4gICAgICB9LFxuICAgICAgKCkgPT4ge31cbiAgICApXG4gIH1cblxuICBjb21wb25lbnREaWRNb3VudCgpIHtcbiAgICB3aW5kb3cuYWRkRXZlbnRMaXN0ZW5lcigncmVzaXplJywgdGhpcy5zZXRTaXplKVxuICAgIHRoaXMuc2V0U2l6ZSgpXG5cbiAgICBsZXQgbW9kZV92YWx1ZSA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCdtb2RlJykgfHwgJ2xpZ2h0J1xuICAgIGxldCBncmlkX3ZhbHVlID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ2dyaWQnKSB8fCAnaGlkZSdcblxuICAgIGxldCBjYW52YXMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdjYW52YXMnKVxuICAgIHRoaXMuc2V0U3RhdGUoeyBncmlkX2NhbnZhczogY2FudmFzLCBtb2RlOiBtb2RlX3ZhbHVlLCBncmlkOiBncmlkX3ZhbHVlIH0pXG4gIH1cblxuICByZW5kZXIoKSB7XG4gICAgbGV0IHsgd3csIHdoLCBvcHRpbWFsLCBtb2RlLCBncmlkLCBncmlkX2NhbnZhcywgc2hvd2luZ19wb3N0cyB9ID0gdGhpcy5zdGF0ZVxuICAgIGNvbnN0IHsgQ29tcG9uZW50LCBwYWdlUHJvcHMgfSA9IHRoaXMucHJvcHNcbiAgICBjb25zdCB7IHBhdGhuYW1lIH0gPSB0aGlzLnByb3BzLnJvdXRlclxuXG4gICAgbGV0IGlzX3Bvc3QgPSBwYXRobmFtZS5zdGFydHNXaXRoKCcvcG9zdHMvJylcblxuICAgIGxldCBvZ3JlbSA9IGZvbnRfc2l6ZSAqIGxpbmVfaGVpZ2h0XG4gICAgbGV0IGFmcyA9IGZvbnRfc2l6ZVxuXG4gICAgbGV0IGZvbnRfcmF0aW8gPSBvcHRpbWFsIC8gZm9udF9zaXplXG4gICAgaWYgKHd3IC0gb2dyZW0gPCBvcHRpbWFsKSB7XG4gICAgICBsZXQgYXNwZWN0X2ZvbnQgPSAod3cgLSBvZ3JlbSkgLyBmb250X3JhdGlvXG4gICAgICBpZiAoYXNwZWN0X2ZvbnQgPiBmb250X21pbikge1xuICAgICAgICBhZnMgPSBhc3BlY3RfZm9udFxuICAgICAgfSBlbHNlIHtcbiAgICAgICAgYWZzID0gZm9udF9taW5cbiAgICAgIH1cbiAgICB9XG5cbiAgICBvZ3JlbSA9IGFmcyAqIGxpbmVfaGVpZ2h0XG5cbiAgICBsZXQgZGl2aXNpb25zID0gNFxuXG4gICAgbGV0IHRhcmdldF93aWR0aCA9IG9wdGltYWwgLyBkaXZpc2lvbnNcbiAgICBsZXQgY29sdW1ucyA9IE1hdGguZmxvb3IoKHd3IC0gb2dyZW0pIC8gdGFyZ2V0X3dpZHRoKVxuICAgIGxldCBjb2x1bW5fd2lkdGggPSAod3cgLSBvZ3JlbSkgLyBjb2x1bW5zXG5cbiAgICBsZXQgb2Zmc2V0ID0gMFxuICAgIGxldCBldmVuID0gY29sdW1ucyAlIDIgPT09IDBcbiAgICBpZiAoIWV2ZW4pIHtcbiAgICAgIGNvbHVtbnMgPSBjb2x1bW5zIC0gMVxuICAgICAgb2Zmc2V0ID0gY29sdW1uX3dpZHRoIC8gMlxuICAgIH1cblxuICAgIGxldCByYXRpbyA9IGNvbHVtbl93aWR0aCAvIHRhcmdldF93aWR0aFxuXG4gICAgbGV0IG9wdGltX3dpZHRoID0gY29sdW1uX3dpZHRoICogZGl2aXNpb25zXG4gICAgbGV0IG9wdGltX2NlbnRlcl9sZWZ0ID1cbiAgICAgIChjb2x1bW5zIC8gMiAtIGRpdmlzaW9ucyAvIDIpICogY29sdW1uX3dpZHRoICsgb2Zmc2V0XG5cbiAgICBsZXQgc3RhY2tlZCA9IGZhbHNlXG4gICAgLy8gVE9ETyByZXRoaW5rIHN0YWNrZWRcbiAgICBpZiAoY29sdW1ucyA8IGRpdmlzaW9ucykge1xuICAgICAgb2Zmc2V0ID0gMFxuICAgICAgY29sdW1ucyA9IGRpdmlzaW9uc1xuICAgICAgY29sdW1uX3dpZHRoID0gKHd3IC0gb2dyZW0pIC8gZGl2aXNpb25zXG4gICAgICBvcHRpbV93aWR0aCA9IGNvbHVtbl93aWR0aCAqIGRpdmlzaW9uc1xuICAgICAgb3B0aW1fY2VudGVyX2xlZnQgPSAwXG4gICAgICAvLyBncmVtID0gZ3JlbSAvIDJcbiAgICAgIHJhdGlvID0gMVxuICAgICAgc3RhY2tlZCA9IHRydWVcbiAgICB9XG5cbiAgICAvLyBBZGp1c3QgZ3JlbVxuICAgIGxldCBmcyA9IGFmcyAqIHJhdGlvXG4gICAgbGV0IGdyZW0gPSBmcyAqIGxpbmVfaGVpZ2h0XG5cbiAgICBsZXQgY2VudGVyX3RleHQgPSB7XG4gICAgICB3aWR0aDogb3B0aW1fd2lkdGgsXG4gICAgICBtYXJnaW5MZWZ0OiBvcHRpbV9jZW50ZXJfbGVmdCxcbiAgICB9XG4gICAgbGV0IG9mc24gPSB7XG4gICAgICBmb250U2l6ZTogYWZzLFxuICAgICAgbGluZUhlaWdodDogbGluZV9oZWlnaHQsXG4gICAgfVxuICAgIC8vIGZvbnQtc2l6ZSBub3JtYWxcbiAgICBsZXQgZnNuID0ge1xuICAgICAgZm9udFNpemU6IGZzLFxuICAgICAgbGluZUhlaWdodDogbGluZV9oZWlnaHQsXG4gICAgfVxuXG4gICAgbGV0IGxvZ29fc3Ryb2tlID0gJ2JsYWNrJ1xuICAgIGxldCBvY2FwID0gb2dyZW0gKiAoMjA0OCAvIDI4MTYpXG4gICAgbGV0IGNhcCA9IGdyZW0gKiAoMjA0OCAvIDI4MTYpXG5cbiAgICBsZXQgZ3JpZF9wcm9wcyA9IHtcbiAgICAgIGdyZW0sXG4gICAgICBvZ3JlbSxcbiAgICAgIGNlbnRlcl90ZXh0LFxuICAgICAgYWZzLFxuICAgICAgZnNuLFxuICAgICAgZnMsXG4gICAgICBjb2x1bW5zLFxuICAgICAgY29sdW1uX3dpZHRoLFxuICAgICAgb2Zmc2V0LFxuICAgICAgd3csXG4gICAgICB3aCxcbiAgICAgIGNhcCxcbiAgICAgIG9wdGltX3dpZHRoLFxuICAgIH1cblxuICAgIGNvbnNvbGUubG9nKGdyaWRfcHJvcHMpXG5cbiAgICByZXR1cm4gKFxuICAgICAgPENvbnRhaW5lcj5cbiAgICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgICAqIHtcbiAgICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgICAgfVxuICAgICAgICAgIGh0bWwge1xuICAgICAgICAgICAgZm9udC1mYW1pbHk6ICdJbnRlcicsIHNlcmlmO1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2ZvbnRfc2l6ZX1weDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAke2ZvbnRfc2l6ZSAqIGxpbmVfaGVpZ2h0fXB4O1xuICAgICAgICAgICAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplbGVnaWJpbGl0eTtcbiAgICAgICAgICAgIGZvbnQtZmVhdHVyZS1zZXR0aW5nczogJ2tlcm4nO1xuICAgICAgICAgICAgZm9udC1rZXJuaW5nOiBub3JtYWw7XG4gICAgICAgICAgICBmb250LWZlYXR1cmUtc2V0dGluZ3M6ICdzczAyJyAxO1xuICAgICAgICAgICAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gICAgICAgICAgICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xuICAgICAgICAgIH1cbiAgICAgICAgICBib2R5IHtcbiAgICAgICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgICAgIG92ZXJmbG93LXg6IGhpZGRlbjtcbiAgICAgICAgICB9XG4gICAgICAgICAgYSB7XG4gICAgICAgICAgICBjb2xvcjogaW5oZXJpdDtcbiAgICAgICAgICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgICAgICAgICAgIHRyYW5zaXRpb246IG9wYWNpdHkgMC4wMjVzIGxpbmVhcjtcbiAgICAgICAgICB9XG4gICAgICAgICAgYTpob3ZlciB7XG4gICAgICAgICAgICBvcGFjaXR5OiAwLjc1O1xuICAgICAgICAgIH1cbiAgICAgICAgICBhLm5vLWhvdmVyOmhvdmVyIHtcbiAgICAgICAgICAgIG9wYWNpdHk6IDE7XG4gICAgICAgICAgfVxuICAgICAgICAgIC5ob3Zlcl9ib3hfb3ZlcmxheSB7XG4gICAgICAgICAgICBvcGFjaXR5OiAwO1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogb3BhY2l0eSAwLjAyNXMgbGluZWFyO1xuICAgICAgICAgIH1cbiAgICAgICAgICAuaG92ZXJfYm94OmhvdmVyIC5ob3Zlcl9ib3hfb3ZlcmxheSB7XG4gICAgICAgICAgICBvcGFjaXR5OiAxO1xuICAgICAgICAgIH1cbiAgICAgICAgICBhLmdyYXktYmFja2VyIHtcbiAgICAgICAgICAgIHRyYW5zaXRpb246IGJhY2tncm91bmQgMC4wNXMgbGluZWFyO1xuICAgICAgICAgIH1cbiAgICAgICAgICBhLmdyYXktYmFja2VyOmhvdmVyIHtcbiAgICAgICAgICAgIGJhY2tncm91bmQ6ICNmM2YzZjM7XG4gICAgICAgICAgfVxuICAgICAgICBgfTwvc3R5bGU+XG4gICAgICAgIDxzdHlsZSBqc3ggZ2xvYmFsPntgXG4gICAgICAgICAgaHRtbCB7XG4gICAgICAgICAgICBmb250LXNpemU6ICR7YWZzfXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6ICR7YWZzICogbGluZV9oZWlnaHR9cHg7XG4gICAgICAgICAgfVxuICAgICAgICAgIGEsXG4gICAgICAgICAgLmRpc3BsYXktbGluayB7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoXG4gICAgICAgICAgICAgIHRvIHJpZ2h0LFxuICAgICAgICAgICAgICBibGFjayAxMDAlLFxuICAgICAgICAgICAgICB0cmFuc3BhcmVudCAwJVxuICAgICAgICAgICAgKTtcbiAgICAgICAgICAgIGJhY2tncm91bmQtcG9zaXRpb246IDBlbSBjYWxjKCR7MSArIHNtfWVtKTtcbiAgICAgICAgICAgIGJhY2tncm91bmQtcmVwZWF0OiByZXBlYXQteDtcbiAgICAgICAgICAgIGJhY2tncm91bmQtc2l6ZTogMWVtICR7c219ZW07XG4gICAgICAgICAgfVxuICAgICAgICAgIGEubm8taG92ZXIge1xuICAgICAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogbm9uZTtcbiAgICAgICAgICB9XG4gICAgICAgIGB9PC9zdHlsZT5cblxuICAgICAgICB7b3B0aW1hbCAhPT0gbnVsbCA/IChcbiAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgPEhlYWRlclxuICAgICAgICAgICAgICBncmVtPXtncmVtfVxuICAgICAgICAgICAgICBsb2dvX3N0cm9rZT17bG9nb19zdHJva2V9XG4gICAgICAgICAgICAgIGNhcD17Y2FwfVxuICAgICAgICAgICAgICBmc249e2Zzbn1cbiAgICAgICAgICAgICAgZnM9e2ZzfVxuICAgICAgICAgICAgLz5cblxuICAgICAgICAgICAge2lzX3Bvc3QgPyAoXG4gICAgICAgICAgICAgIDxQb3N0TGF5b3V0IHBhdGhuYW1lPXtwYXRobmFtZX0gey4uLmdyaWRfcHJvcHN9PlxuICAgICAgICAgICAgICAgIDxDb21wb25lbnQgey4uLnBhZ2VQcm9wc30gLz5cbiAgICAgICAgICAgICAgPC9Qb3N0TGF5b3V0PlxuICAgICAgICAgICAgKSA6IChcbiAgICAgICAgICAgICAgPENvbXBvbmVudCB7Li4ucGFnZVByb3BzfSB7Li4uZ3JpZF9wcm9wc30gLz5cbiAgICAgICAgICAgICl9XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgICkgOiBudWxsfVxuICAgICAgPC9Db250YWluZXI+XG4gICAgKVxuICB9XG59XG4iXX0= */\n/*@ sourceURL=/Users/grant.custer/Sites/ffgrids/fastforward/pages/_app.js */")), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a, {
+      }, "*{box-sizing:border-box;}html{font-family:'Inter',serif;font-size:".concat(_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], "px;line-height:").concat(_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], "px;text-rendering:optimizelegibility;font-feature-settings:'kern';font-kerning:normal;font-feature-settings:'ss02' 1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}pre{-webkit-font-smoothing:auto;-moz-osx-font-smoothing:auto;overflow-x:auto;font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo, Monaco,Courier New,monospace;}body{margin:0;overflow-x:hidden;}a{color:inherit;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:opacity 0.025s linear;transition:opacity 0.025s linear;}a:hover{opacity:0.75;}a.no-hover:hover{opacity:1;}.hover_box_overlay{opacity:0;-webkit-transition:opacity 0.025s linear;transition:opacity 0.025s linear;}.hover_box:hover .hover_box_overlay{opacity:1;}a.gray-backer{-webkit-transition:background 0.05s linear;transition:background 0.05s linear;}a.gray-backer:hover{background:#f3f3f3;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmZncmlkcy9mYXN0Zm9yd2FyZC9wYWdlcy9fYXBwLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQW9KMkIsQUFHbUMsQUFHSyxBQVdDLEFBT25CLEFBSUssQUFLRCxBQUdILEFBR0EsQUFJQSxBQUd5QixBQUdoQixTQXhCRCxDQVlwQixBQUdtQyxBQUluQyxHQVZBLENBTHVCLEtBcUJ2QixHQTlDQSxJQUcyQyxDQW1CM0MsQ0FSK0IsNkJBQ2IsT0FXaUIsR0F0QlUsTUFhWCxLQTBCbEMsTUFOQSwwQkFoQ29DLDRCQXNCcEMsTUFyQitCLGlCQVkvQixZQVhzQixvQkFDVywrQkFDSSxtQ0FDRCxrQ0FDcEMiLCJmaWxlIjoiL1VzZXJzL2dyYW50LmN1c3Rlci9TaXRlcy9mZmdyaWRzL2Zhc3Rmb3J3YXJkL3BhZ2VzL19hcHAuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgQXBwLCB7IENvbnRhaW5lciB9IGZyb20gJ25leHQvYXBwJ1xuaW1wb3J0IHsgUG9zdExheW91dCB9IGZyb20gJy4uL3BhcnRzL0xheW91dCdcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB7IGZvbnRfc2l6ZSwgbGluZV9oZWlnaHQsIGZvbnRfbWluLCBzbSB9IGZyb20gJy4uL3BhcnRzL1N0YXRpYydcbmltcG9ydCB7IGRlYm91bmNlIH0gZnJvbSAnbG9kYXNoJ1xuaW1wb3J0IEhlYWRlciBmcm9tICcuLi9wYXJ0cy9IZWFkZXInXG5cbi8vIE92ZXJyaWRlIHRoZSBBcHAgY2xhc3MgdG8gcHV0IGxheW91dCBjb21wb25lbnQgYXJvdW5kIHRoZSBwYWdlIGNvbnRlbnRzXG4vLyBodHRwczovL2dpdGh1Yi5jb20vemVpdC9uZXh0LmpzI2N1c3RvbS1hcHBcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgTXlBcHAgZXh0ZW5kcyBBcHAge1xuICBjb25zdHJ1Y3Rvcihwcm9wcykge1xuICAgIHN1cGVyKHByb3BzKVxuICAgIHRoaXMuc3RhdGUgPSB7XG4gICAgICB3dzogMCxcbiAgICAgIG9wdGltYWw6IG51bGwsXG4gICAgICBncmlkX2NhbnZhczogbnVsbCxcbiAgICAgIG1vZGU6ICdsaWdodCcsXG4gICAgICBncmlkOiAnaGlkZScsXG4gICAgICBzaG93aW5nX3Bvc3RzOiAyNSxcbiAgICB9XG4gICAgdGhpcy5zZXRTaXplID0gdGhpcy5zZXRTaXplLmJpbmQodGhpcylcbiAgICB0aGlzLnNldFNpemUgPSBkZWJvdW5jZSh0aGlzLnNldFNpemUsIDEwMClcbiAgfVxuXG4gIHNldFNpemUoKSB7XG4gICAgbGV0IGNhbnZhcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2NhbnZhcycpXG4gICAgbGV0IGN0eCA9IGNhbnZhcy5nZXRDb250ZXh0KCcyZCcpXG4gICAgY3R4LmZvbnQgPSBgbm9ybWFsICR7Zm9udF9zaXplfXB4IEludGVyYFxuICAgIGxldCB3aWR0aCA9IGN0eC5tZWFzdXJlVGV4dChcbiAgICAgICd0aG91c2FuZCB3cml0ZXJzLiBXaXRoIG92ZXIgYSBtaWxsaW9uIHBlb3BsZSBmcm9tIHZhcmlvdXMgZmllbGRzIHdvcmtpbmcnXG4gICAgKS53aWR0aFxuICAgIHRoaXMuc2V0U3RhdGUoXG4gICAgICB7XG4gICAgICAgIHd3OiB3aW5kb3cuaW5uZXJXaWR0aCxcbiAgICAgICAgd2g6IHdpbmRvdy5pbm5lckhlaWdodCxcbiAgICAgICAgb3B0aW1hbDogd2lkdGggKyBmb250X3NpemUgKiBsaW5lX2hlaWdodCxcbiAgICAgICAgLy8gb3B0aW1hbDogNjMzLjUwMjQ0MTQwNjI1LFxuICAgICAgfSxcbiAgICAgICgpID0+IHt9XG4gICAgKVxuICB9XG5cbiAgY29tcG9uZW50RGlkTW91bnQoKSB7XG4gICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ3Jlc2l6ZScsIHRoaXMuc2V0U2l6ZSlcbiAgICB0aGlzLnNldFNpemUoKVxuXG4gICAgbGV0IG1vZGVfdmFsdWUgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnbW9kZScpIHx8ICdsaWdodCdcbiAgICBsZXQgZ3JpZF92YWx1ZSA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCdncmlkJykgfHwgJ2hpZGUnXG5cbiAgICBsZXQgY2FudmFzID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnY2FudmFzJylcbiAgICB0aGlzLnNldFN0YXRlKHsgZ3JpZF9jYW52YXM6IGNhbnZhcywgbW9kZTogbW9kZV92YWx1ZSwgZ3JpZDogZ3JpZF92YWx1ZSB9KVxuICB9XG5cbiAgcmVuZGVyKCkge1xuICAgIGxldCB7IHd3LCB3aCwgb3B0aW1hbCwgbW9kZSwgZ3JpZCwgZ3JpZF9jYW52YXMsIHNob3dpbmdfcG9zdHMgfSA9IHRoaXMuc3RhdGVcbiAgICBjb25zdCB7IENvbXBvbmVudCwgcGFnZVByb3BzIH0gPSB0aGlzLnByb3BzXG4gICAgY29uc3QgeyBwYXRobmFtZSB9ID0gdGhpcy5wcm9wcy5yb3V0ZXJcblxuICAgIGxldCBpc19wb3N0ID0gcGF0aG5hbWUuc3RhcnRzV2l0aCgnL3Bvc3RzLycpXG5cbiAgICBsZXQgb2dyZW0gPSBmb250X3NpemUgKiBsaW5lX2hlaWdodFxuICAgIGxldCBhZnMgPSBmb250X3NpemVcblxuICAgIGxldCBmb250X3JhdGlvID0gb3B0aW1hbCAvIGZvbnRfc2l6ZVxuICAgIGlmICh3dyAtIG9ncmVtIDwgb3B0aW1hbCkge1xuICAgICAgbGV0IGFzcGVjdF9mb250ID0gKHd3IC0gb2dyZW0pIC8gZm9udF9yYXRpb1xuICAgICAgaWYgKGFzcGVjdF9mb250ID4gZm9udF9taW4pIHtcbiAgICAgICAgYWZzID0gYXNwZWN0X2ZvbnRcbiAgICAgIH0gZWxzZSB7XG4gICAgICAgIGFmcyA9IGZvbnRfbWluXG4gICAgICB9XG4gICAgfVxuXG4gICAgb2dyZW0gPSBhZnMgKiBsaW5lX2hlaWdodFxuXG4gICAgbGV0IGRpdmlzaW9ucyA9IDRcblxuICAgIGxldCB0YXJnZXRfd2lkdGggPSBvcHRpbWFsIC8gZGl2aXNpb25zXG4gICAgbGV0IGNvbHVtbnMgPSBNYXRoLmZsb29yKCh3dyAtIG9ncmVtKSAvIHRhcmdldF93aWR0aClcbiAgICBsZXQgY29sdW1uX3dpZHRoID0gKHd3IC0gb2dyZW0pIC8gY29sdW1uc1xuXG4gICAgbGV0IG9mZnNldCA9IDBcbiAgICBsZXQgZXZlbiA9IGNvbHVtbnMgJSAyID09PSAwXG4gICAgaWYgKCFldmVuKSB7XG4gICAgICBjb2x1bW5zID0gY29sdW1ucyAtIDFcbiAgICAgIG9mZnNldCA9IGNvbHVtbl93aWR0aCAvIDJcbiAgICB9XG5cbiAgICBsZXQgcmF0aW8gPSBjb2x1bW5fd2lkdGggLyB0YXJnZXRfd2lkdGhcblxuICAgIGxldCBvcHRpbV93aWR0aCA9IGNvbHVtbl93aWR0aCAqIGRpdmlzaW9uc1xuICAgIGxldCBvcHRpbV9jZW50ZXJfbGVmdCA9XG4gICAgICAoY29sdW1ucyAvIDIgLSBkaXZpc2lvbnMgLyAyKSAqIGNvbHVtbl93aWR0aCArIG9mZnNldFxuXG4gICAgbGV0IHN0YWNrZWQgPSBmYWxzZVxuICAgIC8vIFRPRE8gcmV0aGluayBzdGFja2VkXG4gICAgaWYgKGNvbHVtbnMgPCBkaXZpc2lvbnMpIHtcbiAgICAgIG9mZnNldCA9IDBcbiAgICAgIGNvbHVtbnMgPSBkaXZpc2lvbnNcbiAgICAgIGNvbHVtbl93aWR0aCA9ICh3dyAtIG9ncmVtKSAvIGRpdmlzaW9uc1xuICAgICAgb3B0aW1fd2lkdGggPSBjb2x1bW5fd2lkdGggKiBkaXZpc2lvbnNcbiAgICAgIG9wdGltX2NlbnRlcl9sZWZ0ID0gMFxuICAgICAgLy8gZ3JlbSA9IGdyZW0gLyAyXG4gICAgICByYXRpbyA9IDFcbiAgICAgIHN0YWNrZWQgPSB0cnVlXG4gICAgfVxuXG4gICAgLy8gQWRqdXN0IGdyZW1cbiAgICBsZXQgZnMgPSBhZnMgKiByYXRpb1xuICAgIGxldCBncmVtID0gZnMgKiBsaW5lX2hlaWdodFxuXG4gICAgbGV0IGNlbnRlcl90ZXh0ID0ge1xuICAgICAgd2lkdGg6IG9wdGltX3dpZHRoLFxuICAgICAgbWFyZ2luTGVmdDogb3B0aW1fY2VudGVyX2xlZnQsXG4gICAgfVxuICAgIGxldCBvZnNuID0ge1xuICAgICAgZm9udFNpemU6IGFmcyxcbiAgICAgIGxpbmVIZWlnaHQ6IGxpbmVfaGVpZ2h0LFxuICAgIH1cbiAgICAvLyBmb250LXNpemUgbm9ybWFsXG4gICAgbGV0IGZzbiA9IHtcbiAgICAgIGZvbnRTaXplOiBmcyxcbiAgICAgIGxpbmVIZWlnaHQ6IGxpbmVfaGVpZ2h0LFxuICAgIH1cblxuICAgIGxldCBsb2dvX3N0cm9rZSA9ICdibGFjaydcbiAgICBsZXQgb2NhcCA9IG9ncmVtICogKDIwNDggLyAyODE2KVxuICAgIGxldCBjYXAgPSBncmVtICogKDIwNDggLyAyODE2KVxuXG4gICAgbGV0IGdyaWRfcHJvcHMgPSB7XG4gICAgICBncmVtLFxuICAgICAgb2dyZW0sXG4gICAgICBjZW50ZXJfdGV4dCxcbiAgICAgIGFmcyxcbiAgICAgIGZzbixcbiAgICAgIGZzLFxuICAgICAgY29sdW1ucyxcbiAgICAgIGNvbHVtbl93aWR0aCxcbiAgICAgIG9mZnNldCxcbiAgICAgIHd3LFxuICAgICAgd2gsXG4gICAgICBjYXAsXG4gICAgICBvcHRpbV93aWR0aCxcbiAgICB9XG5cbiAgICByZXR1cm4gKFxuICAgICAgPENvbnRhaW5lcj5cbiAgICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgICAqIHtcbiAgICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgICAgfVxuICAgICAgICAgIGh0bWwge1xuICAgICAgICAgICAgZm9udC1mYW1pbHk6ICdJbnRlcicsIHNlcmlmO1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2ZvbnRfc2l6ZX1weDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAke2ZvbnRfc2l6ZSAqIGxpbmVfaGVpZ2h0fXB4O1xuICAgICAgICAgICAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplbGVnaWJpbGl0eTtcbiAgICAgICAgICAgIGZvbnQtZmVhdHVyZS1zZXR0aW5nczogJ2tlcm4nO1xuICAgICAgICAgICAgZm9udC1rZXJuaW5nOiBub3JtYWw7XG4gICAgICAgICAgICBmb250LWZlYXR1cmUtc2V0dGluZ3M6ICdzczAyJyAxO1xuICAgICAgICAgICAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gICAgICAgICAgICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xuICAgICAgICAgIH1cbiAgICAgICAgICBwcmUge1xuICAgICAgICAgICAgLXdlYmtpdC1mb250LXNtb290aGluZzogYXV0bztcbiAgICAgICAgICAgIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBhdXRvO1xuICAgICAgICAgICAgb3ZlcmZsb3cteDogYXV0bztcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiBTRk1vbm8tUmVndWxhciwgQ29uc29sYXMsIExpYmVyYXRpb24gTW9ubywgTWVubG8sXG4gICAgICAgICAgICAgIE1vbmFjbywgQ291cmllciBOZXcsIG1vbm9zcGFjZTtcbiAgICAgICAgICB9XG4gICAgICAgICAgYm9keSB7XG4gICAgICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgICAgICBvdmVyZmxvdy14OiBoaWRkZW47XG4gICAgICAgICAgfVxuICAgICAgICAgIGEge1xuICAgICAgICAgICAgY29sb3I6IGluaGVyaXQ7XG4gICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICAgICAgICB0cmFuc2l0aW9uOiBvcGFjaXR5IDAuMDI1cyBsaW5lYXI7XG4gICAgICAgICAgfVxuICAgICAgICAgIGE6aG92ZXIge1xuICAgICAgICAgICAgb3BhY2l0eTogMC43NTtcbiAgICAgICAgICB9XG4gICAgICAgICAgYS5uby1ob3Zlcjpob3ZlciB7XG4gICAgICAgICAgICBvcGFjaXR5OiAxO1xuICAgICAgICAgIH1cbiAgICAgICAgICAuaG92ZXJfYm94X292ZXJsYXkge1xuICAgICAgICAgICAgb3BhY2l0eTogMDtcbiAgICAgICAgICAgIHRyYW5zaXRpb246IG9wYWNpdHkgMC4wMjVzIGxpbmVhcjtcbiAgICAgICAgICB9XG4gICAgICAgICAgLmhvdmVyX2JveDpob3ZlciAuaG92ZXJfYm94X292ZXJsYXkge1xuICAgICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgICB9XG4gICAgICAgICAgYS5ncmF5LWJhY2tlciB7XG4gICAgICAgICAgICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kIDAuMDVzIGxpbmVhcjtcbiAgICAgICAgICB9XG4gICAgICAgICAgYS5ncmF5LWJhY2tlcjpob3ZlciB7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiAjZjNmM2YzO1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAgIGh0bWwge1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2Fmc31weDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAke2FmcyAqIGxpbmVfaGVpZ2h0fXB4O1xuICAgICAgICAgIH1cbiAgICAgICAgICBhLFxuICAgICAgICAgIC5kaXNwbGF5LWxpbmsge1xuICAgICAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KFxuICAgICAgICAgICAgICB0byByaWdodCxcbiAgICAgICAgICAgICAgYmxhY2sgMTAwJSxcbiAgICAgICAgICAgICAgdHJhbnNwYXJlbnQgMCVcbiAgICAgICAgICAgICk7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAwZW0gY2FsYygkezEgKyBzbX1lbSk7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLXJlcGVhdDogcmVwZWF0LXg7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLXNpemU6IDFlbSAke3NtfWVtO1xuICAgICAgICAgIH1cbiAgICAgICAgICBhLm5vLWhvdmVyIHtcbiAgICAgICAgICAgIGJhY2tncm91bmQtaW1hZ2U6IG5vbmU7XG4gICAgICAgICAgfVxuICAgICAgICBgfTwvc3R5bGU+XG5cbiAgICAgICAge29wdGltYWwgIT09IG51bGwgPyAoXG4gICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgIDxIZWFkZXJcbiAgICAgICAgICAgICAgZ3JlbT17Z3JlbX1cbiAgICAgICAgICAgICAgbG9nb19zdHJva2U9e2xvZ29fc3Ryb2tlfVxuICAgICAgICAgICAgICBjYXA9e2NhcH1cbiAgICAgICAgICAgICAgZnNuPXtmc259XG4gICAgICAgICAgICAgIGZzPXtmc31cbiAgICAgICAgICAgICAgaXNfcG9zdD17aXNfcG9zdH1cbiAgICAgICAgICAgIC8+XG5cbiAgICAgICAgICAgIHtpc19wb3N0ID8gKFxuICAgICAgICAgICAgICA8UG9zdExheW91dCBwYXRobmFtZT17cGF0aG5hbWV9IHsuLi5ncmlkX3Byb3BzfT5cbiAgICAgICAgICAgICAgICA8Q29tcG9uZW50IHsuLi5wYWdlUHJvcHN9IC8+XG4gICAgICAgICAgICAgIDwvUG9zdExheW91dD5cbiAgICAgICAgICAgICkgOiAoXG4gICAgICAgICAgICAgIDxDb21wb25lbnQgey4uLnBhZ2VQcm9wc30gey4uLmdyaWRfcHJvcHN9IC8+XG4gICAgICAgICAgICApfVxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICApIDogbnVsbH1cbiAgICAgIDwvQ29udGFpbmVyPlxuICAgIClcbiAgfVxufVxuIl19 */\n/*@ sourceURL=/Users/grant.custer/Sites/ffgrids/fastforward/pages/_app.js */")), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a, {
         id: "3492724327",
-        dynamic: [afs, afs * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], 1 + _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"]],
+        dynamic: [afs, afs * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], 1 + _parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], _parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"]],
         __self: this
-      }, "html{font-size:".concat(afs, "px;line-height:").concat(afs * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], "px;}a,.display-link{background-image:linear-gradient( to right, black 100%, transparent 0% );background-position:0em calc(").concat(1 + _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], "em);background-repeat:repeat-x;background-size:1em ").concat(_exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], "em;}a.no-hover{background-image:none;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmZncmlkcy9mYXN0Zm9yd2FyZC9wYWdlcy9fYXBwLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWtNMkIsQUFHc0QsQUFTeEMsQUFNcUIsc0JBQ3hCLG1CQWY2QyxnQ0FTa0IsV0FSL0Qsa0RBUzZCLDJCQUN3QixtREFDckQiLCJmaWxlIjoiL1VzZXJzL2dyYW50LmN1c3Rlci9TaXRlcy9mZmdyaWRzL2Zhc3Rmb3J3YXJkL3BhZ2VzL19hcHAuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgQXBwLCB7IENvbnRhaW5lciB9IGZyb20gJ25leHQvYXBwJ1xuaW1wb3J0IHsgUG9zdExheW91dCB9IGZyb20gJy4uL3BhcnRzL0xheW91dCdcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB7IGZvbnRfc2l6ZSwgbGluZV9oZWlnaHQsIGZvbnRfbWluLCBzbSB9IGZyb20gJy4uLy4uL2V4cC9wYXJ0cy9TdGF0aWMnXG5pbXBvcnQgeyBkZWJvdW5jZSB9IGZyb20gJ2xvZGFzaCdcbmltcG9ydCBIZWFkZXIgZnJvbSAnLi4vcGFydHMvSGVhZGVyJ1xuXG4vLyBPdmVycmlkZSB0aGUgQXBwIGNsYXNzIHRvIHB1dCBsYXlvdXQgY29tcG9uZW50IGFyb3VuZCB0aGUgcGFnZSBjb250ZW50c1xuLy8gaHR0cHM6Ly9naXRodWIuY29tL3plaXQvbmV4dC5qcyNjdXN0b20tYXBwXG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIE15QXBwIGV4dGVuZHMgQXBwIHtcbiAgY29uc3RydWN0b3IocHJvcHMpIHtcbiAgICBzdXBlcihwcm9wcylcbiAgICB0aGlzLnN0YXRlID0ge1xuICAgICAgd3c6IDAsXG4gICAgICBvcHRpbWFsOiBudWxsLFxuICAgICAgZ3JpZF9jYW52YXM6IG51bGwsXG4gICAgICBtb2RlOiAnbGlnaHQnLFxuICAgICAgZ3JpZDogJ2hpZGUnLFxuICAgICAgc2hvd2luZ19wb3N0czogMjUsXG4gICAgfVxuICAgIHRoaXMuc2V0U2l6ZSA9IHRoaXMuc2V0U2l6ZS5iaW5kKHRoaXMpXG4gICAgdGhpcy5zZXRTaXplID0gZGVib3VuY2UodGhpcy5zZXRTaXplLCAxMDApXG4gIH1cblxuICBzZXRTaXplKCkge1xuICAgIGxldCBjYW52YXMgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdjYW52YXMnKVxuICAgIGxldCBjdHggPSBjYW52YXMuZ2V0Q29udGV4dCgnMmQnKVxuICAgIGN0eC5mb250ID0gYG5vcm1hbCAke2ZvbnRfc2l6ZX1weCBJbnRlcmBcbiAgICBsZXQgd2lkdGggPSBjdHgubWVhc3VyZVRleHQoXG4gICAgICAndGhvdXNhbmQgd3JpdGVycy4gV2l0aCBvdmVyIGEgbWlsbGlvbiBwZW9wbGUgZnJvbSB2YXJpb3VzIGZpZWxkcyB3b3JraW5nJ1xuICAgICkud2lkdGhcbiAgICB0aGlzLnNldFN0YXRlKFxuICAgICAge1xuICAgICAgICB3dzogd2luZG93LmlubmVyV2lkdGgsXG4gICAgICAgIHdoOiB3aW5kb3cuaW5uZXJIZWlnaHQsXG4gICAgICAgIG9wdGltYWw6IHdpZHRoICsgZm9udF9zaXplICogbGluZV9oZWlnaHQsXG4gICAgICAgIC8vIG9wdGltYWw6IDYzMy41MDI0NDE0MDYyNSxcbiAgICAgIH0sXG4gICAgICAoKSA9PiB7fVxuICAgIClcbiAgfVxuXG4gIGNvbXBvbmVudERpZE1vdW50KCkge1xuICAgIHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKCdyZXNpemUnLCB0aGlzLnNldFNpemUpXG4gICAgdGhpcy5zZXRTaXplKClcblxuICAgIGxldCBtb2RlX3ZhbHVlID0gbG9jYWxTdG9yYWdlLmdldEl0ZW0oJ21vZGUnKSB8fCAnbGlnaHQnXG4gICAgbGV0IGdyaWRfdmFsdWUgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnZ3JpZCcpIHx8ICdoaWRlJ1xuXG4gICAgbGV0IGNhbnZhcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2NhbnZhcycpXG4gICAgdGhpcy5zZXRTdGF0ZSh7IGdyaWRfY2FudmFzOiBjYW52YXMsIG1vZGU6IG1vZGVfdmFsdWUsIGdyaWQ6IGdyaWRfdmFsdWUgfSlcbiAgfVxuXG4gIHJlbmRlcigpIHtcbiAgICBsZXQgeyB3dywgd2gsIG9wdGltYWwsIG1vZGUsIGdyaWQsIGdyaWRfY2FudmFzLCBzaG93aW5nX3Bvc3RzIH0gPSB0aGlzLnN0YXRlXG4gICAgY29uc3QgeyBDb21wb25lbnQsIHBhZ2VQcm9wcyB9ID0gdGhpcy5wcm9wc1xuICAgIGNvbnN0IHsgcGF0aG5hbWUgfSA9IHRoaXMucHJvcHMucm91dGVyXG5cbiAgICBsZXQgaXNfcG9zdCA9IHBhdGhuYW1lLnN0YXJ0c1dpdGgoJy9wb3N0cy8nKVxuXG4gICAgbGV0IG9ncmVtID0gZm9udF9zaXplICogbGluZV9oZWlnaHRcbiAgICBsZXQgYWZzID0gZm9udF9zaXplXG5cbiAgICBsZXQgZm9udF9yYXRpbyA9IG9wdGltYWwgLyBmb250X3NpemVcbiAgICBpZiAod3cgLSBvZ3JlbSA8IG9wdGltYWwpIHtcbiAgICAgIGxldCBhc3BlY3RfZm9udCA9ICh3dyAtIG9ncmVtKSAvIGZvbnRfcmF0aW9cbiAgICAgIGlmIChhc3BlY3RfZm9udCA+IGZvbnRfbWluKSB7XG4gICAgICAgIGFmcyA9IGFzcGVjdF9mb250XG4gICAgICB9IGVsc2Uge1xuICAgICAgICBhZnMgPSBmb250X21pblxuICAgICAgfVxuICAgIH1cblxuICAgIG9ncmVtID0gYWZzICogbGluZV9oZWlnaHRcblxuICAgIGxldCBkaXZpc2lvbnMgPSA0XG5cbiAgICBsZXQgdGFyZ2V0X3dpZHRoID0gb3B0aW1hbCAvIGRpdmlzaW9uc1xuICAgIGxldCBjb2x1bW5zID0gTWF0aC5mbG9vcigod3cgLSBvZ3JlbSkgLyB0YXJnZXRfd2lkdGgpXG4gICAgbGV0IGNvbHVtbl93aWR0aCA9ICh3dyAtIG9ncmVtKSAvIGNvbHVtbnNcblxuICAgIGxldCBvZmZzZXQgPSAwXG4gICAgbGV0IGV2ZW4gPSBjb2x1bW5zICUgMiA9PT0gMFxuICAgIGlmICghZXZlbikge1xuICAgICAgY29sdW1ucyA9IGNvbHVtbnMgLSAxXG4gICAgICBvZmZzZXQgPSBjb2x1bW5fd2lkdGggLyAyXG4gICAgfVxuXG4gICAgbGV0IHJhdGlvID0gY29sdW1uX3dpZHRoIC8gdGFyZ2V0X3dpZHRoXG5cbiAgICBsZXQgb3B0aW1fd2lkdGggPSBjb2x1bW5fd2lkdGggKiBkaXZpc2lvbnNcbiAgICBsZXQgb3B0aW1fY2VudGVyX2xlZnQgPVxuICAgICAgKGNvbHVtbnMgLyAyIC0gZGl2aXNpb25zIC8gMikgKiBjb2x1bW5fd2lkdGggKyBvZmZzZXRcblxuICAgIGxldCBzdGFja2VkID0gZmFsc2VcbiAgICAvLyBUT0RPIHJldGhpbmsgc3RhY2tlZFxuICAgIGlmIChjb2x1bW5zIDwgZGl2aXNpb25zKSB7XG4gICAgICBvZmZzZXQgPSAwXG4gICAgICBjb2x1bW5zID0gZGl2aXNpb25zXG4gICAgICBjb2x1bW5fd2lkdGggPSAod3cgLSBvZ3JlbSkgLyBkaXZpc2lvbnNcbiAgICAgIG9wdGltX3dpZHRoID0gY29sdW1uX3dpZHRoICogZGl2aXNpb25zXG4gICAgICBvcHRpbV9jZW50ZXJfbGVmdCA9IDBcbiAgICAgIC8vIGdyZW0gPSBncmVtIC8gMlxuICAgICAgcmF0aW8gPSAxXG4gICAgICBzdGFja2VkID0gdHJ1ZVxuICAgIH1cblxuICAgIC8vIEFkanVzdCBncmVtXG4gICAgbGV0IGZzID0gYWZzICogcmF0aW9cbiAgICBsZXQgZ3JlbSA9IGZzICogbGluZV9oZWlnaHRcblxuICAgIGxldCBjZW50ZXJfdGV4dCA9IHtcbiAgICAgIHdpZHRoOiBvcHRpbV93aWR0aCxcbiAgICAgIG1hcmdpbkxlZnQ6IG9wdGltX2NlbnRlcl9sZWZ0LFxuICAgIH1cbiAgICBsZXQgb2ZzbiA9IHtcbiAgICAgIGZvbnRTaXplOiBhZnMsXG4gICAgICBsaW5lSGVpZ2h0OiBsaW5lX2hlaWdodCxcbiAgICB9XG4gICAgLy8gZm9udC1zaXplIG5vcm1hbFxuICAgIGxldCBmc24gPSB7XG4gICAgICBmb250U2l6ZTogZnMsXG4gICAgICBsaW5lSGVpZ2h0OiBsaW5lX2hlaWdodCxcbiAgICB9XG5cbiAgICBsZXQgbG9nb19zdHJva2UgPSAnYmxhY2snXG4gICAgbGV0IG9jYXAgPSBvZ3JlbSAqICgyMDQ4IC8gMjgxNilcbiAgICBsZXQgY2FwID0gZ3JlbSAqICgyMDQ4IC8gMjgxNilcblxuICAgIGxldCBncmlkX3Byb3BzID0ge1xuICAgICAgZ3JlbSxcbiAgICAgIG9ncmVtLFxuICAgICAgY2VudGVyX3RleHQsXG4gICAgICBhZnMsXG4gICAgICBmc24sXG4gICAgICBmcyxcbiAgICAgIGNvbHVtbnMsXG4gICAgICBjb2x1bW5fd2lkdGgsXG4gICAgICBvZmZzZXQsXG4gICAgICB3dyxcbiAgICAgIHdoLFxuICAgICAgY2FwLFxuICAgICAgb3B0aW1fd2lkdGgsXG4gICAgfVxuXG4gICAgY29uc29sZS5sb2coZ3JpZF9wcm9wcylcblxuICAgIHJldHVybiAoXG4gICAgICA8Q29udGFpbmVyPlxuICAgICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAgICoge1xuICAgICAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICAgICAgICB9XG4gICAgICAgICAgaHRtbCB7XG4gICAgICAgICAgICBmb250LWZhbWlseTogJ0ludGVyJywgc2VyaWY7XG4gICAgICAgICAgICBmb250LXNpemU6ICR7Zm9udF9zaXplfXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6ICR7Zm9udF9zaXplICogbGluZV9oZWlnaHR9cHg7XG4gICAgICAgICAgICB0ZXh0LXJlbmRlcmluZzogb3B0aW1pemVsZWdpYmlsaXR5O1xuICAgICAgICAgICAgZm9udC1mZWF0dXJlLXNldHRpbmdzOiAna2Vybic7XG4gICAgICAgICAgICBmb250LWtlcm5pbmc6IG5vcm1hbDtcbiAgICAgICAgICAgIGZvbnQtZmVhdHVyZS1zZXR0aW5nczogJ3NzMDInIDE7XG4gICAgICAgICAgICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgICAgICAgICAgIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBncmF5c2NhbGU7XG4gICAgICAgICAgfVxuICAgICAgICAgIGJvZHkge1xuICAgICAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICAgICAgb3ZlcmZsb3cteDogaGlkZGVuO1xuICAgICAgICAgIH1cbiAgICAgICAgICBhIHtcbiAgICAgICAgICAgIGNvbG9yOiBpbmhlcml0O1xuICAgICAgICAgICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogb3BhY2l0eSAwLjAyNXMgbGluZWFyO1xuICAgICAgICAgIH1cbiAgICAgICAgICBhOmhvdmVyIHtcbiAgICAgICAgICAgIG9wYWNpdHk6IDAuNzU7XG4gICAgICAgICAgfVxuICAgICAgICAgIGEubm8taG92ZXI6aG92ZXIge1xuICAgICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgICB9XG4gICAgICAgICAgLmhvdmVyX2JveF9vdmVybGF5IHtcbiAgICAgICAgICAgIG9wYWNpdHk6IDA7XG4gICAgICAgICAgICB0cmFuc2l0aW9uOiBvcGFjaXR5IDAuMDI1cyBsaW5lYXI7XG4gICAgICAgICAgfVxuICAgICAgICAgIC5ob3Zlcl9ib3g6aG92ZXIgLmhvdmVyX2JveF9vdmVybGF5IHtcbiAgICAgICAgICAgIG9wYWNpdHk6IDE7XG4gICAgICAgICAgfVxuICAgICAgICAgIGEuZ3JheS1iYWNrZXIge1xuICAgICAgICAgICAgdHJhbnNpdGlvbjogYmFja2dyb3VuZCAwLjA1cyBsaW5lYXI7XG4gICAgICAgICAgfVxuICAgICAgICAgIGEuZ3JheS1iYWNrZXI6aG92ZXIge1xuICAgICAgICAgICAgYmFja2dyb3VuZDogI2YzZjNmMztcbiAgICAgICAgICB9XG4gICAgICAgIGB9PC9zdHlsZT5cbiAgICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgICBodG1sIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogJHthZnN9cHg7XG4gICAgICAgICAgICBsaW5lLWhlaWdodDogJHthZnMgKiBsaW5lX2hlaWdodH1weDtcbiAgICAgICAgICB9XG4gICAgICAgICAgYSxcbiAgICAgICAgICAuZGlzcGxheS1saW5rIHtcbiAgICAgICAgICAgIGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudChcbiAgICAgICAgICAgICAgdG8gcmlnaHQsXG4gICAgICAgICAgICAgIGJsYWNrIDEwMCUsXG4gICAgICAgICAgICAgIHRyYW5zcGFyZW50IDAlXG4gICAgICAgICAgICApO1xuICAgICAgICAgICAgYmFja2dyb3VuZC1wb3NpdGlvbjogMGVtIGNhbGMoJHsxICsgc219ZW0pO1xuICAgICAgICAgICAgYmFja2dyb3VuZC1yZXBlYXQ6IHJlcGVhdC14O1xuICAgICAgICAgICAgYmFja2dyb3VuZC1zaXplOiAxZW0gJHtzbX1lbTtcbiAgICAgICAgICB9XG4gICAgICAgICAgYS5uby1ob3ZlciB7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiBub25lO1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuXG4gICAgICAgIHtvcHRpbWFsICE9PSBudWxsID8gKFxuICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICA8SGVhZGVyXG4gICAgICAgICAgICAgIGdyZW09e2dyZW19XG4gICAgICAgICAgICAgIGxvZ29fc3Ryb2tlPXtsb2dvX3N0cm9rZX1cbiAgICAgICAgICAgICAgY2FwPXtjYXB9XG4gICAgICAgICAgICAgIGZzbj17ZnNufVxuICAgICAgICAgICAgICBmcz17ZnN9XG4gICAgICAgICAgICAvPlxuXG4gICAgICAgICAgICB7aXNfcG9zdCA/IChcbiAgICAgICAgICAgICAgPFBvc3RMYXlvdXQgcGF0aG5hbWU9e3BhdGhuYW1lfSB7Li4uZ3JpZF9wcm9wc30+XG4gICAgICAgICAgICAgICAgPENvbXBvbmVudCB7Li4ucGFnZVByb3BzfSAvPlxuICAgICAgICAgICAgICA8L1Bvc3RMYXlvdXQ+XG4gICAgICAgICAgICApIDogKFxuICAgICAgICAgICAgICA8Q29tcG9uZW50IHsuLi5wYWdlUHJvcHN9IHsuLi5ncmlkX3Byb3BzfSAvPlxuICAgICAgICAgICAgKX1cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgKSA6IG51bGx9XG4gICAgICA8L0NvbnRhaW5lcj5cbiAgICApXG4gIH1cbn1cbiJdfQ== */\n/*@ sourceURL=/Users/grant.custer/Sites/ffgrids/fastforward/pages/_app.js */")), optimal !== null ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a.dynamic([["1356236813", [_exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"]]], ["3492724327", [afs, afs * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], 1 + _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"]]]]),
+      }, "html{font-size:".concat(afs, "px;line-height:").concat(afs * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], "px;}a,.display-link{background-image:linear-gradient( to right, black 100%, transparent 0% );background-position:0em calc(").concat(1 + _parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], "em);background-repeat:repeat-x;background-size:1em ").concat(_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], "em;}a.no-hover{background-image:none;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmZncmlkcy9mYXN0Zm9yd2FyZC9wYWdlcy9fYXBwLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXVNMkIsQUFHc0QsQUFTeEMsQUFNcUIsc0JBQ3hCLG1CQWY2QyxnQ0FTa0IsV0FSL0Qsa0RBUzZCLDJCQUN3QixtREFDckQiLCJmaWxlIjoiL1VzZXJzL2dyYW50LmN1c3Rlci9TaXRlcy9mZmdyaWRzL2Zhc3Rmb3J3YXJkL3BhZ2VzL19hcHAuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgQXBwLCB7IENvbnRhaW5lciB9IGZyb20gJ25leHQvYXBwJ1xuaW1wb3J0IHsgUG9zdExheW91dCB9IGZyb20gJy4uL3BhcnRzL0xheW91dCdcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB7IGZvbnRfc2l6ZSwgbGluZV9oZWlnaHQsIGZvbnRfbWluLCBzbSB9IGZyb20gJy4uL3BhcnRzL1N0YXRpYydcbmltcG9ydCB7IGRlYm91bmNlIH0gZnJvbSAnbG9kYXNoJ1xuaW1wb3J0IEhlYWRlciBmcm9tICcuLi9wYXJ0cy9IZWFkZXInXG5cbi8vIE92ZXJyaWRlIHRoZSBBcHAgY2xhc3MgdG8gcHV0IGxheW91dCBjb21wb25lbnQgYXJvdW5kIHRoZSBwYWdlIGNvbnRlbnRzXG4vLyBodHRwczovL2dpdGh1Yi5jb20vemVpdC9uZXh0LmpzI2N1c3RvbS1hcHBcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgTXlBcHAgZXh0ZW5kcyBBcHAge1xuICBjb25zdHJ1Y3Rvcihwcm9wcykge1xuICAgIHN1cGVyKHByb3BzKVxuICAgIHRoaXMuc3RhdGUgPSB7XG4gICAgICB3dzogMCxcbiAgICAgIG9wdGltYWw6IG51bGwsXG4gICAgICBncmlkX2NhbnZhczogbnVsbCxcbiAgICAgIG1vZGU6ICdsaWdodCcsXG4gICAgICBncmlkOiAnaGlkZScsXG4gICAgICBzaG93aW5nX3Bvc3RzOiAyNSxcbiAgICB9XG4gICAgdGhpcy5zZXRTaXplID0gdGhpcy5zZXRTaXplLmJpbmQodGhpcylcbiAgICB0aGlzLnNldFNpemUgPSBkZWJvdW5jZSh0aGlzLnNldFNpemUsIDEwMClcbiAgfVxuXG4gIHNldFNpemUoKSB7XG4gICAgbGV0IGNhbnZhcyA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2NhbnZhcycpXG4gICAgbGV0IGN0eCA9IGNhbnZhcy5nZXRDb250ZXh0KCcyZCcpXG4gICAgY3R4LmZvbnQgPSBgbm9ybWFsICR7Zm9udF9zaXplfXB4IEludGVyYFxuICAgIGxldCB3aWR0aCA9IGN0eC5tZWFzdXJlVGV4dChcbiAgICAgICd0aG91c2FuZCB3cml0ZXJzLiBXaXRoIG92ZXIgYSBtaWxsaW9uIHBlb3BsZSBmcm9tIHZhcmlvdXMgZmllbGRzIHdvcmtpbmcnXG4gICAgKS53aWR0aFxuICAgIHRoaXMuc2V0U3RhdGUoXG4gICAgICB7XG4gICAgICAgIHd3OiB3aW5kb3cuaW5uZXJXaWR0aCxcbiAgICAgICAgd2g6IHdpbmRvdy5pbm5lckhlaWdodCxcbiAgICAgICAgb3B0aW1hbDogd2lkdGggKyBmb250X3NpemUgKiBsaW5lX2hlaWdodCxcbiAgICAgICAgLy8gb3B0aW1hbDogNjMzLjUwMjQ0MTQwNjI1LFxuICAgICAgfSxcbiAgICAgICgpID0+IHt9XG4gICAgKVxuICB9XG5cbiAgY29tcG9uZW50RGlkTW91bnQoKSB7XG4gICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ3Jlc2l6ZScsIHRoaXMuc2V0U2l6ZSlcbiAgICB0aGlzLnNldFNpemUoKVxuXG4gICAgbGV0IG1vZGVfdmFsdWUgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbSgnbW9kZScpIHx8ICdsaWdodCdcbiAgICBsZXQgZ3JpZF92YWx1ZSA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCdncmlkJykgfHwgJ2hpZGUnXG5cbiAgICBsZXQgY2FudmFzID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnY2FudmFzJylcbiAgICB0aGlzLnNldFN0YXRlKHsgZ3JpZF9jYW52YXM6IGNhbnZhcywgbW9kZTogbW9kZV92YWx1ZSwgZ3JpZDogZ3JpZF92YWx1ZSB9KVxuICB9XG5cbiAgcmVuZGVyKCkge1xuICAgIGxldCB7IHd3LCB3aCwgb3B0aW1hbCwgbW9kZSwgZ3JpZCwgZ3JpZF9jYW52YXMsIHNob3dpbmdfcG9zdHMgfSA9IHRoaXMuc3RhdGVcbiAgICBjb25zdCB7IENvbXBvbmVudCwgcGFnZVByb3BzIH0gPSB0aGlzLnByb3BzXG4gICAgY29uc3QgeyBwYXRobmFtZSB9ID0gdGhpcy5wcm9wcy5yb3V0ZXJcblxuICAgIGxldCBpc19wb3N0ID0gcGF0aG5hbWUuc3RhcnRzV2l0aCgnL3Bvc3RzLycpXG5cbiAgICBsZXQgb2dyZW0gPSBmb250X3NpemUgKiBsaW5lX2hlaWdodFxuICAgIGxldCBhZnMgPSBmb250X3NpemVcblxuICAgIGxldCBmb250X3JhdGlvID0gb3B0aW1hbCAvIGZvbnRfc2l6ZVxuICAgIGlmICh3dyAtIG9ncmVtIDwgb3B0aW1hbCkge1xuICAgICAgbGV0IGFzcGVjdF9mb250ID0gKHd3IC0gb2dyZW0pIC8gZm9udF9yYXRpb1xuICAgICAgaWYgKGFzcGVjdF9mb250ID4gZm9udF9taW4pIHtcbiAgICAgICAgYWZzID0gYXNwZWN0X2ZvbnRcbiAgICAgIH0gZWxzZSB7XG4gICAgICAgIGFmcyA9IGZvbnRfbWluXG4gICAgICB9XG4gICAgfVxuXG4gICAgb2dyZW0gPSBhZnMgKiBsaW5lX2hlaWdodFxuXG4gICAgbGV0IGRpdmlzaW9ucyA9IDRcblxuICAgIGxldCB0YXJnZXRfd2lkdGggPSBvcHRpbWFsIC8gZGl2aXNpb25zXG4gICAgbGV0IGNvbHVtbnMgPSBNYXRoLmZsb29yKCh3dyAtIG9ncmVtKSAvIHRhcmdldF93aWR0aClcbiAgICBsZXQgY29sdW1uX3dpZHRoID0gKHd3IC0gb2dyZW0pIC8gY29sdW1uc1xuXG4gICAgbGV0IG9mZnNldCA9IDBcbiAgICBsZXQgZXZlbiA9IGNvbHVtbnMgJSAyID09PSAwXG4gICAgaWYgKCFldmVuKSB7XG4gICAgICBjb2x1bW5zID0gY29sdW1ucyAtIDFcbiAgICAgIG9mZnNldCA9IGNvbHVtbl93aWR0aCAvIDJcbiAgICB9XG5cbiAgICBsZXQgcmF0aW8gPSBjb2x1bW5fd2lkdGggLyB0YXJnZXRfd2lkdGhcblxuICAgIGxldCBvcHRpbV93aWR0aCA9IGNvbHVtbl93aWR0aCAqIGRpdmlzaW9uc1xuICAgIGxldCBvcHRpbV9jZW50ZXJfbGVmdCA9XG4gICAgICAoY29sdW1ucyAvIDIgLSBkaXZpc2lvbnMgLyAyKSAqIGNvbHVtbl93aWR0aCArIG9mZnNldFxuXG4gICAgbGV0IHN0YWNrZWQgPSBmYWxzZVxuICAgIC8vIFRPRE8gcmV0aGluayBzdGFja2VkXG4gICAgaWYgKGNvbHVtbnMgPCBkaXZpc2lvbnMpIHtcbiAgICAgIG9mZnNldCA9IDBcbiAgICAgIGNvbHVtbnMgPSBkaXZpc2lvbnNcbiAgICAgIGNvbHVtbl93aWR0aCA9ICh3dyAtIG9ncmVtKSAvIGRpdmlzaW9uc1xuICAgICAgb3B0aW1fd2lkdGggPSBjb2x1bW5fd2lkdGggKiBkaXZpc2lvbnNcbiAgICAgIG9wdGltX2NlbnRlcl9sZWZ0ID0gMFxuICAgICAgLy8gZ3JlbSA9IGdyZW0gLyAyXG4gICAgICByYXRpbyA9IDFcbiAgICAgIHN0YWNrZWQgPSB0cnVlXG4gICAgfVxuXG4gICAgLy8gQWRqdXN0IGdyZW1cbiAgICBsZXQgZnMgPSBhZnMgKiByYXRpb1xuICAgIGxldCBncmVtID0gZnMgKiBsaW5lX2hlaWdodFxuXG4gICAgbGV0IGNlbnRlcl90ZXh0ID0ge1xuICAgICAgd2lkdGg6IG9wdGltX3dpZHRoLFxuICAgICAgbWFyZ2luTGVmdDogb3B0aW1fY2VudGVyX2xlZnQsXG4gICAgfVxuICAgIGxldCBvZnNuID0ge1xuICAgICAgZm9udFNpemU6IGFmcyxcbiAgICAgIGxpbmVIZWlnaHQ6IGxpbmVfaGVpZ2h0LFxuICAgIH1cbiAgICAvLyBmb250LXNpemUgbm9ybWFsXG4gICAgbGV0IGZzbiA9IHtcbiAgICAgIGZvbnRTaXplOiBmcyxcbiAgICAgIGxpbmVIZWlnaHQ6IGxpbmVfaGVpZ2h0LFxuICAgIH1cblxuICAgIGxldCBsb2dvX3N0cm9rZSA9ICdibGFjaydcbiAgICBsZXQgb2NhcCA9IG9ncmVtICogKDIwNDggLyAyODE2KVxuICAgIGxldCBjYXAgPSBncmVtICogKDIwNDggLyAyODE2KVxuXG4gICAgbGV0IGdyaWRfcHJvcHMgPSB7XG4gICAgICBncmVtLFxuICAgICAgb2dyZW0sXG4gICAgICBjZW50ZXJfdGV4dCxcbiAgICAgIGFmcyxcbiAgICAgIGZzbixcbiAgICAgIGZzLFxuICAgICAgY29sdW1ucyxcbiAgICAgIGNvbHVtbl93aWR0aCxcbiAgICAgIG9mZnNldCxcbiAgICAgIHd3LFxuICAgICAgd2gsXG4gICAgICBjYXAsXG4gICAgICBvcHRpbV93aWR0aCxcbiAgICB9XG5cbiAgICByZXR1cm4gKFxuICAgICAgPENvbnRhaW5lcj5cbiAgICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgICAqIHtcbiAgICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7XG4gICAgICAgICAgfVxuICAgICAgICAgIGh0bWwge1xuICAgICAgICAgICAgZm9udC1mYW1pbHk6ICdJbnRlcicsIHNlcmlmO1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2ZvbnRfc2l6ZX1weDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAke2ZvbnRfc2l6ZSAqIGxpbmVfaGVpZ2h0fXB4O1xuICAgICAgICAgICAgdGV4dC1yZW5kZXJpbmc6IG9wdGltaXplbGVnaWJpbGl0eTtcbiAgICAgICAgICAgIGZvbnQtZmVhdHVyZS1zZXR0aW5nczogJ2tlcm4nO1xuICAgICAgICAgICAgZm9udC1rZXJuaW5nOiBub3JtYWw7XG4gICAgICAgICAgICBmb250LWZlYXR1cmUtc2V0dGluZ3M6ICdzczAyJyAxO1xuICAgICAgICAgICAgLXdlYmtpdC1mb250LXNtb290aGluZzogYW50aWFsaWFzZWQ7XG4gICAgICAgICAgICAtbW96LW9zeC1mb250LXNtb290aGluZzogZ3JheXNjYWxlO1xuICAgICAgICAgIH1cbiAgICAgICAgICBwcmUge1xuICAgICAgICAgICAgLXdlYmtpdC1mb250LXNtb290aGluZzogYXV0bztcbiAgICAgICAgICAgIC1tb3otb3N4LWZvbnQtc21vb3RoaW5nOiBhdXRvO1xuICAgICAgICAgICAgb3ZlcmZsb3cteDogYXV0bztcbiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiBTRk1vbm8tUmVndWxhciwgQ29uc29sYXMsIExpYmVyYXRpb24gTW9ubywgTWVubG8sXG4gICAgICAgICAgICAgIE1vbmFjbywgQ291cmllciBOZXcsIG1vbm9zcGFjZTtcbiAgICAgICAgICB9XG4gICAgICAgICAgYm9keSB7XG4gICAgICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgICAgICBvdmVyZmxvdy14OiBoaWRkZW47XG4gICAgICAgICAgfVxuICAgICAgICAgIGEge1xuICAgICAgICAgICAgY29sb3I6IGluaGVyaXQ7XG4gICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICAgICAgICB0cmFuc2l0aW9uOiBvcGFjaXR5IDAuMDI1cyBsaW5lYXI7XG4gICAgICAgICAgfVxuICAgICAgICAgIGE6aG92ZXIge1xuICAgICAgICAgICAgb3BhY2l0eTogMC43NTtcbiAgICAgICAgICB9XG4gICAgICAgICAgYS5uby1ob3Zlcjpob3ZlciB7XG4gICAgICAgICAgICBvcGFjaXR5OiAxO1xuICAgICAgICAgIH1cbiAgICAgICAgICAuaG92ZXJfYm94X292ZXJsYXkge1xuICAgICAgICAgICAgb3BhY2l0eTogMDtcbiAgICAgICAgICAgIHRyYW5zaXRpb246IG9wYWNpdHkgMC4wMjVzIGxpbmVhcjtcbiAgICAgICAgICB9XG4gICAgICAgICAgLmhvdmVyX2JveDpob3ZlciAuaG92ZXJfYm94X292ZXJsYXkge1xuICAgICAgICAgICAgb3BhY2l0eTogMTtcbiAgICAgICAgICB9XG4gICAgICAgICAgYS5ncmF5LWJhY2tlciB7XG4gICAgICAgICAgICB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kIDAuMDVzIGxpbmVhcjtcbiAgICAgICAgICB9XG4gICAgICAgICAgYS5ncmF5LWJhY2tlcjpob3ZlciB7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kOiAjZjNmM2YzO1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAgIGh0bWwge1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2Fmc31weDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAke2FmcyAqIGxpbmVfaGVpZ2h0fXB4O1xuICAgICAgICAgIH1cbiAgICAgICAgICBhLFxuICAgICAgICAgIC5kaXNwbGF5LWxpbmsge1xuICAgICAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KFxuICAgICAgICAgICAgICB0byByaWdodCxcbiAgICAgICAgICAgICAgYmxhY2sgMTAwJSxcbiAgICAgICAgICAgICAgdHJhbnNwYXJlbnQgMCVcbiAgICAgICAgICAgICk7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiAwZW0gY2FsYygkezEgKyBzbX1lbSk7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLXJlcGVhdDogcmVwZWF0LXg7XG4gICAgICAgICAgICBiYWNrZ3JvdW5kLXNpemU6IDFlbSAke3NtfWVtO1xuICAgICAgICAgIH1cbiAgICAgICAgICBhLm5vLWhvdmVyIHtcbiAgICAgICAgICAgIGJhY2tncm91bmQtaW1hZ2U6IG5vbmU7XG4gICAgICAgICAgfVxuICAgICAgICBgfTwvc3R5bGU+XG5cbiAgICAgICAge29wdGltYWwgIT09IG51bGwgPyAoXG4gICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgIDxIZWFkZXJcbiAgICAgICAgICAgICAgZ3JlbT17Z3JlbX1cbiAgICAgICAgICAgICAgbG9nb19zdHJva2U9e2xvZ29fc3Ryb2tlfVxuICAgICAgICAgICAgICBjYXA9e2NhcH1cbiAgICAgICAgICAgICAgZnNuPXtmc259XG4gICAgICAgICAgICAgIGZzPXtmc31cbiAgICAgICAgICAgICAgaXNfcG9zdD17aXNfcG9zdH1cbiAgICAgICAgICAgIC8+XG5cbiAgICAgICAgICAgIHtpc19wb3N0ID8gKFxuICAgICAgICAgICAgICA8UG9zdExheW91dCBwYXRobmFtZT17cGF0aG5hbWV9IHsuLi5ncmlkX3Byb3BzfT5cbiAgICAgICAgICAgICAgICA8Q29tcG9uZW50IHsuLi5wYWdlUHJvcHN9IC8+XG4gICAgICAgICAgICAgIDwvUG9zdExheW91dD5cbiAgICAgICAgICAgICkgOiAoXG4gICAgICAgICAgICAgIDxDb21wb25lbnQgey4uLnBhZ2VQcm9wc30gey4uLmdyaWRfcHJvcHN9IC8+XG4gICAgICAgICAgICApfVxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICApIDogbnVsbH1cbiAgICAgIDwvQ29udGFpbmVyPlxuICAgIClcbiAgfVxufVxuIl19 */\n/*@ sourceURL=/Users/grant.custer/Sites/ffgrids/fastforward/pages/_app.js */")), optimal !== null ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement("div", {
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a.dynamic([["3937940525", [_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], _parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"]]], ["3492724327", [afs, afs * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], 1 + _parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], _parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"]]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 217
+          lineNumber: 222
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_parts_Header__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -30468,9 +33449,10 @@ function (_App) {
         cap: cap,
         fsn: fsn,
         fs: fs,
+        is_post: is_post,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 218
+          lineNumber: 223
         },
         __self: this
       }), is_post ? react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(_parts_Layout__WEBPACK_IMPORTED_MODULE_9__["PostLayout"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -30478,21 +33460,21 @@ function (_App) {
       }, grid_props, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 227
+          lineNumber: 233
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a.dynamic([["1356236813", [_exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"]]], ["3492724327", [afs, afs * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], 1 + _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"]]]]) + " " + (pageProps.className != null && pageProps.className || ""),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a.dynamic([["3937940525", [_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], _parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"]]], ["3492724327", [afs, afs * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], 1 + _parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], _parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"]]]]) + " " + (pageProps.className != null && pageProps.className || ""),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 228
+          lineNumber: 234
         },
         __self: this
       }))) : react__WEBPACK_IMPORTED_MODULE_10___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, grid_props, {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a.dynamic([["1356236813", [_exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"]]], ["3492724327", [afs, afs * _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], 1 + _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], _exp_parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"]]]]) + " " + (grid_props.className != null && grid_props.className || pageProps.className != null && pageProps.className || ""),
+        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_7___default.a.dynamic([["3937940525", [_parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"], _parts_Static__WEBPACK_IMPORTED_MODULE_11__["font_size"] * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"]]], ["3492724327", [afs, afs * _parts_Static__WEBPACK_IMPORTED_MODULE_11__["line_height"], 1 + _parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"], _parts_Static__WEBPACK_IMPORTED_MODULE_11__["sm"]]]]) + " " + (grid_props.className != null && grid_props.className || pageProps.className != null && pageProps.className || ""),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 231
+          lineNumber: 237
         },
         __self: this
       }))) : null);
@@ -30639,8 +33621,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Dividers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Dividers */ "./parts/Dividers.js");
 /* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Utils */ "./parts/Utils.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
 
 var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/fastforward/parts/Header.js";
+
 
 
 
@@ -30650,14 +33635,16 @@ var Header = function Header(_ref) {
       logo_stroke = _ref.logo_stroke,
       cap = _ref.cap,
       fsn = _ref.fsn,
-      fs = _ref.fs;
+      fs = _ref.fs,
+      is_post = _ref.is_post;
+  console.log(is_post);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: {
       paddingBottom: grem / 2
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5
+      lineNumber: 8
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -30666,7 +33653,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 9
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -30677,7 +33664,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 10
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -30687,7 +33674,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 17
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -30699,7 +33686,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 18
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
@@ -30711,7 +33698,7 @@ var Header = function Header(_ref) {
     className: "no-hover no-underline",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 26
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -30721,7 +33708,7 @@ var Header = function Header(_ref) {
     src: "/static/images/cloudera.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 34
     },
     __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -30732,7 +33719,7 @@ var Header = function Header(_ref) {
     }, fsn),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 40
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
@@ -30745,7 +33732,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 48
     },
     __self: this
   }, "About CFFL \u2192"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Dividers__WEBPACK_IMPORTED_MODULE_2__["Hd"], {
@@ -30755,7 +33742,7 @@ var Header = function Header(_ref) {
     color: "rgba(0,0,0,0.125)",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59
+      lineNumber: 62
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -30766,7 +33753,7 @@ var Header = function Header(_ref) {
     }, fsn),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 64
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -30776,7 +33763,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69
+      lineNumber: 72
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -30790,16 +33777,29 @@ var Header = function Header(_ref) {
     src: "/static/images/ff.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70
+      lineNumber: 73
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 83
     },
     __self: this
-  }, "Fast Forward Labs")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, "Fast Forward Labs", ' ', is_post ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
+    },
+    __self: this
+  }, "Blog")) : 'Blog')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -30807,7 +33807,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 94
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -30816,30 +33816,30 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 101
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: {},
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 102
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    href: "https://blog.fastforwardlabs.com/",
+    href: "https://experiments.fastforwardlabs.com",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91
+      lineNumber: 103
     },
     __self: this
-  }, "Blog")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Dividers__WEBPACK_IMPORTED_MODULE_2__["Hd"], {
+  }, "AI Experiments")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Dividers__WEBPACK_IMPORTED_MODULE_2__["Hd"], {
     width: "100%",
     align: "b",
     fs: fs,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 109
     },
     __self: this
   })));
@@ -30859,25 +33859,32 @@ var Header = function Header(_ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostLayout", function() { return PostLayout; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
-/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _parts_Utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../parts/Utils */ "./parts/Utils.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../posts */ "./posts.js");
-/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mdx-js/react */ "./node_modules/@mdx-js/react/dist/index.es.js");
-/* harmony import */ var _parts_Dividers__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../parts/Dividers */ "./parts/Dividers.js");
-/* harmony import */ var _parts_PostPreview__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../parts/PostPreview */ "./parts/PostPreview.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styled-jsx/style */ "./node_modules/styled-jsx/style.js");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _parts_Utils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../parts/Utils */ "./parts/Utils.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../posts */ "./posts.js");
+/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mdx-js/react */ "./node_modules/@mdx-js/react/dist/index.es.js");
+/* harmony import */ var _parts_Dividers__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../parts/Dividers */ "./parts/Dividers.js");
+/* harmony import */ var _parts_PostPreview__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../parts/PostPreview */ "./parts/PostPreview.js");
+/* harmony import */ var prism_react_renderer__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! prism-react-renderer */ "./node_modules/prism-react-renderer/es/index.js");
+/* harmony import */ var prism_react_renderer_themes_nightOwl__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! prism-react-renderer/themes/nightOwl */ "./node_modules/prism-react-renderer/themes/nightOwl.js");
+/* harmony import */ var prism_react_renderer_themes_nightOwl__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(prism_react_renderer_themes_nightOwl__WEBPACK_IMPORTED_MODULE_18__);
+
+
 
 
 
@@ -30894,19 +33901,21 @@ var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/fastforward/parts/Layout.j
 
 
 
+
+
 var ofs = 16;
 var PostLayout =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(PostLayout, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(PostLayout, _React$Component);
 
   function PostLayout() {
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, PostLayout);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, PostLayout);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(PostLayout).apply(this, arguments));
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(PostLayout).apply(this, arguments));
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(PostLayout, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(PostLayout, [{
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -30926,22 +33935,20 @@ function (_React$Component) {
           wh = _this$props2.wh,
           cap = _this$props2.cap,
           optim_width = _this$props2.optim_width;
-      console.log(this.props);
-      console.log(column_width);
-      var post_index = _posts__WEBPACK_IMPORTED_MODULE_11__["default"].map(function (p) {
-        return p.urlPath;
+      var post_index = _posts__WEBPACK_IMPORTED_MODULE_13__["default"].map(function (p) {
+        return p.path_name;
       }).indexOf(pathname);
       var prev_index = post_index - 1;
       var next_index = post_index + 1;
-      var post = _posts__WEBPACK_IMPORTED_MODULE_11__["default"][post_index];
-      var prev_post = _posts__WEBPACK_IMPORTED_MODULE_11__["default"][prev_index];
-      var next_post = _posts__WEBPACK_IMPORTED_MODULE_11__["default"][next_index];
+      var post = _posts__WEBPACK_IMPORTED_MODULE_13__["default"][post_index];
+      var prev_post = _posts__WEBPACK_IMPORTED_MODULE_13__["default"][prev_index];
+      var next_post = _posts__WEBPACK_IMPORTED_MODULE_13__["default"][next_index];
       var components = {
         img: function img(props) {
           var address = props.src;
           address.replace('{{ site.github.url }}', '');
           address = address.startsWith('http') ? address : "/static".concat(address);
-          return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
             style: {
               // width: optim_width + ogrem,
               // marginLeft: -grem / 2 - ogrem / 2,
@@ -30949,10 +33956,10 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 46
+              lineNumber: 45
             },
             __self: this
-          }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
+          }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("img", {
             src: address,
             alt: props.alt,
             style: {
@@ -30963,10 +33970,114 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 53
+              lineNumber: 52
             },
             __self: this
           }));
+        },
+        pre: function pre(props) {
+          return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, props, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 65
+            },
+            __self: this
+          }));
+        },
+        code: function code(props) {
+          var children = props.children;
+          var language = props.className !== undefined ? props.className.replace(/language-/, '') : '';
+          return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(prism_react_renderer__WEBPACK_IMPORTED_MODULE_17__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, prism_react_renderer__WEBPACK_IMPORTED_MODULE_17__["defaultProps"], {
+            code: children,
+            language: language,
+            theme: undefined,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 73
+            },
+            __self: this
+          }), function (_ref) {
+            var className = _ref.className,
+                style = _ref.style,
+                tokens = _ref.tokens,
+                getLineProps = _ref.getLineProps,
+                getTokenProps = _ref.getTokenProps;
+            return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+              style: {
+                position: 'relative',
+                marginBottom: grem,
+                width: 4 * column_width,
+                marginLeft: -grem / 2,
+                marginRight: -grem / 2
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 80
+              },
+              __self: this
+            }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+              className: className,
+              style: {
+                overflowX: 'auto',
+                overflowY: 'hidden',
+                background: '#f3f3f3'
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 89
+              },
+              __self: this
+            }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("pre", {
+              style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, style, {
+                float: 'left',
+                fontSize: fs * 0.75,
+                minWidth: '100%',
+                position: 'relative',
+                lineHeight: 1.5,
+                margin: 0,
+                padding: grem / 2,
+                overflow: 'visible'
+              }),
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 97
+              },
+              __self: this
+            }, tokens.map(function (line, i) {
+              return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+                key: i
+              }, getLineProps({
+                line: line,
+                key: i
+              }), {
+                style: {},
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 111
+                },
+                __self: this
+              }), line.map(function (token, key) {
+                return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("span", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({
+                  key: key
+                }, getTokenProps({
+                  token: token,
+                  key: key
+                }), {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 117
+                  },
+                  __self: this
+                }));
+              }));
+            })), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_15__["Rect"], {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 122
+              },
+              __self: this
+            })));
+          });
         }
       };
       var post_date = new Date(post.publishDate);
@@ -30975,208 +34086,212 @@ function (_React$Component) {
       }), " ").concat((post_date.getDay() + 1).toString().padStart(2, '0'), " ").concat(post_date.getFullYear());
       var preview_columns = Math.max(columns / 2 % 2 === 0 ? columns / 2 : columns / 2 - 1, 4);
       var preview_offset = Math.max(0, columns / 2 - preview_columns);
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+      var half = Math.floor(columns / 2 / 2) * 2;
+      return react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 147
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_10___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 148
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("link", {
         rel: "icon",
         type: "image/x-icon",
         href: "static/images/favicon.png",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 84
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("title", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 90
-        },
-        __self: this
-      }, post.title, " - Cloudera Fast Forward")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a, {
-        id: "1405458506",
-        dynamic: [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem],
-        __self: this
-      }, "h1,h2,h3,h4,h5,h6{font-weight:400;font-style:normal;margin:0;}h1{font-size:".concat(fs * 3, "px;line-height:1.25;}h2{font-size:").concat(fs * 2, "px;line-height:1.25;padding-top:").concat(grem, "px;margin-bottom:").concat(grem, "px;}h3{font-size:").concat(fs * 1.5, "px;line-height:1.25;padding-top:").concat(grem, "px;margin-bottom:").concat(grem, "px;}h4{font-size:").concat(fs * 1.25, "px;line-height:1.25;padding-top:").concat(grem, "px;margin-bottom:").concat(grem, "px;}h5{font-size:").concat(fs * 0.75, "px;line-height:1.4375;margin-bottom:").concat(grem / 2, "px;padding-bottom:").concat(grem / 2, "px;margin-top:-").concat(grem / 2, "px;}p{margin:0 0 ").concat(grem, "px 0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmZncmlkcy9mYXN0Zm9yd2FyZC9wYXJ0cy9MYXlvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBNEYyQixBQVE2QixBQUt5QixBQUlBLEFBTUEsQUFNQSxBQU1DLEFBV0csZ0JBckMzQixrQkFDVCxPQUlRLEFBSUEsQUFNQSxBQU1BLENBTUUsQ0F6QnJCLEVBb0NBLGFBaENBLEFBSTZDLEFBTUEsQUFNQSxHQU1HLHdDQWpCRCxBQU1BLEFBTUEsTUFNRSx1Q0FqQmpELEFBTUEsQUFNQSxRQVE4Qyw0Q0FDOUMiLCJmaWxlIjoiL1VzZXJzL2dyYW50LmN1c3Rlci9TaXRlcy9mZmdyaWRzL2Zhc3Rmb3J3YXJkL3BhcnRzL0xheW91dC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBIZWFkIGZyb20gJ25leHQvaGVhZCdcbmltcG9ydCB7IHAgfSBmcm9tICcuLi9wYXJ0cy9VdGlscydcbmltcG9ydCB7IGRlYm91bmNlIH0gZnJvbSAnbG9kYXNoJ1xuaW1wb3J0IHBvc3RzIGZyb20gJy4uL3Bvc3RzJ1xuaW1wb3J0IHsgTURYUHJvdmlkZXIgfSBmcm9tICdAbWR4LWpzL3JlYWN0J1xuaW1wb3J0IHsgSGQsIFZkLCBSZWN0IH0gZnJvbSAnLi4vcGFydHMvRGl2aWRlcnMnXG5pbXBvcnQgUG9zdFByZXZpZXcgZnJvbSAnLi4vcGFydHMvUG9zdFByZXZpZXcnXG5cbmxldCBvZnMgPSAxNlxuXG5leHBvcnQgY2xhc3MgUG9zdExheW91dCBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG4gIHJlbmRlcigpIHtcbiAgICBsZXQgeyBjaGlsZHJlbiwgcGF0aG5hbWUgfSA9IHRoaXMucHJvcHNcbiAgICBsZXQge1xuICAgICAgZ3JlbSxcbiAgICAgIG9ncmVtLFxuICAgICAgY2VudGVyX3RleHQsXG4gICAgICBhZnMsXG4gICAgICBmc24sXG4gICAgICBmcyxcbiAgICAgIGNvbHVtbnMsXG4gICAgICBjb2x1bW5fd2lkdGgsXG4gICAgICBvZmZzZXQsXG4gICAgICB3dyxcbiAgICAgIHdoLFxuICAgICAgY2FwLFxuICAgICAgb3B0aW1fd2lkdGgsXG4gICAgfSA9IHRoaXMucHJvcHNcblxuICAgIGNvbnNvbGUubG9nKHRoaXMucHJvcHMpXG4gICAgY29uc29sZS5sb2coY29sdW1uX3dpZHRoKVxuXG4gICAgbGV0IHBvc3RfaW5kZXggPSBwb3N0cy5tYXAocCA9PiBwLnVybFBhdGgpLmluZGV4T2YocGF0aG5hbWUpXG4gICAgbGV0IHByZXZfaW5kZXggPSBwb3N0X2luZGV4IC0gMVxuICAgIGxldCBuZXh0X2luZGV4ID0gcG9zdF9pbmRleCArIDFcbiAgICBsZXQgcG9zdCA9IHBvc3RzW3Bvc3RfaW5kZXhdXG4gICAgbGV0IHByZXZfcG9zdCA9IHBvc3RzW3ByZXZfaW5kZXhdXG4gICAgbGV0IG5leHRfcG9zdCA9IHBvc3RzW25leHRfaW5kZXhdXG5cbiAgICBsZXQgY29tcG9uZW50cyA9IHtcbiAgICAgIGltZzogcHJvcHMgPT4ge1xuICAgICAgICBsZXQgYWRkcmVzcyA9IHByb3BzLnNyY1xuICAgICAgICBhZGRyZXNzLnJlcGxhY2UoJ3t7IHNpdGUuZ2l0aHViLnVybCB9fScsICcnKVxuICAgICAgICBhZGRyZXNzID0gYWRkcmVzcy5zdGFydHNXaXRoKCdodHRwJykgPyBhZGRyZXNzIDogYC9zdGF0aWMke2FkZHJlc3N9YFxuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgIC8vIHdpZHRoOiBvcHRpbV93aWR0aCArIG9ncmVtLFxuICAgICAgICAgICAgICAvLyBtYXJnaW5MZWZ0OiAtZ3JlbSAvIDIgLSBvZ3JlbSAvIDIsXG4gICAgICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnLFxuICAgICAgICAgICAgfX1cbiAgICAgICAgICA+XG4gICAgICAgICAgICA8aW1nXG4gICAgICAgICAgICAgIHNyYz17YWRkcmVzc31cbiAgICAgICAgICAgICAgYWx0PXtwcm9wcy5hbHR9XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogJ2Jsb2NrJyxcbiAgICAgICAgICAgICAgICBtYXJnaW46ICcwJyxcbiAgICAgICAgICAgICAgICBtYXhXaWR0aDogb3B0aW1fd2lkdGggKyBvZ3JlbSxcbiAgICAgICAgICAgICAgICB3aWR0aDogJzEwMCUnLFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgKVxuICAgICAgfSxcbiAgICB9XG5cbiAgICBsZXQgcG9zdF9kYXRlID0gbmV3IERhdGUocG9zdC5wdWJsaXNoRGF0ZSlcbiAgICBsZXQgcHVibGlzaGVkX2RhdGUgPSBgJHtwb3N0X2RhdGUudG9Mb2NhbGVTdHJpbmcoJ2VuLXVzJywge1xuICAgICAgbW9udGg6ICdzaG9ydCcsXG4gICAgfSl9ICR7KHBvc3RfZGF0ZS5nZXREYXkoKSArIDEpXG4gICAgICAudG9TdHJpbmcoKVxuICAgICAgLnBhZFN0YXJ0KDIsICcwJyl9ICR7cG9zdF9kYXRlLmdldEZ1bGxZZWFyKCl9YFxuXG4gICAgbGV0IHByZXZpZXdfY29sdW1ucyA9IE1hdGgubWF4KFxuICAgICAgKGNvbHVtbnMgLyAyKSAlIDIgPT09IDAgPyBjb2x1bW5zIC8gMiA6IGNvbHVtbnMgLyAyIC0gMSxcbiAgICAgIDRcbiAgICApXG4gICAgbGV0IHByZXZpZXdfb2Zmc2V0ID0gTWF0aC5tYXgoMCwgY29sdW1ucyAvIDIgLSBwcmV2aWV3X2NvbHVtbnMpXG5cbiAgICByZXR1cm4gKFxuICAgICAgPGRpdj5cbiAgICAgICAgPEhlYWQ+XG4gICAgICAgICAgPGxpbmtcbiAgICAgICAgICAgIHJlbD1cImljb25cIlxuICAgICAgICAgICAgdHlwZT1cImltYWdlL3gtaWNvblwiXG4gICAgICAgICAgICBocmVmPVwic3RhdGljL2ltYWdlcy9mYXZpY29uLnBuZ1wiXG4gICAgICAgICAgLz5cblxuICAgICAgICAgIDx0aXRsZT57cG9zdC50aXRsZX0gLSBDbG91ZGVyYSBGYXN0IEZvcndhcmQ8L3RpdGxlPlxuICAgICAgICA8L0hlYWQ+XG5cbiAgICAgICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgICAgICBoMSxcbiAgICAgICAgICBoMixcbiAgICAgICAgICBoMyxcbiAgICAgICAgICBoNCxcbiAgICAgICAgICBoNSxcbiAgICAgICAgICBoNiB7XG4gICAgICAgICAgICBmb250LXdlaWdodDogNDAwO1xuICAgICAgICAgICAgZm9udC1zdHlsZTogbm9ybWFsO1xuICAgICAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICAgIH1cbiAgICAgICAgICBoMSB7XG4gICAgICAgICAgICBmb250LXNpemU6ICR7ZnMgKiAzfXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEuMjU7XG4gICAgICAgICAgfVxuICAgICAgICAgIGgyIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogJHtmcyAqIDJ9cHg7XG4gICAgICAgICAgICBsaW5lLWhlaWdodDogMS4yNTtcbiAgICAgICAgICAgIHBhZGRpbmctdG9wOiAke2dyZW19cHg7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAke2dyZW19cHg7XG4gICAgICAgICAgfVxuICAgICAgICAgIGgzIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogJHtmcyAqIDEuNX1weDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjI1O1xuICAgICAgICAgICAgcGFkZGluZy10b3A6ICR7Z3JlbX1weDtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206ICR7Z3JlbX1weDtcbiAgICAgICAgICB9XG4gICAgICAgICAgaDQge1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2ZzICogMS4yNX1weDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjI1O1xuICAgICAgICAgICAgcGFkZGluZy10b3A6ICR7Z3JlbX1weDtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206ICR7Z3JlbX1weDtcbiAgICAgICAgICB9XG4gICAgICAgICAgaDUge1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2ZzICogMC43NX1weDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjQzNzU7XG4gICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAke2dyZW0gLyAyfXB4O1xuICAgICAgICAgICAgcGFkZGluZy1ib3R0b206ICR7Z3JlbSAvIDJ9cHg7XG4gICAgICAgICAgICAvLyBtYXJnaW4tbGVmdDogLSR7Z3JlbSAvIDIgKyBvZ3JlbSAvIDJ9cHg7XG4gICAgICAgICAgICAvLyBtYXJnaW4tcmlnaHQ6IC0ke2dyZW0gLyAyICsgb2dyZW0gLyAyfXB4O1xuICAgICAgICAgICAgbWFyZ2luLXRvcDogLSR7Z3JlbSAvIDJ9cHg7XG4gICAgICAgICAgfVxuICAgICAgICAgIGg1IGVtIHtcbiAgICAgICAgICB9XG4gICAgICAgICAgcCB7XG4gICAgICAgICAgICBtYXJnaW46IDAgMCAke2dyZW19cHggMDtcbiAgICAgICAgICB9XG4gICAgICAgIGB9PC9zdHlsZT5cbiAgICAgICAgPGRpdiBzdHlsZT17eyBwb3NpdGlvbjogJ3JlbGF0aXZlJyB9fT5cbiAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICBwYWRkaW5nTGVmdDogb2dyZW0gLyAyLFxuICAgICAgICAgICAgICBwYWRkaW5nUmlnaHQ6IG9ncmVtIC8gMixcbiAgICAgICAgICAgICAgcGFkZGluZ1RvcDogZ3JlbSxcbiAgICAgICAgICAgIH19XG4gICAgICAgICAgPlxuICAgICAgICAgICAgPGRpdiBzdHlsZT17e319PlxuICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgIGRpc3BsYXk6ICdmbGV4JyxcbiAgICAgICAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICB3aWR0aDogTWF0aC5taW4oY29sdW1ucywgNikgKiBjb2x1bW5fd2lkdGgsXG4gICAgICAgICAgICAgICAgICBtYXJnaW5MZWZ0OlxuICAgICAgICAgICAgICAgICAgICAoKGNvbHVtbnMgLSBNYXRoLm1pbihjb2x1bW5zLCA2KSkgLyAyKSAqIGNvbHVtbl93aWR0aCArXG4gICAgICAgICAgICAgICAgICAgIG9mZnNldCxcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgICAgd2lkdGg6IGNvbHVtbl93aWR0aCAqIDEsXG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IHAoMCwgZ3JlbSAvIDIpLFxuICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAgICAgZm9udFNpemU6IGZzICogKDYgLyA4KSxcbiAgICAgICAgICAgICAgICAgICAgbGV0dGVyU3BhY2luZzogJzAuMDNlbScsXG4gICAgICAgICAgICAgICAgICAgIHRleHRUcmFuc2Zvcm06ICd1cHBlcmNhc2UnLFxuICAgICAgICAgICAgICAgICAgICBsaW5lSGVpZ2h0OiAxLFxuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICB7cHVibGlzaGVkX2RhdGV9XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgICAgd2lkdGg6IGNvbHVtbl93aWR0aCAqIDEsXG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IHAoMCwgZ3JlbSAvIDIpLFxuICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAgICAgZm9udFNpemU6IGZzICogKDYgLyA4KSxcbiAgICAgICAgICAgICAgICAgICAgbGV0dGVyU3BhY2luZzogJzAuMDNlbScsXG4gICAgICAgICAgICAgICAgICAgIHRleHRUcmFuc2Zvcm06ICd1cHBlcmNhc2UnLFxuICAgICAgICAgICAgICAgICAgICBsaW5lSGVpZ2h0OiAxLFxuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICB7cG9zdC5wb3N0X3R5cGV9XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IG1hcmdpbkJvdHRvbTogMCB9fT5cbiAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAzLFxuICAgICAgICAgICAgICAgICAgICBsaW5lSGVpZ2h0OiAxLjI1LFxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiBwKDAsIGdyZW0gLyAyKSxcbiAgICAgICAgICAgICAgICAgICAgd2lkdGg6IE1hdGgubWluKGNvbHVtbnMsIDYpICogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICAgICAgICBtYXJnaW5MZWZ0OlxuICAgICAgICAgICAgICAgICAgICAgICgoY29sdW1ucyAtIE1hdGgubWluKGNvbHVtbnMsIDYpKSAvIDIpICogY29sdW1uX3dpZHRoICtcbiAgICAgICAgICAgICAgICAgICAgICBvZmZzZXQsXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIHtwb3N0LnRpdGxlfVxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgIGRpc3BsYXk6ICdmbGV4JyxcbiAgICAgICAgICAgICAgICAgIHdpZHRoOiBjb2x1bW5zID4gNCA/IDUgKiBjb2x1bW5fd2lkdGggOiA0ICogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICAgICAgbWFyZ2luTGVmdDpcbiAgICAgICAgICAgICAgICAgICAgKGNvbHVtbnMgPiA0XG4gICAgICAgICAgICAgICAgICAgICAgPyAoKGNvbHVtbnMgLSA0KSAvIDIgLSAxKSAqIGNvbHVtbl93aWR0aFxuICAgICAgICAgICAgICAgICAgICAgIDogKChjb2x1bW5zIC0gNCkgLyAyKSAqIGNvbHVtbl93aWR0aCkgKyBvZmZzZXQsXG4gICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIHtjb2x1bW5zID4gNCA/IChcbiAgICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiBwKGdyZW0sIGdyZW0gLyAyLCBncmVtLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICAgICAgd2lkdGg6IGNvbHVtbl93aWR0aCxcbiAgICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAge3Bvc3QuYXV0aG9yID8gKFxuICAgICAgICAgICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgICAgICAgICBieXsnICd9XG4gICAgICAgICAgICAgICAgICAgICAgICB7cG9zdC5hdXRob3JfbGluayA/IChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj17cG9zdC5hdXRob3JfbGlua30+e3Bvc3QuYXV0aG9yfTwvYT5cbiAgICAgICAgICAgICAgICAgICAgICAgICkgOiAoXG4gICAgICAgICAgICAgICAgICAgICAgICAgIHBvc3QuYXV0aG9yXG4gICAgICAgICAgICAgICAgICAgICAgICApfVxuICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICApIDogbnVsbH17JyAnfVxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgKSA6IG51bGx9XG5cbiAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICB3aWR0aDogY29sdW1uX3dpZHRoICogNCxcbiAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogcChncmVtLCBncmVtIC8gMiwgZ3JlbSwgZ3JlbSAvIDIpLFxuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICA8TURYUHJvdmlkZXIgY29tcG9uZW50cz17Y29tcG9uZW50c30+e2NoaWxkcmVufTwvTURYUHJvdmlkZXI+XG4gICAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogJ2ZsZXgnLFxuICAgICAgICAgICAgICAgICAgICAgIGp1c3RpZnlDb250ZW50OiAnY2VudGVyJyxcbiAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgPGltZ1xuICAgICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IGNhcCxcbiAgICAgICAgICAgICAgICAgICAgICAgIHdpZHRoOiBjYXAsXG4gICAgICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6ICdibG9jaycsXG4gICAgICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAgICAgICBzcmM9XCIvc3RhdGljL2ltYWdlcy9mZi5wbmdcIlxuICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgID5cbiAgICAgICAgICAgICAge25leHRfcG9zdCA/IChcbiAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luTGVmdDogLW9ncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luUmlnaHQ6IC1vZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogZ3JlbSxcbiAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICAgIG1hcmdpbkxlZnQ6IC1vZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAgICAgbWFyZ2luUmlnaHQ6IC1vZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogcChcbiAgICAgICAgICAgICAgICAgICAgICAgIGdyZW0gLyA0LFxuICAgICAgICAgICAgICAgICAgICAgICAgZ3JlbSAvIDIgKyBvZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAgICAgICBncmVtIC8gNCxcbiAgICAgICAgICAgICAgICAgICAgICAgIGdyZW0gLyAyICsgb2Zmc2V0ICsgb2dyZW1cbiAgICAgICAgICAgICAgICAgICAgICApLFxuICAgICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICBCZWZvcmVcbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPFBvc3RQcmV2aWV3XG4gICAgICAgICAgICAgICAgICAgIHBvc3Q9e3Bvc3RzW25leHRfaW5kZXhdfVxuICAgICAgICAgICAgICAgICAgICBncmVtPXtncmVtfVxuICAgICAgICAgICAgICAgICAgICB3dz17d3d9XG4gICAgICAgICAgICAgICAgICAgIGNvbHVtbl93aWR0aD17Y29sdW1uX3dpZHRofVxuICAgICAgICAgICAgICAgICAgICBmcz17ZnN9XG4gICAgICAgICAgICAgICAgICAgIG9ncmVtPXtvZ3JlbX1cbiAgICAgICAgICAgICAgICAgICAgZXh0cmFfbGVmdD17b2dyZW0gLyAyICsgb2Zmc2V0fVxuICAgICAgICAgICAgICAgICAgICBleHRyYV9yaWdodD17b2dyZW0gLyAyICsgb2Zmc2V0fVxuICAgICAgICAgICAgICAgICAgICBjb2x1bW5zPXtjb2x1bW5zfVxuICAgICAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgICAgIDxIZCBhbGlnbj1cImJcIiAvPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICApIDogbnVsbH1cblxuICAgICAgICAgICAgICB7cHJldl9wb3N0ID8gKFxuICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnLFxuICAgICAgICAgICAgICAgICAgICBtYXJnaW5MZWZ0OiAtb2dyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgICBtYXJnaW5SaWdodDogLW9ncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgICAgbWFyZ2luQm90dG9tOiBncmVtLFxuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgICAgbWFyZ2luTGVmdDogLW9ncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgICAgICBtYXJnaW5SaWdodDogLW9ncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiBwKFxuICAgICAgICAgICAgICAgICAgICAgICAgZ3JlbSAvIDQsXG4gICAgICAgICAgICAgICAgICAgICAgICBncmVtIC8gMiArIG9ncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgICAgICAgIGdyZW0gLyA0LFxuICAgICAgICAgICAgICAgICAgICAgICAgZ3JlbSAvIDIgKyBvZmZzZXQgKyBvZ3JlbVxuICAgICAgICAgICAgICAgICAgICAgICksXG4gICAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgIEFmdGVyXG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgIDxQb3N0UHJldmlld1xuICAgICAgICAgICAgICAgICAgICBwb3N0PXtwb3N0c1twcmV2X2luZGV4XX1cbiAgICAgICAgICAgICAgICAgICAgZ3JlbT17Z3JlbX1cbiAgICAgICAgICAgICAgICAgICAgd3c9e3d3fVxuICAgICAgICAgICAgICAgICAgICBjb2x1bW5fd2lkdGg9e2NvbHVtbl93aWR0aH1cbiAgICAgICAgICAgICAgICAgICAgZnM9e2ZzfVxuICAgICAgICAgICAgICAgICAgICBvZ3JlbT17b2dyZW19XG4gICAgICAgICAgICAgICAgICAgIGV4dHJhX2xlZnQ9e29ncmVtIC8gMiArIG9mZnNldH1cbiAgICAgICAgICAgICAgICAgICAgZXh0cmFfcmlnaHQ9e29ncmVtIC8gMiArIG9mZnNldH1cbiAgICAgICAgICAgICAgICAgICAgY29sdW1ucz17Y29sdW1uc31cbiAgICAgICAgICAgICAgICAgIC8+XG5cbiAgICAgICAgICAgICAgICAgIDxIZCBhbGlnbj1cImJcIiAvPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICApIDogbnVsbH1cbiAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IHBhZGRpbmdCb3R0b206IGdyZW0gfX0+XG4gICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgZm9udFNpemU6IGZzICogMixcbiAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEuMjUsXG4gICAgICAgICAgICAgICAgICBwYWRkaW5nOiBwKDAsIGdyZW0gLyAyLCAwLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICBtYXJnaW5Cb3R0b206IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgLi4uY2VudGVyX3RleHQsXG4gICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIEFib3V0XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IHAoMCwgZ3JlbSAvIDIpLFxuICAgICAgICAgICAgICAgICAgbWFyZ2luQm90dG9tOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgIC4uLmNlbnRlcl90ZXh0LFxuICAgICAgICAgICAgICAgICAgLi4uZnNuLFxuICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICBDbG91ZGVyYSBGYXN0IEZvcndhcmQgTGFicyBpcyBhbiBhcHBsaWVkIG1hY2hpbmUgbGVhcm5pbmdcbiAgICAgICAgICAgICAgICByZXNlYXJjaCBncm91cC4gV2UgaGVscCBvcmdhbml6YXRpb25zIHJlY29nbml6ZSBhbmQgZGV2ZWxvcCBuZXdcbiAgICAgICAgICAgICAgICBwcm9kdWN0IGFuZCBidXNpbmVzcyBvcHBvcnR1bml0aWVzIHRocm91Z2ggZW1lcmdpbmdcbiAgICAgICAgICAgICAgICB0ZWNobm9sb2dpZXMueycgJ31cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgcGFkZGluZzogcCgwLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICBtYXJnaW5Cb3R0b206IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgLi4uY2VudGVyX3RleHQsXG4gICAgICAgICAgICAgICAgICAuLi5mc24sXG4gICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIDxhIGhyZWY9XCJodHRwczovL3d3dy5jbG91ZGVyYS5jb20vcHJvZHVjdHMvZmFzdC1mb3J3YXJkLWxhYnMtcmVzZWFyY2guaHRtbFwiPlxuICAgICAgICAgICAgICAgICAgTGVhcm4gbW9yZSBhYm91dCB3b3JraW5nIHdpdGggdXMuXG4gICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgPGRpdiBzdHlsZT17e319PlxuICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBwb3NpdGlvbjogJ3JlbGF0aXZlJyB9fT5cbiAgICAgICAgICAgICAgPEhkIHdpZHRoPVwiMTAwJVwiIGFsaWduPVwidFwiIGZzPXtmc30gLz5cbiAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICBwYWRkaW5nOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgIGRpc3BsYXk6ICdmbGV4JyxcbiAgICAgICAgICAgICAgICAgIGp1c3RpZnlDb250ZW50OiAnc3BhY2UtYmV0d2VlbicsXG4gICAgICAgICAgICAgICAgICBmbGV4V3JhcDogJ3dyYXAnLFxuICAgICAgICAgICAgICAgICAgLi4uZnNuLFxuICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICA8ZGl2PlxuICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cIi9cIj5CbG9nPC9hPlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgZGlzcGxheTogJ2ZsZXgnLCBmbGV4V3JhcDogJ3dyYXAnIH19PlxuICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBtYXJnaW5SaWdodDogZ3JlbSAvIDIgfX0+XG4gICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9XCJodHRwczovL3d3dy5jbG91ZGVyYS5jb20vcHJvZHVjdHMvZmFzdC1mb3J3YXJkLWxhYnMtcmVzZWFyY2guaHRtbFwiPlxuICAgICAgICAgICAgICAgICAgICAgIENsb3VkZXJhXG4gICAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBtYXJnaW5SaWdodDogZ3JlbSAvIDIgfX0+XG4gICAgICAgICAgICAgICAgICAgIDxhIGhyZWY9XCJodHRwczovL2Jsb2cuZmFzdGZvcndhcmRsYWJzLmNvbS9cIj5cbiAgICAgICAgICAgICAgICAgICAgICBBSSBFeHBlcmltZW50c1xuICAgICAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3t9fT5cbiAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cImh0dHBzOi8vdHdpdHRlci5jb20vZmFzdGZvcndhcmRsYWJzXCI+VHdpdHRlcjwvYT5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgIDwvZGl2PlxuICAgICAgICA8L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgIClcbiAgfVxufVxuIl19 */\n/*@ sourceURL=/Users/grant.custer/Sites/ffgrids/fastforward/parts/Layout.js */")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          position: 'relative'
-        },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 141
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          paddingLeft: ogrem / 2,
-          paddingRight: ogrem / 2,
-          paddingTop: grem
-        },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 142
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {},
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 149
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("title", {
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 155
+        },
+        __self: this
+      }, post.title, " - Cloudera Fast Forward")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        id: "1226587591",
+        dynamic: [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem],
+        __self: this
+      }, "h1,h2,h3,h4,h5,h6{font-weight:400;font-style:normal;margin:0;}h1{font-size:".concat(fs * 3, "px;line-height:1.25;}h2{font-size:").concat(fs * 2, "px;line-height:1.25;padding-top:").concat(grem, "px;margin-bottom:").concat(grem, "px;}h3{font-size:").concat(fs * 1.5, "px;line-height:1.25;padding-top:").concat(grem, "px;margin-bottom:").concat(grem, "px;}h4{font-size:").concat(fs * 1.25, "px;line-height:1.25;padding-top:").concat(grem, "px;margin-bottom:").concat(grem, "px;}h5{font-size:").concat(fs * 0.75, "px;line-height:1.4375;margin-bottom:").concat(grem / 2, "px;padding-bottom:").concat(grem / 2, "px;margin-top:-").concat(grem / 2, "px;}p{margin:0 0 ").concat(grem, "px 0;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmZncmlkcy9mYXN0Zm9yd2FyZC9wYXJ0cy9MYXlvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBNkoyQixBQVE2QixBQUt5QixBQUlBLEFBTUEsQUFNQSxBQU1DLEFBV0csZ0JBckMzQixrQkFDVCxPQUlRLEFBSUEsQUFNQSxBQU1BLENBTUUsQ0F6QnJCLEVBb0NBLGFBaENBLEFBSTZDLEFBTUEsQUFNQSxHQU1HLHdDQWpCRCxBQU1BLEFBTUEsTUFNRSx1Q0FqQmpELEFBTUEsQUFNQSxRQVE4Qyw0Q0FDOUMiLCJmaWxlIjoiL1VzZXJzL2dyYW50LmN1c3Rlci9TaXRlcy9mZmdyaWRzL2Zhc3Rmb3J3YXJkL3BhcnRzL0xheW91dC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBIZWFkIGZyb20gJ25leHQvaGVhZCdcbmltcG9ydCB7IHAgfSBmcm9tICcuLi9wYXJ0cy9VdGlscydcbmltcG9ydCB7IGRlYm91bmNlIH0gZnJvbSAnbG9kYXNoJ1xuaW1wb3J0IHBvc3RzIGZyb20gJy4uL3Bvc3RzJ1xuaW1wb3J0IHsgTURYUHJvdmlkZXIgfSBmcm9tICdAbWR4LWpzL3JlYWN0J1xuaW1wb3J0IHsgSGQsIFZkLCBSZWN0IH0gZnJvbSAnLi4vcGFydHMvRGl2aWRlcnMnXG5pbXBvcnQgUG9zdFByZXZpZXcgZnJvbSAnLi4vcGFydHMvUG9zdFByZXZpZXcnXG5pbXBvcnQgSGlnaGxpZ2h0LCB7IGRlZmF1bHRQcm9wcyB9IGZyb20gJ3ByaXNtLXJlYWN0LXJlbmRlcmVyJ1xuaW1wb3J0IGRhcmtUaGVtZSBmcm9tICdwcmlzbS1yZWFjdC1yZW5kZXJlci90aGVtZXMvbmlnaHRPd2wnXG5cbmxldCBvZnMgPSAxNlxuXG5leHBvcnQgY2xhc3MgUG9zdExheW91dCBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG4gIHJlbmRlcigpIHtcbiAgICBsZXQgeyBjaGlsZHJlbiwgcGF0aG5hbWUgfSA9IHRoaXMucHJvcHNcbiAgICBsZXQge1xuICAgICAgZ3JlbSxcbiAgICAgIG9ncmVtLFxuICAgICAgY2VudGVyX3RleHQsXG4gICAgICBhZnMsXG4gICAgICBmc24sXG4gICAgICBmcyxcbiAgICAgIGNvbHVtbnMsXG4gICAgICBjb2x1bW5fd2lkdGgsXG4gICAgICBvZmZzZXQsXG4gICAgICB3dyxcbiAgICAgIHdoLFxuICAgICAgY2FwLFxuICAgICAgb3B0aW1fd2lkdGgsXG4gICAgfSA9IHRoaXMucHJvcHNcblxuICAgIGxldCBwb3N0X2luZGV4ID0gcG9zdHMubWFwKHAgPT4gcC5wYXRoX25hbWUpLmluZGV4T2YocGF0aG5hbWUpXG4gICAgbGV0IHByZXZfaW5kZXggPSBwb3N0X2luZGV4IC0gMVxuICAgIGxldCBuZXh0X2luZGV4ID0gcG9zdF9pbmRleCArIDFcbiAgICBsZXQgcG9zdCA9IHBvc3RzW3Bvc3RfaW5kZXhdXG4gICAgbGV0IHByZXZfcG9zdCA9IHBvc3RzW3ByZXZfaW5kZXhdXG4gICAgbGV0IG5leHRfcG9zdCA9IHBvc3RzW25leHRfaW5kZXhdXG5cbiAgICBsZXQgY29tcG9uZW50cyA9IHtcbiAgICAgIGltZzogcHJvcHMgPT4ge1xuICAgICAgICBsZXQgYWRkcmVzcyA9IHByb3BzLnNyY1xuICAgICAgICBhZGRyZXNzLnJlcGxhY2UoJ3t7IHNpdGUuZ2l0aHViLnVybCB9fScsICcnKVxuICAgICAgICBhZGRyZXNzID0gYWRkcmVzcy5zdGFydHNXaXRoKCdodHRwJykgPyBhZGRyZXNzIDogYC9zdGF0aWMke2FkZHJlc3N9YFxuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgIC8vIHdpZHRoOiBvcHRpbV93aWR0aCArIG9ncmVtLFxuICAgICAgICAgICAgICAvLyBtYXJnaW5MZWZ0OiAtZ3JlbSAvIDIgLSBvZ3JlbSAvIDIsXG4gICAgICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnLFxuICAgICAgICAgICAgfX1cbiAgICAgICAgICA+XG4gICAgICAgICAgICA8aW1nXG4gICAgICAgICAgICAgIHNyYz17YWRkcmVzc31cbiAgICAgICAgICAgICAgYWx0PXtwcm9wcy5hbHR9XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogJ2Jsb2NrJyxcbiAgICAgICAgICAgICAgICBtYXJnaW46ICcwJyxcbiAgICAgICAgICAgICAgICBtYXhXaWR0aDogb3B0aW1fd2lkdGggKyBvZ3JlbSxcbiAgICAgICAgICAgICAgICB3aWR0aDogJzEwMCUnLFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgKVxuICAgICAgfSxcbiAgICAgIHByZTogcHJvcHMgPT4gPGRpdiB7Li4ucHJvcHN9IC8+LFxuICAgICAgY29kZTogcHJvcHMgPT4ge1xuICAgICAgICBsZXQgY2hpbGRyZW4gPSBwcm9wcy5jaGlsZHJlblxuICAgICAgICBjb25zdCBsYW5ndWFnZSA9XG4gICAgICAgICAgcHJvcHMuY2xhc3NOYW1lICE9PSB1bmRlZmluZWRcbiAgICAgICAgICAgID8gcHJvcHMuY2xhc3NOYW1lLnJlcGxhY2UoL2xhbmd1YWdlLS8sICcnKVxuICAgICAgICAgICAgOiAnJ1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgIDxIaWdobGlnaHRcbiAgICAgICAgICAgIHsuLi5kZWZhdWx0UHJvcHN9XG4gICAgICAgICAgICBjb2RlPXtjaGlsZHJlbn1cbiAgICAgICAgICAgIGxhbmd1YWdlPXtsYW5ndWFnZX1cbiAgICAgICAgICAgIHRoZW1lPXt1bmRlZmluZWR9XG4gICAgICAgICAgPlxuICAgICAgICAgICAgeyh7IGNsYXNzTmFtZSwgc3R5bGUsIHRva2VucywgZ2V0TGluZVByb3BzLCBnZXRUb2tlblByb3BzIH0pID0+IChcbiAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogZ3JlbSxcbiAgICAgICAgICAgICAgICAgIHdpZHRoOiA0ICogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICAgICAgbWFyZ2luTGVmdDogLWdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgbWFyZ2luUmlnaHQ6IC1ncmVtIC8gMixcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtjbGFzc05hbWV9XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICBvdmVyZmxvd1g6ICdhdXRvJyxcbiAgICAgICAgICAgICAgICAgICAgb3ZlcmZsb3dZOiAnaGlkZGVuJyxcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogJyNmM2YzZjMnLFxuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICA8cHJlXG4gICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgICAgLi4uc3R5bGUsXG4gICAgICAgICAgICAgICAgICAgICAgZmxvYXQ6ICdsZWZ0JyxcbiAgICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAwLjc1LFxuICAgICAgICAgICAgICAgICAgICAgIG1pbldpZHRoOiAnMTAwJScsXG4gICAgICAgICAgICAgICAgICAgICAgcG9zaXRpb246ICdyZWxhdGl2ZScsXG4gICAgICAgICAgICAgICAgICAgICAgbGluZUhlaWdodDogMS41LFxuICAgICAgICAgICAgICAgICAgICAgIG1hcmdpbjogMCxcbiAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgICAgICBvdmVyZmxvdzogJ3Zpc2libGUnLFxuICAgICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICB7dG9rZW5zLm1hcCgobGluZSwgaSkgPT4gKFxuICAgICAgICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgICAgICAgIGtleT17aX1cbiAgICAgICAgICAgICAgICAgICAgICAgIHsuLi5nZXRMaW5lUHJvcHMoeyBsaW5lLCBrZXk6IGkgfSl9XG4gICAgICAgICAgICAgICAgICAgICAgICBzdHlsZT17e319XG4gICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAge2xpbmUubWFwKCh0b2tlbiwga2V5KSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGtleT17a2V5fSB7Li4uZ2V0VG9rZW5Qcm9wcyh7IHRva2VuLCBrZXkgfSl9IC8+XG4gICAgICAgICAgICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgICA8L3ByZT5cbiAgICAgICAgICAgICAgICAgIDxSZWN0IC8+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgKX1cbiAgICAgICAgICA8L0hpZ2hsaWdodD5cbiAgICAgICAgKVxuICAgICAgfSxcbiAgICB9XG5cbiAgICBsZXQgcG9zdF9kYXRlID0gbmV3IERhdGUocG9zdC5wdWJsaXNoRGF0ZSlcbiAgICBsZXQgcHVibGlzaGVkX2RhdGUgPSBgJHtwb3N0X2RhdGUudG9Mb2NhbGVTdHJpbmcoJ2VuLXVzJywge1xuICAgICAgbW9udGg6ICdzaG9ydCcsXG4gICAgfSl9ICR7KHBvc3RfZGF0ZS5nZXREYXkoKSArIDEpXG4gICAgICAudG9TdHJpbmcoKVxuICAgICAgLnBhZFN0YXJ0KDIsICcwJyl9ICR7cG9zdF9kYXRlLmdldEZ1bGxZZWFyKCl9YFxuXG4gICAgbGV0IHByZXZpZXdfY29sdW1ucyA9IE1hdGgubWF4KFxuICAgICAgKGNvbHVtbnMgLyAyKSAlIDIgPT09IDAgPyBjb2x1bW5zIC8gMiA6IGNvbHVtbnMgLyAyIC0gMSxcbiAgICAgIDRcbiAgICApXG4gICAgbGV0IHByZXZpZXdfb2Zmc2V0ID0gTWF0aC5tYXgoMCwgY29sdW1ucyAvIDIgLSBwcmV2aWV3X2NvbHVtbnMpXG5cbiAgICBsZXQgaGFsZiA9IE1hdGguZmxvb3IoY29sdW1ucyAvIDIgLyAyKSAqIDJcblxuICAgIHJldHVybiAoXG4gICAgICA8ZGl2PlxuICAgICAgICA8SGVhZD5cbiAgICAgICAgICA8bGlua1xuICAgICAgICAgICAgcmVsPVwiaWNvblwiXG4gICAgICAgICAgICB0eXBlPVwiaW1hZ2UveC1pY29uXCJcbiAgICAgICAgICAgIGhyZWY9XCJzdGF0aWMvaW1hZ2VzL2Zhdmljb24ucG5nXCJcbiAgICAgICAgICAvPlxuXG4gICAgICAgICAgPHRpdGxlPntwb3N0LnRpdGxlfSAtIENsb3VkZXJhIEZhc3QgRm9yd2FyZDwvdGl0bGU+XG4gICAgICAgIDwvSGVhZD5cblxuICAgICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAgIGgxLFxuICAgICAgICAgIGgyLFxuICAgICAgICAgIGgzLFxuICAgICAgICAgIGg0LFxuICAgICAgICAgIGg1LFxuICAgICAgICAgIGg2IHtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgICAgfVxuICAgICAgICAgIGgxIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogJHtmcyAqIDN9cHg7XG4gICAgICAgICAgICBsaW5lLWhlaWdodDogMS4yNTtcbiAgICAgICAgICB9XG4gICAgICAgICAgaDIge1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2ZzICogMn1weDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjI1O1xuICAgICAgICAgICAgcGFkZGluZy10b3A6ICR7Z3JlbX1weDtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206ICR7Z3JlbX1weDtcbiAgICAgICAgICB9XG4gICAgICAgICAgaDMge1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2ZzICogMS41fXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEuMjU7XG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogJHtncmVtfXB4O1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogJHtncmVtfXB4O1xuICAgICAgICAgIH1cbiAgICAgICAgICBoNCB7XG4gICAgICAgICAgICBmb250LXNpemU6ICR7ZnMgKiAxLjI1fXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEuMjU7XG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogJHtncmVtfXB4O1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogJHtncmVtfXB4O1xuICAgICAgICAgIH1cbiAgICAgICAgICBoNSB7XG4gICAgICAgICAgICBmb250LXNpemU6ICR7ZnMgKiAwLjc1fXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEuNDM3NTtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206ICR7Z3JlbSAvIDJ9cHg7XG4gICAgICAgICAgICBwYWRkaW5nLWJvdHRvbTogJHtncmVtIC8gMn1weDtcbiAgICAgICAgICAgIC8vIG1hcmdpbi1sZWZ0OiAtJHtncmVtIC8gMiArIG9ncmVtIC8gMn1weDtcbiAgICAgICAgICAgIC8vIG1hcmdpbi1yaWdodDogLSR7Z3JlbSAvIDIgKyBvZ3JlbSAvIDJ9cHg7XG4gICAgICAgICAgICBtYXJnaW4tdG9wOiAtJHtncmVtIC8gMn1weDtcbiAgICAgICAgICB9XG4gICAgICAgICAgaDUgZW0ge1xuICAgICAgICAgIH1cbiAgICAgICAgICBwIHtcbiAgICAgICAgICAgIG1hcmdpbjogMCAwICR7Z3JlbX1weCAwO1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAgIC8qIFByaXNtSlMgMS4xNi4wXG5odHRwczovL3ByaXNtanMuY29tL2Rvd25sb2FkLmh0bWwjdGhlbWVzPXByaXNtJmxhbmd1YWdlcz1tYXJrdXArY3NzK2NsaWtlK2phdmFzY3JpcHQgKi9cbiAgICAgICAgICAvKipcbiAqIHByaXNtLmpzIGRlZmF1bHQgdGhlbWUgZm9yIEphdmFTY3JpcHQsIENTUyBhbmQgSFRNTFxuICogQmFzZWQgb24gZGFiYmxldCAoaHR0cDovL2RhYmJsZXQuY29tKVxuICogQGF1dGhvciBMZWEgVmVyb3VcbiAqL1xuXG4gICAgICAgICAgY29kZVtjbGFzcyo9J2xhbmd1YWdlLSddLFxuICAgICAgICAgIHByZVtjbGFzcyo9J2xhbmd1YWdlLSddIHtcbiAgICAgICAgICAgIGNvbG9yOiBibGFjaztcbiAgICAgICAgICAgIGJhY2tncm91bmQ6IG5vbmU7XG4gICAgICAgICAgICBmb250LWZhbWlseTogQ29uc29sYXMsIE1vbmFjbywgJ0FuZGFsZSBNb25vJywgJ1VidW50dSBNb25vJyxcbiAgICAgICAgICAgICAgbW9ub3NwYWNlO1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcbiAgICAgICAgICAgIHdoaXRlLXNwYWNlOiBwcmU7XG4gICAgICAgICAgICB3b3JkLXNwYWNpbmc6IG5vcm1hbDtcbiAgICAgICAgICAgIHdvcmQtYnJlYWs6IG5vcm1hbDtcbiAgICAgICAgICAgIHdvcmQtd3JhcDogbm9ybWFsO1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEuNTtcblxuICAgICAgICAgICAgLW1vei10YWItc2l6ZTogNDtcbiAgICAgICAgICAgIC1vLXRhYi1zaXplOiA0O1xuICAgICAgICAgICAgdGFiLXNpemU6IDQ7XG5cbiAgICAgICAgICAgIC13ZWJraXQtaHlwaGVuczogbm9uZTtcbiAgICAgICAgICAgIC1tb3otaHlwaGVuczogbm9uZTtcbiAgICAgICAgICAgIC1tcy1oeXBoZW5zOiBub25lO1xuICAgICAgICAgICAgaHlwaGVuczogbm9uZTtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICBwcmVbY2xhc3MqPSdsYW5ndWFnZS0nXTo6LW1vei1zZWxlY3Rpb24sXG4gICAgICAgICAgcHJlW2NsYXNzKj0nbGFuZ3VhZ2UtJ10gOjotbW96LXNlbGVjdGlvbixcbiAgICAgICAgICBjb2RlW2NsYXNzKj0nbGFuZ3VhZ2UtJ106Oi1tb3otc2VsZWN0aW9uLFxuICAgICAgICAgIGNvZGVbY2xhc3MqPSdsYW5ndWFnZS0nXSA6Oi1tb3otc2VsZWN0aW9uIHtcbiAgICAgICAgICAgIHRleHQtc2hhZG93OiBub25lO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIHByZVtjbGFzcyo9J2xhbmd1YWdlLSddOjpzZWxlY3Rpb24sXG4gICAgICAgICAgcHJlW2NsYXNzKj0nbGFuZ3VhZ2UtJ10gOjpzZWxlY3Rpb24sXG4gICAgICAgICAgY29kZVtjbGFzcyo9J2xhbmd1YWdlLSddOjpzZWxlY3Rpb24sXG4gICAgICAgICAgY29kZVtjbGFzcyo9J2xhbmd1YWdlLSddIDo6c2VsZWN0aW9uIHtcbiAgICAgICAgICAgIHRleHQtc2hhZG93OiBub25lO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIEBtZWRpYSBwcmludCB7XG4gICAgICAgICAgICBjb2RlW2NsYXNzKj0nbGFuZ3VhZ2UtJ10sXG4gICAgICAgICAgICBwcmVbY2xhc3MqPSdsYW5ndWFnZS0nXSB7XG4gICAgICAgICAgICAgIHRleHQtc2hhZG93OiBub25lO1xuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cblxuICAgICAgICAgIC8qIENvZGUgYmxvY2tzICovXG4gICAgICAgICAgOm5vdChwcmUpID4gY29kZVtjbGFzcyo9J2xhbmd1YWdlLSddLFxuICAgICAgICAgIHByZVtjbGFzcyo9J2xhbmd1YWdlLSddIHtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICAvKiBJbmxpbmUgY29kZSAqL1xuICAgICAgICAgIDpub3QocHJlKSA+IGNvZGVbY2xhc3MqPSdsYW5ndWFnZS0nXSB7XG4gICAgICAgICAgICB3aGl0ZS1zcGFjZTogbm9ybWFsO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC50b2tlbi5jb21tZW50LFxuICAgICAgICAgIC50b2tlbi5wcm9sb2csXG4gICAgICAgICAgLnRva2VuLmRvY3R5cGUsXG4gICAgICAgICAgLnRva2VuLmNkYXRhIHtcbiAgICAgICAgICAgIGNvbG9yOiBzbGF0ZWdyYXk7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLnRva2VuLnB1bmN0dWF0aW9uIHtcbiAgICAgICAgICAgIGNvbG9yOiAjOTk5O1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC5uYW1lc3BhY2Uge1xuICAgICAgICAgICAgb3BhY2l0eTogMC43O1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC50b2tlbi5wcm9wZXJ0eSxcbiAgICAgICAgICAudG9rZW4udGFnLFxuICAgICAgICAgIC50b2tlbi5ib29sZWFuLFxuICAgICAgICAgIC50b2tlbi5udW1iZXIsXG4gICAgICAgICAgLnRva2VuLmNvbnN0YW50LFxuICAgICAgICAgIC50b2tlbi5zeW1ib2wsXG4gICAgICAgICAgLnRva2VuLmRlbGV0ZWQge1xuICAgICAgICAgICAgY29sb3I6ICM5MDU7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLnRva2VuLnNlbGVjdG9yLFxuICAgICAgICAgIC50b2tlbi5hdHRyLW5hbWUsXG4gICAgICAgICAgLnRva2VuLnN0cmluZyxcbiAgICAgICAgICAudG9rZW4uY2hhcixcbiAgICAgICAgICAudG9rZW4uYnVpbHRpbixcbiAgICAgICAgICAudG9rZW4uaW5zZXJ0ZWQge1xuICAgICAgICAgICAgY29sb3I6ICM2OTA7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLnRva2VuLm9wZXJhdG9yLFxuICAgICAgICAgIC50b2tlbi5lbnRpdHksXG4gICAgICAgICAgLnRva2VuLnVybCxcbiAgICAgICAgICAubGFuZ3VhZ2UtY3NzIC50b2tlbi5zdHJpbmcsXG4gICAgICAgICAgLnN0eWxlIC50b2tlbi5zdHJpbmcge1xuICAgICAgICAgICAgY29sb3I6ICM5YTZlM2E7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLnRva2VuLmF0cnVsZSxcbiAgICAgICAgICAudG9rZW4uYXR0ci12YWx1ZSxcbiAgICAgICAgICAudG9rZW4ua2V5d29yZCB7XG4gICAgICAgICAgICBjb2xvcjogIzA3YTtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICAudG9rZW4uZnVuY3Rpb24sXG4gICAgICAgICAgLnRva2VuLmNsYXNzLW5hbWUge1xuICAgICAgICAgICAgY29sb3I6ICNkZDRhNjg7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLnRva2VuLnJlZ2V4LFxuICAgICAgICAgIC50b2tlbi5pbXBvcnRhbnQsXG4gICAgICAgICAgLnRva2VuLnZhcmlhYmxlIHtcbiAgICAgICAgICAgIGNvbG9yOiAjZTkwO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC50b2tlbi5pbXBvcnRhbnQsXG4gICAgICAgICAgLnRva2VuLmJvbGQge1xuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgICAgICAgfVxuICAgICAgICAgIC50b2tlbi5pdGFsaWMge1xuICAgICAgICAgICAgZm9udC1zdHlsZTogaXRhbGljO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC50b2tlbi5lbnRpdHkge1xuICAgICAgICAgICAgY3Vyc29yOiBoZWxwO1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICA8ZGl2IHN0eWxlPXt7IHBvc2l0aW9uOiAncmVsYXRpdmUnIH19PlxuICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgIHBhZGRpbmdMZWZ0OiBvZ3JlbSAvIDIsXG4gICAgICAgICAgICAgIHBhZGRpbmdSaWdodDogb2dyZW0gLyAyLFxuICAgICAgICAgICAgICBwYWRkaW5nVG9wOiBncmVtLFxuICAgICAgICAgICAgfX1cbiAgICAgICAgICA+XG4gICAgICAgICAgICA8ZGl2IHN0eWxlPXt7fX0+XG4gICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgZGlzcGxheTogJ2ZsZXgnLFxuICAgICAgICAgICAgICAgICAgbWFyZ2luQm90dG9tOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgIHdpZHRoOiBNYXRoLm1pbihjb2x1bW5zLCA2KSAqIGNvbHVtbl93aWR0aCxcbiAgICAgICAgICAgICAgICAgIG1hcmdpbkxlZnQ6XG4gICAgICAgICAgICAgICAgICAgICgoY29sdW1ucyAtIE1hdGgubWluKGNvbHVtbnMsIDYpKSAvIDIpICogY29sdW1uX3dpZHRoICtcbiAgICAgICAgICAgICAgICAgICAgb2Zmc2V0LFxuICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICB3aWR0aDogY29sdW1uX3dpZHRoICogMSxcbiAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogcCgwLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnLFxuICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAoNiAvIDgpLFxuICAgICAgICAgICAgICAgICAgICBsZXR0ZXJTcGFjaW5nOiAnMC4wM2VtJyxcbiAgICAgICAgICAgICAgICAgICAgdGV4dFRyYW5zZm9ybTogJ3VwcGVyY2FzZScsXG4gICAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEsXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIHtwdWJsaXNoZWRfZGF0ZX1cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICB3aWR0aDogY29sdW1uX3dpZHRoICogMSxcbiAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogcCgwLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnLFxuICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAoNiAvIDgpLFxuICAgICAgICAgICAgICAgICAgICBsZXR0ZXJTcGFjaW5nOiAnMC4wM2VtJyxcbiAgICAgICAgICAgICAgICAgICAgdGV4dFRyYW5zZm9ybTogJ3VwcGVyY2FzZScsXG4gICAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEsXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIHtwb3N0LnBvc3RfdHlwZX1cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgbWFyZ2luQm90dG9tOiAwIH19PlxuICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIGZvbnRTaXplOiBmcyAqIDMsXG4gICAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEuMjUsXG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IHAoMCwgZ3JlbSAvIDIpLFxuICAgICAgICAgICAgICAgICAgICB3aWR0aDogTWF0aC5taW4oY29sdW1ucywgNikgKiBjb2x1bW5fd2lkdGgsXG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbkxlZnQ6XG4gICAgICAgICAgICAgICAgICAgICAgKChjb2x1bW5zIC0gTWF0aC5taW4oY29sdW1ucywgNikpIC8gMikgKiBjb2x1bW5fd2lkdGggK1xuICAgICAgICAgICAgICAgICAgICAgIG9mZnNldCxcbiAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAge3Bvc3QudGl0bGV9XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgZGlzcGxheTogJ2ZsZXgnLFxuICAgICAgICAgICAgICAgICAgd2lkdGg6IGNvbHVtbnMgPiA0ID8gNSAqIGNvbHVtbl93aWR0aCA6IDQgKiBjb2x1bW5fd2lkdGgsXG4gICAgICAgICAgICAgICAgICBtYXJnaW5MZWZ0OlxuICAgICAgICAgICAgICAgICAgICAoY29sdW1ucyA+IDRcbiAgICAgICAgICAgICAgICAgICAgICA/ICgoY29sdW1ucyAtIDQpIC8gMiAtIDEpICogY29sdW1uX3dpZHRoXG4gICAgICAgICAgICAgICAgICAgICAgOiAoKGNvbHVtbnMgLSA0KSAvIDIpICogY29sdW1uX3dpZHRoKSArIG9mZnNldCxcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAge2NvbHVtbnMgPiA0ID8gKFxuICAgICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IHAoZ3JlbSwgZ3JlbSAvIDIsIGdyZW0sIGdyZW0gLyAyKSxcbiAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICB7cG9zdC5hdXRob3IgPyAoXG4gICAgICAgICAgICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICAgICAgICAgIGJ5eycgJ31cbiAgICAgICAgICAgICAgICAgICAgICAgIHtwb3N0LmF1dGhvcl9saW5rID8gKFxuICAgICAgICAgICAgICAgICAgICAgICAgICA8YSBocmVmPXtwb3N0LmF1dGhvcl9saW5rfT57cG9zdC5hdXRob3J9PC9hPlxuICAgICAgICAgICAgICAgICAgICAgICAgKSA6IChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcG9zdC5hdXRob3JcbiAgICAgICAgICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICkgOiBudWxsfXsnICd9XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICApIDogbnVsbH1cblxuICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIHdpZHRoOiBjb2x1bW5fd2lkdGggKiA0LFxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiBwKGdyZW0sIGdyZW0gLyAyLCBncmVtLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIDxNRFhQcm92aWRlciBjb21wb25lbnRzPXtjb21wb25lbnRzfT57Y2hpbGRyZW59PC9NRFhQcm92aWRlcj5cbiAgICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiAnZmxleCcsXG4gICAgICAgICAgICAgICAgICAgICAganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInLFxuICAgICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6ICdub25lJyxcbiAgICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgPGltZ1xuICAgICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IGNhcCxcbiAgICAgICAgICAgICAgICAgICAgICAgIHdpZHRoOiBjYXAsXG4gICAgICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6ICdibG9jaycsXG4gICAgICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAgICAgICBzcmM9XCIvc3RhdGljL2ltYWdlcy9mZi5wbmdcIlxuICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBjb2x1bW5zID4gNiA/ICdncmlkJyA6ICdibG9jaycsXG4gICAgICAgICAgICAgICAgZ3JpZFRlbXBsYXRlQ29sdW1uczogYHJlcGVhdCgyLCAxZnIpYCxcbiAgICAgICAgICAgICAgICBtYXJnaW5Cb3R0b206IGdyZW0sXG4gICAgICAgICAgICAgICAgd2lkdGg6IGhhbGYgKiAyICogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICAgIG1hcmdpbkxlZnQ6IG9mZnNldCArICgoY29sdW1ucyAtIGhhbGYgKiAyKSAvIDIpICogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICB7cHJldl9wb3N0ID8gKFxuICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnLFxuICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiAnZ3JpZCcsXG4gICAgICAgICAgICAgICAgICAgIGdyaWRUZW1wbGF0ZVJvd3M6ICdhdXRvIDFmcicsXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgICAgICB0ZXh0VHJhbnNmb3JtOiAndXBwZXJjYXNlJyxcbiAgICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAwLjc1LFxuICAgICAgICAgICAgICAgICAgICAgIGxldHRlclNwYWNpbmc6ICcwLjAzZW0nLFxuICAgICAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEuNSxcbiAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nQm90dG9tOiBncmVtIC8gNCxcbiAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nTGVmdDogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgIE5ld2VyXG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgcG9zaXRpb246ICdyZWxhdGl2ZScsIGRpc3BsYXk6ICdncmlkJyB9fT5cbiAgICAgICAgICAgICAgICAgICAgPFBvc3RQcmV2aWV3XG4gICAgICAgICAgICAgICAgICAgICAgcG9zdD17cG9zdHNbcHJldl9pbmRleF19XG4gICAgICAgICAgICAgICAgICAgICAgZ3JlbT17Z3JlbX1cbiAgICAgICAgICAgICAgICAgICAgICB3dz17d3d9XG4gICAgICAgICAgICAgICAgICAgICAgY29sdW1uX3dpZHRoPXtjb2x1bW5fd2lkdGh9XG4gICAgICAgICAgICAgICAgICAgICAgZnM9e2ZzfVxuICAgICAgICAgICAgICAgICAgICAgIG9ncmVtPXtvZ3JlbX1cbiAgICAgICAgICAgICAgICAgICAgICBjb2x1bW5zPXtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbHVtbnMgPiA2ID8gTWF0aC5mbG9vcihjb2x1bW5zIC8gMiAvIDIpICogMiA6IGNvbHVtbnNcbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICAgIDxSZWN0IC8+XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgKSA6IG51bGx9XG5cbiAgICAgICAgICAgICAge25leHRfcG9zdCA/IChcbiAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogJ2dyaWQnLFxuICAgICAgICAgICAgICAgICAgICBncmlkVGVtcGxhdGVSb3dzOiAnYXV0byAxZnInLFxuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgICAgdGV4dFRyYW5zZm9ybTogJ3VwcGVyY2FzZScsXG4gICAgICAgICAgICAgICAgICAgICAgZm9udFNpemU6IGZzICogMC43NSxcbiAgICAgICAgICAgICAgICAgICAgICBsZXR0ZXJTcGFjaW5nOiAnMC4wM2VtJyxcbiAgICAgICAgICAgICAgICAgICAgICBsaW5lSGVpZ2h0OiAxLjUsXG4gICAgICAgICAgICAgICAgICAgICAgcGFkZGluZ0JvdHRvbTogZ3JlbSAvIDQsXG4gICAgICAgICAgICAgICAgICAgICAgcGFkZGluZ0xlZnQ6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICBPbGRlclxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IHBvc2l0aW9uOiAncmVsYXRpdmUnLCBkaXNwbGF5OiAnZ3JpZCcgfX0+XG4gICAgICAgICAgICAgICAgICAgIDxQb3N0UHJldmlld1xuICAgICAgICAgICAgICAgICAgICAgIHBvc3Q9e3Bvc3RzW25leHRfaW5kZXhdfVxuICAgICAgICAgICAgICAgICAgICAgIGdyZW09e2dyZW19XG4gICAgICAgICAgICAgICAgICAgICAgd3c9e3d3fVxuICAgICAgICAgICAgICAgICAgICAgIGNvbHVtbl93aWR0aD17Y29sdW1uX3dpZHRofVxuICAgICAgICAgICAgICAgICAgICAgIGZzPXtmc31cbiAgICAgICAgICAgICAgICAgICAgICBvZ3JlbT17b2dyZW19XG4gICAgICAgICAgICAgICAgICAgICAgY29sdW1ucz17XG4gICAgICAgICAgICAgICAgICAgICAgICBjb2x1bW5zID4gNiA/IE1hdGguZmxvb3IoY29sdW1ucyAvIDIgLyAyKSAqIDIgOiBjb2x1bW5zXG4gICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgICA8UmVjdCAvPlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICkgOiBudWxsfVxuICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgcGFkZGluZ0JvdHRvbTogZ3JlbSwgcGFkZGluZ1RvcDogZ3JlbSB9fT5cbiAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAyLFxuICAgICAgICAgICAgICAgICAgbGluZUhlaWdodDogMS4yNSxcbiAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IHAoMCwgZ3JlbSAvIDIsIDAsIGdyZW0gLyAyKSxcbiAgICAgICAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAuLi5jZW50ZXJfdGV4dCxcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgQWJvdXRcbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgcGFkZGluZzogcCgwLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICBtYXJnaW5Cb3R0b206IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgLi4uY2VudGVyX3RleHQsXG4gICAgICAgICAgICAgICAgICAuLi5mc24sXG4gICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIENsb3VkZXJhIEZhc3QgRm9yd2FyZCBMYWJzIGlzIGFuIGFwcGxpZWQgbWFjaGluZSBsZWFybmluZ1xuICAgICAgICAgICAgICAgIHJlc2VhcmNoIGdyb3VwLiBXZSBoZWxwIG9yZ2FuaXphdGlvbnMgcmVjb2duaXplIGFuZCBkZXZlbG9wIG5ld1xuICAgICAgICAgICAgICAgIHByb2R1Y3QgYW5kIGJ1c2luZXNzIG9wcG9ydHVuaXRpZXMgdGhyb3VnaCBlbWVyZ2luZ1xuICAgICAgICAgICAgICAgIHRlY2hub2xvZ2llcy57JyAnfVxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICBwYWRkaW5nOiBwKDAsIGdyZW0gLyAyKSxcbiAgICAgICAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAuLi5jZW50ZXJfdGV4dCxcbiAgICAgICAgICAgICAgICAgIC4uLmZzbixcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3LmNsb3VkZXJhLmNvbS9wcm9kdWN0cy9mYXN0LWZvcndhcmQtbGFicy1yZXNlYXJjaC5odG1sXCI+XG4gICAgICAgICAgICAgICAgICBMZWFybiBtb3JlIGFib3V0IHdvcmtpbmcgd2l0aCB1cy5cbiAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICA8ZGl2IHN0eWxlPXt7fX0+XG4gICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IHBvc2l0aW9uOiAncmVsYXRpdmUnIH19PlxuICAgICAgICAgICAgICA8SGQgd2lkdGg9XCIxMDAlXCIgYWxpZ249XCJ0XCIgZnM9e2ZzfSAvPlxuICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgZGlzcGxheTogJ2ZsZXgnLFxuICAgICAgICAgICAgICAgICAganVzdGlmeUNvbnRlbnQ6ICdzcGFjZS1iZXR3ZWVuJyxcbiAgICAgICAgICAgICAgICAgIGZsZXhXcmFwOiAnd3JhcCcsXG4gICAgICAgICAgICAgICAgICAuLi5mc24sXG4gICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgICA8YSBocmVmPVwiL1wiPkJsb2c8L2E+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGZsZXhXcmFwOiAnd3JhcCcgfX0+XG4gICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IG1hcmdpblJpZ2h0OiBncmVtIC8gMiB9fT5cbiAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3LmNsb3VkZXJhLmNvbS9wcm9kdWN0cy9mYXN0LWZvcndhcmQtbGFicy1yZXNlYXJjaC5odG1sXCI+XG4gICAgICAgICAgICAgICAgICAgICAgQ2xvdWRlcmFcbiAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IG1hcmdpblJpZ2h0OiBncmVtIC8gMiB9fT5cbiAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cImh0dHBzOi8vYmxvZy5mYXN0Zm9yd2FyZGxhYnMuY29tL1wiPlxuICAgICAgICAgICAgICAgICAgICAgIEFJIEV4cGVyaW1lbnRzXG4gICAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17e319PlxuICAgICAgICAgICAgICAgICAgICA8YSBocmVmPVwiaHR0cHM6Ly90d2l0dGVyLmNvbS9mYXN0Zm9yd2FyZGxhYnNcIj5Ud2l0dGVyPC9hPlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9kaXY+XG4gICAgKVxuICB9XG59XG4iXX0= */\n/*@ sourceURL=/Users/grant.custer/Sites/ffgrids/fastforward/parts/Layout.js */")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a, {
+        id: "1135431938",
+        __self: this
+      }, "code[class*='language-'],pre[class*='language-']{color:black;background:none;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono', monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;}pre[class*='language-']::-moz-selection,pre[class*='language-']::-moz-selection,code[class*='language-']::-moz-selection,code[class*='language-']::-moz-selection{text-shadow:none;}pre[class*='language-']::selection,pre[class*='language-']::selection,code[class*='language-']::selection,code[class*='language-']::selection{text-shadow:none;}@media print{code[class*='language-'],pre[class*='language-']{text-shadow:none;}}:not(pre)>code[class*='language-']{white-space:normal;}.token.comment,.token.prolog,.token.doctype,.token.cdata{color:slategray;}.token.punctuation{color:#999;}.namespace{opacity:0.7;}.token.property,.token.tag,.token.boolean,.token.number,.token.constant,.token.symbol,.token.deleted{color:#905;}.token.selector,.token.attr-name,.token.string,.token.char,.token.builtin,.token.inserted{color:#690;}.token.operator,.token.entity,.token.url,.language-css .token.string,.style .token.string{color:#9a6e3a;}.token.atrule,.token.attr-value,.token.keyword{color:#07a;}.token.function,.token.class-name{color:#dd4a68;}.token.regex,.token.important,.token.variable{color:#e90;}.token.important,.token.bold{font-weight:bold;}.token.italic{font-style:italic;}.token.entity{cursor:help;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9ncmFudC5jdXN0ZXIvU2l0ZXMvZmZncmlkcy9mYXN0Zm9yd2FyZC9wYXJ0cy9MYXlvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBNk0yQixBQVl5QixBQXlCSyxBQU9BLEFBTUUsQUFXQSxBQU9ILEFBSUwsQUFJQyxBQVVELEFBU0EsQUFRRyxBQU1ILEFBS0csQUFNSCxBQUtNLEFBR0MsQUFJTixXQTNEZCxBQWNBLEFBU0EsQUFjQSxBQVdBLENBNUdrQixBQWdFbEIsQUF3REEsRUE3QkEsQUFXQSxFQTlDQSxDQS9CQSxBQU9BLEFBTUUsQUEyRUYsQ0FHQSxDQW5FQSxTQS9DYSxtRUFDSyxnQkFDQSxnQkFDSSxvQkFDRixrQkFDRCxpQkFDRCxnQkFFQSxnQkFDRixjQUNILFdBRVUscUJBQ0gsa0JBQ0QsaUJBQ0oscUVBQ2YiLCJmaWxlIjoiL1VzZXJzL2dyYW50LmN1c3Rlci9TaXRlcy9mZmdyaWRzL2Zhc3Rmb3J3YXJkL3BhcnRzL0xheW91dC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBIZWFkIGZyb20gJ25leHQvaGVhZCdcbmltcG9ydCB7IHAgfSBmcm9tICcuLi9wYXJ0cy9VdGlscydcbmltcG9ydCB7IGRlYm91bmNlIH0gZnJvbSAnbG9kYXNoJ1xuaW1wb3J0IHBvc3RzIGZyb20gJy4uL3Bvc3RzJ1xuaW1wb3J0IHsgTURYUHJvdmlkZXIgfSBmcm9tICdAbWR4LWpzL3JlYWN0J1xuaW1wb3J0IHsgSGQsIFZkLCBSZWN0IH0gZnJvbSAnLi4vcGFydHMvRGl2aWRlcnMnXG5pbXBvcnQgUG9zdFByZXZpZXcgZnJvbSAnLi4vcGFydHMvUG9zdFByZXZpZXcnXG5pbXBvcnQgSGlnaGxpZ2h0LCB7IGRlZmF1bHRQcm9wcyB9IGZyb20gJ3ByaXNtLXJlYWN0LXJlbmRlcmVyJ1xuaW1wb3J0IGRhcmtUaGVtZSBmcm9tICdwcmlzbS1yZWFjdC1yZW5kZXJlci90aGVtZXMvbmlnaHRPd2wnXG5cbmxldCBvZnMgPSAxNlxuXG5leHBvcnQgY2xhc3MgUG9zdExheW91dCBleHRlbmRzIFJlYWN0LkNvbXBvbmVudCB7XG4gIHJlbmRlcigpIHtcbiAgICBsZXQgeyBjaGlsZHJlbiwgcGF0aG5hbWUgfSA9IHRoaXMucHJvcHNcbiAgICBsZXQge1xuICAgICAgZ3JlbSxcbiAgICAgIG9ncmVtLFxuICAgICAgY2VudGVyX3RleHQsXG4gICAgICBhZnMsXG4gICAgICBmc24sXG4gICAgICBmcyxcbiAgICAgIGNvbHVtbnMsXG4gICAgICBjb2x1bW5fd2lkdGgsXG4gICAgICBvZmZzZXQsXG4gICAgICB3dyxcbiAgICAgIHdoLFxuICAgICAgY2FwLFxuICAgICAgb3B0aW1fd2lkdGgsXG4gICAgfSA9IHRoaXMucHJvcHNcblxuICAgIGxldCBwb3N0X2luZGV4ID0gcG9zdHMubWFwKHAgPT4gcC5wYXRoX25hbWUpLmluZGV4T2YocGF0aG5hbWUpXG4gICAgbGV0IHByZXZfaW5kZXggPSBwb3N0X2luZGV4IC0gMVxuICAgIGxldCBuZXh0X2luZGV4ID0gcG9zdF9pbmRleCArIDFcbiAgICBsZXQgcG9zdCA9IHBvc3RzW3Bvc3RfaW5kZXhdXG4gICAgbGV0IHByZXZfcG9zdCA9IHBvc3RzW3ByZXZfaW5kZXhdXG4gICAgbGV0IG5leHRfcG9zdCA9IHBvc3RzW25leHRfaW5kZXhdXG5cbiAgICBsZXQgY29tcG9uZW50cyA9IHtcbiAgICAgIGltZzogcHJvcHMgPT4ge1xuICAgICAgICBsZXQgYWRkcmVzcyA9IHByb3BzLnNyY1xuICAgICAgICBhZGRyZXNzLnJlcGxhY2UoJ3t7IHNpdGUuZ2l0aHViLnVybCB9fScsICcnKVxuICAgICAgICBhZGRyZXNzID0gYWRkcmVzcy5zdGFydHNXaXRoKCdodHRwJykgPyBhZGRyZXNzIDogYC9zdGF0aWMke2FkZHJlc3N9YFxuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgIC8vIHdpZHRoOiBvcHRpbV93aWR0aCArIG9ncmVtLFxuICAgICAgICAgICAgICAvLyBtYXJnaW5MZWZ0OiAtZ3JlbSAvIDIgLSBvZ3JlbSAvIDIsXG4gICAgICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnLFxuICAgICAgICAgICAgfX1cbiAgICAgICAgICA+XG4gICAgICAgICAgICA8aW1nXG4gICAgICAgICAgICAgIHNyYz17YWRkcmVzc31cbiAgICAgICAgICAgICAgYWx0PXtwcm9wcy5hbHR9XG4gICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgZGlzcGxheTogJ2Jsb2NrJyxcbiAgICAgICAgICAgICAgICBtYXJnaW46ICcwJyxcbiAgICAgICAgICAgICAgICBtYXhXaWR0aDogb3B0aW1fd2lkdGggKyBvZ3JlbSxcbiAgICAgICAgICAgICAgICB3aWR0aDogJzEwMCUnLFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgKVxuICAgICAgfSxcbiAgICAgIHByZTogcHJvcHMgPT4gPGRpdiB7Li4ucHJvcHN9IC8+LFxuICAgICAgY29kZTogcHJvcHMgPT4ge1xuICAgICAgICBsZXQgY2hpbGRyZW4gPSBwcm9wcy5jaGlsZHJlblxuICAgICAgICBjb25zdCBsYW5ndWFnZSA9XG4gICAgICAgICAgcHJvcHMuY2xhc3NOYW1lICE9PSB1bmRlZmluZWRcbiAgICAgICAgICAgID8gcHJvcHMuY2xhc3NOYW1lLnJlcGxhY2UoL2xhbmd1YWdlLS8sICcnKVxuICAgICAgICAgICAgOiAnJ1xuICAgICAgICByZXR1cm4gKFxuICAgICAgICAgIDxIaWdobGlnaHRcbiAgICAgICAgICAgIHsuLi5kZWZhdWx0UHJvcHN9XG4gICAgICAgICAgICBjb2RlPXtjaGlsZHJlbn1cbiAgICAgICAgICAgIGxhbmd1YWdlPXtsYW5ndWFnZX1cbiAgICAgICAgICAgIHRoZW1lPXt1bmRlZmluZWR9XG4gICAgICAgICAgPlxuICAgICAgICAgICAgeyh7IGNsYXNzTmFtZSwgc3R5bGUsIHRva2VucywgZ2V0TGluZVByb3BzLCBnZXRUb2tlblByb3BzIH0pID0+IChcbiAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogZ3JlbSxcbiAgICAgICAgICAgICAgICAgIHdpZHRoOiA0ICogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICAgICAgbWFyZ2luTGVmdDogLWdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgbWFyZ2luUmlnaHQ6IC1ncmVtIC8gMixcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtjbGFzc05hbWV9XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICBvdmVyZmxvd1g6ICdhdXRvJyxcbiAgICAgICAgICAgICAgICAgICAgb3ZlcmZsb3dZOiAnaGlkZGVuJyxcbiAgICAgICAgICAgICAgICAgICAgYmFja2dyb3VuZDogJyNmM2YzZjMnLFxuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICA8cHJlXG4gICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgICAgLi4uc3R5bGUsXG4gICAgICAgICAgICAgICAgICAgICAgZmxvYXQ6ICdsZWZ0JyxcbiAgICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAwLjc1LFxuICAgICAgICAgICAgICAgICAgICAgIG1pbldpZHRoOiAnMTAwJScsXG4gICAgICAgICAgICAgICAgICAgICAgcG9zaXRpb246ICdyZWxhdGl2ZScsXG4gICAgICAgICAgICAgICAgICAgICAgbGluZUhlaWdodDogMS41LFxuICAgICAgICAgICAgICAgICAgICAgIG1hcmdpbjogMCxcbiAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgICAgICBvdmVyZmxvdzogJ3Zpc2libGUnLFxuICAgICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICB7dG9rZW5zLm1hcCgobGluZSwgaSkgPT4gKFxuICAgICAgICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgICAgICAgIGtleT17aX1cbiAgICAgICAgICAgICAgICAgICAgICAgIHsuLi5nZXRMaW5lUHJvcHMoeyBsaW5lLCBrZXk6IGkgfSl9XG4gICAgICAgICAgICAgICAgICAgICAgICBzdHlsZT17e319XG4gICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAge2xpbmUubWFwKCh0b2tlbiwga2V5KSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGtleT17a2V5fSB7Li4uZ2V0VG9rZW5Qcm9wcyh7IHRva2VuLCBrZXkgfSl9IC8+XG4gICAgICAgICAgICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgICA8L3ByZT5cbiAgICAgICAgICAgICAgICAgIDxSZWN0IC8+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgKX1cbiAgICAgICAgICA8L0hpZ2hsaWdodD5cbiAgICAgICAgKVxuICAgICAgfSxcbiAgICB9XG5cbiAgICBsZXQgcG9zdF9kYXRlID0gbmV3IERhdGUocG9zdC5wdWJsaXNoRGF0ZSlcbiAgICBsZXQgcHVibGlzaGVkX2RhdGUgPSBgJHtwb3N0X2RhdGUudG9Mb2NhbGVTdHJpbmcoJ2VuLXVzJywge1xuICAgICAgbW9udGg6ICdzaG9ydCcsXG4gICAgfSl9ICR7KHBvc3RfZGF0ZS5nZXREYXkoKSArIDEpXG4gICAgICAudG9TdHJpbmcoKVxuICAgICAgLnBhZFN0YXJ0KDIsICcwJyl9ICR7cG9zdF9kYXRlLmdldEZ1bGxZZWFyKCl9YFxuXG4gICAgbGV0IHByZXZpZXdfY29sdW1ucyA9IE1hdGgubWF4KFxuICAgICAgKGNvbHVtbnMgLyAyKSAlIDIgPT09IDAgPyBjb2x1bW5zIC8gMiA6IGNvbHVtbnMgLyAyIC0gMSxcbiAgICAgIDRcbiAgICApXG4gICAgbGV0IHByZXZpZXdfb2Zmc2V0ID0gTWF0aC5tYXgoMCwgY29sdW1ucyAvIDIgLSBwcmV2aWV3X2NvbHVtbnMpXG5cbiAgICBsZXQgaGFsZiA9IE1hdGguZmxvb3IoY29sdW1ucyAvIDIgLyAyKSAqIDJcblxuICAgIHJldHVybiAoXG4gICAgICA8ZGl2PlxuICAgICAgICA8SGVhZD5cbiAgICAgICAgICA8bGlua1xuICAgICAgICAgICAgcmVsPVwiaWNvblwiXG4gICAgICAgICAgICB0eXBlPVwiaW1hZ2UveC1pY29uXCJcbiAgICAgICAgICAgIGhyZWY9XCJzdGF0aWMvaW1hZ2VzL2Zhdmljb24ucG5nXCJcbiAgICAgICAgICAvPlxuXG4gICAgICAgICAgPHRpdGxlPntwb3N0LnRpdGxlfSAtIENsb3VkZXJhIEZhc3QgRm9yd2FyZDwvdGl0bGU+XG4gICAgICAgIDwvSGVhZD5cblxuICAgICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAgIGgxLFxuICAgICAgICAgIGgyLFxuICAgICAgICAgIGgzLFxuICAgICAgICAgIGg0LFxuICAgICAgICAgIGg1LFxuICAgICAgICAgIGg2IHtcbiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgICAgICAgICBmb250LXN0eWxlOiBub3JtYWw7XG4gICAgICAgICAgICBtYXJnaW46IDA7XG4gICAgICAgICAgfVxuICAgICAgICAgIGgxIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogJHtmcyAqIDN9cHg7XG4gICAgICAgICAgICBsaW5lLWhlaWdodDogMS4yNTtcbiAgICAgICAgICB9XG4gICAgICAgICAgaDIge1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2ZzICogMn1weDtcbiAgICAgICAgICAgIGxpbmUtaGVpZ2h0OiAxLjI1O1xuICAgICAgICAgICAgcGFkZGluZy10b3A6ICR7Z3JlbX1weDtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206ICR7Z3JlbX1weDtcbiAgICAgICAgICB9XG4gICAgICAgICAgaDMge1xuICAgICAgICAgICAgZm9udC1zaXplOiAke2ZzICogMS41fXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEuMjU7XG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogJHtncmVtfXB4O1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogJHtncmVtfXB4O1xuICAgICAgICAgIH1cbiAgICAgICAgICBoNCB7XG4gICAgICAgICAgICBmb250LXNpemU6ICR7ZnMgKiAxLjI1fXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEuMjU7XG4gICAgICAgICAgICBwYWRkaW5nLXRvcDogJHtncmVtfXB4O1xuICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogJHtncmVtfXB4O1xuICAgICAgICAgIH1cbiAgICAgICAgICBoNSB7XG4gICAgICAgICAgICBmb250LXNpemU6ICR7ZnMgKiAwLjc1fXB4O1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEuNDM3NTtcbiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206ICR7Z3JlbSAvIDJ9cHg7XG4gICAgICAgICAgICBwYWRkaW5nLWJvdHRvbTogJHtncmVtIC8gMn1weDtcbiAgICAgICAgICAgIC8vIG1hcmdpbi1sZWZ0OiAtJHtncmVtIC8gMiArIG9ncmVtIC8gMn1weDtcbiAgICAgICAgICAgIC8vIG1hcmdpbi1yaWdodDogLSR7Z3JlbSAvIDIgKyBvZ3JlbSAvIDJ9cHg7XG4gICAgICAgICAgICBtYXJnaW4tdG9wOiAtJHtncmVtIC8gMn1weDtcbiAgICAgICAgICB9XG4gICAgICAgICAgaDUgZW0ge1xuICAgICAgICAgIH1cbiAgICAgICAgICBwIHtcbiAgICAgICAgICAgIG1hcmdpbjogMCAwICR7Z3JlbX1weCAwO1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICA8c3R5bGUganN4IGdsb2JhbD57YFxuICAgICAgICAgIC8qIFByaXNtSlMgMS4xNi4wXG5odHRwczovL3ByaXNtanMuY29tL2Rvd25sb2FkLmh0bWwjdGhlbWVzPXByaXNtJmxhbmd1YWdlcz1tYXJrdXArY3NzK2NsaWtlK2phdmFzY3JpcHQgKi9cbiAgICAgICAgICAvKipcbiAqIHByaXNtLmpzIGRlZmF1bHQgdGhlbWUgZm9yIEphdmFTY3JpcHQsIENTUyBhbmQgSFRNTFxuICogQmFzZWQgb24gZGFiYmxldCAoaHR0cDovL2RhYmJsZXQuY29tKVxuICogQGF1dGhvciBMZWEgVmVyb3VcbiAqL1xuXG4gICAgICAgICAgY29kZVtjbGFzcyo9J2xhbmd1YWdlLSddLFxuICAgICAgICAgIHByZVtjbGFzcyo9J2xhbmd1YWdlLSddIHtcbiAgICAgICAgICAgIGNvbG9yOiBibGFjaztcbiAgICAgICAgICAgIGJhY2tncm91bmQ6IG5vbmU7XG4gICAgICAgICAgICBmb250LWZhbWlseTogQ29uc29sYXMsIE1vbmFjbywgJ0FuZGFsZSBNb25vJywgJ1VidW50dSBNb25vJyxcbiAgICAgICAgICAgICAgbW9ub3NwYWNlO1xuICAgICAgICAgICAgdGV4dC1hbGlnbjogbGVmdDtcbiAgICAgICAgICAgIHdoaXRlLXNwYWNlOiBwcmU7XG4gICAgICAgICAgICB3b3JkLXNwYWNpbmc6IG5vcm1hbDtcbiAgICAgICAgICAgIHdvcmQtYnJlYWs6IG5vcm1hbDtcbiAgICAgICAgICAgIHdvcmQtd3JhcDogbm9ybWFsO1xuICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEuNTtcblxuICAgICAgICAgICAgLW1vei10YWItc2l6ZTogNDtcbiAgICAgICAgICAgIC1vLXRhYi1zaXplOiA0O1xuICAgICAgICAgICAgdGFiLXNpemU6IDQ7XG5cbiAgICAgICAgICAgIC13ZWJraXQtaHlwaGVuczogbm9uZTtcbiAgICAgICAgICAgIC1tb3otaHlwaGVuczogbm9uZTtcbiAgICAgICAgICAgIC1tcy1oeXBoZW5zOiBub25lO1xuICAgICAgICAgICAgaHlwaGVuczogbm9uZTtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICBwcmVbY2xhc3MqPSdsYW5ndWFnZS0nXTo6LW1vei1zZWxlY3Rpb24sXG4gICAgICAgICAgcHJlW2NsYXNzKj0nbGFuZ3VhZ2UtJ10gOjotbW96LXNlbGVjdGlvbixcbiAgICAgICAgICBjb2RlW2NsYXNzKj0nbGFuZ3VhZ2UtJ106Oi1tb3otc2VsZWN0aW9uLFxuICAgICAgICAgIGNvZGVbY2xhc3MqPSdsYW5ndWFnZS0nXSA6Oi1tb3otc2VsZWN0aW9uIHtcbiAgICAgICAgICAgIHRleHQtc2hhZG93OiBub25lO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIHByZVtjbGFzcyo9J2xhbmd1YWdlLSddOjpzZWxlY3Rpb24sXG4gICAgICAgICAgcHJlW2NsYXNzKj0nbGFuZ3VhZ2UtJ10gOjpzZWxlY3Rpb24sXG4gICAgICAgICAgY29kZVtjbGFzcyo9J2xhbmd1YWdlLSddOjpzZWxlY3Rpb24sXG4gICAgICAgICAgY29kZVtjbGFzcyo9J2xhbmd1YWdlLSddIDo6c2VsZWN0aW9uIHtcbiAgICAgICAgICAgIHRleHQtc2hhZG93OiBub25lO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIEBtZWRpYSBwcmludCB7XG4gICAgICAgICAgICBjb2RlW2NsYXNzKj0nbGFuZ3VhZ2UtJ10sXG4gICAgICAgICAgICBwcmVbY2xhc3MqPSdsYW5ndWFnZS0nXSB7XG4gICAgICAgICAgICAgIHRleHQtc2hhZG93OiBub25lO1xuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cblxuICAgICAgICAgIC8qIENvZGUgYmxvY2tzICovXG4gICAgICAgICAgOm5vdChwcmUpID4gY29kZVtjbGFzcyo9J2xhbmd1YWdlLSddLFxuICAgICAgICAgIHByZVtjbGFzcyo9J2xhbmd1YWdlLSddIHtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICAvKiBJbmxpbmUgY29kZSAqL1xuICAgICAgICAgIDpub3QocHJlKSA+IGNvZGVbY2xhc3MqPSdsYW5ndWFnZS0nXSB7XG4gICAgICAgICAgICB3aGl0ZS1zcGFjZTogbm9ybWFsO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC50b2tlbi5jb21tZW50LFxuICAgICAgICAgIC50b2tlbi5wcm9sb2csXG4gICAgICAgICAgLnRva2VuLmRvY3R5cGUsXG4gICAgICAgICAgLnRva2VuLmNkYXRhIHtcbiAgICAgICAgICAgIGNvbG9yOiBzbGF0ZWdyYXk7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLnRva2VuLnB1bmN0dWF0aW9uIHtcbiAgICAgICAgICAgIGNvbG9yOiAjOTk5O1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC5uYW1lc3BhY2Uge1xuICAgICAgICAgICAgb3BhY2l0eTogMC43O1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC50b2tlbi5wcm9wZXJ0eSxcbiAgICAgICAgICAudG9rZW4udGFnLFxuICAgICAgICAgIC50b2tlbi5ib29sZWFuLFxuICAgICAgICAgIC50b2tlbi5udW1iZXIsXG4gICAgICAgICAgLnRva2VuLmNvbnN0YW50LFxuICAgICAgICAgIC50b2tlbi5zeW1ib2wsXG4gICAgICAgICAgLnRva2VuLmRlbGV0ZWQge1xuICAgICAgICAgICAgY29sb3I6ICM5MDU7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLnRva2VuLnNlbGVjdG9yLFxuICAgICAgICAgIC50b2tlbi5hdHRyLW5hbWUsXG4gICAgICAgICAgLnRva2VuLnN0cmluZyxcbiAgICAgICAgICAudG9rZW4uY2hhcixcbiAgICAgICAgICAudG9rZW4uYnVpbHRpbixcbiAgICAgICAgICAudG9rZW4uaW5zZXJ0ZWQge1xuICAgICAgICAgICAgY29sb3I6ICM2OTA7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLnRva2VuLm9wZXJhdG9yLFxuICAgICAgICAgIC50b2tlbi5lbnRpdHksXG4gICAgICAgICAgLnRva2VuLnVybCxcbiAgICAgICAgICAubGFuZ3VhZ2UtY3NzIC50b2tlbi5zdHJpbmcsXG4gICAgICAgICAgLnN0eWxlIC50b2tlbi5zdHJpbmcge1xuICAgICAgICAgICAgY29sb3I6ICM5YTZlM2E7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLnRva2VuLmF0cnVsZSxcbiAgICAgICAgICAudG9rZW4uYXR0ci12YWx1ZSxcbiAgICAgICAgICAudG9rZW4ua2V5d29yZCB7XG4gICAgICAgICAgICBjb2xvcjogIzA3YTtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICAudG9rZW4uZnVuY3Rpb24sXG4gICAgICAgICAgLnRva2VuLmNsYXNzLW5hbWUge1xuICAgICAgICAgICAgY29sb3I6ICNkZDRhNjg7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgLnRva2VuLnJlZ2V4LFxuICAgICAgICAgIC50b2tlbi5pbXBvcnRhbnQsXG4gICAgICAgICAgLnRva2VuLnZhcmlhYmxlIHtcbiAgICAgICAgICAgIGNvbG9yOiAjZTkwO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC50b2tlbi5pbXBvcnRhbnQsXG4gICAgICAgICAgLnRva2VuLmJvbGQge1xuICAgICAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgICAgICAgfVxuICAgICAgICAgIC50b2tlbi5pdGFsaWMge1xuICAgICAgICAgICAgZm9udC1zdHlsZTogaXRhbGljO1xuICAgICAgICAgIH1cblxuICAgICAgICAgIC50b2tlbi5lbnRpdHkge1xuICAgICAgICAgICAgY3Vyc29yOiBoZWxwO1xuICAgICAgICAgIH1cbiAgICAgICAgYH08L3N0eWxlPlxuICAgICAgICA8ZGl2IHN0eWxlPXt7IHBvc2l0aW9uOiAncmVsYXRpdmUnIH19PlxuICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgIHBhZGRpbmdMZWZ0OiBvZ3JlbSAvIDIsXG4gICAgICAgICAgICAgIHBhZGRpbmdSaWdodDogb2dyZW0gLyAyLFxuICAgICAgICAgICAgICBwYWRkaW5nVG9wOiBncmVtLFxuICAgICAgICAgICAgfX1cbiAgICAgICAgICA+XG4gICAgICAgICAgICA8ZGl2IHN0eWxlPXt7fX0+XG4gICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgZGlzcGxheTogJ2ZsZXgnLFxuICAgICAgICAgICAgICAgICAgbWFyZ2luQm90dG9tOiBncmVtIC8gMixcbiAgICAgICAgICAgICAgICAgIHdpZHRoOiBNYXRoLm1pbihjb2x1bW5zLCA2KSAqIGNvbHVtbl93aWR0aCxcbiAgICAgICAgICAgICAgICAgIG1hcmdpbkxlZnQ6XG4gICAgICAgICAgICAgICAgICAgICgoY29sdW1ucyAtIE1hdGgubWluKGNvbHVtbnMsIDYpKSAvIDIpICogY29sdW1uX3dpZHRoICtcbiAgICAgICAgICAgICAgICAgICAgb2Zmc2V0LFxuICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICB3aWR0aDogY29sdW1uX3dpZHRoICogMSxcbiAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogcCgwLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnLFxuICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAoNiAvIDgpLFxuICAgICAgICAgICAgICAgICAgICBsZXR0ZXJTcGFjaW5nOiAnMC4wM2VtJyxcbiAgICAgICAgICAgICAgICAgICAgdGV4dFRyYW5zZm9ybTogJ3VwcGVyY2FzZScsXG4gICAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEsXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIHtwdWJsaXNoZWRfZGF0ZX1cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICB3aWR0aDogY29sdW1uX3dpZHRoICogMSxcbiAgICAgICAgICAgICAgICAgICAgcGFkZGluZzogcCgwLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnLFxuICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAoNiAvIDgpLFxuICAgICAgICAgICAgICAgICAgICBsZXR0ZXJTcGFjaW5nOiAnMC4wM2VtJyxcbiAgICAgICAgICAgICAgICAgICAgdGV4dFRyYW5zZm9ybTogJ3VwcGVyY2FzZScsXG4gICAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEsXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIHtwb3N0LnBvc3RfdHlwZX1cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgbWFyZ2luQm90dG9tOiAwIH19PlxuICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIGZvbnRTaXplOiBmcyAqIDMsXG4gICAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEuMjUsXG4gICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IHAoMCwgZ3JlbSAvIDIpLFxuICAgICAgICAgICAgICAgICAgICB3aWR0aDogTWF0aC5taW4oY29sdW1ucywgNikgKiBjb2x1bW5fd2lkdGgsXG4gICAgICAgICAgICAgICAgICAgIG1hcmdpbkxlZnQ6XG4gICAgICAgICAgICAgICAgICAgICAgKChjb2x1bW5zIC0gTWF0aC5taW4oY29sdW1ucywgNikpIC8gMikgKiBjb2x1bW5fd2lkdGggK1xuICAgICAgICAgICAgICAgICAgICAgIG9mZnNldCxcbiAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAge3Bvc3QudGl0bGV9XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuXG4gICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgZGlzcGxheTogJ2ZsZXgnLFxuICAgICAgICAgICAgICAgICAgd2lkdGg6IGNvbHVtbnMgPiA0ID8gNSAqIGNvbHVtbl93aWR0aCA6IDQgKiBjb2x1bW5fd2lkdGgsXG4gICAgICAgICAgICAgICAgICBtYXJnaW5MZWZ0OlxuICAgICAgICAgICAgICAgICAgICAoY29sdW1ucyA+IDRcbiAgICAgICAgICAgICAgICAgICAgICA/ICgoY29sdW1ucyAtIDQpIC8gMiAtIDEpICogY29sdW1uX3dpZHRoXG4gICAgICAgICAgICAgICAgICAgICAgOiAoKGNvbHVtbnMgLSA0KSAvIDIpICogY29sdW1uX3dpZHRoKSArIG9mZnNldCxcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAge2NvbHVtbnMgPiA0ID8gKFxuICAgICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IHAoZ3JlbSwgZ3JlbSAvIDIsIGdyZW0sIGdyZW0gLyAyKSxcbiAgICAgICAgICAgICAgICAgICAgICB3aWR0aDogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICB7cG9zdC5hdXRob3IgPyAoXG4gICAgICAgICAgICAgICAgICAgICAgPGRpdj5cbiAgICAgICAgICAgICAgICAgICAgICAgIGJ5eycgJ31cbiAgICAgICAgICAgICAgICAgICAgICAgIHtwb3N0LmF1dGhvcl9saW5rID8gKFxuICAgICAgICAgICAgICAgICAgICAgICAgICA8YSBocmVmPXtwb3N0LmF1dGhvcl9saW5rfT57cG9zdC5hdXRob3J9PC9hPlxuICAgICAgICAgICAgICAgICAgICAgICAgKSA6IChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcG9zdC5hdXRob3JcbiAgICAgICAgICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICkgOiBudWxsfXsnICd9XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICApIDogbnVsbH1cblxuICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIHdpZHRoOiBjb2x1bW5fd2lkdGggKiA0LFxuICAgICAgICAgICAgICAgICAgICBwYWRkaW5nOiBwKGdyZW0sIGdyZW0gLyAyLCBncmVtLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIDxNRFhQcm92aWRlciBjb21wb25lbnRzPXtjb21wb25lbnRzfT57Y2hpbGRyZW59PC9NRFhQcm92aWRlcj5cbiAgICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiAnZmxleCcsXG4gICAgICAgICAgICAgICAgICAgICAganVzdGlmeUNvbnRlbnQ6ICdjZW50ZXInLFxuICAgICAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6ICdub25lJyxcbiAgICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAgPGltZ1xuICAgICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgICAgICBoZWlnaHQ6IGNhcCxcbiAgICAgICAgICAgICAgICAgICAgICAgIHdpZHRoOiBjYXAsXG4gICAgICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAgICAgICAgIGRpc3BsYXk6ICdibG9jaycsXG4gICAgICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICAgICAgICBzcmM9XCIvc3RhdGljL2ltYWdlcy9mZi5wbmdcIlxuICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICBkaXNwbGF5OiBjb2x1bW5zID4gNiA/ICdncmlkJyA6ICdibG9jaycsXG4gICAgICAgICAgICAgICAgZ3JpZFRlbXBsYXRlQ29sdW1uczogYHJlcGVhdCgyLCAxZnIpYCxcbiAgICAgICAgICAgICAgICBtYXJnaW5Cb3R0b206IGdyZW0sXG4gICAgICAgICAgICAgICAgd2lkdGg6IGhhbGYgKiAyICogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICAgIG1hcmdpbkxlZnQ6IG9mZnNldCArICgoY29sdW1ucyAtIGhhbGYgKiAyKSAvIDIpICogY29sdW1uX3dpZHRoLFxuICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgPlxuICAgICAgICAgICAgICB7cHJldl9wb3N0ID8gKFxuICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAncmVsYXRpdmUnLFxuICAgICAgICAgICAgICAgICAgICBkaXNwbGF5OiAnZ3JpZCcsXG4gICAgICAgICAgICAgICAgICAgIGdyaWRUZW1wbGF0ZVJvd3M6ICdhdXRvIDFmcicsXG4gICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgICAgICB0ZXh0VHJhbnNmb3JtOiAndXBwZXJjYXNlJyxcbiAgICAgICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAwLjc1LFxuICAgICAgICAgICAgICAgICAgICAgIGxldHRlclNwYWNpbmc6ICcwLjAzZW0nLFxuICAgICAgICAgICAgICAgICAgICAgIGxpbmVIZWlnaHQ6IDEuNSxcbiAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nQm90dG9tOiBncmVtIC8gNCxcbiAgICAgICAgICAgICAgICAgICAgICBwYWRkaW5nTGVmdDogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAgIH19XG4gICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgIE5ld2VyXG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgcG9zaXRpb246ICdyZWxhdGl2ZScsIGRpc3BsYXk6ICdncmlkJyB9fT5cbiAgICAgICAgICAgICAgICAgICAgPFBvc3RQcmV2aWV3XG4gICAgICAgICAgICAgICAgICAgICAgcG9zdD17cG9zdHNbcHJldl9pbmRleF19XG4gICAgICAgICAgICAgICAgICAgICAgZ3JlbT17Z3JlbX1cbiAgICAgICAgICAgICAgICAgICAgICB3dz17d3d9XG4gICAgICAgICAgICAgICAgICAgICAgY29sdW1uX3dpZHRoPXtjb2x1bW5fd2lkdGh9XG4gICAgICAgICAgICAgICAgICAgICAgZnM9e2ZzfVxuICAgICAgICAgICAgICAgICAgICAgIG9ncmVtPXtvZ3JlbX1cbiAgICAgICAgICAgICAgICAgICAgICBjb2x1bW5zPXtcbiAgICAgICAgICAgICAgICAgICAgICAgIGNvbHVtbnMgPiA2ID8gTWF0aC5mbG9vcihjb2x1bW5zIC8gMiAvIDIpICogMiA6IGNvbHVtbnNcbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICAgIDxSZWN0IC8+XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgKSA6IG51bGx9XG5cbiAgICAgICAgICAgICAge25leHRfcG9zdCA/IChcbiAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgICBwb3NpdGlvbjogJ3JlbGF0aXZlJyxcbiAgICAgICAgICAgICAgICAgICAgZGlzcGxheTogJ2dyaWQnLFxuICAgICAgICAgICAgICAgICAgICBncmlkVGVtcGxhdGVSb3dzOiAnYXV0byAxZnInLFxuICAgICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICAgICAgdGV4dFRyYW5zZm9ybTogJ3VwcGVyY2FzZScsXG4gICAgICAgICAgICAgICAgICAgICAgZm9udFNpemU6IGZzICogMC43NSxcbiAgICAgICAgICAgICAgICAgICAgICBsZXR0ZXJTcGFjaW5nOiAnMC4wM2VtJyxcbiAgICAgICAgICAgICAgICAgICAgICBsaW5lSGVpZ2h0OiAxLjUsXG4gICAgICAgICAgICAgICAgICAgICAgcGFkZGluZ0JvdHRvbTogZ3JlbSAvIDQsXG4gICAgICAgICAgICAgICAgICAgICAgcGFkZGluZ0xlZnQ6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICBPbGRlclxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IHBvc2l0aW9uOiAncmVsYXRpdmUnLCBkaXNwbGF5OiAnZ3JpZCcgfX0+XG4gICAgICAgICAgICAgICAgICAgIDxQb3N0UHJldmlld1xuICAgICAgICAgICAgICAgICAgICAgIHBvc3Q9e3Bvc3RzW25leHRfaW5kZXhdfVxuICAgICAgICAgICAgICAgICAgICAgIGdyZW09e2dyZW19XG4gICAgICAgICAgICAgICAgICAgICAgd3c9e3d3fVxuICAgICAgICAgICAgICAgICAgICAgIGNvbHVtbl93aWR0aD17Y29sdW1uX3dpZHRofVxuICAgICAgICAgICAgICAgICAgICAgIGZzPXtmc31cbiAgICAgICAgICAgICAgICAgICAgICBvZ3JlbT17b2dyZW19XG4gICAgICAgICAgICAgICAgICAgICAgY29sdW1ucz17XG4gICAgICAgICAgICAgICAgICAgICAgICBjb2x1bW5zID4gNiA/IE1hdGguZmxvb3IoY29sdW1ucyAvIDIgLyAyKSAqIDIgOiBjb2x1bW5zXG4gICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgICA8UmVjdCAvPlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICkgOiBudWxsfVxuICAgICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgcGFkZGluZ0JvdHRvbTogZ3JlbSwgcGFkZGluZ1RvcDogZ3JlbSB9fT5cbiAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICBmb250U2l6ZTogZnMgKiAyLFxuICAgICAgICAgICAgICAgICAgbGluZUhlaWdodDogMS4yNSxcbiAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IHAoMCwgZ3JlbSAvIDIsIDAsIGdyZW0gLyAyKSxcbiAgICAgICAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAuLi5jZW50ZXJfdGV4dCxcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgQWJvdXRcbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDxkaXZcbiAgICAgICAgICAgICAgICBzdHlsZT17e1xuICAgICAgICAgICAgICAgICAgcGFkZGluZzogcCgwLCBncmVtIC8gMiksXG4gICAgICAgICAgICAgICAgICBtYXJnaW5Cb3R0b206IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgLi4uY2VudGVyX3RleHQsXG4gICAgICAgICAgICAgICAgICAuLi5mc24sXG4gICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIENsb3VkZXJhIEZhc3QgRm9yd2FyZCBMYWJzIGlzIGFuIGFwcGxpZWQgbWFjaGluZSBsZWFybmluZ1xuICAgICAgICAgICAgICAgIHJlc2VhcmNoIGdyb3VwLiBXZSBoZWxwIG9yZ2FuaXphdGlvbnMgcmVjb2duaXplIGFuZCBkZXZlbG9wIG5ld1xuICAgICAgICAgICAgICAgIHByb2R1Y3QgYW5kIGJ1c2luZXNzIG9wcG9ydHVuaXRpZXMgdGhyb3VnaCBlbWVyZ2luZ1xuICAgICAgICAgICAgICAgIHRlY2hub2xvZ2llcy57JyAnfVxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgIHN0eWxlPXt7XG4gICAgICAgICAgICAgICAgICBwYWRkaW5nOiBwKDAsIGdyZW0gLyAyKSxcbiAgICAgICAgICAgICAgICAgIG1hcmdpbkJvdHRvbTogZ3JlbSAvIDIsXG4gICAgICAgICAgICAgICAgICAuLi5jZW50ZXJfdGV4dCxcbiAgICAgICAgICAgICAgICAgIC4uLmZzbixcbiAgICAgICAgICAgICAgICB9fVxuICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3LmNsb3VkZXJhLmNvbS9wcm9kdWN0cy9mYXN0LWZvcndhcmQtbGFicy1yZXNlYXJjaC5odG1sXCI+XG4gICAgICAgICAgICAgICAgICBMZWFybiBtb3JlIGFib3V0IHdvcmtpbmcgd2l0aCB1cy5cbiAgICAgICAgICAgICAgICA8L2E+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgICA8ZGl2IHN0eWxlPXt7fX0+XG4gICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IHBvc2l0aW9uOiAncmVsYXRpdmUnIH19PlxuICAgICAgICAgICAgICA8SGQgd2lkdGg9XCIxMDAlXCIgYWxpZ249XCJ0XCIgZnM9e2ZzfSAvPlxuICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgc3R5bGU9e3tcbiAgICAgICAgICAgICAgICAgIHBhZGRpbmc6IGdyZW0gLyAyLFxuICAgICAgICAgICAgICAgICAgZGlzcGxheTogJ2ZsZXgnLFxuICAgICAgICAgICAgICAgICAganVzdGlmeUNvbnRlbnQ6ICdzcGFjZS1iZXR3ZWVuJyxcbiAgICAgICAgICAgICAgICAgIGZsZXhXcmFwOiAnd3JhcCcsXG4gICAgICAgICAgICAgICAgICAuLi5mc24sXG4gICAgICAgICAgICAgICAgfX1cbiAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgIDxkaXY+XG4gICAgICAgICAgICAgICAgICA8YSBocmVmPVwiL1wiPkJsb2c8L2E+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17eyBkaXNwbGF5OiAnZmxleCcsIGZsZXhXcmFwOiAnd3JhcCcgfX0+XG4gICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IG1hcmdpblJpZ2h0OiBncmVtIC8gMiB9fT5cbiAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cImh0dHBzOi8vd3d3LmNsb3VkZXJhLmNvbS9wcm9kdWN0cy9mYXN0LWZvcndhcmQtbGFicy1yZXNlYXJjaC5odG1sXCI+XG4gICAgICAgICAgICAgICAgICAgICAgQ2xvdWRlcmFcbiAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICA8ZGl2IHN0eWxlPXt7IG1hcmdpblJpZ2h0OiBncmVtIC8gMiB9fT5cbiAgICAgICAgICAgICAgICAgICAgPGEgaHJlZj1cImh0dHBzOi8vYmxvZy5mYXN0Zm9yd2FyZGxhYnMuY29tL1wiPlxuICAgICAgICAgICAgICAgICAgICAgIEFJIEV4cGVyaW1lbnRzXG4gICAgICAgICAgICAgICAgICAgIDwvYT5cbiAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT17e319PlxuICAgICAgICAgICAgICAgICAgICA8YSBocmVmPVwiaHR0cHM6Ly90d2l0dGVyLmNvbS9mYXN0Zm9yd2FyZGxhYnNcIj5Ud2l0dGVyPC9hPlxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgIDwvZGl2PlxuICAgICAgPC9kaXY+XG4gICAgKVxuICB9XG59XG4iXX0= */\n/*@ sourceURL=/Users/grant.custer/Sites/ffgrids/fastforward/parts/Layout.js */"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: {
+          position: 'relative'
+        },
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 340
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: {
+          paddingLeft: ogrem / 2,
+          paddingRight: ogrem / 2,
+          paddingTop: grem
+        },
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 341
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: {},
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 348
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           display: 'flex',
           marginBottom: grem / 2,
           width: Math.min(columns, 6) * column_width,
           marginLeft: (columns - Math.min(columns, 6)) / 2 * column_width + offset
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150
+          lineNumber: 349
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           width: column_width * 1,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_9__["p"])(0, grem / 2),
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(0, grem / 2),
           position: 'relative',
           fontSize: fs * (6 / 8),
           letterSpacing: '0.03em',
           textTransform: 'uppercase',
           lineHeight: 1
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 160
+          lineNumber: 359
         },
         __self: this
-      }, published_date), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, published_date), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           width: column_width * 1,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_9__["p"])(0, grem / 2),
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(0, grem / 2),
           position: 'relative',
           fontSize: fs * (6 / 8),
           letterSpacing: '0.03em',
           textTransform: 'uppercase',
           lineHeight: 1
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 372
         },
         __self: this
-      }, post.post_type)), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, post.post_type)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           marginBottom: 0
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 386
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           fontSize: fs * 3,
           lineHeight: 1.25,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_9__["p"])(0, grem / 2),
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(0, grem / 2),
           width: Math.min(columns, 6) * column_width,
           marginLeft: (columns - Math.min(columns, 6)) / 2 * column_width + offset
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 387
         },
         __self: this
-      }, post.title)), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, post.title)), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           display: 'flex',
           width: columns > 4 ? 5 * column_width : 4 * column_width,
           marginLeft: (columns > 4 ? ((columns - 4) / 2 - 1) * column_width : (columns - 4) / 2 * column_width) + offset
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 203
+          lineNumber: 402
         },
         __self: this
-      }, columns > 4 ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, columns > 4 ? react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_9__["p"])(grem, grem / 2, grem, grem / 2),
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(grem, grem / 2, grem, grem / 2),
           width: column_width
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 214
+          lineNumber: 413
         },
         __self: this
-      }, post.author ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+      }, post.author ? react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 221
+          lineNumber: 420
         },
         __self: this
-      }, "by", ' ', post.author_link ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+      }, "by", ' ', post.author_link ? react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         href: post.author_link,
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 224
+          lineNumber: 423
         },
         __self: this
-      }, post.author) : post.author) : null, ' ') : null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, post.author) : post.author) : null, ' ') : null, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           width: column_width * 4,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_9__["p"])(grem, grem / 2, grem, grem / 2)
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(grem, grem / 2, grem, grem / 2)
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233
+          lineNumber: 432
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_mdx_js_react__WEBPACK_IMPORTED_MODULE_12__["MDXProvider"], {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_mdx_js_react__WEBPACK_IMPORTED_MODULE_14__["MDXProvider"], {
         components: components,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239
+          lineNumber: 438
         },
         __self: this
-      }, children), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
+      }, children), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
           display: 'flex',
           justifyContent: 'center',
           padding: grem / 2
-        },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        }, "display", 'none'),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 240
+          lineNumber: 439
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("img", {
         style: {
           height: cap,
           width: cap,
@@ -31184,285 +34299,311 @@ function (_React$Component) {
           display: 'block'
         },
         src: "/static/images/ff.png",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 247
+          lineNumber: 447
         },
         __self: this
-      }))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          position: 'relative'
-        },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 261
-        },
-        __self: this
-      }, next_post ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }))))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           position: 'relative',
-          marginLeft: -ogrem / 2,
-          marginRight: -ogrem / 2,
-          marginBottom: grem
+          display: columns > 6 ? 'grid' : 'block',
+          gridTemplateColumns: "repeat(2, 1fr)",
+          marginBottom: grem,
+          width: half * 2 * column_width,
+          marginLeft: offset + (columns - half * 2) / 2 * column_width
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 267
+          lineNumber: 461
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, prev_post ? react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
-          marginLeft: -ogrem / 2,
-          marginRight: -ogrem / 2,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_9__["p"])(grem / 4, grem / 2 + ogrem / 2, grem / 4, grem / 2 + offset + ogrem)
+          position: 'relative',
+          display: 'grid',
+          gridTemplateRows: 'auto 1fr'
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 275
+          lineNumber: 472
         },
         __self: this
-      }, "Before"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_PostPreview__WEBPACK_IMPORTED_MODULE_14__["default"], {
-        post: _posts__WEBPACK_IMPORTED_MODULE_11__["default"][next_index],
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: {
+          textTransform: 'uppercase',
+          fontSize: fs * 0.75,
+          letterSpacing: '0.03em',
+          lineHeight: 1.5,
+          paddingBottom: grem / 4,
+          paddingLeft: grem / 2
+        },
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 479
+        },
+        __self: this
+      }, "Newer"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: {
+          position: 'relative',
+          display: 'grid'
+        },
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 491
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_parts_PostPreview__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        post: _posts__WEBPACK_IMPORTED_MODULE_13__["default"][prev_index],
         grem: grem,
         ww: ww,
         column_width: column_width,
         fs: fs,
         ogrem: ogrem,
-        extra_left: ogrem / 2 + offset,
-        extra_right: ogrem / 2 + offset,
-        columns: columns,
+        columns: columns > 6 ? Math.floor(columns / 2 / 2) * 2 : columns,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 289
+          lineNumber: 492
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_13__["Hd"], {
-        align: "b",
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_15__["Rect"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 300
+          lineNumber: 503
         },
         __self: this
-      })) : null, prev_post ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }))) : null, next_post ? react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           position: 'relative',
-          marginLeft: -ogrem / 2,
-          marginRight: -ogrem / 2,
-          marginBottom: grem
+          display: 'grid',
+          gridTemplateRows: 'auto 1fr'
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 305
+          lineNumber: 509
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
-          marginLeft: -ogrem / 2,
-          marginRight: -ogrem / 2,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_9__["p"])(grem / 4, grem / 2 + ogrem / 2, grem / 4, grem / 2 + offset + ogrem)
+          textTransform: 'uppercase',
+          fontSize: fs * 0.75,
+          letterSpacing: '0.03em',
+          lineHeight: 1.5,
+          paddingBottom: grem / 4,
+          paddingLeft: grem / 2
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 313
+          lineNumber: 516
         },
         __self: this
-      }, "After"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_PostPreview__WEBPACK_IMPORTED_MODULE_14__["default"], {
-        post: _posts__WEBPACK_IMPORTED_MODULE_11__["default"][prev_index],
+      }, "Older"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: {
+          position: 'relative',
+          display: 'grid'
+        },
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 528
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_parts_PostPreview__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        post: _posts__WEBPACK_IMPORTED_MODULE_13__["default"][next_index],
         grem: grem,
         ww: ww,
         column_width: column_width,
         fs: fs,
         ogrem: ogrem,
-        extra_left: ogrem / 2 + offset,
-        extra_right: ogrem / 2 + offset,
-        columns: columns,
+        columns: columns > 6 ? Math.floor(columns / 2 / 2) * 2 : columns,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 327
+          lineNumber: 529
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_13__["Hd"], {
-        align: "b",
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_15__["Rect"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 339
+          lineNumber: 540
         },
         __self: this
-      })) : null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }))) : null), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
-          paddingBottom: grem
+          paddingBottom: grem,
+          paddingTop: grem
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 344
+          lineNumber: 546
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
           fontSize: fs * 2,
           lineHeight: 1.25,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_9__["p"])(0, grem / 2, 0, grem / 2),
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(0, grem / 2, 0, grem / 2),
           marginBottom: grem / 2
         }, center_text),
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 345
+          lineNumber: 547
         },
         __self: this
-      }, "About"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_9__["p"])(0, grem / 2),
+      }, "About"), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(0, grem / 2),
           marginBottom: grem / 2
         }, center_text, fsn),
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 356
+          lineNumber: 558
         },
         __self: this
-      }, "Cloudera Fast Forward Labs is an applied machine learning research group. We help organizations recognize and develop new product and business opportunities through emerging technologies.", ' '), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_9__["p"])(0, grem / 2),
+      }, "Cloudera Fast Forward Labs is an applied machine learning research group. We help organizations recognize and develop new product and business opportunities through emerging technologies.", ' '), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(0, grem / 2),
           marginBottom: grem / 2
         }, center_text, fsn),
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 369
+          lineNumber: 571
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         href: "https://www.cloudera.com/products/fast-forward-labs-research.html",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 377
+          lineNumber: 579
         },
         __self: this
-      }, "Learn more about working with us.")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, "Learn more about working with us.")))), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {},
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 384
+          lineNumber: 586
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           position: 'relative'
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 385
+          lineNumber: 587
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_13__["Hd"], {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_15__["Hd"], {
         width: "100%",
         align: "t",
         fs: fs,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 386
+          lineNumber: 588
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      }), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
           padding: grem / 2,
           display: 'flex',
           justifyContent: 'space-between',
           flexWrap: 'wrap'
         }, fsn),
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 387
+          lineNumber: 589
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 396
+          lineNumber: 598
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         href: "/",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 397
+          lineNumber: 599
         },
         __self: this
-      }, "Blog")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, "Blog")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           display: 'flex',
           flexWrap: 'wrap'
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 399
+          lineNumber: 601
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           marginRight: grem / 2
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 400
+          lineNumber: 602
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         href: "https://www.cloudera.com/products/fast-forward-labs-research.html",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 401
+          lineNumber: 603
         },
         __self: this
-      }, "Cloudera")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, "Cloudera")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {
           marginRight: grem / 2
         },
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 405
+          lineNumber: 607
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         href: "https://blog.fastforwardlabs.com/",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 406
+          lineNumber: 608
         },
         __self: this
-      }, "AI Experiments")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, "AI Experiments")), react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("div", {
         style: {},
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 410
+          lineNumber: 612
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement("a", {
         href: "https://twitter.com/fastforwardlabs",
-        className: styled_jsx_style__WEBPACK_IMPORTED_MODULE_6___default.a.dynamic([["1405458506", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
+        className: "jsx-1135431938 " + styled_jsx_style__WEBPACK_IMPORTED_MODULE_8___default.a.dynamic([["1226587591", [fs * 3, fs * 2, grem, grem, fs * 1.5, grem, grem, fs * 1.25, grem, grem, fs * 0.75, grem / 2, grem / 2, grem / 2 + ogrem / 2, grem / 2 + ogrem / 2, grem / 2, grem]]]),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 411
+          lineNumber: 613
         },
         __self: this
       }, "Twitter"))))))));
@@ -31470,7 +34611,7 @@ function (_React$Component) {
   }]);
 
   return PostLayout;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_9___default.a.Component);
 
 /***/ }),
 
@@ -31593,7 +34734,7 @@ function (_React$Component) {
       }
 
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_10___default.a, {
-        href: post.urlPath,
+        href: post.external_url ? post.external_url : post.urlPath,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 71
@@ -31725,14 +34866,14 @@ function (_React$Component) {
           lineNumber: 152
         },
         __self: this
-      }, post.title)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, post.title, post.external_url ? ' ↗' : '')), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         style: {
           paddingTop: grem / 4,
           position: 'relative'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156
+          lineNumber: 157
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
@@ -31745,7 +34886,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157
+          lineNumber: 158
         },
         __self: this
       }, columns < 10 && columns > 4 ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
@@ -31755,13 +34896,13 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 167
+          lineNumber: 168
         },
         __self: this
       }, post.author ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 174
         },
         __self: this
       }, "by ", post.author) : null) : null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
@@ -31771,25 +34912,10 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 176
+          lineNumber: 177
         },
         __self: this
-      }, columns === 4 ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_8__["p"])(0, 0, grem / 4, 0)
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 188
-        },
-        __self: this
-      }, post.author ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 193
-        },
-        __self: this
-      }, "by ", post.author) : null) : null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         style: {
           height: grem * 0.875 * (columns === 4 ? 4 : 3),
           overflow: 'hidden',
@@ -31800,10 +34926,16 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197
+          lineNumber: 188
         },
         __self: this
-      }, post.excerpt), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, columns === 4 && post.author ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 199
+        },
+        __self: this
+      }, "by ", post.author, " | ") : null, post.excerpt), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         style: {
           overflow: 'hidden',
           width: '100%',
@@ -31812,14 +34944,20 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209
+          lineNumber: 203
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
         className: "display-link",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 217
+          lineNumber: 211
+        },
+        __self: this
+      }, post.external_url ? post.external_url : react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 215
         },
         __self: this
       }, "View", ' ', react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
@@ -31828,10 +34966,10 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 219
+          lineNumber: 217
         },
         __self: this
-      }, post.post_type)))), columns < 8 ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, post.post_type))))), columns < 8 ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         style: {
           position: 'relative',
           width: columns === 4 ? column_width * 2 : column_width * 1
@@ -31857,14 +34995,14 @@ function (_React$Component) {
           lineNumber: 233
         },
         __self: this
-      })) : null))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      })) : null))), columns > 6 ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         style: {
           position: 'relative',
           width: column_width * 1
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 255
+          lineNumber: 256
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
@@ -31880,14 +35018,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 261
+          lineNumber: 262
         },
         __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_7__["Hd"], {
+      })) : null), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_7__["Hd"], {
         align: "t",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 279
+          lineNumber: 282
         },
         __self: this
       })));
@@ -32012,6 +35150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ([{
   "filePath": "pages/posts/2019-04-03-an-invitation-to-active-learning.md",
   "urlPath": "/posts/2019-04-03-an-invitation-to-active-learning",
+  "path_name": "/posts/2019-04-03-an-invitation-to-active-learning",
   "publishDate": "2019-04-03T00:00:00.000Z",
   "title": "An Invitation to Active Learning",
   "preview_image": "/images/editor_uploads/2019-04-04-171937-uncertainty_sampling_observable_fast.gif",
@@ -32020,10 +35159,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Chris",
   "post_type": "post",
   "author_link": "https://twitter.com/_cjwallace",
-  "excerpt": "\nMany interesting learning problems exist in places where labeled data is limited.\nAs such, much thought has been spent on how best to learn from limited labeled data.\nOne obvious answer is simply to collect more data.\nThat is valid, but for some applications, data is difficult..."
+  "excerpt": "\nMany interesting learning problems exist in places where labeled data is limited.\nAs such, much thought has been spent on how best to learn from limited labeled data.\nOne obvious answer is simply to collect more data.\nThat is valid, but for some applications, data is difficult...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data.md",
   "urlPath": "/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data",
+  "path_name": "/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data",
   "publishDate": "2019-04-02T18:04:00.000Z",
   "title": "A Guide to Learning with Limited Labeled Data",
   "preview_image": "/images/2019/03/fig_15-1553784931001.png",
@@ -32031,10 +35172,12 @@ __webpack_require__.r(__webpack_exports__);
   "published": true,
   "author": "Shioulin and Nisha",
   "post_type": "Featured post",
-  "excerpt": "\nWe are excited to release Learning with Limited Labeled Data, the latest report and prototype from Cloudera Fast Forward Labs.\n\nBeing able to learn with limited labeled data relaxes the stringent labeled data requirement for supervised machine learning. Our report focuses on..."
+  "excerpt": "\nWe are excited to release Learning with Limited Labeled Data, the latest report and prototype from Cloudera Fast Forward Labs.\n\nBeing able to learn with limited labeled data relaxes the stringent labeled data requirement for supervised machine learning. Our report focuses on...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2019-03-20-learning-with-limited-labeled-data.md",
   "urlPath": "/posts/2019-03-20-learning-with-limited-labeled-data",
+  "path_name": "/posts/2019-03-20-learning-with-limited-labeled-data",
   "publishDate": "2019-03-20T19:03:00.000Z",
   "title": "Learning with Limited Labeled Data",
   "preview_image": "/images/editor_uploads/2019-03-21-201701-AL_loop.png",
@@ -32042,10 +35185,12 @@ __webpack_require__.r(__webpack_exports__);
   "published": true,
   "author": "Shioulin and Nisha",
   "post_type": "Featured post",
-  "excerpt": "\nIn recent years, machine learning technologies - especially deep learning - have made breakthroughs which have turned science fiction into reality. Autonomous cars are almost possible, and machines can comprehend language. These technical advances are unprecedented, but they..."
+  "excerpt": "\nIn recent years, machine learning technologies - especially deep learning - have made breakthroughs which have turned science fiction into reality. Autonomous cars are almost possible, and machines can comprehend language. These technical advances are unprecedented, but they...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2019-02-28-causality-in-machine-learning.md",
   "urlPath": "/posts/2019-02-28-causality-in-machine-learning",
+  "path_name": "/posts/2019-02-28-causality-in-machine-learning",
   "publishDate": "2019-02-28T19:03:00.000Z",
   "title": "Causality in machine learning",
   "preview_image": "/images/editor_uploads/2019-03-12-191909-correlation.png",
@@ -32054,10 +35199,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Seth",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/shendrickson16",
-  "excerpt": "\nJudea Pearl, the inventor of Bayesian networks, recently published a book called The Book of Why: The New Science of Cause and Effect. The book covers a great many things, including a detailed history of how the fields of causality and statistics have long been at odds, Pearl's..."
+  "excerpt": "\nJudea Pearl, the inventor of Bayesian networks, recently published a book called The Book of Why: The New Science of Cause and Effect. The book covers a great many things, including a detailed history of how the fields of causality and statistics have long been at odds, Pearl's...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set.md",
   "urlPath": "/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set",
+  "path_name": "/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set",
   "publishDate": "2019-01-29T17:01:00.000Z",
   "title": "Making an interactive UMAP visualization of the MNIST data set",
   "preview_image": "http://feed.grantcuster.com/static/images/feed/umap_zoom-1547839236092.gif",
@@ -32066,10 +35213,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/grantcuster",
-  "excerpt": "\nA GIF of zooming into the MNIST visualization\n\nUMAP explorer: an interactive visualization of the MNIST data set\n\nWe're in the middle of work on our next report, Learning with Limited Labeled Data, and the accompanying prototype. For the prototype's front-end we wanted to be..."
+  "excerpt": "\nA GIF of zooming into the MNIST visualization\n\nUMAP explorer: an interactive visualization of the MNIST data set\n\nWe're in the middle of work on our next report, Learning with Limited Labeled Data, and the accompanying prototype. For the prototype's front-end we wanted to be...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-12-28-the-business-case-for-federated-learning.md",
   "urlPath": "/posts/2018-12-28-the-business-case-for-federated-learning",
+  "path_name": "/posts/2018-12-28-the-business-case-for-federated-learning",
   "publishDate": "2018-12-28T19:01:00.000Z",
   "title": "The business case for federated learning",
   "preview_image": "/images/editor_uploads/2019-01-05-191115-FF09_Overview.png",
@@ -32078,20 +35227,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Mike",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nLast month, we released Federated Learning, the latest report and prototype from\nCloudera Fast Forward Labs.\n\nFederated learning makes it possible to build machine learning systems without\ndirect access to training data. The data remains in its original location,\nwhich helps to..."
+  "excerpt": "\nLast month, we released Federated Learning, the latest report and prototype from\nCloudera Fast Forward Labs.\n\nFederated learning makes it possible to build machine learning systems without\ndirect access to training data. The data remains in its original location,\nwhich helps to...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-12-18-highlights-2018.md",
   "urlPath": "/posts/2018-12-18-highlights-2018",
+  "path_name": "/posts/2018-12-18-highlights-2018",
   "publishDate": "2018-12-18T19:12:00.000Z",
   "title": "Highlights of 2018",
   "preview_image": "/images/editor_uploads/2018-12-19-194412-alchemist.jpg",
   "feature": true,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nWe end 2018 with a round-up of some of the research, talks, sci-fi, visualizations/art, and a grab bag of other stuff we found particularly interesting, enjoyable, or influential this year (and we’re going to be a bit fuzzy about the definition of “this year”)!\n\nResearch\n\nIn..."
+  "excerpt": "\nWe end 2018 with a round-up of some of the research, talks, sci-fi, visualizations/art, and a grab bag of other stuff we found particularly interesting, enjoyable, or influential this year (and we’re going to be a bit fuzzy about the definition of “this year”)!\n\nResearch\n\nIn...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-12-18-finetuning-for-natural-language-processing.md",
   "urlPath": "/posts/2018-12-18-finetuning-for-natural-language-processing",
+  "path_name": "/posts/2018-12-18-finetuning-for-natural-language-processing",
   "publishDate": "2018-12-28T19:01:00.000Z",
   "title": "Fine-tuning for Natural Language Processing",
   "preview_image": "/images/2018/12/Screen_Shot_2018_12_07_at_12_03_44_PM-1544202300577.png",
@@ -32100,10 +35253,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Shioulin",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/shioulin_sam",
-  "excerpt": "\n2018 was a fun and exciting year for natural language processing. A series of papers put forth powerful new ideas that improve the way machines understand and work with language. They challenge the standard way of using pretrained word embeddings like word2vec to initialize the..."
+  "excerpt": "\n2018 was a fun and exciting year for natural language processing. A series of papers put forth powerful new ideas that improve the way machines understand and work with language. They challenge the standard way of using pretrained word embeddings like word2vec to initialize the...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-12-18-deep-learning-for-media-content.md",
   "urlPath": "/posts/2018-12-18-deep-learning-for-media-content",
+  "path_name": "/posts/2018-12-18-deep-learning-for-media-content",
   "publishDate": "2018-12-28T19:01:00.000Z",
   "title": "Deep Learning for Media Content",
   "preview_image": "/images/editor_uploads/2019-01-05-191614-Merlin_Flow.png",
@@ -32112,10 +35267,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Ryan",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/jqpubliq",
-  "excerpt": "\nMachine learning continues to make its way into the arts, most recently in film and TV.\n\nIn a recent blog post, data scientists at 20th Century Fox and technical staff at Google Cloud described the approach they are using to predict audiences for their movies. (The tone of the..."
+  "excerpt": "\nMachine learning continues to make its way into the arts, most recently in film and TV.\n\nIn a recent blog post, data scientists at 20th Century Fox and technical staff at Google Cloud described the approach they are using to predict audiences for their movies. (The tone of the...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-12-06-designing-turbofan-tycoon.md",
   "urlPath": "/posts/2018-12-06-designing-turbofan-tycoon",
+  "path_name": "/posts/2018-12-06-designing-turbofan-tycoon",
   "publishDate": "2018-12-06T16:12:00.000Z",
   "title": "Designing Turbofan Tycoon",
   "preview_image": "/images/editor_uploads/2018-12-07-163940-turbofan_even_shorter.gif",
@@ -32124,10 +35281,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "post",
   "author_link": "https://twitter.com/grantcuster",
-  "excerpt": "\nA GIF of Turbofan Tycoon in action.\n\nOur prototypes are designed to demonstrate the value of the technologies we research. For our most recent prototype, Turbofan Tycoon, we decided that the best way to demonstrate the value of federated learning was to place you in an..."
+  "excerpt": "\nA GIF of Turbofan Tycoon in action.\n\nOur prototypes are designed to demonstrate the value of the technologies we research. For our most recent prototype, Turbofan Tycoon, we decided that the best way to demonstrate the value of federated learning was to place you in an...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-11-14-federated-learning.md",
   "urlPath": "/posts/2018-11-14-federated-learning",
+  "path_name": "/posts/2018-11-14-federated-learning",
   "publishDate": "2018-11-14T10:11:00.000Z",
   "title": "Federated learning: distributed machine learning with data locality and privacy",
   "preview_image": "/images/editor_uploads/2018-11-14-214557-ff09_07.png",
@@ -32136,10 +35295,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Mike",
   "post_type": "post",
   "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nWe’re excited to release Federated Learning, the latest report and prototype from Cloudera Fast Forward Labs.\n\nFederated learning makes it possible to build machine learning systems without direct access to training data. The data remains in its original location, which helps to..."
+  "excerpt": "\nWe’re excited to release Federated Learning, the latest report and prototype from Cloudera Fast Forward Labs.\n\nFederated learning makes it possible to build machine learning systems without direct access to training data. The data remains in its original location, which helps to...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence.md",
   "urlPath": "/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence",
+  "path_name": "/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence",
   "publishDate": "2018-10-29T15:11:00.000Z",
   "title": "The quest continues: a look at a new initiative to explore human and machine intelligence",
   "preview_image": "/images/2018/10/mike_petrucci_607505_unsplash-1539792581534.jpg",
@@ -32148,10 +35309,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Alice",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/AliceAlbrecht",
-  "excerpt": "\nThe resurrection of neural networks as a technique has helped propel the field of machine learning to the forefront of commercial applications. Today’s most popular applications focus on finding patterns in data and exploiting those patterns for very narrow tasks. But what if we..."
+  "excerpt": "\nThe resurrection of neural networks as a technique has helped propel the field of machine learning to the forefront of commercial applications. Today’s most popular applications focus on finding patterns in data and exploiting those patterns for very narrow tasks. But what if we...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-10-29-the-decentralized-web.md",
   "urlPath": "/posts/2018-10-29-the-decentralized-web",
+  "path_name": "/posts/2018-10-29-the-decentralized-web",
   "publishDate": "2018-10-29T15:11:00.000Z",
   "title": "The Decentralized Web",
   "preview_image": "/images/editor_uploads/2018-10-02-191324-Screen_Shot_2018_10_01_at_3_04_36_PM.png",
@@ -32160,10 +35323,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nLast week, Sir Tim Berners-Lee announced Solid, a project designed to give users more control over their data. Solid is one of a number of recent attempts to rethink how the web works. As part of an effort to get my head around the goals of these different approaches and, more..."
+  "excerpt": "\nLast week, Sir Tim Berners-Lee announced Solid, a project designed to give users more control over their data. Solid is one of a number of recent attempts to rethink how the web works. As part of an effort to get my head around the goals of these different approaches and, more...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way.md",
   "urlPath": "/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way",
+  "path_name": "/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way",
   "publishDate": "2018-10-29T15:11:00.000Z",
   "title": "Learning to learn in a model-agnostic way",
   "preview_image": "/images/2018/10/meta_learning-1538505489954.png",
@@ -32172,20 +35337,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Nisha",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/NishaMuktewar",
-  "excerpt": "\nAs humans, we can quickly adapt our actions in new situations, be it recognizing objects from a few examples, or learning new skills and\napplying them in a matter of just a few minutes. But when it comes to deep learning techniques, an\nunderstandably large amount of time and..."
+  "excerpt": "\nAs humans, we can quickly adapt our actions in new situations, be it recognizing objects from a few examples, or learning new skills and\napplying them in a matter of just a few minutes. But when it comes to deep learning techniques, an\nunderstandably large amount of time and...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge.md",
   "urlPath": "/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge",
+  "path_name": "/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge",
   "publishDate": "2018-10-29T18:10:00.000Z",
   "title": "Coming Soon: Federated Learning",
   "preview_image": "/images/editor_uploads/2018-10-31-181344-federated_learning_animated_labeled.gif",
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nFederated Learning is a technology that allows you to build machine learning systems when your datacenter can't get direct access to model training data. The data remains in its original location, which helps to ensure privacy and reduces communication costs.\n\nPrivacy and..."
+  "excerpt": "\nFederated Learning is a technology that allows you to build machine learning systems when your datacenter can't get direct access to model training data. The data remains in its original location, which helps to ensure privacy and reduces communication costs.\n\nPrivacy and...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-09-28-the-true-competitive-advantage-in-ml.md",
   "urlPath": "/posts/2018-09-28-the-true-competitive-advantage-in-ml",
+  "path_name": "/posts/2018-09-28-the-true-competitive-advantage-in-ml",
   "publishDate": "2018-09-28T21:10:00.000Z",
   "title": "The True Competitive Advantage in ML",
   "preview_image": "/images/editor_uploads/2018-10-30-212122-rawpixel_1072884_unsplash.jpg",
@@ -32194,10 +35363,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Justin",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/JustinJDN",
-  "excerpt": "\nData science, machine learning (ML), and AI are no longer just cute buzzwords.  Nearly all organizations, companies and governments now recognize the immense potential of AI-enabled products and services, and many of them have already made the very real investment of hiring..."
+  "excerpt": "\nData science, machine learning (ML), and AI are no longer just cute buzzwords.  Nearly all organizations, companies and governments now recognize the immense potential of AI-enabled products and services, and many of them have already made the very real investment of hiring...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision.md",
   "urlPath": "/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision",
+  "path_name": "/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision",
   "publishDate": "2018-09-28T21:10:00.000Z",
   "title": "Snorkel: Rapid Training Data Creation with Weak Supervision",
   "preview_image": "/images/editor_uploads/2018-09-05-182818-snorkel_workflow.png",
@@ -32206,10 +35377,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Nisha",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/NishaMuktewar",
-  "excerpt": "\nMachine learning (and more specifically, deep learning) techniques are recognized for their ability to obtain high accuracy for\na variety of classification problems. Deep learning models are more complex than most traditional models and often have\nthousands of parameters and..."
+  "excerpt": "\nMachine learning (and more specifically, deep learning) techniques are recognized for their ability to obtain high accuracy for\na variety of classification problems. Deep learning models are more complex than most traditional models and often have\nthousands of parameters and...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-09-28-realistic-video-generation.md",
   "urlPath": "/posts/2018-09-28-realistic-video-generation",
+  "path_name": "/posts/2018-09-28-realistic-video-generation",
   "publishDate": "2018-09-28T21:10:00.000Z",
   "title": "Realistic Video Generation",
   "preview_image": "/images/2018/09/gan-1536758013486.png",
@@ -32218,10 +35391,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Micha",
   "post_type": "newsletter",
   "author_link": "http://micha.codes/",
-  "excerpt": "\nGenerative Adversarial Networks (GANs) wowed the world in 2014 with their\nability to generate what we considered to be realistic images. While these\nimages were quite low resolution, researchers kept working on how to perfect\nthese methods in order to increase the quality of the..."
+  "excerpt": "\nGenerative Adversarial Networks (GANs) wowed the world in 2014 with their\nability to generate what we considered to be realistic images. While these\nimages were quite low resolution, researchers kept working on how to perfect\nthese methods in order to increase the quality of the...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover.md",
   "urlPath": "/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover",
+  "path_name": "/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover",
   "publishDate": "2018-09-28T21:10:00.000Z",
   "title": "Apache Spark gets a machine learning makeover",
   "preview_image": "/images/editor_uploads/2018-09-19-194511-XOnSpark.png",
@@ -32230,20 +35405,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Seth",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/shendrickson16",
-  "excerpt": "\nMachine learning on Spark: an abridged history\n\nApache Spark - the cluster computing framework\nthat's been throwing shade at MapReduce since 2011 - has always been a bit\nremarkable, because it bridged the divide between data engineering and data\nscience. One of the great..."
+  "excerpt": "\nMachine learning on Spark: an abridged history\n\nApache Spark - the cluster computing framework\nthat's been throwing shade at MapReduce since 2011 - has always been a bit\nremarkable, because it bridged the divide between data engineering and data\nscience. One of the great...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning.md",
   "urlPath": "/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning",
+  "path_name": "/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning",
   "publishDate": "2018-09-17T16:09:00.000Z",
   "title": "Deep learning made easier with transfer learning",
   "preview_image": "/images/editor_uploads/2018-09-18-170232-robot_share_1.png",
   "feature": true,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nDeep learning has provided extraordinary advances in problem spaces that\nare poorly solved by other approaches. This success is due to several key\ndepartures from traditional machine learning that allow it to excel when\napplied to unstructured data. Today, deep learning models..."
+  "excerpt": "\nDeep learning has provided extraordinary advances in problem spaces that\nare poorly solved by other approaches. This success is due to several key\ndepartures from traditional machine learning that allow it to excel when\napplied to unstructured data. Today, deep learning models...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-08-29-understanding-a-generative-space.md",
   "urlPath": "/posts/2018-08-29-understanding-a-generative-space",
+  "path_name": "/posts/2018-08-29-understanding-a-generative-space",
   "publishDate": "2018-08-29T22:09:00.000Z",
   "title": "Understanding a generative space",
   "preview_image": "/images/2018/08/compton_generator-1533226496607.jpg",
@@ -32252,10 +35431,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "Newsletter",
   "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nKate Compton, maker of many interesting things, recently tweeted a diagram from her work-in-progress dissertation zine. The illustration breaks down how we interact with a procedural generator, which can be anything from a photo filter to a character creation tool.\n\nA diagram..."
+  "excerpt": "\nKate Compton, maker of many interesting things, recently tweeted a diagram from her work-in-progress dissertation zine. The illustration breaks down how we interact with a procedural generator, which can be anything from a photo filter to a character creation tool.\n\nA diagram...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability.md",
   "urlPath": "/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability",
+  "path_name": "/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability",
   "publishDate": "2018-08-29T00:00:00.000Z",
   "title": "Hyperparameter Tuning and Meta-Interpretability: Track All Your Experiments!",
   "preview_image": "/images/2018/07/Screen_Shot_2018_07_31_at_11_01_41_AM-1533049344437.png",
@@ -32264,10 +35445,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Friederike",
   "post_type": "newsletter",
   "author_link": "https://www.linkedin.com/in/friederikeschueuer/",
-  "excerpt": "\nFrom random forest to neural networks, many modern machine learning algorithms involve a number of parameters that have to be fixed before training the\nalgorithm. These parameters, in contrast to the ones learned by the algorithm\nduring training, are called hyperparameters. The..."
+  "excerpt": "\nFrom random forest to neural networks, many modern machine learning algorithms involve a number of parameters that have to be fixed before training the\nalgorithm. These parameters, in contrast to the ones learned by the algorithm\nduring training, are called hyperparameters. The...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp.md",
   "urlPath": "/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp",
+  "path_name": "/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp",
   "publishDate": "2018-08-29T22:09:00.000Z",
   "title": "Breakthroughs in transfer learning for natural language processing",
   "preview_image": "/images/2018/07/task_dict_v-1532535013679.jpg",
@@ -32276,10 +35459,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Seth",
   "post_type": "Newsletter",
   "author_link": "https://twitter.com/shendrickson16",
-  "excerpt": "\nOne of the most exciting parts of our jobs at Cloudera Fast Forward Labs is our work on applied machine learning research. Through this research we see and work with some of the most exciting developments in machine learning, deep learning, and AI, but - as with any field that..."
+  "excerpt": "\nOne of the most exciting parts of our jobs at Cloudera Fast Forward Labs is our work on applied machine learning research. Through this research we see and work with some of the most exciting developments in machine learning, deep learning, and AI, but - as with any field that...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-08-29-automated-machine-learning-hype-now-reality-later.md",
   "urlPath": "/posts/2018-08-29-automated-machine-learning-hype-now-reality-later",
+  "path_name": "/posts/2018-08-29-automated-machine-learning-hype-now-reality-later",
   "publishDate": "2018-08-29T00:00:00.000Z",
   "title": "Automated Machine Learning: Hype now, reality later?",
   "feature": false,
@@ -32287,10 +35472,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Shioulin",
   "post_type": "Newsletter",
   "author_link": "https://twitter.com/shioulin_sam",
-  "excerpt": "\nPreviously in our newsletter, we had framed automated machine learning around four notions:\nCitizen Data Science / ML: Automated machine learning will allow everyone to do data science and ML. It requires no special training or skills.\nEfficient Data Science / ML: Automated..."
+  "excerpt": "\nPreviously in our newsletter, we had framed automated machine learning around four notions:\nCitizen Data Science / ML: Automated machine learning will allow everyone to do data science and ML. It requires no special training or skills.\nEfficient Data Science / ML: Automated...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-08-15-multi-task-sci-fi-havurtat.md",
   "urlPath": "/posts/2018-08-15-multi-task-sci-fi-havurtat",
+  "path_name": "/posts/2018-08-15-multi-task-sci-fi-havurtat",
   "publishDate": "2018-08-15T12:00:00.000Z",
   "title": "Multi-Task Sci-Fi: Havurtat",
   "preview_image": "https://scifi.fastforwardlabs.com/08-01-f34226bd05186095e6feb166414361a5.svg",
@@ -32299,30 +35486,36 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Umair Kazi",
   "post_type": "SciFi",
   "author_link": "https://twitter.com/nightcolander",
-  "excerpt": "\nEach report we do features a science-fiction story inspired by the report topic. For our multi-task learning report, Umair Kazi explores the paradoxes of knowledge in the lost city of Havurtat.\n"
+  "excerpt": "\nEach report we do features a science-fiction story inspired by the report topic. For our multi-task learning report, Umair Kazi explores the paradoxes of knowledge in the lost city of Havurtat.\n",
+  "external_url": "https://scifi.fastforwardlabs.com/ff08/havurtat"
 }, {
   "filePath": "pages/posts/2018-07-31-progress-in-machine-learning-interpretability.md",
   "urlPath": "/posts/2018-07-31-progress-in-machine-learning-interpretability",
+  "path_name": "/posts/2018-07-31-progress-in-machine-learning-interpretability",
   "publishDate": "2018-07-31T16:08:00.000Z",
   "title": "Progress in machine learning interpretability",
   "preview_image": "/images/2018/07/lime-1530894622923.png",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nOur goal when we do research is to address capabilities and technologies that\nwe expect to become production-ready in one to two years. That focus on\nfast-moving areas means that new algorithmic ideas sometimes come along that\nallow our clients to extend or improve upon the work..."
+  "excerpt": "\nOur goal when we do research is to address capabilities and technologies that\nwe expect to become production-ready in one to two years. That focus on\nfast-moving areas means that new algorithmic ideas sometimes come along that\nallow our clients to extend or improve upon the work...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-07-31-new-dynamics-for-topic-models.md",
   "urlPath": "/posts/2018-07-31-new-dynamics-for-topic-models",
+  "path_name": "/posts/2018-07-31-new-dynamics-for-topic-models",
   "publishDate": "2018-07-31T16:08:00.000Z",
   "title": "New Dynamics for Topic Models",
   "preview_image": "/images/2018/07/f5-1531838383022.jpg",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nTopic models can extract key themes from large collections of documents in an unsupervised manner, which makes them one of the most powerful tools in organizing, searching, and understanding the vast troves of text data produced by humanity. Their power derives, in part, from..."
+  "excerpt": "\nTopic models can extract key themes from large collections of documents in an unsupervised manner, which makes them one of the most powerful tools in organizing, searching, and understanding the vast troves of text data produced by humanity. Their power derives, in part, from...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-07-31-neural-reinterpretations-of-movie-trailers.md",
   "urlPath": "/posts/2018-07-31-neural-reinterpretations-of-movie-trailers",
+  "path_name": "/posts/2018-07-31-neural-reinterpretations-of-movie-trailers",
   "publishDate": "2018-07-31T16:08:00.000Z",
   "title": "Neural reinterpretations of movie trailers",
   "preview_image": "/images/editor_uploads/2018-06-26-144942-Screen_Shot_2018_06_25_at_10_46_42_AM.png",
@@ -32331,10 +35524,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "Newsletter",
   "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nIn his latest project, artist and coder Mario Klingemann uses a neural network to match archival movie footage with the content of recent movie trailers. He regularly posts the resulting “neural reinterpretations” on his Twitter. The results are technically impressive. They’re..."
+  "excerpt": "\nIn his latest project, artist and coder Mario Klingemann uses a neural network to match archival movie footage with the content of recent movie trailers. He regularly posts the resulting “neural reinterpretations” on his Twitter. The results are technically impressive. They’re...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-07-24-ff08-launch.md",
   "urlPath": "/posts/2018-07-24-ff08-launch",
+  "path_name": "/posts/2018-07-24-ff08-launch",
   "publishDate": "2018-07-24T13:00:00.000Z",
   "title": "New Research on Multi-Task Learning",
   "preview_image": "/images/2018/07/ff08-1532375075481.gif",
@@ -32343,30 +35538,36 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Friederike",
   "post_type": "post",
   "author_link": "https://www.linkedin.com/in/friederikeschueuer/",
-  "excerpt": "\nWe are excited to share the latest report and prototype from our machine\nintelligence R&D team: Multi-Task Learning.\n\nFF08 Multi-Task Learning\n\nWax on.. face off!\nWhen humans learn new tasks, we take advantage of knowledge we've gained from\nlearning, or having learned, related..."
+  "excerpt": "\nWe are excited to share the latest report and prototype from our machine\nintelligence R&D team: Multi-Task Learning.\n\nFF08 Multi-Task Learning\n\nWax on.. face off!\nWhen humans learn new tasks, we take advantage of knowledge we've gained from\nlearning, or having learned, related...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning.md",
   "urlPath": "/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning",
+  "path_name": "/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning",
   "publishDate": "2018-06-29T16:08:00.000Z",
   "title": "Sequence labeling with semi-supervised multi-task learning",
   "preview_image": "/images/2018/06/Screen_Shot_2018_06_14_at_4_27_13_PM-1529008110241.png",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nSequence labeling tasks attempt to assign a categorical label to each member in\nthe sequence. In natural language processing, where a sequence generally refers\nto a sentence, examples of sequence labeling include named entity\nrecognition (NER), part-of-speech tagging (POS) and..."
+  "excerpt": "\nSequence labeling tasks attempt to assign a categorical label to each member in\nthe sequence. In natural language processing, where a sequence generally refers\nto a sentence, examples of sequence labeling include named entity\nrecognition (NER), part-of-speech tagging (POS) and...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems.md",
   "urlPath": "/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems",
+  "path_name": "/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems",
   "publishDate": "2018-06-29T16:08:00.000Z",
   "title": "Deep Learning Vendor Update: Hyperparameter Tuning Systems",
   "preview_image": "/images/editor_uploads/2018-06-19-231235-Compressorhead___Fingers_on_Gibson_Flying_V_Bones_on_Fender_Precision_Bass___Musikmesse_Frankfurt_2013.jpg",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nIn our research reports, we cover \"the recently possible,\" and what makes \"the recently possible\" possible. In addition to a detailed how-to guide of new machine learning capabilities, each of our reports contains a section on open source projects, commercial offerings, and..."
+  "excerpt": "\nIn our research reports, we cover \"the recently possible,\" and what makes \"the recently possible\" possible. In addition to a detailed how-to guide of new machine learning capabilities, each of our reports contains a section on open source projects, commercial offerings, and...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning.md",
   "urlPath": "/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning",
+  "path_name": "/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning",
   "publishDate": "2018-06-27T00:00:00.000Z",
   "title": "Supercharging Classification - The Value of Multi-task Learning",
   "preview_image": "/images/2018/06/02_03-1530032857031.png",
@@ -32375,30 +35576,36 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Manny",
   "post_type": "post",
   "author_link": "https://twitter.com/mannymoss",
-  "excerpt": "\nToday's machines can identify objects in photographs, predict loan repayments or\ndefaults, write short summaries of long articles, or recommend movies you may\nlike. Up until now, machines have achieved mastery through laser-like focus; most\nmachine learning algorithms today..."
+  "excerpt": "\nToday's machines can identify objects in photographs, predict loan repayments or\ndefaults, write short summaries of long articles, or recommend movies you may\nlike. Up until now, machines have achieved mastery through laser-like focus; most\nmachine learning algorithms today...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-05-31-rules-to-learn-by.md",
   "urlPath": "/posts/2018-05-31-rules-to-learn-by",
+  "path_name": "/posts/2018-05-31-rules-to-learn-by",
   "publishDate": "2018-05-31T16:08:00.000Z",
   "title": "Rules to Learn By",
   "preview_image": "/images/editor_uploads/2018-05-09-164638-55f9d8d8bd86ef1d008bac98_750_577.png",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nLongtime readers of this newsletter know that we follow the Fairness, Accountability, and Transparency in Machine Learning conversation closely (see here and here). These conversations address and attempt to mitigate the potential for technical systems to produce unfairness..."
+  "excerpt": "\nLongtime readers of this newsletter know that we follow the Fairness, Accountability, and Transparency in Machine Learning conversation closely (see here and here). These conversations address and attempt to mitigate the potential for technical systems to produce unfairness...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-05-31-convolve-all-the-things.md",
   "urlPath": "/posts/2018-05-31-convolve-all-the-things",
+  "path_name": "/posts/2018-05-31-convolve-all-the-things",
   "publishDate": "2018-05-31T16:08:00.000Z",
   "title": "Convolve all the things",
   "preview_image": "/images/2018/04/CausalConv-1524689210501.jpg",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nWhile deep learning can be applied generally, much of the excitement around it has stemmed from significant breakthroughs in two main areas: computer vision and natural language processing. Practitioners have typically applied convolutional neural networks (CNNs) to spatial data..."
+  "excerpt": "\nWhile deep learning can be applied generally, much of the excitement around it has stemmed from significant breakthroughs in two main areas: computer vision and natural language processing. Practitioners have typically applied convolutional neural networks (CNNs) to spatial data...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-05-02-progress-in-text-summarization.md",
   "urlPath": "/posts/2018-05-02-progress-in-text-summarization",
+  "path_name": "/posts/2018-05-02-progress-in-text-summarization",
   "publishDate": "2018-05-02T16:10:00.000Z",
   "title": "Progress in text summarization",
   "preview_image": "/images/editor_uploads/2018-10-19-160814-pointer_gen.png",
@@ -32407,20 +35614,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Mike",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nWe published our report on text summarization in 2016. Since then, we've\nenjoyed helping our clients make use of techniques such as topic modeling,\ndocument embedding, and recurrent neural networks to deal with text that ranges\nin scope from product reviews to insurance..."
+  "excerpt": "\nWe published our report on text summarization in 2016. Since then, we've\nenjoyed helping our clients make use of techniques such as topic modeling,\ndocument embedding, and recurrent neural networks to deal with text that ranges\nin scope from product reviews to insurance...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling.md",
   "urlPath": "/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling",
+  "path_name": "/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling",
   "publishDate": "2018-04-25T16:08:00.000Z",
   "title": "Simple Architectures Outperform Complex Ones in Language Modeling",
   "preview_image": "/images/2018/03/param_importance-1522251173209.png",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nAre novel, complex, and specialized neural network architectures always better for language modeling? Recent papers have shown otherwise. Language models are used to predict the next token given the preceeding tokens. Most operate at word-level or character-level. Word-level..."
+  "excerpt": "\nAre novel, complex, and specialized neural network architectures always better for language modeling? Recent papers have shown otherwise. Language models are used to predict the next token given the preceeding tokens. Most operate at word-level or character-level. Word-level...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition.md",
   "urlPath": "/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition",
+  "path_name": "/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition",
   "publishDate": "2018-04-25T16:08:00.000Z",
   "title": "JavaScript eats the world: deep learning and notebooks edition",
   "preview_image": "/images/editor_uploads/2018-03-31-210319-hicat2.gif",
@@ -32429,10 +35640,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "Newsletter",
   "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nGoogle recently announced TensorFlow.js, an open-source library for running machine learning in the browser, and a successor to the deeplearn.js library. While the majority of machine learning work is unlikely to shift to JavaScript anytime soon, the examples included on the..."
+  "excerpt": "\nGoogle recently announced TensorFlow.js, an open-source library for running machine learning in the browser, and a successor to the deeplearn.js library. While the majority of machine learning work is unlikely to shift to JavaScript anytime soon, the examples included on the...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-04-18-introducing-scifi.md",
   "urlPath": "/posts/2018-04-18-introducing-scifi",
+  "path_name": "/posts/2018-04-18-introducing-scifi",
   "publishDate": "2018-04-19T18:04:00.000Z",
   "title": "Introducing SciFi",
   "preview_image": "/images/editor_uploads/2018-04-19-185324-scifi_crop.png",
@@ -32441,10 +35654,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "post",
   "author_link": "https://twiiter.con/GrantCuster",
-  "excerpt": "\nToday we are launching a mini-site featuring our collection of short stories inspired by new developments in machine learning.   Beginning with our fourth report, we started including a science-fiction story along with the technical and strategic overviews that are the bulk of..."
+  "excerpt": "\nToday we are launching a mini-site featuring our collection of short stories inspired by new developments in machine learning.   Beginning with our fourth report, we started including a science-fiction story along with the technical and strategic overviews that are the bulk of...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-04-10-pytorch-for-recommenders-101.md",
   "urlPath": "/posts/2018-04-10-pytorch-for-recommenders-101",
+  "path_name": "/posts/2018-04-10-pytorch-for-recommenders-101",
   "publishDate": "2018-04-10T17:04:00.000Z",
   "title": "PyTorch for Recommenders 101",
   "preview_image": "/images/editor_uploads/2018-04-11-175944-02_07.png",
@@ -32453,20 +35668,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Shioulin",
   "post_type": "post",
   "author_link": "https://twitter.com/shioulin_sam",
-  "excerpt": "\nRecommenders, generally associated with e-commerce, sift though a huge inventory\nof available items to find and recommend ones that a user will like. Different\nfrom search, recommenders rely on historical data to tease out user\npreference. How does a recommender accomplish this..."
+  "excerpt": "\nRecommenders, generally associated with e-commerce, sift though a huge inventory\nof available items to find and recommend ones that a user will like. Different\nfrom search, recommenders rely on historical data to tease out user\npreference. How does a recommender accomplish this...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-03-28-unemployment-vs-augmentation.md",
   "urlPath": "/posts/2018-03-28-unemployment-vs-augmentation",
+  "path_name": "/posts/2018-03-28-unemployment-vs-augmentation",
   "publishDate": "2018-03-28T16:08:00.000Z",
   "title": "Unemployment vs. Augmentation",
   "preview_image": "/images/2018/02/1_ruUDqwD4sGZOhIkeK2zUYQ-1519759204276.png",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nIn the ongoing debates around whether or not robots are going to take our jobs, listening to those who have a real stake in the technology is critical, and often offers important insights for how we build new technologies, as well as how we talk about what we build. Take, for..."
+  "excerpt": "\nIn the ongoing debates around whether or not robots are going to take our jobs, listening to those who have a real stake in the technology is critical, and often offers important insights for how we build new technologies, as well as how we talk about what we build. Take, for...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-03-28-new-creative-possibilities-with-machine-learning.md",
   "urlPath": "/posts/2018-03-28-new-creative-possibilities-with-machine-learning",
+  "path_name": "/posts/2018-03-28-new-creative-possibilities-with-machine-learning",
   "publishDate": "2018-03-28T16:08:00.000Z",
   "title": "New creative possibilities with machine learning",
   "preview_image": "/images/editor_uploads/2018-03-09-211736-Screen_Shot_2018_03_08_at_3_52_58_PM.png",
@@ -32475,20 +35694,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "Newsletter",
   "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nMachine learning techniques are able to organize large amounts of unstructured data. Combined with dimensionality reduction techniques like t-SNE, this capability opens up new ways for us to interact with creative material including sounds, words, and ideas. In this section we..."
+  "excerpt": "\nMachine learning techniques are able to organize large amounts of unstructured data. Combined with dimensionality reduction techniques like t-SNE, this capability opens up new ways for us to interact with creative material including sounds, words, and ideas. In this section we...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-03-21-join-the-machine-learning-team-at-cloudera.md",
   "urlPath": "/posts/2018-03-21-join-the-machine-learning-team-at-cloudera",
+  "path_name": "/posts/2018-03-21-join-the-machine-learning-team-at-cloudera",
   "publishDate": "2018-03-21T15:03:00.000Z",
   "title": "Join the Machine Learning Team at Cloudera!",
   "preview_image": "http://fastforwardlabs.github.io/report_images/ff04/rnn_encoder.png",
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nAt Cloudera, we believe that with data we can make what is impossible today possible tomorrow. We are building the modern platform for machine learning and analytics to help our customers solve some of the world’s greatest challenges with data.\n\nThe Machine Learning team is a..."
+  "excerpt": "\nAt Cloudera, we believe that with data we can make what is impossible today possible tomorrow. We are building the modern platform for machine learning and analytics to help our customers solve some of the world’s greatest challenges with data.\n\nThe Machine Learning team is a...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-03-06-using-three-js-for-2d-data-visualization.md",
   "urlPath": "/posts/2018-03-06-using-three-js-for-2d-data-visualization",
+  "path_name": "/posts/2018-03-06-using-three-js-for-2d-data-visualization",
   "publishDate": "2018-03-06T15:50:00.000Z",
   "title": "Using three.js for 2D data visualization",
   "preview_image": "http://blog.fastforwardlabs.com/images/2018/03/Screen_Shot_2018_03_06_at_10_53_16_AM-1520351645421.png",
@@ -32497,20 +35720,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "Demo",
   "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nA code walkthrough of how to use three.js for large 2D data visualizations. Three.js can smoothly render a large number of points in the browser but there are some tricks to making it work for interactive 2D visualizations. This is the guide that I wish I would have had when I..."
+  "excerpt": "\nA code walkthrough of how to use three.js for large 2D data visualizations. Three.js can smoothly render a large number of points in the browser but there are some tricks to making it work for interactive 2D visualizations. This is the guide that I wish I would have had when I...",
+  "external_url": "https://beta.observablehq.com/@grantcuster/using-three-js-for-2d-data-visualization"
 }, {
   "filePath": "pages/posts/2018-02-28-multitask-learning.md",
   "urlPath": "/posts/2018-02-28-multitask-learning",
+  "path_name": "/posts/2018-02-28-multitask-learning",
   "publishDate": "2018-02-28T17:08:00.000Z",
   "title": "Multi-Task Learning",
   "preview_image": "/images/2018/02/MTLNet-1517931635465.png",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nThe common approach in machine learning is to train and optimize one task at a time. In contrast, multitask learning (MTL) trains related tasks in parallel, using a shared representation. One advantage of MTL is improved generalization - using information regarding related tasks..."
+  "excerpt": "\nThe common approach in machine learning is to train and optimize one task at a time. In contrast, multitask learning (MTL) trains related tasks in parallel, using a shared representation. One advantage of MTL is improved generalization - using information regarding related tasks...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-02-28-machine-learning-in-the-browser.md",
   "urlPath": "/posts/2018-02-28-machine-learning-in-the-browser",
+  "path_name": "/posts/2018-02-28-machine-learning-in-the-browser",
   "publishDate": "2019-02-28T19:03:00.000Z",
   "title": "Machine Learning In The Browser",
   "preview_image": "/images/editor_uploads/2019-02-21-221448-tfjs.jpg",
@@ -32519,20 +35746,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Victor",
   "post_type": "newsletter",
   "author_link": "https://twitter.com/vykthur",
-  "excerpt": "\nThe promise of Machine Learning (ML) on edge devices holds potential to enable new capabilities while reaping the benefits associated with on-device computation. As an environment that is frequently the source of data (user interactions, sensors such as cameras, acelerometers..."
+  "excerpt": "\nThe promise of Machine Learning (ML) on edge devices holds potential to enable new capabilities while reaping the benefits associated with on-device computation. As an environment that is frequently the source of data (user interactions, sensors such as cameras, acelerometers...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab.md",
   "urlPath": "/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab",
+  "path_name": "/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab",
   "publishDate": "2018-02-28T16:08:00.000Z",
   "title": "Comparing human and agent performance: DeepMind releases PsychLab",
   "preview_image": "/images/2018/02/PsychLabs_DeepMind_figure-1517949199677.png",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nGoogle’s DeepMind released PsychLab this week, which has been developed internally and released to the public as part of DeepMind’s efforts30509-3) to apply decades of research in cognitive science/neuroscience to advance the state of the art in machine learning and artificial..."
+  "excerpt": "\nGoogle’s DeepMind released PsychLab this week, which has been developed internally and released to the public as part of DeepMind’s efforts30509-3) to apply decades of research in cognitive science/neuroscience to advance the state of the art in machine learning and artificial...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-02-14-probabilistic-cookies.md",
   "urlPath": "/posts/2018-02-14-probabilistic-cookies",
+  "path_name": "/posts/2018-02-14-probabilistic-cookies",
   "publishDate": "2018-02-14T17:02:00.000Z",
   "title": "Probabilistic Cookies!",
   "preview_image": "/images/editor_uploads/2018-02-15-204722-IMG_20180208_091928_1200.jpg",
@@ -32541,40 +35772,48 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Ryan Micallef",
   "post_type": "Fast Forward Food Labs",
   "author_link": "https://www.flickr.com/photos/jqpubliq",
-  "excerpt": "\nIn the spirit of Valentine's Day, we at Fast Forward Labs thought it would be fun to bake cookies for our sweethearts. Being DIY nerds, we thought we'd math it up a bit.\n\nWe used python to generate probability distributions and matplotlib to check our distributions. Then we..."
+  "excerpt": "\nIn the spirit of Valentine's Day, we at Fast Forward Labs thought it would be fun to bake cookies for our sweethearts. Being DIY nerds, we thought we'd math it up a bit.\n\nWe used python to generate probability distributions and matplotlib to check our distributions. Then we...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-02-08-the-post-editor-did-this.md",
   "urlPath": "/posts/2018-02-08-the-post-editor-did-this",
+  "path_name": "/posts/2018-02-08-the-post-editor-did-this",
   "publishDate": "2018-02-08T23:02:00.000Z",
   "title": "The post editor edited this",
   "preview_image": "/images/editor_uploads/2018-02-08-170315-ff_logo_white_bg.png",
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nFast Forward Labs is a machine intelligence research company. Our unique applied research program helps organizations innovate with data science and machine learning.\n\nWe recently wrote a report on Semantic Recommendations.\n\nWhat We Do\n\nFast Forward Labs helps organizations..."
+  "excerpt": "\nFast Forward Labs is a machine intelligence research company. Our unique applied research program helps organizations innovate with data science and machine learning.\n\nWe recently wrote a report on Semantic Recommendations.\n\nWhat We Do\n\nFast Forward Labs helps organizations...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-01-26-serverless-data-science.md",
   "urlPath": "/posts/2018-01-26-serverless-data-science",
+  "path_name": "/posts/2018-01-26-serverless-data-science",
   "publishDate": "2018-01-26T17:08:00.000Z",
   "title": "Serverless data science",
   "preview_image": "/images/2018/01/serverless_pywren-1515449109658.png",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nCloud computing has transformed enterprise IT. It makes it possible to rapidly\nscale up and down a complex and global infrastructure, without the overhead of\na datacenter. But living in the cloud can be expensive, and you still need to\nmaintain computers and their operating..."
+  "excerpt": "\nCloud computing has transformed enterprise IT. It makes it possible to rapidly\nscale up and down a complex and global infrastructure, without the overhead of\na datacenter. But living in the cloud can be expensive, and you still need to\nmaintain computers and their operating...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters.md",
   "urlPath": "/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters",
+  "path_name": "/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters",
   "publishDate": "2018-01-26T17:08:00.000Z",
   "title": "Google Maps' Competitive Moat - Why Better Data Matters",
   "preview_image": "/images/2018/01/Smith_Court_Area_of_Interest-1516748269178.JPG",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nJustin O'Beirne recently wrote a blog post surveying the landscape of mapping apps and sites (with particular focus on Google Maps and Apple Maps). This is one of a series of pieces O'Beirne has written comparing Google and Apple Maps. In short, O'Beirne concludes that Google..."
+  "excerpt": "\nJustin O'Beirne recently wrote a blog post surveying the landscape of mapping apps and sites (with particular focus on Google Maps and Apple Maps). This is one of a series of pieces O'Beirne has written comparing Google and Apple Maps. In short, O'Beirne concludes that Google...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2018-01-22-exploring-recommendation-systems.md",
   "urlPath": "/posts/2018-01-22-exploring-recommendation-systems",
+  "path_name": "/posts/2018-01-22-exploring-recommendation-systems",
   "publishDate": "2018-01-22T00:00:00.000Z",
   "title": "Exploring Recommendation Systems",
   "preview_image": "/images/2018/01/ROC_NMF_tag_loop_1115_nodot.png",
@@ -32583,10 +35822,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Shioulin",
   "post_type": "post",
   "author_link": "https://twitter.com/shioulin_sam",
-  "excerpt": "\n\nWhile we commonly associate recommendation systems with e-commerce, their\napplication extends to any decision-making problem which requires pairing two\ntypes of things together. To understand why recommenders don't always work as\nwell as we'd like them to, we set out to build..."
+  "excerpt": "\n\nWhile we commonly associate recommendation systems with e-commerce, their\napplication extends to any decision-making problem which requires pairing two\ntypes of things together. To understand why recommenders don't always work as\nwell as we'd like them to, we set out to build...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-12-20-2017-highlights.md",
   "urlPath": "/posts/2017-12-20-2017-highlights",
+  "path_name": "/posts/2017-12-20-2017-highlights",
   "publishDate": "2017-12-20T00:00:00.000Z",
   "title": "Highlights of 2017",
   "preview_image": "/images/2017/12/stars.jpg",
@@ -32594,20 +35835,24 @@ __webpack_require__.r(__webpack_exports__);
   "published": true,
   "author": "CFFL",
   "post_type": "post",
-  "excerpt": "\nWe end 2017 with a round-up of some of the research, talks, sci-fi,\nvisualizations/art, and a grab bag of other stuff we found particularly\ninteresting, enjoyable, or influential this year.\n\nStars from around the world\n\nStars from around the world. Image credit: Kyle McDonald..."
+  "excerpt": "\nWe end 2017 with a round-up of some of the research, talks, sci-fi,\nvisualizations/art, and a grab bag of other stuff we found particularly\ninteresting, enjoyable, or influential this year.\n\nStars from around the world\n\nStars from around the world. Image credit: Kyle McDonald...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-11-30-the-promise-of-automated-machine-learning-automl.md",
   "urlPath": "/posts/2017-11-30-the-promise-of-automated-machine-learning-automl",
+  "path_name": "/posts/2017-11-30-the-promise-of-automated-machine-learning-automl",
   "publishDate": "2017-11-30T17:08:00.000Z",
   "title": "The promise of Automated Machine Learning (AutoML)",
   "preview_image": "/images/2017/11/Screen_Shot_2017_11_07_at_10_07_43_AM-1510067292745.png",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nEarlier this month The New York Times published an article on Building A.I. That Can Build A.I.. There is a lot of excitement about AutoML due to the scarcity of machine learning (ML) talent:\n\n> By some estimates, only 10,000 people worldwide have the education, experience and..."
+  "excerpt": "\nEarlier this month The New York Times published an article on Building A.I. That Can Build A.I.. There is a lot of excitement about AutoML due to the scarcity of machine learning (ML) talent:\n\n> By some estimates, only 10,000 people worldwide have the education, experience and...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-11-22-happy-thanksgiving.md",
   "urlPath": "/posts/2017-11-22-happy-thanksgiving",
+  "path_name": "/posts/2017-11-22-happy-thanksgiving",
   "publishDate": "2017-11-22T00:00:00.000Z",
   "title": "Algorithmic Cookery & Happy Thanksgiving",
   "preview_image": "/images/2017/11/cute_bot-1511369925891.jpg",
@@ -32616,10 +35861,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Friederike",
   "post_type": "post",
   "author_link": "https://twitter.com/FSchueuer",
-  "excerpt": "\nAs you are preparing for your Thanksgiving meal, just know that a robotic arm is holding the spoon at the Institute for Culinary Education (ICE); progress is relentless. \"The Chef Watson cookbook is a revolutionary display of the creative collaboration of man and machine..."
+  "excerpt": "\nAs you are preparing for your Thanksgiving meal, just know that a robotic arm is holding the spoon at the Institute for Culinary Education (ICE); progress is relentless. \"The Chef Watson cookbook is a revolutionary display of the creative collaboration of man and machine...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-11-02-interpretability-scifi-the-definition-of-success.md",
   "urlPath": "/posts/2017-11-02-interpretability-scifi-the-definition-of-success",
+  "path_name": "/posts/2017-11-02-interpretability-scifi-the-definition-of-success",
   "publishDate": "2017-11-02T14:00:00.000Z",
   "title": "Interpretability Sci-Fi: The Definition of Success",
   "preview_image": "/images/2017/09/5-07.png",
@@ -32628,30 +35875,36 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "post",
   "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nWe believe in fiction as an important tool for imagining future relationships to technology. In our reports on new technologies we feature short science fiction stories that imagine the possible implications. The following story, influenced by a certain classic Sci-Fi film..."
+  "excerpt": "\nWe believe in fiction as an important tool for imagining future relationships to technology. In our reports on new technologies we feature short science fiction stories that imagine the possible implications. The following story, influenced by a certain classic Sci-Fi film...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-10-26-neuroscienceinspired-ai.md",
   "urlPath": "/posts/2017-10-26-neuroscienceinspired-ai",
+  "path_name": "/posts/2017-10-26-neuroscienceinspired-ai",
   "publishDate": "2017-10-26T18:07:00.000Z",
   "title": "Neuroscience-inspired AI",
   "preview_image": "/images/2017/10/Screen_Shot_2017_10_09_at_9-1507556105313.33",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nPioneers in artificial intelligence (AI) have worked across multiple related fields, including computer science, AI, neuroscience, and psychology - but as each of these areas of research have grown in complexity and disciplinary boundaries have solidified, collaboration has..."
+  "excerpt": "\nPioneers in artificial intelligence (AI) have worked across multiple related fields, including computer science, AI, neuroscience, and psychology - but as each of these areas of research have grown in complexity and disciplinary boundaries have solidified, collaboration has...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use.md",
   "urlPath": "/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use",
+  "path_name": "/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use",
   "publishDate": "2017-10-26T18:07:00.000Z",
   "title": "Bias Mitigation Using the Copyright Doctrine of Fair Use",
   "preview_image": "/images/2017/10/Screen_Shot_2017_10_10_at_10-1507644713217.11",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nPirating a copyrighted song, video, or e-book to listen to the song, watch the movie, or read the book is an infringement of copyright (which can be severely fined). So how about pirating a song, video, or e-book to train machine learning models?\n\nNYU Teaching and Research..."
+  "excerpt": "\nPirating a copyrighted song, video, or e-book to listen to the song, watch the movie, or read the book is an infringement of copyright (which can be severely fined). So how about pirating a song, video, or e-book to train machine learning models?\n\nNYU Teaching and Research...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-10-26-alphago-zero.md",
   "urlPath": "/posts/2017-10-26-alphago-zero",
+  "path_name": "/posts/2017-10-26-alphago-zero",
   "publishDate": "2017-10-25T00:00:00.000Z",
   "title": "AlphaGo Zero's win, what it means",
   "preview_image": "/images/2017/10/220px_Go_board_part-1508964914733.jpg",
@@ -32660,10 +35913,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Friederike",
   "post_type": "post",
   "author_link": "https://twitter.com/FSchueuer",
-  "excerpt": "\nIn an almost Freudian twist, a play on Vatermord by an artificial intelligence, AlphaGo Zero has dethroned its \"parent,\" AlphaGo.\n\nIn March 2016, AlphaGo defeated 18-time world Go champion Lee Sedol. At the Future of Go Summit in May 2017, AlphaGo prevailed against China's top..."
+  "excerpt": "\nIn an almost Freudian twist, a play on Vatermord by an artificial intelligence, AlphaGo Zero has dethroned its \"parent,\" AlphaGo.\n\nIn March 2016, AlphaGo defeated 18-time world Go champion Lee Sedol. At the Future of Go Summit in May 2017, AlphaGo prevailed against China's top...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-10-04-using-three-js-for-2d-data-visualization.md",
   "urlPath": "/posts/2017-10-04-using-three-js-for-2d-data-visualization",
+  "path_name": "/posts/2017-10-04-using-three-js-for-2d-data-visualization",
   "publishDate": "2017-10-04T14:30:00.000Z",
   "title": "First Look: Using Three.js for 2D Data Visualization",
   "preview_image": "http://blog.fastforwardlabs.com/images/2017/10/tsne-final.png",
@@ -32672,10 +35927,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "post",
   "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nUpdate: I have a new post on Using three.js for 2D data visualization. It contains all the stuff I learned while working on the project and is the place you should look for updated code. This post may still be interesting if you want to see my thoughts when I first started on..."
+  "excerpt": "\nUpdate: I have a new post on Using three.js for 2D data visualization. It contains all the stuff I learned while working on the project and is the place you should look for updated code. This post may still be interesting if you want to see my thoughts when I first started on...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-10-02-pp-bibliography.md",
   "urlPath": "/posts/2017-10-02-pp-bibliography",
+  "path_name": "/posts/2017-10-02-pp-bibliography",
   "publishDate": "2017-10-02T00:00:00.000Z",
   "title": "Probabilistic programming: an annotated bibliography",
   "preview_image": "/images/2017/09/ff05.gif",
@@ -32684,30 +35941,36 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Mike",
   "post_type": "post",
   "author_link": "http://twitter.com/mikepqr",
-  "excerpt": "\nEarlier this year we launched a research report on [probabilistic\nprogramming](http://blog.fastforwardlabs.com/2017/01/18/new-research-on-probabilistic-programming.html),\nan emerging programming paradigm that makes it easier to describe and train\nprobabilistic models. The..."
+  "excerpt": "\nEarlier this year we launched a research report on [probabilistic\nprogramming](http://blog.fastforwardlabs.com/2017/01/18/new-research-on-probabilistic-programming.html),\nan emerging programming paradigm that makes it easier to describe and train\nprobabilistic models. The...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples.md",
   "urlPath": "/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples",
+  "path_name": "/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples",
   "publishDate": "2017-09-29T18:07:00.000Z",
   "title": "The Danger and Promise of Adversarial Samples",
   "preview_image": "/images/2017/09/Screen_Shot_2017_09_13_at_9-1505322932035.59",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nAdversarial samples are inputs designed to fool a model: they are inputs created by applying perturbations to example inputs in the dataset such that the perturbed inputs result in the model outputting an incorrect answer with high confidence. Often, perturbations are so small..."
+  "excerpt": "\nAdversarial samples are inputs designed to fool a model: they are inputs created by applying perturbations to example inputs in the dataset such that the perturbed inputs result in the model outputting an incorrect answer with high confidence. Often, perturbations are so small...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-09-29-futurism-and-artificial-intelligence.md",
   "urlPath": "/posts/2017-09-29-futurism-and-artificial-intelligence",
+  "path_name": "/posts/2017-09-29-futurism-and-artificial-intelligence",
   "publishDate": "2017-09-29T18:07:00.000Z",
   "title": "Futurism and Artificial Intelligence",
   "preview_image": "/images/2017/09/star_trek_chess-1505156456055.jpg",
   "feature": false,
   "published": true,
   "post_type": "Newsletter",
-  "excerpt": "\nFor some, Mayweather-McGregor was the prizefight of the summer. For others, it has been Musk-Zuckerberg going toe-to-toe over the risks posed by AI, with Musk voicing his reservations about artificial intelligence while Zuck remains more sanguine. Musk has called AI possibly the..."
+  "excerpt": "\nFor some, Mayweather-McGregor was the prizefight of the summer. For others, it has been Musk-Zuckerberg going toe-to-toe over the risks posed by AI, with Musk voicing his reservations about artificial intelligence while Zuck remains more sanguine. Musk has called AI possibly the...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-09-26-the-product-possibilities-of-interpretability.md",
   "urlPath": "/posts/2017-09-26-the-product-possibilities-of-interpretability",
+  "path_name": "/posts/2017-09-26-the-product-possibilities-of-interpretability",
   "publishDate": "2017-09-28T14:30:00.000Z",
   "title": "The Product Possibilities of Interpretability",
   "preview_image": "/images/2017/09/refractor-local.gif",
@@ -32716,10 +35979,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "post",
   "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nThis post is part of a series highlighting the importance of interpretability. Previous posts include a video conversation on interpretability, a guide to using the LIME technique to predict whether couples will stay together, and a look at the business rationale. In our post on..."
+  "excerpt": "\nThis post is part of a series highlighting the importance of interpretability. Previous posts include a video conversation on interpretability, a guide to using the LIME technique to predict whether couples will stay together, and a look at the business rationale. In our post on...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-09-11-interpretability-webinar.md",
   "urlPath": "/posts/2017-09-11-interpretability-webinar",
+  "path_name": "/posts/2017-09-11-interpretability-webinar",
   "publishDate": "2017-09-11T00:00:00.000Z",
   "title": "Interpretability in conversation with Patrick Hall and Sameer Singh",
   "preview_image": "/images/2017/08/ff06-logo.png",
@@ -32728,10 +35993,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Mike",
   "post_type": "post",
   "author_link": "http://twitter.com/mikepqr",
-  "excerpt": "\n\nWe're pleased to share the recording of our recent webinar on machine learning\ninterpretability and accompanying resources.\n\nWe were joined by guests Patrick Hall (Senior Director for Data Science\nProducts at H2o.ai, co-author of [Ideas on Interpreting Machine\nLearning](https..."
+  "excerpt": "\n\nWe're pleased to share the recording of our recent webinar on machine learning\ninterpretability and accompanying resources.\n\nWe were joined by guests Patrick Hall (Senior Director for Data Science\nProducts at H2o.ai, co-author of [Ideas on Interpreting Machine\nLearning](https...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-09-07-to-the-future.md",
   "urlPath": "/posts/2017-09-07-to-the-future",
+  "path_name": "/posts/2017-09-07-to-the-future",
   "publishDate": "2017-09-07T14:30:00.000Z",
   "title": "To the Future...",
   "preview_image": "/images/2017/09/gradient-1504809772766.jpg",
@@ -32740,10 +36007,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Hilary",
   "post_type": "post",
   "author_link": "https://twitter.com/hmason",
-  "excerpt": "\nI started Fast Forward Labs more than three years ago with the vision of creating a new mechanism for applied research, helping businesses large and small understand how recently possible machine learning and applied artificial intelligence technologies could be useful for..."
+  "excerpt": "\nI started Fast Forward Labs more than three years ago with the vision of creating a new mechanism for applied research, helping businesses large and small understand how recently possible machine learning and applied artificial intelligence technologies could be useful for...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-09-01-crowdwork-for-ml.md",
   "urlPath": "/posts/2017-09-01-crowdwork-for-ml",
+  "path_name": "/posts/2017-09-01-crowdwork-for-ml",
   "publishDate": "2017-09-26T14:30:00.000Z",
   "title": "Crowdwork for Machine Learning: An Autoethnography",
   "preview_image": "/images/2017/09/the_turk.jpg",
@@ -32752,10 +36021,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Manny",
   "post_type": "post",
   "author_link": "https://twitter.com/mannymoss",
-  "excerpt": "\nAmazon’s Mechanical Turk is a platform for soliciting work on online tasks that has been used by market researchers, translators, and data scientists to complete surveys, perform work that cannot be easily automated, and create human-labeled data for supervised learning systems..."
+  "excerpt": "\nAmazon’s Mechanical Turk is a platform for soliciting work on online tasks that has been used by market researchers, translators, and data scientists to complete surveys, perform work that cannot be easily automated, and create human-labeled data for supervised learning systems...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-09-01-LIME-for-couples.md",
   "urlPath": "/posts/2017-09-01-LIME-for-couples",
+  "path_name": "/posts/2017-09-01-LIME-for-couples",
   "publishDate": "2017-09-01T00:00:00.000Z",
   "title": "Why your relationship is likely to last (or not): using Local Interpretable Model-Agnostic Explanations (LIME)",
   "preview_image": "/images/2017/09/henry_viii-1504299070584.jpg",
@@ -32764,19 +36035,23 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Friederike",
   "post_type": "post",
   "author_link": "http://www.linkedin.com/in/friederikeschueuer",
-  "excerpt": "\nHenry VIII of England had many relationships. We build a classifier to predict whether relationships are going to last, or not, and used Local Interpretable Model-Agnostic Explanations (LIME) to understand the predicted success or failure of given relationships.\n\nLast month we..."
+  "excerpt": "\nHenry VIII of England had many relationships. We build a classifier to predict whether relationships are going to last, or not, and used Local Interpretable Model-Agnostic Explanations (LIME) to understand the predicted success or failure of given relationships.\n\nLast month we...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-08-22-individ_subscribe_announce.md",
   "urlPath": "/posts/2017-08-22-individ_subscribe_announce",
+  "path_name": "/posts/2017-08-22-individ_subscribe_announce",
   "publishDate": null,
   "title": "2017-08-22-individ_subscribe_announce.md",
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nAnnouncing Individual User Subscriptions\n\nFor the past three months at Fast Forward Labs we have been beta-testing a subscription option for individuals who would love to read our reporting on emerging capabilities in machine learning and dig further into field even if they're..."
+  "excerpt": "\nAnnouncing Individual User Subscriptions\n\nFor the past three months at Fast Forward Labs we have been beta-testing a subscription option for individuals who would love to read our reporting on emerging capabilities in machine learning and dig further into field even if they're...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-08-08-encartopedia.md",
   "urlPath": "/posts/2017-08-08-encartopedia",
+  "path_name": "/posts/2017-08-08-encartopedia",
   "publishDate": "2017-08-15T14:30:00.000Z",
   "title": "Encartopedia",
   "preview_image": "/images/2017/08/enc-tabula.jpg",
@@ -32785,10 +36060,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Sepand",
   "post_type": "post",
   "author_link": "https://sepans.com/sp",
-  "excerpt": "\nTabula Rogeriana\n\nThe Tabula Rogeriana, a world map created by Muhammad al-Idrisi through traveler interviews in 1154.\n\nThe Wikipedia corpus is one of the favorite datasets of the machine learning community. It is often used for experimenting, benchmarking and providing how-to..."
+  "excerpt": "\nTabula Rogeriana\n\nThe Tabula Rogeriana, a world map created by Muhammad al-Idrisi through traveler interviews in 1154.\n\nThe Wikipedia corpus is one of the favorite datasets of the machine learning community. It is often used for experimenting, benchmarking and providing how-to...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-08-07-business-interpretability.md",
   "urlPath": "/posts/2017-08-07-business-interpretability",
+  "path_name": "/posts/2017-08-07-business-interpretability",
   "publishDate": "2017-08-02T13:00:00.000Z",
   "title": "The Business Case for Machine Learning Interpretability",
   "preview_image": "/images/2017/08/actions.png",
@@ -32797,10 +36074,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Manny",
   "post_type": "post",
   "author_link": "https://twitter.com/mannymoss",
-  "excerpt": "\nLast week we launched the latest prototype and report from our machine\nintelligence R&D team:\nInterpretability.\n\nOur prototype shows how new ideas in interpretability research can be used to\nextract actionable insights from black-box machine learning models; our report\ndescribes..."
+  "excerpt": "\nLast week we launched the latest prototype and report from our machine\nintelligence R&D team:\nInterpretability.\n\nOur prototype shows how new ideas in interpretability research can be used to\nextract actionable insights from black-box machine learning models; our report\ndescribes...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-08-02-interpretability.md",
   "urlPath": "/posts/2017-08-02-interpretability",
+  "path_name": "/posts/2017-08-02-interpretability",
   "publishDate": "2017-08-02T13:00:00.000Z",
   "title": "New Research on Interpretability",
   "preview_image": "/images/2017/08/ff06-animation.gif",
@@ -32809,10 +36088,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Mike",
   "post_type": "post",
   "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nWe're excited to release the latest prototype and report from our machine\nintelligence R&D team: Interpretability.\n\nFF06 Interpretability\n\nAn interpretable algorithm is one whose decisions you can explain. You can\nbetter rely on such a model to be safe, accurate and useful.\n\nOur..."
+  "excerpt": "\nWe're excited to release the latest prototype and report from our machine\nintelligence R&D team: Interpretability.\n\nFF06 Interpretability\n\nAn interpretable algorithm is one whose decisions you can explain. You can\nbetter rely on such a model to be safe, accurate and useful.\n\nOur...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do.md",
   "urlPath": "/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do",
+  "path_name": "/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do",
   "publishDate": "2017-08-02T16:00:00.000Z",
   "title": "Why we talk about AI the way we do, and why we have to change it.",
   "preview_image": "TBA",
@@ -32821,10 +36102,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Friederike",
   "post_type": "post",
   "author_link": "https://twitter.com/FSchueuer",
-  "excerpt": "\nThe public conversation about machine learning and AI happens at the extremes. AI is either awesome or scary. It writes movie scripts, wins at poker and Go, and helps Google cool its data centers. Awesome! It will take our jobs and robot investors will incite wars for profits..."
+  "excerpt": "\nThe public conversation about machine learning and AI happens at the extremes. AI is either awesome or scary. It writes movie scripts, wins at poker and Go, and helps Google cool its data centers. Awesome! It will take our jobs and robot investors will incite wars for profits...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-07-05-probabilistic-programming-from-scratch.md",
   "urlPath": "/posts/2017-07-05-probabilistic-programming-from-scratch",
+  "path_name": "/posts/2017-07-05-probabilistic-programming-from-scratch",
   "publishDate": "2017-07-06T16:00:00.000Z",
   "title": "Probabilistic programming from scratch",
   "preview_image": "/images/2017/07/output_30_0.png",
@@ -32833,10 +36116,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Mike",
   "post_type": "post",
   "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nThis article contains highlights from a series of three interactive video tutorials on probabilistic programming from scratch published on O'Reilly Safari (login required).\n\nIf you're interested in the business case for probabilistic programming the Fast Forward Labs report..."
+  "excerpt": "\nThis article contains highlights from a series of three interactive video tutorials on probabilistic programming from scratch published on O'Reilly Safari (login required).\n\nIf you're interested in the business case for probabilistic programming the Fast Forward Labs report...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-06-25-fingerprinting-documents-with-steganography.md",
   "urlPath": "/posts/2017-06-25-fingerprinting-documents-with-steganography",
+  "path_name": "/posts/2017-06-25-fingerprinting-documents-with-steganography",
   "publishDate": "2017-06-23T15:50:00.000Z",
   "title": "F⁠ingerprinting documents​ with steganography​",
   "preview_image": "/images/2017/06/confusables.png",
@@ -32845,10 +36130,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Noam",
   "post_type": "post",
   "author_link": "https://github.com/n-s-f",
-  "excerpt": "\nSteganography is the​ practice​ of​ hiding messages​ anywhere​ they’re​ not expected‏‎.\nI⁠n a well-executed​ piece of​ steganography, anyone who​ is​ not the intended​\nrecipient can​ look at​ the​ message​ and not​ realize its there at all‏‎. In a recent\nheadline-making\nstory..."
+  "excerpt": "\nSteganography is the​ practice​ of​ hiding messages​ anywhere​ they’re​ not expected‏‎.\nI⁠n a well-executed​ piece of​ steganography, anyone who​ is​ not the intended​\nrecipient can​ look at​ the​ message​ and not​ realize its there at all‏‎. In a recent\nheadline-making\nstory...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000.md",
   "urlPath": "/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000",
+  "path_name": "/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000",
   "publishDate": "2017-06-06T14:30:00.000Z",
   "title": "Probabilistic Programmming Sci-Fi: BayesHead 5000",
   "preview_image": "/images/2017/06/mc.png",
@@ -32856,10 +36143,12 @@ __webpack_require__.r(__webpack_exports__);
   "published": true,
   "author": "Liam Sweeney",
   "post_type": "Fiction",
-  "excerpt": "\nWe believe in fiction as an important tool for imagining future relationships to technology. In our reports on new technologies we feature short science fiction stories that imagine the possible implications. The following story, written by Liam Sweeney (email), appeared in our..."
+  "excerpt": "\nWe believe in fiction as an important tool for imagining future relationships to technology. In our reports on new technologies we feature short science fiction stories that imagine the possible implications. The following story, written by Liam Sweeney (email), appeared in our...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic.md",
   "urlPath": "/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic",
+  "path_name": "/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic",
   "publishDate": "2017-05-30T15:00:00.000Z",
   "title": "Slack Maestro: Helping Users Stay on Topic",
   "preview_image": "/images/2017/05/threshold.png",
@@ -32868,10 +36157,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Andrej Ficnar",
   "post_type": "Guest Post",
   "author_link": "https://github.com/aficnar",
-  "excerpt": "\nThis is a guest post featuring a project by Andrej Ficnar (now a data scientist at Schireson Associates), which he completed as a fellow in the Insight Data Science program. We are partnered with Insight and occasionally advise fellows on month-long projects from idea to..."
+  "excerpt": "\nThis is a guest post featuring a project by Andrej Ficnar (now a data scientist at Schireson Associates), which he completed as a fellow in the Insight Data Science program. We are partnered with Insight and occasionally advise fellows on month-long projects from idea to...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-05-26-Places-Journal-Mississippi-Basin.md",
   "urlPath": "/posts/2017-05-26-Places-Journal-Mississippi-Basin",
+  "path_name": "/posts/2017-05-26-Places-Journal-Mississippi-Basin",
   "publishDate": "2017-06-30T15:19:00.000Z",
   "title": "Learning from Real-World Models: The Mississippi Basin Model and Machine Learning",
   "preview_image": "/images/2017/05/dykema-basin-model-1_525.jpg",
@@ -32880,10 +36171,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Manny",
   "post_type": "post",
   "author_link": "https://twitter.com/mannymoss",
-  "excerpt": "\nModel-building has a venerable history that long predates parallel processing, python, and perceptrons. Physical, scale models and maps have helped humans think through complex processes and ambitious endeavors, from the rigging of a pharoah's pleasure yacht to the Battle of..."
+  "excerpt": "\nModel-building has a venerable history that long predates parallel processing, python, and perceptrons. Physical, scale models and maps have helped humans think through complex processes and ambitious endeavors, from the rigging of a pharoah's pleasure yacht to the Battle of...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-05-15-reply-retweet-ratio.md",
   "urlPath": "/posts/2017-05-15-reply-retweet-ratio",
+  "path_name": "/posts/2017-05-15-reply-retweet-ratio",
   "publishDate": "2017-05-15T20:00:00.000Z",
   "title": "A Quick Look at the Reply-to-Retweet Ratio",
   "preview_image": "/images/2017/05/tweetratio.png",
@@ -32892,20 +36185,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Sepand",
   "post_type": "Demo",
   "author_link": "https://twitter.com/s3pans",
-  "excerpt": "\nTwitter users can retweet, like or reply to a tweet. If a tweet from a\nprominent account gets more replies than retweets then [that's usually Not\nGood](http://www.esquire.com/news-politics/news/a54440/twitter-ratio-reply/).\n\nTake, for example, this recent tweet from United..."
+  "excerpt": "\nTwitter users can retweet, like or reply to a tweet. If a tweet from a\nprominent account gets more replies than retweets then [that's usually Not\nGood](http://www.esquire.com/news-politics/news/a54440/twitter-ratio-reply/).\n\nTake, for example, this recent tweet from United...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix.md",
   "urlPath": "/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix",
+  "path_name": "/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix",
   "publishDate": "2017-04-28T13:44:00.000Z",
   "title": "Eli Bressert on Data-Driven Processes at Netflix",
   "preview_image": "/images/2017/04/b1509_w11.jpg",
   "feature": false,
   "published": true,
   "post_type": "Interview",
-  "excerpt": "\nDespite their best intentions, companies often struggle to develop processes that provide data-driven decisions through partnership across the business. Netflix stands out as a company that excels at deeply integrating its data science teams into all aspects of the company. We..."
+  "excerpt": "\nDespite their best intentions, companies often struggle to develop processes that provide data-driven decisions through partnership across the business. Netflix stands out as a company that excels at deeply integrating its data science teams into all aspects of the company. We...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne.md",
   "urlPath": "/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne",
+  "path_name": "/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne",
   "publishDate": "2017-04-14T19:30:00.000Z",
   "title": "Visualizing the Taste of a Community of Cinephiles Using t-SNE",
   "preview_image": "http://fastforwardlabs.github.io/cinephile_tsne/images/Cover.png",
@@ -32914,20 +36211,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Aditya",
   "post_type": "Demo",
   "author_link": "https://twitter.com/whaleandpetunia",
-  "excerpt": "\nIn this post we are going to look at an interactive visualization that clusters movies together based on their ratings by a set of users. This visualization will give us a glimpse into the aesthetic tastes of a community of cinephiles.\n"
+  "excerpt": "\nIn this post we are going to look at an interactive visualization that clusters movies together based on their ratings by a set of users. This visualization will give us a glimpse into the aesthetic tastes of a community of cinephiles.\n",
+  "external_url": "http://fastforwardlabs.github.io/cinephile_tsne/"
 }, {
   "filePath": "pages/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists.md",
   "urlPath": "/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists",
+  "path_name": "/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists",
   "publishDate": "2017-03-31T19:30:00.000Z",
   "title": "Free eBook: Development Workflows for Data Scientists",
   "preview_image": "/images/2017/03/development-workflows-1.jpg",
   "feature": false,
   "published": true,
   "post_type": "Announcement",
-  "excerpt": "\nCover image from Development Workflows for Data Scientists eBook\n\nWorking with over 30 enterprise clients, in industries like financial services, insurance, publishing, and retail, the Fast Forward Labs team has had ample opportunity to observe the challenges of doing data..."
+  "excerpt": "\nCover image from Development Workflows for Data Scientists eBook\n\nWorking with over 30 enterprise clients, in industries like financial services, insurance, publishing, and retail, the Fast Forward Labs team has had ample opportunity to observe the challenges of doing data...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-03-25-five-distractions-in-thinking-about-ai.md",
   "urlPath": "/posts/2017-03-25-five-distractions-in-thinking-about-ai",
+  "path_name": "/posts/2017-03-25-five-distractions-in-thinking-about-ai",
   "publishDate": "2017-03-22T19:30:00.000Z",
   "title": "Five Distractions in Thinking about AI",
   "preview_image": "https://quamproxime.files.wordpress.com/2017/03/screen-shot-2017-03-25-at-1-28-55-pm.png",
@@ -32936,10 +36237,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Kathryn",
   "post_type": "post",
   "author_link": "https://twitter.com/HumeKathryn",
-  "excerpt": "\nAn image of a clock drawn in a cappuccino melting over the side of the cup, reminiscent of a Salvador Dali painting.\n\nThis post originally appeared on quamproxime.com, the personal blog of our sales and marketing lead, Kathryn Hume\n\nOne of the main arguments the Israeli..."
+  "excerpt": "\nAn image of a clock drawn in a cappuccino melting over the side of the cup, reminiscent of a Salvador Dali painting.\n\nThis post originally appeared on quamproxime.com, the personal blog of our sales and marketing lead, Kathryn Hume\n\nOne of the main arguments the Israeli...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-03-22-prophet.md",
   "urlPath": "/posts/2017-03-22-prophet",
+  "path_name": "/posts/2017-03-22-prophet",
   "publishDate": "2017-03-22T19:30:00.000Z",
   "title": "Taking Prophet for a Spin",
   "preview_image": "/images/2017/03/birthforecast.png",
@@ -32948,10 +36251,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Shioulin",
   "post_type": "post",
   "author_link": null,
-  "excerpt": "\nFacebook recently released\nProphet, a general purpose time\nseries forecasting package with both Python and R interfaces.\n\nPython and R already have plenty of time series forecasting options, so why is\nProphet interesting? It caught our eye because the backend is implemented in..."
+  "excerpt": "\nFacebook recently released\nProphet, a general purpose time\nseries forecasting package with both Python and R interfaces.\n\nPython and R already have plenty of time series forecasting options, so why is\nProphet interesting? It caught our eye because the backend is implemented in...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming.md",
   "urlPath": "/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming",
+  "path_name": "/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming",
   "publishDate": "2017-03-15T19:49:00.000Z",
   "title": "Predicting NYC Real Estate Prices with Probabilistic Programming",
   "preview_image": "/images/2017/05/price_mode.gif",
@@ -32960,10 +36265,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "post",
   "author_link": "https://twitter.com/grantcuster",
-  "excerpt": "\nProbabilistic Real Estate is a prototype we built to explore the New York City real estate market. As explained in a previous post, we used probabilistic programming's ability to incorporate hierarchical models to make predictions across neighborhoods with sparse amounts of..."
+  "excerpt": "\nProbabilistic Real Estate is a prototype we built to explore the New York City real estate market. As explained in a previous post, we used probabilistic programming's ability to incorporate hierarchical models to make predictions across neighborhoods with sparse amounts of...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-03-13-practical-deep-learning.md",
   "urlPath": "/posts/2017-03-13-practical-deep-learning",
+  "path_name": "/posts/2017-03-13-practical-deep-learning",
   "publishDate": "2017-03-13T19:49:00.000Z",
   "title": "Practical Deep Learning",
   "preview_image": "/images/2017/03/doc-full-screen.jpg",
@@ -32972,10 +36279,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Micha",
   "post_type": "Talk Slides",
   "author_link": "https://github.com/mynameisfiber",
-  "excerpt": "\nMicha's talk demystifies deep learning. View the slides.\n\nOur research team spent last week in London hosting sessions and workshops about applied machine learning at the QCon conference. Micha Gorelick gave a talk about building a working product with Keras, a high level deep..."
+  "excerpt": "\nMicha's talk demystifies deep learning. View the slides.\n\nOur research team spent last week in London hosting sessions and workshops about applied machine learning at the QCon conference. Micha Gorelick gave a talk about building a working product with Keras, a high level deep...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes.md",
   "urlPath": "/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes",
+  "path_name": "/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes",
   "publishDate": "2017-03-10T18:00:00.000Z",
   "title": "Trees, Layers, and Speed: Talking Optimization with Patrick Hayes",
   "preview_image": "/images/2017/04/maze%20image.png",
@@ -32984,10 +36293,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Kathryn",
   "post_type": "Interview",
   "author_link": "https://twitter.com/humekathryn",
-  "excerpt": "\nIn a modern twist on Claude Shannon's Theseus, SigOpt explains optimization by teaching a mouse to solve a randomly generated maze\n\nThe learning of machine learning refers to the process of updating and tuning the parameters of a model. For example, if we take the function f(x..."
+  "excerpt": "\nIn a modern twist on Claude Shannon's Theseus, SigOpt explains optimization by teaching a mouse to solve a randomly generated maze\n\nThe learning of machine learning refers to the process of updating and tuning the parameters of a model. For example, if we take the function f(x...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-03-09-fairml-auditing-black-box-predictive-models.md",
   "urlPath": "/posts/2017-03-09-fairml-auditing-black-box-predictive-models",
+  "path_name": "/posts/2017-03-09-fairml-auditing-black-box-predictive-models",
   "publishDate": "2017-03-09T14:44:00.000Z",
   "title": "FairML: Auditing Black-Box Predictive Models",
   "preview_image": "/images/2017/03/fairness_and_justice_symbol.png",
@@ -32996,10 +36307,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Julius",
   "post_type": "Whitepaper",
   "author_link": "https://twitter.com/julius_adebayo",
-  "excerpt": "\nFairness in ML\n\nMachine learning models are used for important decisions\nlike determining who has access to bail.\nThe aim is to increase efficiency and spot patterns in data that humans would otherwise miss.\nBut how do we know if a machine learning model is fair? And what does..."
+  "excerpt": "\nFairness in ML\n\nMachine learning models are used for important decisions\nlike determining who has access to bail.\nThe aim is to increase efficiency and spot patterns in data that humans would otherwise miss.\nBut how do we know if a machine learning model is fair? And what does...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-02-27-mobile-authentication.md",
   "urlPath": "/posts/2017-02-27-mobile-authentication",
+  "path_name": "/posts/2017-02-27-mobile-authentication",
   "publishDate": "2017-02-27T00:00:00.000Z",
   "title": "Mobile Behavioural Authentication",
   "preview_image": "/images/2017/02/mobileauth.png",
@@ -33008,40 +36321,48 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Shioulin",
   "post_type": "post",
   "author_link": null,
-  "excerpt": "\nAs mobile devices become central to our personal and professional lives, their\nsecurity is more and more important. Passcodes in particular can be lost (or\nforcibly surrendered) to law enforcement. Recent research has focussed on\nbehavioural authentication based on patterns of..."
+  "excerpt": "\nAs mobile devices become central to our personal and professional lives, their\nsecurity is more and more important. Passcodes in particular can be lost (or\nforcibly surrendered) to law enforcement. Recent research has focussed on\nbehavioural authentication based on patterns of...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-02-22-upcoming-talks-with-our-team.md",
   "urlPath": "/posts/2017-02-22-upcoming-talks-with-our-team",
+  "path_name": "/posts/2017-02-22-upcoming-talks-with-our-team",
   "publishDate": "2017-02-22T18:15:00.000Z",
   "title": "Upcoming Talks with our Team",
   "preview_image": "https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_630,w_1200/v1/83772/WATF_DataFest_2017-TRANSPARENT_unzk9h.png",
   "feature": false,
   "published": true,
   "post_type": "Announcement",
-  "excerpt": "\nThe Fast Forward Labs team will be traveling the world to give talks in March and April! Please join us and let us know if you'd like to meet one-on-one to discuss all things data science and machine learning at these events. You can reach us at contact@fastforwardlabs.com to..."
+  "excerpt": "\nThe Fast Forward Labs team will be traveling the world to give talks in March and April! Please join us and let us know if you'd like to meet one-on-one to discuss all things data science and machine learning at these events. You can reach us at contact@fastforwardlabs.com to...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming.md",
   "urlPath": "/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming",
+  "path_name": "/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming",
   "publishDate": "2017-02-09T14:44:00.000Z",
   "title": "Online Talk: Introduction to Probabilistic Programming",
   "preview_image": "http://fastforwardlabs.github.io/report_images/ff05/2-08.png",
   "feature": false,
   "published": true,
   "post_type": "Announcement",
-  "excerpt": "\nOn Tuesday, we hosted an online talk with the Stan Group discussing why probabilistic programming is generating so much excitement in the fields of machine learning and statistics. In essence, probabilistic programming is a powerful tool to help organizations make rational..."
+  "excerpt": "\nOn Tuesday, we hosted an online talk with the Stan Group discussing why probabilistic programming is generating so much excitement in the fields of machine learning and statistics. In essence, probabilistic programming is a powerful tool to help organizations make rational...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-02-08-summer-internships.md",
   "urlPath": "/posts/2017-02-08-summer-internships",
+  "path_name": "/posts/2017-02-08-summer-internships",
   "publishDate": "2017-02-08T16:34:00.000Z",
   "title": "Summer Internships: Data Science, Applied Data Science Writing, Prototyping & Data Viz.",
   "preview_image": "http://fastforwardlabs.github.io/resources/images/logos/ff-logo-white-bg.png",
   "feature": false,
   "published": true,
   "post_type": "Announcement",
-  "excerpt": "\nWe’re excited to announce three summer internship opportunities, which are open to current undergraduate and graduate students, as well as recent graduates and career changers seeking an internship position.\n\nThe internship positions are:\n\n  Data Science Intern\n  Applied Data..."
+  "excerpt": "\nWe’re excited to announce three summer internship opportunities, which are open to current undergraduate and graduate students, as well as recent graduates and career changers seeking an internship position.\n\nThe internship positions are:\n\n  Data Science Intern\n  Applied Data...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-01-30-the-algorithms-behind-probabilistic-programming.md",
   "urlPath": "/posts/2017-01-30-the-algorithms-behind-probabilistic-programming",
+  "path_name": "/posts/2017-01-30-the-algorithms-behind-probabilistic-programming",
   "publishDate": "2017-01-30T18:52:00.000Z",
   "title": "The Algorithms Behind Probabilistic Programming",
   "preview_image": "http://fastforwardlabs.github.io/report_images/ff05/3-08.png",
@@ -33050,40 +36371,48 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Mike",
   "post_type": "post",
   "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nWe recently [introduced our report on probabilistic\nprogramming](http://blog.fastforwardlabs.com/2017/01/18/new-research-on-probabilistic-programming.html). The accompanying prototype allows you to explore the [past and\nfuture of the New York residential real estate\nmarket](http..."
+  "excerpt": "\nWe recently [introduced our report on probabilistic\nprogramming](http://blog.fastforwardlabs.com/2017/01/18/new-research-on-probabilistic-programming.html). The accompanying prototype allows you to explore the [past and\nfuture of the New York residential real estate\nmarket](http...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer.md",
   "urlPath": "/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer",
+  "path_name": "/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer",
   "publishDate": "2017-01-25T23:15:00.000Z",
   "title": "Privacy and Encryption Above the Data: Interview with Dave Archer",
   "preview_image": "/images/2017/01/chart.png",
   "feature": false,
   "published": true,
   "post_type": "Interview",
-  "excerpt": "\nOur mission at Fast Forward Labs is to commercialize artificial intelligence research, to clearly explain how new technologies work and help enterprises apply them in practical products. As our business model is rare, we're always keen to connect with and learn from..."
+  "excerpt": "\nOur mission at Fast Forward Labs is to commercialize artificial intelligence research, to clearly explain how new technologies work and help enterprises apply them in practical products. As our business model is rare, we're always keen to connect with and learn from...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-01-18-new-research-on-probabilistic-programming.md",
   "urlPath": "/posts/2017-01-18-new-research-on-probabilistic-programming",
+  "path_name": "/posts/2017-01-18-new-research-on-probabilistic-programming",
   "publishDate": "2017-01-18T15:00:00.000Z",
   "title": "New Research on Probabilistic Programming",
   "preview_image": "https://68.media.tumblr.com/cbe0007d3ac0cdaaf70d6c4d25978e83/tumblr_inline_ojzf3jTBUF1ta78fg_540.png",
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nimage\n\nWe're excited to release the latest research from our machine intelligence R&amp;D team!\nThis report and prototype explore probabilistic programming, an emerging programming paradigm that makes it easier to construct and fit Bayesian inference models in code. It's..."
+  "excerpt": "\nimage\n\nWe're excited to release the latest research from our machine intelligence R&amp;D team!\nThis report and prototype explore probabilistic programming, an emerging programming paradigm that makes it easier to construct and fit Bayesian inference models in code. It's...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with.md",
   "urlPath": "/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with",
+  "path_name": "/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with",
   "publishDate": "2017-01-11T14:23:11.000Z",
   "title": "Thomas Wiecki on Probabilistic Programming with PyMC3",
   "preview_image": "https://68.media.tumblr.com/b1cc21602fec1b350032b5b79db93552/tumblr_inline_ojmc1prF0t1ta78fg_540.png",
   "feature": true,
   "published": true,
   "post_type": "Interview",
-  "excerpt": "\nA rolling regression with PyMC3: instead of the regression coefficients being constant over time (the points are daily stock prices of 2 stocks), this model assumes they follow a random-walk and can thus slowly adapt them over time to fit the data best.\n\nProbabilistic..."
+  "excerpt": "\nA rolling regression with PyMC3: instead of the regression coefficients being constant over time (the points are daily stock prices of 2 stocks), this model assumes they follow a random-walk and can thus slowly adapt them over time to fit the data best.\n\nProbabilistic...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017.md",
   "urlPath": "/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017",
+  "path_name": "/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017",
   "publishDate": "2017-01-10T15:00:00.000Z",
   "title": "Five 2016 Trends We Expect to Come to Fruition in 2017",
   "preview_image": "https://68.media.tumblr.com/14005dd5347c443d8716cd09c855a599/tumblr_inline_ojkq92ckuZ1qcg73w_540.jpg",
@@ -33091,10 +36420,12 @@ __webpack_require__.r(__webpack_exports__);
   "published": true,
   "author": "Friederike",
   "post_type": "post",
-  "excerpt": "\nThe start of a new year is an excellent occasion for audacious extrapolation. Based on 2016  developments, what do we expect for 2017?\n\nThis blog post covers five prominent trends: Deep Learning Beyond Cats, Chat Bots - Take Two, All the News In The World - Turning Text Into..."
+  "excerpt": "\nThe start of a new year is an excellent occasion for audacious extrapolation. Based on 2016  developments, what do we expect for 2017?\n\nThis blog post covers five prominent trends: Deep Learning Beyond Cats, Chat Bots - Take Two, All the News In The World - Turning Text Into...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2017-01-03-learning-to-use-react.md",
   "urlPath": "/posts/2017-01-03-learning-to-use-react",
+  "path_name": "/posts/2017-01-03-learning-to-use-react",
   "publishDate": "2017-01-03T15:00:00.000Z",
   "title": "Learning to Use React",
   "preview_image": "https://68.media.tumblr.com/3eefb9d8c2e3d798ca6dcead23017de9/tumblr_inline_oj7sj2BjWG1ta78fg_540.png",
@@ -33103,20 +36434,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Grant",
   "post_type": "post",
   "author_link": "https://twitter.com/grantcuster",
-  "excerpt": "\nReact and Redux helped us keep application state manageable in our probabilistic programming prototypes\n\nFor every topic we research at Fast Forward Labs, we create prototypes to show how the technology can be applied to make great products. Finite, stand-alone projects, our..."
+  "excerpt": "\nReact and Redux helped us keep application state manageable in our probabilistic programming prototypes\n\nFor every topic we research at Fast Forward Labs, we create prototypes to show how the technology can be applied to make great products. Finite, stand-alone projects, our...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2016-12-13-hilary-mason-at-data-driven-nyc.md",
   "urlPath": "/posts/2016-12-13-hilary-mason-at-data-driven-nyc",
+  "path_name": "/posts/2016-12-13-hilary-mason-at-data-driven-nyc",
   "publishDate": "2016-12-13T18:02:12.000Z",
   "title": "Hilary Mason at Data Driven NYC",
   "preview_image": "http://68.media.tumblr.com/706a85da781f730b2aa59f0dc0e965c4/tumblr_inline_oi4x9i4yhD1ta78fg_540.png",
   "feature": false,
   "published": true,
   "post_type": "Announcement",
-  "excerpt": "\nHilary Mason, Fast Forward Labs Founder &amp; CEO, gave a talk at November’s Data Driven NYC Meetup. Check it out to hear our thoughts on:\n\nHow innovation works in academia, startups, and large enterpriseWhy it often makes sense to build, not buy, AI productsHow to predict that..."
+  "excerpt": "\nHilary Mason, Fast Forward Labs Founder &amp; CEO, gave a talk at November’s Data Driven NYC Meetup. Check it out to hear our thoughts on:\n\nHow innovation works in academia, startups, and large enterpriseWhy it often makes sense to build, not buy, AI productsHow to predict that...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2016-12-12-machines-in-conversation.md",
   "urlPath": "/posts/2016-12-12-machines-in-conversation",
+  "path_name": "/posts/2016-12-12-machines-in-conversation",
   "publishDate": "2016-12-12T17:47:22.000Z",
   "title": "Machines in Conversation",
   "preview_image": "http://68.media.tumblr.com/692d44e33b12223b1e7fb77bb122ec99/tumblr_inline_oi327sddi71ta78fg_540.png",
@@ -33125,10 +36460,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Gridspace",
   "post_type": "Guest Post",
   "author_link": "https://www.gridspace.com/",
-  "excerpt": "\nWe at Fast Forward Labs have long been interested in speech recognition technologies. This year’s chatbot craze has seen growing interest in machines that interface with users in friendly, accessible language. Bots, however, only rarely understand the complexity of colloquial..."
+  "excerpt": "\nWe at Fast Forward Labs have long been interested in speech recognition technologies. This year’s chatbot craze has seen growing interest in machines that interface with users in friendly, accessible language. Bots, however, only rarely understand the complexity of colloquial...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2016-12-08-dimensionality-reduction-and-intuition.md",
   "urlPath": "/posts/2016-12-08-dimensionality-reduction-and-intuition",
+  "path_name": "/posts/2016-12-08-dimensionality-reduction-and-intuition",
   "publishDate": "2016-12-08T17:22:58.000Z",
   "title": "Dimensionality Reduction and Intuition",
   "preview_image": "http://68.media.tumblr.com/a97d30b7577d5fb32955853cb2ec7b17/tumblr_inline_ohvie7chq81ta78fg_540.png",
@@ -33137,10 +36474,12 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Kathryn",
   "post_type": "post",
   "author_link": "https://twitter.com/HumeKathryn",
-  "excerpt": "“I call our world Flatland, not because we call it so, but to make its nature clearer to you, my happy readers, who are privileged to live in Space.\"\n\nSo reads the first sentence of Edwin Abbott Abbott’s 1884 work of science fiction and social satire, Flatland: A Romance of Many..."
+  "excerpt": "“I call our world Flatland, not because we call it so, but to make its nature clearer to you, my happy readers, who are privileged to live in Space.\"\n\nSo reads the first sentence of Edwin Abbott Abbott’s 1884 work of science fiction and social satire, Flatland: A Romance of Many...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo.md",
   "urlPath": "/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo",
+  "path_name": "/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo",
   "publishDate": "2016-11-23T18:36:58.000Z",
   "title": "Probabilistic Data Structure Showdown: Cuckoo Filters vs. Bloom Filters",
   "preview_image": "/tumblr_files/pmrs-test.png",
@@ -33149,20 +36488,24 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Julius",
   "post_type": "Whitepaper",
   "author_link": "https://twitter.com/julius_adebayo",
-  "excerpt": "\n\nProbabilistic data structures store data compactly with low memory and provide approximate answers to queries about stored data. They are designed to answer queries in a space-efficient manner, which can mean sacrificing accuracy. However, they typically provide guarantees and..."
+  "excerpt": "\n\nProbabilistic data structures store data compactly with low memory and provide approximate answers to queries about stored data. They are designed to answer queries in a space-efficient manner, which can mean sacrificing accuracy. However, they typically provide guarantees and...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2016-09-19-job-opportunities-at-signal.md",
   "urlPath": "/posts/2016-09-19-job-opportunities-at-signal",
+  "path_name": "/posts/2016-09-19-job-opportunities-at-signal",
   "publishDate": "2016-09-19T17:30:04.000Z",
   "title": "Job Opportunities at Signal",
   "preview_image": "https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
   "feature": false,
   "published": true,
   "post_type": "Announcement",
-  "excerpt": "\nWe’re excited to partner with Prehype and an international news media organization to develop Signal, a new way to understand and structure large volumes of streaming news and media content. Signal will combine novel data with emerging algorithms. We're looking for a couple of..."
+  "excerpt": "\nWe’re excited to partner with Prehype and an international news media organization to develop Signal, a new way to understand and structure large volumes of streaming news and media content. Signal will combine novel data with emerging algorithms. We're looking for a couple of...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2016-08-26-exploring-deep-learning-on-satellite-data.md",
   "urlPath": "/posts/2016-08-26-exploring-deep-learning-on-satellite-data",
+  "path_name": "/posts/2016-08-26-exploring-deep-learning-on-satellite-data",
   "publishDate": "2016-08-26T17:43:24.000Z",
   "title": "Exploring Deep Learning on Satellite Data",
   "preview_image": "http://fastforwardlabs.github.io/blog-images/geo/empty_satellite_image.png",
@@ -33170,27 +36513,32 @@ __webpack_require__.r(__webpack_exports__);
   "published": true,
   "author": "Patrick Doupe",
   "post_type": "Guest Post",
-  "excerpt": "\nThis is a guest post featuring a project Patrick Doupe, now a Senior Data Analyst at Icahn School of Medicine at Mount Sinai, completed as a fellow in the Insight Data Science program. In our partnership with Insight, we occassionally advise fellows on month-long projects and..."
+  "excerpt": "\nThis is a guest post featuring a project Patrick Doupe, now a Senior Data Analyst at Icahn School of Medicine at Mount Sinai, completed as a fellow in the Insight Data Science program. In our partnership with Insight, we occassionally advise fellows on month-long projects and...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2016-08-25-new-tensorflow-code-for-text-summarization.md",
   "urlPath": "/posts/2016-08-25-new-tensorflow-code-for-text-summarization",
+  "path_name": "/posts/2016-08-25-new-tensorflow-code-for-text-summarization",
   "publishDate": "2016-08-25T17:24:14.000Z",
   "title": "New TensorFlow Code for Text Summarization",
   "preview_image": "http://68.media.tumblr.com/ecc5db59efcfa474331c6a1d2ec84824/tumblr_inline_och5k95kSe1ta78fg_540.png",
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nYesterday, Google released new TensorFlow model code for text summarization, specifically for generating news headlines on the Annotated English Gigaword dataset. We’re excited to see others working on summarization, as we did in our last report: our ability to “digest large..."
+  "excerpt": "\nYesterday, Google released new TensorFlow model code for text summarization, specifically for generating news headlines on the Annotated English Gigaword dataset. We’re excited to see others working on summarization, as we did in our last report: our ability to “digest large...",
+  "external_url": false
 }, {
   "filePath": "pages/posts/2016-08-24-next-economics-interview-with-jimi-crawford.md",
   "urlPath": "/posts/2016-08-24-next-economics-interview-with-jimi-crawford",
+  "path_name": "/posts/2016-08-24-next-economics-interview-with-jimi-crawford",
   "publishDate": "2016-08-24T16:18:12.000Z",
   "title": "Next Economics: Interview with Jimi Crawford",
   "preview_image": "http://68.media.tumblr.com/de9fc93bc4bda585c1bb51a785fc7801/tumblr_inline_ocf6npUoHK1ta78fg_540.png",
   "feature": false,
   "published": true,
   "post_type": "interview",
-  "excerpt": "\nBuilding shadows as proxies for construction rates in Shanghai. Photos courtesy of Orbital Insight/Digital Globe.\n\nIt’s no small feat to commercialize new technologies that arise from scientific and academic research. The useful is a small subset of the possible, and the..."
+  "excerpt": "\nBuilding shadows as proxies for construction rates in Shanghai. Photos courtesy of Orbital Insight/Digital Globe.\n\nIt’s no small feat to commercialize new technologies that arise from scientific and academic research. The useful is a small subset of the possible, and the...",
+  "external_url": false
 }]);
 
 /***/ }),
