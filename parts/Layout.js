@@ -1,10 +1,10 @@
-import Head from 'next/head'
 import { p } from '../parts/Utils'
+import Head from 'next/head'
 import { debounce } from 'lodash'
 import posts from '../posts'
 import { MDXProvider } from '@mdx-js/react'
 import { Hd, Vd, Rect } from '../parts/Dividers'
-import PostPreview from '../parts/PostPreview'
+import MorePostsPreview from '../parts/MorePostsPreview'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import darkTheme from 'prism-react-renderer/themes/nightOwl'
 
@@ -138,10 +138,8 @@ export class PostLayout extends React.Component {
       .toString()
       .padStart(2, '0')} ${post_date.getFullYear()}`
 
-    let preview_columns = Math.max(
-      (columns / 2) % 2 === 0 ? columns / 2 : columns / 2 - 1,
-      4
-    )
+    let preview_columns =
+      columns > 6 ? Math.floor(columns / 2 / 2) * 2 : columns
     let preview_offset = Math.max(0, columns / 2 - preview_columns)
 
     let half = Math.floor(columns / 2 / 2) * 2
@@ -461,90 +459,17 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
               </div>
             </div>
 
-            <div
-              style={{
-                position: 'relative',
-                display: columns > 6 ? 'grid' : 'block',
-                gridTemplateColumns: `repeat(2, 1fr)`,
-                marginBottom: grem,
-                width: half * 2 * column_width,
-                marginLeft: offset + ((columns - half * 2) / 2) * column_width,
-              }}
-            >
-              {prev_post ? (
-                <div
-                  style={{
-                    position: 'relative',
-                    display: 'grid',
-                    gridTemplateRows: 'auto 1fr',
-                  }}
-                >
-                  <div
-                    style={{
-                      textTransform: 'uppercase',
-                      fontSize: fs * 0.75,
-                      letterSpacing: '0.03em',
-                      lineHeight: 1.5,
-                      paddingBottom: grem / 4,
-                      paddingLeft: grem / 2,
-                    }}
-                  >
-                    Newer
-                  </div>
-                  <div style={{ position: 'relative', display: 'grid' }}>
-                    <PostPreview
-                      post={posts[prev_index]}
-                      grem={grem}
-                      ww={ww}
-                      column_width={column_width}
-                      fs={fs}
-                      ogrem={ogrem}
-                      columns={
-                        columns > 6 ? Math.floor(columns / 2 / 2) * 2 : columns
-                      }
-                    />
-                    <Rect />
-                  </div>
-                </div>
-              ) : null}
-
-              {next_post ? (
-                <div
-                  style={{
-                    position: 'relative',
-                    display: 'grid',
-                    gridTemplateRows: 'auto 1fr',
-                  }}
-                >
-                  <div
-                    style={{
-                      textTransform: 'uppercase',
-                      fontSize: fs * 0.75,
-                      letterSpacing: '0.03em',
-                      lineHeight: 1.5,
-                      paddingBottom: grem / 4,
-                      paddingLeft: grem / 2,
-                    }}
-                  >
-                    Older
-                  </div>
-                  <div style={{ position: 'relative', display: 'grid' }}>
-                    <PostPreview
-                      post={posts[next_index]}
-                      grem={grem}
-                      ww={ww}
-                      column_width={column_width}
-                      fs={fs}
-                      ogrem={ogrem}
-                      columns={
-                        columns > 6 ? Math.floor(columns / 2 / 2) * 2 : columns
-                      }
-                    />
-                    <Rect />
-                  </div>
-                </div>
-              ) : null}
-            </div>
+            <MorePostsPreview
+              columns={columns}
+              grem={grem}
+              column_width={column_width}
+              next_post={next_post}
+              offset={offset}
+              prev_post={prev_post}
+              fs={fs}
+              ww={ww}
+              ogrem={ogrem}
+            />
 
             <div style={{ paddingBottom: grem, paddingTop: grem }}>
               <div

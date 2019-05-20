@@ -199,7 +199,7 @@ class PostPreview extends React.Component {
                       }}
                     >
                       {columns === 4 && post.author ? (
-                        <span>by {post.author} | </span>
+                        <span>by {post.author} ◦ </span>
                       ) : null}
                       {post.excerpt}
                     </div>
