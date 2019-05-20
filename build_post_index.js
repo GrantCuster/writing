@@ -73,12 +73,27 @@ function readPostMetadata(postPath) {
   let excerpt = s.prune(removeMd(post.content), 140 * 2)
   // console.log(excerpt)
   let meta = post.data
+
+  let url_path = postPath
+    .replace(/\\/, '/')
+    .replace(/^pages/, '')
+    .replace(/\.mdx?$/, '')
+
+  // Modified for serving according to jekyll file path conventions
+  let path_name = url_path
+  if (process.argv[2] === 'prod') {
+    url_path =
+      url_path
+        .replace('/posts', '')
+        .replace('-', '/')
+        .replace('-', '/')
+        .replace('-', '/') + '.html'
+  }
+
   return {
     filePath: postPath,
-    urlPath: postPath
-      .replace(/\\/, '/')
-      .replace(/^pages/, '')
-      .replace(/\.mdx?$/, ''),
+    urlPath: url_path,
+    path_name: path_name,
     publishDate: new Date(meta.date),
     title: meta.title || path.basename(postPath),
     preview_image: meta.preview_image,

@@ -8,7 +8,7 @@
     "dev": "node ./build_post_index && next",
     "start": "next start",
     "build": "next build",
-    "export": "node ./build_post_index && next build && next export",
+    "export": "node ./build_post_index prod && next build && next export",
     "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "author": "",

@@ -9,11 +9,13 @@ import { Hd, Vd, Rect } from '../parts/Dividers'
 import posts from '../posts'
 import PostPreview from '../parts/PostPreview'
 
+let posts_per_page = 20
+
 class Index extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      showing_posts: 25,
+      showing_posts: posts_per_page,
     }
   }
 
@@ -33,6 +35,13 @@ class Index extends React.Component {
       wh,
       optimal,
     } = this.props
+
+    let post_groups = []
+    for (let i = 0; i < showing_posts / posts_per_page; i++) {
+      let _posts = posts.slice(i * posts_per_page, (i + 1) * posts_per_page)
+      post_groups.push(_posts)
+    }
+    console.log(post_groups)
 
     return (
       <div>
@@ -97,30 +106,58 @@ class Index extends React.Component {
                   position: 'relative',
                 }}
               >
-                {posts
-                  .filter(post => post.published === true)
-                  .slice(0, showing_posts)
-                  .map((post, i) => (
-                    <PostPreview
-                      key={post.title}
-                      post={post}
-                      grem={grem}
-                      ww={ww}
-                      fs={fs}
-                      ogrem={ogrem}
-                      columns={columns}
-                      column_width={column_width}
-                      extra_left={ogrem / 2 + offset}
-                      extra_right={ogrem / 2 + offset}
-                      adjust_left={-ogrem / 2}
-                      adjust_right={-ogrem / 2}
-                    />
-                  ))}
+                {post_groups.map((g, i) => {
+                  return (
+                    <div style={{ position: 'relative' }}>
+                      {i !== 0 ? (
+                        <div
+                          style={{
+                            paddingTop: grem * 2,
+                            paddingLeft: grem / 2,
+                            paddingRight: grem / 2,
+                            paddingBottom: grem / 2,
+                            fontSize: fs * 1.25,
+                            lineHeight: 1.5,
+                          }}
+                        >
+                          Page {i + 1}
+                        </div>
+                      ) : null}
+                      {g
+                        .filter(post => post.published === true)
+                        .map((post, i) => (
+                          <PostPreview
+                            key={post.title}
+                            post={post}
+                            grem={grem}
+                            ww={ww}
+                            fs={fs}
+                            ogrem={ogrem}
+                            columns={columns}
+                            column_width={column_width}
+                            extra_left={ogrem / 2 + offset}
+                            extra_right={ogrem / 2 + offset}
+                            adjust_left={-ogrem / 2}
+                            adjust_right={-ogrem / 2}
+                          />
+                        ))}
+                      <div
+                        style={{
+                          position: 'relative',
+                          marginLeft: -grem / 2,
+                          marginRight: -grem / 2,
+                        }}
+                      >
+                        <Hd align="b" />
+                      </div>
+                    </div>
+                  )
+                })}
                 {showing_posts < posts.length ? (
                   <button
                     className="gray-backer"
                     onClick={() => {
-                      this.setState({ showing_posts: showing_posts + 25 })
+                      this.setState({ showing_posts: showing_posts + 20 })
                     }}
                     style={{
                       display: 'block',

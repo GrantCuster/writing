@@ -144,11 +144,24 @@ export default class MyApp extends App {
       optim_width,
     }
 
-    console.log(grid_props)
-
     return (
       <Container>
         <style jsx global>{`
+          @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            src: url('static/fonts/Inter-Regular.woff2?v=3.5') format('woff2'),
+              url('static/fonts/Inter-Regular.woff?v=3.5') format('woff');
+          }
+          @font-face {
+            font-family: 'Inter';
+            font-style: italic;
+            font-weight: 400;
+            src: url('static/fonts/Inter-Italic.woff2?v=3.5') format('woff2'),
+              url('static/fonts/Inter-Italic.woff?v=3.5') format('woff');
+          }
+
           * {
             box-sizing: border-box;
           }

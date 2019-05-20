@@ -68,7 +68,10 @@ class PostPreview extends React.Component {
     }
 
     return (
-      <Link href={post.external_url ? post.external_url : post.urlPath}>
+      <Link
+        href={post.external_url ? post.external_url : post.path_name}
+        as={post.external_url ? post.external_url : post.urlPath}
+      >
         <a
           className="hover-box no-underline no-hover gray-backer hover-extend"
           key={post.urlPath}

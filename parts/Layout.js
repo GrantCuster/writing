@@ -30,9 +30,9 @@ export class PostLayout extends React.Component {
     } = this.props
 
     console.log(this.props)
-    console.log(column_width)
+    console.log(pathname)
 
-    let post_index = posts.map(p => p.urlPath).indexOf(pathname)
+    let post_index = posts.map(p => p.path_name).indexOf(pathname)
     let prev_index = post_index - 1
     let next_index = post_index + 1
     let post = posts[post_index]
