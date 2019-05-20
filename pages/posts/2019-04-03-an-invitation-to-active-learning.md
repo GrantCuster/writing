@@ -1,11 +1,11 @@
 ---
-title: "An Invitation to Active Learning"
-date: "2019-04-03"
-preview_image: "/images/editor_uploads/2019-04-04-171937-uncertainty_sampling_observable_fast.gif"
+title: 'An Invitation to Active Learning'
+date: '2019-04-03'
+preview_image: '/images/editor_uploads/2019-04-04-171937-uncertainty_sampling_observable_fast.gif'
 feature: false
 published: true
-author_link: "https://twitter.com/_cjwallace"
-author: "Chris"
+author_link: 'https://twitter.com/_cjwallace'
+author: 'Chris'
 ---
 
 Many interesting learning problems exist in places where labeled data is limited.
@@ -26,16 +26,15 @@ The active learning process forms a loop:
 5. GOTO 1.
 
 ![The active learning loop in action](/images/editor_uploads/2019-04-04-171937-uncertainty_sampling_observable_fast.gif)
-_The active learning loop in action - try out the [demo](https://observablehq.com/@cjwallace/an-invitation-to-active-learning)!_
+
+##### The active learning loop in action - try out the [demo](https://observablehq.com/@cjwallace/an-invitation-to-active-learning)!
 
 The essence of active learning is in the _strategy_ we choose in the loop above.
 Three broad families of strategy are:
 
-- *Random sampling*. In the default case, we sample unlabeled data from the pool randomly. This is a passive approach where we don't use the output of the current model to inform the next data point to be labeled. As such, it isn't really active learning.
-
-- *Uncertainty sampling*. In uncertainty sampling, we choose the data point about which the algorithm is least certain to label next. This could be the point closest to the decision boundary (the least confident prediction), or it could be the point with highest entropy, or other measure of uncertainty. Choosing points as such helps our learning algorithm refine the decision boundary.
-
-- *Density sampling*. Uncertainty sampling works much better than random sampling, but by definition it causes the data points we choose to label to cluster around the decision boundary. This data may be very informative, but not necessarily representative. In density sampling, we try to sample from regions where there are many data points. The trade off between informativeness and representativeness is fundamental to active learning, and there are many approaches that address it.
+- _Random sampling_: In the default case, we sample unlabeled data from the pool randomly. This is a passive approach where we don't use the output of the current model to inform the next data point to be labeled. As such, it isn't really active learning.
+- _Uncertainty sampling_: In uncertainty sampling, we choose the data point about which the algorithm is least certain to label next. This could be the point closest to the decision boundary (the least confident prediction), or it could be the point with highest entropy, or other measure of uncertainty. Choosing points as such helps our learning algorithm refine the decision boundary.
+- _Density sampling_: Uncertainty sampling works much better than random sampling, but by definition it causes the data points we choose to label to cluster around the decision boundary. This data may be very informative, but not necessarily representative. In density sampling, we try to sample from regions where there are many data points. The trade off between informativeness and representativeness is fundamental to active learning, and there are many approaches that address it.
 
 To illustrate the difference between passive and active learning, we created an Observable notebook with a toy problem, which you can explore [here](https://observablehq.com/@cjwallace/an-invitation-to-active-learning).
 In the notebook, the goal is to find a good separation of red and blue points on a two dimensional chart, and we train a logistic regression model live in the browser to do so.

@@ -25,7 +25,7 @@ export default [
     "feature": true,
     "published": true,
     "author": "Shioulin and Nisha",
-    "post_type": "Featured post",
+    "post_type": "post",
     "excerpt": "\nWe are excited to release Learning with Limited Labeled Data, the latest report and prototype from Cloudera Fast Forward Labs.\n\nBeing able to learn with limited labeled data relaxes the stringent labeled data requirement for supervised machine learning. Our report focuses on...",
     "external_url": false
   },
@@ -39,7 +39,7 @@ export default [
     "feature": false,
     "published": true,
     "author": "Shioulin and Nisha",
-    "post_type": "Featured post",
+    "post_type": "post",
     "excerpt": "\nIn recent years, machine learning technologies - especially deep learning - have made breakthroughs which have turned science fiction into reality. Autonomous cars are almost possible, and machines can comprehend language. These technical advances are unprecedented, but they...",
     "external_url": false
   },
@@ -419,7 +419,7 @@ export default [
     "author": "Friederike",
     "post_type": "post",
     "author_link": "https://www.linkedin.com/in/friederikeschueuer/",
-    "excerpt": "\nWe are excited to share the latest report and prototype from our machine\nintelligence R&D team: Multi-Task Learning.\n\nFF08 Multi-Task Learning\n\nWax on.. face off!\nWhen humans learn new tasks, we take advantage of knowledge we've gained from\nlearning, or having learned, related...",
+    "excerpt": "\nWe are excited to share the latest report and prototype from our machine\nintelligence R&D team: Multi-Task Learning.\n\nFF08 Multi-Task Learning\n\nWax on.. face off!\n\nWhen humans learn new tasks, we take advantage of knowledge we've gained from\nlearning, or having learned, related...",
     "external_url": false
   },
   {
@@ -672,19 +672,6 @@ export default [
     "post_type": "Fast Forward Food Labs",
     "author_link": "https://www.flickr.com/photos/jqpubliq",
     "excerpt": "\nIn the spirit of Valentine's Day, we at Fast Forward Labs thought it would be fun to bake cookies for our sweethearts. Being DIY nerds, we thought we'd math it up a bit.\n\nWe used python to generate probability distributions and matplotlib to check our distributions. Then we...",
-    "external_url": false
-  },
-  {
-    "filePath": "pages/posts/2018-02-08-the-post-editor-did-this.md",
-    "urlPath": "/posts/2018-02-08-the-post-editor-did-this",
-    "path_name": "/posts/2018-02-08-the-post-editor-did-this",
-    "publishDate": "2018-02-08T23:02:00.000Z",
-    "title": "The post editor edited this",
-    "preview_image": "/images/editor_uploads/2018-02-08-170315-ff_logo_white_bg.png",
-    "feature": false,
-    "published": true,
-    "post_type": "post",
-    "excerpt": "\nFast Forward Labs is a machine intelligence research company. Our unique applied research program helps organizations innovate with data science and machine learning.\n\nWe recently wrote a report on Semantic Recommendations.\n\nWhat We Do\n\nFast Forward Labs helps organizations...",
     "external_url": false
   },
   {
@@ -955,18 +942,6 @@ export default [
     "post_type": "post",
     "author_link": "http://www.linkedin.com/in/friederikeschueuer",
     "excerpt": "\nHenry VIII of England had many relationships. We build a classifier to predict whether relationships are going to last, or not, and used Local Interpretable Model-Agnostic Explanations (LIME) to understand the predicted success or failure of given relationships.\n\nLast month we...",
-    "external_url": false
-  },
-  {
-    "filePath": "pages/posts/2017-08-22-individ_subscribe_announce.md",
-    "urlPath": "/posts/2017-08-22-individ_subscribe_announce",
-    "path_name": "/posts/2017-08-22-individ_subscribe_announce",
-    "publishDate": null,
-    "title": "2017-08-22-individ_subscribe_announce.md",
-    "feature": false,
-    "published": true,
-    "post_type": "post",
-    "excerpt": "\nAnnouncing Individual User Subscriptions\n\nFor the past three months at Fast Forward Labs we have been beta-testing a subscription option for individuals who would love to read our reporting on emerging capabilities in machine learning and dig further into field even if they're...",
     "external_url": false
   },
   {

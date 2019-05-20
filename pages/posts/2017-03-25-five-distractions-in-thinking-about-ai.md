@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Five Distractions in Thinking about AI"
+title: 'Five Distractions in Thinking about AI'
 date: 2017-03-22 15:30
 preview_image: https://quamproxime.files.wordpress.com/2017/03/screen-shot-2017-03-25-at-1-28-55-pm.png
 feature: false
@@ -20,9 +20,8 @@ author_link: https://twitter.com/HumeKathryn
 <p>Anytime he hears rumblings that AI is going to replace the workforce as we know it, my father, who has 40 years of experience in software engineering, most recently in natural language processing and machine learning, placidly mentions <a href="https://en.wikipedia.org/wiki/Desk_Set">Desk Set</a>, a 1957 romantic comedy featuring the always lovable Spencer Tracy and Katharine Hepburn. Desk Set features a group of librarians at a national broadcasting network who fear their job security when an engineer is brought in to install EMERAC (named after IBM&#8217;s <a href="https://en.wikipedia.org/wiki/ENIAC">ENIAC</a>), an &#8220;electronic brain&#8221; that promises to do a better job fielding consumer trivia questions than they do. The film is both charming and prescient, and will seem very familiar to anyone reading about a <a href="https://www.theatlantic.com/magazine/archive/2015/07/world-without-work/395294/">world without work</a>. The best scene features a virtuoso feat of associative memory showing the sheer brilliance of the character played by Katharine Hepburn (winning Tracy&#8217;s heart in the process), a brilliance the primitive electronic brain would have no chance of emulating. The movie ends with a literal <a href="https://en.wikipedia.org/wiki/Deus_ex_machina">deus ex machina</a> where a machine accidentally prints pink slips to fire the entire company, only to get shut down due to its rogue disruption on operations.</p>
 
 <div class="video-holder">
-<iframe class='youtube-player' type='text/html' width='648' height='395' src='https://www.youtube.com/embed/pEoFFYH_m0Q?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true' style='border:0;'></iframe>
+<iframe class='youtube-player' type='text/html' width='648' height='395' src='https://www.youtube.com/embed/pEoFFYH_m0Q?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true'></iframe>
 </div>
-
 
 ##### The Desk Set scene where Katharine Hepburn shows a robot is no match for her intelligence.
 
@@ -67,6 +66,7 @@ author_link: https://twitter.com/HumeKathryn
 <h2>Conclusion</h2>
 <p>As mentioned at the beginning of this post, collective fictions are the driving force of group alignment and activity. They are powerful, beautiful, the stuff of passion and motivation and awe. The fictions we create about the potential of AI may just be the catalyst to drive real impact throughout society. That&#8217;s nothing short of amazing, as long as we can step back and make sure we don&#8217;t forgot the hard work required to realize these visions, and the risks we have to address along the way.</p>
 <p>&nbsp;</p>
-##### * <a href="https://www.youtube.com/watch?v=0xyIcZY0cDI">Sam Harris</a> and <a href="http://a16z.com/2017/02/23/yuval-harari-from-homo-sapiens-to-homo-deus/">a16z</a> recently interviewed Harari on their podcasts. Both of these podcasts are consistently excellent.
 
-##### **One of my favorite professors at Stanford, <a href="https://dlcl.stanford.edu/people/russell-berman">Russell Berman</a>, argued something similar in <em><a href="https://www.uipress.uiowa.edu/books/2007-fall/bermanficset.html">Fiction Sets You Free</a></em>. Berman focuses more on the liberating power to use fiction to imagine a world and political situation different from the present conditions. His book also comments of the unique historicity of fiction, where works at different period refer back to precedents and influencers from the past.
+##### \* <a href="https://www.youtube.com/watch?v=0xyIcZY0cDI">Sam Harris</a> and <a href="http://a16z.com/2017/02/23/yuval-harari-from-homo-sapiens-to-homo-deus/">a16z</a> recently interviewed Harari on their podcasts. Both of these podcasts are consistently excellent.
+
+##### \*\* One of my favorite professors at Stanford, <a href="https://dlcl.stanford.edu/people/russell-berman">Russell Berman</a>, argued something similar in <em><a href="https://www.uipress.uiowa.edu/books/2007-fall/bermanficset.html">Fiction Sets You Free</a></em>. Berman focuses more on the liberating power to use fiction to imagine a world and political situation different from the present conditions. His book also comments of the unique historicity of fiction, where works at different period refer back to precedents and influencers from the past.

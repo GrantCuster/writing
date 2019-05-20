@@ -50,6 +50,7 @@ class PostPreview extends React.Component {
       extra_right = 0,
       adjust_left = 0,
       adjust_right = 0,
+      border_top = true,
     } = this.props
     let { top_height, bottom_height } = this.state
     let post_date = new Date(post.publishDate)
@@ -282,7 +283,7 @@ class PostPreview extends React.Component {
               </div>
             ) : null}
           </div>
-          <Hd align="t" />
+          {border_top ? <Hd align="t" /> : null}
         </a>
       </Link>
     )

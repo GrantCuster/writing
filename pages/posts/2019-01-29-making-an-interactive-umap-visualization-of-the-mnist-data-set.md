@@ -1,17 +1,17 @@
 ---
-title: "Making an interactive UMAP visualization of the MNIST data set"
-date: "2019-01-29 12:01 -0500"
-preview_image: "http://feed.grantcuster.com/static/images/feed/umap_zoom-1547839236092.gif"
+title: 'Making an interactive UMAP visualization of the MNIST data set'
+date: '2019-01-29 12:01 -0500'
+preview_image: 'http://feed.grantcuster.com/static/images/feed/umap_zoom-1547839236092.gif'
 feature: false
 published: true
-author: "Grant"
-author_link: "https://twitter.com/grantcuster"
-post_type: "newsletter"
+author: 'Grant'
+author_link: 'https://twitter.com/grantcuster'
+post_type: 'newsletter'
 ---
 
 ![A GIF of zooming into the MNIST visualization](http://feed.grantcuster.com/static/images/feed/umap_zoom-1547839236092.gif)
 
-_[UMAP explorer: an interactive visualization of the MNIST data set](https://grantcuster.github.io/umap-explorer)_
+##### [UMAP explorer: an interactive visualization of the MNIST data set](https://grantcuster.github.io/umap-explorer)
 
 We're in the middle of work on our next report, _Learning with Limited Labeled Data_, and the accompanying prototype. For the prototype's front-end we wanted to be able visualize and explore the embedding of a large image data set. Once you get into the tens of thousands of points, this can be a challenge to do in the browser. To determine whether what we wanted to do on the front-end was possible, I decided to make a demo focused on the MNIST hand-written digit data set. After some dead ends and a lot of Stack Overflow searching, it turns out it is possible, and I shared the result as [an interactive UMAP visualization of the MNIST data set](https://grantcuster.github.io/umap-explorer/).
 
@@ -35,7 +35,7 @@ It took me a while to get there, but the key turned out to be this [WestLangley 
 
 ![](https://grantcuster.github.io/umap-explorer/mnist_tile_solid_0.png)
 
-_A texture atlas of one chunk of the MNIST dataset._
+##### Texture atlas of one chunk of the MNIST dataset.
 
 Another big help in making this was [Douglas Duhaime's post on using three.js to visualize TSNE maps](https://douglasduhaime.com/posts/visualizing-tsne-maps-with-three-js.html). Finding Douglas's post and project reassured me that I was on the right path. It also provided lots of information about texture atlases. Including the info that for some devices, 2048x2048 is the largest size allowed.
 
@@ -53,7 +53,7 @@ For highlighting, I again used an approach from my past project. Using three.js'
 
 ![A GIF of the transition between UMAP and T-SNE](http://feed.grantcuster.com/static/images/feed/umap_tsne_umap-1548104013595.gif)
 
-_I recently got transitions between UMAP and T-SNE running._
+##### I recently got transitions between UMAP and T-SNE running.
 
 - I'd love to see what you could do by switching sprite sheets for different zoom levels. If you used different resolution sprites for different zoom levels, you might get better performance. It could also be interesting to switch to something more abstract (like a circle sprite) when you're zoomed out, and then switch over to the images only when you're zoomed in enough that they're useful.
 - Different scaling of points on zoom. Like I said, I don't think I nailed this part. I'd love to see someone take a more rigorous approach to it.

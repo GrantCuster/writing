@@ -1,6 +1,6 @@
---- 
+---
 layout: post
-title: "The Product Possibilities of Interpretability"
+title: 'The Product Possibilities of Interpretability'
 date: 2017-09-28 10:30
 preview_image: /images/2017/09/refractor-local.gif
 feature: true
@@ -23,7 +23,7 @@ During their development, it promises better processes for feature engineering
 and model debugging. After completion, it can enhance users' understanding of
 the system being modeled and advise on what actions to take.
 
-<div class="html-video-holder"><video controls="true" autoplay="true" loop="true" src="/images/2017/09/refractor-wide.mp4"></video></div>
+<div class="html-video-holder"><video controls="true" autoplay="true" loop="true" src="/static/images/2017/09/refractor-wide.mp4"></video></div>
 
 ##### The Refractor prototype shows how different attributes affect a customer's likelihood to churn.
 
@@ -49,7 +49,7 @@ globally oriented view. The stacked local interpretations, however, coalesce
 into a powerful global representation of how the algorithm works. For many
 complex algorithms, this is the only kind of global view you can have.
 
-<div class="html-video-holder"><video controls="true" autoplay="true" loop="true" src="/images/2017/09/refractor-global.mp4"></video></div>
+<div class="html-video-holder"><video controls="true" autoplay="true" loop="true" src="/static/images/2017/09/refractor-global.mp4"></video></div>
 
 ##### The global table displays the churn probability prediction (calculated by the model) and highlights in red and blue the importance of different features in making that prediction (as calculated by LIME). Columns can be sorted by value to explore the relationships across customers.
 
@@ -80,7 +80,7 @@ While the table view is a powerful interface, it can feel overwhelming. For
 this prototype, we wanted to complement it with an individual customer view
 that would focus on actions you could take in relation to a specific customer.
 
-<div class="html-video-holder"><video controls="true" autoplay="true" loop="true" src="/images/2017/09/refractor-customer.mp4"></video></div>
+<div class="html-video-holder"><video controls="true" autoplay="true" loop="true" src="/static/images/2017/09/refractor-customer.mp4"></video></div>
 
 ##### The individual customer view shifts the focus from comparisons across customers to one particular customer.
 
@@ -92,7 +92,7 @@ customer service representative looking for ways to decrease the chance the
 customer will leave, this list can function as a checklist of things to try to
 change.
 
-<div class="html-video-holder"><video controls="true" autoplay="true" loop="true" src="/images/2017/09/refractor-sort.mp4"></video></div>
+<div class="html-video-holder"><video controls="true" autoplay="true" loop="true" src="/static/images/2017/09/refractor-sort.mp4"></video></div>
 
 ##### Using LIME, we can sort customer attributes by their relative importance to the churn prediction.
 
@@ -106,7 +106,7 @@ further information. The recommendation side panel highlights the top three
 and uses the model to calculate the percent reduction in
 churn probability that changing each feature would have.
 
-<div class="html-video-holder"><video controls="true" autoplay="true" loop="true" src="/images/2017/09/refractor-recommendations.mp4"></video></div>
+<div class="html-video-holder"><video controls="true" autoplay="true" loop="true" src="/static/images/2017/09/refractor-recommendations.mp4"></video></div>
 
 ##### The recommendation sidebar highlights the top possible churn reduction actions.
 
@@ -137,7 +137,7 @@ discernible effect on the churn prediction?
 
 ![A screenshot of an early version of the Refractor prototype. Only the top three features are shown.](/images/2017/09/4b-ps-3.png)
 
-##### Early interface experiments displayed only the top three features for each customer. The view was focused but provided the user with less context to understand the model. 
+##### Early interface experiments displayed only the top three features for each customer. The view was focused but provided the user with less context to understand the model.
 
 We experimented with interfaces emphasizing just the top features, and they did
 have the benefit of being more clear and focused. However, the loss of context

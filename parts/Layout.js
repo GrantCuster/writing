@@ -29,9 +29,6 @@ export class PostLayout extends React.Component {
       optim_width,
     } = this.props
 
-    console.log(this.props)
-    console.log(pathname)
-
     let post_index = posts.map(p => p.path_name).indexOf(pathname)
     let prev_index = post_index - 1
     let next_index = post_index + 1
@@ -186,7 +183,7 @@ export class PostLayout extends React.Component {
           h4 {
             font-size: ${fs * 1.25}px;
             line-height: 1.25;
-            padding-top: ${grem}px;
+            padding-top: ${0}px;
             margin-bottom: ${grem}px;
           }
           h5 {
@@ -202,6 +199,19 @@ export class PostLayout extends React.Component {
           }
           p {
             margin: 0 0 ${grem}px 0;
+          }
+          ol, ul {
+            margin: 0 0 ${grem}px 0;
+            padding-left: ${grem}px;
+          }
+          blockquote {
+            margin: 0 0 ${grem}px ${grem}px;
+          }
+          .html-video-holder {
+            margin: 0 0 ${grem}px 0;
+          }
+          video {
+            max-width: 100%;
           }
         `}</style>
         <style jsx global>{`

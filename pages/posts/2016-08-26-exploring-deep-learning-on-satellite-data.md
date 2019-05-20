@@ -2,8 +2,8 @@
 title: Exploring Deep Learning on Satellite Data
 date: 2016-08-26 17:43:24 Z
 tags:
-- deep learning
-- code
+  - deep learning
+  - code
 layout: post
 redirect_from:
   - /post/149516029368/exploring-deep-learning-on-satellite-data
@@ -34,17 +34,23 @@ author: Patrick Doupe
 <p>Not really. You see, a satellite image is not a collection of independent pixels. Each pixel is connected to other pixels and this connection has meaning. A mountain range is connected across pixels and human built infrastructure is connected across pixels. We want to retain this information. Instead of modelling pixels independently, we need to model pixels in connection with their neighbours.</p>
 <p>Convolutional neural networks (hereafter, &ldquo;convnets&rdquo;) do exactly this. These networks are super powerful at image classification, with many models reporting better accuracy than humans. What we can do is swap the loss function and run a regression.</p>
 <img src="http://fastforwardlabs.github.io/blog-images/geo/convnet-01-ffl.png" alt="Figure of Convolutional Neural Network showing the processing of an image of a horse" style="max-width: 360px"/>
+
 ##### Diagram of a simple convolutional neural network processing an input image. From Fast Forward Labs report on Deep Learning: Image Analysis
+
 <h2 id="training-the-model">Training the model</h2>
 <p>Unfortunately convnets can be hard to train. First, there are a lot of parameters to set in a convnet: how many convolutional layers? Max-pooling or average-pooling? How do I initialise my weights? Which activations? It&rsquo;s super easy to get overwhelmed. Micha suggested I use the well known VGGNet as a starting base for a model. For other parameters, I based the network on what seemed to be the current best practices. I learned these by following this winter&rsquo;s <a href="http://cs231n.github.io/neural-networks-2/">convolutional neural network course at Stanford</a>.</p>
 <p>Second, they take a lot of time and data to train. This results in training periods of hours to weeks, while we want fast results for a prototype. One option is to use pre-trained models, like those available at the <a href="https://github.com/BVLC/caffe/wiki/Model-Zoo">Caffe model zoo</a>. I was writing my model using the <a href="http://keras.io">Keras</a> python library, which at present doesn&rsquo;t have as large a zoo of models. Instead, I chose to use a smaller model and see if the results pointed in a promising direction.</p>
 <h2 id="results">Results</h2>
 <p>To validate the model, I used data from on Washington and Victoria, Australia. I show the model&rsquo;s accuracy on the following scatter plot of the model&rsquo;s predictions against reality. The unit of observation is the small image-observation used by the network and I estimate the population density in an image. Since each image size is the same, this is the same as estimating population. Last, the data is quasi log-normalised[6]. Let&rsquo;s start with Washington</p>
-<img src="http://fastforwardlabs.github.io/blog-images/geo/washington.png" alt="Washington State"/>
+<p><img src="http://fastforwardlabs.github.io/blog-images/geo/washington.png" alt="Washington State"/></p>
+
 ##### Washington State
+
 <p>We see that the model is picking up the signal. Higher actual population densities are associated with higher model predictions. Also noticeable is that the model struggles to estimate regions of zero population density. The R<sup>2</sup> of the model is 0.74. That is, the model explains about 74 percent of the spatial variation in population. This is up from 26 percent in the four weeks achieved in Insight.</p>
-<img src="http://fastforwardlabs.github.io/blog-images/geo/victoria.png" alt="Victoria"/>
+<p><img src="http://fastforwardlabs.github.io/blog-images/geo/victoria.png" alt="Victoria"/></p>
+
 ##### Victoria
+
 <p>A harder test is a region like Victora with a different natural and built environment. The scatter plot of model performance shows the reduced performance. The model&rsquo;s inability to pick regions of low population is more apparent here. Not only does the model struggle with areas of zero population, it predicts higher population for low population areas. Nevertheless, with an R<sup>2</sup> of 0.63, the overall fit is good for a harder test.</p>
 <p>An interesting outcome is that the regression estimates are quite similar for both Washington and Victoria: the model consistently underestimates reality. In sample, we still have a model that underestimates population. Given that the images are unlikely to have enough information to identify human settlements at current resolution, it&rsquo;s understandable that the model struggles to estimate population in these regions.</p>
 <table><thead><tr class="header"><th align="left">Variable</th>

@@ -1,6 +1,6 @@
---- 
+---
 layout: post
-title: "First Look: Using Three.js for 2D Data Visualization"
+title: 'First Look: Using Three.js for 2D Data Visualization'
 date: 2017-10-04 10:30
 preview_image: http://blog.fastforwardlabs.com/images/2017/10/tsne-final.png
 author: Grant
@@ -26,15 +26,14 @@ Twitter ([@grantcuster](//www.twitter.com/GrantCuster)).
 
 ## What I'm after
 
-![A screenshot of the final working demo: a plotted t-sne with working pan and zoom.](//blog.fastforwardlabs.com/images/2017/10/tsne-final.png)
+![A screenshot of the final working demo: a plotted t-sne with working pan and zoom.](/images/2017/10/tsne-final.png)
 
 ##### The final result: [a T-SNE rendered in three.js with a map style pan and zoom](https://codepen.io/GrantCuster/pen/rGGRRp).
 
 I want to render a visualization with tens of thousands of points. I want to be
 able to zoom into that visualization by scrolling and pan by clicking and
 dragging (think [Google Maps](//maps.google.com)). I want the zoom to follow the
-position of the mouse and I want that zoom to feel smooth and responsive. I also want the browser to
-not crash when I do those things.
+position of the mouse and I want that zoom to feel smooth and responsive. I also want the browser to not crash when I do those things.
 
 ## Challenges
 
@@ -70,20 +69,20 @@ I'd also seen a bit of what WebGL could do while working on our [Probabilistic R
 Estate prototype](http://fastforwardlabs.github.io/pre), which uses [Mapbox's
 WebGL library](https://www.mapbox.com/mapbox-gl-js/api/). For knowledge of
 canvas and three.js strategies, I was lucky to have the examples of two great
-past projects from FFL interns. 
+past projects from FFL interns.
 
 - [Aditya](//www.twitter.com/whaleandpetnuia) used D3 rendered to canvas in his
   [visualization of a community's taste in
-movies](http://fastforwardlabs.github.io/cinephile_tsne/). I watched him push
-canvas rendering to its limits, rendering around 20,000 points. 
+  movies](http://fastforwardlabs.github.io/cinephile_tsne/). I watched him push
+  canvas rendering to its limits, rendering around 20,000 points.
 - [Sepand](//sepans.com/) used three.js to render his [visualization
   of Wikipedia articles](//www.fastforwardlabs.com/encartopedia). He was able to
-render 100,000 points without framerate issues. Coming (like me) from D3
-experience, he had to invest considerable dev time in understanding
-three.js's camera system.
+  render 100,000 points without framerate issues. Coming (like me) from D3
+  experience, he had to invest considerable dev time in understanding
+  three.js's camera system.
 
 Based on those experiences, I went into this project thinking I'd use three.js. It also just
-seemed like fun. Three.js comes more out of the game dev world 
+seemed like fun. Three.js comes more out of the game dev world
 than the web app one I'm used to. A lot of recent web app
 innovation has come from adopting techniques from the video game world, so I was
 excited about the opportunity to further explore that path.
@@ -105,7 +104,7 @@ some work into trying to understand the [PerspectiveCamera](https://threejs.org/
 things to render at the size I was after I mainly used trial and error of
 plugging in different parameters. One of the downsides of rendering to a canvas
 (rather than HTML or SVG) is that you don't have a DOM to inspect for debugging.
-Often I'd find myself  with a blank canvas and I'd have to retrace my steps to a
+Often I'd find myself with a blank canvas and I'd have to retrace my steps to a
 point where things were working. I made frequent reference to [Sepand's
 code](https://github.com/sepans/wikiviz).
 
@@ -113,14 +112,13 @@ code](https://github.com/sepans/wikiviz).
 
 One of the video game techniques you use in three.js is the animation loop:
 
-
 ```javascript
 // Three.js render loop
 function animate() {
-  requestAnimationFrame(animate);
-  renderer.render(scene, camera);
+  requestAnimationFrame(animate)
+  renderer.render(scene, camera)
 }
-animate();
+animate()
 ```
 
 Rather than having logic set up to only re-draw when things change, the animation
@@ -132,7 +130,7 @@ read them!) but it's fun for me to discover connections as I go.
 
 ### Z-Fighting
 
-![A screenshot of the flickering points debug demo.](//blog.fastforwardlabs.com/images/2017/10/z-fighting.png)
+![A screenshot of the flickering points debug demo.](/images/2017/10/z-fighting.png)
 
 ##### An early challenge: [flickering caused by z-fighting](https://codepen.io/GrantCuster/pen/GMmPxx)
 
@@ -191,20 +189,21 @@ WestLangley](https://stackoverflow.com/questions/13055214/mouse-canvas-x-y-to-th
 directed zoom working:
 
 ```javascript
-var vector = new THREE.Vector3();
+var vector = new THREE.Vector3()
 
 vector.set(
-    ( event.clientX / window.innerWidth ) * 2 - 1,
-    - ( event.clientY / window.innerHeight ) * 2 + 1,
-    0.5 );
+  (event.clientX / window.innerWidth) * 2 - 1,
+  -(event.clientY / window.innerHeight) * 2 + 1,
+  0.5
+)
 
-vector.unproject( camera );
+vector.unproject(camera)
 
-var dir = vector.sub( camera.position ).normalize();
+var dir = vector.sub(camera.position).normalize()
 
-var distance = - camera.position.z / dir.z;
+var distance = -camera.position.z / dir.z
 
-var pos = camera.position.clone().add( dir.multiplyScalar( distance ) );
+var pos = camera.position.clone().add(dir.multiplyScalar(distance))
 ```
 
 It projects a ray from the camera through the mouse position. You can then
@@ -212,7 +211,7 @@ move along that ray on the z-axis, using the `z` value to get back new `x` and
 `y` coordinates. In [my code](https://codepen.io/GrantCuster/pen/rGGRRp), I'm taking the scale from D3's zoom behavior and
 plugging it in as the new `z` value. I can then use the `x` and `y` values to set the
 new camera position and get the directed zoom effect I was after. My
-understanding of *exactly* what's happening here is still fuzzy, I tried
+understanding of _exactly_ what's happening here is still fuzzy, I tried
 dissecting it a bit and hope to do more in the future. For now, though, it
 works.
 
@@ -237,10 +236,10 @@ crashes, but it would be a big help for getting started.
 While looking for a panning solution, I found [Andrei Kashcha's
 three.map.control](https://github.com/anvaka/three.map.control),
 which conceptually had the things I was after for both directed zoom and
-panning. I did not like the zoom feel, however. In my opinion it moves 
+panning. I did not like the zoom feel, however. In my opinion it moves
 too fast and the thresholding makes it jerky. The momentum setting on the
 panning is also not what I was after.
- 
+
 I checked out the code, and found the `getCurrentScale`
 function which calculates the current scale based on the camera settings and `z`
 value. Using this along with the `movementX` and `movementY` events from D3's
@@ -250,47 +249,47 @@ far you'd dragged) yielded the pan behavior I was after.
 I experimented with using `getCurrentScale` to replace the ray function I was using for zoom.
 It seemed cleaner to have the directed zoom and panning operating off the same
 logic. After a fair amount of experimenting I got values fairly close to the ray
-method – but not close enough. It felt like I was zooming on ice.  I'm
+method – but not close enough. It felt like I was zooming on ice. I'm
 still 90% sure can be done, but after crashing the browser a bunch
 of times trying to figure it out, I decided to stick with the current working
 configuration.
 
 ## A practical success
 
-So, after lots of experimentation, crashes, and help from other people's code, 
+So, after lots of experimentation, crashes, and help from other people's code,
 I made it to [a working example with tens of thousands of
 points, and the zoom and panning behavior I was
 after](https://codepen.io/GrantCuster/pen/rGGRRp). I'd like to tighten up the
-code for that behavior as well as my understanding of it, but that's 
+code for that behavior as well as my understanding of it, but that's
 always the case. I've had my first tangle with a lot of the concepts and edges
-of three.js, and I expect I'll have lots of opportunities to revisit them. I look 
+of three.js, and I expect I'll have lots of opportunities to revisit them. I look
 forward to learning how to do all of this stuff better in the future.
 
 ## Notes
+
 - In the current demo the zoom direction is inverted because I'm plugging D3's
   scale directly into the camera's z-value. D3 evidently has some easing as you
-zoom in close, where it slows down the rate of zoom change. That means I can't
-just simply invert the scale. I'll figure out something to fix this in the
-future.
+  zoom in close, where it slows down the rate of zoom change. That means I can't
+  just simply invert the scale. I'll figure out something to fix this in the
+  future.
 - In the demo, I scale the point size up a bit when you're really close. This is
   what feels best to me -- points stay the same size most of the way in, but at
-the end they get a bit bigger. Right now it's all an experiment in what feels right.
+  the end they get a bit bigger. Right now it's all an experiment in what feels right.
 - Why exactly is three.js fast? This is something I'd love to learn more about.
   My operating understanding is that WebGL uses the GPU, which is good at doing
-these kinds of calculations, and three.js is also very smart about only drawing
-what you can currently see (known as culling). I don't know how this all plays
-out though. Is it fast mostly because of the GPU use or mostly because of the
-culling?
+  these kinds of calculations, and three.js is also very smart about only drawing
+  what you can currently see (known as culling). I don't know how this all plays
+  out though. Is it fast mostly because of the GPU use or mostly because of the
+  culling?
 - The camera uses a field of view setting which is not at all intuitive to me, but if you
   have friends or coworkers who are into actual physical cameras they'll have a
-bunch of experience with it. You can ask them about it and they'll probably draw
-diagrams.
+  bunch of experience with it. You can ask them about it and they'll probably draw
+  diagrams.
 - Why am I using a 3D library for a 2D visualization? Because it's fast. I did
   look at the 2D WebGL renderer [PixiJS](http://www.pixijs.com/) but found mostly
-game related examples. I could also try using the WebGL library directly. I'd
-love to read about either of those approaches. But given my time limit three.js
-seemed the right level at which to dive in.
+  game related examples. I could also try using the WebGL library directly. I'd
+  love to read about either of those approaches. But given my time limit three.js
+  seemed the right level at which to dive in.
 - Why are the points squares? It is apparently more taxing to draw circles.
   Sepand did it, and I plan to eventually (with sprites) once I understand the
-ins-and-outs a little more. 
-
+  ins-and-outs a little more.

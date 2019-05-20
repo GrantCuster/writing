@@ -1,18 +1,18 @@
 ---
-title: "Learning with Limited Labeled Data"
-date: "2019-03-20 15:03 -0400"
-preview_image: "/images/editor_uploads/2019-03-21-201701-AL_loop.png"
+title: 'Learning with Limited Labeled Data'
+date: '2019-03-20 15:03 -0400'
+preview_image: '/images/editor_uploads/2019-03-21-201701-AL_loop.png'
 feature: false
 published: true
-post_type: "Featured post"
-author: "Shioulin and Nisha"
+post_type: 'post'
+author: 'Shioulin and Nisha'
 ---
 
-In recent years, machine learning technologies - especially deep learning - have made breakthroughs which have turned science fiction into reality. Autonomous cars are almost possible, and machines can comprehend language. These technical advances are unprecedented, but they hinge on the availability of vast amounts of data. 
+In recent years, machine learning technologies - especially deep learning - have made breakthroughs which have turned science fiction into reality. Autonomous cars are almost possible, and machines can comprehend language. These technical advances are unprecedented, but they hinge on the availability of vast amounts of data.
 
 For a form of machine learning known as supervised learning, having data itself is not sufficient. Supervised machine learning, while powerful, needs data in a form that can serve as examples for what machines should learn. These examples often manifest themselves in the form of labeled data. The labels are used to teach and guide machines.
 
-Unfortunately, data in the real world does not come nicely packaged with labels. Enterprises collect massive amounts of data - but only a small sliver (if any) of that data is labeled. For example, risk assessment is crucial for financial institutions, because it sets the amount of capital required to absorb systemic instability. Large volumes of contracts and loan agreements exist and can be used to build a risk model, but not all of them have been processed to extract  relevant information, such as the purpose of the agreement, the loan amount, and the collateral amount. In corporate IT, customer service chat logs are available and can be used to identify customer concerns and satisfaction levels, but not many are annotated. In healthcare, medical images are abundant and can be used to build a diagnostic model, but these images are rarely labeled properly. 
+Unfortunately, data in the real world does not come nicely packaged with labels. Enterprises collect massive amounts of data - but only a small sliver (if any) of that data is labeled. For example, risk assessment is crucial for financial institutions, because it sets the amount of capital required to absorb systemic instability. Large volumes of contracts and loan agreements exist and can be used to build a risk model, but not all of them have been processed to extract relevant information, such as the purpose of the agreement, the loan amount, and the collateral amount. In corporate IT, customer service chat logs are available and can be used to identify customer concerns and satisfaction levels, but not many are annotated. In healthcare, medical images are abundant and can be used to build a diagnostic model, but these images are rarely labeled properly.
 
 In order to leverage supervised machine learning opportunities, many enterprises attempt to manually label vast amounts of unlabeled data. This undertaking can be prohibitively expensive, inefficient, and time-consuming.
 
@@ -22,7 +22,7 @@ Active learning is one such approach. It takes advantage of collaboration betwee
 
 ![](/images/editor_uploads/2019-03-21-201701-AL_loop.png)
 
-The latest report and prototype from Cloudera Fast Forward Labs  explores active learning and its implications. While not a new framework, active learning has recently been adapted to deep learning applications, where the labeled data requirement is even more stringent. Along with the availability of tooling and a maturing supporting ecosystem, active learning is now newly exciting!
+The latest report and prototype from Cloudera Fast Forward Labs explores active learning and its implications. While not a new framework, active learning has recently been adapted to deep learning applications, where the labeled data requirement is even more stringent. Along with the availability of tooling and a maturing supporting ecosystem, active learning is now newly exciting!
 
 The report will be available to corporate subscribers to Cloudera Fast Forward Labs’ research and advising service on April 2nd. The prototype will be made available to the public the same day.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Interpretability in conversation with Patrick Hall and Sameer Singh"
+title: 'Interpretability in conversation with Patrick Hall and Sameer Singh'
 date: 2017-09-11
 preview_image: /images/2017/08/ff06-logo.png
 author: Mike
@@ -9,8 +9,8 @@ feature: true
 published: true
 ---
 
-<div class="video-holder">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/NxYCY8-Qfx0" frameborder="0" allowfullscreen></iframe>
+<div class="html-video-holder">
+<iframe width="560" height="315"  src="https://www.youtube.com/embed/NxYCY8-Qfx0" frameborder="0" allowfullscreen></iframe>
 </div>
 
 We're pleased to share the recording of our recent webinar on machine learning
@@ -32,59 +32,59 @@ interested in working together.
 
 ### Contact
 
- * Fast Forward Labs, <contact@fastforwardlabs.com>,
-   [@fastforwardlabs](https://twitter.com/FastForwardLabs)
- * Mike Lee Williams, [@mikepqr](https://twitter.com/mikepqr)
- * Patrick Hall, [@jpatrickhall](https://twitter.com/jpatrickhall),
-   <phall@h2o.ai>
- * Sameer Singh, [sameersingh.org](http://sameersingh.org/) or
-   [@sameer_](https://twitter.com/sameer_), <sameer@uci.edu>
+- Fast Forward Labs, <contact@fastforwardlabs.com>,
+  [@fastforwardlabs](https://twitter.com/FastForwardLabs)
+- Mike Lee Williams, [@mikepqr](https://twitter.com/mikepqr)
+- Patrick Hall, [@jpatrickhall](https://twitter.com/jpatrickhall),
+  <phall@h2o.ai>
+- Sameer Singh, [sameersingh.org](http://sameersingh.org/) or
+  [@sameer\_](https://twitter.com/sameer_), <sameer@uci.edu>
 
 ### Code, demos and applications
 
- * [Open source LIME implementation](https://github.com/marcotcr/lime)
- * [Machine Learning Interpretability with H2O.ai’s Driverless
-   AI](https://youtu.be/3_gm00kBwEw)
- * [Practical Model
-   Interpretability](https://github.com/jphall663/GWU_data_mining/blob/master/10_model_interpretability/10_model_interpretability.md)
-   (Patrick’s teaching resources)
- * [Why your relationship is likely to last (or not): using
-   LIME](http://blog.fastforwardlabs.com/2017/09/01/LIME-for-couples.html) by
-   Fast Forward Labs
+- [Open source LIME implementation](https://github.com/marcotcr/lime)
+- [Machine Learning Interpretability with H2O.ai’s Driverless
+  AI](https://youtu.be/3_gm00kBwEw)
+- [Practical Model
+  Interpretability](https://github.com/jphall663/GWU_data_mining/blob/master/10_model_interpretability/10_model_interpretability.md)
+  (Patrick’s teaching resources)
+- [Why your relationship is likely to last (or not): using
+  LIME](http://blog.fastforwardlabs.com/2017/09/01/LIME-for-couples.html) by
+  Fast Forward Labs
 
 ### Reading
 
- * [Ideas on Machine
-   Learning](https://www.oreilly.com/ideas/ideas-on-interpreting-machine-learning)
-   by Patrick Hall
- * ["Why Should I Trust You?": Explaining the Predictions of Any
-   Classifier](https://arxiv.org/abs/1602.04938) (or [O’Reilly version of
-   paper](https://www.oreilly.com/learning/introduction-to-local-interpretable-model-agnostic-explanations-lime))
-   by Marco Tulio Ribero, Sameer Singh and Carlos Guestrin
- * [Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital
-   30-day Readmission](http://people.dbmi.columbia.edu/noemie/papers/15kdd.pdf)
-   by Rich Caruana et al. (the source for the pneumonia/asthma story Mike told)
- * [The business case for
-   interpretability](http://blog.fastforwardlabs.com/2017/08/02/business-interpretability.html)
-   by Fast Forward Labs
- * [A Case for Model-Agnostic
-   Interpretability](https://arxiv.org/abs/1606.05386) by Marco Tulio Ribero,
-   Sameer Singh and Carlos Guestrin
- * [Fairness, Accountability and Transparency in Machine
-   Learning](http://www.fatml.org/) and [FAT
-   conference](https://fatconference.org/) (NYC, February 2018)
- * [Logic Magazine Issue 1](https://logicmag.io/01-intelligence/), which
-   features the interview with an anonymous data scientist
+- [Ideas on Machine
+  Learning](https://www.oreilly.com/ideas/ideas-on-interpreting-machine-learning)
+  by Patrick Hall
+- ["Why Should I Trust You?": Explaining the Predictions of Any
+  Classifier](https://arxiv.org/abs/1602.04938) (or [O’Reilly version of
+  paper](https://www.oreilly.com/learning/introduction-to-local-interpretable-model-agnostic-explanations-lime))
+  by Marco Tulio Ribero, Sameer Singh and Carlos Guestrin
+- [Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital
+  30-day Readmission](http://people.dbmi.columbia.edu/noemie/papers/15kdd.pdf)
+  by Rich Caruana et al. (the source for the pneumonia/asthma story Mike told)
+- [The business case for
+  interpretability](http://blog.fastforwardlabs.com/2017/08/02/business-interpretability.html)
+  by Fast Forward Labs
+- [A Case for Model-Agnostic
+  Interpretability](https://arxiv.org/abs/1606.05386) by Marco Tulio Ribero,
+  Sameer Singh and Carlos Guestrin
+- [Fairness, Accountability and Transparency in Machine
+  Learning](http://www.fatml.org/) and [FAT
+  conference](https://fatconference.org/) (NYC, February 2018)
+- [Logic Magazine Issue 1](https://logicmag.io/01-intelligence/), which
+  features the interview with an anonymous data scientist
 
 ### Talks
 
- * [Explaining Black-box Machine Learning
-   Predictions](https://www.youtube.com/watch?v=LAm4QmVaf0E), talk by Sameer on
-   LIME and related ideas at the Orange County ACM chapter.
- * [Interpretable AI: not just for
-   regulators](https://conferences.oreilly.com/strata/strata-ny/public/schedule/detail/59747)
-   a forthcoming talk by SriSatish Ambati and Patrick Hall at Strata NYC, Sep
-   27 2017
+- [Explaining Black-box Machine Learning
+  Predictions](https://www.youtube.com/watch?v=LAm4QmVaf0E), talk by Sameer on
+  LIME and related ideas at the Orange County ACM chapter.
+- [Interpretable AI: not just for
+  regulators](https://conferences.oreilly.com/strata/strata-ny/public/schedule/detail/59747)
+  a forthcoming talk by SriSatish Ambati and Patrick Hall at Strata NYC, Sep
+  27 2017
 
 ## Audience questions we didn't address during the webinar
 
@@ -93,9 +93,9 @@ interested in working together.
 Patrick: Not that I am aware of, but we use and have [put forward this simple
 heuristic](https://www.oreilly.com/ideas/ideas-on-interpreting-machine-learning):
 
- * Linear, monotonic models - easily interpretable 
- * Nonlinear, monotonic models - interpretable
- * Nonlinear, non-monotonic models - difficult to interpret
+- Linear, monotonic models - easily interpretable
+- Nonlinear, monotonic models - interpretable
+- Nonlinear, non-monotonic models - difficult to interpret
 
 Mike: one option, when comparing like with like, is simply the number of
 parameters. This is a common metric in the deep learning community. It glosses
@@ -141,7 +141,7 @@ parameters. (Which is not uncommon in practice.) I do like the idea of training
 checkpoints, but what if at the checkpoint, the model says: "these are the
 10,000 most important extracted features which represent 100+ degree
 combinations of the original model inputs"? So perhaps the combination of
-training checkpoints plus constraints on complexity could be very useful. 
+training checkpoints plus constraints on complexity could be very useful.
 
 **Conversations in data science center around the latest/greatest models, not interpretability. Do you have any recommendations for building a company culture that values interpretability.**
 
@@ -162,14 +162,14 @@ Sameer: Partly, it comes from the fact that accuracy provides a single number,
 which appeals to the human strive for competition and for sports, and for
 engineering things that beat other things. Interpretability is, almost by
 definition, much more fuzzier to define and evaluate, making us a little
-nervous as empiricists, I think. 
+nervous as empiricists, I think.
 
 **How does interpretability varies across industry, e.g. aviation v media v financial services?**
 
 Patrick: I can only say that the regulations for predictive models are probably
-most mature in credit lending *in the U.S.*, and that I see machine learning
+most mature in credit lending _in the U.S._, and that I see machine learning
 being used more prominently in verticals outside credit lending, i.e.
-e-commerce, marketing, anti-fraud, anti-money-laundering. 
+e-commerce, marketing, anti-fraud, anti-money-laundering.
 
 Mike: I’d say that, of the particular three mentioned, the need for
 interpretability is most acute in aviation. In fact, it goes beyond
@@ -198,7 +198,7 @@ financial risks of out-of-range predictions on new data are staggering! I do
 also hope that machine learning models that make serious impacts on people’s
 lives will be better regulated in the future, and the EU is taking steps toward
 this with the GDPR. In the meantime, you can keep up with research in this area
-at [FATML](http://www.fatml.org/). 
+at [FATML](http://www.fatml.org/).
 
 Mike: I also recommend [What’s your ML test score? A rubric for ML production
 systems](https://research.google.com/pubs/pub45742.html), which mentions a
@@ -215,7 +215,7 @@ Patrick: I think it will prevent people from using overly-complicated,
 difficult to explain features in their models as well. It’s no good to say
 `CV_SVD23_Cluster99_INCOME_RANGE` is the most important variable in the
 prediction if you can’t also say directly what that variable is exactly and how
-it was derived. 
+it was derived.
 
 **I'm a graduate DS student who just sent some ML research to a group of people in industry who I thought would be interested. In response I got the question "will your research replace my job". What are some ways to overcome the fear of ML and convince people that AI won't replace the creativity in decision making of humans.**
 
@@ -238,7 +238,7 @@ familiarity with linear models. It’s that a trained linear model really is
 simple to describe (and interpret). Trained neural networks are, in a relative
 sense, not even simple to describe. The big linear modeling textbooks are about the long textbooks' deep domain-specific implications, difficulties like
 causality, and the [real numerical/engineering
-subtleties](https://arxiv.org/abs/1008.4686). 
+subtleties](https://arxiv.org/abs/1008.4686).
 
 Patrick: I 100% agree with the questioner's sentiment. Essentially linear model
 interpretations are exact and stable, which is great, _but_ the models are
@@ -267,7 +267,7 @@ remove problematic information with techniques like differential privacy during
 model training. Another method I’m personally interested is determining the
 local contribution of problematic features using something like LOCO or LIME
 and subtracting out the different contributions of problematic features
-row-by-row when predictions are made. 
+row-by-row when predictions are made.
 
 **Aren't we reducing interpretability to visual analytics of sensitivity?**
 
@@ -320,13 +320,13 @@ Patrick: We chose to use clusters in the training data, instead of bootstrapped
 or simulated samples around a row of data, to construct local regions on which
 to build explanatory linear models. This has two primary advantages:
 
-* We don’t need a new/different sample for every point we want to explain
-* It allows us to present the (hopefully helpful) diagnostic plot of the
+- We don’t need a new/different sample for every point we want to explain
+- It allows us to present the (hopefully helpful) diagnostic plot of the
   training data, complex model, and explanatory model that you saw in the
-  webinar. 
+  webinar.
 
 The main drawback is that sometimes clusters are large and the fit of the
-explanatory model can degrade in this case. If you’re curious,  we choose the
+explanatory model can degrade in this case. If you’re curious, we choose the
 number clusters by maximizing the R-squared between all the linear model
 predictions and the complex model’s predictions.
 
@@ -340,9 +340,9 @@ in XGBoost.
 Sameer: Personally, I like the former, since I do believe an inaccurate model
 is not a useful model. I also don’t want to restrict the architecture or the
 algorithms that people want to use, nor do I want to constrain them to certain
-types of interpretations that an interpretable model provides. 
+types of interpretations that an interpretable model provides.
 
 ### Mailing list
 
-Our public mailing list is a great way of getting a taste of what Fast Forward 
+Our public mailing list is a great way of getting a taste of what Fast Forward
 Labs is interested in and working on right now. [We hope you'll sign up](https://fastforwardlabs.us8.list-manage.com/subscribe/post?u=bdb368b9a389b010c19dbcd54&id=1d8c97a0bd)!

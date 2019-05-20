@@ -211,6 +211,9 @@ export default class MyApp extends App {
           a.gray-backer:hover {
             background: #f3f3f3;
           }
+          button:focus {
+            outline: #999 auto 3px;
+          }
         `}</style>
         <style jsx global>{`
           html {
