@@ -197,7 +197,7 @@ class Index extends React.Component {
               </div>
             </div>
 
-            <div style={{ padding: p(0, 0), marginBottom: grem * 2 }}>
+            <div style={{ padding: p(0, 0) }}>
               <div
                 style={{
                   fontSize: fs * 2,

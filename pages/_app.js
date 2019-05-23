@@ -34,8 +34,8 @@ export default class MyApp extends App {
       {
         ww: window.innerWidth,
         wh: window.innerHeight,
-        optimal: width + font_size * line_height,
-        // optimal: 633.50244140625,
+        // optimal: width + font_size * line_height,
+        optimal: 633.50244140625,
       },
       () => {}
     )
@@ -151,15 +151,30 @@ export default class MyApp extends App {
             font-family: 'Inter';
             font-style: normal;
             font-weight: 400;
-            src: url('static/fonts/Inter-Regular.woff2?v=3.5') format('woff2'),
-              url('static/fonts/Inter-Regular.woff?v=3.5') format('woff');
+            src: url('/static/fonts/Inter-Regular.woff2?v=3.5') format('woff2'),
+              url('/static/fonts/Inter-Regular.woff?v=3.5') format('woff');
           }
           @font-face {
             font-family: 'Inter';
             font-style: italic;
             font-weight: 400;
-            src: url('static/fonts/Inter-Italic.woff2?v=3.5') format('woff2'),
-              url('static/fonts/Inter-Italic.woff?v=3.5') format('woff');
+            src: url('/static/fonts/Inter-Italic.woff2?v=3.5') format('woff2'),
+              url('/static/fonts/Inter-Italic.woff?v=3.5') format('woff');
+          }
+          @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            src: url('/static/fonts/Inter-Bold.woff2?v=3.5') format('woff2'),
+              url('/static/fonts/Inter-Bold.woff?v=3.5') format('woff');
+          }
+          @font-face {
+            font-family: 'Inter';
+            font-style: italic;
+            font-weight: 700;
+            src: url('/static/fonts/Inter-BoldItalic.woff2?v=3.5')
+                format('woff2'),
+              url('/static/fonts/Inter-BoldItalic.woff?v=3.5') format('woff');
           }
 
           * {

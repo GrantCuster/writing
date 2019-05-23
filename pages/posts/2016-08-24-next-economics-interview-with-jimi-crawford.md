@@ -2,11 +2,11 @@
 title: 'Next Economics: Interview with Jimi Crawford'
 date: 2016-08-24 16:18:12 Z
 tags:
-- deep learning
-- interview
-- satellite data
-- machine learning
-- hedge funds
+  - deep learning
+  - interview
+  - satellite data
+  - machine learning
+  - hedge funds
 layout: post
 redirect_from:
   - /post/149419599203/next-economics-interview-with-jimi-crawford
@@ -16,7 +16,7 @@ interview_with: Jimi Crawford, Orbital Insights
 interview_with_link: https://orbitalinsight.com/
 ---
 
-<figure class="tmblr-full" data-orig-height="656" data-orig-width="1629"><img src="http://68.media.tumblr.com/de9fc93bc4bda585c1bb51a785fc7801/tumblr_inline_ocf6npUoHK1ta78fg_540.png" data-orig-height="656" data-orig-width="1629"/></figure><figure class="tmblr-full" data-orig-height="923" data-orig-width="2291"><img src="http://68.media.tumblr.com/e65b096c51449dd8ad7ef4b2f0e4ad10/tumblr_inline_ocf6k5SHv61ta78fg_540.png" data-orig-height="923" data-orig-width="2291"/></figure>
+![](http://68.media.tumblr.com/de9fc93bc4bda585c1bb51a785fc7801/tumblr_inline_ocf6npUoHK1ta78fg_540.png)
 
 ##### Building shadows as proxies for construction rates in Shanghai. Photos courtesy of Orbital Insight/Digital Globe.
 
