@@ -12,6 +12,8 @@ redirect_from:
 preview_image: http://68.media.tumblr.com/1848a19b440d862d19082e450097910b/tumblr_inline_nsq7opgW3S1ta78fg_540.jpg
 ---
 
+import {VideoHolder} from '../../parts/CustomMDX'
+
 <p>Today’s post is inspired by a slow-motion recording we captured of a Stirling engine that Ryan, Fast Forward’s General Counsel, just so happened to have lying around our New York City offices. For the non-mechanics among us, a <a href="https://en.wikipedia.org/wiki/Stirling_engine">Stirling engine</a> is a heat engine that operates by cyclic compression and expansion of air and other gas at different temperatures; the temperature differential translates heat into mechanical work. The slowmo in the video renders a hypnotic locomotive sound that differs greatly from the mechanic buzz of realtime.</p>
 
 <VideoHolder src="https://www.youtube.com/embed/RIr4_9kbz_Q?feature=oembed" />

@@ -143,6 +143,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/parse-int */ "./node_modules/core-js/library/fn/parse-int.js");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/promise.js":
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/promise.js ***!
@@ -1165,6 +1176,19 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 __webpack_require__(/*! ../../modules/es6.object.set-prototype-of */ "./node_modules/core-js/library/modules/es6.object.set-prototype-of.js");
 module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.setPrototypeOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/fn/parse-int.js":
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/library/fn/parse-int.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ../modules/es6.parse-int */ "./node_modules/core-js/library/modules/es6.parse-int.js");
+module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/core-js/library/modules/_core.js").parseInt;
 
 
 /***/ }),
@@ -2958,6 +2982,26 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/library/modules/_parse-int.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_parse-int.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $parseInt = __webpack_require__(/*! ./_global */ "./node_modules/core-js/library/modules/_global.js").parseInt;
+var $trim = __webpack_require__(/*! ./_string-trim */ "./node_modules/core-js/library/modules/_string-trim.js").trim;
+var ws = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
+var hex = /^[-+]?0[xX]/;
+
+module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix) {
+  var string = $trim(String(str), 3);
+  return $parseInt(string, (radix >>> 0) || (hex.test(string) ? 16 : 10));
+} : $parseInt;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/library/modules/_perform.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_perform.js ***!
@@ -3275,6 +3319,60 @@ module.exports = function (TO_STRING) {
       : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
   };
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_string-trim.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_string-trim.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var defined = __webpack_require__(/*! ./_defined */ "./node_modules/core-js/library/modules/_defined.js");
+var fails = __webpack_require__(/*! ./_fails */ "./node_modules/core-js/library/modules/_fails.js");
+var spaces = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
+var space = '[' + spaces + ']';
+var non = '\u200b\u0085';
+var ltrim = RegExp('^' + space + space + '*');
+var rtrim = RegExp(space + space + '*$');
+
+var exporter = function (KEY, exec, ALIAS) {
+  var exp = {};
+  var FORCE = fails(function () {
+    return !!spaces[KEY]() || non[KEY]() != non;
+  });
+  var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
+  if (ALIAS) exp[ALIAS] = fn;
+  $export($export.P + $export.F * FORCE, 'String', exp);
+};
+
+// 1 -> String#trimLeft
+// 2 -> String#trimRight
+// 3 -> String#trim
+var trim = exporter.trim = function (string, TYPE) {
+  string = String(defined(string));
+  if (TYPE & 1) string = string.replace(ltrim, '');
+  if (TYPE & 2) string = string.replace(rtrim, '');
+  return string;
+};
+
+module.exports = exporter;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/_string-ws.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/_string-ws.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
+  '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 
 /***/ }),
@@ -3875,6 +3973,21 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(/*! ./_set-pr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/library/modules/es6.parse-int.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/core-js/library/modules/es6.parse-int.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
+var $parseInt = __webpack_require__(/*! ./_parse-int */ "./node_modules/core-js/library/modules/_parse-int.js");
+// 18.2.5 parseInt(string, radix)
+$export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
 
 
 /***/ }),
@@ -28969,26 +29082,31 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../parts/Header */ "./parts/Header.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _parts_Static__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../parts/Static */ "./parts/Static.js");
-/* harmony import */ var _parts_Utils__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../parts/Utils */ "./parts/Utils.js");
-/* harmony import */ var _parts_Dividers__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../parts/Dividers */ "./parts/Dividers.js");
-/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../posts */ "./posts.js");
-/* harmony import */ var _parts_PostPreview__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../parts/PostPreview */ "./parts/PostPreview.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../parts/Header */ "./parts/Header.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _parts_Static__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../parts/Static */ "./parts/Static.js");
+/* harmony import */ var _parts_Utils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../parts/Utils */ "./parts/Utils.js");
+/* harmony import */ var _parts_Dividers__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../parts/Dividers */ "./parts/Dividers.js");
+/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../posts */ "./posts.js");
+/* harmony import */ var _parts_PostPreview__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../parts/PostPreview */ "./parts/PostPreview.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_17__);
+
 
 
 
@@ -29006,26 +29124,28 @@ var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/fastforward/pages/index.js
 
 
 
+
+
 var posts_per_page = 20;
 
 var Index =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Index, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Index, _React$Component);
 
   function Index(props) {
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Index);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Index);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Index).call(this, props));
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Index).call(this, props));
     _this.state = {
       showing_posts: posts_per_page
     };
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Index, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Index, [{
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -29043,179 +29163,227 @@ function (_React$Component) {
           offset = _this$props.offset,
           ww = _this$props.ww,
           wh = _this$props.wh,
-          optimal = _this$props.optimal;
+          optimal = _this$props.optimal,
+          stacked = _this$props.stacked;
+      var search = this.props.router.query;
+      var params = new URLSearchParams(search);
+      var page_number = params.get('pages') || 1;
       var post_groups = [];
+      var published = _posts__WEBPACK_IMPORTED_MODULE_15__["default"].filter(function (p) {
+        return p.published;
+      });
 
-      for (var i = 0; i < showing_posts / posts_per_page; i++) {
-        var _posts = _posts__WEBPACK_IMPORTED_MODULE_14__["default"].slice(i * posts_per_page, (i + 1) * posts_per_page);
+      for (var i = 0; i < page_number; i++) {
+        if (i * posts_per_page < published.length) {
+          var _posts = published.slice(i * posts_per_page, (i + 1) * posts_per_page);
 
-        post_groups.push(_posts);
+          post_groups.push(_posts);
+        }
       }
 
-      console.log(post_groups);
-      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 58
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 59
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
         rel: "icon",
         type: "image/x-icon",
         href: "static/images/favicon.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("title", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 54
-        },
-        __self: this
-      }, "Blog \u2013 Cloudera Fast Forward"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
-        property: "og:title",
-        content: "Experiments - Cloudera Fast Forward",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 55
-        },
-        __self: this
-      }), "property=\"description\"", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
-        content: "Machine learning visualizations and code by Cloudera Fast Forward.",
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 60
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
-        property: "og:description",
-        content: "Machine learning visualizations and code by Cloudera Fast Forward.",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 61
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
-        property: "og:image",
-        content: "https://experiments.fastforwardlabs.com/static/images/experiments-share.png",
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("title", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 65
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
-        property: "og:url",
-        content: "https://experiments.fastforwardlabs.com",
+      }, "Blog \u2013 Cloudera Fast Forward"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
+        property: "og:title",
+        content: "Experiments - Cloudera Fast Forward",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 66
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
-        name: "twitter:card",
-        content: "summary_large_image",
+      }), "property=\"description\"", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
+        content: "Machine learning visualizations and code by Cloudera Fast Forward.",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 71
         },
         __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
+        property: "og:description",
+        content: "Machine learning visualizations and code by Cloudera Fast Forward.",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 72
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
+        property: "og:image",
+        content: "https://experiments.fastforwardlabs.com/static/images/experiments-share.png",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 76
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
+        property: "og:url",
+        content: "https://experiments.fastforwardlabs.com",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
+        name: "twitter:card",
+        content: "summary_large_image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 84
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_12__["p"])(grem / 4, ogrem / 2)
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, stacked ? ogrem / 4 : ogrem / 2)
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 88
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, center_text, {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_12__["p"])(grem / 4, grem / 2),
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, center_text, {
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, grem / 2),
           fontSize: afs * 3,
           lineHeight: 1.25,
           position: 'relative'
         }),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 91
         },
         __self: this
-      }, "Blog"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_12__["p"])(grem / 4, grem / 2)
+      }, "Blog"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, grem / 2)
         }, center_text, fsn),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 102
         },
         __self: this
-      }, "Posts on machine learning and other emerging technologies by", ' ', react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
+      }, "Posts on machine learning and other emerging technologies by", ' ', react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "https://www.cloudera.com/products/fast-forward-labs-research.html",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 110
         },
         __self: this
-      }, "Cloudera Fast Forward Labs"), "."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, "Cloudera Fast Forward Labs"), "."), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_12__["p"])(grem / 2, 0, grem, 0)
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 2, 0, grem, 0)
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 103
+          lineNumber: 116
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
           position: 'relative'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 104
+          lineNumber: 117
         },
         __self: this
       }, post_groups.map(function (g, i) {
-        return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        var first = g[0];
+        var first_date = new Date(first.publishDate);
+        var first_short_date = "".concat(first_date.toLocaleString('en-us', {
+          month: 'short'
+        }), " ").concat(first_date.getFullYear());
+        var last = g[g.length - 1];
+        var last_date = new Date(last.publishDate);
+        var last_short_date = "".concat(last_date.toLocaleString('en-us', {
+          month: 'short'
+        }), " ").concat(last_date.getFullYear());
+        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          key: 'group_' + i,
           style: {
             position: 'relative'
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 111
+            lineNumber: 135
           },
           __self: this
-        }, i !== 0 ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        }, i !== 0 ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
           style: {
             paddingTop: grem * 2,
-            paddingLeft: grem / 2,
-            paddingRight: grem / 2,
             paddingBottom: grem / 2,
-            fontSize: fs * 1.25,
-            lineHeight: 1.5
+            paddingLeft: columns > 10 ? offset + (columns - 10) / 2 * column_width : offset,
+            display: 'flex',
+            fontSize: fs * 0.75,
+            lineHeight: 1.5,
+            textTransform: 'uppercase',
+            letterSpacing: '0.03em'
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 113
+            lineNumber: 137
           },
           __self: this
-        }, "Page ", i + 1) : null, g.filter(function (post) {
-          return post.published === true;
-        }).map(function (post, i) {
-          return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_parts_PostPreview__WEBPACK_IMPORTED_MODULE_15__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          style: {
+            width: columns > 8 ? 3 * column_width : 2 * column_width,
+            padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(0, grem / 2)
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 152
+          },
+          __self: this
+        }, first_short_date, " \u2013 ", last_short_date), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          style: {
+            width: columns === 4 ? 2 * column_width : (columns - 4) / 2 * column_width,
+            padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(0, grem / 2)
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 163
+          },
+          __self: this
+        }, "Page ".concat(i + 1))) : react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+          style: {
+            height: grem / 2
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 176
+          },
+          __self: this
+        }), g.map(function (post, i) {
+          return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_PostPreview__WEBPACK_IMPORTED_MODULE_16__["default"], {
             key: post.title,
             post: post,
             grem: grem,
@@ -29228,13 +29396,14 @@ function (_React$Component) {
             extra_right: ogrem / 2 + offset,
             adjust_left: -ogrem / 2,
             adjust_right: -ogrem / 2,
+            stacked: stacked,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 129
+              lineNumber: 179
             },
             __self: this
           });
-        }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+        }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
           style: {
             position: 'relative',
             marginLeft: -grem / 2,
@@ -29242,22 +29411,25 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 144
+            lineNumber: 195
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_13__["Hd"], {
+        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_14__["Hd"], {
           align: "b",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 151
+            lineNumber: 202
           },
           __self: this
         })));
-      }), showing_posts < _posts__WEBPACK_IMPORTED_MODULE_14__["default"].length ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("button", {
+      }), page_number * posts_per_page < published.length ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         className: "gray-backer",
         onClick: function onClick() {
-          _this2.setState({
-            showing_posts: showing_posts + 20
+          next_router__WEBPACK_IMPORTED_MODULE_17___default.a.push({
+            pathname: _this2.props.router.pathname,
+            query: {
+              pages: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(page_number) + 1
+            }
           });
         },
         style: {
@@ -29279,17 +29451,17 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157
+          lineNumber: 208
         },
         __self: this
-      }, "Load more posts", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_13__["Hd"], {
+      }, "Load more posts", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_14__["Hd"], {
         align: "t",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 239
         },
         __self: this
-      })) : null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      })) : null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
           marginLeft: -ogrem / 2,
           marginRight: -ogrem / 2,
@@ -29297,90 +29469,90 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 242
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_13__["Hd"], {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_14__["Hd"], {
         align: "b",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195
+          lineNumber: 249
         },
         __self: this
-      })))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      })))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_12__["p"])(0, 0)
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(0, 0)
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200
+          lineNumber: 254
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
           fontSize: fs * 2,
           lineHeight: 1.25,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_12__["p"])(grem / 4, grem / 2)
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, grem / 2)
         }, center_text),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 201
+          lineNumber: 255
         },
         __self: this
-      }, "About"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_12__["p"])(grem / 4, grem / 2)
+      }, "About"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, grem / 2)
         }, center_text, fsn),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 211
+          lineNumber: 265
         },
         __self: this
-      }, "Cloudera Fast Forward Labs is an applied machine learning research group. We help organizations recognize and develop new product and business opportunities through emerging technologies.", ' '), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_12__["p"])(grem / 4, grem / 2)
+      }, "Cloudera Fast Forward Labs is an applied machine learning research group. We help organizations recognize and develop new product and business opportunities through emerging technologies.", ' '), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, grem / 2)
         }, center_text, fsn),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 223
+          lineNumber: 277
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "https://www.cloudera.com/products/fast-forward-labs-research.html",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 230
+          lineNumber: 284
         },
         __self: this
-      }, "Learn more about working with us.")))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, "Learn more about working with us.")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
           paddingTop: grem / 2
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 237
+          lineNumber: 291
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
           position: 'relative'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238
+          lineNumber: 292
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_13__["Hd"], {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_14__["Hd"], {
         width: "100%",
         align: "t",
         fs: fs,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239
+          lineNumber: 293
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
           padding: grem / 2,
           display: 'flex',
           justifyContent: 'space-between',
@@ -29388,69 +29560,69 @@ function (_React$Component) {
         }, fsn),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 240
+          lineNumber: 294
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 249
+          lineNumber: 303
         },
         __self: this
-      }, "Cloudera Fast Forward Labs"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, "Cloudera Fast Forward Labs"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
           display: 'flex',
           flexWrap: 'wrap'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 250
+          lineNumber: 304
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
           marginRight: grem / 2
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 251
+          lineNumber: 305
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "https://www.cloudera.com/products/fast-forward-labs-research.html",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 252
+          lineNumber: 306
         },
         __self: this
-      }, "Cloudera")), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, "Cloudera")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {
           marginRight: grem / 2
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 256
+          lineNumber: 310
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "https://blog.fastforwardlabs.com/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 257
+          lineNumber: 311
         },
         __self: this
-      }, "Blog")), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, "Blog")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         style: {},
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 259
+          lineNumber: 313
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "https://twitter.com/fastforwardlabs",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 260
+          lineNumber: 314
         },
         __self: this
       }, "Twitter"))))))));
@@ -29458,9 +29630,9 @@ function (_React$Component) {
   }]);
 
   return Index;
-}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Index);
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_17__["withRouter"])(Index));
 
 /***/ }),
 
@@ -29613,14 +29785,13 @@ var Header = function Header(_ref) {
       fsn = _ref.fsn,
       fs = _ref.fs,
       is_post = _ref.is_post;
-  console.log(is_post);
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: {
       paddingBottom: grem / 2
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 7
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -29629,7 +29800,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 8
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -29640,7 +29811,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 9
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -29650,7 +29821,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 16
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -29662,7 +29833,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 17
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
@@ -29671,10 +29842,10 @@ var Header = function Header(_ref) {
       display: 'block',
       lineHeight: 0
     },
-    className: "no-hover no-underline",
+    className: "no-underline no-hover",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 25
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -29684,7 +29855,7 @@ var Header = function Header(_ref) {
     src: "/static/images/cloudera.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 33
     },
     __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -29695,7 +29866,7 @@ var Header = function Header(_ref) {
     }, fsn),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 39
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
@@ -29708,17 +29879,17 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 47
     },
     __self: this
-  }, "About CFFL \u2192"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Dividers__WEBPACK_IMPORTED_MODULE_2__["Hd"], {
+  }, "About Us \u2192"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Dividers__WEBPACK_IMPORTED_MODULE_2__["Hd"], {
     width: "100%",
     align: "b",
     fs: fs,
     color: "rgba(0,0,0,0.125)",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62
+      lineNumber: 61
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -29729,7 +29900,7 @@ var Header = function Header(_ref) {
     }, fsn),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 63
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -29739,7 +29910,25 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
       lineNumber: 72
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    className: "no-hover no-underline",
+    style: {
+      display: 'flex',
+      alignItems: 'center'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
@@ -29753,29 +29942,16 @@ var Header = function Header(_ref) {
     src: "/static/images/ff.png",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73
+      lineNumber: 77
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
-    },
-    __self: this
-  }, "Fast Forward Labs", ' ', is_post ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 87
     },
     __self: this
-  }, "Blog")) : 'Blog')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, "Fast Forward Labs ")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     style: {
       display: 'flex',
       alignItems: 'center',
@@ -29783,7 +29959,7 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 91
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -29792,21 +29968,43 @@ var Header = function Header(_ref) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 98
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: {},
+    style: {
+      marginRight: grem / 2
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99
+    },
+    __self: this
+  }, is_post ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 102
+    },
+    __self: this
+  }, "Blog")) : 'Blog'), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    style: {},
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
     href: "https://experiments.fastforwardlabs.com",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 110
     },
     __self: this
   }, "AI Experiments")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Dividers__WEBPACK_IMPORTED_MODULE_2__["Hd"], {
@@ -29815,7 +30013,7 @@ var Header = function Header(_ref) {
     fs: fs,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 116
     },
     __self: this
   })));
@@ -29999,7 +30197,7 @@ function (_React$Component) {
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         style: {
-          width: column_width,
+          width: columns === 4 ? column_width * 2 : column_width,
           padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_8__["p"])(grem / 2, grem / 2, 0, grem / 2)
         },
         __source: {
@@ -30050,7 +30248,7 @@ function (_React$Component) {
       }, "by ", post.author) : null) : null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
         style: {
           position: 'relative',
-          width: columns > 8 ? (columns - 4) * column_width : columns === 6 ? columns * column_width : columns === 4 ? column_width * 4 : (columns - 3) * column_width,
+          width: columns > 8 ? (Math.min(columns, 10) - 4) * column_width : columns === 6 ? columns * column_width : columns === 4 ? column_width * 4 : (columns - 3) * column_width,
           padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_8__["p"])(grem / 2, 0)
         },
         __source: {
@@ -30133,9 +30331,9 @@ function (_React$Component) {
           height: grem * 0.875 * (columns === 4 ? 4 : 3),
           overflow: 'hidden',
           display: '-webkit-box',
-          webkitLineClamp: columns === 4 ? '4' : '3',
+          WebkitLineClamp: columns === 4 ? '4' : '3',
           hyphens: 'auto',
-          webkitBoxOrient: 'vertical'
+          WebkitBoxOrient: 'vertical'
         },
         __source: {
           fileName: _jsxFileName,
@@ -30361,6 +30559,47 @@ function track(size) {
 __webpack_require__.r(__webpack_exports__);
 // automatically generated by build_post_index.js
 /* harmony default export */ __webpack_exports__["default"] = ([{
+  "filePath": "pages/posts/2019-05-22-metalearners-learning-how-to-learn.md",
+  "urlPath": "/posts/2019-05-22-metalearners-learning-how-to-learn",
+  "path_name": "/posts/2019-05-22-metalearners-learning-how-to-learn",
+  "publishDate": "2019-05-22T19:05:00.000Z",
+  "title": "Meta-Learners - learning how to learn",
+  "preview_image": "/images/2019/05/fig1-1558038180094.png",
+  "feature": true,
+  "published": true,
+  "author": "Shioulin and Nisha",
+  "post_type": "Post",
+  "excerpt": "\nActive learning\nallows us to be smart about picking the right set of datapoints for which to create labels. Done properly, this approach results in models that are trained on less data\nperforming comparatively to models trained on much more data. In the world of meta-learning...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2019-04-29-visualizing-active-learning.md",
+  "urlPath": "/posts/2019-04-29-visualizing-active-learning",
+  "path_name": "/posts/2019-04-29-visualizing-active-learning",
+  "publishDate": "2019-04-29T20:05:00.000Z",
+  "title": "Visualizing Active Learning",
+  "preview_image": "/images/editor_uploads/2019-04-10-191420-active_learner_gif_small.gif",
+  "feature": true,
+  "published": true,
+  "author": "Grant",
+  "post_type": "newsletter",
+  "author_link": "https://twitter.com/grantcuster",
+  "excerpt": "\nA GIF of the Active Learner prototype\n\nActive Learner shows how active learning selects which data to be labeled.\n\nActive Learner, our new research prototype, is an interactive visualization of different active learning strategies for labeling data. It features three different...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes.md",
+  "urlPath": "/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes",
+  "path_name": "/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes",
+  "publishDate": "2019-04-29T20:05:00.000Z",
+  "title": "Teaching machines to recognize faces: a tale of two outcomes",
+  "preview_image": "/images/2019/04/Affectiva_Face_Image-1555448954465.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Alice",
+  "post_type": "newsletter",
+  "author_link": "https://twitter.com/alicealbrecht/",
+  "excerpt": "\nMachine learning used for facial recognition can have both potentially life-saving and privacy-killing consequences. The rise of cheap sensors, more robust data storage, and advances in machine learning have propelled many industries forward - for instance, many sensors used in...",
+  "external_url": false
+}, {
   "filePath": "pages/posts/2019-04-03-an-invitation-to-active-learning.md",
   "urlPath": "/posts/2019-04-03-an-invitation-to-active-learning",
   "path_name": "/posts/2019-04-03-an-invitation-to-active-learning",
@@ -31042,7 +31281,7 @@ __webpack_require__.r(__webpack_exports__);
   "filePath": "pages/posts/2017-11-30-the-promise-of-automated-machine-learning-automl.md",
   "urlPath": "/posts/2017-11-30-the-promise-of-automated-machine-learning-automl",
   "path_name": "/posts/2017-11-30-the-promise-of-automated-machine-learning-automl",
-  "publishDate": "2017-11-30T17:08:00.000Z",
+  "publishDate": "2017-11-30T12:08:00.000Z",
   "title": "The promise of Automated Machine Learning (AutoML)",
   "preview_image": "/images/2017/11/Screen_Shot_2017_11_07_at_10_07_43_AM-1510067292745.png",
   "feature": false,
@@ -31427,7 +31666,7 @@ __webpack_require__.r(__webpack_exports__);
   "author": "Kathryn",
   "post_type": "post",
   "author_link": "https://twitter.com/HumeKathryn",
-  "excerpt": "\nAn image of a clock drawn in a cappuccino melting over the side of the cup, reminiscent of a Salvador Dali painting.\n\nThis post originally appeared on quamproxime.com, the personal blog of our sales and marketing lead, Kathryn Hume\n\nOne of the main arguments the Israeli...",
+  "excerpt": "\n\nAn image of a clock drawn in a cappuccino melting over the side of the cup, reminiscent of a Salvador Dali painting.\n\nThis post originally appeared on quamproxime.com, the personal blog of our sales and marketing lead, Kathryn Hume\n\nOne of the main arguments the Israeli...",
   "external_url": false
 }, {
   "filePath": "pages/posts/2017-03-22-prophet.md",
@@ -31523,7 +31762,7 @@ __webpack_require__.r(__webpack_exports__);
   "feature": false,
   "published": true,
   "post_type": "Announcement",
-  "excerpt": "\nThe Fast Forward Labs team will be traveling the world to give talks in March and April! Please join us and let us know if you'd like to meet one-on-one to discuss all things data science and machine learning at these events. You can reach us at contact@fastforwardlabs.com to...",
+  "excerpt": "\n\nThe Fast Forward Labs team will be traveling the world to give talks in March and April! Please join us and let us know if you'd like to meet one-on-one to discuss all things data science and machine learning at these events. You can reach us at contact@fastforwardlabs.com to...",
   "external_url": false
 }, {
   "filePath": "pages/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming.md",
@@ -31535,7 +31774,7 @@ __webpack_require__.r(__webpack_exports__);
   "feature": false,
   "published": true,
   "post_type": "Announcement",
-  "excerpt": "\nOn Tuesday, we hosted an online talk with the Stan Group discussing why probabilistic programming is generating so much excitement in the fields of machine learning and statistics. In essence, probabilistic programming is a powerful tool to help organizations make rational...",
+  "excerpt": "\n\nOn Tuesday, we hosted an online talk with the Stan Group discussing why probabilistic programming is generating so much excitement in the fields of machine learning and statistics. In essence, probabilistic programming is a powerful tool to help organizations make rational...",
   "external_url": false
 }, {
   "filePath": "pages/posts/2017-02-08-summer-internships.md",
@@ -31715,7 +31954,7 @@ __webpack_require__.r(__webpack_exports__);
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nYesterday, Google released new TensorFlow model code for text summarization, specifically for generating news headlines on the Annotated English Gigaword dataset. We’re excited to see others working on summarization, as we did in our last report: our ability to “digest large...",
+  "excerpt": "\n\nYesterday, Google released new TensorFlow model code for text summarization, specifically for generating news headlines on the Annotated English Gigaword dataset. We’re excited to see others working on summarization, as we did in our last report: our ability to “digest large...",
   "external_url": false
 }, {
   "filePath": "pages/posts/2016-08-24-next-economics-interview-with-jimi-crawford.md",
@@ -31728,6 +31967,828 @@ __webpack_require__.r(__webpack_exports__);
   "published": true,
   "post_type": "interview",
   "excerpt": "\nBuilding shadows as proxies for construction rates in Shanghai. Photos courtesy of Orbital Insight/Digital Globe.\n\nIt’s no small feat to commercialize new technologies that arise from scientific and academic research. The useful is a small subset of the possible, and the...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in.md",
+  "urlPath": "/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in",
+  "path_name": "/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in",
+  "publishDate": "2016-08-22T18:02:08.000Z",
+  "title": "Under the Hood of the Variational Autoencoder (in Prose and Code)",
+  "preview_image": "http://fastforwardlabs.github.io/blog-images/miriam/imgs_code/160816_1754_reloaded_latent_784_500_500_50_round_65536_morph_4730816952.gif",
+  "feature": true,
+  "published": true,
+  "author": "Miriam",
+  "post_type": "Whitepaper",
+  "author_link": "https://twitter.com/meereve",
+  "excerpt": "\nThe Variational Autoencoder (VAE) neatly synthesizes unsupervised deep learning and variational Bayesian methods into one sleek package. In Part I of this series, we introduced the theory and intuition behind the VAE, an exciting development in machine learning for combined...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-08-18-giving-speech-a-voice-in-the-home.md",
+  "urlPath": "/posts/2016-08-18-giving-speech-a-voice-in-the-home",
+  "path_name": "/posts/2016-08-18-giving-speech-a-voice-in-the-home",
+  "publishDate": "2016-08-18T20:09:29.000Z",
+  "title": "Giving Speech a Voice in the Home",
+  "preview_image": "http://68.media.tumblr.com/24baab55961a73824bb7c218d3fb3d52/tumblr_inline_oc4fofyCUx1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "author": "Sean Lorenz, SENTER",
+  "post_type": "Guest Post",
+  "author_link": "http://senter.io/",
+  "excerpt": "\nThis is a guest post by Sean Lorenz, the Founder &amp; CEO of SENTER, a Boston-based startup using sensors and data science to support healthcare in the home. Sean explains how techniques from computational neuroscience can help make the smart home smarter and describes the...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and.md",
+  "urlPath": "/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and",
+  "path_name": "/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and",
+  "publishDate": "2016-08-12T17:09:50.000Z",
+  "title": "Introducing Variational Autoencoders (in Prose and Code)",
+  "preview_image": "http://fastforwardlabs.github.io/blog-images/miriam/160727_1340_explore.gray_del11_492x490.slower40.gif",
+  "feature": true,
+  "published": true,
+  "author": "Miriam",
+  "post_type": "whitepaper",
+  "author_link": "https://twitter.com/meereve",
+  "excerpt": "\n\nEffective machine learning means building expressive models that sift out signal from noise—that simplify the complexity of real-world data, yet accurately intuit and capture its subtle underlying patterns.\n\nWhatever the downstream application, a primary challenge often boils...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-07-27-late-summer-reading-list.md",
+  "urlPath": "/posts/2016-07-27-late-summer-reading-list",
+  "path_name": "/posts/2016-07-27-late-summer-reading-list",
+  "publishDate": "2016-07-27T16:45:52.000Z",
+  "title": "Late Summer Reading List",
+  "preview_image": "/tumblr_files/pexels-photo-57808.jpeg",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\nIt’s July 27. 89 degrees with high humidity on the sweltering New York City streets. We’re hard at work on our probabilistic programming report and prototype and looking forward to some good reads on the beach.\n\nHere are our recommendations for the dog days of summer!\n\nHomage to...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-07-25-fall-internships-research-engineering-and.md",
+  "urlPath": "/posts/2016-07-25-fall-internships-research-engineering-and",
+  "path_name": "/posts/2016-07-25-fall-internships-research-engineering-and",
+  "publishDate": "2016-07-25T17:30:43.000Z",
+  "title": "Fall Internships: Research Engineering and Prototype + Data Visualization [Filled]",
+  "preview_image": "https://images.pexels.com/photos/187041/pexels-photo-187041.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\nThese positions have been filled. We are not accepting further applications. For announcements of future opportunities, please subscribe to our mailing list.\n\nWe’re excited to announce two fall internship opportunities, which are open to current undergraduate and graduate...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-07-11-two-talks-in-nyc-this-saturday.md",
+  "urlPath": "/posts/2016-07-11-two-talks-in-nyc-this-saturday",
+  "path_name": "/posts/2016-07-11-two-talks-in-nyc-this-saturday",
+  "publishDate": "2016-07-11T16:46:23.000Z",
+  "title": "Two Talks in NYC this Saturday",
+  "preview_image": "http://68.media.tumblr.com/6d185b6ef69e9fa29f78e724fdf7415e/tumblr_inline_oa5seyqhEJ1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\nIf you’re a New Yorker looking for something interesting to do Saturday afternoon, Fast Forward Labs will be speaking at two events.\nPyGotham | July 16 | 2:15 pm\n\nMike Williams on Text Summarization\n\nPyGotham is a conference for the Python developer community. Mike’s talk...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-07-08-what-we-liked-at-ainow.md",
+  "urlPath": "/posts/2016-07-08-what-we-liked-at-ainow",
+  "path_name": "/posts/2016-07-08-what-we-liked-at-ainow",
+  "publishDate": "2016-07-08T17:29:52.000Z",
+  "title": "What We Liked at AINow",
+  "preview_image": "http://68.media.tumblr.com/bbb5c0978c75c9e2e36e04e770b6ccd5/tumblr_inline_oa065reL0V1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nOver the past two months, the White House ran a series of workshops geared to “prepare for the future of artificial intelligence.” At each session, technologists, academics, policy makers, and social scientists discussed social and economic issues stemming from data...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello.md",
+  "urlPath": "/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello",
+  "path_name": "/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello",
+  "publishDate": "2016-06-10T14:23:11.000Z",
+  "title": "Machine Listening: Interview with Juan Pablo Bello",
+  "preview_image": "http://68.media.tumblr.com/5cfcc6b830aa09f63bf9e9b2333524a1/tumblr_inline_o8k7rqJDmA1ta78fg_540.png",
+  "feature": true,
+  "published": true,
+  "post_type": "Interview",
+  "excerpt": "\nA probabilistic latent component analysis of a pitch class sequence for The Beatles’ Good Day Sunshine. The top layer shows the original representation (time vs pitch class). Subsequent layers show latent components.\n\nWhat is music? Or rather, what differentiates music from...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-06-02-welcome-friederike.md",
+  "urlPath": "/posts/2016-06-02-welcome-friederike",
+  "path_name": "/posts/2016-06-02-welcome-friederike",
+  "publishDate": "2016-06-02T13:53:20.000Z",
+  "title": "Welcome, Friederike!",
+  "preview_image": "http://68.media.tumblr.com/48ec558f89fc83dbf3e1770639cf6404/tumblr_inline_o85byoZHrx1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\n\nAlongside our research on emerging machine learning techniques, Fast Forward Labs advises organizations on data science issues like technical architecture, new product development, models and algorithms, and even hiring the right talent. Our client base is growing fast, and we...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-05-27-online-talk-summarization-algorithms.md",
+  "urlPath": "/posts/2016-05-27-online-talk-summarization-algorithms",
+  "path_name": "/posts/2016-05-27-online-talk-summarization-algorithms",
+  "publishDate": "2016-05-27T17:16:23.000Z",
+  "title": "Online Talk: Summarization Algorithms",
+  "preview_image": "https://images.pexels.com/photos/159621/open-book-library-education-read-159621.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\n\nThis week, we had the pleasure of hosting an online talk with the team from Agolo, an NYC-based startup with a great product that automatically summarizes articles (and can even generate new titles for a group of summarized articles). During the event, we discussed:why...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-05-25-human-machine-algorithms-interview-with-eric.md",
+  "urlPath": "/posts/2016-05-25-human-machine-algorithms-interview-with-eric",
+  "path_name": "/posts/2016-05-25-human-machine-algorithms-interview-with-eric",
+  "publishDate": "2016-05-25T12:37:15.000Z",
+  "title": "Human-Machine Algorithms: Interview with Eric Colson",
+  "preview_image": "http://68.media.tumblr.com/dd7cacb29c66b0d8ac385f37fde89d2d/tumblr_inline_o7qmpkkMD11qcg73w_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "interview",
+  "excerpt": "\n\nTherefore render unto Caesar the things that are Caesar&rsquo;s, and unto God the things that are God&rsquo;s.\n\n&ndash; Matthew, 22:21\n\nWe tend to think that recommender systems are old hat. ECommerce platforms like Amazon have been using techniques like collaborative filtering...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-05-23-evaluating-summarization-systems.md",
+  "urlPath": "/posts/2016-05-23-evaluating-summarization-systems",
+  "path_name": "/posts/2016-05-23-evaluating-summarization-systems",
+  "publishDate": "2016-05-23T17:09:13.000Z",
+  "title": "Evaluating Summarization Systems",
+  "preview_image": "http://68.media.tumblr.com/d879f22c1b7be3467b606c8aa8f7cfb6/tumblr_inline_o7n3a6bf5R1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Mohamed AlTantawy, Agolo",
+  "post_type": "Guest Post",
+  "author_link": "http://www.agolo.com/",
+  "excerpt": "\nWe’re excited for tomorrow’s online discussion about automatic text summarization! You can register here.\n\nDuring the event, Mohamed AlTantawy, CTO of Agolo, will explain the tech behind their summarization tool. In this blog post, he describes how his team evaluates the quality...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-05-12-may-24-online-event-text-summarization.md",
+  "urlPath": "/posts/2016-05-12-may-24-online-event-text-summarization",
+  "path_name": "/posts/2016-05-12-may-24-online-event-text-summarization",
+  "publishDate": "2016-05-12T11:36:14.000Z",
+  "title": "May 24 Online Event: Text Summarization",
+  "preview_image": "http://68.media.tumblr.com/9fea484f8c262c1b0b289a64348027c7/tumblr_inline_o7142hZoGX1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nPlease join us May 24 at 1:00 pm EST/10:00 am PST for an online discussion about how recent breakthroughs in deep learning allow us to extract and process meaning from text. This opens up a vast range of applications: summarization, instant translation, semantic search...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-05-03-probabilistic-programming-for-anomaly-detection.md",
+  "urlPath": "/posts/2016-05-03-probabilistic-programming-for-anomaly-detection",
+  "path_name": "/posts/2016-05-03-probabilistic-programming-for-anomaly-detection",
+  "publishDate": "2016-05-03T14:51:14.000Z",
+  "title": "Probabilistic Programming for Anomaly Detection",
+  "preview_image": "http://68.media.tumblr.com/1d842739c4ecb115ce586049dd552f48/tumblr_inline_o6kjvaPgBs1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Noam",
+  "post_type": "post",
+  "author_link": "https://twitter.com/noamsf",
+  "excerpt": "\n\nThe Fast Forward Labs research team is developing our next prototype, which will demonstrate an application of probabilistic programming. Probabilistic programming languages are a set of high-level languages that lower the barrier to entry for Bayesian data analysis.Bayesian...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-04-26-making-a-case-for-machine-learning-to-legal.md",
+  "urlPath": "/posts/2016-04-26-making-a-case-for-machine-learning-to-legal",
+  "path_name": "/posts/2016-04-26-making-a-case-for-machine-learning-to-legal",
+  "publishDate": "2016-04-26T18:41:17.000Z",
+  "title": "Making a Case for Machine Learning to Legal Departments",
+  "preview_image": "http://68.media.tumblr.com/ebfd0ddb6284c50fde7a72b87f40462d/tumblr_inline_o69786Qw561ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Dean Gonsowski",
+  "post_type": "Guest Post",
+  "author_link": "https://twitter.com/dean_gonsowski",
+  "excerpt": "\nSince we released our text summarization resources, the legal technology community has shown interest in leveraging summarization technology to support litigation document review, deposition digests, and contract analysis. Data scientist interest to use machine learning to mine...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-04-25-active-learning-in-the-law.md",
+  "urlPath": "/posts/2016-04-25-active-learning-in-the-law",
+  "path_name": "/posts/2016-04-25-active-learning-in-the-law",
+  "publishDate": "2016-04-25T17:41:02.000Z",
+  "title": "Active Learning in the Law",
+  "preview_image": "http://68.media.tumblr.com/5419ce3290efb6634bdefc85748cbe2e/tumblr_inline_o67a1hhHOk1ta78fg_540.gif",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\nThe NIST Text Retrieval Conference (TREC) Logo\n\nWe recently released research on neural network methods to summarize text. Systems like Brief, our summarization prototype, are poised to modify how we consume text. Content systems were historically designed to help humans find...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-04-21-summarization-as-a-gateway-to-computable-language.md",
+  "urlPath": "/posts/2016-04-21-summarization-as-a-gateway-to-computable-language",
+  "path_name": "/posts/2016-04-21-summarization-as-a-gateway-to-computable-language",
+  "publishDate": "2016-04-21T19:38:37.000Z",
+  "title": "Summarization as a Gateway to Computable Language",
+  "preview_image": "http://68.media.tumblr.com/981136c87557be0df4c1d09c3b4ed8b2/tumblr_inline_o600ygq2OG1qcg73w_540.png",
+  "feature": true,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\nAnalyzing unstructured text data such as news, emails, chats, narrative prose, legal documents, or transcribed speech is an extremely tough problem. Thanks to massive leaps in data engineering, we can just about store and retrieve this torrent of information. But we can&rsquo;t...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-04-15-assessing-data-science-maturity.md",
+  "urlPath": "/posts/2016-04-15-assessing-data-science-maturity",
+  "path_name": "/posts/2016-04-15-assessing-data-science-maturity",
+  "publishDate": "2016-04-15T18:07:33.000Z",
+  "title": "Assessing Data Science Maturity",
+  "preview_image": "http://68.media.tumblr.com/f80852671283007961d228f73499ecc3/tumblr_inline_o5ornqRft01ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nWe’re getting excited for our Data Leadership Conference, which is set for April 28 in New York City! The conference will feature an expert panel where Haile Owusu (Mashable), Claudia Perlich (Dstillery), and Kirk Borne (Booz Allen Hamilton) will share practical insights on how...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-04-11-new-tools-to-summarize-text.md",
+  "urlPath": "/posts/2016-04-11-new-tools-to-summarize-text",
+  "path_name": "/posts/2016-04-11-new-tools-to-summarize-text",
+  "publishDate": "2016-04-11T15:25:26.000Z",
+  "title": "New Tools to Summarize Text",
+  "preview_image": "http://68.media.tumblr.com/bc9e86d90ab7e2dbe8e2b1edf7293166/tumblr_inline_o58ah2oAIz1qcg73w_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\n\nWe’re excited to introduce the latest report and prototype from our machine intelligence R&amp;D group! In this iteration, we explore summarization, or neural network techniques for making unstructured text data computable.Making language computable has been a goal of computer...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-04-06-where-do-you-put-your-data-scientists.md",
+  "urlPath": "/posts/2016-04-06-where-do-you-put-your-data-scientists",
+  "path_name": "/posts/2016-04-06-where-do-you-put-your-data-scientists",
+  "publishDate": "2016-04-06T15:41:33.000Z",
+  "title": "Where Do You Put Your Data Scientists?",
+  "preview_image": "http://68.media.tumblr.com/84ee6a02c04f8869d9b14bc31170c5d8/tumblr_inline_o57xvwb9QO1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "author": "Daniel Tunkelang",
+  "post_type": "Guest Post",
+  "author_link": "https://www.linkedin.com/in/dtunkelang",
+  "excerpt": "\nThis is a guest post by Daniel Tunkelang, a data scientist and engineering executive, to preview the keynote he’ll deliver at our April 28 Data Leadership Conference in New York City!\n\nIn 2012, Harvard Business Review proclaimed that &ldquo;data scientist&rdquo; was the sexiest...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape.md",
+  "urlPath": "/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape",
+  "path_name": "/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape",
+  "publishDate": "2016-03-30T15:00:03.000Z",
+  "title": "Shivon Zilis on the Machine Intelligence Landscape",
+  "preview_image": "http://68.media.tumblr.com/74ea2d9c04837d672993d887788dcd76/tumblr_inline_o4tb0bi8wF1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "author": "Kathryn",
+  "post_type": "Interview",
+  "author_link": "http://www.twitter.com/HumeKathryn",
+  "excerpt": "\n\n2016 is shaping up to be a big year for machine intelligence. Achievements like DeepMind’s AlphaGo are making headlines in the popular press, large tech companies have started a “platform war” to become the go-to company for A.I., and entrepreneurs are increasingly building...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-03-28-fast-forward-labs-data-leadership-conference.md",
+  "urlPath": "/posts/2016-03-28-fast-forward-labs-data-leadership-conference",
+  "path_name": "/posts/2016-03-28-fast-forward-labs-data-leadership-conference",
+  "publishDate": "2016-03-28T20:26:11.000Z",
+  "title": "Fast Forward Labs Data Leadership Conference",
+  "preview_image": "http://68.media.tumblr.com/d453330d60fd9dffb72ac2e76c816b5d/tumblr_inline_o4rm2iqk5a1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "announcement",
+  "excerpt": "\n\nWe’re excited to announce the first Fast Forward Labs Data Leadership Conference! Join us April 28 in New York City as we discuss how to build strong data teams in complex organizations. You can register here. In a recent Computerworld article, our CEO &amp; Founder Hilary...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity.md",
+  "urlPath": "/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity",
+  "path_name": "/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity",
+  "publishDate": "2016-03-25T16:25:43.000Z",
+  "title": "H.P. Luhn and the Heuristic Value of Simplicity",
+  "preview_image": "http://68.media.tumblr.com/8ad092dc44ae1ad68bad697a55274b30/tumblr_inline_o4lon7By6N1ta78fg_540.gif",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nThe Fast Forward Labs team is putting final touches on our Summarization research, which explains approaches to making text quantifiable and computable. Stay tuned for a series of resources on the topic, including an online talk May 24 where we’ll cover technical details and...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus.md",
+  "urlPath": "/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus",
+  "path_name": "/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus",
+  "publishDate": "2016-02-24T18:58:10.000Z",
+  "title": "\"Hello world\" in Keras (or, Scikit-learn versus Keras)",
+  "preview_image": "http://68.media.tumblr.com/a4cf05aa664f57b54fe5021ce966f5d6/tumblr_inline_o30qnzlyxi1qcg73w_540.png",
+  "feature": true,
+  "published": true,
+  "author": "Mike",
+  "post_type": "post",
+  "author_link": "https://twitter.com/mikepqr",
+  "excerpt": "\nThis article is available as a\nnotebook on Github. Please refer to that notebook for a more detailed\ndiscussion and code fixes and updates.\n\nDespite all the recent excitement around deep learning, neural networks have a reputation among non-specialists as complicated to build...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-02-18-neuraltalk-with-kyle-mcdonald.md",
+  "urlPath": "/posts/2016-02-18-neuraltalk-with-kyle-mcdonald",
+  "path_name": "/posts/2016-02-18-neuraltalk-with-kyle-mcdonald",
+  "publishDate": "2016-02-18T15:09:51.000Z",
+  "title": "NeuralTalk with Kyle McDonald",
+  "preview_image": "http://68.media.tumblr.com/806e99a04e9f647a198d0d887942562b/tumblr_inline_o2pgqgwhP01ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Kathryn",
+  "post_type": "Interview",
+  "author_link": "https://twitter.com/HumeKathryn",
+  "excerpt": "\nImage from Social Soul, an immersive experience of being inside a social media stream, by Lauren McCarthy and Kyle McDonald\n\nA few weeks ago, theCUBE stopped by the Fast Forward Labs offices to interview us about our approach to innovation. In the interview, we highlighted that...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-02-16-machines-and-metaphors.md",
+  "urlPath": "/posts/2016-02-16-machines-and-metaphors",
+  "path_name": "/posts/2016-02-16-machines-and-metaphors",
+  "publishDate": "2016-02-16T16:35:11.000Z",
+  "title": "Machines and Metaphors",
+  "preview_image": "http://68.media.tumblr.com/2cf1b0924a1bfc66737d96f4797ef6f7/tumblr_inline_o2neravFOu1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "author": "Gene Kogan",
+  "post_type": "Guest Post",
+  "author_link": "http://www.genekogan.com/",
+  "excerpt": "\nThis is a guest post by Gene Kogan, an artist and programmer who applies emerging technology into artistic and expressive contexts, and teaches courses and workshops on topics related to code and art.\n\nRecent advances in deep learning research have renewed popular interest in...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-02-03-what-history-teaches-us-about-data-science.md",
+  "urlPath": "/posts/2016-02-03-what-history-teaches-us-about-data-science",
+  "path_name": "/posts/2016-02-03-what-history-teaches-us-about-data-science",
+  "publishDate": "2016-02-03T22:05:44.000Z",
+  "title": "What History Teaches Us About Data Science",
+  "preview_image": "http://68.media.tumblr.com/45c6f3016da356bf6dc765883e601b93/tumblr_inline_o1zrwfo9mf1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Kathryn",
+  "post_type": "post",
+  "author_link": "https://twitter.com/HumeKathryn",
+  "excerpt": "\nThe FFL team at the New York Historical Society's Silicon City exhibit\n\n> Study the past if you would define the future. — Confucius\n\nUntil April 17, 2016, the New York Historical Society is featuring an exhibition called Silicon City: Computer History Made in New York. The Fast...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-01-27-discussing-nlg-with-automated-insights.md",
+  "urlPath": "/posts/2016-01-27-discussing-nlg-with-automated-insights",
+  "path_name": "/posts/2016-01-27-discussing-nlg-with-automated-insights",
+  "publishDate": "2016-01-27T16:36:33.000Z",
+  "title": "Discussing NLG with Automated Insights",
+  "preview_image": "http://imgur.com/PihF0QE.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nOn January 26, we co-hosted an online discussion with Robbie Allen, the founder and CEO of natural language generation software provider Automated Insights. You may know them as the company behind Yahoo! fantasy football reports and the Associated Press’s automated company...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering.md",
+  "urlPath": "/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering",
+  "path_name": "/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering",
+  "publishDate": "2016-01-22T14:06:46.000Z",
+  "title": "Eli Pariser on the Ethics of Algorithmic Filtering",
+  "preview_image": "http://68.media.tumblr.com/3172e6d87c1d99d12058845989f9041f/tumblr_inline_o1bgwg1jOS1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Kathryn",
+  "post_type": "interview",
+  "author_link": "https://twitter.com/HumeKathryn",
+  "excerpt": "Chiefly his reflection, of which the portrait / Is the reflection, of which the portrait / Is the reflection once removed. / The glass chose to reflect only what he saw / Which was enough for his purpose: his image / Glazed, embalmed, projected at a 180-degree angle...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-01-15-demystifying-machine-intelligence.md",
+  "urlPath": "/posts/2016-01-15-demystifying-machine-intelligence",
+  "path_name": "/posts/2016-01-15-demystifying-machine-intelligence",
+  "publishDate": "2016-01-15T16:07:07.000Z",
+  "title": "Demystifying Machine Intelligence",
+  "preview_image": "http://imgur.com/fkb8Q7u.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nWe recently co-hosted an event at 1871 in Chicago with Kris Hammond, Chief Scientist at Narrative Science. Called “Technology Explained,” the event helped attendees understand why machine intelligence is succeeding today and how businesses can leverage new technologies to make...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar.md",
+  "urlPath": "/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar",
+  "path_name": "/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar",
+  "publishDate": "2016-01-12T18:11:44.000Z",
+  "title": "New NLG Resources: Sale and January 26 Webinar",
+  "preview_image": "http://68.media.tumblr.com/657a6b3cb24f5c2dc89aa2554daff67a/tumblr_inline_o0ukqsL5Tq1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\nWe’re excited to start 2016 by putting our Natural Language Generation (NLG) report and prototype on sale! We’re offering multiple packages, including a short report focused on business value for C-level executives.\nNLG is a technology that allows software systems to write...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-12-21-five-good-books-of-2015.md",
+  "urlPath": "/posts/2015-12-21-five-good-books-of-2015",
+  "path_name": "/posts/2015-12-21-five-good-books-of-2015",
+  "publishDate": "2015-12-21T17:13:49.000Z",
+  "title": "Five Good Books* of 2015",
+  "preview_image": "https://images-na.ssl-images-amazon.com/images/I/51Cf7c2AlpL._SX379_BO1,204,203,200_.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n* Plus a few papers, videos, and other fun things.\n\nWe love books, and it feels fitting to end 2015 with a round-up of a few that we thought were particularly excellent this year. Our favorite book for data science beginners: Data Science from Scratch: First Principles with...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-12-15-nextview-ventures-podcast.md",
+  "urlPath": "/posts/2015-12-15-nextview-ventures-podcast",
+  "path_name": "/posts/2015-12-15-nextview-ventures-podcast",
+  "publishDate": "2015-12-15T21:15:34.000Z",
+  "title": "NextView Ventures Podcast",
+  "preview_image": "http://68.media.tumblr.com/2a7557828a723a63971bd2f90412bbf0/tumblr_inline_nzf49uMo1i1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nBoston-based NextView Ventures runs a podcast series called Traction that features interviews with exciting new startups. Their latest podcast features an interview with our own Hilary Mason. Some highlights:\n\n> In its essence, data science is the practice of learning insights...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-12-10-summer-internship-research-engineer.md",
+  "urlPath": "/posts/2015-12-10-summer-internship-research-engineer",
+  "path_name": "/posts/2015-12-10-summer-internship-research-engineer",
+  "publishDate": "2015-12-10T16:58:36.000Z",
+  "title": "Summer Internship: Research Engineer",
+  "preview_image": "http://fastforwardlabs.github.io/report_images/ff02/18.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\nWe’re excited to announce a summer internship opportunity, which is open to current undergraduate and graduate students. To apply, send your resume and cover letter to jobs@fastforwardlabs.com. Keep reading for details on responsibilities, qualifications, and perks.\nResearch...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst.md",
+  "urlPath": "/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst",
+  "path_name": "/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst",
+  "publishDate": "2015-12-09T17:44:00.000Z",
+  "title": "Fashion Goes Deep: Data Science at Lyst",
+  "preview_image": "http://68.media.tumblr.com/993f6c53159f5715d9c127b790bb4bf5/tumblr_inline_nz3b9rPB5w1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "interview",
+  "excerpt": "\n\nOn November 16, 2015, Lyst, an online fashion marketplace based in the United Kingdom, launched its first advertising campaign. Featuring a series of ironic headlines (one simply says “Rip-off”) etched over beautiful images, the campaign emphasizes the company’s identity as a...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve.md",
+  "urlPath": "/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve",
+  "path_name": "/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve",
+  "publishDate": "2015-11-17T16:35:14.000Z",
+  "title": "When Dog Is Enough: Using Hypernyms To Improve Neural Network Predictions",
+  "preview_image": "http://68.media.tumblr.com/7df25fbff433a17f0a2d414666eff600/tumblr_inline_nxxgbxBEMd1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\nPossibly true statement: the Fast Forward Labs dog is the cutest dog in the world.\nOur General Counsel Ryan picked up the puppy a month ago and we’ve yet to name him. Ryan likes Renfield, which, as Bram Stoker fans know, evokes slightly different thoughts than “super cute...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc.md",
+  "urlPath": "/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc",
+  "path_name": "/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc",
+  "publishDate": "2015-11-03T19:00:20.000Z",
+  "title": "FFL in the Bay Area, Chicago, and DC",
+  "preview_image": "http://68.media.tumblr.com/c9c72b3fe440442ba7cf9e27cfea2f9e/tumblr_inline_nx954t5Jfv1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\nWe’ve got three events on the horizon. Join us, or contact us with questions if you’d like to learn more but are unable to attend!\n\nWednesday, November 11 | Mountain View, CA\n\nHilary Mason will give a keynote at H2O World, where participants discuss how to use machine learning...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-10-29-interview-with-pedro-domingos.md",
+  "urlPath": "/posts/2015-10-29-interview-with-pedro-domingos",
+  "path_name": "/posts/2015-10-29-interview-with-pedro-domingos",
+  "publishDate": "2015-10-29T13:13:00.000Z",
+  "title": "Interview with Pedro Domingos",
+  "preview_image": "http://68.media.tumblr.com/4886047f032d47b832630a0ad0a72841/tumblr_inline_nwzgbcEPkQ1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "Interview",
+  "excerpt": "\n\nMachine learning technologies increasingly shape our sense of reality and the choices we make in our daily lives. They power Amazon’s product recommendations. They classify documents relevant for a lawsuit. They enable computers to play chess like the masters.As machine...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-10-26-hello-deep-learning.md",
+  "urlPath": "/posts/2015-10-26-hello-deep-learning",
+  "path_name": "/posts/2015-10-26-hello-deep-learning",
+  "publishDate": "2015-10-26T16:20:07.000Z",
+  "title": "Hello Deep Learning",
+  "preview_image": "http://fastforwardlabs.github.io/report_images/ff03/neural_net_overview.png",
+  "feature": true,
+  "published": true,
+  "author": "Micha",
+  "post_type": "post",
+  "author_link": "https://github.com/mynameisfiber",
+  "excerpt": "\n\nDeep learning is a hot and fascinating research area, particularly when applied to classifying images. While researching the Fast Forward Labs Deep Learning: Image Analysis report, we played with a lot of very cool technology. In this blog post, we offer a guide to getting...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-10-20-flip-the-paradigm.md",
+  "urlPath": "/posts/2015-10-20-flip-the-paradigm",
+  "path_name": "/posts/2015-10-20-flip-the-paradigm",
+  "publishDate": "2015-10-20T19:14:08.000Z",
+  "title": "Flip the Paradigm",
+  "preview_image": "http://68.media.tumblr.com/d935756482197fabc55dcfb430e1b6e4/tumblr_inline_nwkldwjnwC1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nLast week, Hilary, Fast Forward Labs founder and CEO, gave the opening keynote at the Grace Hopper Celebration of Women in Computing in Houston, TX. Her talk inspired an audience of over 12,000 women to embrace the unimaginable possibilities that will shape the careers of...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-10-13-grace-hopper-opening-keynote.md",
+  "urlPath": "/posts/2015-10-13-grace-hopper-opening-keynote",
+  "path_name": "/posts/2015-10-13-grace-hopper-opening-keynote",
+  "publishDate": "2015-10-13T20:23:46.000Z",
+  "title": "Grace Hopper Opening Keynote",
+  "preview_image": "http://68.media.tumblr.com/bb7189932710038cbde1e04da9b51eeb/tumblr_inline_nw6da4Gppo1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nWe’re super excited that our CEO &amp; Founder, Hilary Mason, will deliver the opening keynote tomorrow at the Grace Hopper conference in Houston, TX. You can catch the keynote live at 9:30 EDT / 8:30 CDT on the conference livestream website. As a brief preview, Hilary’s talk...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-10-06-breaking-down-memes.md",
+  "urlPath": "/posts/2015-10-06-breaking-down-memes",
+  "path_name": "/posts/2015-10-06-breaking-down-memes",
+  "publishDate": "2015-10-06T21:12:57.000Z",
+  "title": "Breaking Down Memes",
+  "preview_image": "http://68.media.tumblr.com/ee5c34209ef754284caac01cfd8e0374/tumblr_inline_nvtfasBYBg1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nLast week, Hilary spoke about opportunities for mid-sized companies to use data at Accelerating America’s Middle Market, hosted by the Wall Street Journal. This morning, I spoke about opportunities for large, established companies to use data at a Corporate Longevity Leadership...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-09-29-machine-learning-in-retail-consumer-privacy.md",
+  "urlPath": "/posts/2015-09-29-machine-learning-in-retail-consumer-privacy",
+  "path_name": "/posts/2015-09-29-machine-learning-in-retail-consumer-privacy",
+  "publishDate": "2015-09-29T18:13:00.000Z",
+  "title": "Machine Learning in Retail: Consumer Privacy Implications",
+  "preview_image": "http://68.media.tumblr.com/7404e8cb508c2bc469e5a9887f5ac5e4/tumblr_inline_nvgbviEbKS1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Jessica",
+  "post_type": "post",
+  "author_link": "https://twitter.com/sefleuria",
+  "excerpt": "\n\nIn our last retail post, we explained how emerging sensor technologies are changing data science for brick and mortar. Many companies are working to retro-fit physical stores with capabilities originally developed for ecommerce. Without adding any new sensors or tags, image...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-09-24-how-do-neural-networks-learn.md",
+  "urlPath": "/posts/2015-09-24-how-do-neural-networks-learn",
+  "path_name": "/posts/2015-09-24-how-do-neural-networks-learn",
+  "publishDate": "2015-09-24T18:56:09.000Z",
+  "title": "How do neural networks learn?",
+  "preview_image": "http://68.media.tumblr.com/402a5e41ab09be86b8c43ce7f1e147a0/tumblr_inline_nv72twppMF1ta78fg_540.png",
+  "feature": false,
+  "published": true,
+  "author": "Mike S.",
+  "post_type": "post",
+  "author_link": "http://mwskirpan.com/",
+  "excerpt": "\nNeural networks are generating a lot of excitement, as they are quickly proving to be a promising and practical form of machine intelligence. At Fast Forward Labs, we just finished a project researching and building systems that use neural networks for image analysis, as shown...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep.md",
+  "urlPath": "/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep",
+  "path_name": "/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep",
+  "publishDate": "2015-09-22T18:58:45.000Z",
+  "title": "Fast Forward Labs Interviews Clarifai about Deep Learning",
+  "preview_image": "http://fastforwardlabs.github.io/report_images/ff03/pictograph-dogs.png",
+  "feature": false,
+  "published": true,
+  "post_type": "Interview",
+  "excerpt": "\nLast Thursday Hilary and I headed to Clarifai’s offices in the Flatiron District to ask CEO Matt Zeiler about using deep learning for image analysis. A few highlights from the interview:1) The success of a deep learning project depends on the quality of the initial training data...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-09-15-pictograph-unlock-your-images.md",
+  "urlPath": "/posts/2015-09-15-pictograph-unlock-your-images",
+  "path_name": "/posts/2015-09-15-pictograph-unlock-your-images",
+  "publishDate": "2015-09-15T19:16:19.000Z",
+  "title": "Pictograph: Unlock Your Images",
+  "preview_image": "http://fastforwardlabs.github.io/report_images/ff03/pictograph.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\nHave you ever wondered what your photos say about how you look at the world and who you are? Your images won’t say much about what types of things you tend to post unless you routinely tag them.  Our new toy application, Pictograph, catalogs the objects that make up your...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear.md",
+  "urlPath": "/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear",
+  "path_name": "/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear",
+  "publishDate": "2015-09-02T14:08:33.000Z",
+  "title": "D’Alembert’s Deep Dream: Bees and Nonlinear Transformations",
+  "preview_image": "http://68.media.tumblr.com/5e441cb1ef3adcd99999f7b29da5ee5e/tumblr_inline_nu1ujeo4cc1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Kathryn",
+  "post_type": "post",
+  "author_link": "https://twitter.com/HumeKathryn",
+  "excerpt": "\n\nHold your hats! In the next couple of weeks we’re launching an arsenal of deep learning resources, including a feature report, a public prototype that will classify your Instagram identity and a webinar exploring the past, present and future of deep learning. Sign up here!As a...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-08-19-machine-learning-applications-in-fashion-retail.md",
+  "urlPath": "/posts/2015-08-19-machine-learning-applications-in-fashion-retail",
+  "path_name": "/posts/2015-08-19-machine-learning-applications-in-fashion-retail",
+  "publishDate": "2015-08-19T18:08:14.000Z",
+  "title": "Machine Learning Applications in Fashion Retail",
+  "preview_image": "http://68.media.tumblr.com/1ea7d218b3ec206decfb85436ead953d/tumblr_inline_ntcf1hms2i1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Jessica",
+  "post_type": "post",
+  "author_link": "http://68.media.tumblr.com/1ea7d218b3ec206decfb85436ead953d/tumblr_inline_ntcf1hms2i1ta78fg_540.jpg",
+  "excerpt": "\nThis is the first of two articles about recent developments in fashion technology. Part two will focus on implications for consumer privacy.\n\nThe next frontier for recommender systems is the retail store. We’re used to associating machine learning with ecommerce giants like Gilt...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-08-14-why-now-some-preconditions-for-technology.md",
+  "urlPath": "/posts/2015-08-14-why-now-some-preconditions-for-technology",
+  "path_name": "/posts/2015-08-14-why-now-some-preconditions-for-technology",
+  "publishDate": "2015-08-14T18:57:31.000Z",
+  "title": "Why Now? Some Preconditions for Technology Innovations",
+  "preview_image": "http://68.media.tumblr.com/aedff218136a4dbddc112c09618503ae/tumblr_inline_nt365m6VoK1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\nWe like to hold fast to the myth of the individual creative genius as the source of the world’s most impactful scientific revolutions or disruptive innovations. But it’s consoling to recall how Isaac Newton consoled his rival Robert Hooke: “If I’ve seen further than others, it...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep.md",
+  "urlPath": "/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep",
+  "path_name": "/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep",
+  "publishDate": "2015-08-07T19:08:04.000Z",
+  "title": "On Stirling Engines and Orchids: A Prelude to Deep Learning",
+  "preview_image": "http://68.media.tumblr.com/1848a19b440d862d19082e450097910b/tumblr_inline_nsq7opgW3S1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\nToday’s post is inspired by a slow-motion recording we captured of a Stirling engine that Ryan, Fast Forward’s General Counsel, just so happened to have lying around our New York City offices. For the non-mechanics among us, a Stirling engine is a heat engine that operates by...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-08-05-a-flying-machine-from-new-york-to-paris.md",
+  "urlPath": "/posts/2015-08-05-a-flying-machine-from-new-york-to-paris",
+  "path_name": "/posts/2015-08-05-a-flying-machine-from-new-york-to-paris",
+  "publishDate": "2015-08-05T20:28:34.000Z",
+  "title": "A Flying Machine from New York to Paris",
+  "preview_image": "http://68.media.tumblr.com/131a376a1e12ca1034f528a2e59eaba8/tumblr_inline_nsml4hM1dM1ta78fg_540.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nOn March 25, 1909, Wilbur Wright (of the Wright brothers) told a reporter at the Cairo, Illinois bulletin that “no airship will ever fly from New York to Paris.” As with most quotes inherited from the past, people often misinterpret Wright’s quote as reactionary because they...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-07-16-fast-forward-labs-at-the-science-fair.md",
+  "urlPath": "/posts/2015-07-16-fast-forward-labs-at-the-science-fair",
+  "path_name": "/posts/2015-07-16-fast-forward-labs-at-the-science-fair",
+  "publishDate": "2015-07-16T19:43:26.000Z",
+  "title": "Fast Forward Labs at the Science Fair",
+  "preview_image": "http://68.media.tumblr.com/bbd3e0495730ede2d37c309aa574112f/tumblr_inline_nrlfopx9PL1ts2crc_540.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\nLast night was the New York Times' Open Source Science Fair. It kicked off with a keynote speech by our own Hilary Mason.\n\nPhoto by Chrys Wu: http://t.co/m7G7G3g1ih\n\nAfter a dinner meet-and-greet session, the attendees and exhibitors got down to business, showing off their open...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-06-23-celebrating-our-one-year-anniversary.md",
+  "urlPath": "/posts/2015-06-23-celebrating-our-one-year-anniversary",
+  "path_name": "/posts/2015-06-23-celebrating-our-one-year-anniversary",
+  "publishDate": "2015-06-23T19:24:50.000Z",
+  "title": "Celebrating Our One Year Anniversary",
+  "preview_image": "http://localhost:4000/tumblr_files/tumblr_nqewle0krb1teyfqto1_1280.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nCelebrating our one year anniversary!\n",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote.md",
+  "urlPath": "/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote",
+  "path_name": "/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote",
+  "publishDate": "2015-06-19T19:42:33.000Z",
+  "title": "MongoDB World Keynote",
+  "preview_image": "/tumblr_files/tumblr_nq7ihwHn5R1teyfqto1_1280.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nFast Forward Labs’ founder and CEO gave a keynote speech at MongoDB World in New York earlier this month.  Check out the video here.\n",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science.md",
+  "urlPath": "/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science",
+  "path_name": "/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science",
+  "publishDate": "2015-06-16T14:40:47.000Z",
+  "title": "Hilary on Science Friday",
+  "preview_image": "http://localhost:4000/tumblr_files/tumblr_nq1krz1wI61teyfqto1_1280.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\n\nLast Friday, Hilary joined Ira Flatow on Science Friday in the studio to discuss the question: Will Our Smartphones Know Us Better Than Ourselves?\n\nWe love imagining what our future may look like with the technology we are building.\n",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-06-04-coffee-thermoregulation.md",
+  "urlPath": "/posts/2015-06-04-coffee-thermoregulation",
+  "path_name": "/posts/2015-06-04-coffee-thermoregulation",
+  "publishDate": "2015-06-04T22:59:36.000Z",
+  "title": "Coffee Thermoregulation",
+  "preview_image": "http://68.media.tumblr.com/72224480b881edf2292e6c5145351411/tumblr_inline_npfzn7D0tB1ts2crc_540.jpg",
+  "feature": false,
+  "published": true,
+  "author": "Ryan",
+  "post_type": "post",
+  "author_link": "https://www.flickr.com/photos/jqpubliq/",
+  "excerpt": "\nWe take coffee pretty seriously here at Fast Forward Labs.  In addition to our machine learning research, we have also explored both hot and cold coffee brewing technologies.\n\nResearch reveals that no one wants to drink a mug of hot brew once it settles to room temperature.  As...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-05-19-designing-the-tech-graph.md",
+  "urlPath": "/posts/2015-05-19-designing-the-tech-graph",
+  "path_name": "/posts/2015-05-19-designing-the-tech-graph",
+  "publishDate": "2015-05-19T16:25:01.000Z",
+  "title": "Designing the Tech Graph",
+  "preview_image": "http://i.imgur.com/bJjtxok.png",
+  "feature": false,
+  "published": true,
+  "author": "Grant",
+  "post_type": "post",
+  "author_link": "http://www.twitter.com/grantcuster",
+  "excerpt": "\nWe launched a redesign of the Fast Forward Labs website today. There are lots of parts of the design I’d like to write someday about but for this post I want to focus on the thinking behind the “Tech Graph” force-directed graph display in the Intro section.\n\nDramatizing...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared.md",
+  "urlPath": "/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared",
+  "path_name": "/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared",
+  "publishDate": "2015-04-30T21:33:25.000Z",
+  "title": "Hilary on Bloomberg TV",
+  "preview_image": "/tumblr_files/tumblr_nnn20a7yAI1teyfqto1_r1_1280.png",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\n\nOur fearless leader Hilary Mason appeared yesterday on Bloomberg TV to discuss Selerity’s early acquisition of Twitter’s earnings data.  The interview video is available here.\n",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-04-23-bytecode-hacking-for-great-justice.md",
+  "urlPath": "/posts/2015-04-23-bytecode-hacking-for-great-justice",
+  "path_name": "/posts/2015-04-23-bytecode-hacking-for-great-justice",
+  "publishDate": "2015-04-23T15:16:56.000Z",
+  "title": "Bytecode Hacking for Great Justice",
+  "preview_image": "http://i.imgur.com/OodCK0c.png",
+  "feature": true,
+  "published": true,
+  "author": "Micha",
+  "post_type": "post",
+  "author_link": "http://github.com/mynameisfiber",
+  "excerpt": "\nDO NOT TRY THIS AT HOME! NO PYTHONS WERE HURT IN THE CREATION OF THIS BLOG POST!\n\nCheck out the code at code at github.com/mynameisfiber/pytailcall\n\nAs an exercise into learning more about python 2.7 bytecode, I wanted to implement the thing that pythonistas love to hate - tail...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for.md",
+  "urlPath": "/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for",
+  "path_name": "/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for",
+  "publishDate": "2015-04-01T20:24:20.000Z",
+  "title": "Probabilistic Methods for Realtime Streams",
+  "preview_image": "/tumblr_files/tumblr_nm5a0kCyu11teyfqto1_1280.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "announcement",
+  "excerpt": "\n\nOur second R&D Report, Probabilistic Methods for Realtime Streams, has gone out! In this report, we explored probabilistic algorithms for machine learning on potentially large realtime streams of data with efficient CPU and memory usage.\n\nOur prototype demonstrated these...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs.md",
+  "urlPath": "/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs",
+  "path_name": "/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs",
+  "publishDate": "2015-03-31T18:44:43.000Z",
+  "title": "The Hoff",
+  "preview_image": "/tumblr_files/tumblr_nm3aqjqnEp1teyfqto1_1280.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\n\nThe Hoff stopped by Fast Forward Labs!\n",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2014-12-19-announcing-our-next-topic-realtime-stream.md",
+  "urlPath": "/posts/2014-12-19-announcing-our-next-topic-realtime-stream",
+  "path_name": "/posts/2014-12-19-announcing-our-next-topic-realtime-stream",
+  "publishDate": "2014-12-19T21:17:09.000Z",
+  "title": "Our Next Topic: Realtime Stream Analysis",
+  "preview_image": "http://fastforwardlabs.github.io/report_images/ff02/19.png",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\nWe're very pleased to announce our second research report topic will be realtime stream analysis, with a focus on probabilistic data structures.\nUsing these techniques, we're able to build systems that enable extremely fast and memory efficient computation over very large data...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language.md",
+  "urlPath": "/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language",
+  "path_name": "/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language",
+  "publishDate": "2014-10-17T20:49:48.000Z",
+  "title": "The Natural Language Generation Report is Out",
+  "preview_image": "/tumblr_files/tumblr_ndlwj0JNFG1teyfqto1_1280.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "Announcement",
+  "excerpt": "\n\nThe Fast Forward Labs report on Natural Language Generation will be arriving soon to a bookshelf near you!\n",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the.md",
+  "urlPath": "/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the",
+  "path_name": "/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the",
+  "publishDate": "2014-08-21T19:28:14.000Z",
+  "title": "We Built a Table",
+  "preview_image": "/tumblr_files/tumblr_nao8r2wCGP1teyfqto5_1280.jpg",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\n\nAt Fast Forward Labs we're thoughtful about the kind of work space we want to spend our time in. We decided that we preferred a shared large table instead of individual desks, to make it easier to collaborate and offer the flexibility to spread out when necessary, and to allow...",
+  "external_url": false
+}, {
+  "filePath": "pages/posts/2014-07-21-hello-fast-forward-labs.md",
+  "urlPath": "/posts/2014-07-21-hello-fast-forward-labs",
+  "path_name": "/posts/2014-07-21-hello-fast-forward-labs",
+  "publishDate": "2014-07-21T16:01:01.000Z",
+  "title": "Hello, Fast Forward Labs!",
+  "preview_image": "http://fastforwardlabs.github.io/resources/images/logos/ff-logo-white-bg.png",
+  "feature": false,
+  "published": true,
+  "post_type": "post",
+  "excerpt": "\nI’m very pleased to introduce Fast Forward Labs.\nFast Forward Labs is an independent data technology research lab. We focus on taking technologies that are just becoming possible, and making them useful.\nWe believe that the existing research structures are failing in 2014. We...",
   "external_url": false
 }]);
 

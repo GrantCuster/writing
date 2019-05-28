@@ -1,1034 +1,1034 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[My blog]]></title>
-        <description><![CDATA[My blog]]></description>
-        <link>https://nextjs-mdx-blog-example.now.sh</link>
+        <title><![CDATA[Cloudera Fast Forward LAbs Blog]]></title>
+        <description><![CDATA[Cloudera Fast Forward LAbs Blog]]></description>
+        <link>https://blog.fastforwardlabs.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 09 May 2019 14:18:33 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 May 2019 19:36:06 GMT</lastBuildDate>
+        <item>
+            <title><![CDATA[Meta-Learners - learning how to learn]]></title>
+            <link>https://blog.fastforwardlabs.com/2019/05/22/metalearners-learning-how-to-learn.html</link>
+            <guid isPermaLink="false">/2019/05/22/metalearners-learning-how-to-learn.html</guid>
+            <pubDate>Wed, 22 May 2019 19:05:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Visualizing Active Learning]]></title>
+            <link>https://blog.fastforwardlabs.com/2019/04/29/visualizing-active-learning.html</link>
+            <guid isPermaLink="false">/2019/04/29/visualizing-active-learning.html</guid>
+            <pubDate>Mon, 29 Apr 2019 20:05:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Teaching machines to recognize faces: a tale of two outcomes]]></title>
+            <link>https://blog.fastforwardlabs.com/2019/04/29/teaching-machines-to-recognize-faces-a-tale-of-two-outcomes.html</link>
+            <guid isPermaLink="false">/2019/04/29/teaching-machines-to-recognize-faces-a-tale-of-two-outcomes.html</guid>
+            <pubDate>Mon, 29 Apr 2019 20:05:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[An Invitation to Active Learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2019-04-03-an-invitation-to-active-learning</link>
-            <guid isPermaLink="false">/posts/2019-04-03-an-invitation-to-active-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2019/04/03/an-invitation-to-active-learning.html</link>
+            <guid isPermaLink="false">/2019/04/03/an-invitation-to-active-learning.html</guid>
             <pubDate>Wed, 03 Apr 2019 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[A Guide to Learning with Limited Labeled Data]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data</link>
-            <guid isPermaLink="false">/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data</guid>
+            <link>https://blog.fastforwardlabs.com/2019/04/02/a-guide-to-learning-with-limited-labeled-data.html</link>
+            <guid isPermaLink="false">/2019/04/02/a-guide-to-learning-with-limited-labeled-data.html</guid>
             <pubDate>Tue, 02 Apr 2019 18:04:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Learning with Limited Labeled Data]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2019-03-20-learning-with-limited-labeled-data</link>
-            <guid isPermaLink="false">/posts/2019-03-20-learning-with-limited-labeled-data</guid>
+            <link>https://blog.fastforwardlabs.com/2019/03/20/learning-with-limited-labeled-data.html</link>
+            <guid isPermaLink="false">/2019/03/20/learning-with-limited-labeled-data.html</guid>
             <pubDate>Wed, 20 Mar 2019 19:03:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Causality in machine learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2019-02-28-causality-in-machine-learning</link>
-            <guid isPermaLink="false">/posts/2019-02-28-causality-in-machine-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2019/02/28/causality-in-machine-learning.html</link>
+            <guid isPermaLink="false">/2019/02/28/causality-in-machine-learning.html</guid>
             <pubDate>Thu, 28 Feb 2019 19:03:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Making an interactive UMAP visualization of the MNIST data set]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set</link>
-            <guid isPermaLink="false">/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set</guid>
+            <link>https://blog.fastforwardlabs.com/2019/01/29/making-an-interactive-umap-visualization-of-the-mnist-data-set.html</link>
+            <guid isPermaLink="false">/2019/01/29/making-an-interactive-umap-visualization-of-the-mnist-data-set.html</guid>
             <pubDate>Tue, 29 Jan 2019 17:01:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The business case for federated learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-12-28-the-business-case-for-federated-learning</link>
-            <guid isPermaLink="false">/posts/2018-12-28-the-business-case-for-federated-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2018/12/28/the-business-case-for-federated-learning.html</link>
+            <guid isPermaLink="false">/2018/12/28/the-business-case-for-federated-learning.html</guid>
             <pubDate>Fri, 28 Dec 2018 19:01:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Highlights of 2018]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-12-18-highlights-2018</link>
-            <guid isPermaLink="false">/posts/2018-12-18-highlights-2018</guid>
+            <link>https://blog.fastforwardlabs.com/2018/12/18/highlights-2018.html</link>
+            <guid isPermaLink="false">/2018/12/18/highlights-2018.html</guid>
             <pubDate>Tue, 18 Dec 2018 19:12:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Fine-tuning for Natural Language Processing]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-12-18-finetuning-for-natural-language-processing</link>
-            <guid isPermaLink="false">/posts/2018-12-18-finetuning-for-natural-language-processing</guid>
+            <link>https://blog.fastforwardlabs.com/2018/12/18/finetuning-for-natural-language-processing.html</link>
+            <guid isPermaLink="false">/2018/12/18/finetuning-for-natural-language-processing.html</guid>
             <pubDate>Fri, 28 Dec 2018 19:01:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Deep Learning for Media Content]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-12-18-deep-learning-for-media-content</link>
-            <guid isPermaLink="false">/posts/2018-12-18-deep-learning-for-media-content</guid>
+            <link>https://blog.fastforwardlabs.com/2018/12/18/deep-learning-for-media-content.html</link>
+            <guid isPermaLink="false">/2018/12/18/deep-learning-for-media-content.html</guid>
             <pubDate>Fri, 28 Dec 2018 19:01:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Designing Turbofan Tycoon]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-12-06-designing-turbofan-tycoon</link>
-            <guid isPermaLink="false">/posts/2018-12-06-designing-turbofan-tycoon</guid>
+            <link>https://blog.fastforwardlabs.com/2018/12/06/designing-turbofan-tycoon.html</link>
+            <guid isPermaLink="false">/2018/12/06/designing-turbofan-tycoon.html</guid>
             <pubDate>Thu, 06 Dec 2018 16:12:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Federated learning: distributed machine learning with data locality and privacy]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-11-14-federated-learning</link>
-            <guid isPermaLink="false">/posts/2018-11-14-federated-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2018/11/14/federated-learning.html</link>
+            <guid isPermaLink="false">/2018/11/14/federated-learning.html</guid>
             <pubDate>Wed, 14 Nov 2018 10:11:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The quest continues: a look at a new initiative to explore human and machine intelligence]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence</link>
-            <guid isPermaLink="false">/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence</guid>
+            <link>https://blog.fastforwardlabs.com/2018/10/29/the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence.html</link>
+            <guid isPermaLink="false">/2018/10/29/the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence.html</guid>
             <pubDate>Mon, 29 Oct 2018 15:11:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The Decentralized Web]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-10-29-the-decentralized-web</link>
-            <guid isPermaLink="false">/posts/2018-10-29-the-decentralized-web</guid>
+            <link>https://blog.fastforwardlabs.com/2018/10/29/the-decentralized-web.html</link>
+            <guid isPermaLink="false">/2018/10/29/the-decentralized-web.html</guid>
             <pubDate>Mon, 29 Oct 2018 15:11:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Learning to learn in a model-agnostic way]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way</link>
-            <guid isPermaLink="false">/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way</guid>
+            <link>https://blog.fastforwardlabs.com/2018/10/29/learning-to-learn-in-a-modelagnostic-way.html</link>
+            <guid isPermaLink="false">/2018/10/29/learning-to-learn-in-a-modelagnostic-way.html</guid>
             <pubDate>Mon, 29 Oct 2018 15:11:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Coming Soon: Federated Learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge</link>
-            <guid isPermaLink="false">/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge</guid>
+            <link>https://blog.fastforwardlabs.com/2018/10/29/federated-learning-machine-learning-with-privacy-on-the-edge.html</link>
+            <guid isPermaLink="false">/2018/10/29/federated-learning-machine-learning-with-privacy-on-the-edge.html</guid>
             <pubDate>Mon, 29 Oct 2018 18:10:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The True Competitive Advantage in ML]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-09-28-the-true-competitive-advantage-in-ml</link>
-            <guid isPermaLink="false">/posts/2018-09-28-the-true-competitive-advantage-in-ml</guid>
+            <link>https://blog.fastforwardlabs.com/2018/09/28/the-true-competitive-advantage-in-ml.html</link>
+            <guid isPermaLink="false">/2018/09/28/the-true-competitive-advantage-in-ml.html</guid>
             <pubDate>Fri, 28 Sep 2018 21:10:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Snorkel: Rapid Training Data Creation with Weak Supervision]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision</link>
-            <guid isPermaLink="false">/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision</guid>
+            <link>https://blog.fastforwardlabs.com/2018/09/28/snorkel-rapid-training-data-creation-with-weak-supervision.html</link>
+            <guid isPermaLink="false">/2018/09/28/snorkel-rapid-training-data-creation-with-weak-supervision.html</guid>
             <pubDate>Fri, 28 Sep 2018 21:10:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Realistic Video Generation]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-09-28-realistic-video-generation</link>
-            <guid isPermaLink="false">/posts/2018-09-28-realistic-video-generation</guid>
+            <link>https://blog.fastforwardlabs.com/2018/09/28/realistic-video-generation.html</link>
+            <guid isPermaLink="false">/2018/09/28/realistic-video-generation.html</guid>
             <pubDate>Fri, 28 Sep 2018 21:10:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Apache Spark gets a machine learning makeover]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover</link>
-            <guid isPermaLink="false">/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover</guid>
+            <link>https://blog.fastforwardlabs.com/2018/09/28/apache-spark-gets-a-machine-learning-makeover.html</link>
+            <guid isPermaLink="false">/2018/09/28/apache-spark-gets-a-machine-learning-makeover.html</guid>
             <pubDate>Fri, 28 Sep 2018 21:10:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Deep learning made easier with transfer learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning</link>
-            <guid isPermaLink="false">/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2018/09/17/deep-learning-is-easy-an-introduction-to-transfer-learning.html</link>
+            <guid isPermaLink="false">/2018/09/17/deep-learning-is-easy-an-introduction-to-transfer-learning.html</guid>
             <pubDate>Mon, 17 Sep 2018 16:09:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Understanding a generative space]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-08-29-understanding-a-generative-space</link>
-            <guid isPermaLink="false">/posts/2018-08-29-understanding-a-generative-space</guid>
+            <link>https://blog.fastforwardlabs.com/2018/08/29/understanding-a-generative-space.html</link>
+            <guid isPermaLink="false">/2018/08/29/understanding-a-generative-space.html</guid>
             <pubDate>Wed, 29 Aug 2018 22:09:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Hyperparameter Tuning and Meta-Interpretability: Track All Your Experiments!]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability</link>
-            <guid isPermaLink="false">/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability</guid>
+            <link>https://blog.fastforwardlabs.com/2018/08/29/hyperparameter-tuning-and-metainterpretability.html</link>
+            <guid isPermaLink="false">/2018/08/29/hyperparameter-tuning-and-metainterpretability.html</guid>
             <pubDate>Wed, 29 Aug 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Breakthroughs in transfer learning for natural language processing]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp</link>
-            <guid isPermaLink="false">/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp</guid>
+            <link>https://blog.fastforwardlabs.com/2018/08/29/breakthroughs-in-transfer-learning-for-nlp.html</link>
+            <guid isPermaLink="false">/2018/08/29/breakthroughs-in-transfer-learning-for-nlp.html</guid>
             <pubDate>Wed, 29 Aug 2018 22:09:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Automated Machine Learning: Hype now, reality later?]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-08-29-automated-machine-learning-hype-now-reality-later</link>
-            <guid isPermaLink="false">/posts/2018-08-29-automated-machine-learning-hype-now-reality-later</guid>
+            <link>https://blog.fastforwardlabs.com/2018/08/29/automated-machine-learning-hype-now-reality-later.html</link>
+            <guid isPermaLink="false">/2018/08/29/automated-machine-learning-hype-now-reality-later.html</guid>
             <pubDate>Wed, 29 Aug 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Multi-Task Sci-Fi: Havurtat]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-08-15-multi-task-sci-fi-havurtat</link>
-            <guid isPermaLink="false">/posts/2018-08-15-multi-task-sci-fi-havurtat</guid>
+            <link>https://blog.fastforwardlabs.com/2018/08/15/multi-task-sci-fi-havurtat.html</link>
+            <guid isPermaLink="false">/2018/08/15/multi-task-sci-fi-havurtat.html</guid>
             <pubDate>Wed, 15 Aug 2018 12:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Progress in machine learning interpretability]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-07-31-progress-in-machine-learning-interpretability</link>
-            <guid isPermaLink="false">/posts/2018-07-31-progress-in-machine-learning-interpretability</guid>
+            <link>https://blog.fastforwardlabs.com/2018/07/31/progress-in-machine-learning-interpretability.html</link>
+            <guid isPermaLink="false">/2018/07/31/progress-in-machine-learning-interpretability.html</guid>
             <pubDate>Tue, 31 Jul 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[New Dynamics for Topic Models]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-07-31-new-dynamics-for-topic-models</link>
-            <guid isPermaLink="false">/posts/2018-07-31-new-dynamics-for-topic-models</guid>
+            <link>https://blog.fastforwardlabs.com/2018/07/31/new-dynamics-for-topic-models.html</link>
+            <guid isPermaLink="false">/2018/07/31/new-dynamics-for-topic-models.html</guid>
             <pubDate>Tue, 31 Jul 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Neural reinterpretations of movie trailers]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-07-31-neural-reinterpretations-of-movie-trailers</link>
-            <guid isPermaLink="false">/posts/2018-07-31-neural-reinterpretations-of-movie-trailers</guid>
+            <link>https://blog.fastforwardlabs.com/2018/07/31/neural-reinterpretations-of-movie-trailers.html</link>
+            <guid isPermaLink="false">/2018/07/31/neural-reinterpretations-of-movie-trailers.html</guid>
             <pubDate>Tue, 31 Jul 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[New Research on Multi-Task Learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-07-24-ff08-launch</link>
-            <guid isPermaLink="false">/posts/2018-07-24-ff08-launch</guid>
+            <link>https://blog.fastforwardlabs.com/2018/07/24/ff08-launch.html</link>
+            <guid isPermaLink="false">/2018/07/24/ff08-launch.html</guid>
             <pubDate>Tue, 24 Jul 2018 13:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Sequence labeling with semi-supervised multi-task learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning</link>
-            <guid isPermaLink="false">/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2018/06/29/sequence-labeling-with-semisupervised-multitask-learning.html</link>
+            <guid isPermaLink="false">/2018/06/29/sequence-labeling-with-semisupervised-multitask-learning.html</guid>
             <pubDate>Fri, 29 Jun 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Deep Learning Vendor Update: Hyperparameter Tuning Systems]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems</link>
-            <guid isPermaLink="false">/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems</guid>
+            <link>https://blog.fastforwardlabs.com/2018/06/29/deep-learning-vendor-update-hyperparameter-tuning-systems.html</link>
+            <guid isPermaLink="false">/2018/06/29/deep-learning-vendor-update-hyperparameter-tuning-systems.html</guid>
             <pubDate>Fri, 29 Jun 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Supercharging Classification - The Value of Multi-task Learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning</link>
-            <guid isPermaLink="false">/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2018/06/26/supercharging-classification-the-value-of-multitask-learning.html</link>
+            <guid isPermaLink="false">/2018/06/26/supercharging-classification-the-value-of-multitask-learning.html</guid>
             <pubDate>Wed, 27 Jun 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Rules to Learn By]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-05-31-rules-to-learn-by</link>
-            <guid isPermaLink="false">/posts/2018-05-31-rules-to-learn-by</guid>
+            <link>https://blog.fastforwardlabs.com/2018/05/31/rules-to-learn-by.html</link>
+            <guid isPermaLink="false">/2018/05/31/rules-to-learn-by.html</guid>
             <pubDate>Thu, 31 May 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Convolve all the things]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-05-31-convolve-all-the-things</link>
-            <guid isPermaLink="false">/posts/2018-05-31-convolve-all-the-things</guid>
+            <link>https://blog.fastforwardlabs.com/2018/05/31/convolve-all-the-things.html</link>
+            <guid isPermaLink="false">/2018/05/31/convolve-all-the-things.html</guid>
             <pubDate>Thu, 31 May 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Progress in text summarization]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-05-02-progress-in-text-summarization</link>
-            <guid isPermaLink="false">/posts/2018-05-02-progress-in-text-summarization</guid>
+            <link>https://blog.fastforwardlabs.com/2018/05/02/progress-in-text-summarization.html</link>
+            <guid isPermaLink="false">/2018/05/02/progress-in-text-summarization.html</guid>
             <pubDate>Wed, 02 May 2018 16:10:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Simple Architectures Outperform Complex Ones in Language Modeling]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling</link>
-            <guid isPermaLink="false">/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling</guid>
+            <link>https://blog.fastforwardlabs.com/2018/04/25/simple-architectures-outperform-complex-ones-in-language-modeling.html</link>
+            <guid isPermaLink="false">/2018/04/25/simple-architectures-outperform-complex-ones-in-language-modeling.html</guid>
             <pubDate>Wed, 25 Apr 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[JavaScript eats the world: deep learning and notebooks edition]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition</link>
-            <guid isPermaLink="false">/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition</guid>
+            <link>https://blog.fastforwardlabs.com/2018/04/25/javascript-eats-the-world-deep-learning-and-notebooks-edition.html</link>
+            <guid isPermaLink="false">/2018/04/25/javascript-eats-the-world-deep-learning-and-notebooks-edition.html</guid>
             <pubDate>Wed, 25 Apr 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Introducing SciFi]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-04-18-introducing-scifi</link>
-            <guid isPermaLink="false">/posts/2018-04-18-introducing-scifi</guid>
+            <link>https://blog.fastforwardlabs.com/2018/04/18/introducing-scifi.html</link>
+            <guid isPermaLink="false">/2018/04/18/introducing-scifi.html</guid>
             <pubDate>Thu, 19 Apr 2018 18:04:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[PyTorch for Recommenders 101]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-04-10-pytorch-for-recommenders-101</link>
-            <guid isPermaLink="false">/posts/2018-04-10-pytorch-for-recommenders-101</guid>
+            <link>https://blog.fastforwardlabs.com/2018/04/10/pytorch-for-recommenders-101.html</link>
+            <guid isPermaLink="false">/2018/04/10/pytorch-for-recommenders-101.html</guid>
             <pubDate>Tue, 10 Apr 2018 17:04:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Unemployment vs. Augmentation]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-03-28-unemployment-vs-augmentation</link>
-            <guid isPermaLink="false">/posts/2018-03-28-unemployment-vs-augmentation</guid>
+            <link>https://blog.fastforwardlabs.com/2018/03/28/unemployment-vs-augmentation.html</link>
+            <guid isPermaLink="false">/2018/03/28/unemployment-vs-augmentation.html</guid>
             <pubDate>Wed, 28 Mar 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[New creative possibilities with machine learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-03-28-new-creative-possibilities-with-machine-learning</link>
-            <guid isPermaLink="false">/posts/2018-03-28-new-creative-possibilities-with-machine-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2018/03/28/new-creative-possibilities-with-machine-learning.html</link>
+            <guid isPermaLink="false">/2018/03/28/new-creative-possibilities-with-machine-learning.html</guid>
             <pubDate>Wed, 28 Mar 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Join the Machine Learning Team at Cloudera!]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-03-21-join-the-machine-learning-team-at-cloudera</link>
-            <guid isPermaLink="false">/posts/2018-03-21-join-the-machine-learning-team-at-cloudera</guid>
+            <link>https://blog.fastforwardlabs.com/2018/03/21/join-the-machine-learning-team-at-cloudera.html</link>
+            <guid isPermaLink="false">/2018/03/21/join-the-machine-learning-team-at-cloudera.html</guid>
             <pubDate>Wed, 21 Mar 2018 15:03:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Using three.js for 2D data visualization]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-03-06-using-three-js-for-2d-data-visualization</link>
-            <guid isPermaLink="false">/posts/2018-03-06-using-three-js-for-2d-data-visualization</guid>
+            <link>https://blog.fastforwardlabs.com/2018/03/06/using-three-js-for-2d-data-visualization.html</link>
+            <guid isPermaLink="false">/2018/03/06/using-three-js-for-2d-data-visualization.html</guid>
             <pubDate>Tue, 06 Mar 2018 15:50:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Multi-Task Learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-02-28-multitask-learning</link>
-            <guid isPermaLink="false">/posts/2018-02-28-multitask-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2018/02/28/multitask-learning.html</link>
+            <guid isPermaLink="false">/2018/02/28/multitask-learning.html</guid>
             <pubDate>Wed, 28 Feb 2018 17:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Machine Learning In The Browser]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-02-28-machine-learning-in-the-browser</link>
-            <guid isPermaLink="false">/posts/2018-02-28-machine-learning-in-the-browser</guid>
+            <link>https://blog.fastforwardlabs.com/2018/02/28/machine-learning-in-the-browser.html</link>
+            <guid isPermaLink="false">/2018/02/28/machine-learning-in-the-browser.html</guid>
             <pubDate>Thu, 28 Feb 2019 19:03:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Comparing human and agent performance: DeepMind releases PsychLab]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab</link>
-            <guid isPermaLink="false">/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab</guid>
+            <link>https://blog.fastforwardlabs.com/2018/02/28/comparing-human-and-agent-performance-deepmind-releases-psychlab.html</link>
+            <guid isPermaLink="false">/2018/02/28/comparing-human-and-agent-performance-deepmind-releases-psychlab.html</guid>
             <pubDate>Wed, 28 Feb 2018 16:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Probabilistic Cookies!]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-02-14-probabilistic-cookies</link>
-            <guid isPermaLink="false">/posts/2018-02-14-probabilistic-cookies</guid>
+            <link>https://blog.fastforwardlabs.com/2018/02/14/probabilistic-cookies.html</link>
+            <guid isPermaLink="false">/2018/02/14/probabilistic-cookies.html</guid>
             <pubDate>Wed, 14 Feb 2018 17:02:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[The post editor edited this]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-02-08-the-post-editor-did-this</link>
-            <guid isPermaLink="false">/posts/2018-02-08-the-post-editor-did-this</guid>
-            <pubDate>Thu, 08 Feb 2018 23:02:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[Serverless data science]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-01-26-serverless-data-science</link>
-            <guid isPermaLink="false">/posts/2018-01-26-serverless-data-science</guid>
+            <link>https://blog.fastforwardlabs.com/2018/01/26/serverless-data-science.html</link>
+            <guid isPermaLink="false">/2018/01/26/serverless-data-science.html</guid>
             <pubDate>Fri, 26 Jan 2018 17:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Google Maps' Competitive Moat - Why Better Data Matters]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters</link>
-            <guid isPermaLink="false">/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters</guid>
+            <link>https://blog.fastforwardlabs.com/2018/01/26/google-mapss-competitive-moat-why-better-data-matters.html</link>
+            <guid isPermaLink="false">/2018/01/26/google-mapss-competitive-moat-why-better-data-matters.html</guid>
             <pubDate>Fri, 26 Jan 2018 17:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Exploring Recommendation Systems]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2018-01-22-exploring-recommendation-systems</link>
-            <guid isPermaLink="false">/posts/2018-01-22-exploring-recommendation-systems</guid>
+            <link>https://blog.fastforwardlabs.com/2018/01/22/exploring-recommendation-systems.html</link>
+            <guid isPermaLink="false">/2018/01/22/exploring-recommendation-systems.html</guid>
             <pubDate>Mon, 22 Jan 2018 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Highlights of 2017]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-12-20-2017-highlights</link>
-            <guid isPermaLink="false">/posts/2017-12-20-2017-highlights</guid>
+            <link>https://blog.fastforwardlabs.com/2017/12/20/2017-highlights.html</link>
+            <guid isPermaLink="false">/2017/12/20/2017-highlights.html</guid>
             <pubDate>Wed, 20 Dec 2017 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The promise of Automated Machine Learning (AutoML)]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-11-30-the-promise-of-automated-machine-learning-automl</link>
-            <guid isPermaLink="false">/posts/2017-11-30-the-promise-of-automated-machine-learning-automl</guid>
-            <pubDate>Thu, 30 Nov 2017 17:08:00 GMT</pubDate>
+            <link>https://blog.fastforwardlabs.com/2017/11/30/the-promise-of-automated-machine-learning-automl.html</link>
+            <guid isPermaLink="false">/2017/11/30/the-promise-of-automated-machine-learning-automl.html</guid>
+            <pubDate>Thu, 30 Nov 2017 12:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Algorithmic Cookery & Happy Thanksgiving]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-11-22-happy-thanksgiving</link>
-            <guid isPermaLink="false">/posts/2017-11-22-happy-thanksgiving</guid>
+            <link>https://blog.fastforwardlabs.com/2017/11/22/happy-thanksgiving.html</link>
+            <guid isPermaLink="false">/2017/11/22/happy-thanksgiving.html</guid>
             <pubDate>Wed, 22 Nov 2017 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Interpretability Sci-Fi: The Definition of Success]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-11-02-interpretability-scifi-the-definition-of-success</link>
-            <guid isPermaLink="false">/posts/2017-11-02-interpretability-scifi-the-definition-of-success</guid>
+            <link>https://blog.fastforwardlabs.com/2017/11/02/interpretability-scifi-the-definition-of-success.html</link>
+            <guid isPermaLink="false">/2017/11/02/interpretability-scifi-the-definition-of-success.html</guid>
             <pubDate>Thu, 02 Nov 2017 14:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Neuroscience-inspired AI]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-10-26-neuroscienceinspired-ai</link>
-            <guid isPermaLink="false">/posts/2017-10-26-neuroscienceinspired-ai</guid>
+            <link>https://blog.fastforwardlabs.com/2017/10/26/neuroscienceinspired-ai.html</link>
+            <guid isPermaLink="false">/2017/10/26/neuroscienceinspired-ai.html</guid>
             <pubDate>Thu, 26 Oct 2017 18:07:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Bias Mitigation Using the Copyright Doctrine of Fair Use]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use</link>
-            <guid isPermaLink="false">/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use</guid>
+            <link>https://blog.fastforwardlabs.com/2017/10/26/bias-mitigation-using-the-copyright-doctrine-of-fair-use.html</link>
+            <guid isPermaLink="false">/2017/10/26/bias-mitigation-using-the-copyright-doctrine-of-fair-use.html</guid>
             <pubDate>Thu, 26 Oct 2017 18:07:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[AlphaGo Zero's win, what it means]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-10-26-alphago-zero</link>
-            <guid isPermaLink="false">/posts/2017-10-26-alphago-zero</guid>
+            <link>https://blog.fastforwardlabs.com/2017/10/26/alphago-zero.html</link>
+            <guid isPermaLink="false">/2017/10/26/alphago-zero.html</guid>
             <pubDate>Wed, 25 Oct 2017 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[First Look: Using Three.js for 2D Data Visualization]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-10-04-using-three-js-for-2d-data-visualization</link>
-            <guid isPermaLink="false">/posts/2017-10-04-using-three-js-for-2d-data-visualization</guid>
+            <link>https://blog.fastforwardlabs.com/2017/10/04/using-three-js-for-2d-data-visualization.html</link>
+            <guid isPermaLink="false">/2017/10/04/using-three-js-for-2d-data-visualization.html</guid>
             <pubDate>Wed, 04 Oct 2017 14:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Probabilistic programming: an annotated bibliography]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-10-02-pp-bibliography</link>
-            <guid isPermaLink="false">/posts/2017-10-02-pp-bibliography</guid>
+            <link>https://blog.fastforwardlabs.com/2017/10/02/pp-bibliography.html</link>
+            <guid isPermaLink="false">/2017/10/02/pp-bibliography.html</guid>
             <pubDate>Mon, 02 Oct 2017 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The Danger and Promise of Adversarial Samples]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples</link>
-            <guid isPermaLink="false">/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples</guid>
+            <link>https://blog.fastforwardlabs.com/2017/09/29/the-danger-and-promise-of-adversarial-samples.html</link>
+            <guid isPermaLink="false">/2017/09/29/the-danger-and-promise-of-adversarial-samples.html</guid>
             <pubDate>Fri, 29 Sep 2017 18:07:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Futurism and Artificial Intelligence]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-09-29-futurism-and-artificial-intelligence</link>
-            <guid isPermaLink="false">/posts/2017-09-29-futurism-and-artificial-intelligence</guid>
+            <link>https://blog.fastforwardlabs.com/2017/09/29/futurism-and-artificial-intelligence.html</link>
+            <guid isPermaLink="false">/2017/09/29/futurism-and-artificial-intelligence.html</guid>
             <pubDate>Fri, 29 Sep 2017 18:07:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The Product Possibilities of Interpretability]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-09-26-the-product-possibilities-of-interpretability</link>
-            <guid isPermaLink="false">/posts/2017-09-26-the-product-possibilities-of-interpretability</guid>
+            <link>https://blog.fastforwardlabs.com/2017/09/26/the-product-possibilities-of-interpretability.html</link>
+            <guid isPermaLink="false">/2017/09/26/the-product-possibilities-of-interpretability.html</guid>
             <pubDate>Thu, 28 Sep 2017 14:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Interpretability in conversation with Patrick Hall and Sameer Singh]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-09-11-interpretability-webinar</link>
-            <guid isPermaLink="false">/posts/2017-09-11-interpretability-webinar</guid>
+            <link>https://blog.fastforwardlabs.com/2017/09/11/interpretability-webinar.html</link>
+            <guid isPermaLink="false">/2017/09/11/interpretability-webinar.html</guid>
             <pubDate>Mon, 11 Sep 2017 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[To the Future...]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-09-07-to-the-future</link>
-            <guid isPermaLink="false">/posts/2017-09-07-to-the-future</guid>
+            <link>https://blog.fastforwardlabs.com/2017/09/07/to-the-future.html</link>
+            <guid isPermaLink="false">/2017/09/07/to-the-future.html</guid>
             <pubDate>Thu, 07 Sep 2017 14:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Crowdwork for Machine Learning: An Autoethnography]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-09-01-crowdwork-for-ml</link>
-            <guid isPermaLink="false">/posts/2017-09-01-crowdwork-for-ml</guid>
+            <link>https://blog.fastforwardlabs.com/2017/09/01/crowdwork-for-ml.html</link>
+            <guid isPermaLink="false">/2017/09/01/crowdwork-for-ml.html</guid>
             <pubDate>Tue, 26 Sep 2017 14:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Why your relationship is likely to last (or not): using Local Interpretable Model-Agnostic Explanations (LIME)]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-09-01-LIME-for-couples</link>
-            <guid isPermaLink="false">/posts/2017-09-01-LIME-for-couples</guid>
+            <link>https://blog.fastforwardlabs.com/2017/09/01/LIME-for-couples.html</link>
+            <guid isPermaLink="false">/2017/09/01/LIME-for-couples.html</guid>
             <pubDate>Fri, 01 Sep 2017 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[2017-08-22-individ_subscribe_announce.md]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-08-22-individ_subscribe_announce</link>
-            <guid isPermaLink="false">/posts/2017-08-22-individ_subscribe_announce</guid>
-            <pubDate>Invalid Date</pubDate>
-        </item>
-        <item>
             <title><![CDATA[Encartopedia]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-08-08-encartopedia</link>
-            <guid isPermaLink="false">/posts/2017-08-08-encartopedia</guid>
+            <link>https://blog.fastforwardlabs.com/2017/08/08/encartopedia.html</link>
+            <guid isPermaLink="false">/2017/08/08/encartopedia.html</guid>
             <pubDate>Tue, 15 Aug 2017 14:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The Business Case for Machine Learning Interpretability]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-08-07-business-interpretability</link>
-            <guid isPermaLink="false">/posts/2017-08-07-business-interpretability</guid>
+            <link>https://blog.fastforwardlabs.com/2017/08/07/business-interpretability.html</link>
+            <guid isPermaLink="false">/2017/08/07/business-interpretability.html</guid>
             <pubDate>Wed, 02 Aug 2017 13:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[New Research on Interpretability]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-08-02-interpretability</link>
-            <guid isPermaLink="false">/posts/2017-08-02-interpretability</guid>
+            <link>https://blog.fastforwardlabs.com/2017/08/02/interpretability.html</link>
+            <guid isPermaLink="false">/2017/08/02/interpretability.html</guid>
             <pubDate>Wed, 02 Aug 2017 13:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Why we talk about AI the way we do, and why we have to change it.]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do</link>
-            <guid isPermaLink="false">/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do</guid>
+            <link>https://blog.fastforwardlabs.com/2017/07/25/why-we-talk-about-AI-the-way-we-do.html</link>
+            <guid isPermaLink="false">/2017/07/25/why-we-talk-about-AI-the-way-we-do.html</guid>
             <pubDate>Wed, 02 Aug 2017 16:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Probabilistic programming from scratch]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-07-05-probabilistic-programming-from-scratch</link>
-            <guid isPermaLink="false">/posts/2017-07-05-probabilistic-programming-from-scratch</guid>
+            <link>https://blog.fastforwardlabs.com/2017/07/05/probabilistic-programming-from-scratch.html</link>
+            <guid isPermaLink="false">/2017/07/05/probabilistic-programming-from-scratch.html</guid>
             <pubDate>Thu, 06 Jul 2017 16:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[F⁠ingerprinting documents​ with steganography​]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-06-25-fingerprinting-documents-with-steganography</link>
-            <guid isPermaLink="false">/posts/2017-06-25-fingerprinting-documents-with-steganography</guid>
+            <link>https://blog.fastforwardlabs.com/2017/06/25/fingerprinting-documents-with-steganography.html</link>
+            <guid isPermaLink="false">/2017/06/25/fingerprinting-documents-with-steganography.html</guid>
             <pubDate>Fri, 23 Jun 2017 15:50:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Probabilistic Programmming Sci-Fi: BayesHead 5000]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000</link>
-            <guid isPermaLink="false">/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000</guid>
+            <link>https://blog.fastforwardlabs.com/2017/06/06/probabilistic-programming-sci-fi-bayeshead-5000.html</link>
+            <guid isPermaLink="false">/2017/06/06/probabilistic-programming-sci-fi-bayeshead-5000.html</guid>
             <pubDate>Tue, 06 Jun 2017 14:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Slack Maestro: Helping Users Stay on Topic]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic</link>
-            <guid isPermaLink="false">/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic</guid>
+            <link>https://blog.fastforwardlabs.com/2017/05/30/Slack-Maestro-Helping-Users-Stay-on-Topic.html</link>
+            <guid isPermaLink="false">/2017/05/30/Slack-Maestro-Helping-Users-Stay-on-Topic.html</guid>
             <pubDate>Tue, 30 May 2017 15:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Learning from Real-World Models: The Mississippi Basin Model and Machine Learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-05-26-Places-Journal-Mississippi-Basin</link>
-            <guid isPermaLink="false">/posts/2017-05-26-Places-Journal-Mississippi-Basin</guid>
+            <link>https://blog.fastforwardlabs.com/2017/05/26/Places-Journal-Mississippi-Basin.html</link>
+            <guid isPermaLink="false">/2017/05/26/Places-Journal-Mississippi-Basin.html</guid>
             <pubDate>Fri, 30 Jun 2017 15:19:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[A Quick Look at the Reply-to-Retweet Ratio]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-05-15-reply-retweet-ratio</link>
-            <guid isPermaLink="false">/posts/2017-05-15-reply-retweet-ratio</guid>
+            <link>https://blog.fastforwardlabs.com/2017/05/15/reply-retweet-ratio.html</link>
+            <guid isPermaLink="false">/2017/05/15/reply-retweet-ratio.html</guid>
             <pubDate>Mon, 15 May 2017 20:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Eli Bressert on Data-Driven Processes at Netflix]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix</link>
-            <guid isPermaLink="false">/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix</guid>
+            <link>https://blog.fastforwardlabs.com/2017/04/28/eli-bressert-on-data-driven-processes-at-netflix.html</link>
+            <guid isPermaLink="false">/2017/04/28/eli-bressert-on-data-driven-processes-at-netflix.html</guid>
             <pubDate>Fri, 28 Apr 2017 13:44:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Visualizing the Taste of a Community of Cinephiles Using t-SNE]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne</link>
-            <guid isPermaLink="false">/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne</guid>
+            <link>https://blog.fastforwardlabs.com/2017/04/14/visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne.html</link>
+            <guid isPermaLink="false">/2017/04/14/visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne.html</guid>
             <pubDate>Fri, 14 Apr 2017 19:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Free eBook: Development Workflows for Data Scientists]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists</link>
-            <guid isPermaLink="false">/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists</guid>
+            <link>https://blog.fastforwardlabs.com/2017/03/31/free-ebook-development-workflows-for-data-scientists.html</link>
+            <guid isPermaLink="false">/2017/03/31/free-ebook-development-workflows-for-data-scientists.html</guid>
             <pubDate>Fri, 31 Mar 2017 19:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Five Distractions in Thinking about AI]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-03-25-five-distractions-in-thinking-about-ai</link>
-            <guid isPermaLink="false">/posts/2017-03-25-five-distractions-in-thinking-about-ai</guid>
+            <link>https://blog.fastforwardlabs.com/2017/03/25/five-distractions-in-thinking-about-ai.html</link>
+            <guid isPermaLink="false">/2017/03/25/five-distractions-in-thinking-about-ai.html</guid>
             <pubDate>Wed, 22 Mar 2017 19:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Taking Prophet for a Spin]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-03-22-prophet</link>
-            <guid isPermaLink="false">/posts/2017-03-22-prophet</guid>
+            <link>https://blog.fastforwardlabs.com/2017/03/22/prophet.html</link>
+            <guid isPermaLink="false">/2017/03/22/prophet.html</guid>
             <pubDate>Wed, 22 Mar 2017 19:30:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Predicting NYC Real Estate Prices with Probabilistic Programming]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming</link>
-            <guid isPermaLink="false">/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming</guid>
+            <link>https://blog.fastforwardlabs.com/2017/03/15/predicting-nyc-real-estate-prices-with-probabilistic-programming.html</link>
+            <guid isPermaLink="false">/2017/03/15/predicting-nyc-real-estate-prices-with-probabilistic-programming.html</guid>
             <pubDate>Wed, 15 Mar 2017 19:49:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Practical Deep Learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-03-13-practical-deep-learning</link>
-            <guid isPermaLink="false">/posts/2017-03-13-practical-deep-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2017/03/13/practical-deep-learning.html</link>
+            <guid isPermaLink="false">/2017/03/13/practical-deep-learning.html</guid>
             <pubDate>Mon, 13 Mar 2017 19:49:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Trees, Layers, and Speed: Talking Optimization with Patrick Hayes]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes</link>
-            <guid isPermaLink="false">/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes</guid>
+            <link>https://blog.fastforwardlabs.com/2017/03/10/Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes.html</link>
+            <guid isPermaLink="false">/2017/03/10/Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes.html</guid>
             <pubDate>Fri, 10 Mar 2017 18:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[FairML: Auditing Black-Box Predictive Models]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-03-09-fairml-auditing-black-box-predictive-models</link>
-            <guid isPermaLink="false">/posts/2017-03-09-fairml-auditing-black-box-predictive-models</guid>
+            <link>https://blog.fastforwardlabs.com/2017/03/09/fairml-auditing-black-box-predictive-models.html</link>
+            <guid isPermaLink="false">/2017/03/09/fairml-auditing-black-box-predictive-models.html</guid>
             <pubDate>Thu, 09 Mar 2017 14:44:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Mobile Behavioural Authentication]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-02-27-mobile-authentication</link>
-            <guid isPermaLink="false">/posts/2017-02-27-mobile-authentication</guid>
+            <link>https://blog.fastforwardlabs.com/2017/02/27/mobile-authentication.html</link>
+            <guid isPermaLink="false">/2017/02/27/mobile-authentication.html</guid>
             <pubDate>Mon, 27 Feb 2017 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Upcoming Talks with our Team]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-02-22-upcoming-talks-with-our-team</link>
-            <guid isPermaLink="false">/posts/2017-02-22-upcoming-talks-with-our-team</guid>
+            <link>https://blog.fastforwardlabs.com/2017/02/22/upcoming-talks-with-our-team.html</link>
+            <guid isPermaLink="false">/2017/02/22/upcoming-talks-with-our-team.html</guid>
             <pubDate>Wed, 22 Feb 2017 18:15:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Online Talk: Introduction to Probabilistic Programming]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming</link>
-            <guid isPermaLink="false">/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming</guid>
+            <link>https://blog.fastforwardlabs.com/2017/02/09/online-talk-introduction-to-probabilistic-programming.html</link>
+            <guid isPermaLink="false">/2017/02/09/online-talk-introduction-to-probabilistic-programming.html</guid>
             <pubDate>Thu, 09 Feb 2017 14:44:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Summer Internships: Data Science, Applied Data Science Writing, Prototyping & Data Viz.]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-02-08-summer-internships</link>
-            <guid isPermaLink="false">/posts/2017-02-08-summer-internships</guid>
+            <link>https://blog.fastforwardlabs.com/2017/02/08/summer-internships.html</link>
+            <guid isPermaLink="false">/2017/02/08/summer-internships.html</guid>
             <pubDate>Wed, 08 Feb 2017 16:34:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The Algorithms Behind Probabilistic Programming]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-01-30-the-algorithms-behind-probabilistic-programming</link>
-            <guid isPermaLink="false">/posts/2017-01-30-the-algorithms-behind-probabilistic-programming</guid>
+            <link>https://blog.fastforwardlabs.com/2017/01/30/the-algorithms-behind-probabilistic-programming.html</link>
+            <guid isPermaLink="false">/2017/01/30/the-algorithms-behind-probabilistic-programming.html</guid>
             <pubDate>Mon, 30 Jan 2017 18:52:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Privacy and Encryption Above the Data: Interview with Dave Archer]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer</link>
-            <guid isPermaLink="false">/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer</guid>
+            <link>https://blog.fastforwardlabs.com/2017/01/25/privacy-and-encryption-above-the-data-interview-with-dave-archer.html</link>
+            <guid isPermaLink="false">/2017/01/25/privacy-and-encryption-above-the-data-interview-with-dave-archer.html</guid>
             <pubDate>Wed, 25 Jan 2017 23:15:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[New Research on Probabilistic Programming]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-01-18-new-research-on-probabilistic-programming</link>
-            <guid isPermaLink="false">/posts/2017-01-18-new-research-on-probabilistic-programming</guid>
+            <link>https://blog.fastforwardlabs.com/2017/01/18/new-research-on-probabilistic-programming.html</link>
+            <guid isPermaLink="false">/2017/01/18/new-research-on-probabilistic-programming.html</guid>
             <pubDate>Wed, 18 Jan 2017 15:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Thomas Wiecki on Probabilistic Programming with PyMC3]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with</link>
-            <guid isPermaLink="false">/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with</guid>
+            <link>https://blog.fastforwardlabs.com/2017/01/11/thomas-wiecki-on-probabilistic-programming-with.html</link>
+            <guid isPermaLink="false">/2017/01/11/thomas-wiecki-on-probabilistic-programming-with.html</guid>
             <pubDate>Wed, 11 Jan 2017 14:23:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Five 2016 Trends We Expect to Come to Fruition in 2017]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017</link>
-            <guid isPermaLink="false">/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017</guid>
+            <link>https://blog.fastforwardlabs.com/2017/01/10/five-trends-we-expect-to-come-to-fruition-in-2017.html</link>
+            <guid isPermaLink="false">/2017/01/10/five-trends-we-expect-to-come-to-fruition-in-2017.html</guid>
             <pubDate>Tue, 10 Jan 2017 15:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Learning to Use React]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2017-01-03-learning-to-use-react</link>
-            <guid isPermaLink="false">/posts/2017-01-03-learning-to-use-react</guid>
+            <link>https://blog.fastforwardlabs.com/2017/01/03/learning-to-use-react.html</link>
+            <guid isPermaLink="false">/2017/01/03/learning-to-use-react.html</guid>
             <pubDate>Tue, 03 Jan 2017 15:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Hilary Mason at Data Driven NYC]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-12-13-hilary-mason-at-data-driven-nyc</link>
-            <guid isPermaLink="false">/posts/2016-12-13-hilary-mason-at-data-driven-nyc</guid>
+            <link>https://blog.fastforwardlabs.com/2016/12/13/hilary-mason-at-data-driven-nyc.html</link>
+            <guid isPermaLink="false">/2016/12/13/hilary-mason-at-data-driven-nyc.html</guid>
             <pubDate>Tue, 13 Dec 2016 18:02:12 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Machines in Conversation]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-12-12-machines-in-conversation</link>
-            <guid isPermaLink="false">/posts/2016-12-12-machines-in-conversation</guid>
+            <link>https://blog.fastforwardlabs.com/2016/12/12/machines-in-conversation.html</link>
+            <guid isPermaLink="false">/2016/12/12/machines-in-conversation.html</guid>
             <pubDate>Mon, 12 Dec 2016 17:47:22 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Dimensionality Reduction and Intuition]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-12-08-dimensionality-reduction-and-intuition</link>
-            <guid isPermaLink="false">/posts/2016-12-08-dimensionality-reduction-and-intuition</guid>
+            <link>https://blog.fastforwardlabs.com/2016/12/08/dimensionality-reduction-and-intuition.html</link>
+            <guid isPermaLink="false">/2016/12/08/dimensionality-reduction-and-intuition.html</guid>
             <pubDate>Thu, 08 Dec 2016 17:22:58 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Probabilistic Data Structure Showdown: Cuckoo Filters vs. Bloom Filters]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo</link>
-            <guid isPermaLink="false">/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo</guid>
+            <link>https://blog.fastforwardlabs.com/2016/11/23/probabilistic-data-structure-showdown-cuckoo.html</link>
+            <guid isPermaLink="false">/2016/11/23/probabilistic-data-structure-showdown-cuckoo.html</guid>
             <pubDate>Wed, 23 Nov 2016 18:36:58 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Job Opportunities at Signal]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-09-19-job-opportunities-at-signal</link>
-            <guid isPermaLink="false">/posts/2016-09-19-job-opportunities-at-signal</guid>
+            <link>https://blog.fastforwardlabs.com/2016/09/19/job-opportunities-at-signal.html</link>
+            <guid isPermaLink="false">/2016/09/19/job-opportunities-at-signal.html</guid>
             <pubDate>Mon, 19 Sep 2016 17:30:04 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Exploring Deep Learning on Satellite Data]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-08-26-exploring-deep-learning-on-satellite-data</link>
-            <guid isPermaLink="false">/posts/2016-08-26-exploring-deep-learning-on-satellite-data</guid>
+            <link>https://blog.fastforwardlabs.com/2016/08/26/exploring-deep-learning-on-satellite-data.html</link>
+            <guid isPermaLink="false">/2016/08/26/exploring-deep-learning-on-satellite-data.html</guid>
             <pubDate>Fri, 26 Aug 2016 17:43:24 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[New TensorFlow Code for Text Summarization]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-08-25-new-tensorflow-code-for-text-summarization</link>
-            <guid isPermaLink="false">/posts/2016-08-25-new-tensorflow-code-for-text-summarization</guid>
+            <link>https://blog.fastforwardlabs.com/2016/08/25/new-tensorflow-code-for-text-summarization.html</link>
+            <guid isPermaLink="false">/2016/08/25/new-tensorflow-code-for-text-summarization.html</guid>
             <pubDate>Thu, 25 Aug 2016 17:24:14 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Next Economics: Interview with Jimi Crawford]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-08-24-next-economics-interview-with-jimi-crawford</link>
-            <guid isPermaLink="false">/posts/2016-08-24-next-economics-interview-with-jimi-crawford</guid>
+            <link>https://blog.fastforwardlabs.com/2016/08/24/next-economics-interview-with-jimi-crawford.html</link>
+            <guid isPermaLink="false">/2016/08/24/next-economics-interview-with-jimi-crawford.html</guid>
             <pubDate>Wed, 24 Aug 2016 16:18:12 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Under the Hood of the Variational Autoencoder (in Prose and Code)]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in</link>
-            <guid isPermaLink="false">/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in</guid>
+            <link>https://blog.fastforwardlabs.com/2016/08/22/under-the-hood-of-the-variational-autoencoder-in.html</link>
+            <guid isPermaLink="false">/2016/08/22/under-the-hood-of-the-variational-autoencoder-in.html</guid>
             <pubDate>Mon, 22 Aug 2016 18:02:08 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Giving Speech a Voice in the Home]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-08-18-giving-speech-a-voice-in-the-home</link>
-            <guid isPermaLink="false">/posts/2016-08-18-giving-speech-a-voice-in-the-home</guid>
+            <link>https://blog.fastforwardlabs.com/2016/08/18/giving-speech-a-voice-in-the-home.html</link>
+            <guid isPermaLink="false">/2016/08/18/giving-speech-a-voice-in-the-home.html</guid>
             <pubDate>Thu, 18 Aug 2016 20:09:29 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Introducing Variational Autoencoders (in Prose and Code)]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and</link>
-            <guid isPermaLink="false">/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and</guid>
+            <link>https://blog.fastforwardlabs.com/2016/08/12/introducing-variational-autoencoders-in-prose-and.html</link>
+            <guid isPermaLink="false">/2016/08/12/introducing-variational-autoencoders-in-prose-and.html</guid>
             <pubDate>Fri, 12 Aug 2016 17:09:50 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Late Summer Reading List]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-07-27-late-summer-reading-list</link>
-            <guid isPermaLink="false">/posts/2016-07-27-late-summer-reading-list</guid>
+            <link>https://blog.fastforwardlabs.com/2016/07/27/late-summer-reading-list.html</link>
+            <guid isPermaLink="false">/2016/07/27/late-summer-reading-list.html</guid>
             <pubDate>Wed, 27 Jul 2016 16:45:52 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Fall Internships: Research Engineering and Prototype + Data Visualization [Filled]]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-07-25-fall-internships-research-engineering-and</link>
-            <guid isPermaLink="false">/posts/2016-07-25-fall-internships-research-engineering-and</guid>
+            <link>https://blog.fastforwardlabs.com/2016/07/25/fall-internships-research-engineering-and.html</link>
+            <guid isPermaLink="false">/2016/07/25/fall-internships-research-engineering-and.html</guid>
             <pubDate>Mon, 25 Jul 2016 17:30:43 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Two Talks in NYC this Saturday]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-07-11-two-talks-in-nyc-this-saturday</link>
-            <guid isPermaLink="false">/posts/2016-07-11-two-talks-in-nyc-this-saturday</guid>
+            <link>https://blog.fastforwardlabs.com/2016/07/11/two-talks-in-nyc-this-saturday.html</link>
+            <guid isPermaLink="false">/2016/07/11/two-talks-in-nyc-this-saturday.html</guid>
             <pubDate>Mon, 11 Jul 2016 16:46:23 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[What We Liked at AINow]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-07-08-what-we-liked-at-ainow</link>
-            <guid isPermaLink="false">/posts/2016-07-08-what-we-liked-at-ainow</guid>
+            <link>https://blog.fastforwardlabs.com/2016/07/08/what-we-liked-at-ainow.html</link>
+            <guid isPermaLink="false">/2016/07/08/what-we-liked-at-ainow.html</guid>
             <pubDate>Fri, 08 Jul 2016 17:29:52 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Machine Listening: Interview with Juan Pablo Bello]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello</link>
-            <guid isPermaLink="false">/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello</guid>
+            <link>https://blog.fastforwardlabs.com/2016/06/10/machine-listening-interview-with-juan-pablo-bello.html</link>
+            <guid isPermaLink="false">/2016/06/10/machine-listening-interview-with-juan-pablo-bello.html</guid>
             <pubDate>Fri, 10 Jun 2016 14:23:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Welcome, Friederike!]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-06-02-welcome-friederike</link>
-            <guid isPermaLink="false">/posts/2016-06-02-welcome-friederike</guid>
+            <link>https://blog.fastforwardlabs.com/2016/06/02/welcome-friederike.html</link>
+            <guid isPermaLink="false">/2016/06/02/welcome-friederike.html</guid>
             <pubDate>Thu, 02 Jun 2016 13:53:20 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Online Talk: Summarization Algorithms]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-05-27-online-talk-summarization-algorithms</link>
-            <guid isPermaLink="false">/posts/2016-05-27-online-talk-summarization-algorithms</guid>
+            <link>https://blog.fastforwardlabs.com/2016/05/27/online-talk-summarization-algorithms.html</link>
+            <guid isPermaLink="false">/2016/05/27/online-talk-summarization-algorithms.html</guid>
             <pubDate>Fri, 27 May 2016 17:16:23 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Human-Machine Algorithms: Interview with Eric Colson]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-05-25-human-machine-algorithms-interview-with-eric</link>
-            <guid isPermaLink="false">/posts/2016-05-25-human-machine-algorithms-interview-with-eric</guid>
+            <link>https://blog.fastforwardlabs.com/2016/05/25/human-machine-algorithms-interview-with-eric.html</link>
+            <guid isPermaLink="false">/2016/05/25/human-machine-algorithms-interview-with-eric.html</guid>
             <pubDate>Wed, 25 May 2016 12:37:15 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Evaluating Summarization Systems]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-05-23-evaluating-summarization-systems</link>
-            <guid isPermaLink="false">/posts/2016-05-23-evaluating-summarization-systems</guid>
+            <link>https://blog.fastforwardlabs.com/2016/05/23/evaluating-summarization-systems.html</link>
+            <guid isPermaLink="false">/2016/05/23/evaluating-summarization-systems.html</guid>
             <pubDate>Mon, 23 May 2016 17:09:13 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[May 24 Online Event: Text Summarization]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-05-12-may-24-online-event-text-summarization</link>
-            <guid isPermaLink="false">/posts/2016-05-12-may-24-online-event-text-summarization</guid>
+            <link>https://blog.fastforwardlabs.com/2016/05/12/may-24-online-event-text-summarization.html</link>
+            <guid isPermaLink="false">/2016/05/12/may-24-online-event-text-summarization.html</guid>
             <pubDate>Thu, 12 May 2016 11:36:14 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Probabilistic Programming for Anomaly Detection]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-05-03-probabilistic-programming-for-anomaly-detection</link>
-            <guid isPermaLink="false">/posts/2016-05-03-probabilistic-programming-for-anomaly-detection</guid>
+            <link>https://blog.fastforwardlabs.com/2016/05/03/probabilistic-programming-for-anomaly-detection.html</link>
+            <guid isPermaLink="false">/2016/05/03/probabilistic-programming-for-anomaly-detection.html</guid>
             <pubDate>Tue, 03 May 2016 14:51:14 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Making a Case for Machine Learning to Legal Departments]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-04-26-making-a-case-for-machine-learning-to-legal</link>
-            <guid isPermaLink="false">/posts/2016-04-26-making-a-case-for-machine-learning-to-legal</guid>
+            <link>https://blog.fastforwardlabs.com/2016/04/26/making-a-case-for-machine-learning-to-legal.html</link>
+            <guid isPermaLink="false">/2016/04/26/making-a-case-for-machine-learning-to-legal.html</guid>
             <pubDate>Tue, 26 Apr 2016 18:41:17 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Active Learning in the Law]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-04-25-active-learning-in-the-law</link>
-            <guid isPermaLink="false">/posts/2016-04-25-active-learning-in-the-law</guid>
+            <link>https://blog.fastforwardlabs.com/2016/04/25/active-learning-in-the-law.html</link>
+            <guid isPermaLink="false">/2016/04/25/active-learning-in-the-law.html</guid>
             <pubDate>Mon, 25 Apr 2016 17:41:02 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Summarization as a Gateway to Computable Language]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-04-21-summarization-as-a-gateway-to-computable-language</link>
-            <guid isPermaLink="false">/posts/2016-04-21-summarization-as-a-gateway-to-computable-language</guid>
+            <link>https://blog.fastforwardlabs.com/2016/04/21/summarization-as-a-gateway-to-computable-language.html</link>
+            <guid isPermaLink="false">/2016/04/21/summarization-as-a-gateway-to-computable-language.html</guid>
             <pubDate>Thu, 21 Apr 2016 19:38:37 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Assessing Data Science Maturity]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-04-15-assessing-data-science-maturity</link>
-            <guid isPermaLink="false">/posts/2016-04-15-assessing-data-science-maturity</guid>
+            <link>https://blog.fastforwardlabs.com/2016/04/15/assessing-data-science-maturity.html</link>
+            <guid isPermaLink="false">/2016/04/15/assessing-data-science-maturity.html</guid>
             <pubDate>Fri, 15 Apr 2016 18:07:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[New Tools to Summarize Text]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-04-11-new-tools-to-summarize-text</link>
-            <guid isPermaLink="false">/posts/2016-04-11-new-tools-to-summarize-text</guid>
+            <link>https://blog.fastforwardlabs.com/2016/04/11/new-tools-to-summarize-text.html</link>
+            <guid isPermaLink="false">/2016/04/11/new-tools-to-summarize-text.html</guid>
             <pubDate>Mon, 11 Apr 2016 15:25:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Where Do You Put Your Data Scientists?]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-04-06-where-do-you-put-your-data-scientists</link>
-            <guid isPermaLink="false">/posts/2016-04-06-where-do-you-put-your-data-scientists</guid>
+            <link>https://blog.fastforwardlabs.com/2016/04/06/where-do-you-put-your-data-scientists.html</link>
+            <guid isPermaLink="false">/2016/04/06/where-do-you-put-your-data-scientists.html</guid>
             <pubDate>Wed, 06 Apr 2016 15:41:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Shivon Zilis on the Machine Intelligence Landscape]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape</link>
-            <guid isPermaLink="false">/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape</guid>
+            <link>https://blog.fastforwardlabs.com/2016/03/30/shivon-zilis-on-the-machine-intelligence-landscape.html</link>
+            <guid isPermaLink="false">/2016/03/30/shivon-zilis-on-the-machine-intelligence-landscape.html</guid>
             <pubDate>Wed, 30 Mar 2016 15:00:03 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Fast Forward Labs Data Leadership Conference]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-03-28-fast-forward-labs-data-leadership-conference</link>
-            <guid isPermaLink="false">/posts/2016-03-28-fast-forward-labs-data-leadership-conference</guid>
+            <link>https://blog.fastforwardlabs.com/2016/03/28/fast-forward-labs-data-leadership-conference.html</link>
+            <guid isPermaLink="false">/2016/03/28/fast-forward-labs-data-leadership-conference.html</guid>
             <pubDate>Mon, 28 Mar 2016 20:26:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[H.P. Luhn and the Heuristic Value of Simplicity]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity</link>
-            <guid isPermaLink="false">/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity</guid>
+            <link>https://blog.fastforwardlabs.com/2016/03/25/hp-luhn-and-the-heuristic-value-of-simplicity.html</link>
+            <guid isPermaLink="false">/2016/03/25/hp-luhn-and-the-heuristic-value-of-simplicity.html</guid>
             <pubDate>Fri, 25 Mar 2016 16:25:43 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA["Hello world" in Keras (or, Scikit-learn versus Keras)]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus</link>
-            <guid isPermaLink="false">/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus</guid>
+            <link>https://blog.fastforwardlabs.com/2016/02/24/hello-world-in-keras-or-scikit-learn-versus.html</link>
+            <guid isPermaLink="false">/2016/02/24/hello-world-in-keras-or-scikit-learn-versus.html</guid>
             <pubDate>Wed, 24 Feb 2016 18:58:10 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[NeuralTalk with Kyle McDonald]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-02-18-neuraltalk-with-kyle-mcdonald</link>
-            <guid isPermaLink="false">/posts/2016-02-18-neuraltalk-with-kyle-mcdonald</guid>
+            <link>https://blog.fastforwardlabs.com/2016/02/18/neuraltalk-with-kyle-mcdonald.html</link>
+            <guid isPermaLink="false">/2016/02/18/neuraltalk-with-kyle-mcdonald.html</guid>
             <pubDate>Thu, 18 Feb 2016 15:09:51 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Machines and Metaphors]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-02-16-machines-and-metaphors</link>
-            <guid isPermaLink="false">/posts/2016-02-16-machines-and-metaphors</guid>
+            <link>https://blog.fastforwardlabs.com/2016/02/16/machines-and-metaphors.html</link>
+            <guid isPermaLink="false">/2016/02/16/machines-and-metaphors.html</guid>
             <pubDate>Tue, 16 Feb 2016 16:35:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[What History Teaches Us About Data Science]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-02-03-what-history-teaches-us-about-data-science</link>
-            <guid isPermaLink="false">/posts/2016-02-03-what-history-teaches-us-about-data-science</guid>
+            <link>https://blog.fastforwardlabs.com/2016/02/03/what-history-teaches-us-about-data-science.html</link>
+            <guid isPermaLink="false">/2016/02/03/what-history-teaches-us-about-data-science.html</guid>
             <pubDate>Wed, 03 Feb 2016 22:05:44 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Discussing NLG with Automated Insights]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-01-27-discussing-nlg-with-automated-insights</link>
-            <guid isPermaLink="false">/posts/2016-01-27-discussing-nlg-with-automated-insights</guid>
+            <link>https://blog.fastforwardlabs.com/2016/01/27/discussing-nlg-with-automated-insights.html</link>
+            <guid isPermaLink="false">/2016/01/27/discussing-nlg-with-automated-insights.html</guid>
             <pubDate>Wed, 27 Jan 2016 16:36:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Eli Pariser on the Ethics of Algorithmic Filtering]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering</link>
-            <guid isPermaLink="false">/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering</guid>
+            <link>https://blog.fastforwardlabs.com/2016/01/22/eli-pariser-on-the-ethics-of-algorithmic-filtering.html</link>
+            <guid isPermaLink="false">/2016/01/22/eli-pariser-on-the-ethics-of-algorithmic-filtering.html</guid>
             <pubDate>Fri, 22 Jan 2016 14:06:46 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Demystifying Machine Intelligence]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-01-15-demystifying-machine-intelligence</link>
-            <guid isPermaLink="false">/posts/2016-01-15-demystifying-machine-intelligence</guid>
+            <link>https://blog.fastforwardlabs.com/2016/01/15/demystifying-machine-intelligence.html</link>
+            <guid isPermaLink="false">/2016/01/15/demystifying-machine-intelligence.html</guid>
             <pubDate>Fri, 15 Jan 2016 16:07:07 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[New NLG Resources: Sale and January 26 Webinar]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar</link>
-            <guid isPermaLink="false">/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar</guid>
+            <link>https://blog.fastforwardlabs.com/2016/01/12/new-nlg-resources-sale-and-january-26-webinar.html</link>
+            <guid isPermaLink="false">/2016/01/12/new-nlg-resources-sale-and-january-26-webinar.html</guid>
             <pubDate>Tue, 12 Jan 2016 18:11:44 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Five Good Books* of 2015]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-12-21-five-good-books-of-2015</link>
-            <guid isPermaLink="false">/posts/2015-12-21-five-good-books-of-2015</guid>
+            <link>https://blog.fastforwardlabs.com/2015/12/21/five-good-books-of-2015.html</link>
+            <guid isPermaLink="false">/2015/12/21/five-good-books-of-2015.html</guid>
             <pubDate>Mon, 21 Dec 2015 17:13:49 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[NextView Ventures Podcast]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-12-15-nextview-ventures-podcast</link>
-            <guid isPermaLink="false">/posts/2015-12-15-nextview-ventures-podcast</guid>
+            <link>https://blog.fastforwardlabs.com/2015/12/15/nextview-ventures-podcast.html</link>
+            <guid isPermaLink="false">/2015/12/15/nextview-ventures-podcast.html</guid>
             <pubDate>Tue, 15 Dec 2015 21:15:34 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Summer Internship: Research Engineer]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-12-10-summer-internship-research-engineer</link>
-            <guid isPermaLink="false">/posts/2015-12-10-summer-internship-research-engineer</guid>
+            <link>https://blog.fastforwardlabs.com/2015/12/10/summer-internship-research-engineer.html</link>
+            <guid isPermaLink="false">/2015/12/10/summer-internship-research-engineer.html</guid>
             <pubDate>Thu, 10 Dec 2015 16:58:36 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Fashion Goes Deep: Data Science at Lyst]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst</link>
-            <guid isPermaLink="false">/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst</guid>
+            <link>https://blog.fastforwardlabs.com/2015/12/09/fashion-goes-deep-data-science-at-lyst.html</link>
+            <guid isPermaLink="false">/2015/12/09/fashion-goes-deep-data-science-at-lyst.html</guid>
             <pubDate>Wed, 09 Dec 2015 17:44:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[When Dog Is Enough: Using Hypernyms To Improve Neural Network Predictions]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve</link>
-            <guid isPermaLink="false">/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve</guid>
+            <link>https://blog.fastforwardlabs.com/2015/11/17/when-dog-is-enough-using-hypernyms-to-improve.html</link>
+            <guid isPermaLink="false">/2015/11/17/when-dog-is-enough-using-hypernyms-to-improve.html</guid>
             <pubDate>Tue, 17 Nov 2015 16:35:14 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[FFL in the Bay Area, Chicago, and DC]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc</link>
-            <guid isPermaLink="false">/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc</guid>
+            <link>https://blog.fastforwardlabs.com/2015/11/03/ffl-in-the-bay-area-chicago-and-dc.html</link>
+            <guid isPermaLink="false">/2015/11/03/ffl-in-the-bay-area-chicago-and-dc.html</guid>
             <pubDate>Tue, 03 Nov 2015 19:00:20 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Interview with Pedro Domingos]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-10-29-interview-with-pedro-domingos</link>
-            <guid isPermaLink="false">/posts/2015-10-29-interview-with-pedro-domingos</guid>
+            <link>https://blog.fastforwardlabs.com/2015/10/29/interview-with-pedro-domingos.html</link>
+            <guid isPermaLink="false">/2015/10/29/interview-with-pedro-domingos.html</guid>
             <pubDate>Thu, 29 Oct 2015 13:13:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Hello Deep Learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-10-26-hello-deep-learning</link>
-            <guid isPermaLink="false">/posts/2015-10-26-hello-deep-learning</guid>
+            <link>https://blog.fastforwardlabs.com/2015/10/26/hello-deep-learning.html</link>
+            <guid isPermaLink="false">/2015/10/26/hello-deep-learning.html</guid>
             <pubDate>Mon, 26 Oct 2015 16:20:07 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Flip the Paradigm]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-10-20-flip-the-paradigm</link>
-            <guid isPermaLink="false">/posts/2015-10-20-flip-the-paradigm</guid>
+            <link>https://blog.fastforwardlabs.com/2015/10/20/flip-the-paradigm.html</link>
+            <guid isPermaLink="false">/2015/10/20/flip-the-paradigm.html</guid>
             <pubDate>Tue, 20 Oct 2015 19:14:08 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Grace Hopper Opening Keynote]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-10-13-grace-hopper-opening-keynote</link>
-            <guid isPermaLink="false">/posts/2015-10-13-grace-hopper-opening-keynote</guid>
+            <link>https://blog.fastforwardlabs.com/2015/10/13/grace-hopper-opening-keynote.html</link>
+            <guid isPermaLink="false">/2015/10/13/grace-hopper-opening-keynote.html</guid>
             <pubDate>Tue, 13 Oct 2015 20:23:46 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Breaking Down Memes]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-10-06-breaking-down-memes</link>
-            <guid isPermaLink="false">/posts/2015-10-06-breaking-down-memes</guid>
+            <link>https://blog.fastforwardlabs.com/2015/10/06/breaking-down-memes.html</link>
+            <guid isPermaLink="false">/2015/10/06/breaking-down-memes.html</guid>
             <pubDate>Tue, 06 Oct 2015 21:12:57 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Machine Learning in Retail: Consumer Privacy Implications]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-09-29-machine-learning-in-retail-consumer-privacy</link>
-            <guid isPermaLink="false">/posts/2015-09-29-machine-learning-in-retail-consumer-privacy</guid>
+            <link>https://blog.fastforwardlabs.com/2015/09/29/machine-learning-in-retail-consumer-privacy.html</link>
+            <guid isPermaLink="false">/2015/09/29/machine-learning-in-retail-consumer-privacy.html</guid>
             <pubDate>Tue, 29 Sep 2015 18:13:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[How do neural networks learn?]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-09-24-how-do-neural-networks-learn</link>
-            <guid isPermaLink="false">/posts/2015-09-24-how-do-neural-networks-learn</guid>
+            <link>https://blog.fastforwardlabs.com/2015/09/24/how-do-neural-networks-learn.html</link>
+            <guid isPermaLink="false">/2015/09/24/how-do-neural-networks-learn.html</guid>
             <pubDate>Thu, 24 Sep 2015 18:56:09 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Fast Forward Labs Interviews Clarifai about Deep Learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep</link>
-            <guid isPermaLink="false">/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep</guid>
+            <link>https://blog.fastforwardlabs.com/2015/09/22/fast-forward-labs-interviews-clarifai-about-deep.html</link>
+            <guid isPermaLink="false">/2015/09/22/fast-forward-labs-interviews-clarifai-about-deep.html</guid>
             <pubDate>Tue, 22 Sep 2015 18:58:45 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Pictograph: Unlock Your Images]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-09-15-pictograph-unlock-your-images</link>
-            <guid isPermaLink="false">/posts/2015-09-15-pictograph-unlock-your-images</guid>
+            <link>https://blog.fastforwardlabs.com/2015/09/15/pictograph-unlock-your-images.html</link>
+            <guid isPermaLink="false">/2015/09/15/pictograph-unlock-your-images.html</guid>
             <pubDate>Tue, 15 Sep 2015 19:16:19 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[D’Alembert’s Deep Dream: Bees and Nonlinear Transformations]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear</link>
-            <guid isPermaLink="false">/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear</guid>
+            <link>https://blog.fastforwardlabs.com/2015/09/02/dalemberts-deep-dream-bees-and-nonlinear.html</link>
+            <guid isPermaLink="false">/2015/09/02/dalemberts-deep-dream-bees-and-nonlinear.html</guid>
             <pubDate>Wed, 02 Sep 2015 14:08:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Machine Learning Applications in Fashion Retail]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-08-19-machine-learning-applications-in-fashion-retail</link>
-            <guid isPermaLink="false">/posts/2015-08-19-machine-learning-applications-in-fashion-retail</guid>
+            <link>https://blog.fastforwardlabs.com/2015/08/19/machine-learning-applications-in-fashion-retail.html</link>
+            <guid isPermaLink="false">/2015/08/19/machine-learning-applications-in-fashion-retail.html</guid>
             <pubDate>Wed, 19 Aug 2015 18:08:14 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Why Now? Some Preconditions for Technology Innovations]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-08-14-why-now-some-preconditions-for-technology</link>
-            <guid isPermaLink="false">/posts/2015-08-14-why-now-some-preconditions-for-technology</guid>
+            <link>https://blog.fastforwardlabs.com/2015/08/14/why-now-some-preconditions-for-technology.html</link>
+            <guid isPermaLink="false">/2015/08/14/why-now-some-preconditions-for-technology.html</guid>
             <pubDate>Fri, 14 Aug 2015 18:57:31 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[On Stirling Engines and Orchids: A Prelude to Deep Learning]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep</link>
-            <guid isPermaLink="false">/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep</guid>
+            <link>https://blog.fastforwardlabs.com/2015/08/07/on-stirling-engines-and-orchids-a-prelude-to-deep.html</link>
+            <guid isPermaLink="false">/2015/08/07/on-stirling-engines-and-orchids-a-prelude-to-deep.html</guid>
             <pubDate>Fri, 07 Aug 2015 19:08:04 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[A Flying Machine from New York to Paris]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-08-05-a-flying-machine-from-new-york-to-paris</link>
-            <guid isPermaLink="false">/posts/2015-08-05-a-flying-machine-from-new-york-to-paris</guid>
+            <link>https://blog.fastforwardlabs.com/2015/08/05/a-flying-machine-from-new-york-to-paris.html</link>
+            <guid isPermaLink="false">/2015/08/05/a-flying-machine-from-new-york-to-paris.html</guid>
             <pubDate>Wed, 05 Aug 2015 20:28:34 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Fast Forward Labs at the Science Fair]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-07-16-fast-forward-labs-at-the-science-fair</link>
-            <guid isPermaLink="false">/posts/2015-07-16-fast-forward-labs-at-the-science-fair</guid>
+            <link>https://blog.fastforwardlabs.com/2015/07/16/fast-forward-labs-at-the-science-fair.html</link>
+            <guid isPermaLink="false">/2015/07/16/fast-forward-labs-at-the-science-fair.html</guid>
             <pubDate>Thu, 16 Jul 2015 19:43:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Celebrating Our One Year Anniversary]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-06-23-celebrating-our-one-year-anniversary</link>
-            <guid isPermaLink="false">/posts/2015-06-23-celebrating-our-one-year-anniversary</guid>
+            <link>https://blog.fastforwardlabs.com/2015/06/23/celebrating-our-one-year-anniversary.html</link>
+            <guid isPermaLink="false">/2015/06/23/celebrating-our-one-year-anniversary.html</guid>
             <pubDate>Tue, 23 Jun 2015 19:24:50 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[MongoDB World Keynote]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote</link>
-            <guid isPermaLink="false">/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote</guid>
+            <link>https://blog.fastforwardlabs.com/2015/06/19/fast-forward-labs-founder-and-ceo-gave-a-keynote.html</link>
+            <guid isPermaLink="false">/2015/06/19/fast-forward-labs-founder-and-ceo-gave-a-keynote.html</guid>
             <pubDate>Fri, 19 Jun 2015 19:42:33 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Hilary on Science Friday]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science</link>
-            <guid isPermaLink="false">/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science</guid>
+            <link>https://blog.fastforwardlabs.com/2015/06/16/last-friday-hilary-joined-ira-flatow-on-science.html</link>
+            <guid isPermaLink="false">/2015/06/16/last-friday-hilary-joined-ira-flatow-on-science.html</guid>
             <pubDate>Tue, 16 Jun 2015 14:40:47 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Coffee Thermoregulation]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-06-04-coffee-thermoregulation</link>
-            <guid isPermaLink="false">/posts/2015-06-04-coffee-thermoregulation</guid>
+            <link>https://blog.fastforwardlabs.com/2015/06/04/coffee-thermoregulation.html</link>
+            <guid isPermaLink="false">/2015/06/04/coffee-thermoregulation.html</guid>
             <pubDate>Thu, 04 Jun 2015 22:59:36 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Designing the Tech Graph]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-05-19-designing-the-tech-graph</link>
-            <guid isPermaLink="false">/posts/2015-05-19-designing-the-tech-graph</guid>
+            <link>https://blog.fastforwardlabs.com/2015/05/19/designing-the-tech-graph.html</link>
+            <guid isPermaLink="false">/2015/05/19/designing-the-tech-graph.html</guid>
             <pubDate>Tue, 19 May 2015 16:25:01 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Hilary on Bloomberg TV]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared</link>
-            <guid isPermaLink="false">/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared</guid>
+            <link>https://blog.fastforwardlabs.com/2015/04/30/our-fearless-leader-hilary-mason-appeared.html</link>
+            <guid isPermaLink="false">/2015/04/30/our-fearless-leader-hilary-mason-appeared.html</guid>
             <pubDate>Thu, 30 Apr 2015 21:33:25 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Bytecode Hacking for Great Justice]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-04-23-bytecode-hacking-for-great-justice</link>
-            <guid isPermaLink="false">/posts/2015-04-23-bytecode-hacking-for-great-justice</guid>
+            <link>https://blog.fastforwardlabs.com/2015/04/23/bytecode-hacking-for-great-justice.html</link>
+            <guid isPermaLink="false">/2015/04/23/bytecode-hacking-for-great-justice.html</guid>
             <pubDate>Thu, 23 Apr 2015 15:16:56 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Blog Design Refresh]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-04-06-its-restyled-blog-day-here-at-fast-forward-labs</link>
-            <guid isPermaLink="false">/posts/2015-04-06-its-restyled-blog-day-here-at-fast-forward-labs</guid>
-            <pubDate>Mon, 06 Apr 2015 20:12:24 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[Probabilistic Methods for Realtime Streams]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for</link>
-            <guid isPermaLink="false">/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for</guid>
+            <link>https://blog.fastforwardlabs.com/2015/04/01/our-second-rd-report-probabilistic-methods-for.html</link>
+            <guid isPermaLink="false">/2015/04/01/our-second-rd-report-probabilistic-methods-for.html</guid>
             <pubDate>Wed, 01 Apr 2015 20:24:20 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The Hoff]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs</link>
-            <guid isPermaLink="false">/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs</guid>
+            <link>https://blog.fastforwardlabs.com/2015/03/31/the-hoff-stopped-by-fast-forward-labs.html</link>
+            <guid isPermaLink="false">/2015/03/31/the-hoff-stopped-by-fast-forward-labs.html</guid>
             <pubDate>Tue, 31 Mar 2015 18:44:43 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Our Next Topic: Realtime Stream Analysis]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2014-12-19-announcing-our-next-topic-realtime-stream</link>
-            <guid isPermaLink="false">/posts/2014-12-19-announcing-our-next-topic-realtime-stream</guid>
+            <link>https://blog.fastforwardlabs.com/2014/12/19/announcing-our-next-topic-realtime-stream.html</link>
+            <guid isPermaLink="false">/2014/12/19/announcing-our-next-topic-realtime-stream.html</guid>
             <pubDate>Fri, 19 Dec 2014 21:17:09 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[The Natural Language Generation Report is Out]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language</link>
-            <guid isPermaLink="false">/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language</guid>
+            <link>https://blog.fastforwardlabs.com/2014/10/17/the-fast-forward-labs-report-on-natural-language.html</link>
+            <guid isPermaLink="false">/2014/10/17/the-fast-forward-labs-report-on-natural-language.html</guid>
             <pubDate>Fri, 17 Oct 2014 20:49:48 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[We Built a Table]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the</link>
-            <guid isPermaLink="false">/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the</guid>
+            <link>https://blog.fastforwardlabs.com/2014/08/21/at-fast-forward-labs-were-thoughtful-about-the.html</link>
+            <guid isPermaLink="false">/2014/08/21/at-fast-forward-labs-were-thoughtful-about-the.html</guid>
             <pubDate>Thu, 21 Aug 2014 19:28:14 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Hello, Fast Forward Labs!]]></title>
-            <link>https://nextjs-mdx-blog-example.now.sh/posts/2014-07-21-hello-fast-forward-labs</link>
-            <guid isPermaLink="false">/posts/2014-07-21-hello-fast-forward-labs</guid>
+            <link>https://blog.fastforwardlabs.com/2014/07/21/hello-fast-forward-labs.html</link>
+            <guid isPermaLink="false">/2014/07/21/hello-fast-forward-labs.html</guid>
             <pubDate>Mon, 21 Jul 2014 16:01:01 GMT</pubDate>
         </item>
     </channel>
