@@ -70,7 +70,9 @@ function scanDir(dirPath, extension) {
 
 function readPostMetadata(postPath) {
   let post = getPostFromPath(postPath)
-  let excerpt = s.prune(removeMd(post.content), 140 * 2)
+
+  let import_free_content = post.content.replace(/^import.*\n?/m, '')
+  let excerpt = s.prune(removeMd(import_free_content), 140 * 2)
   // console.log(excerpt)
   let meta = post.data
 
@@ -108,9 +110,9 @@ function readPostMetadata(postPath) {
 }
 
 function generateRSS(posts) {
-  const siteUrl = 'https://nextjs-mdx-blog-example.now.sh'
+  const siteUrl = 'https://blog.fastforwardlabs.com'
   const feed = new RSS({
-    title: 'My blog',
+    title: 'Cloudera Fast Forward LAbs Blog',
     site_url: siteUrl,
   })
   posts.map(post => {
@@ -140,10 +142,10 @@ function main() {
       `export default ${postsJSON}\n`
   )
   console.info(`Saved ${posts.length} posts in ${exportPath}`)
-  // const rssPath = 'static/rss-feed.xml'
-  // const rssXML = generateRSS(posts)
-  // fs.writeFileSync(rssPath, rssXML)
-  // console.info(`Saved RSS feed to ${rssPath}`)
+  const rssPath = 'static/rss-feed.xml'
+  const rssXML = generateRSS(posts)
+  fs.writeFileSync(rssPath, rssXML)
+  console.info(`Saved RSS feed to ${rssPath}`)
 }
 
 main()

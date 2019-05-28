@@ -4,6 +4,7 @@ import React from 'react'
 import { font_size, line_height, font_min, sm } from '../parts/Static'
 import { debounce } from 'lodash'
 import Header from '../parts/Header'
+import Head from 'next/head'
 
 // Override the App class to put layout component around the page contents
 // https://github.com/zeit/next.js#custom-app
@@ -12,12 +13,14 @@ export default class MyApp extends App {
   constructor(props) {
     super(props)
     this.state = {
-      ww: 0,
-      optimal: null,
+      ww: 600,
+      optimal: 600,
       grid_canvas: null,
       mode: 'light',
       grid: 'hide',
       showing_posts: 25,
+      scroll_check: false,
+      loaded: false,
     }
     this.setSize = this.setSize.bind(this)
     this.setSize = debounce(this.setSize, 100)
@@ -36,8 +39,17 @@ export default class MyApp extends App {
         wh: window.innerHeight,
         // optimal: width + font_size * line_height,
         optimal: 633.50244140625,
+        loaded: true,
       },
-      () => {}
+      () => {
+        // account for scroll bar
+        if (this.state.scroll_check === false) {
+          this.setState({
+            ww: document.documentElement.clientWidth,
+            scroll_check: true,
+          })
+        }
+      }
     )
   }
 
@@ -53,7 +65,16 @@ export default class MyApp extends App {
   }
 
   render() {
-    let { ww, wh, optimal, mode, grid, grid_canvas, showing_posts } = this.state
+    let {
+      ww,
+      wh,
+      optimal,
+      mode,
+      grid,
+      grid_canvas,
+      showing_posts,
+      loaded,
+    } = this.state
     const { Component, pageProps } = this.props
     const { pathname } = this.props.router
 
@@ -74,11 +95,15 @@ export default class MyApp extends App {
 
     ogrem = afs * line_height
 
+    let stacked = false
+    if (ww - ogrem < optimal) stacked = true
+
     let divisions = 4
 
+    let avail = stacked ? ww - ogrem / 2 : ww - ogrem
     let target_width = optimal / divisions
-    let columns = Math.floor((ww - ogrem) / target_width)
-    let column_width = (ww - ogrem) / columns
+    let columns = Math.floor(avail / target_width)
+    let column_width = avail / columns
 
     let offset = 0
     let even = columns % 2 === 0
@@ -93,17 +118,15 @@ export default class MyApp extends App {
     let optim_center_left =
       (columns / 2 - divisions / 2) * column_width + offset
 
-    let stacked = false
     // TODO rethink stacked
-    if (columns < divisions) {
+    if (stacked) {
       offset = 0
       columns = divisions
-      column_width = (ww - ogrem) / divisions
+      column_width = avail / divisions
       optim_width = column_width * divisions
       optim_center_left = 0
       // grem = grem / 2
       ratio = 1
-      stacked = true
     }
 
     // Adjust grem
@@ -142,10 +165,17 @@ export default class MyApp extends App {
       wh,
       cap,
       optim_width,
+      stacked,
     }
 
     return (
       <Container>
+        <Head>
+          <style>{`.js-no-flash { display: none }`}</style>
+          <noscript>
+            <style>{`.js-no-flash { display: block }`}</style>
+          </noscript>
+        </Head>
         <style jsx global>{`
           @font-face {
             font-family: 'Inter';
@@ -246,13 +276,23 @@ export default class MyApp extends App {
             background-repeat: repeat-x;
             background-size: 1em ${sm}em;
           }
+          a.no-underline {
+            background-image: none;
+          }
           a.no-hover {
             background-image: none;
+          }
+          a.no-hover:hover {
+            background-image: none;
+            opacity: 1;
           }
         `}</style>
 
         {optimal !== null ? (
-          <div>
+          <div
+            className="js-no-flash"
+            style={{ display: loaded ? 'block' : null }}
+          >
             <Header
               grem={grem}
               logo_stroke={logo_stroke}
@@ -261,7 +301,6 @@ export default class MyApp extends App {
               fs={fs}
               is_post={is_post}
             />
-
             {is_post ? (
               <PostLayout pathname={pathname} {...grid_props}>
                 <Component {...pageProps} />

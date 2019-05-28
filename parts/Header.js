@@ -3,7 +3,6 @@ import { p } from './Utils'
 import Link from 'next/link'
 
 const Header = ({ grem, logo_stroke, cap, fsn, fs, is_post }) => {
-  console.log(is_post)
   return (
     <div style={{ paddingBottom: grem / 2 }}>
       <div style={{ position: 'relative' }}>
@@ -29,7 +28,7 @@ const Header = ({ grem, logo_stroke, cap, fsn, fs, is_post }) => {
                   display: 'block',
                   lineHeight: 0,
                 }}
-                className="no-hover no-underline"
+                className="no-underline no-hover"
               >
                 <img
                   style={{ height: grem * (16 / 32) }}
@@ -54,7 +53,7 @@ const Header = ({ grem, logo_stroke, cap, fsn, fs, is_post }) => {
                   lineHeight: 1.5,
                 }}
               >
-                About CFFL →
+                About Us →
               </a>
             </div>
           </div>
@@ -70,26 +69,24 @@ const Header = ({ grem, logo_stroke, cap, fsn, fs, is_post }) => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <img
-              style={{
-                height: cap,
-                width: cap,
-                marginRight: grem * (6 / 16),
-                position: 'relative',
-                top: -cap / 32,
-              }}
-              src="/static/images/ff.png"
-            />
-            <div>
-              Fast Forward Labs{' '}
-              {is_post ? (
-                <Link href="/">
-                  <a>Blog</a>
-                </Link>
-              ) : (
-                'Blog'
-              )}
-            </div>
+            <Link href="/">
+              <a
+                className={`no-hover no-underline`}
+                style={{ display: 'flex', alignItems: 'center' }}
+              >
+                <img
+                  style={{
+                    height: cap,
+                    width: cap,
+                    marginRight: grem * (6 / 16),
+                    position: 'relative',
+                    top: -cap / 32,
+                  }}
+                  src="/static/images/ff.png"
+                />
+                <div>Fast Forward Labs </div>
+              </a>
+            </Link>
           </div>
           <div
             style={{
@@ -99,6 +96,16 @@ const Header = ({ grem, logo_stroke, cap, fsn, fs, is_post }) => {
             }}
           />
           <div style={{ display: 'flex' }}>
+            <div style={{ marginRight: grem / 2 }}>
+              {is_post ? (
+                <Link href="/">
+                  <a>Blog</a>
+                </Link>
+              ) : (
+                'Blog'
+              )}
+            </div>
+
             <div style={{}}>
               <a href="https://experiments.fastforwardlabs.com">
                 AI Experiments

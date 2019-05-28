@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-unfetch'
-
 import Head from 'next/head'
 import Header from '../parts/Header'
 import { debounce } from 'lodash'
@@ -8,6 +7,8 @@ import { p } from '../parts/Utils'
 import { Hd, Vd, Rect } from '../parts/Dividers'
 import posts from '../posts'
 import PostPreview from '../parts/PostPreview'
+import { withRouter } from 'next/router'
+import Router from 'next/router'
 
 let posts_per_page = 20
 
@@ -34,14 +35,24 @@ class Index extends React.Component {
       ww,
       wh,
       optimal,
+      stacked,
     } = this.props
 
+    let search = this.props.router.query
+    let params = new URLSearchParams(search)
+    let page_number = params.get('pages') || 1
+
     let post_groups = []
-    for (let i = 0; i < showing_posts / posts_per_page; i++) {
-      let _posts = posts.slice(i * posts_per_page, (i + 1) * posts_per_page)
-      post_groups.push(_posts)
+    let published = posts.filter(p => p.published)
+    for (let i = 0; i < page_number; i++) {
+      if (i * posts_per_page < published.length) {
+        let _posts = published.slice(
+          i * posts_per_page,
+          (i + 1) * posts_per_page
+        )
+        post_groups.push(_posts)
+      }
     }
-    console.log(post_groups)
 
     return (
       <div>
@@ -74,7 +85,9 @@ class Index extends React.Component {
         </Head>
 
         <div>
-          <div style={{ padding: p(grem / 4, ogrem / 2) }}>
+          <div
+            style={{ padding: p(grem / 4, stacked ? ogrem / 4 : ogrem / 2) }}
+          >
             <div
               style={{
                 ...center_text,
@@ -107,40 +120,78 @@ class Index extends React.Component {
                 }}
               >
                 {post_groups.map((g, i) => {
+                  let first = g[0]
+                  let first_date = new Date(first.publishDate)
+                  let first_short_date = `${first_date.toLocaleString('en-us', {
+                    month: 'short',
+                  })} ${first_date.getFullYear()}`
+                  let last = g[g.length - 1]
+                  let last_date = new Date(last.publishDate)
+                  let last_short_date = `${last_date.toLocaleString('en-us', {
+                    month: 'short',
+                  })} ${last_date.getFullYear()}`
+
                   return (
-                    <div style={{ position: 'relative' }}>
+                    <div key={'group_' + i} style={{ position: 'relative' }}>
                       {i !== 0 ? (
                         <div
                           style={{
                             paddingTop: grem * 2,
-                            paddingLeft: grem / 2,
-                            paddingRight: grem / 2,
                             paddingBottom: grem / 2,
-                            fontSize: fs * 1.25,
+                            paddingLeft:
+                              columns > 10
+                                ? offset + ((columns - 10) / 2) * column_width
+                                : offset,
+                            display: 'flex',
+                            fontSize: fs * 0.75,
                             lineHeight: 1.5,
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.03em',
                           }}
                         >
-                          Page {i + 1}
+                          <div
+                            style={{
+                              width:
+                                columns > 8
+                                  ? 3 * column_width
+                                  : 2 * column_width,
+                              padding: p(0, grem / 2),
+                            }}
+                          >
+                            {first_short_date} &ndash; {last_short_date}
+                          </div>
+                          <div
+                            style={{
+                              width:
+                                columns === 4
+                                  ? 2 * column_width
+                                  : ((columns - 4) / 2) * column_width,
+                              padding: p(0, grem / 2),
+                            }}
+                          >
+                            {`Page ${i + 1}`}
+                          </div>
                         </div>
-                      ) : null}
-                      {g
-                        .filter(post => post.published === true)
-                        .map((post, i) => (
-                          <PostPreview
-                            key={post.title}
-                            post={post}
-                            grem={grem}
-                            ww={ww}
-                            fs={fs}
-                            ogrem={ogrem}
-                            columns={columns}
-                            column_width={column_width}
-                            extra_left={ogrem / 2 + offset}
-                            extra_right={ogrem / 2 + offset}
-                            adjust_left={-ogrem / 2}
-                            adjust_right={-ogrem / 2}
-                          />
-                        ))}
+                      ) : (
+                        <div style={{ height: grem / 2 }} />
+                      )}
+                      {g.map((post, i) => (
+                        <PostPreview
+                          key={post.title}
+                          post={post}
+                          grem={grem}
+                          ww={ww}
+                          fs={fs}
+                          ogrem={ogrem}
+                          columns={columns}
+                          column_width={column_width}
+                          extra_left={ogrem / 2 + offset}
+                          extra_right={ogrem / 2 + offset}
+                          adjust_left={-ogrem / 2}
+                          adjust_right={-ogrem / 2}
+                          stacked={stacked}
+                        />
+                      ))}
                       <div
                         style={{
                           position: 'relative',
@@ -153,11 +204,14 @@ class Index extends React.Component {
                     </div>
                   )
                 })}
-                {showing_posts < posts.length ? (
+                {page_number * posts_per_page < published.length ? (
                   <button
                     className="gray-backer"
                     onClick={() => {
-                      this.setState({ showing_posts: showing_posts + 20 })
+                      Router.push({
+                        pathname: this.props.router.pathname,
+                        query: { pages: parseInt(page_number) + 1 },
+                      })
                     }}
                     style={{
                       display: 'block',
@@ -269,4 +323,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index
+export default withRouter(Index)

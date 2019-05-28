@@ -102,7 +102,7 @@ class PostPreview extends React.Component {
             >
               <div
                 style={{
-                  width: column_width,
+                  width: columns === 4 ? column_width * 2 : column_width,
                   padding: p(grem / 2, grem / 2, 0, grem / 2),
                 }}
               >
@@ -136,7 +136,7 @@ class PostPreview extends React.Component {
                 position: 'relative',
                 width:
                   columns > 8
-                    ? (columns - 4) * column_width
+                    ? (Math.min(columns, 10) - 4) * column_width
                     : columns === 6
                     ? columns * column_width
                     : columns === 4
@@ -194,9 +194,9 @@ class PostPreview extends React.Component {
                         height: grem * 0.875 * (columns === 4 ? 4 : 3),
                         overflow: 'hidden',
                         display: '-webkit-box',
-                        webkitLineClamp: columns === 4 ? '4' : '3',
+                        WebkitLineClamp: columns === 4 ? '4' : '3',
                         hyphens: 'auto',
-                        webkitBoxOrient: 'vertical',
+                        WebkitBoxOrient: 'vertical',
                       }}
                     >
                       {columns === 4 && post.author ? (

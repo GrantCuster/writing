@@ -7,8 +7,28 @@ import { Hd, Vd, Rect } from '../parts/Dividers'
 import MorePostsPreview from '../parts/MorePostsPreview'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import darkTheme from 'prism-react-renderer/themes/nightOwl'
+import { katex_style } from '../parts/KatexStyle'
 
 let ofs = 16
+
+// Line highlighting from https://github.com/filoxo/blog/commit/3862bb4f5f5d4ebfafa3f773b7c1687fc8ca5bea
+const RE = /{([\d,-]+)}/
+let calculateLinesToHighlight = meta => {
+  if (!RE.test(meta)) {
+    return () => false
+  } else {
+    const lineNumbers = RE.exec(meta)[1]
+      .split(',')
+      .map(v => v.split('-').map(v => parseInt(v, 10)))
+    return index => {
+      const lineNumber = index + 1
+      const inRange = lineNumbers.some(([start, end]) =>
+        end ? lineNumber >= start && lineNumber <= end : lineNumber === start
+      )
+      return inRange
+    }
+  }
+}
 
 export class PostLayout extends React.Component {
   render() {
@@ -27,14 +47,8 @@ export class PostLayout extends React.Component {
       wh,
       cap,
       optim_width,
+      stacked,
     } = this.props
-
-    let post_index = posts.map(p => p.path_name).indexOf(pathname)
-    let prev_index = post_index - 1
-    let next_index = post_index + 1
-    let post = posts[post_index]
-    let prev_post = posts[prev_index]
-    let next_post = posts[next_index]
 
     let components = {
       img: props => {
@@ -55,16 +69,20 @@ export class PostLayout extends React.Component {
               style={{
                 display: 'block',
                 margin: '0',
-                maxWidth: optim_width + ogrem,
+                // maxWidth: optim_width + ogrem,
                 width: '100%',
               }}
             />
           </div>
         )
       },
-      pre: props => <div {...props} />,
+      pre: props => {
+        return <div {...props} />
+      },
       code: props => {
         let children = props.children
+        let metastring = props.metastring
+        let shouldHighlightLine = calculateLinesToHighlight(metastring)
         const language =
           props.className !== undefined
             ? props.className.replace(/language-/, '')
@@ -81,9 +99,11 @@ export class PostLayout extends React.Component {
                 style={{
                   position: 'relative',
                   marginBottom: grem,
-                  width: 4 * column_width,
-                  marginLeft: -grem / 2,
-                  marginRight: -grem / 2,
+                  width: stacked
+                    ? 4 * column_width + ogrem / 2 + 2
+                    : 4 * column_width,
+                  marginLeft: stacked ? -ogrem / 4 - grem / 2 - 1 : -grem / 2,
+                  marginRight: stacked ? -ogrem / 4 - grem / 2 - 1 : -grem / 2,
                 }}
               >
                 <div
@@ -107,17 +127,46 @@ export class PostLayout extends React.Component {
                       overflow: 'visible',
                     }}
                   >
-                    {tokens.map((line, i) => (
-                      <div
-                        key={i}
-                        {...getLineProps({ line, key: i })}
-                        style={{}}
-                      >
-                        {line.map((token, key) => (
-                          <span key={key} {...getTokenProps({ token, key })} />
-                        ))}
-                      </div>
-                    ))}
+                    {tokens.map((line, i) => {
+                      let line_props = getLineProps({ line, key: i })
+                      let highlight_style = {}
+                      if (shouldHighlightLine(i)) {
+                        highlight_style = {
+                          background: '#ddd',
+                          marginLeft: -grem / 2,
+                          marginRight: -grem / 2,
+                        }
+                      }
+                      return (
+                        <div
+                          key={i}
+                          {...line_props}
+                          style={{
+                            ...highlight_style,
+                          }}
+                        >
+                          <span>
+                            {post.line_numbers === true ? (
+                              <span>
+                                style=
+                                {{
+                                  userSelect: 'none',
+                                  marginRight: 12,
+                                  color: '#aaa',
+                                }}
+                                >{(i + 1).toString().padStart(2, '0')}
+                              </span>
+                            ) : null}
+                            {line.map((token, key) => (
+                              <span
+                                key={key}
+                                {...getTokenProps({ token, key })}
+                              />
+                            ))}
+                          </span>
+                        </div>
+                      )
+                    })}
                   </pre>
                   <Rect />
                 </div>
@@ -127,6 +176,41 @@ export class PostLayout extends React.Component {
         )
       },
     }
+
+    let post_index = posts.map(p => p.path_name).indexOf(pathname)
+    let prev_index = post_index - 1
+    let post = posts[post_index]
+    let prev_post = posts[prev_index]
+
+    function getNewerPost(index, posts) {
+      let next_try = posts[index - 1]
+      if (next_try === undefined) {
+        return undefined
+      } else {
+        if (next_try.external_url !== false) {
+          return getNewerPost(index - 1, posts)
+        } else {
+          return next_try
+        }
+      }
+    }
+
+    let newer_post = getNewerPost(post_index, posts)
+
+    function getOlderPost(index, posts) {
+      let next_try = posts[index + 1]
+      if (next_try === undefined) {
+        return undefined
+      } else {
+        if (next_try.external_url !== false) {
+          return getOlderPost(index + 1, posts)
+        } else {
+          return next_try
+        }
+      }
+    }
+
+    let older_post = getOlderPost(post_index, posts)
 
     let post_date = new Date(post.publishDate)
     let published_date = `${post_date.toLocaleString('en-us', {
@@ -149,7 +233,12 @@ export class PostLayout extends React.Component {
             type="image/x-icon"
             href="static/images/favicon.png"
           />
-
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css"
+            integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j"
+            crossorigin="anonymous"
+          />
           <title>{post.title} - Cloudera Fast Forward</title>
         </Head>
 
@@ -212,6 +301,13 @@ export class PostLayout extends React.Component {
           }
           video {
             max-width: 100%;
+          }
+          code {
+            background: #eaeaea;
+            padding-right: 3px;
+            padding-left: 3px;
+            font-size: 0.975em;
+            word-break: break-word;
           }
         `}</style>
         <style jsx global>{`
@@ -351,8 +447,8 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         <div style={{ position: 'relative' }}>
           <div
             style={{
-              paddingLeft: ogrem / 2,
-              paddingRight: ogrem / 2,
+              paddingLeft: stacked ? ogrem / 4 : ogrem / 2,
+              paddingRight: stacked ? ogrem / 4 : ogrem / 2,
               paddingTop: grem,
             }}
           >
@@ -369,7 +465,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
               >
                 <div
                   style={{
-                    width: column_width * 1,
+                    width: columns === 4 ? column_width * 2 : column_width,
                     padding: p(0, grem / 2),
                     position: 'relative',
                     fontSize: fs * (6 / 8),
@@ -382,7 +478,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
                 </div>
                 <div
                   style={{
-                    width: column_width * 1,
+                    width: columns === 4 ? column_width * 2 : column_width,
                     padding: p(0, grem / 2),
                     position: 'relative',
                     fontSize: fs * (6 / 8),
@@ -397,7 +493,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
               <div style={{ marginBottom: 0 }}>
                 <div
                   style={{
-                    fontSize: fs * 3,
+                    fontSize: stacked ? fs * 2.5 : fs * 3,
                     lineHeight: 1.25,
                     padding: p(0, grem / 2),
                     width: Math.min(columns, 6) * column_width,
@@ -413,30 +509,35 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
               <div
                 style={{
                   display: 'flex',
+                  flexWrap: 'wrap',
                   width: columns > 4 ? 5 * column_width : 4 * column_width,
                   marginLeft:
                     (columns > 4
-                      ? ((columns - 4) / 2 - 1) * column_width
+                      ? ((columns - 4) / 2 - (post.author ? 1 : 0)) *
+                        column_width
                       : ((columns - 4) / 2) * column_width) + offset,
                 }}
               >
-                {columns > 4 ? (
+                {post.author ? (
                   <div
                     style={{
-                      padding: p(grem, grem / 2, grem, grem / 2),
-                      width: column_width,
+                      padding: p(
+                        stacked ? grem / 2 : grem,
+                        grem / 2,
+                        stacked ? 0 : grem,
+                        grem / 2
+                      ),
+                      width: stacked ? column_width * 4 : column_width,
                     }}
                   >
-                    {post.author ? (
-                      <div>
-                        by{' '}
-                        {post.author_link ? (
-                          <a href={post.author_link}>{post.author}</a>
-                        ) : (
-                          post.author
-                        )}
-                      </div>
-                    ) : null}{' '}
+                    <div>
+                      by{' '}
+                      {post.author_link ? (
+                        <a href={post.author_link}>{post.author}</a>
+                      ) : (
+                        post.author
+                      )}
+                    </div>
                   </div>
                 ) : null}
 
@@ -473,9 +574,9 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
               columns={columns}
               grem={grem}
               column_width={column_width}
-              next_post={next_post}
+              next_post={older_post}
               offset={offset}
-              prev_post={prev_post}
+              prev_post={newer_post}
               fs={fs}
               ww={ww}
               ogrem={ogrem}

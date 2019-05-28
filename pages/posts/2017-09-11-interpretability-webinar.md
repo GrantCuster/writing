@@ -9,9 +9,9 @@ feature: true
 published: true
 ---
 
-<div class="html-video-holder">
-<iframe width="560" height="315"  src="https://www.youtube.com/embed/NxYCY8-Qfx0" frameborder="0" allowfullscreen></iframe>
-</div>
+import {VideoHolder} from '../../parts/CustomMDX'
+
+<VideoHolder src="https://www.youtube.com/embed/NxYCY8-Qfx0" />
 
 We're pleased to share the recording of our recent webinar on machine learning
 interpretability and accompanying resources.

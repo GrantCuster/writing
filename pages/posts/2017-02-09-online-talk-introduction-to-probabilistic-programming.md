@@ -7,6 +7,8 @@ post_type: Announcement
 feature: false
 ---
 
+import { VideoHolder } from '../../parts/CustomMDX'
+
 On Tuesday, we hosted an online talk with the [Stan Group](http://stan.fit/) discussing why probabilistic programming is generating so much excitement in the fields of machine learning and statistics. In essence, probabilistic programming is a powerful tool to help organizations make rational decisions under uncertainty.
 
 Watching the recording, you will learn:
@@ -20,6 +22,4 @@ Watching the recording, you will learn:
 
 This online talk part of a series of educational resources accompanying our [recent research on probabilistic programming](http://blog.fastforwardlabs.com/2017/01/18/new-research-on-probabilistic-programming.html). Our research dives deeper into the topic, teaching readers how to build products using Bayesian inference models. To learn more or subscribe to our research, write to us at [contact@fastforwardlabs.com](mailto:contact@fastforwardlabs.com).
 
-<div class="video-holder">
-  <iframe src="https://www.youtube.com/embed/7BjqGEl6mRs" frameborder="0" allowfullscreen=""></iframe>
-</div>
+<VideoHolder src="https://www.youtube.com/embed/7BjqGEl6mRs" />

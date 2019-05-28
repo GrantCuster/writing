@@ -8,6 +8,8 @@ author: Kathryn
 author_link: https://twitter.com/HumeKathryn
 ---
 
+import { VideoHolder } from '../../parts/CustomMDX'
+
 ![An image of a clock drawn in a cappuccino melting over the side of the cup, reminiscent of a Salvador Dali painting.](https://quamproxime.files.wordpress.com/2017/03/screen-shot-2017-03-25-at-1-28-55-pm.png)
 
 ##### This post originally appeared on [quamproxime.com](https://quamproxime.com/2017/03/25/five-distractions-in-thinking-about-ai/), the personal blog of our sales and marketing lead, [Kathryn Hume](https://twitter.com/HumeKathryn)
@@ -19,9 +21,7 @@ author_link: https://twitter.com/HumeKathryn
 <h2>Distraction 1: The End of Work</h2>
 <p>Anytime he hears rumblings that AI is going to replace the workforce as we know it, my father, who has 40 years of experience in software engineering, most recently in natural language processing and machine learning, placidly mentions <a href="https://en.wikipedia.org/wiki/Desk_Set">Desk Set</a>, a 1957 romantic comedy featuring the always lovable Spencer Tracy and Katharine Hepburn. Desk Set features a group of librarians at a national broadcasting network who fear their job security when an engineer is brought in to install EMERAC (named after IBM&#8217;s <a href="https://en.wikipedia.org/wiki/ENIAC">ENIAC</a>), an &#8220;electronic brain&#8221; that promises to do a better job fielding consumer trivia questions than they do. The film is both charming and prescient, and will seem very familiar to anyone reading about a <a href="https://www.theatlantic.com/magazine/archive/2015/07/world-without-work/395294/">world without work</a>. The best scene features a virtuoso feat of associative memory showing the sheer brilliance of the character played by Katharine Hepburn (winning Tracy&#8217;s heart in the process), a brilliance the primitive electronic brain would have no chance of emulating. The movie ends with a literal <a href="https://en.wikipedia.org/wiki/Deus_ex_machina">deus ex machina</a> where a machine accidentally prints pink slips to fire the entire company, only to get shut down due to its rogue disruption on operations.</p>
 
-<div class="video-holder">
-<iframe class='youtube-player' type='text/html' width='648' height='395' src='https://www.youtube.com/embed/pEoFFYH_m0Q?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true'></iframe>
-</div>
+<VideoHolder src="https://www.youtube.com/embed/pEoFFYH_m0Q" />
 
 ##### The Desk Set scene where Katharine Hepburn shows a robot is no match for her intelligence.
 

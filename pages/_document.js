@@ -28,6 +28,10 @@ class MyDocument extends Document {
             type="font/woff2"
             crossOrigin="*"
           />
+          <link
+            href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
