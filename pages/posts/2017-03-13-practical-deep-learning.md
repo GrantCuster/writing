@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Practical Deep Learning"
-date: 2017-03-13 15:49
+title: 'Practical Deep Learning'
+date: 2017-03-13 15:49:00 Z
 preview_image: /images/2017/03/doc-full-screen.jpg
 feature: false
 author: Micha
 author_link: https://github.com/mynameisfiber
-post_type: "Talk Slides"
+post_type: 'Talk Slides'
 ---
 
 ![](/images/2017/03/micha-talk-doc.jpg)

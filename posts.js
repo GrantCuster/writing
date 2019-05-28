@@ -1227,7 +1227,7 @@ export default [
     "filePath": "pages/posts/2017-03-13-practical-deep-learning.md",
     "urlPath": "/2017/03/13/practical-deep-learning.html",
     "path_name": "/posts/2017-03-13-practical-deep-learning",
-    "publishDate": "2017-03-13T19:49:00.000Z",
+    "publishDate": "2017-03-13T15:49:00.000Z",
     "title": "Practical Deep Learning",
     "preview_image": "/images/2017/03/doc-full-screen.jpg",
     "feature": false,

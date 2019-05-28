@@ -129,9 +129,9 @@ function generateRSS(posts) {
 function main() {
   const postPaths = scanDir('pages/posts', '.md')
   // console.debug({ postPaths })
-  const now = new Date()
+  // const now = new Date()
   let posts = postPaths.map(readPostMetadata)
-  posts.sort((a, b) => b.date - a.date)
+  posts.sort((a, b) => new Date(b.date) - new Date(a.date))
   posts = posts.reverse()
   // console.debug({ posts })
   const postsJSON = JSON.stringify(posts, null, 2)
