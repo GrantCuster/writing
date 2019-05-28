@@ -31700,7 +31700,7 @@ __webpack_require__.r(__webpack_exports__);
   "filePath": "pages/posts/2017-03-13-practical-deep-learning.md",
   "urlPath": "/posts/2017-03-13-practical-deep-learning",
   "path_name": "/posts/2017-03-13-practical-deep-learning",
-  "publishDate": "2017-03-13T19:49:00.000Z",
+  "publishDate": "2017-03-13T15:49:00.000Z",
   "title": "Practical Deep Learning",
   "preview_image": "/images/2017/03/doc-full-screen.jpg",
   "feature": false,
@@ -32538,7 +32538,7 @@ __webpack_require__.r(__webpack_exports__);
   "feature": false,
   "published": true,
   "post_type": "Interview",
-  "excerpt": "\nLast Thursday Hilary and I headed to Clarifai’s offices in the Flatiron District to ask CEO Matt Zeiler about using deep learning for image analysis. A few highlights from the interview:1) The success of a deep learning project depends on the quality of the initial training data...",
+  "excerpt": "\n\nLast Thursday Hilary and I headed to Clarifai’s offices in the Flatiron District to ask CEO Matt Zeiler about using deep learning for image analysis. A few highlights from the interview:1) The success of a deep learning project depends on the quality of the initial training...",
   "external_url": false
 }, {
   "filePath": "pages/posts/2015-09-15-pictograph-unlock-your-images.md",
@@ -32602,7 +32602,7 @@ __webpack_require__.r(__webpack_exports__);
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nToday’s post is inspired by a slow-motion recording we captured of a Stirling engine that Ryan, Fast Forward’s General Counsel, just so happened to have lying around our New York City offices. For the non-mechanics among us, a Stirling engine is a heat engine that operates by...",
+  "excerpt": "\n\nToday’s post is inspired by a slow-motion recording we captured of a Stirling engine that Ryan, Fast Forward’s General Counsel, just so happened to have lying around our New York City offices. For the non-mechanics among us, a Stirling engine is a heat engine that operates by...",
   "external_url": false
 }, {
   "filePath": "pages/posts/2015-08-05-a-flying-machine-from-new-york-to-paris.md",
