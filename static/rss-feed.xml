@@ -4,7 +4,25 @@
         <description><![CDATA[Cloudera Fast Forward LAbs Blog]]></description>
         <link>https://blog.fastforwardlabs.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 28 May 2019 19:05:49 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 May 2019 19:25:15 GMT</lastBuildDate>
+        <item>
+            <title><![CDATA[Meta-Learners - learning how to learn]]></title>
+            <link>https://blog.fastforwardlabs.com/posts/2019-05-22-metalearners-learning-how-to-learn</link>
+            <guid isPermaLink="false">/posts/2019-05-22-metalearners-learning-how-to-learn</guid>
+            <pubDate>Wed, 22 May 2019 19:05:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Visualizing Active Learning]]></title>
+            <link>https://blog.fastforwardlabs.com/posts/2019-04-29-visualizing-active-learning</link>
+            <guid isPermaLink="false">/posts/2019-04-29-visualizing-active-learning</guid>
+            <pubDate>Mon, 29 Apr 2019 20:05:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Teaching machines to recognize faces: a tale of two outcomes]]></title>
+            <link>https://blog.fastforwardlabs.com/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes</link>
+            <guid isPermaLink="false">/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes</guid>
+            <pubDate>Mon, 29 Apr 2019 20:05:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[An Invitation to Active Learning]]></title>
             <link>https://blog.fastforwardlabs.com/posts/2019-04-03-an-invitation-to-active-learning</link>
@@ -315,7 +333,7 @@
             <title><![CDATA[The promise of Automated Machine Learning (AutoML)]]></title>
             <link>https://blog.fastforwardlabs.com/posts/2017-11-30-the-promise-of-automated-machine-learning-automl</link>
             <guid isPermaLink="false">/posts/2017-11-30-the-promise-of-automated-machine-learning-automl</guid>
-            <pubDate>Thu, 30 Nov 2017 17:08:00 GMT</pubDate>
+            <pubDate>Thu, 30 Nov 2017 12:08:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Algorithmic Cookery & Happy Thanksgiving]]></title>
