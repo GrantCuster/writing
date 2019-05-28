@@ -131,8 +131,7 @@ function main() {
   // console.debug({ postPaths })
   // const now = new Date()
   let posts = postPaths.map(readPostMetadata)
-  posts.sort((a, b) => new Date(b.date) - new Date(a.date))
-  posts = posts.reverse()
+  posts.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate))
   // console.debug({ posts })
   const postsJSON = JSON.stringify(posts, null, 2)
   const exportPath = 'posts.js'

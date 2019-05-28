@@ -2,7 +2,7 @@
 export default [
   {
     "filePath": "pages/posts/2019-05-22-metalearners-learning-how-to-learn.md",
-    "urlPath": "/2019/05/22/metalearners-learning-how-to-learn.html",
+    "urlPath": "/posts/2019-05-22-metalearners-learning-how-to-learn",
     "path_name": "/posts/2019-05-22-metalearners-learning-how-to-learn",
     "publishDate": "2019-05-22T19:05:00.000Z",
     "title": "Meta-Learners - learning how to learn",
@@ -15,23 +15,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2019-04-29-visualizing-active-learning.md",
-    "urlPath": "/2019/04/29/visualizing-active-learning.html",
-    "path_name": "/posts/2019-04-29-visualizing-active-learning",
-    "publishDate": "2019-04-29T20:05:00.000Z",
-    "title": "Visualizing Active Learning",
-    "preview_image": "/images/editor_uploads/2019-04-10-191420-active_learner_gif_small.gif",
-    "feature": true,
-    "published": true,
-    "author": "Grant",
-    "post_type": "newsletter",
-    "author_link": "https://twitter.com/grantcuster",
-    "excerpt": "\nA GIF of the Active Learner prototype\n\nActive Learner shows how active learning selects which data to be labeled.\n\nActive Learner, our new research prototype, is an interactive visualization of different active learning strategies for labeling data. It features three different...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes.md",
-    "urlPath": "/2019/04/29/teaching-machines-to-recognize-faces-a-tale-of-two-outcomes.html",
+    "urlPath": "/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes",
     "path_name": "/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes",
     "publishDate": "2019-04-29T20:05:00.000Z",
     "title": "Teaching machines to recognize faces: a tale of two outcomes",
@@ -45,8 +30,23 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2019-04-29-visualizing-active-learning.md",
+    "urlPath": "/posts/2019-04-29-visualizing-active-learning",
+    "path_name": "/posts/2019-04-29-visualizing-active-learning",
+    "publishDate": "2019-04-29T20:05:00.000Z",
+    "title": "Visualizing Active Learning",
+    "preview_image": "/images/editor_uploads/2019-04-10-191420-active_learner_gif_small.gif",
+    "feature": true,
+    "published": true,
+    "author": "Grant",
+    "post_type": "newsletter",
+    "author_link": "https://twitter.com/grantcuster",
+    "excerpt": "\nA GIF of the Active Learner prototype\n\nActive Learner shows how active learning selects which data to be labeled.\n\nActive Learner, our new research prototype, is an interactive visualization of different active learning strategies for labeling data. It features three different...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2019-04-03-an-invitation-to-active-learning.md",
-    "urlPath": "/2019/04/03/an-invitation-to-active-learning.html",
+    "urlPath": "/posts/2019-04-03-an-invitation-to-active-learning",
     "path_name": "/posts/2019-04-03-an-invitation-to-active-learning",
     "publishDate": "2019-04-03T00:00:00.000Z",
     "title": "An Invitation to Active Learning",
@@ -61,7 +61,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data.md",
-    "urlPath": "/2019/04/02/a-guide-to-learning-with-limited-labeled-data.html",
+    "urlPath": "/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data",
     "path_name": "/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data",
     "publishDate": "2019-04-02T18:04:00.000Z",
     "title": "A Guide to Learning with Limited Labeled Data",
@@ -75,7 +75,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2019-03-20-learning-with-limited-labeled-data.md",
-    "urlPath": "/2019/03/20/learning-with-limited-labeled-data.html",
+    "urlPath": "/posts/2019-03-20-learning-with-limited-labeled-data",
     "path_name": "/posts/2019-03-20-learning-with-limited-labeled-data",
     "publishDate": "2019-03-20T19:03:00.000Z",
     "title": "Learning with Limited Labeled Data",
@@ -88,8 +88,23 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-02-28-machine-learning-in-the-browser.md",
+    "urlPath": "/posts/2018-02-28-machine-learning-in-the-browser",
+    "path_name": "/posts/2018-02-28-machine-learning-in-the-browser",
+    "publishDate": "2019-02-28T19:03:00.000Z",
+    "title": "Machine Learning In The Browser",
+    "preview_image": "/images/editor_uploads/2019-02-21-221448-tfjs.jpg",
+    "feature": false,
+    "published": true,
+    "author": "Victor",
+    "post_type": "newsletter",
+    "author_link": "https://twitter.com/vykthur",
+    "excerpt": "\nThe promise of Machine Learning (ML) on edge devices holds potential to enable new capabilities while reaping the benefits associated with on-device computation. As an environment that is frequently the source of data (user interactions, sensors such as cameras, acelerometers...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2019-02-28-causality-in-machine-learning.md",
-    "urlPath": "/2019/02/28/causality-in-machine-learning.html",
+    "urlPath": "/posts/2019-02-28-causality-in-machine-learning",
     "path_name": "/posts/2019-02-28-causality-in-machine-learning",
     "publishDate": "2019-02-28T19:03:00.000Z",
     "title": "Causality in machine learning",
@@ -104,7 +119,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set.md",
-    "urlPath": "/2019/01/29/making-an-interactive-umap-visualization-of-the-mnist-data-set.html",
+    "urlPath": "/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set",
     "path_name": "/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set",
     "publishDate": "2019-01-29T17:01:00.000Z",
     "title": "Making an interactive UMAP visualization of the MNIST data set",
@@ -118,8 +133,38 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-12-18-deep-learning-for-media-content.md",
+    "urlPath": "/posts/2018-12-18-deep-learning-for-media-content",
+    "path_name": "/posts/2018-12-18-deep-learning-for-media-content",
+    "publishDate": "2018-12-28T19:01:00.000Z",
+    "title": "Deep Learning for Media Content",
+    "preview_image": "/images/editor_uploads/2019-01-05-191614-Merlin_Flow.png",
+    "feature": false,
+    "published": true,
+    "author": "Ryan",
+    "post_type": "newsletter",
+    "author_link": "https://twitter.com/jqpubliq",
+    "excerpt": "\nMachine learning continues to make its way into the arts, most recently in film and TV.\n\nIn a recent blog post, data scientists at 20th Century Fox and technical staff at Google Cloud described the approach they are using to predict audiences for their movies. (The tone of the...",
+    "external_url": false
+  },
+  {
+    "filePath": "pages/posts/2018-12-18-finetuning-for-natural-language-processing.md",
+    "urlPath": "/posts/2018-12-18-finetuning-for-natural-language-processing",
+    "path_name": "/posts/2018-12-18-finetuning-for-natural-language-processing",
+    "publishDate": "2018-12-28T19:01:00.000Z",
+    "title": "Fine-tuning for Natural Language Processing",
+    "preview_image": "/images/2018/12/Screen_Shot_2018_12_07_at_12_03_44_PM-1544202300577.png",
+    "feature": false,
+    "published": true,
+    "author": "Shioulin",
+    "post_type": "newsletter",
+    "author_link": "https://twitter.com/shioulin_sam",
+    "excerpt": "\n2018 was a fun and exciting year for natural language processing. A series of papers put forth powerful new ideas that improve the way machines understand and work with language. They challenge the standard way of using pretrained word embeddings like word2vec to initialize the...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2018-12-28-the-business-case-for-federated-learning.md",
-    "urlPath": "/2018/12/28/the-business-case-for-federated-learning.html",
+    "urlPath": "/posts/2018-12-28-the-business-case-for-federated-learning",
     "path_name": "/posts/2018-12-28-the-business-case-for-federated-learning",
     "publishDate": "2018-12-28T19:01:00.000Z",
     "title": "The business case for federated learning",
@@ -134,7 +179,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2018-12-18-highlights-2018.md",
-    "urlPath": "/2018/12/18/highlights-2018.html",
+    "urlPath": "/posts/2018-12-18-highlights-2018",
     "path_name": "/posts/2018-12-18-highlights-2018",
     "publishDate": "2018-12-18T19:12:00.000Z",
     "title": "Highlights of 2018",
@@ -146,38 +191,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-12-18-finetuning-for-natural-language-processing.md",
-    "urlPath": "/2018/12/18/finetuning-for-natural-language-processing.html",
-    "path_name": "/posts/2018-12-18-finetuning-for-natural-language-processing",
-    "publishDate": "2018-12-28T19:01:00.000Z",
-    "title": "Fine-tuning for Natural Language Processing",
-    "preview_image": "/images/2018/12/Screen_Shot_2018_12_07_at_12_03_44_PM-1544202300577.png",
-    "feature": false,
-    "published": true,
-    "author": "Shioulin",
-    "post_type": "newsletter",
-    "author_link": "https://twitter.com/shioulin_sam",
-    "excerpt": "\n2018 was a fun and exciting year for natural language processing. A series of papers put forth powerful new ideas that improve the way machines understand and work with language. They challenge the standard way of using pretrained word embeddings like word2vec to initialize the...",
-    "external_url": false
-  },
-  {
-    "filePath": "pages/posts/2018-12-18-deep-learning-for-media-content.md",
-    "urlPath": "/2018/12/18/deep-learning-for-media-content.html",
-    "path_name": "/posts/2018-12-18-deep-learning-for-media-content",
-    "publishDate": "2018-12-28T19:01:00.000Z",
-    "title": "Deep Learning for Media Content",
-    "preview_image": "/images/editor_uploads/2019-01-05-191614-Merlin_Flow.png",
-    "feature": false,
-    "published": true,
-    "author": "Ryan",
-    "post_type": "newsletter",
-    "author_link": "https://twitter.com/jqpubliq",
-    "excerpt": "\nMachine learning continues to make its way into the arts, most recently in film and TV.\n\nIn a recent blog post, data scientists at 20th Century Fox and technical staff at Google Cloud described the approach they are using to predict audiences for their movies. (The tone of the...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2018-12-06-designing-turbofan-tycoon.md",
-    "urlPath": "/2018/12/06/designing-turbofan-tycoon.html",
+    "urlPath": "/posts/2018-12-06-designing-turbofan-tycoon",
     "path_name": "/posts/2018-12-06-designing-turbofan-tycoon",
     "publishDate": "2018-12-06T16:12:00.000Z",
     "title": "Designing Turbofan Tycoon",
@@ -192,7 +207,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2018-11-14-federated-learning.md",
-    "urlPath": "/2018/11/14/federated-learning.html",
+    "urlPath": "/posts/2018-11-14-federated-learning",
     "path_name": "/posts/2018-11-14-federated-learning",
     "publishDate": "2018-11-14T10:11:00.000Z",
     "title": "Federated learning: distributed machine learning with data locality and privacy",
@@ -206,38 +221,21 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence.md",
-    "urlPath": "/2018/10/29/the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence.html",
-    "path_name": "/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence",
-    "publishDate": "2018-10-29T15:11:00.000Z",
-    "title": "The quest continues: a look at a new initiative to explore human and machine intelligence",
-    "preview_image": "/images/2018/10/mike_petrucci_607505_unsplash-1539792581534.jpg",
+    "filePath": "pages/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge.md",
+    "urlPath": "/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge",
+    "path_name": "/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge",
+    "publishDate": "2018-10-29T18:10:00.000Z",
+    "title": "Coming Soon: Federated Learning",
+    "preview_image": "/images/editor_uploads/2018-10-31-181344-federated_learning_animated_labeled.gif",
     "feature": false,
     "published": true,
-    "author": "Alice",
-    "post_type": "newsletter",
-    "author_link": "https://twitter.com/AliceAlbrecht",
-    "excerpt": "\nThe resurrection of neural networks as a technique has helped propel the field of machine learning to the forefront of commercial applications. Today’s most popular applications focus on finding patterns in data and exploiting those patterns for very narrow tasks. But what if we...",
-    "external_url": false
-  },
-  {
-    "filePath": "pages/posts/2018-10-29-the-decentralized-web.md",
-    "urlPath": "/2018/10/29/the-decentralized-web.html",
-    "path_name": "/posts/2018-10-29-the-decentralized-web",
-    "publishDate": "2018-10-29T15:11:00.000Z",
-    "title": "The Decentralized Web",
-    "preview_image": "/images/editor_uploads/2018-10-02-191324-Screen_Shot_2018_10_01_at_3_04_36_PM.png",
-    "feature": false,
-    "published": true,
-    "author": "Grant",
-    "post_type": "newsletter",
-    "author_link": "https://twitter.com/GrantCuster",
-    "excerpt": "\nLast week, Sir Tim Berners-Lee announced Solid, a project designed to give users more control over their data. Solid is one of a number of recent attempts to rethink how the web works. As part of an effort to get my head around the goals of these different approaches and, more...",
+    "post_type": "post",
+    "excerpt": "\nFederated Learning is a technology that allows you to build machine learning systems when your datacenter can't get direct access to model training data. The data remains in its original location, which helps to ensure privacy and reduces communication costs.\n\nPrivacy and...",
     "external_url": false
   },
   {
     "filePath": "pages/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way.md",
-    "urlPath": "/2018/10/29/learning-to-learn-in-a-modelagnostic-way.html",
+    "urlPath": "/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way",
     "path_name": "/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way",
     "publishDate": "2018-10-29T15:11:00.000Z",
     "title": "Learning to learn in a model-agnostic way",
@@ -251,66 +249,38 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge.md",
-    "urlPath": "/2018/10/29/federated-learning-machine-learning-with-privacy-on-the-edge.html",
-    "path_name": "/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge",
-    "publishDate": "2018-10-29T18:10:00.000Z",
-    "title": "Coming Soon: Federated Learning",
-    "preview_image": "/images/editor_uploads/2018-10-31-181344-federated_learning_animated_labeled.gif",
+    "filePath": "pages/posts/2018-10-29-the-decentralized-web.md",
+    "urlPath": "/posts/2018-10-29-the-decentralized-web",
+    "path_name": "/posts/2018-10-29-the-decentralized-web",
+    "publishDate": "2018-10-29T15:11:00.000Z",
+    "title": "The Decentralized Web",
+    "preview_image": "/images/editor_uploads/2018-10-02-191324-Screen_Shot_2018_10_01_at_3_04_36_PM.png",
     "feature": false,
     "published": true,
-    "post_type": "post",
-    "excerpt": "\nFederated Learning is a technology that allows you to build machine learning systems when your datacenter can't get direct access to model training data. The data remains in its original location, which helps to ensure privacy and reduces communication costs.\n\nPrivacy and...",
+    "author": "Grant",
+    "post_type": "newsletter",
+    "author_link": "https://twitter.com/GrantCuster",
+    "excerpt": "\nLast week, Sir Tim Berners-Lee announced Solid, a project designed to give users more control over their data. Solid is one of a number of recent attempts to rethink how the web works. As part of an effort to get my head around the goals of these different approaches and, more...",
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-09-28-the-true-competitive-advantage-in-ml.md",
-    "urlPath": "/2018/09/28/the-true-competitive-advantage-in-ml.html",
-    "path_name": "/posts/2018-09-28-the-true-competitive-advantage-in-ml",
-    "publishDate": "2018-09-28T21:10:00.000Z",
-    "title": "The True Competitive Advantage in ML",
-    "preview_image": "/images/editor_uploads/2018-10-30-212122-rawpixel_1072884_unsplash.jpg",
+    "filePath": "pages/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence.md",
+    "urlPath": "/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence",
+    "path_name": "/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence",
+    "publishDate": "2018-10-29T15:11:00.000Z",
+    "title": "The quest continues: a look at a new initiative to explore human and machine intelligence",
+    "preview_image": "/images/2018/10/mike_petrucci_607505_unsplash-1539792581534.jpg",
     "feature": false,
     "published": true,
-    "author": "Justin",
+    "author": "Alice",
     "post_type": "newsletter",
-    "author_link": "https://twitter.com/JustinJDN",
-    "excerpt": "\nData science, machine learning (ML), and AI are no longer just cute buzzwords.  Nearly all organizations, companies and governments now recognize the immense potential of AI-enabled products and services, and many of them have already made the very real investment of hiring...",
-    "external_url": false
-  },
-  {
-    "filePath": "pages/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision.md",
-    "urlPath": "/2018/09/28/snorkel-rapid-training-data-creation-with-weak-supervision.html",
-    "path_name": "/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision",
-    "publishDate": "2018-09-28T21:10:00.000Z",
-    "title": "Snorkel: Rapid Training Data Creation with Weak Supervision",
-    "preview_image": "/images/editor_uploads/2018-09-05-182818-snorkel_workflow.png",
-    "feature": false,
-    "published": true,
-    "author": "Nisha",
-    "post_type": "newsletter",
-    "author_link": "https://twitter.com/NishaMuktewar",
-    "excerpt": "\nMachine learning (and more specifically, deep learning) techniques are recognized for their ability to obtain high accuracy for\na variety of classification problems. Deep learning models are more complex than most traditional models and often have\nthousands of parameters and...",
-    "external_url": false
-  },
-  {
-    "filePath": "pages/posts/2018-09-28-realistic-video-generation.md",
-    "urlPath": "/2018/09/28/realistic-video-generation.html",
-    "path_name": "/posts/2018-09-28-realistic-video-generation",
-    "publishDate": "2018-09-28T21:10:00.000Z",
-    "title": "Realistic Video Generation",
-    "preview_image": "/images/2018/09/gan-1536758013486.png",
-    "feature": false,
-    "published": true,
-    "author": "Micha",
-    "post_type": "newsletter",
-    "author_link": "http://micha.codes/",
-    "excerpt": "\nGenerative Adversarial Networks (GANs) wowed the world in 2014 with their\nability to generate what we considered to be realistic images. While these\nimages were quite low resolution, researchers kept working on how to perfect\nthese methods in order to increase the quality of the...",
+    "author_link": "https://twitter.com/AliceAlbrecht",
+    "excerpt": "\nThe resurrection of neural networks as a technique has helped propel the field of machine learning to the forefront of commercial applications. Today’s most popular applications focus on finding patterns in data and exploiting those patterns for very narrow tasks. But what if we...",
     "external_url": false
   },
   {
     "filePath": "pages/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover.md",
-    "urlPath": "/2018/09/28/apache-spark-gets-a-machine-learning-makeover.html",
+    "urlPath": "/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover",
     "path_name": "/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover",
     "publishDate": "2018-09-28T21:10:00.000Z",
     "title": "Apache Spark gets a machine learning makeover",
@@ -324,8 +294,53 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-09-28-realistic-video-generation.md",
+    "urlPath": "/posts/2018-09-28-realistic-video-generation",
+    "path_name": "/posts/2018-09-28-realistic-video-generation",
+    "publishDate": "2018-09-28T21:10:00.000Z",
+    "title": "Realistic Video Generation",
+    "preview_image": "/images/2018/09/gan-1536758013486.png",
+    "feature": false,
+    "published": true,
+    "author": "Micha",
+    "post_type": "newsletter",
+    "author_link": "http://micha.codes/",
+    "excerpt": "\nGenerative Adversarial Networks (GANs) wowed the world in 2014 with their\nability to generate what we considered to be realistic images. While these\nimages were quite low resolution, researchers kept working on how to perfect\nthese methods in order to increase the quality of the...",
+    "external_url": false
+  },
+  {
+    "filePath": "pages/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision.md",
+    "urlPath": "/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision",
+    "path_name": "/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision",
+    "publishDate": "2018-09-28T21:10:00.000Z",
+    "title": "Snorkel: Rapid Training Data Creation with Weak Supervision",
+    "preview_image": "/images/editor_uploads/2018-09-05-182818-snorkel_workflow.png",
+    "feature": false,
+    "published": true,
+    "author": "Nisha",
+    "post_type": "newsletter",
+    "author_link": "https://twitter.com/NishaMuktewar",
+    "excerpt": "\nMachine learning (and more specifically, deep learning) techniques are recognized for their ability to obtain high accuracy for\na variety of classification problems. Deep learning models are more complex than most traditional models and often have\nthousands of parameters and...",
+    "external_url": false
+  },
+  {
+    "filePath": "pages/posts/2018-09-28-the-true-competitive-advantage-in-ml.md",
+    "urlPath": "/posts/2018-09-28-the-true-competitive-advantage-in-ml",
+    "path_name": "/posts/2018-09-28-the-true-competitive-advantage-in-ml",
+    "publishDate": "2018-09-28T21:10:00.000Z",
+    "title": "The True Competitive Advantage in ML",
+    "preview_image": "/images/editor_uploads/2018-10-30-212122-rawpixel_1072884_unsplash.jpg",
+    "feature": false,
+    "published": true,
+    "author": "Justin",
+    "post_type": "newsletter",
+    "author_link": "https://twitter.com/JustinJDN",
+    "excerpt": "\nData science, machine learning (ML), and AI are no longer just cute buzzwords.  Nearly all organizations, companies and governments now recognize the immense potential of AI-enabled products and services, and many of them have already made the very real investment of hiring...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning.md",
-    "urlPath": "/2018/09/17/deep-learning-is-easy-an-introduction-to-transfer-learning.html",
+    "urlPath": "/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning",
     "path_name": "/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning",
     "publishDate": "2018-09-17T16:09:00.000Z",
     "title": "Deep learning made easier with transfer learning",
@@ -337,38 +352,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-08-29-understanding-a-generative-space.md",
-    "urlPath": "/2018/08/29/understanding-a-generative-space.html",
-    "path_name": "/posts/2018-08-29-understanding-a-generative-space",
-    "publishDate": "2018-08-29T22:09:00.000Z",
-    "title": "Understanding a generative space",
-    "preview_image": "/images/2018/08/compton_generator-1533226496607.jpg",
-    "feature": false,
-    "published": true,
-    "author": "Grant",
-    "post_type": "Newsletter",
-    "author_link": "https://twitter.com/GrantCuster",
-    "excerpt": "\nKate Compton, maker of many interesting things, recently tweeted a diagram from her work-in-progress dissertation zine. The illustration breaks down how we interact with a procedural generator, which can be anything from a photo filter to a character creation tool.\n\nA diagram...",
-    "external_url": false
-  },
-  {
-    "filePath": "pages/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability.md",
-    "urlPath": "/2018/08/29/hyperparameter-tuning-and-metainterpretability.html",
-    "path_name": "/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability",
-    "publishDate": "2018-08-29T00:00:00.000Z",
-    "title": "Hyperparameter Tuning and Meta-Interpretability: Track All Your Experiments!",
-    "preview_image": "/images/2018/07/Screen_Shot_2018_07_31_at_11_01_41_AM-1533049344437.png",
-    "feature": false,
-    "published": true,
-    "author": "Friederike",
-    "post_type": "newsletter",
-    "author_link": "https://www.linkedin.com/in/friederikeschueuer/",
-    "excerpt": "\nFrom random forest to neural networks, many modern machine learning algorithms involve a number of parameters that have to be fixed before training the\nalgorithm. These parameters, in contrast to the ones learned by the algorithm\nduring training, are called hyperparameters. The...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp.md",
-    "urlPath": "/2018/08/29/breakthroughs-in-transfer-learning-for-nlp.html",
+    "urlPath": "/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp",
     "path_name": "/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp",
     "publishDate": "2018-08-29T22:09:00.000Z",
     "title": "Breakthroughs in transfer learning for natural language processing",
@@ -382,8 +367,23 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-08-29-understanding-a-generative-space.md",
+    "urlPath": "/posts/2018-08-29-understanding-a-generative-space",
+    "path_name": "/posts/2018-08-29-understanding-a-generative-space",
+    "publishDate": "2018-08-29T22:09:00.000Z",
+    "title": "Understanding a generative space",
+    "preview_image": "/images/2018/08/compton_generator-1533226496607.jpg",
+    "feature": false,
+    "published": true,
+    "author": "Grant",
+    "post_type": "Newsletter",
+    "author_link": "https://twitter.com/GrantCuster",
+    "excerpt": "\nKate Compton, maker of many interesting things, recently tweeted a diagram from her work-in-progress dissertation zine. The illustration breaks down how we interact with a procedural generator, which can be anything from a photo filter to a character creation tool.\n\nA diagram...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2018-08-29-automated-machine-learning-hype-now-reality-later.md",
-    "urlPath": "/2018/08/29/automated-machine-learning-hype-now-reality-later.html",
+    "urlPath": "/posts/2018-08-29-automated-machine-learning-hype-now-reality-later",
     "path_name": "/posts/2018-08-29-automated-machine-learning-hype-now-reality-later",
     "publishDate": "2018-08-29T00:00:00.000Z",
     "title": "Automated Machine Learning: Hype now, reality later?",
@@ -396,8 +396,23 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability.md",
+    "urlPath": "/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability",
+    "path_name": "/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability",
+    "publishDate": "2018-08-29T00:00:00.000Z",
+    "title": "Hyperparameter Tuning and Meta-Interpretability: Track All Your Experiments!",
+    "preview_image": "/images/2018/07/Screen_Shot_2018_07_31_at_11_01_41_AM-1533049344437.png",
+    "feature": false,
+    "published": true,
+    "author": "Friederike",
+    "post_type": "newsletter",
+    "author_link": "https://www.linkedin.com/in/friederikeschueuer/",
+    "excerpt": "\nFrom random forest to neural networks, many modern machine learning algorithms involve a number of parameters that have to be fixed before training the\nalgorithm. These parameters, in contrast to the ones learned by the algorithm\nduring training, are called hyperparameters. The...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2018-08-15-multi-task-sci-fi-havurtat.md",
-    "urlPath": "/2018/08/15/multi-task-sci-fi-havurtat.html",
+    "urlPath": "/posts/2018-08-15-multi-task-sci-fi-havurtat",
     "path_name": "/posts/2018-08-15-multi-task-sci-fi-havurtat",
     "publishDate": "2018-08-15T12:00:00.000Z",
     "title": "Multi-Task Sci-Fi: Havurtat",
@@ -411,34 +426,8 @@ export default [
     "external_url": "https://scifi.fastforwardlabs.com/ff08/havurtat"
   },
   {
-    "filePath": "pages/posts/2018-07-31-progress-in-machine-learning-interpretability.md",
-    "urlPath": "/2018/07/31/progress-in-machine-learning-interpretability.html",
-    "path_name": "/posts/2018-07-31-progress-in-machine-learning-interpretability",
-    "publishDate": "2018-07-31T16:08:00.000Z",
-    "title": "Progress in machine learning interpretability",
-    "preview_image": "/images/2018/07/lime-1530894622923.png",
-    "feature": false,
-    "published": true,
-    "post_type": "Newsletter",
-    "excerpt": "\nOur goal when we do research is to address capabilities and technologies that\nwe expect to become production-ready in one to two years. That focus on\nfast-moving areas means that new algorithmic ideas sometimes come along that\nallow our clients to extend or improve upon the work...",
-    "external_url": false
-  },
-  {
-    "filePath": "pages/posts/2018-07-31-new-dynamics-for-topic-models.md",
-    "urlPath": "/2018/07/31/new-dynamics-for-topic-models.html",
-    "path_name": "/posts/2018-07-31-new-dynamics-for-topic-models",
-    "publishDate": "2018-07-31T16:08:00.000Z",
-    "title": "New Dynamics for Topic Models",
-    "preview_image": "/images/2018/07/f5-1531838383022.jpg",
-    "feature": false,
-    "published": true,
-    "post_type": "Newsletter",
-    "excerpt": "\nTopic models can extract key themes from large collections of documents in an unsupervised manner, which makes them one of the most powerful tools in organizing, searching, and understanding the vast troves of text data produced by humanity. Their power derives, in part, from...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2018-07-31-neural-reinterpretations-of-movie-trailers.md",
-    "urlPath": "/2018/07/31/neural-reinterpretations-of-movie-trailers.html",
+    "urlPath": "/posts/2018-07-31-neural-reinterpretations-of-movie-trailers",
     "path_name": "/posts/2018-07-31-neural-reinterpretations-of-movie-trailers",
     "publishDate": "2018-07-31T16:08:00.000Z",
     "title": "Neural reinterpretations of movie trailers",
@@ -452,8 +441,34 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-07-31-new-dynamics-for-topic-models.md",
+    "urlPath": "/posts/2018-07-31-new-dynamics-for-topic-models",
+    "path_name": "/posts/2018-07-31-new-dynamics-for-topic-models",
+    "publishDate": "2018-07-31T16:08:00.000Z",
+    "title": "New Dynamics for Topic Models",
+    "preview_image": "/images/2018/07/f5-1531838383022.jpg",
+    "feature": false,
+    "published": true,
+    "post_type": "Newsletter",
+    "excerpt": "\nTopic models can extract key themes from large collections of documents in an unsupervised manner, which makes them one of the most powerful tools in organizing, searching, and understanding the vast troves of text data produced by humanity. Their power derives, in part, from...",
+    "external_url": false
+  },
+  {
+    "filePath": "pages/posts/2018-07-31-progress-in-machine-learning-interpretability.md",
+    "urlPath": "/posts/2018-07-31-progress-in-machine-learning-interpretability",
+    "path_name": "/posts/2018-07-31-progress-in-machine-learning-interpretability",
+    "publishDate": "2018-07-31T16:08:00.000Z",
+    "title": "Progress in machine learning interpretability",
+    "preview_image": "/images/2018/07/lime-1530894622923.png",
+    "feature": false,
+    "published": true,
+    "post_type": "Newsletter",
+    "excerpt": "\nOur goal when we do research is to address capabilities and technologies that\nwe expect to become production-ready in one to two years. That focus on\nfast-moving areas means that new algorithmic ideas sometimes come along that\nallow our clients to extend or improve upon the work...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2018-07-24-ff08-launch.md",
-    "urlPath": "/2018/07/24/ff08-launch.html",
+    "urlPath": "/posts/2018-07-24-ff08-launch",
     "path_name": "/posts/2018-07-24-ff08-launch",
     "publishDate": "2018-07-24T13:00:00.000Z",
     "title": "New Research on Multi-Task Learning",
@@ -467,21 +482,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning.md",
-    "urlPath": "/2018/06/29/sequence-labeling-with-semisupervised-multitask-learning.html",
-    "path_name": "/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning",
-    "publishDate": "2018-06-29T16:08:00.000Z",
-    "title": "Sequence labeling with semi-supervised multi-task learning",
-    "preview_image": "/images/2018/06/Screen_Shot_2018_06_14_at_4_27_13_PM-1529008110241.png",
-    "feature": false,
-    "published": true,
-    "post_type": "Newsletter",
-    "excerpt": "\nSequence labeling tasks attempt to assign a categorical label to each member in\nthe sequence. In natural language processing, where a sequence generally refers\nto a sentence, examples of sequence labeling include named entity\nrecognition (NER), part-of-speech tagging (POS) and...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems.md",
-    "urlPath": "/2018/06/29/deep-learning-vendor-update-hyperparameter-tuning-systems.html",
+    "urlPath": "/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems",
     "path_name": "/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems",
     "publishDate": "2018-06-29T16:08:00.000Z",
     "title": "Deep Learning Vendor Update: Hyperparameter Tuning Systems",
@@ -493,8 +495,21 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning.md",
+    "urlPath": "/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning",
+    "path_name": "/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning",
+    "publishDate": "2018-06-29T16:08:00.000Z",
+    "title": "Sequence labeling with semi-supervised multi-task learning",
+    "preview_image": "/images/2018/06/Screen_Shot_2018_06_14_at_4_27_13_PM-1529008110241.png",
+    "feature": false,
+    "published": true,
+    "post_type": "Newsletter",
+    "excerpt": "\nSequence labeling tasks attempt to assign a categorical label to each member in\nthe sequence. In natural language processing, where a sequence generally refers\nto a sentence, examples of sequence labeling include named entity\nrecognition (NER), part-of-speech tagging (POS) and...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning.md",
-    "urlPath": "/2018/06/26/supercharging-classification-the-value-of-multitask-learning.html",
+    "urlPath": "/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning",
     "path_name": "/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning",
     "publishDate": "2018-06-27T00:00:00.000Z",
     "title": "Supercharging Classification - The Value of Multi-task Learning",
@@ -508,21 +523,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-05-31-rules-to-learn-by.md",
-    "urlPath": "/2018/05/31/rules-to-learn-by.html",
-    "path_name": "/posts/2018-05-31-rules-to-learn-by",
-    "publishDate": "2018-05-31T16:08:00.000Z",
-    "title": "Rules to Learn By",
-    "preview_image": "/images/editor_uploads/2018-05-09-164638-55f9d8d8bd86ef1d008bac98_750_577.png",
-    "feature": false,
-    "published": true,
-    "post_type": "Newsletter",
-    "excerpt": "\nLongtime readers of this newsletter know that we follow the Fairness, Accountability, and Transparency in Machine Learning conversation closely (see here and here). These conversations address and attempt to mitigate the potential for technical systems to produce unfairness...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2018-05-31-convolve-all-the-things.md",
-    "urlPath": "/2018/05/31/convolve-all-the-things.html",
+    "urlPath": "/posts/2018-05-31-convolve-all-the-things",
     "path_name": "/posts/2018-05-31-convolve-all-the-things",
     "publishDate": "2018-05-31T16:08:00.000Z",
     "title": "Convolve all the things",
@@ -534,8 +536,21 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-05-31-rules-to-learn-by.md",
+    "urlPath": "/posts/2018-05-31-rules-to-learn-by",
+    "path_name": "/posts/2018-05-31-rules-to-learn-by",
+    "publishDate": "2018-05-31T16:08:00.000Z",
+    "title": "Rules to Learn By",
+    "preview_image": "/images/editor_uploads/2018-05-09-164638-55f9d8d8bd86ef1d008bac98_750_577.png",
+    "feature": false,
+    "published": true,
+    "post_type": "Newsletter",
+    "excerpt": "\nLongtime readers of this newsletter know that we follow the Fairness, Accountability, and Transparency in Machine Learning conversation closely (see here and here). These conversations address and attempt to mitigate the potential for technical systems to produce unfairness...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2018-05-02-progress-in-text-summarization.md",
-    "urlPath": "/2018/05/02/progress-in-text-summarization.html",
+    "urlPath": "/posts/2018-05-02-progress-in-text-summarization",
     "path_name": "/posts/2018-05-02-progress-in-text-summarization",
     "publishDate": "2018-05-02T16:10:00.000Z",
     "title": "Progress in text summarization",
@@ -549,21 +564,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling.md",
-    "urlPath": "/2018/04/25/simple-architectures-outperform-complex-ones-in-language-modeling.html",
-    "path_name": "/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling",
-    "publishDate": "2018-04-25T16:08:00.000Z",
-    "title": "Simple Architectures Outperform Complex Ones in Language Modeling",
-    "preview_image": "/images/2018/03/param_importance-1522251173209.png",
-    "feature": false,
-    "published": true,
-    "post_type": "Newsletter",
-    "excerpt": "\nAre novel, complex, and specialized neural network architectures always better for language modeling? Recent papers have shown otherwise. Language models are used to predict the next token given the preceeding tokens. Most operate at word-level or character-level. Word-level...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition.md",
-    "urlPath": "/2018/04/25/javascript-eats-the-world-deep-learning-and-notebooks-edition.html",
+    "urlPath": "/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition",
     "path_name": "/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition",
     "publishDate": "2018-04-25T16:08:00.000Z",
     "title": "JavaScript eats the world: deep learning and notebooks edition",
@@ -577,8 +579,21 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling.md",
+    "urlPath": "/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling",
+    "path_name": "/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling",
+    "publishDate": "2018-04-25T16:08:00.000Z",
+    "title": "Simple Architectures Outperform Complex Ones in Language Modeling",
+    "preview_image": "/images/2018/03/param_importance-1522251173209.png",
+    "feature": false,
+    "published": true,
+    "post_type": "Newsletter",
+    "excerpt": "\nAre novel, complex, and specialized neural network architectures always better for language modeling? Recent papers have shown otherwise. Language models are used to predict the next token given the preceeding tokens. Most operate at word-level or character-level. Word-level...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2018-04-18-introducing-scifi.md",
-    "urlPath": "/2018/04/18/introducing-scifi.html",
+    "urlPath": "/posts/2018-04-18-introducing-scifi",
     "path_name": "/posts/2018-04-18-introducing-scifi",
     "publishDate": "2018-04-19T18:04:00.000Z",
     "title": "Introducing SciFi",
@@ -593,7 +608,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2018-04-10-pytorch-for-recommenders-101.md",
-    "urlPath": "/2018/04/10/pytorch-for-recommenders-101.html",
+    "urlPath": "/posts/2018-04-10-pytorch-for-recommenders-101",
     "path_name": "/posts/2018-04-10-pytorch-for-recommenders-101",
     "publishDate": "2018-04-10T17:04:00.000Z",
     "title": "PyTorch for Recommenders 101",
@@ -607,21 +622,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-03-28-unemployment-vs-augmentation.md",
-    "urlPath": "/2018/03/28/unemployment-vs-augmentation.html",
-    "path_name": "/posts/2018-03-28-unemployment-vs-augmentation",
-    "publishDate": "2018-03-28T16:08:00.000Z",
-    "title": "Unemployment vs. Augmentation",
-    "preview_image": "/images/2018/02/1_ruUDqwD4sGZOhIkeK2zUYQ-1519759204276.png",
-    "feature": false,
-    "published": true,
-    "post_type": "Newsletter",
-    "excerpt": "\nIn the ongoing debates around whether or not robots are going to take our jobs, listening to those who have a real stake in the technology is critical, and often offers important insights for how we build new technologies, as well as how we talk about what we build. Take, for...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2018-03-28-new-creative-possibilities-with-machine-learning.md",
-    "urlPath": "/2018/03/28/new-creative-possibilities-with-machine-learning.html",
+    "urlPath": "/posts/2018-03-28-new-creative-possibilities-with-machine-learning",
     "path_name": "/posts/2018-03-28-new-creative-possibilities-with-machine-learning",
     "publishDate": "2018-03-28T16:08:00.000Z",
     "title": "New creative possibilities with machine learning",
@@ -635,8 +637,21 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-03-28-unemployment-vs-augmentation.md",
+    "urlPath": "/posts/2018-03-28-unemployment-vs-augmentation",
+    "path_name": "/posts/2018-03-28-unemployment-vs-augmentation",
+    "publishDate": "2018-03-28T16:08:00.000Z",
+    "title": "Unemployment vs. Augmentation",
+    "preview_image": "/images/2018/02/1_ruUDqwD4sGZOhIkeK2zUYQ-1519759204276.png",
+    "feature": false,
+    "published": true,
+    "post_type": "Newsletter",
+    "excerpt": "\nIn the ongoing debates around whether or not robots are going to take our jobs, listening to those who have a real stake in the technology is critical, and often offers important insights for how we build new technologies, as well as how we talk about what we build. Take, for...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2018-03-21-join-the-machine-learning-team-at-cloudera.md",
-    "urlPath": "/2018/03/21/join-the-machine-learning-team-at-cloudera.html",
+    "urlPath": "/posts/2018-03-21-join-the-machine-learning-team-at-cloudera",
     "path_name": "/posts/2018-03-21-join-the-machine-learning-team-at-cloudera",
     "publishDate": "2018-03-21T15:03:00.000Z",
     "title": "Join the Machine Learning Team at Cloudera!",
@@ -649,7 +664,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2018-03-06-using-three-js-for-2d-data-visualization.md",
-    "urlPath": "/2018/03/06/using-three-js-for-2d-data-visualization.html",
+    "urlPath": "/posts/2018-03-06-using-three-js-for-2d-data-visualization",
     "path_name": "/posts/2018-03-06-using-three-js-for-2d-data-visualization",
     "publishDate": "2018-03-06T15:50:00.000Z",
     "title": "Using three.js for 2D data visualization",
@@ -664,7 +679,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2018-02-28-multitask-learning.md",
-    "urlPath": "/2018/02/28/multitask-learning.html",
+    "urlPath": "/posts/2018-02-28-multitask-learning",
     "path_name": "/posts/2018-02-28-multitask-learning",
     "publishDate": "2018-02-28T17:08:00.000Z",
     "title": "Multi-Task Learning",
@@ -676,23 +691,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-02-28-machine-learning-in-the-browser.md",
-    "urlPath": "/2018/02/28/machine-learning-in-the-browser.html",
-    "path_name": "/posts/2018-02-28-machine-learning-in-the-browser",
-    "publishDate": "2019-02-28T19:03:00.000Z",
-    "title": "Machine Learning In The Browser",
-    "preview_image": "/images/editor_uploads/2019-02-21-221448-tfjs.jpg",
-    "feature": false,
-    "published": true,
-    "author": "Victor",
-    "post_type": "newsletter",
-    "author_link": "https://twitter.com/vykthur",
-    "excerpt": "\nThe promise of Machine Learning (ML) on edge devices holds potential to enable new capabilities while reaping the benefits associated with on-device computation. As an environment that is frequently the source of data (user interactions, sensors such as cameras, acelerometers...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab.md",
-    "urlPath": "/2018/02/28/comparing-human-and-agent-performance-deepmind-releases-psychlab.html",
+    "urlPath": "/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab",
     "path_name": "/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab",
     "publishDate": "2018-02-28T16:08:00.000Z",
     "title": "Comparing human and agent performance: DeepMind releases PsychLab",
@@ -705,7 +705,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2018-02-14-probabilistic-cookies.md",
-    "urlPath": "/2018/02/14/probabilistic-cookies.html",
+    "urlPath": "/posts/2018-02-14-probabilistic-cookies",
     "path_name": "/posts/2018-02-14-probabilistic-cookies",
     "publishDate": "2018-02-14T17:02:00.000Z",
     "title": "Probabilistic Cookies!",
@@ -719,21 +719,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2018-01-26-serverless-data-science.md",
-    "urlPath": "/2018/01/26/serverless-data-science.html",
-    "path_name": "/posts/2018-01-26-serverless-data-science",
-    "publishDate": "2018-01-26T17:08:00.000Z",
-    "title": "Serverless data science",
-    "preview_image": "/images/2018/01/serverless_pywren-1515449109658.png",
-    "feature": false,
-    "published": true,
-    "post_type": "Newsletter",
-    "excerpt": "\nCloud computing has transformed enterprise IT. It makes it possible to rapidly\nscale up and down a complex and global infrastructure, without the overhead of\na datacenter. But living in the cloud can be expensive, and you still need to\nmaintain computers and their operating...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters.md",
-    "urlPath": "/2018/01/26/google-mapss-competitive-moat-why-better-data-matters.html",
+    "urlPath": "/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters",
     "path_name": "/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters",
     "publishDate": "2018-01-26T17:08:00.000Z",
     "title": "Google Maps' Competitive Moat - Why Better Data Matters",
@@ -745,8 +732,21 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2018-01-26-serverless-data-science.md",
+    "urlPath": "/posts/2018-01-26-serverless-data-science",
+    "path_name": "/posts/2018-01-26-serverless-data-science",
+    "publishDate": "2018-01-26T17:08:00.000Z",
+    "title": "Serverless data science",
+    "preview_image": "/images/2018/01/serverless_pywren-1515449109658.png",
+    "feature": false,
+    "published": true,
+    "post_type": "Newsletter",
+    "excerpt": "\nCloud computing has transformed enterprise IT. It makes it possible to rapidly\nscale up and down a complex and global infrastructure, without the overhead of\na datacenter. But living in the cloud can be expensive, and you still need to\nmaintain computers and their operating...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2018-01-22-exploring-recommendation-systems.md",
-    "urlPath": "/2018/01/22/exploring-recommendation-systems.html",
+    "urlPath": "/posts/2018-01-22-exploring-recommendation-systems",
     "path_name": "/posts/2018-01-22-exploring-recommendation-systems",
     "publishDate": "2018-01-22T00:00:00.000Z",
     "title": "Exploring Recommendation Systems",
@@ -761,7 +761,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-12-20-2017-highlights.md",
-    "urlPath": "/2017/12/20/2017-highlights.html",
+    "urlPath": "/posts/2017-12-20-2017-highlights",
     "path_name": "/posts/2017-12-20-2017-highlights",
     "publishDate": "2017-12-20T00:00:00.000Z",
     "title": "Highlights of 2017",
@@ -775,7 +775,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-11-30-the-promise-of-automated-machine-learning-automl.md",
-    "urlPath": "/2017/11/30/the-promise-of-automated-machine-learning-automl.html",
+    "urlPath": "/posts/2017-11-30-the-promise-of-automated-machine-learning-automl",
     "path_name": "/posts/2017-11-30-the-promise-of-automated-machine-learning-automl",
     "publishDate": "2017-11-30T12:08:00.000Z",
     "title": "The promise of Automated Machine Learning (AutoML)",
@@ -788,7 +788,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-11-22-happy-thanksgiving.md",
-    "urlPath": "/2017/11/22/happy-thanksgiving.html",
+    "urlPath": "/posts/2017-11-22-happy-thanksgiving",
     "path_name": "/posts/2017-11-22-happy-thanksgiving",
     "publishDate": "2017-11-22T00:00:00.000Z",
     "title": "Algorithmic Cookery & Happy Thanksgiving",
@@ -803,7 +803,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-11-02-interpretability-scifi-the-definition-of-success.md",
-    "urlPath": "/2017/11/02/interpretability-scifi-the-definition-of-success.html",
+    "urlPath": "/posts/2017-11-02-interpretability-scifi-the-definition-of-success",
     "path_name": "/posts/2017-11-02-interpretability-scifi-the-definition-of-success",
     "publishDate": "2017-11-02T14:00:00.000Z",
     "title": "Interpretability Sci-Fi: The Definition of Success",
@@ -817,21 +817,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2017-10-26-neuroscienceinspired-ai.md",
-    "urlPath": "/2017/10/26/neuroscienceinspired-ai.html",
-    "path_name": "/posts/2017-10-26-neuroscienceinspired-ai",
-    "publishDate": "2017-10-26T18:07:00.000Z",
-    "title": "Neuroscience-inspired AI",
-    "preview_image": "/images/2017/10/Screen_Shot_2017_10_09_at_9-1507556105313.33",
-    "feature": false,
-    "published": true,
-    "post_type": "Newsletter",
-    "excerpt": "\nPioneers in artificial intelligence (AI) have worked across multiple related fields, including computer science, AI, neuroscience, and psychology - but as each of these areas of research have grown in complexity and disciplinary boundaries have solidified, collaboration has...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use.md",
-    "urlPath": "/2017/10/26/bias-mitigation-using-the-copyright-doctrine-of-fair-use.html",
+    "urlPath": "/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use",
     "path_name": "/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use",
     "publishDate": "2017-10-26T18:07:00.000Z",
     "title": "Bias Mitigation Using the Copyright Doctrine of Fair Use",
@@ -843,8 +830,21 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2017-10-26-neuroscienceinspired-ai.md",
+    "urlPath": "/posts/2017-10-26-neuroscienceinspired-ai",
+    "path_name": "/posts/2017-10-26-neuroscienceinspired-ai",
+    "publishDate": "2017-10-26T18:07:00.000Z",
+    "title": "Neuroscience-inspired AI",
+    "preview_image": "/images/2017/10/Screen_Shot_2017_10_09_at_9-1507556105313.33",
+    "feature": false,
+    "published": true,
+    "post_type": "Newsletter",
+    "excerpt": "\nPioneers in artificial intelligence (AI) have worked across multiple related fields, including computer science, AI, neuroscience, and psychology - but as each of these areas of research have grown in complexity and disciplinary boundaries have solidified, collaboration has...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2017-10-26-alphago-zero.md",
-    "urlPath": "/2017/10/26/alphago-zero.html",
+    "urlPath": "/posts/2017-10-26-alphago-zero",
     "path_name": "/posts/2017-10-26-alphago-zero",
     "publishDate": "2017-10-25T00:00:00.000Z",
     "title": "AlphaGo Zero's win, what it means",
@@ -859,7 +859,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-10-04-using-three-js-for-2d-data-visualization.md",
-    "urlPath": "/2017/10/04/using-three-js-for-2d-data-visualization.html",
+    "urlPath": "/posts/2017-10-04-using-three-js-for-2d-data-visualization",
     "path_name": "/posts/2017-10-04-using-three-js-for-2d-data-visualization",
     "publishDate": "2017-10-04T14:30:00.000Z",
     "title": "First Look: Using Three.js for 2D Data Visualization",
@@ -874,7 +874,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-10-02-pp-bibliography.md",
-    "urlPath": "/2017/10/02/pp-bibliography.html",
+    "urlPath": "/posts/2017-10-02-pp-bibliography",
     "path_name": "/posts/2017-10-02-pp-bibliography",
     "publishDate": "2017-10-02T00:00:00.000Z",
     "title": "Probabilistic programming: an annotated bibliography",
@@ -888,21 +888,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples.md",
-    "urlPath": "/2017/09/29/the-danger-and-promise-of-adversarial-samples.html",
-    "path_name": "/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples",
-    "publishDate": "2017-09-29T18:07:00.000Z",
-    "title": "The Danger and Promise of Adversarial Samples",
-    "preview_image": "/images/2017/09/Screen_Shot_2017_09_13_at_9-1505322932035.59",
-    "feature": false,
-    "published": true,
-    "post_type": "Newsletter",
-    "excerpt": "\nAdversarial samples are inputs designed to fool a model: they are inputs created by applying perturbations to example inputs in the dataset such that the perturbed inputs result in the model outputting an incorrect answer with high confidence. Often, perturbations are so small...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2017-09-29-futurism-and-artificial-intelligence.md",
-    "urlPath": "/2017/09/29/futurism-and-artificial-intelligence.html",
+    "urlPath": "/posts/2017-09-29-futurism-and-artificial-intelligence",
     "path_name": "/posts/2017-09-29-futurism-and-artificial-intelligence",
     "publishDate": "2017-09-29T18:07:00.000Z",
     "title": "Futurism and Artificial Intelligence",
@@ -914,8 +901,21 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples.md",
+    "urlPath": "/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples",
+    "path_name": "/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples",
+    "publishDate": "2017-09-29T18:07:00.000Z",
+    "title": "The Danger and Promise of Adversarial Samples",
+    "preview_image": "/images/2017/09/Screen_Shot_2017_09_13_at_9-1505322932035.59",
+    "feature": false,
+    "published": true,
+    "post_type": "Newsletter",
+    "excerpt": "\nAdversarial samples are inputs designed to fool a model: they are inputs created by applying perturbations to example inputs in the dataset such that the perturbed inputs result in the model outputting an incorrect answer with high confidence. Often, perturbations are so small...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2017-09-26-the-product-possibilities-of-interpretability.md",
-    "urlPath": "/2017/09/26/the-product-possibilities-of-interpretability.html",
+    "urlPath": "/posts/2017-09-26-the-product-possibilities-of-interpretability",
     "path_name": "/posts/2017-09-26-the-product-possibilities-of-interpretability",
     "publishDate": "2017-09-28T14:30:00.000Z",
     "title": "The Product Possibilities of Interpretability",
@@ -929,8 +929,23 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2017-09-01-crowdwork-for-ml.md",
+    "urlPath": "/posts/2017-09-01-crowdwork-for-ml",
+    "path_name": "/posts/2017-09-01-crowdwork-for-ml",
+    "publishDate": "2017-09-26T14:30:00.000Z",
+    "title": "Crowdwork for Machine Learning: An Autoethnography",
+    "preview_image": "/images/2017/09/the_turk.jpg",
+    "feature": true,
+    "published": true,
+    "author": "Manny",
+    "post_type": "post",
+    "author_link": "https://twitter.com/mannymoss",
+    "excerpt": "\nAmazon’s Mechanical Turk is a platform for soliciting work on online tasks that has been used by market researchers, translators, and data scientists to complete surveys, perform work that cannot be easily automated, and create human-labeled data for supervised learning systems...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2017-09-11-interpretability-webinar.md",
-    "urlPath": "/2017/09/11/interpretability-webinar.html",
+    "urlPath": "/posts/2017-09-11-interpretability-webinar",
     "path_name": "/posts/2017-09-11-interpretability-webinar",
     "publishDate": "2017-09-11T00:00:00.000Z",
     "title": "Interpretability in conversation with Patrick Hall and Sameer Singh",
@@ -945,7 +960,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-09-07-to-the-future.md",
-    "urlPath": "/2017/09/07/to-the-future.html",
+    "urlPath": "/posts/2017-09-07-to-the-future",
     "path_name": "/posts/2017-09-07-to-the-future",
     "publishDate": "2017-09-07T14:30:00.000Z",
     "title": "To the Future...",
@@ -959,23 +974,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2017-09-01-crowdwork-for-ml.md",
-    "urlPath": "/2017/09/01/crowdwork-for-ml.html",
-    "path_name": "/posts/2017-09-01-crowdwork-for-ml",
-    "publishDate": "2017-09-26T14:30:00.000Z",
-    "title": "Crowdwork for Machine Learning: An Autoethnography",
-    "preview_image": "/images/2017/09/the_turk.jpg",
-    "feature": true,
-    "published": true,
-    "author": "Manny",
-    "post_type": "post",
-    "author_link": "https://twitter.com/mannymoss",
-    "excerpt": "\nAmazon’s Mechanical Turk is a platform for soliciting work on online tasks that has been used by market researchers, translators, and data scientists to complete surveys, perform work that cannot be easily automated, and create human-labeled data for supervised learning systems...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2017-09-01-LIME-for-couples.md",
-    "urlPath": "/2017/09/01/LIME-for-couples.html",
+    "urlPath": "/posts/2017-09-01-LIME-for-couples",
     "path_name": "/posts/2017-09-01-LIME-for-couples",
     "publishDate": "2017-09-01T00:00:00.000Z",
     "title": "Why your relationship is likely to last (or not): using Local Interpretable Model-Agnostic Explanations (LIME)",
@@ -990,7 +990,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-08-08-encartopedia.md",
-    "urlPath": "/2017/08/08/encartopedia.html",
+    "urlPath": "/posts/2017-08-08-encartopedia",
     "path_name": "/posts/2017-08-08-encartopedia",
     "publishDate": "2017-08-15T14:30:00.000Z",
     "title": "Encartopedia",
@@ -1004,38 +1004,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2017-08-07-business-interpretability.md",
-    "urlPath": "/2017/08/07/business-interpretability.html",
-    "path_name": "/posts/2017-08-07-business-interpretability",
-    "publishDate": "2017-08-02T13:00:00.000Z",
-    "title": "The Business Case for Machine Learning Interpretability",
-    "preview_image": "/images/2017/08/actions.png",
-    "feature": false,
-    "published": true,
-    "author": "Manny",
-    "post_type": "post",
-    "author_link": "https://twitter.com/mannymoss",
-    "excerpt": "\nLast week we launched the latest prototype and report from our machine\nintelligence R&D team:\nInterpretability.\n\nOur prototype shows how new ideas in interpretability research can be used to\nextract actionable insights from black-box machine learning models; our report\ndescribes...",
-    "external_url": false
-  },
-  {
-    "filePath": "pages/posts/2017-08-02-interpretability.md",
-    "urlPath": "/2017/08/02/interpretability.html",
-    "path_name": "/posts/2017-08-02-interpretability",
-    "publishDate": "2017-08-02T13:00:00.000Z",
-    "title": "New Research on Interpretability",
-    "preview_image": "/images/2017/08/ff06-animation.gif",
-    "feature": true,
-    "published": true,
-    "author": "Mike",
-    "post_type": "post",
-    "author_link": "https://twitter.com/mikepqr",
-    "excerpt": "\nWe're excited to release the latest prototype and report from our machine\nintelligence R&D team: Interpretability.\n\nFF06 Interpretability\n\nAn interpretable algorithm is one whose decisions you can explain. You can\nbetter rely on such a model to be safe, accurate and useful.\n\nOur...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do.md",
-    "urlPath": "/2017/07/25/why-we-talk-about-AI-the-way-we-do.html",
+    "urlPath": "/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do",
     "path_name": "/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do",
     "publishDate": "2017-08-02T16:00:00.000Z",
     "title": "Why we talk about AI the way we do, and why we have to change it.",
@@ -1049,8 +1019,38 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2017-08-02-interpretability.md",
+    "urlPath": "/posts/2017-08-02-interpretability",
+    "path_name": "/posts/2017-08-02-interpretability",
+    "publishDate": "2017-08-02T13:00:00.000Z",
+    "title": "New Research on Interpretability",
+    "preview_image": "/images/2017/08/ff06-animation.gif",
+    "feature": true,
+    "published": true,
+    "author": "Mike",
+    "post_type": "post",
+    "author_link": "https://twitter.com/mikepqr",
+    "excerpt": "\nWe're excited to release the latest prototype and report from our machine\nintelligence R&D team: Interpretability.\n\nFF06 Interpretability\n\nAn interpretable algorithm is one whose decisions you can explain. You can\nbetter rely on such a model to be safe, accurate and useful.\n\nOur...",
+    "external_url": false
+  },
+  {
+    "filePath": "pages/posts/2017-08-07-business-interpretability.md",
+    "urlPath": "/posts/2017-08-07-business-interpretability",
+    "path_name": "/posts/2017-08-07-business-interpretability",
+    "publishDate": "2017-08-02T13:00:00.000Z",
+    "title": "The Business Case for Machine Learning Interpretability",
+    "preview_image": "/images/2017/08/actions.png",
+    "feature": false,
+    "published": true,
+    "author": "Manny",
+    "post_type": "post",
+    "author_link": "https://twitter.com/mannymoss",
+    "excerpt": "\nLast week we launched the latest prototype and report from our machine\nintelligence R&D team:\nInterpretability.\n\nOur prototype shows how new ideas in interpretability research can be used to\nextract actionable insights from black-box machine learning models; our report\ndescribes...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2017-07-05-probabilistic-programming-from-scratch.md",
-    "urlPath": "/2017/07/05/probabilistic-programming-from-scratch.html",
+    "urlPath": "/posts/2017-07-05-probabilistic-programming-from-scratch",
     "path_name": "/posts/2017-07-05-probabilistic-programming-from-scratch",
     "publishDate": "2017-07-06T16:00:00.000Z",
     "title": "Probabilistic programming from scratch",
@@ -1064,8 +1064,23 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2017-05-26-Places-Journal-Mississippi-Basin.md",
+    "urlPath": "/posts/2017-05-26-Places-Journal-Mississippi-Basin",
+    "path_name": "/posts/2017-05-26-Places-Journal-Mississippi-Basin",
+    "publishDate": "2017-06-30T15:19:00.000Z",
+    "title": "Learning from Real-World Models: The Mississippi Basin Model and Machine Learning",
+    "preview_image": "/images/2017/05/dykema-basin-model-1_525.jpg",
+    "feature": false,
+    "published": true,
+    "author": "Manny",
+    "post_type": "post",
+    "author_link": "https://twitter.com/mannymoss",
+    "excerpt": "\nModel-building has a venerable history that long predates parallel processing, python, and perceptrons. Physical, scale models and maps have helped humans think through complex processes and ambitious endeavors, from the rigging of a pharoah's pleasure yacht to the Battle of...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2017-06-25-fingerprinting-documents-with-steganography.md",
-    "urlPath": "/2017/06/25/fingerprinting-documents-with-steganography.html",
+    "urlPath": "/posts/2017-06-25-fingerprinting-documents-with-steganography",
     "path_name": "/posts/2017-06-25-fingerprinting-documents-with-steganography",
     "publishDate": "2017-06-23T15:50:00.000Z",
     "title": "F⁠ingerprinting documents​ with steganography​",
@@ -1080,7 +1095,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000.md",
-    "urlPath": "/2017/06/06/probabilistic-programming-sci-fi-bayeshead-5000.html",
+    "urlPath": "/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000",
     "path_name": "/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000",
     "publishDate": "2017-06-06T14:30:00.000Z",
     "title": "Probabilistic Programmming Sci-Fi: BayesHead 5000",
@@ -1094,7 +1109,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic.md",
-    "urlPath": "/2017/05/30/Slack-Maestro-Helping-Users-Stay-on-Topic.html",
+    "urlPath": "/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic",
     "path_name": "/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic",
     "publishDate": "2017-05-30T15:00:00.000Z",
     "title": "Slack Maestro: Helping Users Stay on Topic",
@@ -1108,23 +1123,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2017-05-26-Places-Journal-Mississippi-Basin.md",
-    "urlPath": "/2017/05/26/Places-Journal-Mississippi-Basin.html",
-    "path_name": "/posts/2017-05-26-Places-Journal-Mississippi-Basin",
-    "publishDate": "2017-06-30T15:19:00.000Z",
-    "title": "Learning from Real-World Models: The Mississippi Basin Model and Machine Learning",
-    "preview_image": "/images/2017/05/dykema-basin-model-1_525.jpg",
-    "feature": false,
-    "published": true,
-    "author": "Manny",
-    "post_type": "post",
-    "author_link": "https://twitter.com/mannymoss",
-    "excerpt": "\nModel-building has a venerable history that long predates parallel processing, python, and perceptrons. Physical, scale models and maps have helped humans think through complex processes and ambitious endeavors, from the rigging of a pharoah's pleasure yacht to the Battle of...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2017-05-15-reply-retweet-ratio.md",
-    "urlPath": "/2017/05/15/reply-retweet-ratio.html",
+    "urlPath": "/posts/2017-05-15-reply-retweet-ratio",
     "path_name": "/posts/2017-05-15-reply-retweet-ratio",
     "publishDate": "2017-05-15T20:00:00.000Z",
     "title": "A Quick Look at the Reply-to-Retweet Ratio",
@@ -1139,7 +1139,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix.md",
-    "urlPath": "/2017/04/28/eli-bressert-on-data-driven-processes-at-netflix.html",
+    "urlPath": "/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix",
     "path_name": "/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix",
     "publishDate": "2017-04-28T13:44:00.000Z",
     "title": "Eli Bressert on Data-Driven Processes at Netflix",
@@ -1152,7 +1152,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne.md",
-    "urlPath": "/2017/04/14/visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne.html",
+    "urlPath": "/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne",
     "path_name": "/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne",
     "publishDate": "2017-04-14T19:30:00.000Z",
     "title": "Visualizing the Taste of a Community of Cinephiles Using t-SNE",
@@ -1167,7 +1167,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists.md",
-    "urlPath": "/2017/03/31/free-ebook-development-workflows-for-data-scientists.html",
+    "urlPath": "/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists",
     "path_name": "/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists",
     "publishDate": "2017-03-31T19:30:00.000Z",
     "title": "Free eBook: Development Workflows for Data Scientists",
@@ -1179,23 +1179,8 @@ export default [
     "external_url": false
   },
   {
-    "filePath": "pages/posts/2017-03-25-five-distractions-in-thinking-about-ai.md",
-    "urlPath": "/2017/03/25/five-distractions-in-thinking-about-ai.html",
-    "path_name": "/posts/2017-03-25-five-distractions-in-thinking-about-ai",
-    "publishDate": "2017-03-22T19:30:00.000Z",
-    "title": "Five Distractions in Thinking about AI",
-    "preview_image": "https://quamproxime.files.wordpress.com/2017/03/screen-shot-2017-03-25-at-1-28-55-pm.png",
-    "feature": false,
-    "published": true,
-    "author": "Kathryn",
-    "post_type": "post",
-    "author_link": "https://twitter.com/HumeKathryn",
-    "excerpt": "\n\nAn image of a clock drawn in a cappuccino melting over the side of the cup, reminiscent of a Salvador Dali painting.\n\nThis post originally appeared on quamproxime.com, the personal blog of our sales and marketing lead, Kathryn Hume\n\nOne of the main arguments the Israeli...",
-    "external_url": false
-  },
-  {
     "filePath": "pages/posts/2017-03-22-prophet.md",
-    "urlPath": "/2017/03/22/prophet.html",
+    "urlPath": "/posts/2017-03-22-prophet",
     "path_name": "/posts/2017-03-22-prophet",
     "publishDate": "2017-03-22T19:30:00.000Z",
     "title": "Taking Prophet for a Spin",
@@ -1209,8 +1194,23 @@ export default [
     "external_url": false
   },
   {
+    "filePath": "pages/posts/2017-03-25-five-distractions-in-thinking-about-ai.md",
+    "urlPath": "/posts/2017-03-25-five-distractions-in-thinking-about-ai",
+    "path_name": "/posts/2017-03-25-five-distractions-in-thinking-about-ai",
+    "publishDate": "2017-03-22T19:30:00.000Z",
+    "title": "Five Distractions in Thinking about AI",
+    "preview_image": "https://quamproxime.files.wordpress.com/2017/03/screen-shot-2017-03-25-at-1-28-55-pm.png",
+    "feature": false,
+    "published": true,
+    "author": "Kathryn",
+    "post_type": "post",
+    "author_link": "https://twitter.com/HumeKathryn",
+    "excerpt": "\n\nAn image of a clock drawn in a cappuccino melting over the side of the cup, reminiscent of a Salvador Dali painting.\n\nThis post originally appeared on quamproxime.com, the personal blog of our sales and marketing lead, Kathryn Hume\n\nOne of the main arguments the Israeli...",
+    "external_url": false
+  },
+  {
     "filePath": "pages/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming.md",
-    "urlPath": "/2017/03/15/predicting-nyc-real-estate-prices-with-probabilistic-programming.html",
+    "urlPath": "/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming",
     "path_name": "/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming",
     "publishDate": "2017-03-15T19:49:00.000Z",
     "title": "Predicting NYC Real Estate Prices with Probabilistic Programming",
@@ -1225,7 +1225,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-03-13-practical-deep-learning.md",
-    "urlPath": "/2017/03/13/practical-deep-learning.html",
+    "urlPath": "/posts/2017-03-13-practical-deep-learning",
     "path_name": "/posts/2017-03-13-practical-deep-learning",
     "publishDate": "2017-03-13T15:49:00.000Z",
     "title": "Practical Deep Learning",
@@ -1240,7 +1240,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes.md",
-    "urlPath": "/2017/03/10/Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes.html",
+    "urlPath": "/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes",
     "path_name": "/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes",
     "publishDate": "2017-03-10T18:00:00.000Z",
     "title": "Trees, Layers, and Speed: Talking Optimization with Patrick Hayes",
@@ -1255,7 +1255,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-03-09-fairml-auditing-black-box-predictive-models.md",
-    "urlPath": "/2017/03/09/fairml-auditing-black-box-predictive-models.html",
+    "urlPath": "/posts/2017-03-09-fairml-auditing-black-box-predictive-models",
     "path_name": "/posts/2017-03-09-fairml-auditing-black-box-predictive-models",
     "publishDate": "2017-03-09T14:44:00.000Z",
     "title": "FairML: Auditing Black-Box Predictive Models",
@@ -1270,7 +1270,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-02-27-mobile-authentication.md",
-    "urlPath": "/2017/02/27/mobile-authentication.html",
+    "urlPath": "/posts/2017-02-27-mobile-authentication",
     "path_name": "/posts/2017-02-27-mobile-authentication",
     "publishDate": "2017-02-27T00:00:00.000Z",
     "title": "Mobile Behavioural Authentication",
@@ -1285,7 +1285,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-02-22-upcoming-talks-with-our-team.md",
-    "urlPath": "/2017/02/22/upcoming-talks-with-our-team.html",
+    "urlPath": "/posts/2017-02-22-upcoming-talks-with-our-team",
     "path_name": "/posts/2017-02-22-upcoming-talks-with-our-team",
     "publishDate": "2017-02-22T18:15:00.000Z",
     "title": "Upcoming Talks with our Team",
@@ -1298,7 +1298,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming.md",
-    "urlPath": "/2017/02/09/online-talk-introduction-to-probabilistic-programming.html",
+    "urlPath": "/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming",
     "path_name": "/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming",
     "publishDate": "2017-02-09T14:44:00.000Z",
     "title": "Online Talk: Introduction to Probabilistic Programming",
@@ -1311,7 +1311,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-02-08-summer-internships.md",
-    "urlPath": "/2017/02/08/summer-internships.html",
+    "urlPath": "/posts/2017-02-08-summer-internships",
     "path_name": "/posts/2017-02-08-summer-internships",
     "publishDate": "2017-02-08T16:34:00.000Z",
     "title": "Summer Internships: Data Science, Applied Data Science Writing, Prototyping & Data Viz.",
@@ -1324,7 +1324,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-01-30-the-algorithms-behind-probabilistic-programming.md",
-    "urlPath": "/2017/01/30/the-algorithms-behind-probabilistic-programming.html",
+    "urlPath": "/posts/2017-01-30-the-algorithms-behind-probabilistic-programming",
     "path_name": "/posts/2017-01-30-the-algorithms-behind-probabilistic-programming",
     "publishDate": "2017-01-30T18:52:00.000Z",
     "title": "The Algorithms Behind Probabilistic Programming",
@@ -1339,7 +1339,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer.md",
-    "urlPath": "/2017/01/25/privacy-and-encryption-above-the-data-interview-with-dave-archer.html",
+    "urlPath": "/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer",
     "path_name": "/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer",
     "publishDate": "2017-01-25T23:15:00.000Z",
     "title": "Privacy and Encryption Above the Data: Interview with Dave Archer",
@@ -1352,7 +1352,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-01-18-new-research-on-probabilistic-programming.md",
-    "urlPath": "/2017/01/18/new-research-on-probabilistic-programming.html",
+    "urlPath": "/posts/2017-01-18-new-research-on-probabilistic-programming",
     "path_name": "/posts/2017-01-18-new-research-on-probabilistic-programming",
     "publishDate": "2017-01-18T15:00:00.000Z",
     "title": "New Research on Probabilistic Programming",
@@ -1365,7 +1365,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with.md",
-    "urlPath": "/2017/01/11/thomas-wiecki-on-probabilistic-programming-with.html",
+    "urlPath": "/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with",
     "path_name": "/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with",
     "publishDate": "2017-01-11T14:23:11.000Z",
     "title": "Thomas Wiecki on Probabilistic Programming with PyMC3",
@@ -1378,7 +1378,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017.md",
-    "urlPath": "/2017/01/10/five-trends-we-expect-to-come-to-fruition-in-2017.html",
+    "urlPath": "/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017",
     "path_name": "/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017",
     "publishDate": "2017-01-10T15:00:00.000Z",
     "title": "Five 2016 Trends We Expect to Come to Fruition in 2017",
@@ -1392,7 +1392,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2017-01-03-learning-to-use-react.md",
-    "urlPath": "/2017/01/03/learning-to-use-react.html",
+    "urlPath": "/posts/2017-01-03-learning-to-use-react",
     "path_name": "/posts/2017-01-03-learning-to-use-react",
     "publishDate": "2017-01-03T15:00:00.000Z",
     "title": "Learning to Use React",
@@ -1407,7 +1407,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-12-13-hilary-mason-at-data-driven-nyc.md",
-    "urlPath": "/2016/12/13/hilary-mason-at-data-driven-nyc.html",
+    "urlPath": "/posts/2016-12-13-hilary-mason-at-data-driven-nyc",
     "path_name": "/posts/2016-12-13-hilary-mason-at-data-driven-nyc",
     "publishDate": "2016-12-13T18:02:12.000Z",
     "title": "Hilary Mason at Data Driven NYC",
@@ -1420,7 +1420,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-12-12-machines-in-conversation.md",
-    "urlPath": "/2016/12/12/machines-in-conversation.html",
+    "urlPath": "/posts/2016-12-12-machines-in-conversation",
     "path_name": "/posts/2016-12-12-machines-in-conversation",
     "publishDate": "2016-12-12T17:47:22.000Z",
     "title": "Machines in Conversation",
@@ -1435,7 +1435,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-12-08-dimensionality-reduction-and-intuition.md",
-    "urlPath": "/2016/12/08/dimensionality-reduction-and-intuition.html",
+    "urlPath": "/posts/2016-12-08-dimensionality-reduction-and-intuition",
     "path_name": "/posts/2016-12-08-dimensionality-reduction-and-intuition",
     "publishDate": "2016-12-08T17:22:58.000Z",
     "title": "Dimensionality Reduction and Intuition",
@@ -1450,7 +1450,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo.md",
-    "urlPath": "/2016/11/23/probabilistic-data-structure-showdown-cuckoo.html",
+    "urlPath": "/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo",
     "path_name": "/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo",
     "publishDate": "2016-11-23T18:36:58.000Z",
     "title": "Probabilistic Data Structure Showdown: Cuckoo Filters vs. Bloom Filters",
@@ -1465,7 +1465,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-09-19-job-opportunities-at-signal.md",
-    "urlPath": "/2016/09/19/job-opportunities-at-signal.html",
+    "urlPath": "/posts/2016-09-19-job-opportunities-at-signal",
     "path_name": "/posts/2016-09-19-job-opportunities-at-signal",
     "publishDate": "2016-09-19T17:30:04.000Z",
     "title": "Job Opportunities at Signal",
@@ -1478,7 +1478,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-08-26-exploring-deep-learning-on-satellite-data.md",
-    "urlPath": "/2016/08/26/exploring-deep-learning-on-satellite-data.html",
+    "urlPath": "/posts/2016-08-26-exploring-deep-learning-on-satellite-data",
     "path_name": "/posts/2016-08-26-exploring-deep-learning-on-satellite-data",
     "publishDate": "2016-08-26T17:43:24.000Z",
     "title": "Exploring Deep Learning on Satellite Data",
@@ -1492,7 +1492,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-08-25-new-tensorflow-code-for-text-summarization.md",
-    "urlPath": "/2016/08/25/new-tensorflow-code-for-text-summarization.html",
+    "urlPath": "/posts/2016-08-25-new-tensorflow-code-for-text-summarization",
     "path_name": "/posts/2016-08-25-new-tensorflow-code-for-text-summarization",
     "publishDate": "2016-08-25T17:24:14.000Z",
     "title": "New TensorFlow Code for Text Summarization",
@@ -1505,7 +1505,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-08-24-next-economics-interview-with-jimi-crawford.md",
-    "urlPath": "/2016/08/24/next-economics-interview-with-jimi-crawford.html",
+    "urlPath": "/posts/2016-08-24-next-economics-interview-with-jimi-crawford",
     "path_name": "/posts/2016-08-24-next-economics-interview-with-jimi-crawford",
     "publishDate": "2016-08-24T16:18:12.000Z",
     "title": "Next Economics: Interview with Jimi Crawford",
@@ -1518,7 +1518,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in.md",
-    "urlPath": "/2016/08/22/under-the-hood-of-the-variational-autoencoder-in.html",
+    "urlPath": "/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in",
     "path_name": "/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in",
     "publishDate": "2016-08-22T18:02:08.000Z",
     "title": "Under the Hood of the Variational Autoencoder (in Prose and Code)",
@@ -1533,7 +1533,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-08-18-giving-speech-a-voice-in-the-home.md",
-    "urlPath": "/2016/08/18/giving-speech-a-voice-in-the-home.html",
+    "urlPath": "/posts/2016-08-18-giving-speech-a-voice-in-the-home",
     "path_name": "/posts/2016-08-18-giving-speech-a-voice-in-the-home",
     "publishDate": "2016-08-18T20:09:29.000Z",
     "title": "Giving Speech a Voice in the Home",
@@ -1548,7 +1548,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and.md",
-    "urlPath": "/2016/08/12/introducing-variational-autoencoders-in-prose-and.html",
+    "urlPath": "/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and",
     "path_name": "/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and",
     "publishDate": "2016-08-12T17:09:50.000Z",
     "title": "Introducing Variational Autoencoders (in Prose and Code)",
@@ -1563,7 +1563,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-07-27-late-summer-reading-list.md",
-    "urlPath": "/2016/07/27/late-summer-reading-list.html",
+    "urlPath": "/posts/2016-07-27-late-summer-reading-list",
     "path_name": "/posts/2016-07-27-late-summer-reading-list",
     "publishDate": "2016-07-27T16:45:52.000Z",
     "title": "Late Summer Reading List",
@@ -1576,7 +1576,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-07-25-fall-internships-research-engineering-and.md",
-    "urlPath": "/2016/07/25/fall-internships-research-engineering-and.html",
+    "urlPath": "/posts/2016-07-25-fall-internships-research-engineering-and",
     "path_name": "/posts/2016-07-25-fall-internships-research-engineering-and",
     "publishDate": "2016-07-25T17:30:43.000Z",
     "title": "Fall Internships: Research Engineering and Prototype + Data Visualization [Filled]",
@@ -1589,7 +1589,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-07-11-two-talks-in-nyc-this-saturday.md",
-    "urlPath": "/2016/07/11/two-talks-in-nyc-this-saturday.html",
+    "urlPath": "/posts/2016-07-11-two-talks-in-nyc-this-saturday",
     "path_name": "/posts/2016-07-11-two-talks-in-nyc-this-saturday",
     "publishDate": "2016-07-11T16:46:23.000Z",
     "title": "Two Talks in NYC this Saturday",
@@ -1602,7 +1602,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-07-08-what-we-liked-at-ainow.md",
-    "urlPath": "/2016/07/08/what-we-liked-at-ainow.html",
+    "urlPath": "/posts/2016-07-08-what-we-liked-at-ainow",
     "path_name": "/posts/2016-07-08-what-we-liked-at-ainow",
     "publishDate": "2016-07-08T17:29:52.000Z",
     "title": "What We Liked at AINow",
@@ -1615,7 +1615,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello.md",
-    "urlPath": "/2016/06/10/machine-listening-interview-with-juan-pablo-bello.html",
+    "urlPath": "/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello",
     "path_name": "/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello",
     "publishDate": "2016-06-10T14:23:11.000Z",
     "title": "Machine Listening: Interview with Juan Pablo Bello",
@@ -1628,7 +1628,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-06-02-welcome-friederike.md",
-    "urlPath": "/2016/06/02/welcome-friederike.html",
+    "urlPath": "/posts/2016-06-02-welcome-friederike",
     "path_name": "/posts/2016-06-02-welcome-friederike",
     "publishDate": "2016-06-02T13:53:20.000Z",
     "title": "Welcome, Friederike!",
@@ -1641,7 +1641,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-05-27-online-talk-summarization-algorithms.md",
-    "urlPath": "/2016/05/27/online-talk-summarization-algorithms.html",
+    "urlPath": "/posts/2016-05-27-online-talk-summarization-algorithms",
     "path_name": "/posts/2016-05-27-online-talk-summarization-algorithms",
     "publishDate": "2016-05-27T17:16:23.000Z",
     "title": "Online Talk: Summarization Algorithms",
@@ -1654,7 +1654,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-05-25-human-machine-algorithms-interview-with-eric.md",
-    "urlPath": "/2016/05/25/human-machine-algorithms-interview-with-eric.html",
+    "urlPath": "/posts/2016-05-25-human-machine-algorithms-interview-with-eric",
     "path_name": "/posts/2016-05-25-human-machine-algorithms-interview-with-eric",
     "publishDate": "2016-05-25T12:37:15.000Z",
     "title": "Human-Machine Algorithms: Interview with Eric Colson",
@@ -1667,7 +1667,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-05-23-evaluating-summarization-systems.md",
-    "urlPath": "/2016/05/23/evaluating-summarization-systems.html",
+    "urlPath": "/posts/2016-05-23-evaluating-summarization-systems",
     "path_name": "/posts/2016-05-23-evaluating-summarization-systems",
     "publishDate": "2016-05-23T17:09:13.000Z",
     "title": "Evaluating Summarization Systems",
@@ -1682,7 +1682,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-05-12-may-24-online-event-text-summarization.md",
-    "urlPath": "/2016/05/12/may-24-online-event-text-summarization.html",
+    "urlPath": "/posts/2016-05-12-may-24-online-event-text-summarization",
     "path_name": "/posts/2016-05-12-may-24-online-event-text-summarization",
     "publishDate": "2016-05-12T11:36:14.000Z",
     "title": "May 24 Online Event: Text Summarization",
@@ -1695,7 +1695,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-05-03-probabilistic-programming-for-anomaly-detection.md",
-    "urlPath": "/2016/05/03/probabilistic-programming-for-anomaly-detection.html",
+    "urlPath": "/posts/2016-05-03-probabilistic-programming-for-anomaly-detection",
     "path_name": "/posts/2016-05-03-probabilistic-programming-for-anomaly-detection",
     "publishDate": "2016-05-03T14:51:14.000Z",
     "title": "Probabilistic Programming for Anomaly Detection",
@@ -1710,7 +1710,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-04-26-making-a-case-for-machine-learning-to-legal.md",
-    "urlPath": "/2016/04/26/making-a-case-for-machine-learning-to-legal.html",
+    "urlPath": "/posts/2016-04-26-making-a-case-for-machine-learning-to-legal",
     "path_name": "/posts/2016-04-26-making-a-case-for-machine-learning-to-legal",
     "publishDate": "2016-04-26T18:41:17.000Z",
     "title": "Making a Case for Machine Learning to Legal Departments",
@@ -1725,7 +1725,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-04-25-active-learning-in-the-law.md",
-    "urlPath": "/2016/04/25/active-learning-in-the-law.html",
+    "urlPath": "/posts/2016-04-25-active-learning-in-the-law",
     "path_name": "/posts/2016-04-25-active-learning-in-the-law",
     "publishDate": "2016-04-25T17:41:02.000Z",
     "title": "Active Learning in the Law",
@@ -1738,7 +1738,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-04-21-summarization-as-a-gateway-to-computable-language.md",
-    "urlPath": "/2016/04/21/summarization-as-a-gateway-to-computable-language.html",
+    "urlPath": "/posts/2016-04-21-summarization-as-a-gateway-to-computable-language",
     "path_name": "/posts/2016-04-21-summarization-as-a-gateway-to-computable-language",
     "publishDate": "2016-04-21T19:38:37.000Z",
     "title": "Summarization as a Gateway to Computable Language",
@@ -1751,7 +1751,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-04-15-assessing-data-science-maturity.md",
-    "urlPath": "/2016/04/15/assessing-data-science-maturity.html",
+    "urlPath": "/posts/2016-04-15-assessing-data-science-maturity",
     "path_name": "/posts/2016-04-15-assessing-data-science-maturity",
     "publishDate": "2016-04-15T18:07:33.000Z",
     "title": "Assessing Data Science Maturity",
@@ -1764,7 +1764,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-04-11-new-tools-to-summarize-text.md",
-    "urlPath": "/2016/04/11/new-tools-to-summarize-text.html",
+    "urlPath": "/posts/2016-04-11-new-tools-to-summarize-text",
     "path_name": "/posts/2016-04-11-new-tools-to-summarize-text",
     "publishDate": "2016-04-11T15:25:26.000Z",
     "title": "New Tools to Summarize Text",
@@ -1777,7 +1777,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-04-06-where-do-you-put-your-data-scientists.md",
-    "urlPath": "/2016/04/06/where-do-you-put-your-data-scientists.html",
+    "urlPath": "/posts/2016-04-06-where-do-you-put-your-data-scientists",
     "path_name": "/posts/2016-04-06-where-do-you-put-your-data-scientists",
     "publishDate": "2016-04-06T15:41:33.000Z",
     "title": "Where Do You Put Your Data Scientists?",
@@ -1792,7 +1792,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape.md",
-    "urlPath": "/2016/03/30/shivon-zilis-on-the-machine-intelligence-landscape.html",
+    "urlPath": "/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape",
     "path_name": "/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape",
     "publishDate": "2016-03-30T15:00:03.000Z",
     "title": "Shivon Zilis on the Machine Intelligence Landscape",
@@ -1807,7 +1807,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-03-28-fast-forward-labs-data-leadership-conference.md",
-    "urlPath": "/2016/03/28/fast-forward-labs-data-leadership-conference.html",
+    "urlPath": "/posts/2016-03-28-fast-forward-labs-data-leadership-conference",
     "path_name": "/posts/2016-03-28-fast-forward-labs-data-leadership-conference",
     "publishDate": "2016-03-28T20:26:11.000Z",
     "title": "Fast Forward Labs Data Leadership Conference",
@@ -1820,7 +1820,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity.md",
-    "urlPath": "/2016/03/25/hp-luhn-and-the-heuristic-value-of-simplicity.html",
+    "urlPath": "/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity",
     "path_name": "/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity",
     "publishDate": "2016-03-25T16:25:43.000Z",
     "title": "H.P. Luhn and the Heuristic Value of Simplicity",
@@ -1833,7 +1833,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus.md",
-    "urlPath": "/2016/02/24/hello-world-in-keras-or-scikit-learn-versus.html",
+    "urlPath": "/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus",
     "path_name": "/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus",
     "publishDate": "2016-02-24T18:58:10.000Z",
     "title": "\"Hello world\" in Keras (or, Scikit-learn versus Keras)",
@@ -1848,7 +1848,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-02-18-neuraltalk-with-kyle-mcdonald.md",
-    "urlPath": "/2016/02/18/neuraltalk-with-kyle-mcdonald.html",
+    "urlPath": "/posts/2016-02-18-neuraltalk-with-kyle-mcdonald",
     "path_name": "/posts/2016-02-18-neuraltalk-with-kyle-mcdonald",
     "publishDate": "2016-02-18T15:09:51.000Z",
     "title": "NeuralTalk with Kyle McDonald",
@@ -1863,7 +1863,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-02-16-machines-and-metaphors.md",
-    "urlPath": "/2016/02/16/machines-and-metaphors.html",
+    "urlPath": "/posts/2016-02-16-machines-and-metaphors",
     "path_name": "/posts/2016-02-16-machines-and-metaphors",
     "publishDate": "2016-02-16T16:35:11.000Z",
     "title": "Machines and Metaphors",
@@ -1878,7 +1878,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-02-03-what-history-teaches-us-about-data-science.md",
-    "urlPath": "/2016/02/03/what-history-teaches-us-about-data-science.html",
+    "urlPath": "/posts/2016-02-03-what-history-teaches-us-about-data-science",
     "path_name": "/posts/2016-02-03-what-history-teaches-us-about-data-science",
     "publishDate": "2016-02-03T22:05:44.000Z",
     "title": "What History Teaches Us About Data Science",
@@ -1893,7 +1893,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-01-27-discussing-nlg-with-automated-insights.md",
-    "urlPath": "/2016/01/27/discussing-nlg-with-automated-insights.html",
+    "urlPath": "/posts/2016-01-27-discussing-nlg-with-automated-insights",
     "path_name": "/posts/2016-01-27-discussing-nlg-with-automated-insights",
     "publishDate": "2016-01-27T16:36:33.000Z",
     "title": "Discussing NLG with Automated Insights",
@@ -1906,7 +1906,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering.md",
-    "urlPath": "/2016/01/22/eli-pariser-on-the-ethics-of-algorithmic-filtering.html",
+    "urlPath": "/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering",
     "path_name": "/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering",
     "publishDate": "2016-01-22T14:06:46.000Z",
     "title": "Eli Pariser on the Ethics of Algorithmic Filtering",
@@ -1921,7 +1921,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-01-15-demystifying-machine-intelligence.md",
-    "urlPath": "/2016/01/15/demystifying-machine-intelligence.html",
+    "urlPath": "/posts/2016-01-15-demystifying-machine-intelligence",
     "path_name": "/posts/2016-01-15-demystifying-machine-intelligence",
     "publishDate": "2016-01-15T16:07:07.000Z",
     "title": "Demystifying Machine Intelligence",
@@ -1934,7 +1934,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar.md",
-    "urlPath": "/2016/01/12/new-nlg-resources-sale-and-january-26-webinar.html",
+    "urlPath": "/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar",
     "path_name": "/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar",
     "publishDate": "2016-01-12T18:11:44.000Z",
     "title": "New NLG Resources: Sale and January 26 Webinar",
@@ -1947,7 +1947,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-12-21-five-good-books-of-2015.md",
-    "urlPath": "/2015/12/21/five-good-books-of-2015.html",
+    "urlPath": "/posts/2015-12-21-five-good-books-of-2015",
     "path_name": "/posts/2015-12-21-five-good-books-of-2015",
     "publishDate": "2015-12-21T17:13:49.000Z",
     "title": "Five Good Books* of 2015",
@@ -1960,7 +1960,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-12-15-nextview-ventures-podcast.md",
-    "urlPath": "/2015/12/15/nextview-ventures-podcast.html",
+    "urlPath": "/posts/2015-12-15-nextview-ventures-podcast",
     "path_name": "/posts/2015-12-15-nextview-ventures-podcast",
     "publishDate": "2015-12-15T21:15:34.000Z",
     "title": "NextView Ventures Podcast",
@@ -1973,7 +1973,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-12-10-summer-internship-research-engineer.md",
-    "urlPath": "/2015/12/10/summer-internship-research-engineer.html",
+    "urlPath": "/posts/2015-12-10-summer-internship-research-engineer",
     "path_name": "/posts/2015-12-10-summer-internship-research-engineer",
     "publishDate": "2015-12-10T16:58:36.000Z",
     "title": "Summer Internship: Research Engineer",
@@ -1986,7 +1986,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst.md",
-    "urlPath": "/2015/12/09/fashion-goes-deep-data-science-at-lyst.html",
+    "urlPath": "/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst",
     "path_name": "/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst",
     "publishDate": "2015-12-09T17:44:00.000Z",
     "title": "Fashion Goes Deep: Data Science at Lyst",
@@ -1999,7 +1999,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve.md",
-    "urlPath": "/2015/11/17/when-dog-is-enough-using-hypernyms-to-improve.html",
+    "urlPath": "/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve",
     "path_name": "/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve",
     "publishDate": "2015-11-17T16:35:14.000Z",
     "title": "When Dog Is Enough: Using Hypernyms To Improve Neural Network Predictions",
@@ -2012,7 +2012,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc.md",
-    "urlPath": "/2015/11/03/ffl-in-the-bay-area-chicago-and-dc.html",
+    "urlPath": "/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc",
     "path_name": "/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc",
     "publishDate": "2015-11-03T19:00:20.000Z",
     "title": "FFL in the Bay Area, Chicago, and DC",
@@ -2025,7 +2025,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-10-29-interview-with-pedro-domingos.md",
-    "urlPath": "/2015/10/29/interview-with-pedro-domingos.html",
+    "urlPath": "/posts/2015-10-29-interview-with-pedro-domingos",
     "path_name": "/posts/2015-10-29-interview-with-pedro-domingos",
     "publishDate": "2015-10-29T13:13:00.000Z",
     "title": "Interview with Pedro Domingos",
@@ -2038,7 +2038,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-10-26-hello-deep-learning.md",
-    "urlPath": "/2015/10/26/hello-deep-learning.html",
+    "urlPath": "/posts/2015-10-26-hello-deep-learning",
     "path_name": "/posts/2015-10-26-hello-deep-learning",
     "publishDate": "2015-10-26T16:20:07.000Z",
     "title": "Hello Deep Learning",
@@ -2053,7 +2053,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-10-20-flip-the-paradigm.md",
-    "urlPath": "/2015/10/20/flip-the-paradigm.html",
+    "urlPath": "/posts/2015-10-20-flip-the-paradigm",
     "path_name": "/posts/2015-10-20-flip-the-paradigm",
     "publishDate": "2015-10-20T19:14:08.000Z",
     "title": "Flip the Paradigm",
@@ -2066,7 +2066,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-10-13-grace-hopper-opening-keynote.md",
-    "urlPath": "/2015/10/13/grace-hopper-opening-keynote.html",
+    "urlPath": "/posts/2015-10-13-grace-hopper-opening-keynote",
     "path_name": "/posts/2015-10-13-grace-hopper-opening-keynote",
     "publishDate": "2015-10-13T20:23:46.000Z",
     "title": "Grace Hopper Opening Keynote",
@@ -2079,7 +2079,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-10-06-breaking-down-memes.md",
-    "urlPath": "/2015/10/06/breaking-down-memes.html",
+    "urlPath": "/posts/2015-10-06-breaking-down-memes",
     "path_name": "/posts/2015-10-06-breaking-down-memes",
     "publishDate": "2015-10-06T21:12:57.000Z",
     "title": "Breaking Down Memes",
@@ -2092,7 +2092,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-09-29-machine-learning-in-retail-consumer-privacy.md",
-    "urlPath": "/2015/09/29/machine-learning-in-retail-consumer-privacy.html",
+    "urlPath": "/posts/2015-09-29-machine-learning-in-retail-consumer-privacy",
     "path_name": "/posts/2015-09-29-machine-learning-in-retail-consumer-privacy",
     "publishDate": "2015-09-29T18:13:00.000Z",
     "title": "Machine Learning in Retail: Consumer Privacy Implications",
@@ -2107,7 +2107,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-09-24-how-do-neural-networks-learn.md",
-    "urlPath": "/2015/09/24/how-do-neural-networks-learn.html",
+    "urlPath": "/posts/2015-09-24-how-do-neural-networks-learn",
     "path_name": "/posts/2015-09-24-how-do-neural-networks-learn",
     "publishDate": "2015-09-24T18:56:09.000Z",
     "title": "How do neural networks learn?",
@@ -2122,7 +2122,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep.md",
-    "urlPath": "/2015/09/22/fast-forward-labs-interviews-clarifai-about-deep.html",
+    "urlPath": "/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep",
     "path_name": "/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep",
     "publishDate": "2015-09-22T18:58:45.000Z",
     "title": "Fast Forward Labs Interviews Clarifai about Deep Learning",
@@ -2135,7 +2135,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-09-15-pictograph-unlock-your-images.md",
-    "urlPath": "/2015/09/15/pictograph-unlock-your-images.html",
+    "urlPath": "/posts/2015-09-15-pictograph-unlock-your-images",
     "path_name": "/posts/2015-09-15-pictograph-unlock-your-images",
     "publishDate": "2015-09-15T19:16:19.000Z",
     "title": "Pictograph: Unlock Your Images",
@@ -2148,7 +2148,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear.md",
-    "urlPath": "/2015/09/02/dalemberts-deep-dream-bees-and-nonlinear.html",
+    "urlPath": "/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear",
     "path_name": "/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear",
     "publishDate": "2015-09-02T14:08:33.000Z",
     "title": "D’Alembert’s Deep Dream: Bees and Nonlinear Transformations",
@@ -2163,7 +2163,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-08-19-machine-learning-applications-in-fashion-retail.md",
-    "urlPath": "/2015/08/19/machine-learning-applications-in-fashion-retail.html",
+    "urlPath": "/posts/2015-08-19-machine-learning-applications-in-fashion-retail",
     "path_name": "/posts/2015-08-19-machine-learning-applications-in-fashion-retail",
     "publishDate": "2015-08-19T18:08:14.000Z",
     "title": "Machine Learning Applications in Fashion Retail",
@@ -2178,7 +2178,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-08-14-why-now-some-preconditions-for-technology.md",
-    "urlPath": "/2015/08/14/why-now-some-preconditions-for-technology.html",
+    "urlPath": "/posts/2015-08-14-why-now-some-preconditions-for-technology",
     "path_name": "/posts/2015-08-14-why-now-some-preconditions-for-technology",
     "publishDate": "2015-08-14T18:57:31.000Z",
     "title": "Why Now? Some Preconditions for Technology Innovations",
@@ -2191,7 +2191,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep.md",
-    "urlPath": "/2015/08/07/on-stirling-engines-and-orchids-a-prelude-to-deep.html",
+    "urlPath": "/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep",
     "path_name": "/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep",
     "publishDate": "2015-08-07T19:08:04.000Z",
     "title": "On Stirling Engines and Orchids: A Prelude to Deep Learning",
@@ -2204,7 +2204,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-08-05-a-flying-machine-from-new-york-to-paris.md",
-    "urlPath": "/2015/08/05/a-flying-machine-from-new-york-to-paris.html",
+    "urlPath": "/posts/2015-08-05-a-flying-machine-from-new-york-to-paris",
     "path_name": "/posts/2015-08-05-a-flying-machine-from-new-york-to-paris",
     "publishDate": "2015-08-05T20:28:34.000Z",
     "title": "A Flying Machine from New York to Paris",
@@ -2217,7 +2217,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-07-16-fast-forward-labs-at-the-science-fair.md",
-    "urlPath": "/2015/07/16/fast-forward-labs-at-the-science-fair.html",
+    "urlPath": "/posts/2015-07-16-fast-forward-labs-at-the-science-fair",
     "path_name": "/posts/2015-07-16-fast-forward-labs-at-the-science-fair",
     "publishDate": "2015-07-16T19:43:26.000Z",
     "title": "Fast Forward Labs at the Science Fair",
@@ -2230,7 +2230,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-06-23-celebrating-our-one-year-anniversary.md",
-    "urlPath": "/2015/06/23/celebrating-our-one-year-anniversary.html",
+    "urlPath": "/posts/2015-06-23-celebrating-our-one-year-anniversary",
     "path_name": "/posts/2015-06-23-celebrating-our-one-year-anniversary",
     "publishDate": "2015-06-23T19:24:50.000Z",
     "title": "Celebrating Our One Year Anniversary",
@@ -2243,7 +2243,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote.md",
-    "urlPath": "/2015/06/19/fast-forward-labs-founder-and-ceo-gave-a-keynote.html",
+    "urlPath": "/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote",
     "path_name": "/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote",
     "publishDate": "2015-06-19T19:42:33.000Z",
     "title": "MongoDB World Keynote",
@@ -2256,7 +2256,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science.md",
-    "urlPath": "/2015/06/16/last-friday-hilary-joined-ira-flatow-on-science.html",
+    "urlPath": "/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science",
     "path_name": "/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science",
     "publishDate": "2015-06-16T14:40:47.000Z",
     "title": "Hilary on Science Friday",
@@ -2269,7 +2269,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-06-04-coffee-thermoregulation.md",
-    "urlPath": "/2015/06/04/coffee-thermoregulation.html",
+    "urlPath": "/posts/2015-06-04-coffee-thermoregulation",
     "path_name": "/posts/2015-06-04-coffee-thermoregulation",
     "publishDate": "2015-06-04T22:59:36.000Z",
     "title": "Coffee Thermoregulation",
@@ -2284,7 +2284,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-05-19-designing-the-tech-graph.md",
-    "urlPath": "/2015/05/19/designing-the-tech-graph.html",
+    "urlPath": "/posts/2015-05-19-designing-the-tech-graph",
     "path_name": "/posts/2015-05-19-designing-the-tech-graph",
     "publishDate": "2015-05-19T16:25:01.000Z",
     "title": "Designing the Tech Graph",
@@ -2299,7 +2299,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared.md",
-    "urlPath": "/2015/04/30/our-fearless-leader-hilary-mason-appeared.html",
+    "urlPath": "/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared",
     "path_name": "/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared",
     "publishDate": "2015-04-30T21:33:25.000Z",
     "title": "Hilary on Bloomberg TV",
@@ -2312,7 +2312,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-04-23-bytecode-hacking-for-great-justice.md",
-    "urlPath": "/2015/04/23/bytecode-hacking-for-great-justice.html",
+    "urlPath": "/posts/2015-04-23-bytecode-hacking-for-great-justice",
     "path_name": "/posts/2015-04-23-bytecode-hacking-for-great-justice",
     "publishDate": "2015-04-23T15:16:56.000Z",
     "title": "Bytecode Hacking for Great Justice",
@@ -2327,7 +2327,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for.md",
-    "urlPath": "/2015/04/01/our-second-rd-report-probabilistic-methods-for.html",
+    "urlPath": "/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for",
     "path_name": "/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for",
     "publishDate": "2015-04-01T20:24:20.000Z",
     "title": "Probabilistic Methods for Realtime Streams",
@@ -2340,7 +2340,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs.md",
-    "urlPath": "/2015/03/31/the-hoff-stopped-by-fast-forward-labs.html",
+    "urlPath": "/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs",
     "path_name": "/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs",
     "publishDate": "2015-03-31T18:44:43.000Z",
     "title": "The Hoff",
@@ -2353,7 +2353,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2014-12-19-announcing-our-next-topic-realtime-stream.md",
-    "urlPath": "/2014/12/19/announcing-our-next-topic-realtime-stream.html",
+    "urlPath": "/posts/2014-12-19-announcing-our-next-topic-realtime-stream",
     "path_name": "/posts/2014-12-19-announcing-our-next-topic-realtime-stream",
     "publishDate": "2014-12-19T21:17:09.000Z",
     "title": "Our Next Topic: Realtime Stream Analysis",
@@ -2366,7 +2366,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language.md",
-    "urlPath": "/2014/10/17/the-fast-forward-labs-report-on-natural-language.html",
+    "urlPath": "/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language",
     "path_name": "/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language",
     "publishDate": "2014-10-17T20:49:48.000Z",
     "title": "The Natural Language Generation Report is Out",
@@ -2379,7 +2379,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the.md",
-    "urlPath": "/2014/08/21/at-fast-forward-labs-were-thoughtful-about-the.html",
+    "urlPath": "/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the",
     "path_name": "/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the",
     "publishDate": "2014-08-21T19:28:14.000Z",
     "title": "We Built a Table",
@@ -2392,7 +2392,7 @@ export default [
   },
   {
     "filePath": "pages/posts/2014-07-21-hello-fast-forward-labs.md",
-    "urlPath": "/2014/07/21/hello-fast-forward-labs.html",
+    "urlPath": "/posts/2014-07-21-hello-fast-forward-labs",
     "path_name": "/posts/2014-07-21-hello-fast-forward-labs",
     "publishDate": "2014-07-21T16:01:01.000Z",
     "title": "Hello, Fast Forward Labs!",
