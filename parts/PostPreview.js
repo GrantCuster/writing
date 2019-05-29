@@ -264,12 +264,7 @@ class PostPreview extends React.Component {
                     height: `calc(100% - ${grem}px)`,
                     marginLeft: grem / 2,
                     marginTop: grem / 2,
-                    backgroundImage: `url(${
-                      post.preview_image &&
-                      post.preview_image.startsWith('http')
-                        ? post.preview_image
-                        : '/static' + post.preview_image
-                    })`,
+                    backgroundImage: `url(${post.preview_image})`,
                     backgroundSize: 'contain',
                     backgroundPosition: 'center center',
                     backgroundRepeat: 'no-repeat',
