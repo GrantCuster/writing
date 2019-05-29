@@ -1,27 +1,25 @@
 backend:
-  name: github
+  name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
-  repo: fastforwardlabs/exp
-  site_domain: agitated-galileo-3985d1.netlify.com
+  repo: fastforwardlabs/blog2
+  site_domain: https://gifted-mirzakhani-c4a45b.netlify.com/
 
 media_folder: "static/images/uploads" # Media files will be stored in the repo under images/uploads
 
 collections:
-  - label: "Pages"
-    name: "pages"
-    files:
-      - label: "Experiments page"
-        name: "experiments page"
-        file: "data/experiments.json"
-        fields:
-          - label: Experiments
-            name: experiments
-            widget: list
-            fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Head, name: head, widget: string}
-              - {label: Featured, name: featured, widget: boolean}
-              - {label: Description, name: description, widget: text}
-              - {label: URL, name: url, widget: string}
-              - {label: Image, name: image, widget: image}
-
+  - name: "posts" # Used in routes, e.g., /admin/collections/blog
+    label: "Posts" # Used in the UI
+    folder: "pages/posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Post label", name: "post_type", widget: "string", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Preview Image", name: "preview_image", widget: "image"}
+      - {label: "Published", name: "published", widget: "boolean", default: false, hint: "Determines whether post is published"} 
+      - {label: "Author", name: "author", widget: "string", required: false}
+      - {label: "Author Link", name: "author_link", widget: "string", required: false}
+      - {label: "External URL", name: "external_url", widget: "string", required: false, hint: "Link to post not on our site"}
+      - {label: "Body", name: "body", widget: "markdown"}
