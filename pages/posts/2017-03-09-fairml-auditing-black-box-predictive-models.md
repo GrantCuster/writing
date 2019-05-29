@@ -2,7 +2,7 @@
 layout: post
 title: "FairML: Auditing Black-Box Predictive Models"
 date: 2017-03-09 09:44
-preview_image: /images/2017/03/fairness_and_justice_symbol.png
+preview_image: /static/images/2017/03/fairness_and_justice_symbol.png
 feature: true
 post_type: Whitepaper
 author: Julius

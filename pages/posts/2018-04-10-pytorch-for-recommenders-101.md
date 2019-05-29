@@ -1,7 +1,7 @@
 ---
 title: PyTorch for Recommenders 101
 date: 2018-04-10 13:04 -0400
-preview_image: /images/editor_uploads/2018-04-11-175944-02_07.png
+preview_image: /static/images/editor_uploads/2018-04-11-175944-02_07.png
 author: Shioulin
 author_link: https://twitter.com/shioulin_sam
 ---

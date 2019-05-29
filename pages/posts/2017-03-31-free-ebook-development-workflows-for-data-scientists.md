@@ -2,7 +2,7 @@
 layout: post
 title: "Free eBook: Development Workflows for Data Scientists"
 date: 2017-03-31 15:30
-preview_image: /images/2017/03/development-workflows-1.jpg
+preview_image: /static/images/2017/03/development-workflows-1.jpg
 feature: false
 post_type: Announcement
 ---

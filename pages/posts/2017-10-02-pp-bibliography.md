@@ -2,7 +2,7 @@
 layout: post
 title: "Probabilistic programming: an annotated bibliography"
 date: 2017-10-02
-preview_image: /images/2017/09/ff05.gif
+preview_image: /static/images/2017/09/ff05.gif
 author: Mike
 author_link: http://twitter.com/mikepqr
 feature: true

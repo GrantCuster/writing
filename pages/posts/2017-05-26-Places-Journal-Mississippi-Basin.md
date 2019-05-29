@@ -2,7 +2,7 @@
 layout: post
 title: "Learning from Real-World Models: The Mississippi Basin Model and Machine Learning"
 date: 2017-06-30 11:19
-preview_image: /images/2017/05/dykema-basin-model-1_525.jpg
+preview_image: /static/images/2017/05/dykema-basin-model-1_525.jpg
 feature: false
 author: Manny
 published: true

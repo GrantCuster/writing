@@ -1,7 +1,7 @@
 ---
 title: Google Maps' Competitive Moat - Why Better Data Matters
 date: 2018-01-26 12:08
-preview_image: /images/2018/01/Smith_Court_Area_of_Interest-1516748269178.JPG
+preview_image: /static/images/2018/01/Smith_Court_Area_of_Interest-1516748269178.JPG
 feature: false
 published: true
 post_type: Newsletter

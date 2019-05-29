@@ -2,7 +2,7 @@
 layout: post
 title: "AlphaGo Zero's win, what it means"
 date: 2017-10-25
-preview_image: "/images/2017/10/220px_Go_board_part-1508964914733.jpg"
+preview_image: "/static/images/2017/10/220px_Go_board_part-1508964914733.jpg"
 author: Friederike
 author_link: "https://twitter.com/FSchueuer"
 published: true

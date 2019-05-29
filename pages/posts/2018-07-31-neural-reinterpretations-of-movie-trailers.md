@@ -1,7 +1,7 @@
 ---
 title: Neural reinterpretations of movie trailers
 date: 2018-07-31 12:08 -0400
-preview_image: /images/editor_uploads/2018-06-26-144942-Screen_Shot_2018_06_25_at_10_46_42_AM.png
+preview_image: /static/images/editor_uploads/2018-06-26-144942-Screen_Shot_2018_06_25_at_10_46_42_AM.png
 feature: false
 published: true
 post_type: Newsletter

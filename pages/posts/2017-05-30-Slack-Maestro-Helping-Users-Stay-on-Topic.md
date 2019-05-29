@@ -2,7 +2,7 @@
 layout: post
 title: 'Slack Maestro: Helping Users Stay on Topic'
 date: 2017-05-30 11:00
-preview_image: /images/2017/05/threshold.png
+preview_image: /static/images/2017/05/threshold.png
 feature: true
 author: 'Andrej Ficnar'
 author_link: https://github.com/aficnar

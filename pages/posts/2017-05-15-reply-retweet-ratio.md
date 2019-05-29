@@ -3,7 +3,7 @@ layout: post
 title: "A Quick Look at the Reply-to-Retweet Ratio"
 date: 2017-05-15 16:00
 published: true
-preview_image: /images/2017/05/tweetratio.png
+preview_image: /static/images/2017/05/tweetratio.png
 feature: false
 post_type: Demo
 author: Sepand

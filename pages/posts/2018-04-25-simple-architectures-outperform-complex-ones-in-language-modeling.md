@@ -1,7 +1,7 @@
 ---
 title: Simple Architectures Outperform Complex Ones in Language Modeling
 date: 2018-04-25 12:08 -0400
-preview_image: /images/2018/03/param_importance-1522251173209.png
+preview_image: /static/images/2018/03/param_importance-1522251173209.png
 feature: false
 published: true
 post_type: Newsletter

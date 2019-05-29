@@ -1,7 +1,7 @@
 ---
 title: Probabilistic Cookies!
 date: 2018-02-14 12:02 -0500
-preview_image: /images/editor_uploads/2018-02-15-204722-IMG_20180208_091928_1200.jpg
+preview_image: /static/images/editor_uploads/2018-02-15-204722-IMG_20180208_091928_1200.jpg
 feature: true
 published: true
 author: Ryan Micallef

@@ -1,7 +1,7 @@
 ---
 title: Rules to Learn By
 date: 2018-05-31 12:08 -0400
-preview_image: /images/editor_uploads/2018-05-09-164638-55f9d8d8bd86ef1d008bac98_750_577.png
+preview_image: /static/images/editor_uploads/2018-05-09-164638-55f9d8d8bd86ef1d008bac98_750_577.png
 feature: false
 published: true
 post_type: Newsletter

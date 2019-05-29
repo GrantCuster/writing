@@ -1,7 +1,7 @@
 ---
 title:  New creative possibilities with machine learning
 date: 2018-03-28 12:08 -0400
-preview_image: /images/editor_uploads/2018-03-09-211736-Screen_Shot_2018_03_08_at_3_52_58_PM.png
+preview_image: /static/images/editor_uploads/2018-03-09-211736-Screen_Shot_2018_03_08_at_3_52_58_PM.png
 feature: false
 published: true
 post_type: Newsletter

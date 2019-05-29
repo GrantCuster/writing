@@ -1,7 +1,7 @@
 ---
 title: Understanding a generative space
 date: 2018-08-29 18:09 -0400
-preview_image: /images/2018/08/compton_generator-1533226496607.jpg
+preview_image: /static/images/2018/08/compton_generator-1533226496607.jpg
 feature: false
 published: true
 author: Grant

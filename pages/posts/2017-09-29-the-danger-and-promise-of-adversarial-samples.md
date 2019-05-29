@@ -1,7 +1,7 @@
 ---
 title:  The Danger and Promise of Adversarial Samples
 date: 2017-09-29 14:07
-preview_image: /images/2017/09/Screen_Shot_2017_09_13_at_9-1505322932035.59
+preview_image: /static/images/2017/09/Screen_Shot_2017_09_13_at_9-1505322932035.59
 feature: false
 published: true
 post_type: Newsletter

@@ -1,7 +1,7 @@
 ---
 title: "Progress in text summarization"
 date: "2018-05-02 12:10 -0400"
-preview_image: "/images/editor_uploads/2018-10-19-160814-pointer_gen.png"
+preview_image: "/static/images/editor_uploads/2018-10-19-160814-pointer_gen.png"
 feature: "false"
 published: "true"
 author: "Mike"

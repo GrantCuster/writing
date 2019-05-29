@@ -2,7 +2,7 @@
 layout: post
 title: "Why your relationship is likely to last (or not): using Local Interpretable Model-Agnostic Explanations (LIME)"
 date: 2017-09-01
-preview_image: /images/2017/09/henry_viii-1504299070584.jpg
+preview_image: /static/images/2017/09/henry_viii-1504299070584.jpg
 author: Friederike
 author_link: http://www.linkedin.com/in/friederikeschueuer
 feature: true

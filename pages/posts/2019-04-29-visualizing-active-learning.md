@@ -1,7 +1,7 @@
 ---
 title: "Visualizing Active Learning"
 date: "2019-04-29 16:05 -0400"
-preview_image: "/images/editor_uploads/2019-04-10-191420-active_learner_gif_small.gif"
+preview_image: "/static/images/editor_uploads/2019-04-10-191420-active_learner_gif_small.gif"
 feature: true
 published: true
 author: "Grant"

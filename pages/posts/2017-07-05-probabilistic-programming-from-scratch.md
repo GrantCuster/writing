@@ -2,7 +2,7 @@
 layout: post
 title: "Probabilistic programming from scratch"
 date: 2017-07-06 12:00
-preview_image: /images/2017/07/output_30_0.png
+preview_image: /static/images/2017/07/output_30_0.png
 author: Mike
 author_link: "https://twitter.com/mikepqr"
 feature: true

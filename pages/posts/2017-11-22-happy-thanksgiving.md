@@ -2,7 +2,7 @@
 layout: post
 title: "Algorithmic Cookery & Happy Thanksgiving"
 date: 2017-11-22
-preview_image: "/images/2017/11/cute_bot-1511369925891.jpg"
+preview_image: "/static/images/2017/11/cute_bot-1511369925891.jpg"
 author: Friederike
 author_link: "https://twitter.com/FSchueuer"
 published: true

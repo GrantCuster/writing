@@ -1,7 +1,7 @@
 ---
 title: 'Meta-Learners - learning how to learn'
 date: '2019-05-22 15:05 -0400'
-preview_image: '/images/2019/05/fig1-1558038180094.png'
+preview_image: '/static/images/2019/05/fig1-1558038180094.png'
 feature: true
 published: true
 author: 'Shioulin and Nisha'

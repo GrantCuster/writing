@@ -1,7 +1,7 @@
 ---
 title: Progress in machine learning interpretability
 date: 2018-07-31 12:08 -0400
-preview_image: /images/2018/07/lime-1530894622923.png
+preview_image: /static/images/2018/07/lime-1530894622923.png
 feature: false
 published: true
 post_type: Newsletter

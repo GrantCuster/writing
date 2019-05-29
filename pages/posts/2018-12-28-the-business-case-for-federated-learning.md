@@ -1,7 +1,7 @@
 ---
 title: "The business case for federated learning"
 date: "2018-12-28 14:01 -0500"
-preview_image: "/images/editor_uploads/2019-01-05-191115-FF09_Overview.png"
+preview_image: "/static/images/editor_uploads/2019-01-05-191115-FF09_Overview.png"
 feature: false
 published: true
 author: "Mike"

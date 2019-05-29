@@ -2,7 +2,7 @@
 layout: post
 title: "To the Future..."
 date: 2017-09-07 10:30
-preview_image: /images/2017/09/gradient-1504809772766.jpg
+preview_image: /static/images/2017/09/gradient-1504809772766.jpg
 author: Hilary
 author_link: https://twitter.com/hmason
 feature: true

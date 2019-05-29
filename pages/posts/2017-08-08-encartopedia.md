@@ -2,7 +2,7 @@
 layout: post
 title: "Encartopedia"
 date: 2017-08-15 10:30
-preview_image: /images/2017/08/enc-tabula.jpg
+preview_image: /static/images/2017/08/enc-tabula.jpg
 author: Sepand
 author_link: "https://sepans.com/sp"
 feature: true

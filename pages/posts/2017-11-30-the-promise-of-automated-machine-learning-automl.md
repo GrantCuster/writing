@@ -1,7 +1,7 @@
 ---
 title: The promise of Automated Machine Learning (AutoML)
 date: 2017-11-30 12:08:00 Z
-preview_image: /images/2017/11/Screen_Shot_2017_11_07_at_10_07_43_AM-1510067292745.png
+preview_image: /static/images/2017/11/Screen_Shot_2017_11_07_at_10_07_43_AM-1510067292745.png
 feature: false
 published: true
 post_type: Newsletter

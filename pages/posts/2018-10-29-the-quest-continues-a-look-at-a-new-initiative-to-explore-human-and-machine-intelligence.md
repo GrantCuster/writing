@@ -1,7 +1,7 @@
 ---
 title: "The quest continues: a look at a new initiative to explore human and machine intelligence"
 date: "2018-10-29 11:11 -0400"
-preview_image: "/images/2018/10/mike_petrucci_607505_unsplash-1539792581534.jpg"
+preview_image: "/static/images/2018/10/mike_petrucci_607505_unsplash-1539792581534.jpg"
 feature: false
 published: true
 author: "Alice"

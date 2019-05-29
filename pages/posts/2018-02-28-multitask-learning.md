@@ -1,7 +1,7 @@
 ---
 title: Multi-Task Learning
 date: 2018-02-28 12:08
-preview_image: /images/2018/02/MTLNet-1517931635465.png
+preview_image: /static/images/2018/02/MTLNet-1517931635465.png
 feature: false
 published: true
 post_type: Newsletter

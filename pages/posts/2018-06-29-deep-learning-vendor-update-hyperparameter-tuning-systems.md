@@ -1,7 +1,7 @@
 ---
 title: "Deep Learning Vendor Update: Hyperparameter Tuning Systems"
 date: 2018-06-29 12:08 -0400
-preview_image: /images/editor_uploads/2018-06-19-231235-Compressorhead___Fingers_on_Gibson_Flying_V_Bones_on_Fender_Precision_Bass___Musikmesse_Frankfurt_2013.jpg
+preview_image: /static/images/editor_uploads/2018-06-19-231235-Compressorhead___Fingers_on_Gibson_Flying_V_Bones_on_Fender_Precision_Bass___Musikmesse_Frankfurt_2013.jpg
 feature: false
 published: true
 post_type: Newsletter

@@ -2,7 +2,7 @@
 layout: post
 title: "Trees, Layers, and Speed: Talking Optimization with Patrick Hayes"
 date: 2017-03-10 13:00
-preview_image: /images/2017/04/maze%20image.png
+preview_image: /static/images/2017/04/maze%20image.png
 published: true
 feature: false
 post_type: Interview

@@ -1,7 +1,7 @@
 ---
 title: "Comparing human and agent performance: DeepMind releases PsychLab"
 date: 2018-02-28 12:08 -0400
-preview_image: /images/2018/02/PsychLabs_DeepMind_figure-1517949199677.png
+preview_image: /static/images/2018/02/PsychLabs_DeepMind_figure-1517949199677.png
 feature: false
 published: true
 post_type: Newsletter

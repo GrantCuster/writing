@@ -1,7 +1,7 @@
 ---
 title: Futurism and Artificial Intelligence
 date: 2017-09-29 14:07
-preview_image: /images/2017/09/star_trek_chess-1505156456055.jpg
+preview_image: /static/images/2017/09/star_trek_chess-1505156456055.jpg
 feature: false
 published: true
 post_type: Newsletter

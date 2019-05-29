@@ -2,7 +2,7 @@
 layout: post
 title: "The Business Case for Machine Learning Interpretability"
 date: 2017-08-02 09:00
-preview_image: /images/2017/08/actions.png
+preview_image: /static/images/2017/08/actions.png
 author: Manny
 author_link: "https://twitter.com/mannymoss"
 feature: false

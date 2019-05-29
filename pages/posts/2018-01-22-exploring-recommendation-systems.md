@@ -2,7 +2,7 @@
 layout: post
 title: "Exploring Recommendation Systems"
 date: 2018-01-22
-preview_image: "/images/2018/01/ROC_NMF_tag_loop_1115_nodot.png"
+preview_image: "/static/images/2018/01/ROC_NMF_tag_loop_1115_nodot.png"
 author: Shioulin
 author_link: https://twitter.com/shioulin_sam
 --- 

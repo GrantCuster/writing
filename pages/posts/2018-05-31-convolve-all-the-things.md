@@ -1,7 +1,7 @@
 ---
 title: Convolve all the things
 date: 2018-05-31 12:08 -0400
-preview_image: /images/2018/04/CausalConv-1524689210501.jpg
+preview_image: /static/images/2018/04/CausalConv-1524689210501.jpg
 feature: false
 published: true
 post_type: Newsletter

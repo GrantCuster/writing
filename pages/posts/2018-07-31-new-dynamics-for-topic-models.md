@@ -1,7 +1,7 @@
 ---
 title: New Dynamics for Topic Models
 date: 2018-07-31 12:08 -0400
-preview_image: /images/2018/07/f5-1531838383022.jpg
+preview_image: /static/images/2018/07/f5-1531838383022.jpg
 feature: false
 published: true
 post_type: Newsletter

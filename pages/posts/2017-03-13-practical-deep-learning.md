@@ -2,7 +2,7 @@
 layout: post
 title: 'Practical Deep Learning'
 date: 2017-03-13 15:49:00 Z
-preview_image: /images/2017/03/doc-full-screen.jpg
+preview_image: /static/images/2017/03/doc-full-screen.jpg
 feature: false
 author: Micha
 author_link: https://github.com/mynameisfiber

@@ -1,7 +1,7 @@
 ---
 title: Unemployment vs. Augmentation
 date: 2018-03-28 12:08 -0400
-preview_image: /images/2018/02/1_ruUDqwD4sGZOhIkeK2zUYQ-1519759204276.png
+preview_image: /static/images/2018/02/1_ruUDqwD4sGZOhIkeK2zUYQ-1519759204276.png
 feature: false
 published: true
 post_type: Newsletter

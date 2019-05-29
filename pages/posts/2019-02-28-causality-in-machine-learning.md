@@ -1,7 +1,7 @@
 ---
 title: "Causality in machine learning"
 date: "2019-02-28 15:03 -0400"
-preview_image: "/images/editor_uploads/2019-03-12-191909-correlation.png"
+preview_image: "/static/images/editor_uploads/2019-03-12-191909-correlation.png"
 feature: false
 published: true
 author: "Seth"

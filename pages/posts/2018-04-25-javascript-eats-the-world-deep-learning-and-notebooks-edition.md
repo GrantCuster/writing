@@ -1,7 +1,7 @@
 ---
 title: "JavaScript eats the world: deep learning and notebooks edition"
 date: 2018-04-25 12:08 -0400
-preview_image: /images/editor_uploads/2018-03-31-210319-hicat2.gif
+preview_image: /static/images/editor_uploads/2018-03-31-210319-hicat2.gif
 feature: false
 published: true
 author: Grant

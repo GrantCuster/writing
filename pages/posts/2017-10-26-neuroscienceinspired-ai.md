@@ -1,7 +1,7 @@
 ---
 title: Neuroscience-inspired AI
 date: 2017-10-26 14:07 -0400
-preview_image: /images/2017/10/Screen_Shot_2017_10_09_at_9-1507556105313.33
+preview_image: /static/images/2017/10/Screen_Shot_2017_10_09_at_9-1507556105313.33
 feature: false
 published: true
 post_type: Newsletter

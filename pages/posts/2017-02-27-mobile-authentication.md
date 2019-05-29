@@ -2,7 +2,7 @@
 layout: post
 title: Mobile Behavioural Authentication
 date: 2017-02-27
-preview_image: /images/2017/02/mobileauth.png
+preview_image: /static/images/2017/02/mobileauth.png
 feature: false
 author: Shioulin
 author_link: 

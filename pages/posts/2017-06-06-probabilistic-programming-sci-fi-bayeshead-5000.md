@@ -2,7 +2,7 @@
 layout: post
 title: "Probabilistic Programmming Sci-Fi: BayesHead 5000"
 date: 2017-06-06 10:30
-preview_image: /images/2017/06/mc.png
+preview_image: /static/images/2017/06/mc.png
 author: "Liam Sweeney"
 post_type: "Fiction"
 ---

@@ -1,7 +1,7 @@
 ---
 title: Supercharging Classification - The Value of Multi-task Learning
 date: Tue Jun 26 2018 20:00:00 GMT-0400 (Eastern Daylight Time)
-preview_image: /images/2018/06/02_03-1530032857031.png
+preview_image: /static/images/2018/06/02_03-1530032857031.png
 feature: false
 published: true
 layout: post

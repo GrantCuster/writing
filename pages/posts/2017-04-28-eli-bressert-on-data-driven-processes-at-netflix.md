@@ -2,7 +2,7 @@
 layout: post
 title: "Eli Bressert on Data-Driven Processes at Netflix"
 date: 2017-04-28 09:44
-preview_image: /images/2017/04/b1509_w11.jpg
+preview_image: /static/images/2017/04/b1509_w11.jpg
 post_type: Interview
 interview_with: Eli Bressert
 interview_with_link: https://twitter.com/astrobiased

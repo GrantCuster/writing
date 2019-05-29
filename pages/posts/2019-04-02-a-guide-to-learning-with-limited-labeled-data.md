@@ -1,7 +1,7 @@
 ---
 title: 'A Guide to Learning with Limited Labeled Data'
 date: '2019-04-02 14:04 -0400'
-preview_image: '/images/2019/03/fig_15-1553784931001.png'
+preview_image: '/static/images/2019/03/fig_15-1553784931001.png'
 feature: true
 published: true
 post_type: 'post'

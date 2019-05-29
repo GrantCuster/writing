@@ -1,7 +1,7 @@
 ---
 title: "Teaching machines to recognize faces: a tale of two outcomes"
 date: "2019-04-29 16:05 -0400"
-preview_image: "/images/2019/04/Affectiva_Face_Image-1555448954465.jpg"
+preview_image: "/static/images/2019/04/Affectiva_Face_Image-1555448954465.jpg"
 feature: false
 published: true
 author: "Alice"

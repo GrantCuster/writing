@@ -2,7 +2,7 @@
 layout: post
 title: "Privacy and Encryption Above the Data: Interview with Dave Archer"
 date: 2017-01-25 18:15
-preview_image: /images/2017/01/chart.png
+preview_image: /static/images/2017/01/chart.png
 interview_with: David Archer
 interview_with_link: https://galois.com/team/david-archer/
 post_type: Interview

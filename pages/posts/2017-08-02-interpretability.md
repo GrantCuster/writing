@@ -2,7 +2,7 @@
 layout: post
 title: "New Research on Interpretability"
 date: 2017-08-02 09:00
-preview_image: /images/2017/08/ff06-animation.gif
+preview_image: /static/images/2017/08/ff06-animation.gif
 author: Mike
 author_link: "https://twitter.com/mikepqr"
 feature: true

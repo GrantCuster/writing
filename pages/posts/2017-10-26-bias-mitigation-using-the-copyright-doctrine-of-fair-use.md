@@ -1,7 +1,7 @@
 ---
 title: Bias Mitigation Using the Copyright Doctrine of Fair Use
 date: 2017-10-26 14:07 -0400
-preview_image: /images/2017/10/Screen_Shot_2017_10_10_at_10-1507644713217.11
+preview_image: /static/images/2017/10/Screen_Shot_2017_10_10_at_10-1507644713217.11
 feature: false
 published: true
 post_type: Newsletter

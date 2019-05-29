@@ -1,7 +1,7 @@
 ---
 title: "Designing Turbofan Tycoon"
 date: "2018-12-06 11:12 -0500"
-preview_image: "/images/editor_uploads/2018-12-07-163940-turbofan_even_shorter.gif"
+preview_image: "/static/images/editor_uploads/2018-12-07-163940-turbofan_even_shorter.gif"
 feature: true
 published: true
 author: "Grant"

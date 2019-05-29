@@ -1,7 +1,7 @@
 ---
 title: Sequence labeling with semi-supervised multi-task learning
 date: 2018-06-29 12:08 -0400
-preview_image: /images/2018/06/Screen_Shot_2018_06_14_at_4_27_13_PM-1529008110241.png
+preview_image: /static/images/2018/06/Screen_Shot_2018_06_14_at_4_27_13_PM-1529008110241.png
 feature: false
 published: true
 post_type: Newsletter

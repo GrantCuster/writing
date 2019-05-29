@@ -2,7 +2,7 @@
 layout: post
 title: 'Interpretability in conversation with Patrick Hall and Sameer Singh'
 date: 2017-09-11
-preview_image: /images/2017/08/ff06-logo.png
+preview_image: /static/images/2017/08/ff06-logo.png
 author: Mike
 author_link: http://twitter.com/mikepqr
 feature: true

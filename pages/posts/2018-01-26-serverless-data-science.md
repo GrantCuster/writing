@@ -1,7 +1,7 @@
 ---
 title: Serverless data science
 date: 2018-01-26 12:08
-preview_image: /images/2018/01/serverless_pywren-1515449109658.png
+preview_image: /static/images/2018/01/serverless_pywren-1515449109658.png
 feature: false
 published: true
 post_type: Newsletter

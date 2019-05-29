@@ -1,7 +1,7 @@
 ---
 title: Deep learning made easier with transfer learning
 date: 2018-09-17 09:09 -0700
-preview_image: /images/editor_uploads/2018-09-18-170232-robot_share_1.png
+preview_image: /static/images/editor_uploads/2018-09-18-170232-robot_share_1.png
 feature: true
 published: true
 ---

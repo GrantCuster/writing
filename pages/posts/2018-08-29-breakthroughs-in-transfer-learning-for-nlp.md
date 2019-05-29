@@ -1,7 +1,7 @@
 ---
 title: Breakthroughs in transfer learning for natural language processing
 date: 2018-08-29 18:09 -0400
-preview_image: /images/2018/07/task_dict_v-1532535013679.jpg
+preview_image: /static/images/2018/07/task_dict_v-1532535013679.jpg
 feature: false
 published: true
 author: Seth

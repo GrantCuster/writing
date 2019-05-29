@@ -2,7 +2,7 @@
 layout: post
 title: "Predicting NYC Real Estate Prices with Probabilistic Programming"
 date: 2017-03-15 15:49
-preview_image: /images/2017/05/price_mode.gif
+preview_image: /static/images/2017/05/price_mode.gif
 feature: false
 author: Grant
 author_link: https://twitter.com/grantcuster
