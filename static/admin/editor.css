@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/static/fonts/Inter-Regular.woff2?v=3.5') format('woff2'),
+    url('/static/fonts/Inter-Regular.woff?v=3.5') format('woff');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/static/fonts/Inter-Italic.woff2?v=3.5') format('woff2'),
+    url('/static/fonts/Inter-Italic.woff?v=3.5') format('woff');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/static/fonts/Inter-Bold.woff2?v=3.5') format('woff2'),
+    url('/static/fonts/Inter-Bold.woff?v=3.5') format('woff');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/static/fonts/Inter-BoldItalic.woff2?v=3.5') format('woff2'),
+    url('/static/fonts/Inter-BoldItalic.woff?v=3.5') format('woff');
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: 'Inter', serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-rendering: optimizelegibility;
+  font-feature-settings: 'kern';
+  font-kerning: normal;
+  font-feature-settings: 'ss02' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+pre {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  overflow-x: auto;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Monaco,
+    Courier New, monospace;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.025s linear;
+}
+a:hover {
+  opacity: 0.75;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+h1 {
+  font-size: calc(16px * 3);
+  line-height: 1.25;
+}
+h2 {
+  font-size: calc(16px * 2);
+  line-height: 1.25;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+h3 {
+  font-size: calc(16px * 1.5);
+  line-height: 1.25;
+  padding-top: 1rem;
+  margin-bottom: 1rem;
+}
+h4 {
+  font-size: calc(16px * 1.25);
+  line-height: 1.25;
+  padding-top: 0px;
+  margin-bottom: 1rem;
+}
+h5 {
+  font-size: calc(16px * 0.75);
+  line-height: 1.4375;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+h5 em {
+}
+p {
+  margin: 0 0 1rem 0;
+}
+ol,
+ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1rem;
+}
+blockquote {
+  margin: 0 0 1rem 1rem;
+}
+.html-video-holder {
+  margin: 0 0 1rem 0;
+}
+video {
+  max-width: 100%;
+}
+code {
+  background: #eaeaea;
+  padding-right: 3px;
+  padding-left: 3px;
+  font-size: 0.975em;
+  word-break: break-word;
+}
