@@ -15,7 +15,7 @@ In a [recent blog post](https://cloud.google.com/blog/products/ai-machine-learni
 
 Their product, [Merlin Video](https://datastudio.google.com/u/0/reporting/1Ss64x1ocKeeDdTcMVX3l4iQcr8gp9w-W/page/Hg2V), is a deep learning tool that analyzes movie trailer videos. It was based on a pre-trained model - Google's YouTube 8M video data set, which identifes objects in video, and tuned with movie trailers and marketing data from past movies. Fox released [a paper describing the technology in detail](https://arxiv.org/abs/1810.08189). They have been using Merlin - with success - for a year and a half.
 
-![](/images/editor_uploads/2019-01-05-191614-Merlin_Flow.png)
+![](/static/images/editor_uploads/2019-01-05-191614-Merlin_Flow.png)
 ##### Merlin's architecture [(image source)](https://cloud.google.com/blog/products/ai-machine-learning/how-20th-century-fox-uses-ml-to-predict-a-movie-audience)
 
 Fox's software works to predict an *audience*, with clear implications for "testing" likely outcomes for certain types of films, which studios can use to market existing movies more effectively, and guide writers and directors toward making more commercially appealing stories. But can machines generate the stories themselves? Not yet - but this is not far off.

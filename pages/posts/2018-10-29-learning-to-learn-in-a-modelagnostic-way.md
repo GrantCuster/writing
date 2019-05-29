@@ -23,7 +23,7 @@ single task and testing on held-out examples from that task. These systems are t
 tasks and are then tested in their ability to learn new tasks; an example of a task might be classifying a new image within 5 
 possible classes, given one example of each class.
 
-![](/images/2018/10/meta_learning-1538505489954.png)
+![](/static/images/2018/10/meta_learning-1538505489954.png)
 ##### A meta-learning set-up for few-shot image classification from a paper on [Optimization as a Model for Few-Shot Learning](https://openreview.net/forum?id=rJY0-Kcll)
 
 During this process, the model is trained to learn tasks in the meta-training set. There are two optimizations at play – the 
@@ -35,7 +35,7 @@ adapted to a new task, via a few gradient steps. The meta-learner seeks to find 
 adapting to various problems, but also can be adapted quickly (in a small number of steps) and efficiently (using only a few 
 examples). Suppose we are seeking to find a set of parameters θ that are highly adaptable. During the course of meta-learning (the bold line), MAML optimizes for a set of parameters such that when a gradient step is taken with respect to a particular task i (the gray lines), the parameters are close to the optimal parameters θ<sup>∗</sup><sub>i</sub> for task i.
 
-![](/images/2018/10/MAML-1538505613205.png)
+![](/static/images/2018/10/MAML-1538505613205.png)
 ##### [(image source)](https://arxiv.org/pdf/1703.03400.pdf)
 
 This approach is quite simple and has some distinctive advantages:   

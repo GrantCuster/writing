@@ -165,7 +165,7 @@ plt.hist(a_samples, bins=abbins, normed=True)  # normed=True gives a probability
 plt.xlim(0, max(abbins));
 ```
 
-![png](/images/2017/07/output_20_0.png)
+![png](/static/images/2017/07/output_20_0.png)
 
 ##### This is the posterior distribution for the conversion fraction of layout A. It's a full picture of our knowledge after the experiment.
 
@@ -209,7 +209,7 @@ plt.legend();
 ```
 
 
-![png](/images/2017/07/output_26_0.png)
+![png](/static/images/2017/07/output_26_0.png)
 
 ##### The guesses for layout B are concentrated around 6%, which captures our prior knowledge.
 
@@ -236,7 +236,7 @@ plt.xlim(0, max(abbins));
 plt.legend();
 ```
 
-![png](/images/2017/07/output_30_0.png)
+![png](/static/images/2017/07/output_30_0.png)
 
 
 ##### Note the histogram for layout B is to the right of that for layout A. This is telling us that layout B is probably better than layout A.

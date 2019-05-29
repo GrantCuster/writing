@@ -18,7 +18,7 @@ The I⁠ntercept inadvertently outed​ their​ source​ by publishing​ a do
 embedded steganographic​ message that allowed​ the NSA to identify the​ person​ who
 printed it‏‎.
 
-![](/images/2017/06/stego_images.jpg)
+![](/static/images/2017/06/stego_images.jpg)
 
 These days, information is​ often​ hidden​ in digital media​ like images and​ audio​
 files, where flipping a few bits​ doesn’t change​ the​ file to​ the​ human​ eye (or
@@ -120,7 +120,7 @@ When you​ have 120,000 characters, some​ of​ them are bound to​ look the
 H⁠ere’s​ an [English character](https://codepoints.net/U+0041) A, and​ here’s​ a
 [Greek character](https://codepoints.net/U+0391) Α. S⁠ee the difference?
 
-![](/images/2017/06/confusables.png)
+![](/static/images/2017/06/confusables.png)
 
 Similar characters like these, called​ ’confusables’, are​ recognized as being​
 dangerous​ enough that all​ modern​ browsers often​ some​ protection​ against​ letting
@@ -132,7 +132,7 @@ H⁠ere’s​ a great​ unicode​
 [resource](http://unicode.org/cldr/utility/confusables.jsp?a=fast+forward+labs&r=None)
 for​ identifying​ confusables.
 
-![](/images/2017/06/unicode_url.png)
+![](/static/images/2017/06/unicode_url.png)
 
 U⁠sed​ judiciously, there​ are plenty​ of confusables​ that are, well, suitably​
 confusing‏‎. H⁠ere are a​ few rules of thumb: simpler​ letters are more easily

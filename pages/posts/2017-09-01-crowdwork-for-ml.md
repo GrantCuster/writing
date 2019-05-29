@@ -12,7 +12,7 @@ Amazon’s [Mechanical Turk](https://www.wired.com/2002/03/turk/) is a platform 
 
 Amazon's artificial artificial intelligence has proven useful for 'real' AI applications as a source of labeled data for training supervised machine learning algorithms. Supervised machine learning fits squarely under the umbrella of AI, and mTurk's role in supervised learning is crucial for understanding the development of AI. Because of the role crowdwork plays as a source of the human knowledge that machine intelligence relies on to train algorithms, a better understanding how crowdworking platforms like mTurk function as a conduit for human intelligence can improve its usefulness for the data scientists that rely on it.
 
-![](/images/2017/09/the_turk.jpg)
+![](/static/images/2017/09/the_turk.jpg)
 
 I engaged in an [autoethnographic](https://www.google.com/url?q=http://www.qualitative-research.net/index.php/fqs/article/view/1589/3095&sa=D&ust=1505416244226000&usg=AFQjCNEr-gvdQkAOu8LRFoWw051o4ao29g) exercise, working as an mTurker to "systematically analyze" the world of crowdworkers. Using myself as both instrument and unit of analysis, I spent a day working on the mTurk platform (I also tried out [Crowdflower](https://www.crowdflower.com/)), navigating the idiosyncrasies of the platform and trying to optimize my earnings against the time I spent performing tasks. I asked: How does crowdwork affect data science products? And what do data scientists need to know about crowdworking that would help them design tasks that support better machine learning?
 
@@ -30,7 +30,7 @@ These training tasks, which the worker must complete above a certain threshold e
 
 While this training round for embedding human intelligence in machine learning products ensures some degree of consistency and limits error to an acceptable rate, it also filters out many reasonable responses - responses likely to be generated in the real world to similar prompts that are not captured by the validation rules for the task. The human intelligence appended to the dataset through the crowdwork platform comes to resemble the validation rules more than it does the range of likely responses.
 
-![](/images/2017/09/validation_error.JPG)
+![](/static/images/2017/09/validation_error.JPG)
 
 The task platform itself is also a barrier to capturing the range of human intelligence that might otherwise be possible. No matter how extensible the task-building platform is, there are only a few ways for task designers to elicit information from task workers: Writing text in fields, selecting radio buttons or checkboxes, or using dropdown menus are the most database-friendly methods, but recording audio, capturing video or still photos from a webcam, or asking for drawn annotations may also be used.  In my time as an mTurker, I drew boxes around food items in pictures, populated fields in a form based on my interpretation of the description of a product listing on a shopping site, read short snippets of text and clicked radio buttons associated with true or false statements about the text, and suggested multiple versions of passably natural language for very specific voice commands (< search > for < phone number > and < location > and < perform action >). 
 
@@ -45,7 +45,7 @@ A key component of any ethnographic exercise, even an autoethnographic exercise 
 
 In general, lower-priced tasks are [more likely](http://faculty.washington.edu/marcjd/articles/An%20Analysis%20of%20the%20Use%20of%20Amazon%E2%80%99s%20Mechanical%20Turk%20for%20Survey%20Research%20in%20the%20Cloud%20-%20v.%203.pdf) to be completed by non-US workers. This isn’t a problem per se, but it should be recognized that when tasks are intended to embed human knowledge into a data set, and then used to train a machine learning model, the human knowledge is inseparable from the cultural knowledge that frames it. It goes without saying that I can recognize what parts of an image contain food items and which do not, but when asked to draw a bounding box around the “food” part of the image, I had some level of difficulty. Do I include the bowl that the soup is in? I cropped it out. Are papaya seeds edible? Should I draw a box around them? Do I include the paper wrapper around a burrito, or just the part that was visible? Or just the part with the bite taken out, where I could see the delicious contents? I cropped out the paper, but cropped in the tortilla. Is this what the creator of the task would have wanted? How did my own (copious) experience with burritos affect how I completed this particular task item?
 
-![](/images/2017/09/papaya.JPG)
+![](/static/images/2017/09/papaya.JPG)
 
 The pace with which work gets done is also subject to some of these factors. When designing a project expecting workers from all around the world to contribute to it, various economies come into play. The more the project pays, the faster it will get done. But as you lower the price for a task, not only does the turnaround time rise, but the spread of workers contributing to the project changes as well. Lower-priced tasks are less likely to be taken by US workers in locales with high costs of living, and are less likely to be taken up by experienced workers, overall. 
 

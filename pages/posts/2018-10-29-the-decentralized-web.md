@@ -11,7 +11,7 @@ post_type: "newsletter"
 
 Last week, Sir Tim Berners-Lee [announced Solid](https://medium.com/@timberners_lee/one-small-step-for-the-web-87f92217d085), a project designed to give users more control over their data. Solid is one of a number of recent attempts to rethink how the web works. As part of an effort to get my head around the goals of these different approaches and, more concretely, what they actually do, I made some notes on what I see as the most interesting approaches.
 
-![A screenshot of the Beaker browser website.](/images/editor_uploads/2018-10-02-191324-Screen_Shot_2018_10_01_at_3_04_36_PM.png)
+![A screenshot of the Beaker browser website.](/static/images/editor_uploads/2018-10-02-191324-Screen_Shot_2018_10_01_at_3_04_36_PM.png)
 
 ##### [Beaker browser](https://beakerbrowser.com/) for the peer-to-peer web.
 
@@ -19,7 +19,7 @@ The approach I’ve looked at the most is [Beaker Browser](https://beakerbrowser
 
 I got a much better picture of the goals and capabilities of Beaker through this talk by [Tara Vancil](https://www.youtube.com/watch?v=rJ_WvfF3FN8), a core member of the Beaker team. Part of the talk is focused on [the web we lost](https://anildash.com/2012/12/13/the_web_we_lost/): the beginner-friendliness of decipherable view source, and places like Geocities (where anyone could make their own weird web pages). With Beaker, you can make your own website and immediately host it on the peer-to-peer web without having to worry about setting up your own server. This could make it a great fit for demonstrations and classroom settings. To have a peer-to-peer site that stays up even when your computer is shut down and your seeders have run out is a bit more complicated. I found Tom MacWright’s [“So you want to decentralize your website”](https://macwright.org/2017/07/20/decentralize-your-website.html) a useful and realistic look at the steps involved.
 
-![](/images/editor_uploads/2018-10-02-191445-Screen_Shot_2018_10_01_at_3_04_07_PM.png)
+![](/static/images/editor_uploads/2018-10-02-191445-Screen_Shot_2018_10_01_at_3_04_07_PM.png)
 
 ##### Tom MacWright's post "So you want to decentralize your website" [web link](https://macwright.org/2017/07/20/decentralize-your-website.html) [dat link](dat://tmcw.hashbase.io/2017/07/20/decentralize-your-website.html)
 

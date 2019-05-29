@@ -11,7 +11,7 @@ post_type: Newsletter
 
 Google recently announced [TensorFlow.js](https://medium.com/tensorflow/introducing-tensorflow-js-machine-learning-in-javascript-bf3eab376db), an open-source library for running machine learning in the browser, and a successor to the deeplearn.js library. While the majority of machine learning work is unlikely to shift to JavaScript anytime soon, the examples included on the [TensorFlow.js site](https://js.tensorflow.org/) do a good job of showing the promise of machine learning models that run in the browser. 
 
-![A short GIF of the Teachable Machines demo showing Grant raising his hand and the model responding with a GIF of a cat waving.](/images/editor_uploads/2018-03-31-210319-hicat2.gif)
+![A short GIF of the Teachable Machines demo showing Grant raising his hand and the model responding with a GIF of a cat waving.](/static/images/editor_uploads/2018-03-31-210319-hicat2.gif)
 
 ##### Teachable Machine lets you train a model to help you wave at cats.
 
@@ -19,7 +19,7 @@ Our favorite example is [Teachable Machine](https://teachablemachine.withgoogle.
 
 Another advantage of having deep learning code running in the browser is that you can open up the code itself for people to interact with. Better JavaScript deep-learning tools mean more web-based interactive deep-learning explainers: explainers like [Minsuk Kahng's Deep Learning Tutorial](https://beta.observablehq.com/@minsukkahng/deep-learning-tutorial-with-deeplearn-js), which shows how to use deeplearn.js to build a model for the Iris dataset. Because all of the code for the system is exposed and editable, viewers cans tweak different parameters and easily view the results. 
 
-![A screenshot form a section of Minsuk Kahng's Deep Learning Tutorial. It shows the model code and a slider for specifying the number of neurons in the hidden layer.](/images/editor_uploads/2018-03-31-210737-Screen_Shot_2018_03_30_at_4_59_56_PM.png)
+![A screenshot form a section of Minsuk Kahng's Deep Learning Tutorial. It shows the model code and a slider for specifying the number of neurons in the hidden layer.](/static/images/editor_uploads/2018-03-31-210737-Screen_Shot_2018_03_30_at_4_59_56_PM.png)
 
 ##### Minsuk Kahng's deeplearning.js node lets you edit the code and immediately view the results.
 

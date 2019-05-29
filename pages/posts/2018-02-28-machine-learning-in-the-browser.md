@@ -32,7 +32,7 @@ There are several open source libraries which provide a simple JavaScript API th
 
 As of right now, [Tensorflow.js](https://js.tensorflow.org) appears to be the most mature API in terms of maintenance, integration with the broader ML ecosystem, and community adoption. TensorFlow.js consists of two sets of APIs: the Ops API which provides lower-level linear algebra operations (e.g., matrix multiplication, tensor addition, etc.), and the Layers API, which provides higher-level model building blocks and best practices with emphasis on neural networks. The Layers API is modeled after the tf.keras namespace in TensorFlow Python, which is based on the widely adopted [Keras API](https://keras.io,) and supports rapid prototyping of complex ML models.
 
-![](/images/editor_uploads/2019-02-21-221448-tfjs.jpg)
+![](/static/images/editor_uploads/2019-02-21-221448-tfjs.jpg)
 ##### Figure shows the architecture of the Tensorflow.js library. [source](https://arxiv.org/abs/1901.05350)  
    
 TensorFlow.js is designed to run in-browser and server-side, as shown in the figure above. When running inside the browser, it utilizes the GPU of the device via WebGL to enable fast parallelized floating point computation. In Node.js, TensorFlow.js binds to the TensorFlow C library, enabling full access to TensorFlow. TensorFlow.js also provides a slower CPU implementation as a fallback (omitted in the figure for simplicity), implemented in plain JS. This fallback can run in any execution environment and is automatically used when the environment has no access to WebGL or the TensorFlow binary. ([See the Tensorflow.js paper here.](https://arxiv.org/abs/1901.05350))

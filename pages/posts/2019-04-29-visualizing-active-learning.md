@@ -9,7 +9,7 @@ author_link: "https://twitter.com/grantcuster"
 post_type: "newsletter"
 ---
 
-![A GIF of the Active Learner prototype](/images/editor_uploads/2019-04-10-191420-active_learner_gif_small.gif)
+![A GIF of the Active Learner prototype](/static/images/editor_uploads/2019-04-10-191420-active_learner_gif_small.gif)
 
 ##### [Active Learner](https://activelearner.fastforwardlabs.com/) shows how active learning selects which data to be labeled.
 
@@ -20,7 +20,7 @@ In this newsletter, I'm going to focus on the visualization challenges involved 
 
 #### Show me the data
 
-![](/images/editor_uploads/2019-04-10-191535-clip4.gif)
+![](/static/images/editor_uploads/2019-04-10-191535-clip4.gif)
 
 ##### I used sprite sheets and shaders to display the image for each of the data points.
 
@@ -33,7 +33,7 @@ In this prototype, I saw an opportunity to take another crack at building an int
 
 #### UMAP Explorer
 
-![](/images/editor_uploads/2019-04-10-191718-umap_zoom_1547839236092.gif)
+![](/static/images/editor_uploads/2019-04-10-191718-umap_zoom_1547839236092.gif)
 
 ##### In [UMAP Explorer](https://grantcuster.github.io/umap-explorer/) I worked out the image rendering techniques used in the prototype.
 

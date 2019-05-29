@@ -15,7 +15,7 @@ Last week [Affectiva](https://go.affectiva.com/auto) announced that it had close
 
 But truthfully, there is no reason the technology being developed for this product (which is aimed at decreasing vehicular accidents) couldn’t be used in other settings. Perhaps someday this work could be extended to better understanding human emotion and interactions in public spaces, or human reaction to marketing billboards.
 
-![](/images/2019/04/Affectiva_Face_Image-1555448954465.jpg)
+![](/static/images/2019/04/Affectiva_Face_Image-1555448954465.jpg)
 ##### Image taken from Affectiva.com
 
 Automatically categorizing faces is a capability that has existed for some [time](https://ieeexplore.ieee.org/abstract/document/1467368). As facial image capture and categorization become more ubiquitous, we see many products that use this capability to make people’s lives easier (i.e., automatically tagging individuals in photos), and I’ve just highlighted a way in which it is likely to make our lives safer. As many stories of technological advancement go however, this story isn’t all rosy. In the same week as we saw increased investment in Affectiva’s research, we also saw how some Chinese start ups are using facial recognition algorithms to [racially profile minority groups](https://www.nytimes.com/2019/04/14/technology/china-surveillance-artificial-intelligence-racial-profiling.html).  Though these two applications are surely not relying on the same underlying models, architecture, or data, there is a sharing of information and acceleration of these techniques in research communities that enable both. 

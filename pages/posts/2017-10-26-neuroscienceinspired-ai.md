@@ -25,7 +25,7 @@ Rats - capable of strategic, reward-maximizing decisions - are unlikely to use s
 
 Stachenfeld and colleagues offer empirical evidence for the existence of successor representations in the rat's hippocampus *and* for the existence of a low-dimensional decomposition of successor representations in the [entorhinal cortex](https://en.wikipedia.org/wiki/Entorhinal_cortex) (the main interface between the hippocampus and neocortex). The authors show that these low-dimensional decompositions of the successor representations lend themselves to the discovery of subgoals, a hallmark of efficient planning and *the* foundation for hierarchical, increasingly abstract representations of tasks required for the generalization of knowledge to novel scenarios. 
 
-![](/images/2017/10/Screen_Shot_2017_10_09_at_9-1507556105313.33)
+![](/static/images/2017/10/Screen_Shot_2017_10_09_at_9-1507556105313.33)
 
 ##### Comparing model predictions (B) to reality (A) (i.e., the firing rates of cells recorded in the hippocampus of a rat). As the rat is trained to run in a preferred direction along a narrow track, initially symmetric place cells (red) begin to skew (blue) predicted in theory (B) and demonstrated in practice (A).
 

@@ -12,7 +12,7 @@ published: true
 We're excited to release the latest prototype and report from our machine
 intelligence R&D team: _Interpretability_.
 
-![FF06 Interpretability](/images/2017/08/ff06-animation.gif)
+![FF06 Interpretability](/static/images/2017/08/ff06-animation.gif)
 
 An interpretable algorithm is one whose decisions you can explain. You can
 better rely on such a model to be safe, accurate and useful.
@@ -34,7 +34,7 @@ is also one you, regulators, and society can more easily trust to be safe and
 nondiscriminatory. And an accurate model that is also interpretable can offer
 insights that can be used to change real-world outcomes for the better.
 
-![How does any of this work](/images/2017/08/howdoesanyofthiswork.png)
+![How does any of this work](/static/images/2017/08/howdoesanyofthiswork.png)
 
 There is a central tension, however, between accuracy and interpretability: the
 most accurate models are necessarily the hardest to understand. Our report
@@ -47,7 +47,7 @@ Our report explains how these techniques work at both a conceptual and
 technical level, and then discusses the commercial opportunities for their
 application.
 
-![Refractor](/images/2017/08/refractor.gif)
+![Refractor](/static/images/2017/08/refractor.gif)
 
 Our prototype, meanwhile, makes these possibilities concrete. We applied a
 model-agnostic tool called LIME to a black-box model, in order to better

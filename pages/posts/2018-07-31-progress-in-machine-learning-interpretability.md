@@ -22,7 +22,7 @@ churn risk.) And if a model is bad, LIME can help you understand why.
 This all sounds great, but we had to leave three issues unresolved in our
 report. Progress since last year has begun to address those concerns.
 
-![](/images/2018/07/lime-1530894622923.png)
+![](/static/images/2018/07/lime-1530894622923.png)
 
 ##### LIME explanations of sentiment classification. "Not" is a positive word in one example, but not in another. Image credit: [Anchors](https://homes.cs.washington.edu/~marcotcr/aaai18.pdf).
 
@@ -35,7 +35,7 @@ always indicates positive sentiment. This makes sense: the presence of "not" in
 how local is "local"? How similar to the original sentence does a new sentence
 need to be for LIME's explanation to apply?
 
-![](/images/2018/07/anchor-1530894675267.png)
+![](/static/images/2018/07/anchor-1530894675267.png)
 
 ##### Anchors explanations of sentiment classification. "Not" is a positive word in combination with "bad." Image credit: [Anchors](https://homes.cs.washington.edu/~marcotcr/aaai18.pdf).
 

@@ -16,7 +16,7 @@ has 100,000 ratings (1-5) that 943 users provided on 1682 movies.
 
 ## Matrix Factorization
 
-![Diagram of a simple recommendation system. It moves from Step 1: User, to Step 2: Connected Factors, to Step 3: Recommended items based on the connected factors.](/images/editor_uploads/2018-04-11-175944-02_07.png)
+![Diagram of a simple recommendation system. It moves from Step 1: User, to Step 2: Connected Factors, to Step 3: Recommended items based on the connected factors.](/static/images/editor_uploads/2018-04-11-175944-02_07.png)
 
 We first build a traditional recommendation system based on [matrix
 factorization](https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf). The

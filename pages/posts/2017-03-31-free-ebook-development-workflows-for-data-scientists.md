@@ -7,7 +7,7 @@ feature: false
 post_type: Announcement
 ---
 
-![Cover image from Development Workflows for Data Scientists eBook](/images/2017/03/development-workflows-1.jpg)
+![Cover image from Development Workflows for Data Scientists eBook](/static/images/2017/03/development-workflows-1.jpg)
 
 Working with over 30 enterprise clients, in industries like financial services, insurance, publishing, and retail, the Fast Forward Labs team has had ample opportunity to observe the challenges of doing data science in practice. By now, most organizations have moved beyond traditional waterfall software development process to adopt more risk-tolerant and agile methodologies. But directly applying agile to data science can create friction, as data products require more leeway for experimentation and exploration, as well as open communication between business, science, and engineering teams. 
 

@@ -9,7 +9,7 @@ post_type: Interview
 author: Kathryn
 author_link: https://twitter.com/humekathryn
 ---
-![](/images/2017/04/maze%20image.png)
+![](/static/images/2017/04/maze%20image.png)
 
 ##### In a modern twist on [Claude Shannon's Theseus](https://www.youtube.com/watch?v=vPKkXibQXGA), SigOpt explains optimization by [teaching a mouse](http://blog.sigopt.com/post/151388283013/sigopt-in-depth-building-a-better-mousetrap-via) to solve a randomly generated maze 
 
@@ -37,7 +37,7 @@ My co-founder, [Scott Clark](https://www.linkedin.com/in/sc932/), researched hyp
 
 SigOpt is an optimization platform for any machine learning pipeline: our API includes various optimization technologies for hyperparameters, feature selection, machine learning model selection, or even algorithmic trading strategies.The goal is to enable our users to have the best version of their model as possible. We recently published a [paper demonstrating](https://arxiv.org/abs/1603.09441) that our methods outperform other common approaches to this problem, like [random search and grid search](https://www.quora.com/What-is-the-difference-between-random-search-and-grid-search-for-hyperparameter-optimization). 
 
-![](/images/2017/04/optimization%20feedback%20loop.png)
+![](/static/images/2017/04/optimization%20feedback%20loop.png)
 
 **SigOpt focuses on Bayesian optimization ensembles. What does that mean and how do Bayesian techniques support parameter optimization?**
 
@@ -57,7 +57,7 @@ It’s true that models are built and optimized for a given setting, and as your
 
 I don’t think feature engineering will be automated any time in the near future. Hyperparameter optimization is another example of [letting machines do what machines do best](http://blog.fastforwardlabs.com/2016/05/25/human-machine-algorithms-interview-with-eric.html), and enabling humans to focus on more creative and critical thinking activities. Our brains aren’t made to optimize 20-dimensional functions in our head, but they are made to explore aspects of a data set to frame a problem worth solving. I’d advise aspiring data scientists to make sure they understand the full machine learning pipeline, from collection and processing, through model building, through engineering and shipping the model. You can’t be satisfied with just part of the process. Production machine learning requires a different skill set than theoretical data science. There’s certain ways of thinking and behaving you can only learn by doing, by getting your hands dirty on the job, by working with real, messy data and making a model scale on real infrastructure. 
 
-![](/images/2017/04/tunable%20parameters%20deep%20learning.png)
+![](/static/images/2017/04/tunable%20parameters%20deep%20learning.png)
 
 ##### Optimization can be a powerful tool for complex neural network architecture
 

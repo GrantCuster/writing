@@ -12,19 +12,19 @@ author_link: https://twitter.com/grantcuster
 
 ## Prototype Overview: Price Mode
 
-![Screenshot of Probabilistic Programming in price mode, showing all five boroughs of NYC.](/images/2017/05/price_mode.png)
+![Screenshot of Probabilistic Programming in price mode, showing all five boroughs of NYC.](/static/images/2017/05/price_mode.png)
 
 ##### [In price mode](http://fastforwardlabs.github.io/pre/#/price/50-1000000/2016/all_boroughs/all_neighborhoods), Probabilistic Real Estate shows the median price for each neighborhood.
 
 In price mode, the prototype's most conventional view, the strength of the orange shading is determined by the median price for each neighborhood. This creates a heat map of relative neighborhood real estate prices. The most expensive neighborhoods are clustered in Manhattan, with nearby Brooklyn and Queens neighborhoods a close second. The map view is complemented by the sidebar, which provides a list of the neighborhoods ordered by price. Use the sidebar to quickly spot things like the most expensive neighborhood (the Upper East Side).
 
-![Animated GIF showing the prototype in price mode with the year being cycled through from 2010 to 2018.](/images/2017/05/price_mode.gif)
+![Animated GIF showing the prototype in price mode with the year being cycled through from 2010 to 2018.](/static/images/2017/05/price_mode.gif)
 
 ##### Changing years shows the change in median prices over time.
 
 Use the year selector in the bottom right corner to cycle from the past (2010) to the predicted future (2018). You can see the dark orange of high median prices spread out from Manhattan further and further into the surrounding boroughs as the years progress.
 
-![Neighborhood detail view of Prospect Heights neighborhood in price mode.](/images/2017/05/price_mode_prospect_heights.png)
+![Neighborhood detail view of Prospect Heights neighborhood in price mode.](/static/images/2017/05/price_mode_prospect_heights.png)
 
 ##### [The neighborhood detail view](http://fastforwardlabs.github.io/pre/#/price/50-1000000/2016/all_boroughs/prospect_heights) shows the probability distribution for the selected neighborhood.
 
@@ -32,13 +32,13 @@ Clicking on a neighborhood reveals a more detailed view. A map of hexagonal grou
 
 ## Probabilistic Possibilities: Probability Mode
 
-![Neighborhood detail view of Prospect Heights neighborhood in probability mode.](/images/2017/05/probability_mode_prospect_heights.png)
+![Neighborhood detail view of Prospect Heights neighborhood in probability mode.](/static/images/2017/05/probability_mode_prospect_heights.png)
 
 ##### In probability mode, [the neighborhood detail view](http://fastforwardlabs.github.io/pre/#/probability/2000000-50/2016/all_boroughs/prospect_heights?_k=w9o2m5) shows how the selected price impacts the probability you would be able to afford a property in that neighborhood.
 
 The possibilities of utilizing the entire probability distribution are further explored in probability mode, the prototype's other, less conventional, mode. Price mode gives you a sense of real estate price dynamics across the city. Probability mode is more focused. It allows you to choose an amount of money and then uses each neighborhood's probability distribution to show your chances of being able to afford a property within that neighborhood.
 
-![Animated GIF of changing the price while in detail view of Prospect Heights in probability mode.](/images/2017/05/prospect_heights.gif)
+![Animated GIF of changing the price while in detail view of Prospect Heights in probability mode.](/static/images/2017/05/prospect_heights.gif)
 
 ##### When you change the price, the probability is recalculated using each neighborhood's probability distribution.
 
@@ -48,7 +48,7 @@ While we chose to frame the neighborhood probability as how likely it is you wou
 
 Comparing the shapes of the probability distributions across different neighborhoods also provides valuable information. A flatter distribution can indicate both a wider variety of prices in that neighborhood and a greater degree of uncertainty.
 
-![Overview of all neighborhoods in probability mode.](/images/2017/05/probability_mode.png)
+![Overview of all neighborhoods in probability mode.](/static/images/2017/05/probability_mode.png)
 
 ##### [In probability mode](http://fastforwardlabs.github.io/pre/#/probability/1000000-50/2016/all_boroughs/all_neighborhoods), the probability for each neighborhood is calculated using that neighborhood's probability distribution.
 

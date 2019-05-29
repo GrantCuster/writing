@@ -49,7 +49,7 @@ detail.
 If we are to trust a machine learning model to perform accurately, and to be
 safe and non-discriminatory, it is important that we understand it.
 
-![Asthma and pneumonia](/images/2017/08/asthma.png)
+![Asthma and pneumonia](/static/images/2017/08/asthma.png)
 
 A [paper by Rich Caruana and
 colleagues](http://people.dbmi.columbia.edu/noemie/papers/15kdd.pdf) gives a
@@ -73,7 +73,7 @@ In many industries and jurisdictions, the application of algorithms is
 constrained by legal regulations. Even when it's not, it should be constrained
 by ethical concerns. 
 
-![Asthma and pneumonia](/images/2017/08/regulations.png)
+![Asthma and pneumonia](/static/images/2017/08/regulations.png)
 
 It is extremely difficult to satisfy regulations or ethical concerns if the
 model is uninterpretable. For example, the US Fair Credit Reporting Act
@@ -94,7 +94,7 @@ the user to identify both global weaknesses in the product, and individual
 complaints. Most excitingly, it raises the possibility of intervening to change
 outcomes.
 
-![Explaining predictions](/images/2017/08/actions.png)
+![Explaining predictions](/static/images/2017/08/actions.png)
 
 Refractor is built on top of [LIME](https://github.com/marcotcr/lime), a
 model-agnostic tool that can be applied to a trained black-box model, so data

@@ -20,7 +20,7 @@ Learning with limited labeled data, then, is a machine learning capability that 
 
 Active learning is one such approach. It takes advantage of collaboration between humans and machines to smartly pick a small subset of data to be labeled. A machine learning model is then built using this small subset of data.
 
-![](/images/editor_uploads/2019-03-21-201701-AL_loop.png)
+![](/static/images/editor_uploads/2019-03-21-201701-AL_loop.png)
 
 The latest report and prototype from Cloudera Fast Forward Labs explores active learning and its implications. While not a new framework, active learning has recently been adapted to deep learning applications, where the labeled data requirement is even more stringent. Along with the availability of tooling and a maturing supporting ecosystem, active learning is now newly exciting!
 

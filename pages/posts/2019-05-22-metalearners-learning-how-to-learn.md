@@ -24,7 +24,7 @@ thousands of different tasks. Learning then, happens at two levels. The first
 level focuses on quick acquisition of knowledge within each task. The second
 level slowly pulls and digests information across all tasks.
 
-![Training meta-learners is a two-step process.](/images/2019/05/fig2-1558038262452.png)
+![Training meta-learners is a two-step process.](/static/images/2019/05/fig2-1558038262452.png)
 
 Let's use a concrete example: our goal is to train a model to classify images
 into four classes (cat, bear, fish. and bird), where each class only has a small
@@ -44,7 +44,7 @@ meta-learner takes many many episodes and shows them to the learner,
 episode by episode. The learner's job is to learn to classify the images in the
 target set correctly, episode by episode.
 
-![Meta-learning datasets](/images/2019/05/fig1-1558038180094.png)
+![Meta-learning datasets](/static/images/2019/05/fig1-1558038180094.png)
 
 Papers in this field often use the notation of _k_ and _N_, where _k_ represents the
 number of opportunities the fast learner is given to learn, and _N_ represents the number of
@@ -127,7 +127,7 @@ number of new data. This implies that the initial set of network parameters
 should be sensitive to changes in the new tasks; small changes in the
 parameters will result in large improvements on the loss function of any task.
 
-![The optimal initial set of network parameters is sensitive to changes in new tasks.](/images/2019/05/sensitivity-1558127068935.png)
+![The optimal initial set of network parameters is sensitive to changes in new tasks.](/static/images/2019/05/sensitivity-1558127068935.png)
 
 The general idea behind this approach is the following. We start with a model
 and its _initial set of parameters_. We train this model on a new task using

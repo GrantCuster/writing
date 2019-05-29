@@ -33,7 +33,7 @@ But _abstractive_ summarization is harder still. Not only must you identify the
 salient ideas, but you must also generate new text that expresses those ideas
 concisely.
 
-![](/images/editor_uploads/2018-10-19-160814-pointer_gen.png)
+![](/static/images/editor_uploads/2018-10-19-160814-pointer_gen.png)
 ##### Pointer network for summarization. Credit: [Abigail See and collaborators](http://www.abigailsee.com/2017/04/16/taming-rnns-for-better-summarization.html)
 
 There has been considerable progress along these lines. The current state of
@@ -55,7 +55,7 @@ inevitable breakthroughs in a year or two.
 
 In the meantime, we promised good news!
 
-![](/images/editor_uploads/2018-10-19-160922-b11i8uw.png)
+![](/static/images/editor_uploads/2018-10-19-160922-b11i8uw.png)
 ##### Extractive summarization with reinforcement learning. Credit: [Shashi Narayan and collaborators](https://arxiv.org/abs/1802.08636)
 
 The good news is a couple of really nice papers that make concrete improvements

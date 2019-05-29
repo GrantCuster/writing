@@ -15,7 +15,7 @@ The crew awoke to Ship's message:
 
 "PLANET OF INTEREST APPROACHING -- ESTIMATED ARRIVAL FOUR HOURS -- BEGIN PREPARATION FOR ON-PLANET EXPLORATION."
 
-![](/images/2017/09/5-07.png)
+![](/static/images/2017/09/5-07.png)
 
 ##### Woken from hibernation.
 
@@ -29,7 +29,7 @@ Rue glanced at the monitor -- they'd been out for seven months this time.
 
 Taera stood in the middle of hundreds of egg-like structures. They were each about a meter tall, with a covering that looked like a cross between leather and metal. They seemed to pulse slightly. A low humming suffused the cave.
 
-![](/images/2017/09/5-08.png)
+![](/static/images/2017/09/5-08.png)
 
 ##### Taera in the cave.
 
@@ -64,7 +64,7 @@ Taera's death meant Rue was now acting captain, and therefore had access to the 
 "That's just a number and we both know it, Ship. Show me the success predictions for your last five missions."
 
 
-![](/images/2017/09/5-09.png)
+![](/static/images/2017/09/5-09.png)
 
 ##### Mission success predictions.
 
@@ -84,7 +84,7 @@ The cells in the columns shifted into red and blue highlights. For the profit co
 
 "Ship," Rue said thoughtfully, "probability of crew survival is a feature in your mission success prediction, isn't it? Add that column to the table."
 
-![](/images/2017/09/5-10.png)
+![](/static/images/2017/09/5-10.png)
 
 ##### Feature importance for mission success predictions.
 
@@ -100,7 +100,7 @@ A column titled "Crew Survival" was added to the table. The values varied betwee
 
 The lights dimmed briefly in the control room. As they returned to full power an alarm started, and Ship's voice returned with a new sense of urgency. The adjusted feature importances and success prediction for the current mission appeared on the wall.
 
-![](/images/2017/09/5-11.png)
+![](/static/images/2017/09/5-11.png)
 
 ##### The recalculated success prediction and a recommendation for action.
 

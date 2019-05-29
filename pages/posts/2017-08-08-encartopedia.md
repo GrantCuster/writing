@@ -8,13 +8,13 @@ author_link: "https://sepans.com/sp"
 feature: true
 ---
 
-![Tabula Rogeriana](/images/2017/08/enc-tabula.jpg)
+![Tabula Rogeriana](/static/images/2017/08/enc-tabula.jpg)
 
 ##### The [Tabula Rogeriana](https://en.wikipedia.org/wiki/Tabula_Rogeriana), a world map created by Muhammad al-Idrisi through traveler interviews in 1154.
 
 The Wikipedia corpus is one of the favorite datasets of the machine learning community. It is often used for experimenting, benchmarking and providing how-to examples. These experiments are generally presented separate from the Wikipedia user interface, however, which has remained true to the early hypertext vision of the web. For this experiment, [_Encartopedia_](http://encartopedia.fastforwardlabs.com), I used machine learning techniques and visualization to explore new navigation possibilities for Wikipedia while preserving its hypertextual feel. With Encartopedia, you can map the path of any [journey](https://xkcd.com/214/) through Wikipedia, or use the visualization to jump to articles near and far.
 
-![Encartopedia](/images/2017/08/enc-ui.png)
+![Encartopedia](/static/images/2017/08/enc-ui.png)
 
 ##### [Encartopedia](http://encartopedia.fastforwardlabs.com) features the conventional Wikipedia interface in the left panel, and a mapping of articles based on similarity on the right.
 
@@ -30,11 +30,11 @@ The mapping of the top 100,000 articles makes up the base visualization in the r
 In order to color code and categorize the topic clusters in the article map, I applied the [DBSCAN](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html) clustering algorithm over the result of article coordinates. Unlike many other clustering algorithms DBSCAN doesn't create evenly sized clusters, making it a good fit for the map clusters (after some parameter tuning). DBSCAN doesn't assign categories to all the points but it is easy to assign those points to a cluster in the second pass using [Nearest Neighbors](http://scikit-learn.org/stable/modules/neighbors.html). To name the clusters I scraped the Wikipedia categories assigned to those articles and found the top category shared between them.
 
 
-![Coloring the map](/images/2017/08/enc-color.png)
+![Coloring the map](/static/images/2017/08/enc-color.png)
 
 ##### Color coding points by clustering using DBSCAN
 
-![Voronoi overlay of the map](/images/2017/08/enc-voro.png)
+![Voronoi overlay of the map](/static/images/2017/08/enc-voro.png)
 
 ##### Overlaying the clusters with a voronoi diagram for mouseover interactions.
 

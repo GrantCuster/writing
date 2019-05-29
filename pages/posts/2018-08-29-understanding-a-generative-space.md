@@ -11,7 +11,7 @@ post_type: Newsletter
 
 [Kate Compton](http://www.galaxykate.com/), maker of many interesting things, recently tweeted a diagram from her work-in-progress dissertation zine. The illustration breaks down how we interact with a procedural generator, which can be anything from a photo filter to a character creation tool.
 
-![A diagram. The top half shows the expectation space, and the bottom half the algorithmic space. The process is circular. You start with a mental model, make a hypothesis about what a change will do, then encode the change. In the algorithmic space the model is modified by the change, the code reinterprets the model and displays the results of the change. The user then evaluates the artifact and updates their mental model of how the algorithmic space works. The process restarts.](/images/2018/08/compton_generator-1533226496607.jpg)
+![A diagram. The top half shows the expectation space, and the bottom half the algorithmic space. The process is circular. You start with a mental model, make a hypothesis about what a change will do, then encode the change. In the algorithmic space the model is modified by the change, the code reinterprets the model and displays the results of the change. The user then evaluates the artifact and updates their mental model of how the algorithmic space works. The process restarts.](/static/images/2018/08/compton_generator-1533226496607.jpg)
 
 ##### ["How we understand a generative space" by Kate Compton](https://twitter.com/GalaxyKate/status/1012788721379303424). Understanding a generative space requires moving between the digital space (where the code is and the results are displayed) and the mental space (where we evaluate the display and make guesses about how it works).
 

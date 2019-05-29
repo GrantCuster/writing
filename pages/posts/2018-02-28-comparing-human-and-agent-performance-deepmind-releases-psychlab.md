@@ -13,7 +13,7 @@ The research findings point out some potentially non-obvious ways in which the m
 
 Interestingly, the agent failed to produce many well-known effects in humans. The pattern of differences between humans and the agent isn’t complete enough yet to make any big theoretical claims, but it appears that the agent has some deficits in integrating information over time, yet is spared the deficit typically seen in humans when asked to search for an object composed of the conjunction of two features (e.g., orientation and color). As these patterns continue to emerge, they will inform how new models are developed and will more clearly delineate the fundamental differences between how agents and humans perform cognitive tasks.
 
-![](/images/2018/02/PsychLabs_DeepMind_figure-1517949199677.png)
+![](/static/images/2018/02/PsychLabs_DeepMind_figure-1517949199677.png)
 ##### Figure from [the PsychLab paper](https://arxiv.org/abs/1801.08116)
 
 Most of the machine learning models in _production_ today, as opposed those used for more pure research, are aimed at automating tasks typically performed by humans or augmenting already-existent human capabilities. Currently, many practitioners make tuning decisions to increase the efficiency of machine learning models, but may be inadvertently making trade-offs that affect how well their models actually reliably replicate or augment human abilities. This collaboration between machine learning and cognitive science/neuroscience research, as it evolves, will bring to light new potential approaches to decrease that error. 

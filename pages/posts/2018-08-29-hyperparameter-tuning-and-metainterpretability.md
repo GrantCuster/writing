@@ -44,7 +44,7 @@ recently, [sequential
 approaches](https://papers.nips.cc/paper/4443-algorithms-for-hyper-parameter-optimization.pdf)
 have shown great promise).
 
-![](/images/2018/07/Screen_Shot_2018_07_31_at_11_01_41_AM-1533049344437.png)
+![](/static/images/2018/07/Screen_Shot_2018_07_31_at_11_01_41_AM-1533049344437.png)
 ##### Grid (left) and random (right) search for nine experiments. With random search, all nine trials explore distinct values of the hyperparameters. Random search is more efficient. (Picture taken from Bergstra and Bengio, 2012)
 
 If only a few hyperparameter values really matter, for a given model on a task

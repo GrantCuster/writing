@@ -14,7 +14,7 @@ interview_with_link: https://twitter.com/astrobiased
 
 I started out studying philosophy as an undergrad in Utrecht, with a desire to understand the basic roots of human knowledge. Taking courses in the history and philosophy of science, I discovered Karl Popper ([known for his theory of falsifiability](https://plato.stanford.edu/entries/popper/) in scientific discourse) and Thomas Kuhn ([known for his work on scientific revolutions](https://plato.stanford.edu/entries/thomas-kuhn/)), who inspired me to shift into science. The transition was tough, as math programs are strong in the Netherlands, so I had to play catch up and teach myself partial differential equations. That catch up turned into a great benefit where I fell in love in maths as well (double majored in astro and maths). But it was worth it, and I ended up focusing in astrophysics. My thirst to get my hands dirty observing the cosmos led me to Hawaii, which houses[ 13 large telescopes on Maunakea](http://www.imiloahawaii.org/61/astronomical-observatories), one of the highest mountains in the world! It was crazy up there. There were nights with 10 -14 feet snow blizzards, and we had to brave the elements to put coolant in &nbsp;the telescopes. Thinking back to it always reminds me of the[ scene in The Empire Strikes Back](https://www.youtube.com/watch?v=CXmp1hLK0tY) where Luke Skywalker falls over sideways in the blizzard. &nbsp;At any rate, working with telescopes is intense – it’s being on the edge of physical human capability.
 
-![X-ray image of a pulsar](/images/2017/04/b1509_w11.jpg)
+![X-ray image of a pulsar](/static/images/2017/04/b1509_w11.jpg)
 
 ##### An [X-ray image of a pulsar](http://chandra.harvard.edu/photo/2009/b1509/) Eli made while working at the Chandra Space Telescope.
 
@@ -30,7 +30,7 @@ I had already spent years developing technical data science skills, so considere
 
 It’s fact: Netflix is incredibly data driven. Many people are shocked when they join the company because we don’t make any product changes without first analyzing data. We have multiple departments that use data in different ways. The platform team focuses on infrastructure and tools, Data Engineering &amp; Analytics focuses on data engineering, ETL, and analytics, which offers self-service tools to business teams so they can make decisions autonomously. The Science and Algorithms team focuses on predictive modeling, algorithm research/prototyping, and experimentation (A/B testing). The Product Analytics team has developed an [in-house A/B testing platform, Ignite](http://techblog.netflix.com/2016/04/its-all-about-testing-netflix.html), to get the right insights in front of the right people and provide easy-to-consume visualizations so users can view outputs on daily basis. I’m just mentioning a subset of how many teams are involved in the data space, so there’s a lot more!
 
-![Slide reading "Maximizing value of data product" with three items: self-service tools, analytics, a/b testing](/images/2017/04/bressert-slide.png)
+![Slide reading "Maximizing value of data product" with three items: self-service tools, analytics, a/b testing](/static/images/2017/04/bressert-slide.png)
 
 ##### Key components for maximizing the value of a data product. From Eli’s talk [Data Over Matter](https://www.youtube.com/watch?v=pFly0N-hjYo).
 
@@ -42,7 +42,7 @@ One example is customer retention. We track behaviors of customers on our site a
 
 Data teams at Netflix are organized to make sure we’re very tightly aligned with the company at large. This keeps us efficient (so we don’t get lost on dead end projects) and helps us hone judgment on where to focus our attention and what kinds of questions to ask about our data. Many data science and engineering friends at other companies have told me that business people view them as holding purely technical, rather than strategic roles. Netflix is such a successful data company precisely because data has been built into the culture and operations from day one, and leadership exposes the data team to the big picture, strategic questions. We’ll then orient our work to start exploring questions that are relevant to Netflix in the near and long term future, running some lightweight experiments and even deep analyses to draft memos for the leadership team communicating our early conclusions. These memos can be immensely impactful as a vehicle to get leadership on board to make changes suggested by our analyses. It’s all about scaling multiple levels of communication: memos to tell the high-level, big-picture story, a dashboard to provide additional insights, and the ability for users to dig deeper into the analytics if they like to probe and question the results. 
 
-![Slide reading "Netflix Culture: Freedom and Responsibility"](/images/2017/04/bressert-slide-culture.png)
+![Slide reading "Netflix Culture: Freedom and Responsibility"](/static/images/2017/04/bressert-slide-culture.png)
 
 ##### Part of the Netflix culture is making sure people feel invested in their work and clear in their responsibilities. From Eli’s talk [Data Over Matter](https://www.youtube.com/watch?v=pFly0N-hjYo).
 

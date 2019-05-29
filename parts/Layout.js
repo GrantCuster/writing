@@ -53,8 +53,6 @@ export class PostLayout extends React.Component {
     let components = {
       img: props => {
         let address = props.src
-        address.replace('{{ site.github.url }}', '')
-        address = address.startsWith('http') ? address : `/static${address}`
         return (
           <div
             style={{

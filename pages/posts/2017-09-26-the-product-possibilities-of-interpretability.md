@@ -135,7 +135,7 @@ a customer service representative concerned with convincing a user to stay, why
 would you need to know about features that, according to the model, have no
 discernible effect on the churn prediction?
 
-![A screenshot of an early version of the Refractor prototype. Only the top three features are shown.](/images/2017/09/4b-ps-3.png)
+![A screenshot of an early version of the Refractor prototype. Only the top three features are shown.](/static/images/2017/09/4b-ps-3.png)
 
 ##### Early interface experiments displayed only the top three features for each customer. The view was focused but provided the user with less context to understand the model.
 

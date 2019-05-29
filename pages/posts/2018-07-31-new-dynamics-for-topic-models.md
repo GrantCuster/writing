@@ -19,7 +19,7 @@ Of course, the inference process is considerably more difficult than the linear 
 
 With [Dynamic Topic Models](https://mimno.infosci.cornell.edu/info6150/readings/dynamic_topic_models.pdf) (2006), David Blei and John Lafferty revisited the LDA process to tackle the problem of topics changing over time. While the original LDA model ignores any ordering of the documents in the corpus, dynamic topic models will take their time stamps into account. Blei and Lafferty did so by allowing the topic parameters to wander over time, specifically by imposing upon them a [Wiener Process](https://en.wikipedia.org/wiki/Wiener_process), also known as Brownian Motion. The results are highly compelling: in their [paper](https://mimno.infosci.cornell.edu/info6150/readings/dynamic_topic_models.pdf), they analyze over a century of _Science_ magazine articles, and automatically extract a small history of neuroscience and atomic physics. (Blei happens to be an excellent lecturer, and those looking for his talks online will find a more [comfortable introduction](https://www.youtube.com/watch?v=FkckgwMHP2s) to ideas in topic modeling than is provided by the technical papers.)
 
-![](/images/2018/07/f5-1531838383022.jpg)
+![](/static/images/2018/07/f5-1531838383022.jpg)
 
 ##### Time Evolution of two topics within the Science corpus. From: [D. Blei, Probabilistic Topic Models, Communications of the ACM (2012)](https://deliveryimages.acm.org/10.1145/2140000/2133826/figs/f5.jpg)
 

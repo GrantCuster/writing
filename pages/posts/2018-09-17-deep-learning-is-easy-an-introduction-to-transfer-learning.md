@@ -43,7 +43,7 @@ than traditional machine learning.
 Machine learning is a way for machines to automatically learn functions which
 assign predictions or labels to numerical inputs, i.e. data.
 
-![](/images/editor_uploads/2018-09-18-165643-ml_function_1.png)
+![](/static/images/editor_uploads/2018-09-18-165643-ml_function_1.png)
 
 The difficult part here is determining exactly how the function produces the
 output from the provided input. Without any restrictions on the function, the
@@ -52,7 +52,7 @@ we usually impose some type of structure on the function - based on the type of
 problem we’re solving, domain expertise, or simply trial and error. That
 structure defines a type of machine learning model.
 
-![](/images/editor_uploads/2018-09-18-165658-ml_function_2.png)
+![](/static/images/editor_uploads/2018-09-18-165658-ml_function_2.png)
 
 In theory, there are an infinity of possible structures, but in practice most
 machine learning use cases can be solved by applying one of only a handful of
@@ -60,7 +60,7 @@ structures: linear models, ensembles of trees, and support vector machines make
 up a solid core. The data scientist’s job is then to choose the correct
 structure from this small set of possible structures.
 
-![](/images/editor_uploads/2018-09-18-170135-ml_function_3.png)
+![](/static/images/editor_uploads/2018-09-18-170135-ml_function_3.png)
 
 These models are available as black box objects from a variety of mature
 machine learning libraries, and can be trained in just a few lines of code. For
@@ -87,7 +87,7 @@ can be thought of as basic, fundamental data transformations. This means that
 we need to open up the black box when applying deep learning, instead of
 treating it as fixed by the algorithm.
 
-![](/images/editor_uploads/2018-09-18-170159-ml_function_4.png)
+![](/static/images/editor_uploads/2018-09-18-170159-ml_function_4.png)
 
 This allows more powerful models to be built, but it also adds an entirely new
 dimension to the model building process. Composing these transformations
@@ -173,7 +173,7 @@ Most machine learning tasks start with zero knowledge, meaning that the
 structure and parameters of the model begins as random guesses. This is what we
 mean when we say a model is learned _from scratch_.
 
-![](/images/editor_uploads/2018-09-18-170232-robot_share_1.png)
+![](/static/images/editor_uploads/2018-09-18-170232-robot_share_1.png)
 
 ##### A cat detector model trained from scratch starts by guessing. It gradually learns what a cat is by aggregating common patterns across the many different cats it has seen.
 
@@ -181,14 +181,14 @@ In this situation, everything the model learns comes from the data that you
 show it. But is this the only way of solving a problem? In some cases, it might
 seem like it.
 
-![](/images/editor_uploads/2018-09-18-170302-robot_share_2.png)
+![](/static/images/editor_uploads/2018-09-18-170302-robot_share_2.png)
 
 ##### A cat detector model is likely useless in unrelated applications, like fraud detection. It only knows how to make sense of cat pictures, not credit card transactions.
 
 But in other cases, it seems like we should be able to share information between
 tasks.
 
-![](/images/editor_uploads/2018-09-18-170328-robot_share_3.png)
+![](/static/images/editor_uploads/2018-09-18-170328-robot_share_3.png)
 
 ##### A cat detector _is helpful_ in related tasks, like cat facial location. The detector should already know how to detect whiskers, noses, and eyes - all things that are useful in locating the cat's face.
 
@@ -254,7 +254,7 @@ don’t need to be an expert yourself to obtain expert level results. Consider
 the popular image classification model
 [Resnet-50](https://arxiv.org/abs/1512.03385).
 
-![](/images/editor_uploads/2018-09-18-181622-resnet50.png)
+![](/static/images/editor_uploads/2018-09-18-181622-resnet50.png)
 
 How was that particular architecture chosen? It is the result of years of
 research and experimentation from various deep learning experts. Within this

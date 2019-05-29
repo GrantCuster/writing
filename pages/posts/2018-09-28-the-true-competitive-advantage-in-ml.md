@@ -15,7 +15,7 @@ However, as is true with most things in data science, one size does not fit all!
 
 Of course, the answer is to create a team full of highly competent people with creative, technical and product skills, who are all passionate about AI/ML, right?  Easier said than done!
 
-![](/images/editor_uploads/2018-10-30-212122-rawpixel_1072884_unsplash.jpg)
+![](/static/images/editor_uploads/2018-10-30-212122-rawpixel_1072884_unsplash.jpg)
 ##### photo by [rawpixel](https://unsplash.com/photos/0g-gG83IBQE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](http://unsplash.com)
 
 It's becoming more and more clear that the true competitive advantage in AI/ML isn't some killer algorithm, or even a cutting-edge technology platform (complete with robust experimentation capabilities and slick visualizations); it's the ability to build, engage, and retain an awesome team.  

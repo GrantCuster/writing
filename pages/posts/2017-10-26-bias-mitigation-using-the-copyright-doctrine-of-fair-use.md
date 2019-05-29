@@ -11,7 +11,7 @@ Pirating a copyrighted song, video, or e-book to listen to the song, watch the m
 
 NYU Teaching and Research Fellow Amanda Levendowski proposes [a legal approach to reducing bias in machine learning models](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3024938). Biased data leads to [biased models](https://arxiv.org/abs/1607.06520), she argues, and use of existing public domain data, most of which is over 70 years old, introduces biases from a time before, e.g., the civil rights movement or the feminist movement of the mid-20th century. The copyright doctrine of *fair use* can reduce bias by allowing wider access to copyrighted training data - an interesting and novel proposal.
 
-![](/images/2017/10/Screen_Shot_2017_10_10_at_10-1507644713217.11)
+![](/static/images/2017/10/Screen_Shot_2017_10_10_at_10-1507644713217.11)
 
 ##### Word embeddings (numerical representations of language) are biased. While words like "he" vs. "she" or "wife" vs. "husband" are gendered words and should fall on opposite ends on the "gender axis" (x). Words like "brilliant" should not (image taken from [Bolukbasi et al.](https://arxiv.org/pdf/1607.06520.pdf)). 
 
@@ -23,7 +23,7 @@ Levendowski argues: (1) use of copyrighted materials to train machine learning m
 
 Levendowski steps through each factor in the legal test for fair use and makes good arguments for why machine learning model training should be fair use.  The strongest of these points is that the use is transformative, i.e., it is not used for its primary purpose. For example, a copyrighted music recording was made to be sold and listened to by humans, perhaps over the radio or on a smartphone. Using that same recording to train a model would be a very different use, and one that advances our understanding of music. Courts have held that this weighs in favor of fair use. Also notable is the argument that the copyright owners are not harmed by the use. Using the recording in the example above does not prevent the copyright holder from selling or licensing the recording.
 
-![](/images/2017/10/1_rUzuHpOqB8q1cRjsl65rmw-1507556618126.jpeg)
+![](/static/images/2017/10/1_rUzuHpOqB8q1cRjsl65rmw-1507556618126.jpeg)
 
 ##### A neural net model trained on romance novels generates [captions for images](https://medium.com/@samim/generating-stories-about-images-d163ba41e4ed); *fair use* might remove bias, but it surely entertains (we recommend you check out the authors' alternate model trained on Taylor Swift lyrics).
 

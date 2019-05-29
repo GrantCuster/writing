@@ -54,7 +54,7 @@ are similar to those faced in distributed analytics clusters running Hadoop or
 Spark. To do data analytics in these environments, we have the map-reduce
 computing paradigm, which parallelizes work by splitting it into small parcels.
 
-![](/images/2018/01/serverless_pywren-1515449109658.png)
+![](/static/images/2018/01/serverless_pywren-1515449109658.png)
 
 ##### PyWren's computational power can grow to many TFLOPS as the number of workers (inexpensive AWS Lambda instances in this case) increases. Image credit: [Occupy the Cloud: Distributed Computing for the 99%](https://arxiv.org/abs/1702.04024) 
 

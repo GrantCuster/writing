@@ -18,7 +18,7 @@ Active learning makes it possible to build applications using a small set of lab
 
 Active learning takes advantage of the collaboration between humans and machines to smartly select a small subset of datapoints for which to obtain labels. It is an iterative process, and ideally access is available to some initial labels to start. These initial labels allow a human to build a baseline machine learning model, and use it to predict outputs for all the unlabeled datapoints. The model then looks through all its predictions, flags the one with which it has the most difficulty, and requests a label for it. A human steps in to provide the label, and the newly labeled data is combined with the initial labeled data to improve the model. Model performance is recorded, and the process repeats.
 
-![](/images/2019/03/fig_15-1553784931001.png)
+![](/static/images/2019/03/fig_15-1553784931001.png)
 
 ##### _The active learning loop_
 
@@ -42,7 +42,7 @@ to picking a card from the top of a shuffled deck, then reshuffling the deck wit
 previously chosen card and repeating the action. Because the learner does not help with the
 selection process, random sampling is also known as _passive learning_.
 
-![](/images/2019/03/fig_19-1553784863589.png)
+![](/static/images/2019/03/fig_19-1553784863589.png)
 
 ##### _Random sampling is like picking the top card from a shuffled deck_
 
@@ -70,7 +70,7 @@ learning. Our report explores some of them in detail.
 
 Because active learning is an iterative process, when should we stop? Each label comes with a cost of acquisition - the amount of money and time it takes to acquire the label. With this cost in mind, the stopping criteria can either be static or dynamic. A static criteria sets a budget limit or performance target in the beginning. A dynamic criteria looks at the incremental gain in performance over each round of active learning and stops when it is no longer worthwhile to acquire more labels (the incremental performance plateaus).
 
-![](/images/2019/03/fig_9-1553784742213.png)
+![](/static/images/2019/03/fig_9-1553784742213.png)
 
 ##### _Stopping criteria for active learning_
 
@@ -153,7 +153,7 @@ for creating labels, and a platform for transferring the labeled datapoints.
 
 ## Active Learner
 
-![A GIF showing the Active Learner prototype](/images/2019/04/clip0-1554230510947.gif)
+![A GIF showing the Active Learner prototype](/static/images/2019/04/clip0-1554230510947.gif)
 
 ##### We built the [Active Learner prototype](https://activelearner.fastforwardlabs.com/) to accompany this report.
 

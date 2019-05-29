@@ -44,7 +44,7 @@ So, AlphaGo Zero (like AlphaGo) is a *very clever combination* of *known compone
 
 The *real awesomeness of AlphaGo Zero*, however, is the reduction in computational complexity and required compute power for training due to algorithmic advances and (as so often) hardware improvements. After just three days of self-play training on 4 TPUs, AlphaGo Zero defeated AlphaGo. (For comparison, the first generation of the AlphaGo lineage needed 176 GPUs.) Compute power can be a real bottleneck; the reduction in compute power is impressive.
 
-![](/images/2017/10/AlphaGo20Efficiency_width_1500-1508465583728.png)
+![](/static/images/2017/10/AlphaGo20Efficiency_width_1500-1508465583728.png)
 
 ##### Image Credit: [Google DeepMind](https://deepmind.com/blog/alphago-zero-learning-scratch/).
 
@@ -72,7 +72,7 @@ AlphaGo Zero, welcome!
 ## Parting thoughts
 The DeepMind researchers characterize Go (in their paper introducing AlphaGo Zero) as belonging to one of the "most challenging domains in terms of human intellect." While convenient, a solution is all the more impressive when the problem is extremely difficult. Aren't there more important problems for us to solve, more challenging problems?
 
-![](/images/2017/10/gallery_6-1508465225174.jpg)
+![](/static/images/2017/10/gallery_6-1508465225174.jpg)
 
 ##### The number of possible configurations on the Go board is greater than the number of atoms in the universe, according to the [AlphaGo Movie](https://www.alphagomovie.com/), but complexity is more than combinatorics.
 

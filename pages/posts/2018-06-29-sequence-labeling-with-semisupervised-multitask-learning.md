@@ -49,7 +49,7 @@ version. The hidden representation from the forward-moving LSTM is used to
 predict the next word; the hidden representation from the backward-moving LSTM
 is used to predict the previous word.
 
-![Architecture of the sequence labeling model with secondary task of predicting surrounding words. The input tokens are shown at the bottom; the expected output labels are at the top.](/images/2018/06/Screen_Shot_2018_06_14_at_4_27_13_PM-1529008110241.png)
+![Architecture of the sequence labeling model with secondary task of predicting surrounding words. The input tokens are shown at the bottom; the expected output labels are at the top.](/static/images/2018/06/Screen_Shot_2018_06_14_at_4_27_13_PM-1529008110241.png)
 
 The architecture was evaluated on a range of datasets, covering the tasks of
 error detection, named entity recognition, chunking, and POS-tagging. Introducing

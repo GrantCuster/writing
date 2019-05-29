@@ -22,7 +22,7 @@ Second, there are practical engineering challenges. A huge amount of valuable tr
 
 ## A Breakthrough Innovation
 
-![](/images/editor_uploads/2018-10-31-181344-federated_learning_animated_labeled.gif)
+![](/static/images/editor_uploads/2018-10-31-181344-federated_learning_animated_labeled.gif)
 
 In federated learning, a server coordinates a network of nodes, each of which has training data that it cannot or will not share directly. The nodes each train a model, and it is that model which they share with the server. The server never has direct access to the training data. By moving models instead, federated learning helps to ensure privacy and minimizes communication costs.
 

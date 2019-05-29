@@ -11,7 +11,7 @@ Justin O'Beirne recently wrote a [blog post](https://www.justinobeirne.com/googl
 
 The article is centered around the example of Google's _Areas of Interest_ feature. Simply put, Google adds subtle shading around areas that are commercial districts, i.e., clusters of restaurants and shops, while Apple does not. This feature is quite useful as it reflects [the way humans think of cities](http://groups.ischool.berkeley.edu/mentalmaps/) in terms of their commercial districts.
 
-![](/images/2018/01/Smith_Court_Area_of_Interest-1516748269178.JPG)
+![](/static/images/2018/01/Smith_Court_Area_of_Interest-1516748269178.JPG)
 ##### Court and Smith Streets are commercial districts in the Cobble Hill neighborhood of Brooklyn
 
 Google built this feature from two distinct datasets: satellite imagery and street view imagery. Apple has - or had - access to similar datasets, but Google outpaces Apple in both categories to great effect.

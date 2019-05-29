@@ -9,7 +9,7 @@ author: Julius
 author_link: https://twitter.com/julius_adebayo
 ---
 
-![Fairness in ML](/images/2017/03/fairness_and_justice_symbol.png)
+![Fairness in ML](/static/images/2017/03/fairness_and_justice_symbol.png)
 
 Machine learning models are used for [important decisions](https://www.nber.org/papers/w23180)
 like [determining who has access to bail](http://www.law.nyu.edu/sites/default/files/upload_documents/Angele%20Christin.pdf).
@@ -119,7 +119,7 @@ A projection maps one vector onto another. If you project a vector **a**
 onto vector **b**, then you get the component of vector **a**
 that lies in the direction of vector **b**.
 
-![Orthogonal Projection Demonstration](/images/2017/03/fairml-01.png)
+![Orthogonal Projection Demonstration](/static/images/2017/03/fairml-01.png)
 
 An orthogonal projection is a particular type of vector projection that maps a
 vector onto a direction orthogonal (or perpendicular) to reference vector. For
@@ -127,7 +127,7 @@ example, if we orthogonally project vector **v** onto **s** (in Euclidean
 space), we get the component of vector **v** that is at perpendicular to vector
 **s**.
 
-![Orthogonal Projection Demonstration](/images/2017/03/fairml-02.png)
+![Orthogonal Projection Demonstration](/static/images/2017/03/fairml-02.png)
 
 Orthogonal projection of vectors is important for FairML because it allows us to
 completely remove the linear dependence between attributes. If two vectors
@@ -144,7 +144,7 @@ The change in output between the perturbed input and the original input
 indicates the dependence of the model on a given attribute, and we can be
 confident that there are no hidden collinearity effects.
 
-![FairML Process Diagram](/images/2017/03/fairml-03.png "FairML Process Diagram")
+![FairML Process Diagram](/static/images/2017/03/fairml-03.png "FairML Process Diagram")
 
 If you're familiar with vector projection, you may note that orthogonal
 projection is a linear transformation. This means it does not account for
@@ -243,7 +243,7 @@ simply by passing in a predict method and sample data.
 Now that we know how FairML works, let's use it to audit a hypothetical COMPAS
 model. Here's the output of the demo code above.
 
-![Fairness in ML](/images/2017/03/fairml_propublica_linear_direct_v2.png)
+![Fairness in ML](/static/images/2017/03/fairml_propublica_linear_direct_v2.png)
 
 ##### Relative feature dependence ranking obtained from FariML. Red indicates that the factor highly contributes to a high recidivism rating by COMPAS. Note: We omit the intercept term.
 
@@ -251,7 +251,7 @@ Let's compare the dependence above with that of the logistic regression model
 obtained in ProPublica's analysis. Below, we show a bar chart of each attribute
 and then feature dependence obtained in the two analyses.
 
-![Fairness in ML](/images/2017/03/propublica_vs_fairml_feature_dependence.png)
+![Fairness in ML](/static/images/2017/03/propublica_vs_fairml_feature_dependence.png)
 
 ##### Relative ranking of Logistic Regression Coefficients obtained by ProPublica. Red indicates that the factor highly contributes to a high recidivism rating by COMPAS. Note: We omit the intercept term.
 

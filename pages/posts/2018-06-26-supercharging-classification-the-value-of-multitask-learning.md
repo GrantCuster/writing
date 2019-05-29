@@ -28,7 +28,7 @@ learning model that is learning to understand language benefits from learning
 to identify parts of speech while concurrently learning to identify the
 semantic role words play in a sentence. 
 
-![](/images/2018/06/02_03-1530032857031.png)
+![](/static/images/2018/06/02_03-1530032857031.png)
 
 ##### Multi-task Learning can improve the prediction of two variables (e.g. "risk factor" and "white blood cell count")at the same time that it improves overall performance. 
 

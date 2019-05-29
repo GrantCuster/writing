@@ -11,7 +11,7 @@ post_type: "newsletter"
 
 [Judea Pearl](https://en.wikipedia.org/wiki/Judea_Pearl), the inventor of [Bayesian networks](https://en.wikipedia.org/wiki/Bayesian_network), recently published a book called _[The Book of Why: The New Science of Cause and Effect](https://www.amazon.com/dp/B075CR9QBJ/)_. The book covers a great many things, including a detailed history of how the fields of causality and statistics have long been at odds, Pearl's own [_do-calculus_](https://www.inference.vc/untitled/) framework for teasing causal inferences from observational data, and why (in Pearl's view) the future of AI depends on causality. 
 
-![](/images/editor_uploads/2019-03-12-191909-correlation.png)
+![](/static/images/editor_uploads/2019-03-12-191909-correlation.png)
 ##### Source: ["Correlation" by Randall Munroe at XKCD](https://xkcd.com/552/)
 
 One of the key points in Pearl's book is that observational data - data collected from real world systems - on its own, can only possibly convey associations between variables. To glean which variables in the data act as causes, and which are effects of those causes, we need something more. The implications are profound. A pharmaceutical company cannot ever tell if a particular drug is an effective treatment for a disease simply by observing the outcomes of patients who have taken that drug. It is impossible for scientists to prove that smoking causes lung cancer from observing outcomes of smokers and non-smokers. And yet, these are both things that we as a society have the capability to do today.

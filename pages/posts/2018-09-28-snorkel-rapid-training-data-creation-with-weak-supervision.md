@@ -16,7 +16,7 @@ thousands of parameters and commensurately require more labeled training data. O
 Snorkel is a system built around the [data programming](https://papers.nips.cc/paper/6523-data-programming-creating-large-training-sets-quickly) paradigm for rapidly creating, modeling, and managing training data. It lets one use weak supervision sources like heuristics, external knowledge bases, crowdsourced labels, and more. These are called weak supervision sources because they may be limited in accuracy and coverage. All of these get combined in a principled manner to produce a set of
 probability-weighted labels. The end model is then trained on the generated labels.
 
-![](/images/editor_uploads/2018-09-05-182818-snorkel_workflow.png)
+![](/static/images/editor_uploads/2018-09-05-182818-snorkel_workflow.png)
 
 ##### Snorkel workflow
 
@@ -26,7 +26,7 @@ Snorkel's workflow has three main stages:
    which capture patterns-based heuristics, connect with external knowledge bases (distant supervision), and so on. A labeling
    function is a Python method which, given an input, can either output a label or abstain. For instance, we can write a labeling function that checks if the word “causes” appears between the chemical and disease mentions. If it does, it outputs _True_ if the chemical mention is first and _False_ if the disease mention is first. If “causes” does not appear, it outputs _None_, indicating abstention. In addition, Snorkel includes a number of declarative labeling functions that can be used out of the box.
 
-![](/images/editor_uploads/2018-09-05-182951-labeling_function.png)
+![](/static/images/editor_uploads/2018-09-05-182951-labeling_function.png)
 
 ##### Example labeling function
 

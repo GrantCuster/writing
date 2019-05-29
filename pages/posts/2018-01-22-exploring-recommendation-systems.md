@@ -112,7 +112,7 @@ for trainset, testset in data.folds():
 The ROC curve for our system was underwhelming - it is very close to the diagonal
 line because there is not enough information in the interaction matrix.
 
-![](/images/2018/01/ROC_NMF_nodot_1115.png)
+![](/static/images/2018/01/ROC_NMF_nodot_1115.png)
 
 ### Photo recommender with Tags
 
@@ -141,7 +141,7 @@ tags and iv) normalizing by the number of common tags. All photos are ranked
 using this score and the top one is recommended. Once tag information is
 incorporated, our ROC curve looked much better!
 
-![](/images/2018/01/ROC_NMF_tag_loop_1115_nodot.png)
+![](/static/images/2018/01/ROC_NMF_tag_loop_1115_nodot.png)
 
 ### Basic book recommendation system
 

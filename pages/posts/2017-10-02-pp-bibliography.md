@@ -20,7 +20,7 @@ particularly useful when data is scarce). The rise of probabilistic programming
 languages has made it a more practical technique for time-constrained working
 data scientists.
 
-![](/images/2017/09/ff05.gif)
+![](/static/images/2017/09/ff05.gif)
 
 If that sounds great to you, and you're looking to learn more, the first thing
 you can do is — [work with us](https://www.fastforwardlabs.com/contact)! We'll

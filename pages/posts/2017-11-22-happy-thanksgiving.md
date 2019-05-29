@@ -12,7 +12,7 @@ As you are preparing for your Thanksgiving meal, just *know* that a robotic arm 
 
 Jeopardy! It is [so 2011](http://www.nytimes.com/2011/02/17/science/17jeopardy-watson.html). In 2017, there is (of course) [a neural network trained to generate recipes](https://www.dailydot.com/unclick/neural-network-recipe-generator/) developed by [Janelle Shane](http://aiweirdness.com/aboutme). Try the *Pears Or To Garnestmeam* or the *Shanked Whipping Peanuts*:
 
-![](/images/2017/11/shanked_whipping_peanuts-1511370088418.jpg)
+![](/static/images/2017/11/shanked_whipping_peanuts-1511370088418.jpg)
 
 ##### Image Credit: [The Daily Dot](https://www.dailydot.com/unclick/neural-network-recipe-generator/)
 
@@ -36,7 +36,7 @@ If you've done your shopping already, take a quick picture of your haul and let 
 v(chicken_pizza) - v(pizza) + v(lasagna) = v(chicken_lasagna)
 ```
 
-![](/images/2017/11/arithmetics_sm_image_1-1511372024415.png)
+![](/static/images/2017/11/arithmetics_sm_image_1-1511372024415.png)
 
 ##### You can now compute your next meal (Image Credit: [MIT](http://im2recipe.csail.mit.edu/)).
 

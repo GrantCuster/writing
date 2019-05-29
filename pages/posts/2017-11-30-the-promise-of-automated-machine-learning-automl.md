@@ -43,7 +43,7 @@ We believe AutoML as _Efficient Data Science / ML_ shows real promise for the la
 
 The typical ML system can be broken down into a number of different components, or modules, each with a different aim and focus.
 
-![](/images/2017/11/Screen_Shot_2017_11_07_at_10_07_43_AM-1510067292745.png)
+![](/static/images/2017/11/Screen_Shot_2017_11_07_at_10_07_43_AM-1510067292745.png)
 
 ##### The different components of ML systems. Only a small fraction of real-world ML systems are composed of the ML code. To put ML to work requires complex surrounding infrastructure (taken from the paper [_Hidden Technical Debt in Machine Learning Systems_](https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf)).
 

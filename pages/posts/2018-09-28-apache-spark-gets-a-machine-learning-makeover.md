@@ -52,7 +52,7 @@ algorithms often goes through Spark first. This reality led many developers
 to ponder, "what if we could combine the heavily optimized ML/DL frameworks 
 into Spark?" And with that, the family of XOnSpark libraries came to be.
 
-![](/images/editor_uploads/2018-09-19-194511-XOnSpark.png)
+![](/static/images/editor_uploads/2018-09-19-194511-XOnSpark.png)
 
 But Spark hasn't made it very easy to combine these other libraries, most of 
 which are written in a combination of Python and C++, with Spark. There are

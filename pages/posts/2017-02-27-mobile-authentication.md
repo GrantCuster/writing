@@ -14,7 +14,7 @@ forcibly surrendered) to law enforcement. Recent research has focussed on
 behavioural authentication based on patterns of user interaction. This could
 provide an unintrusive authentication method that operates during normal use.
 
-![Mobile authentication](/images/2017/02/mobileauth.png)
+![Mobile authentication](/static/images/2017/02/mobileauth.png)
 
 ##### Figure from [Touchalytics: On the Applicability of Touchscreen Input as a Behavioral Biometric for Continuous Authentication](https://arxiv.org/abs/1207.6231)
 

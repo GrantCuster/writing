@@ -8,7 +8,7 @@ author: "Grant"
 author_link: "https://twitter.com/grantcuster"
 ---
 
-![A GIF of Turbofan Tycoon in action.](/images/editor_uploads/2018-12-07-163940-turbofan_even_shorter.gif)
+![A GIF of Turbofan Tycoon in action.](/static/images/editor_uploads/2018-12-07-163940-turbofan_even_shorter.gif)
 
 Our prototypes are designed to demonstrate the value of the technologies we research. For our most recent prototype, [Turbofan Tycoon](https://turbofan.fastforwardlabs.com/), we decided that the best way to demonstrate the value of federated learning was to place you in an interactive simulation where you’re in charge of maintaining four turbofan engines. In this post, I’m going to try and explain a bit about why we decided that, and focus on the interaction design. (If you'd like more information about federated learning in general and the predictive models in the prototype, you can find it [in this post](https://blog.fastforwardlabs.com/2018/11/14/federated-learning.html).)
 
@@ -26,7 +26,7 @@ One challenge we faced with Turbofan Tycoon is that, though a great example of a
 
 We found inspiration in the simulation video game scene, which has proven that, presented in the right way, lots of niche technical topics can be a source of entertainment. The title itself is a nod to [RollerCoaster Tycoon](https://en.wikipedia.org/wiki/RollerCoaster_Tycoon). In terms of showing a bunch of gauges and instrumentation, I was thinking of [Microsoft Flight Simulator](https://en.wikipedia.org/wiki/Microsoft_Flight_Simulator), and for oddly compelling specificity I was thinking of [Euro Truck Simulator](https://en.wikipedia.org/wiki/Euro_Truck_Simulator).
 
-![](/images/editor_uploads/2018-12-07-164406-unipaper.png)
+![](/static/images/editor_uploads/2018-12-07-164406-unipaper.png)
 
 ##### [Universal Paperclips](http://www.decisionproblem.com/paperclips/) was the biggest influence on Turbofan Tycoon.
 
@@ -38,13 +38,13 @@ In Turbofan Tycoon, your factory’s profit is our analog to the paperclip total
 
 ## Simulation aesthetics
 
-![](/images/editor_uploads/2018-12-07-164700-Screen_Shot_2018_10_21_at_7_45_16_PM_1540165567038.png)
+![](/static/images/editor_uploads/2018-12-07-164700-Screen_Shot_2018_10_21_at_7_45_16_PM_1540165567038.png)
 
 ##### Turbofan Tycoon styling before the terminal-inspired revision.
 
 For most of its development, Turbofan Tycoon had nearly-default-HTML-styles. Kind of like Universal Paperclips, but with a few more graphs and colors. (If you want to see its design evolution, I have [a collection of work-in-progress screenshots on my blog](http://feed.grantcuster.com/stack/ff09-prototype).) The minimal styles helped focus on the numbers, but something still wasn’t feeling quite right. In a late-process revision, I switched it over to a design inspired by a different information-dense format: the computer terminal.
 
-![](/images/editor_uploads/2018-12-07-171003-Screen_Shot_2017_10_15_at_11_37_23_AM_1508082112775.png)
+![](/static/images/editor_uploads/2018-12-07-171003-Screen_Shot_2017_10_15_at_11_37_23_AM_1508082112775.png)
 
 ##### My vim + tmux set-up. A source of stability and comfort in my life. (I've actually since switched to VS Code.)
 

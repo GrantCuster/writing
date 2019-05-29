@@ -13,7 +13,7 @@ In his latest project, artist and coder Mario Klingemann uses a neural network t
 
 Looking through Klingemann’s tweets you can trace his explorations:
 
-![A screenshot from Klingemann's video of similar scene classification. A 3x3 grid shows several similar looking scenes. Some have planes, others are mostly blank, some have spare drawings of squares.](/images/editor_uploads/2018-06-26-144731-Screen_Shot_2018_06_25_at_10_45_15_AM.png)
+![A screenshot from Klingemann's video of similar scene classification. A 3x3 grid shows several similar looking scenes. Some have planes, others are mostly blank, some have spare drawings of squares.](/static/images/editor_uploads/2018-06-26-144731-Screen_Shot_2018_06_25_at_10_45_15_AM.png)
 
 ##### Mario Klingemann's neural scene classifier grouping scenes it finds similar.
 
@@ -22,7 +22,7 @@ Looking through Klingemann’s tweets you can trace his explorations:
 - Then he adds an element of interactivity, using [his webcam as the source against which to match the archival footage](https://twitter.com/quasimondo/status/1006835734223970304).
 - He tries using the matches to create [new reaction gifs](https://twitter.com/quasimondo/status/1006996750429761536).
 
-![On the left is a shot of Brad Pitt from Fight Club; on the right is a man holding a telephone with a similar expression from the archive footage.](/images/editor_uploads/2018-06-26-144942-Screen_Shot_2018_06_25_at_10_46_42_AM.png)
+![On the left is a shot of Brad Pitt from Fight Club; on the right is a man holding a telephone with a similar expression from the archive footage.](/static/images/editor_uploads/2018-06-26-144942-Screen_Shot_2018_06_25_at_10_46_42_AM.png)
 
 ##### A neural reinterpretation of the Fight Club trailer, with the original footage on the left and the matched on the right.
 
@@ -34,7 +34,7 @@ The movie trailer reinterpretations are a great showcase for the technique for a
 1. Trailers are made up of short clips. This gives the algorithm lots of shots at finding interesting matches (every cut is a new example). If it was instead focused on a 2 minute long continuous scene, you wouldn’t get to see nearly as many matches. Also the fact that the cuts are often timed to the music makes the reinterpreted content appear more connected to the audio of the trailer.
 2. Films have a built up vocabulary of what different shots mean, like a close-up of a face to signal intense feelings. Film-makers employ these patterns consciously. As film watchers, we may not think about scene types explicitly, but we do build up associations and expectations with different framing, movements, and styles. The side-by-side reinterpretations make this referential language more visible by showing us two examples at a time, helping us notice the similarity the machine has identified. We can then often extrapolate even further into “ah, right, that’s another one of those 'vehicles rushing by' shots” that you normally don’t consciously note. This takes the trailers from technical demos into artistic territory.
 
-![A screenshot of the video by Memo Atken. On the left is a blanket being scrunched up by hands; on the right is an image that looks like a painting of waves, where the shape of the waves matches the position of the hands and blanket.](/images/editor_uploads/2018-06-26-145050-Screen_Shot_2018_06_25_at_10_47_09_AM.png)
+![A screenshot of the video by Memo Atken. On the left is a blanket being scrunched up by hands; on the right is an image that looks like a painting of waves, where the shape of the waves matches the position of the hands and blanket.](/static/images/editor_uploads/2018-06-26-145050-Screen_Shot_2018_06_25_at_10_47_09_AM.png)
 
 ##### A still from "Learning to see: Gloomy Sunday" by Memo Atken
 
