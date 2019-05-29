@@ -125,3 +125,6 @@ code {
   font-size: 0.975em;
   word-break: break-word;
 }
+img {
+  max-width: 100%;
+}
