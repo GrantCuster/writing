@@ -7,3 +7,5 @@ preview_image: /static/images/uploads/active-learner-short.gif
 published: true
 ---
 Welcome to ConvNet Playground, our simple prototype for exploring semantic search with multiple models.
+
+Grant edit.
