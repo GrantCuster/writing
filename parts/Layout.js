@@ -633,7 +633,7 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
                 }}
               >
                 <div>
-                  <a href="/">Blog</a>
+                  <a href="/">Blog</a> – Cloudera Fast Forward Labs
                 </div>
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                   <div style={{ marginRight: grem / 2 }}>

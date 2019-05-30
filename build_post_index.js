@@ -72,7 +72,10 @@ function readPostMetadata(postPath) {
   let post = getPostFromPath(postPath)
 
   let import_free_content = post.content.replace(/^import.*\n?/m, '')
-  let excerpt = s.prune(removeMd(import_free_content), 140 * 2)
+  let excerpt = s.prune(
+    removeMd(import_free_content, { useImgAltText: false }),
+    140 * 2
+  )
   // console.log(excerpt)
   let meta = post.data
 

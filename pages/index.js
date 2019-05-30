@@ -229,6 +229,7 @@ class Index extends React.Component {
                       position: 'relative',
                       fontFamily: 'inherit',
                       border: 'none',
+                      background: 'transparent',
                       width: '100vw',
                       cursor: 'pointer',
                       textDecoration: 'underline',
@@ -300,7 +301,7 @@ class Index extends React.Component {
                   ...fsn,
                 }}
               >
-                <div>Cloudera Fast Forward Labs</div>
+                <div>Blog – Cloudera Fast Forward Labs</div>
                 <div style={{ display: 'flex', flexWrap: 'wrap' }}>
                   <div style={{ marginRight: grem / 2 }}>
                     <a href="https://www.cloudera.com/products/fast-forward-labs-research.html">
@@ -308,7 +309,9 @@ class Index extends React.Component {
                     </a>
                   </div>
                   <div style={{ marginRight: grem / 2 }}>
-                    <a href="https://blog.fastforwardlabs.com/">Blog</a>
+                    <a href="https://experiments.fastforwardlabs.com/">
+                      AI Experiments
+                    </a>
                   </div>
                   <div style={{}}>
                     <a href="https://twitter.com/fastforwardlabs">Twitter</a>
