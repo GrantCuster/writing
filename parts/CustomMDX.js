@@ -1,9 +1,51 @@
 import React from 'react'
 
-export class VideoHolder extends React.Component {
-  componentDidMount() {
-    console.log(this.props)
+export class Certainty extends React.Component {
+  render() {
+    return (
+      <p style={{ color: '#555', marginBottom: '1.5rem', textIndent: 0 }}>
+        Certainty: {this.props.children}
+      </p>
+    )
   }
+}
+
+export class Effort extends React.Component {
+  render() {
+    return (
+      <div
+        style={{ color: '#666', marginBottom: '1.5rem', textIndent: '1.5rem' }}
+      >
+        Effort: {this.props.children}
+      </div>
+    )
+  }
+}
+
+export class Context extends React.Component {
+  render() {
+    return <div style={{ color: '#666' }}>context</div>
+  }
+}
+
+export class Person extends React.Component {
+  render() {
+    let { p, v, m, link, cap } = this.props
+    let display = p.short
+    if (v === 'full') display = p.full
+    if (v === 'they') display = p.pronouns[0]
+    if (v === 'them') display = p.pronouns[1]
+    if (v === 'their') display = p.pronouns[2]
+    if (v === 'theirs') display = p.pronouns[3]
+    if (v === 'themself') display = p.pronouns[1] + 'self'
+    if (cap) display = display.charAt(0).toUpperCase() + display.slice(1)
+    if (link) display = <a href={p.link}>{display}</a>
+    return <span person-ref={p.full}>{display}</span>
+  }
+}
+
+export class VideoHolder extends React.Component {
+  componentDidMount() {}
 
   render() {
     return (

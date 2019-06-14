@@ -101,6 +101,8 @@ function readPostMetadata(postPath) {
     path_name: path_name,
     publishDate: new Date(meta.date),
     title: meta.title || path.basename(postPath),
+    summary: meta.summary || null,
+    date: meta.date || null,
     preview_image: meta.preview_image,
     feature: meta.feature || false,
     published: meta.published || true,
