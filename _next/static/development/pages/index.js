@@ -143,17 +143,6 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/set-prototype
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! core-js/library/fn/parse-int */ "./node_modules/core-js/library/fn/parse-int.js");
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/promise.js":
 /*!****************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/promise.js ***!
@@ -1176,19 +1165,6 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 __webpack_require__(/*! ../../modules/es6.object.set-prototype-of */ "./node_modules/core-js/library/modules/es6.object.set-prototype-of.js");
 module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/library/modules/_core.js").Object.setPrototypeOf;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/fn/parse-int.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/library/fn/parse-int.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../modules/es6.parse-int */ "./node_modules/core-js/library/modules/es6.parse-int.js");
-module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/core-js/library/modules/_core.js").parseInt;
 
 
 /***/ }),
@@ -2982,26 +2958,6 @@ module.exports = function (KEY, exec) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/library/modules/_parse-int.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_parse-int.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $parseInt = __webpack_require__(/*! ./_global */ "./node_modules/core-js/library/modules/_global.js").parseInt;
-var $trim = __webpack_require__(/*! ./_string-trim */ "./node_modules/core-js/library/modules/_string-trim.js").trim;
-var ws = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
-var hex = /^[-+]?0[xX]/;
-
-module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix) {
-  var string = $trim(String(str), 3);
-  return $parseInt(string, (radix >>> 0) || (hex.test(string) ? 16 : 10));
-} : $parseInt;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/library/modules/_perform.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/library/modules/_perform.js ***!
@@ -3319,60 +3275,6 @@ module.exports = function (TO_STRING) {
       : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
   };
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_string-trim.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_string-trim.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
-var defined = __webpack_require__(/*! ./_defined */ "./node_modules/core-js/library/modules/_defined.js");
-var fails = __webpack_require__(/*! ./_fails */ "./node_modules/core-js/library/modules/_fails.js");
-var spaces = __webpack_require__(/*! ./_string-ws */ "./node_modules/core-js/library/modules/_string-ws.js");
-var space = '[' + spaces + ']';
-var non = '\u200b\u0085';
-var ltrim = RegExp('^' + space + space + '*');
-var rtrim = RegExp(space + space + '*$');
-
-var exporter = function (KEY, exec, ALIAS) {
-  var exp = {};
-  var FORCE = fails(function () {
-    return !!spaces[KEY]() || non[KEY]() != non;
-  });
-  var fn = exp[KEY] = FORCE ? exec(trim) : spaces[KEY];
-  if (ALIAS) exp[ALIAS] = fn;
-  $export($export.P + $export.F * FORCE, 'String', exp);
-};
-
-// 1 -> String#trimLeft
-// 2 -> String#trimRight
-// 3 -> String#trim
-var trim = exporter.trim = function (string, TYPE) {
-  string = String(defined(string));
-  if (TYPE & 1) string = string.replace(ltrim, '');
-  if (TYPE & 2) string = string.replace(rtrim, '');
-  return string;
-};
-
-module.exports = exporter;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_string-ws.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_string-ws.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
-  '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 
 /***/ }),
@@ -3973,21 +3875,6 @@ $export($export.S, 'Object', { setPrototypeOf: __webpack_require__(/*! ./_set-pr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/es6.parse-int.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/es6.parse-int.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
-var $parseInt = __webpack_require__(/*! ./_parse-int */ "./node_modules/core-js/library/modules/_parse-int.js");
-// 18.2.5 parseInt(string, radix)
-$export($export.G + $export.F * (parseInt != $parseInt), { parseInt: $parseInt });
 
 
 /***/ }),
@@ -23410,10 +23297,10 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Ffastforward%2Fpages%2Findex.js!./":
-/*!***************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Ffastforward%2Fpages%2Findex.js ***!
-  \***************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Findex.js!./":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Findex.js ***!
+  \***********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29082,38 +28969,36 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/parse-int */ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js");
-/* harmony import */ var _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
-/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../parts/Header */ "./parts/Header.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _parts_Static__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../parts/Static */ "./parts/Static.js");
-/* harmony import */ var _parts_Utils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../parts/Utils */ "./parts/Utils.js");
-/* harmony import */ var _parts_Dividers__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../parts/Dividers */ "./parts/Dividers.js");
-/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../posts */ "./posts.js");
-/* harmony import */ var _parts_PostPreview__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../parts/PostPreview */ "./parts/PostPreview.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/isomorphic-unfetch/browser.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! next/head */ "./node_modules/next-server/dist/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _parts_Header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../parts/Header */ "./parts/Header.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _parts_Static__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../parts/Static */ "./parts/Static.js");
+/* harmony import */ var _parts_Utils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../parts/Utils */ "./parts/Utils.js");
+/* harmony import */ var _parts_Dividers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../parts/Dividers */ "./parts/Dividers.js");
+/* harmony import */ var _posts__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../posts */ "./posts.js");
+/* harmony import */ var _parts_PostPreview__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../parts/PostPreview */ "./parts/PostPreview.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_16__);
 
 
 
 
 
+var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/writing/pages/index.js";
 
-
-var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/fastforward/pages/index.js";
 
 
 
@@ -29131,45 +29016,29 @@ var posts_per_page = 20;
 var Index =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Index, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Index, _React$Component);
 
   function Index(props) {
     var _this;
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Index);
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Index);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Index).call(this, props));
-    _this.state = {
-      showing_posts: posts_per_page
-    };
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Index).call(this, props));
+    _this.state = {};
     return _this;
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(Index, [{
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Index, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
-      var showing_posts = this.state.showing_posts;
       var _this$props = this.props,
           grem = _this$props.grem,
-          ogrem = _this$props.ogrem,
-          center_text = _this$props.center_text,
-          afs = _this$props.afs,
-          fsn = _this$props.fsn,
-          fs = _this$props.fs,
-          columns = _this$props.columns,
-          column_width = _this$props.column_width,
-          offset = _this$props.offset,
-          ww = _this$props.ww,
-          wh = _this$props.wh,
-          optimal = _this$props.optimal,
-          stacked = _this$props.stacked;
+          c = _this$props.c;
       var search = this.props.router.query;
       var params = new URLSearchParams(search);
       var page_number = params.get('pages') || 1;
       var post_groups = [];
-      var published = _posts__WEBPACK_IMPORTED_MODULE_15__["default"].filter(function (p) {
+      var published = _posts__WEBPACK_IMPORTED_MODULE_13__["default"].filter(function (p) {
         return p.published;
       });
 
@@ -29181,458 +29050,154 @@ function (_React$Component) {
         }
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 42
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_7___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 43
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("link", {
         rel: "icon",
         type: "image/x-icon",
         href: "static/images/favicon.png",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 44
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("title", {
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("title", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 49
         },
         __self: this
-      }, "Blog \u2013 Cloudera Fast Forward"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
+      }, "Grant Custer \u2013 Writing"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
         property: "og:title",
         content: "Experiments - Cloudera Fast Forward",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 50
         },
         __self: this
-      }), "property=\"description\"", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
+      }), "property=\"description\"", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
         content: "Machine learning visualizations and code by Cloudera Fast Forward.",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
+        property: "og:description",
+        content: "Machine learning visualizations and code by Cloudera Fast Forward.",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
+        property: "og:image",
+        content: "https://experiments.fastforwardlabs.com/static/images/experiments-share.png",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
+        property: "og:url",
+        content: "https://experiments.fastforwardlabs.com",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
+        name: "twitter:card",
+        content: "summary_large_image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        style: {
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(grem / 2, 0)
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 71
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
-        property: "og:description",
-        content: "Machine learning visualizations and code by Cloudera Fast Forward.",
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        style: {
+          width: c * 4,
+          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(0, grem / 2),
+          margin: "0 auto ".concat(grem, "px")
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 72
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
-        property: "og:image",
-        content: "https://experiments.fastforwardlabs.com/static/images/experiments-share.png",
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 79
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
-        property: "og:url",
-        content: "https://experiments.fastforwardlabs.com",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 80
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
-        name: "twitter:card",
-        content: "summary_large_image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 84
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 87
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, stacked ? ogrem / 4 : ogrem / 2)
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 88
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, center_text, {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, grem / 2),
-          fontSize: afs * 3,
-          lineHeight: 1.25,
-          position: 'relative'
-        }),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 91
-        },
-        __self: this
-      }, "Blog"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, grem / 2)
-        }, center_text, fsn),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 102
-        },
-        __self: this
-      }, "Posts on machine learning and other emerging technologies by", ' ', react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "https://www.cloudera.com/products/fast-forward-labs-research.html",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 110
-        },
-        __self: this
-      }, "Cloudera Fast Forward Labs"), "."), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 2, 0, grem, 0)
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 116
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          position: 'relative'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 117
-        },
-        __self: this
-      }, post_groups.map(function (g, i) {
-        var first = g[0];
-        var first_date = new Date(first.publishDate);
-        var first_short_date = "".concat(first_date.toLocaleString('en-us', {
-          month: 'short'
-        }), " ").concat(first_date.getFullYear());
-        var last = g[g.length - 1];
-        var last_date = new Date(last.publishDate);
-        var last_short_date = "".concat(last_date.toLocaleString('en-us', {
-          month: 'short'
-        }), " ").concat(last_date.getFullYear());
-        return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }, "Writing")), post_groups.map(function (g, i) {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
           key: 'group_' + i,
           style: {
             position: 'relative'
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 135
+            lineNumber: 83
           },
           __self: this
-        }, i !== 0 ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-          style: {
-            paddingTop: grem * 2,
-            paddingBottom: grem / 2,
-            paddingLeft: columns > 10 ? offset + (columns - 10) / 2 * column_width : offset,
-            display: 'flex',
-            fontSize: fs * 0.75,
-            lineHeight: 1.5,
-            textTransform: 'uppercase',
-            letterSpacing: '0.03em'
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 137
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-          style: {
-            width: columns > 8 ? 3 * column_width : 2 * column_width,
-            padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(0, grem / 2)
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 152
-          },
-          __self: this
-        }, first_short_date, " \u2013 ", last_short_date), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-          style: {
-            width: columns === 4 ? 2 * column_width : (columns - 4) / 2 * column_width,
-            padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(0, grem / 2)
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 163
-          },
-          __self: this
-        }, "Page ".concat(i + 1))) : react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-          style: {
-            height: grem / 2
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 176
-          },
-          __self: this
-        }), g.map(function (post, i) {
-          return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_PostPreview__WEBPACK_IMPORTED_MODULE_16__["default"], {
-            key: post.title,
-            post: post,
-            grem: grem,
-            ww: ww,
-            fs: fs,
-            ogrem: ogrem,
-            columns: columns,
-            column_width: column_width,
-            extra_left: ogrem / 2 + offset,
-            extra_right: ogrem / 2 + offset,
-            adjust_left: -ogrem / 2,
-            adjust_right: -ogrem / 2,
-            stacked: stacked,
+        }, g.map(function (post, i) {
+          return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+            style: {
+              width: c * 4,
+              padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(0, grem / 2),
+              margin: '0 auto'
+            },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 179
+              lineNumber: 85
             },
             __self: this
-          });
-        }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-          style: {
-            position: 'relative',
-            marginLeft: -grem / 2,
-            marginRight: -grem / 2
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 195
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_14__["Hd"], {
-          align: "b",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 202
-          },
-          __self: this
-        })));
-      }), page_number * posts_per_page < published.length ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
-        className: "gray-backer",
-        onClick: function onClick() {
-          next_router__WEBPACK_IMPORTED_MODULE_17___default.a.push({
-            pathname: _this2.props.router.pathname,
-            query: {
-              pages: _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_0___default()(page_number) + 1
-            }
-          });
-        },
-        style: {
-          display: 'block',
-          paddingTop: grem / 2,
-          paddingBottom: grem / 2,
-          paddingLeft: ogrem / 2 + (columns > 4 ? (columns - 4) / 2 * column_width : 0) + offset + grem / 2,
-          fontSize: fs * 1,
-          lineHeight: 1.5,
-          marginLeft: -ogrem / 2,
-          marginRight: -ogrem / 2,
-          position: 'relative',
-          fontFamily: 'inherit',
-          border: 'none',
-          width: '100vw',
-          cursor: 'pointer',
-          textDecoration: 'underline',
-          textAlign: 'left'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 208
-        },
-        __self: this
-      }, "Load more posts", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_14__["Hd"], {
-        align: "t",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 239
-        },
-        __self: this
-      })) : null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          marginLeft: -ogrem / 2,
-          marginRight: -ogrem / 2,
-          position: 'relative'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 242
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_14__["Hd"], {
-        align: "b",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 249
-        },
-        __self: this
-      })))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(0, 0)
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 254
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
-          fontSize: fs * 2,
-          lineHeight: 1.25,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, grem / 2)
-        }, center_text),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 255
-        },
-        __self: this
-      }, "About"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, grem / 2)
-        }, center_text, fsn),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 265
-        },
-        __self: this
-      }, "Cloudera Fast Forward Labs is an applied machine learning research group. We help organizations recognize and develop new product and business opportunities through emerging technologies.", ' '), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_13__["p"])(grem / 4, grem / 2)
-        }, center_text, fsn),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 277
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "https://www.cloudera.com/products/fast-forward-labs-research.html",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 284
-        },
-        __self: this
-      }, "Learn more about working with us.")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          paddingTop: grem / 2
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 291
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          position: 'relative'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 292
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_14__["Hd"], {
-        width: "100%",
-        align: "t",
-        fs: fs,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 293
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({
-          padding: grem / 2,
-          display: 'flex',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap'
-        }, fsn),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 294
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 303
-        },
-        __self: this
-      }, "Cloudera Fast Forward Labs"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          display: 'flex',
-          flexWrap: 'wrap'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 304
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          marginRight: grem / 2
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 305
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "https://www.cloudera.com/products/fast-forward-labs-research.html",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 306
-        },
-        __self: this
-      }, "Cloudera")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {
-          marginRight: grem / 2
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 310
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "https://blog.fastforwardlabs.com/",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 311
-        },
-        __self: this
-      }, "Blog")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        style: {},
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 313
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "https://twitter.com/fastforwardlabs",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 314
-        },
-        __self: this
-      }, "Twitter"))))))));
+          }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_16___default.a, {
+            href: post.path_name,
+            as: post.urlPath,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 92
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
+            key: post.urlPath,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 93
+            },
+            __self: this
+          }, post.title)));
+        }));
+      })));
     }
   }]);
 
   return Index;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_17__["withRouter"])(Index));
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_15__["withRouter"])(Index));
 
 /***/ }),
 
@@ -29655,7 +29220,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _parts_Static__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../parts/Static */ "./parts/Static.js");
 
 
-var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/fastforward/parts/Dividers.js";
+var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/writing/parts/Dividers.js";
 
 
 var Hd = function Hd(_ref) {
@@ -29764,15 +29329,13 @@ var Rect = function Rect(_ref3) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Dividers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Dividers */ "./parts/Dividers.js");
-/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Utils */ "./parts/Utils.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-
-var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/fastforward/parts/Header.js";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Dividers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dividers */ "./parts/Dividers.js");
+/* harmony import */ var _Utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Utils */ "./parts/Utils.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/writing/parts/Header.js";
 
 
 
@@ -29785,238 +29348,31 @@ var Header = function Header(_ref) {
       fsn = _ref.fsn,
       fs = _ref.fs,
       is_post = _ref.is_post;
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     style: {
-      paddingBottom: grem / 2
+      padding: grem / 2
     },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: {
-      position: 'relative'
-    },
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  }, "Grant Custer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     style: {
-      position: 'relative',
-      padding: Object(_Utils__WEBPACK_IMPORTED_MODULE_3__["p"])(grem * (2 / 8), grem / 2, grem * (2 / 8), grem / 2),
-      backgroundImage: "url(\"/static/images/dataline.png\")"
+      textIndent: grem / 2
     },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: {
-      display: 'flex',
-      justifyContent: 'space-between'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      height: grem,
-      paddingTop: 1
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    href: "https://www.cloudera.com/products/fast-forward-labs-research.html",
-    style: {
-      display: 'block',
-      lineHeight: 0
-    },
-    className: "no-underline no-hover",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    style: {
-      height: grem * (16 / 32)
-    },
-    src: "/static/images/cloudera.png",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 33
-    },
-    __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      display: 'flex',
-      alignItems: 'center',
-      paddingTop: 1
-    }, fsn),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    className: "no-underline",
-    href: "https://www.cloudera.com/products/fast-forward-labs-research.html",
-    style: {
-      color: '#333e47',
-      fontSize: fs * 0.75,
-      lineHeight: 1.5
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47
-    },
-    __self: this
-  }, "About Us \u2192"))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Dividers__WEBPACK_IMPORTED_MODULE_2__["Hd"], {
-    width: "100%",
-    align: "b",
-    fs: fs,
-    color: "rgba(0,0,0,0.125)",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      padding: Object(_Utils__WEBPACK_IMPORTED_MODULE_3__["p"])(grem / 2, grem / 2, grem / 2, grem / 2),
-      display: 'flex',
-      justifyContent: 'space-between'
-    }, fsn),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 71
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 72
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    className: "no-hover no-underline",
-    style: {
-      display: 'flex',
-      alignItems: 'center'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
-    style: {
-      height: cap,
-      width: cap,
-      marginRight: grem * (6 / 16),
-      position: 'relative',
-      top: -cap / 32
-    },
-    src: "/static/images/ff.png",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 77
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87
-    },
-    __self: this
-  }, "Fast Forward Labs ")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      height: grem * 1
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 91
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: {
-      display: 'flex'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 98
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: {
-      marginRight: grem / 2
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 99
-    },
-    __self: this
-  }, is_post ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    href: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 101
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 102
-    },
-    __self: this
-  }, "Blog")) : 'Blog'), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    style: {},
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
-    href: "https://experiments.fastforwardlabs.com",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 110
-    },
-    __self: this
-  }, "AI Experiments")))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Dividers__WEBPACK_IMPORTED_MODULE_2__["Hd"], {
-    width: "100%",
-    align: "b",
-    fs: fs,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 116
-    },
-    __self: this
-  })));
+  }, "Writing"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Header);
@@ -30036,22 +29392,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _parts_Dividers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../parts/Dividers */ "./parts/Dividers.js");
-/* harmony import */ var _parts_Utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../parts/Utils */ "./parts/Utils.js");
-/* harmony import */ var react_truncate__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-truncate */ "./node_modules/react-truncate/lib/Truncate.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _parts_Dividers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../parts/Dividers */ "./parts/Dividers.js");
+/* harmony import */ var _parts_Utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../parts/Utils */ "./parts/Utils.js");
+/* harmony import */ var react_truncate__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-truncate */ "./node_modules/react-truncate/lib/Truncate.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
 
 
-
-var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/fastforward/parts/PostPreview.js";
+var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/writing/parts/PostPreview.js";
 
 
 
@@ -30061,53 +29415,15 @@ var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/fastforward/parts/PostPrev
 var PostPreview =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(PostPreview, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(PostPreview, _React$Component);
 
   function PostPreview(props) {
-    var _this;
-
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, PostPreview);
 
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(PostPreview).call(this, props));
-    _this.state = {
-      top_height: null,
-      bottom_height: null
-    };
-    _this.top = react__WEBPACK_IMPORTED_MODULE_6___default.a.createRef();
-    _this.setTopHeight = _this.setTopHeight.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
-    _this.setBottomHeight = _this.setBottomHeight.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
-    return _this;
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(PostPreview).call(this, props));
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(PostPreview, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.setTopHeight();
-    }
-  }, {
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
-      if (prevProps.ww !== this.props.ww || prevProps.grem !== this.props.grem) {
-        this.setTopHeight();
-      }
-    }
-  }, {
-    key: "setTopHeight",
-    value: function setTopHeight() {
-      var height = this.top.current.getBoundingClientRect().height;
-      this.setState({
-        top_height: height
-      });
-    }
-  }, {
-    key: "setBottomHeight",
-    value: function setBottomHeight() {
-      var height = this.bottom.current.getBoundingClientRect().height;
-      this.setState({
-        bottom_height: height
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -30127,324 +29443,49 @@ function (_React$Component) {
           adjust_right = _this$props$adjust_ri === void 0 ? 0 : _this$props$adjust_ri,
           _this$props$border_to = _this$props.border_top,
           border_top = _this$props$border_to === void 0 ? true : _this$props$border_to;
-      var _this$state = this.state,
-          top_height = _this$state.top_height,
-          bottom_height = _this$state.bottom_height;
-      var post_date = new Date(post.publishDate);
-      var published_date = "".concat(post_date.toLocaleString('en-us', {
-        month: 'short'
-      }), " ").concat((post_date.getDay() + 1).toString().padStart(2, '0'), " ").concat(post_date.getFullYear());
-      var post_height = post.feature ? grem * 7.5 * 2.5 : grem * 7.5;
-      var bottom_available_lines = 2;
-
-      if (top_height) {
-        // subtract top_height, padding, read_more height
-        var bottom_available = top_height - grem / 2;
-        bottom_available_lines = Math.floor(bottom_available / (grem * 0.625));
-      }
-
-      return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_10___default.a, {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_9___default.a, {
         href: post.external_url ? post.external_url : post.path_name,
         as: post.external_url ? post.external_url : post.urlPath,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 28
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
         className: "hover-box no-underline no-hover gray-backer hover-extend",
         key: post.urlPath,
-        onMouseEnter: function onMouseEnter() {},
-        ref: this.top,
         style: {
           display: 'block',
-          position: 'relative',
-          width: columns * column_width + extra_left + extra_right,
-          paddingLeft: extra_left,
-          paddingRight: extra_right,
-          marginLeft: adjust_left,
-          marginRight: adjust_right
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 76
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          display: 'flex',
-          flexWrap: 'wrap'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 91
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          display: 'flex',
-          width: columns > 6 ? column_width * 2 : column_width * 4,
-          fontSize: fs * (6 / 8),
-          letterSpacing: '0.03em',
-          textTransform: 'uppercase',
-          lineHeight: 1.5,
-          marginLeft: Math.max((columns - 10) / 2 * column_width, 0)
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 92
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          width: columns === 4 ? column_width * 2 : column_width,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_8__["p"])(grem / 2, grem / 2, 0, grem / 2)
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 103
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 109
-        },
-        __self: this
-      }, published_date)), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          width: columns === 4 ? column_width * 2 : column_width,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_8__["p"])(grem / 2, grem / 2, 0, grem / 2)
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 111
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 117
-        },
-        __self: this
-      }, post.post_type))), columns > 8 ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          width: column_width,
-          padding: grem / 2,
-          fontSize: fs * 0.875,
-          lineHeight: 1.5
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 122
-        },
-        __self: this
-      }, post.author ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 130
-        },
-        __self: this
-      }, "by ", post.author) : null) : null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          position: 'relative',
-          width: columns > 8 ? (Math.min(columns, 10) - 4) * column_width : columns === 6 ? columns * column_width : columns === 4 ? column_width * 4 : (columns - 3) * column_width,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_8__["p"])(grem / 2, 0)
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 134
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          fontSize: post.feature ? fs * 2 : fs * 1.5,
-          lineHeight: 1.25,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_8__["p"])(0, grem / 2),
-          marginTop: columns < 8 ? -grem / 4 : 0
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 148
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          paddingLeft: columns === 6 ? column_width : 0
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 156
-        },
-        __self: this
-      }, post.title, post.external_url ? ' ↗' : '')), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          paddingTop: grem / 4,
           position: 'relative'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 161
+          lineNumber: 32
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         style: {
-          fontSize: fs * 0.875,
-          lineHeight: '1.5em',
-          display: 'flex',
-          flexWrap: 'wrap',
-          paddingLeft: columns === 6 ? column_width : 0
+          fontSize: fs * 2,
+          lineHeight: 1.25
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 162
+          lineNumber: 40
         },
         __self: this
-      }, columns < 10 && columns > 4 ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          width: column_width,
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_8__["p"])(0, grem / 2)
-        },
+      }, post.title), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_6__["Hd"], {
+        align: "top",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 41
         },
         __self: this
-      }, post.author ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 178
-        },
-        __self: this
-      }, "by ", post.author) : null) : null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_8__["p"])(0, grem / 2),
-          width: columns > 8 ? column_width * 4 : columns === 4 ? column_width * 2 : column_width * 3
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 181
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          height: grem * 0.875 * (columns === 4 ? 4 : 3),
-          overflow: 'hidden',
-          display: '-webkit-box',
-          WebkitLineClamp: columns === 4 ? '4' : '3',
-          hyphens: 'auto',
-          WebkitBoxOrient: 'vertical'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 192
-        },
-        __self: this
-      }, columns === 4 && post.author ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 203
-        },
-        __self: this
-      }, "by ", post.author, " \u25E6 ") : null, post.excerpt), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          overflow: 'hidden',
-          width: '100%',
-          textOverflow: 'ellipsis',
-          whiteSpace: 'nowrap'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 207
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
-        className: "display-link",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 215
-        },
-        __self: this
-      }, post.external_url ? post.external_url : react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 219
-        },
-        __self: this
-      }, "View", ' ', react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("span", {
-        style: {
-          textTransform: 'lowercase'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 221
-        },
-        __self: this
-      }, post.post_type))))), columns < 8 ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          position: 'relative',
-          width: columns === 4 ? column_width * 2 : column_width * 1
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 230
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          width: "calc(100% - ".concat(grem, "px)"),
-          height: "calc(100% - ".concat(grem / 2, "px)"),
-          marginLeft: grem / 2,
-          marginTop: grem / 4,
-          backgroundImage: "url(".concat(post.preview_image && post.preview_image.startsWith('http') ? post.preview_image : '/static' + post.preview_image, ")"),
-          backgroundSize: 'contain',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 237
-        },
-        __self: this
-      })) : null))), columns > 6 ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          position: 'relative',
-          width: column_width * 1
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 260
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("div", {
-        style: {
-          width: "calc(100% - ".concat(grem, "px)"),
-          height: "calc(100% - ".concat(grem, "px)"),
-          marginLeft: grem / 2,
-          marginTop: grem / 2,
-          backgroundImage: "url(".concat(post.preview_image && post.preview_image.startsWith('http') ? post.preview_image : '/static' + post.preview_image, ")"),
-          backgroundSize: 'contain',
-          backgroundPosition: 'center center',
-          backgroundRepeat: 'no-repeat'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 266
-        },
-        __self: this
-      })) : null), border_top ? react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_parts_Dividers__WEBPACK_IMPORTED_MODULE_7__["Hd"], {
-        align: "t",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 286
-        },
-        __self: this
-      }) : null));
+      })));
     }
   }]);
 
   return PostPreview;
-}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (PostPreview);
 
@@ -30463,7 +29504,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "font_min", function() { return font_min; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "line_height", function() { return line_height; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sm", function() { return sm; });
-var font_size = 18;
+var font_size = 16;
 var font_min = 16;
 var line_height = 1.5;
 var sm = 0.07;
@@ -30559,2249 +29600,39 @@ function track(size) {
 __webpack_require__.r(__webpack_exports__);
 // automatically generated by build_post_index.js
 /* harmony default export */ __webpack_exports__["default"] = ([{
-  "filePath": "pages/posts/2019-05-22-metalearners-learning-how-to-learn.md",
-  "urlPath": "/posts/2019-05-22-metalearners-learning-how-to-learn",
-  "path_name": "/posts/2019-05-22-metalearners-learning-how-to-learn",
-  "publishDate": "2019-05-22T19:05:00.000Z",
-  "title": "Meta-Learners - learning how to learn",
-  "preview_image": "/images/2019/05/fig1-1558038180094.png",
-  "feature": true,
-  "published": true,
-  "author": "Shioulin and Nisha",
-  "post_type": "Post",
-  "excerpt": "\nActive learning\nallows us to be smart about picking the right set of datapoints for which to create labels. Done properly, this approach results in models that are trained on less data\nperforming comparatively to models trained on much more data. In the world of meta-learning...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2019-04-29-visualizing-active-learning.md",
-  "urlPath": "/posts/2019-04-29-visualizing-active-learning",
-  "path_name": "/posts/2019-04-29-visualizing-active-learning",
-  "publishDate": "2019-04-29T20:05:00.000Z",
-  "title": "Visualizing Active Learning",
-  "preview_image": "/images/editor_uploads/2019-04-10-191420-active_learner_gif_small.gif",
-  "feature": true,
-  "published": true,
-  "author": "Grant",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/grantcuster",
-  "excerpt": "\nA GIF of the Active Learner prototype\n\nActive Learner shows how active learning selects which data to be labeled.\n\nActive Learner, our new research prototype, is an interactive visualization of different active learning strategies for labeling data. It features three different...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes.md",
-  "urlPath": "/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes",
-  "path_name": "/posts/2019-04-29-teaching-machines-to-recognize-faces-a-tale-of-two-outcomes",
-  "publishDate": "2019-04-29T20:05:00.000Z",
-  "title": "Teaching machines to recognize faces: a tale of two outcomes",
-  "preview_image": "/images/2019/04/Affectiva_Face_Image-1555448954465.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Alice",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/alicealbrecht/",
-  "excerpt": "\nMachine learning used for facial recognition can have both potentially life-saving and privacy-killing consequences. The rise of cheap sensors, more robust data storage, and advances in machine learning have propelled many industries forward - for instance, many sensors used in...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2019-04-03-an-invitation-to-active-learning.md",
-  "urlPath": "/posts/2019-04-03-an-invitation-to-active-learning",
-  "path_name": "/posts/2019-04-03-an-invitation-to-active-learning",
-  "publishDate": "2019-04-03T00:00:00.000Z",
-  "title": "An Invitation to Active Learning",
-  "preview_image": "/images/editor_uploads/2019-04-04-171937-uncertainty_sampling_observable_fast.gif",
-  "feature": false,
-  "published": true,
-  "author": "Chris",
-  "post_type": "post",
-  "author_link": "https://twitter.com/_cjwallace",
-  "excerpt": "\nMany interesting learning problems exist in places where labeled data is limited.\nAs such, much thought has been spent on how best to learn from limited labeled data.\nOne obvious answer is simply to collect more data.\nThat is valid, but for some applications, data is difficult...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data.md",
-  "urlPath": "/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data",
-  "path_name": "/posts/2019-04-02-a-guide-to-learning-with-limited-labeled-data",
-  "publishDate": "2019-04-02T18:04:00.000Z",
-  "title": "A Guide to Learning with Limited Labeled Data",
-  "preview_image": "/images/2019/03/fig_15-1553784931001.png",
-  "feature": true,
-  "published": true,
-  "author": "Shioulin and Nisha",
-  "post_type": "post",
-  "excerpt": "\nWe are excited to release Learning with Limited Labeled Data, the latest report and prototype from Cloudera Fast Forward Labs.\n\nBeing able to learn with limited labeled data relaxes the stringent labeled data requirement for supervised machine learning. Our report focuses on...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2019-03-20-learning-with-limited-labeled-data.md",
-  "urlPath": "/posts/2019-03-20-learning-with-limited-labeled-data",
-  "path_name": "/posts/2019-03-20-learning-with-limited-labeled-data",
-  "publishDate": "2019-03-20T19:03:00.000Z",
-  "title": "Learning with Limited Labeled Data",
-  "preview_image": "/images/editor_uploads/2019-03-21-201701-AL_loop.png",
-  "feature": false,
-  "published": true,
-  "author": "Shioulin and Nisha",
-  "post_type": "post",
-  "excerpt": "\nIn recent years, machine learning technologies - especially deep learning - have made breakthroughs which have turned science fiction into reality. Autonomous cars are almost possible, and machines can comprehend language. These technical advances are unprecedented, but they...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2019-02-28-causality-in-machine-learning.md",
-  "urlPath": "/posts/2019-02-28-causality-in-machine-learning",
-  "path_name": "/posts/2019-02-28-causality-in-machine-learning",
-  "publishDate": "2019-02-28T19:03:00.000Z",
-  "title": "Causality in machine learning",
-  "preview_image": "/images/editor_uploads/2019-03-12-191909-correlation.png",
-  "feature": false,
-  "published": true,
-  "author": "Seth",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/shendrickson16",
-  "excerpt": "\nJudea Pearl, the inventor of Bayesian networks, recently published a book called The Book of Why: The New Science of Cause and Effect. The book covers a great many things, including a detailed history of how the fields of causality and statistics have long been at odds, Pearl's...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set.md",
-  "urlPath": "/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set",
-  "path_name": "/posts/2019-01-29-making-an-interactive-umap-visualization-of-the-mnist-data-set",
-  "publishDate": "2019-01-29T17:01:00.000Z",
-  "title": "Making an interactive UMAP visualization of the MNIST data set",
-  "preview_image": "http://feed.grantcuster.com/static/images/feed/umap_zoom-1547839236092.gif",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/grantcuster",
-  "excerpt": "\nA GIF of zooming into the MNIST visualization\n\nUMAP explorer: an interactive visualization of the MNIST data set\n\nWe're in the middle of work on our next report, Learning with Limited Labeled Data, and the accompanying prototype. For the prototype's front-end we wanted to be...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-12-28-the-business-case-for-federated-learning.md",
-  "urlPath": "/posts/2018-12-28-the-business-case-for-federated-learning",
-  "path_name": "/posts/2018-12-28-the-business-case-for-federated-learning",
-  "publishDate": "2018-12-28T19:01:00.000Z",
-  "title": "The business case for federated learning",
-  "preview_image": "/images/editor_uploads/2019-01-05-191115-FF09_Overview.png",
-  "feature": false,
-  "published": true,
-  "author": "Mike",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nLast month, we released Federated Learning, the latest report and prototype from\nCloudera Fast Forward Labs.\n\nFederated learning makes it possible to build machine learning systems without\ndirect access to training data. The data remains in its original location,\nwhich helps to...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-12-18-highlights-2018.md",
-  "urlPath": "/posts/2018-12-18-highlights-2018",
-  "path_name": "/posts/2018-12-18-highlights-2018",
-  "publishDate": "2018-12-18T19:12:00.000Z",
-  "title": "Highlights of 2018",
-  "preview_image": "/images/editor_uploads/2018-12-19-194412-alchemist.jpg",
-  "feature": true,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nWe end 2018 with a round-up of some of the research, talks, sci-fi, visualizations/art, and a grab bag of other stuff we found particularly interesting, enjoyable, or influential this year (and we’re going to be a bit fuzzy about the definition of “this year”)!\n\nResearch\n\nIn...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-12-18-finetuning-for-natural-language-processing.md",
-  "urlPath": "/posts/2018-12-18-finetuning-for-natural-language-processing",
-  "path_name": "/posts/2018-12-18-finetuning-for-natural-language-processing",
-  "publishDate": "2018-12-28T19:01:00.000Z",
-  "title": "Fine-tuning for Natural Language Processing",
-  "preview_image": "/images/2018/12/Screen_Shot_2018_12_07_at_12_03_44_PM-1544202300577.png",
-  "feature": false,
-  "published": true,
-  "author": "Shioulin",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/shioulin_sam",
-  "excerpt": "\n2018 was a fun and exciting year for natural language processing. A series of papers put forth powerful new ideas that improve the way machines understand and work with language. They challenge the standard way of using pretrained word embeddings like word2vec to initialize the...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-12-18-deep-learning-for-media-content.md",
-  "urlPath": "/posts/2018-12-18-deep-learning-for-media-content",
-  "path_name": "/posts/2018-12-18-deep-learning-for-media-content",
-  "publishDate": "2018-12-28T19:01:00.000Z",
-  "title": "Deep Learning for Media Content",
-  "preview_image": "/images/editor_uploads/2019-01-05-191614-Merlin_Flow.png",
-  "feature": false,
-  "published": true,
-  "author": "Ryan",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/jqpubliq",
-  "excerpt": "\nMachine learning continues to make its way into the arts, most recently in film and TV.\n\nIn a recent blog post, data scientists at 20th Century Fox and technical staff at Google Cloud described the approach they are using to predict audiences for their movies. (The tone of the...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-12-06-designing-turbofan-tycoon.md",
-  "urlPath": "/posts/2018-12-06-designing-turbofan-tycoon",
-  "path_name": "/posts/2018-12-06-designing-turbofan-tycoon",
-  "publishDate": "2018-12-06T16:12:00.000Z",
-  "title": "Designing Turbofan Tycoon",
-  "preview_image": "/images/editor_uploads/2018-12-07-163940-turbofan_even_shorter.gif",
-  "feature": true,
-  "published": true,
-  "author": "Grant",
-  "post_type": "post",
-  "author_link": "https://twitter.com/grantcuster",
-  "excerpt": "\nA GIF of Turbofan Tycoon in action.\n\nOur prototypes are designed to demonstrate the value of the technologies we research. For our most recent prototype, Turbofan Tycoon, we decided that the best way to demonstrate the value of federated learning was to place you in an...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-11-14-federated-learning.md",
-  "urlPath": "/posts/2018-11-14-federated-learning",
-  "path_name": "/posts/2018-11-14-federated-learning",
-  "publishDate": "2018-11-14T10:11:00.000Z",
-  "title": "Federated learning: distributed machine learning with data locality and privacy",
-  "preview_image": "/images/editor_uploads/2018-11-14-214557-ff09_07.png",
-  "feature": true,
-  "published": true,
-  "author": "Mike",
-  "post_type": "post",
-  "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nWe’re excited to release Federated Learning, the latest report and prototype from Cloudera Fast Forward Labs.\n\nFederated learning makes it possible to build machine learning systems without direct access to training data. The data remains in its original location, which helps to...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence.md",
-  "urlPath": "/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence",
-  "path_name": "/posts/2018-10-29-the-quest-continues-a-look-at-a-new-initiative-to-explore-human-and-machine-intelligence",
-  "publishDate": "2018-10-29T15:11:00.000Z",
-  "title": "The quest continues: a look at a new initiative to explore human and machine intelligence",
-  "preview_image": "/images/2018/10/mike_petrucci_607505_unsplash-1539792581534.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Alice",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/AliceAlbrecht",
-  "excerpt": "\nThe resurrection of neural networks as a technique has helped propel the field of machine learning to the forefront of commercial applications. Today’s most popular applications focus on finding patterns in data and exploiting those patterns for very narrow tasks. But what if we...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-10-29-the-decentralized-web.md",
-  "urlPath": "/posts/2018-10-29-the-decentralized-web",
-  "path_name": "/posts/2018-10-29-the-decentralized-web",
-  "publishDate": "2018-10-29T15:11:00.000Z",
-  "title": "The Decentralized Web",
-  "preview_image": "/images/editor_uploads/2018-10-02-191324-Screen_Shot_2018_10_01_at_3_04_36_PM.png",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nLast week, Sir Tim Berners-Lee announced Solid, a project designed to give users more control over their data. Solid is one of a number of recent attempts to rethink how the web works. As part of an effort to get my head around the goals of these different approaches and, more...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way.md",
-  "urlPath": "/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way",
-  "path_name": "/posts/2018-10-29-learning-to-learn-in-a-modelagnostic-way",
-  "publishDate": "2018-10-29T15:11:00.000Z",
-  "title": "Learning to learn in a model-agnostic way",
-  "preview_image": "/images/2018/10/meta_learning-1538505489954.png",
-  "feature": false,
-  "published": true,
-  "author": "Nisha",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/NishaMuktewar",
-  "excerpt": "\nAs humans, we can quickly adapt our actions in new situations, be it recognizing objects from a few examples, or learning new skills and\napplying them in a matter of just a few minutes. But when it comes to deep learning techniques, an\nunderstandably large amount of time and...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge.md",
-  "urlPath": "/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge",
-  "path_name": "/posts/2018-10-29-federated-learning-machine-learning-with-privacy-on-the-edge",
-  "publishDate": "2018-10-29T18:10:00.000Z",
-  "title": "Coming Soon: Federated Learning",
-  "preview_image": "/images/editor_uploads/2018-10-31-181344-federated_learning_animated_labeled.gif",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nFederated Learning is a technology that allows you to build machine learning systems when your datacenter can't get direct access to model training data. The data remains in its original location, which helps to ensure privacy and reduces communication costs.\n\nPrivacy and...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-09-28-the-true-competitive-advantage-in-ml.md",
-  "urlPath": "/posts/2018-09-28-the-true-competitive-advantage-in-ml",
-  "path_name": "/posts/2018-09-28-the-true-competitive-advantage-in-ml",
-  "publishDate": "2018-09-28T21:10:00.000Z",
-  "title": "The True Competitive Advantage in ML",
-  "preview_image": "/images/editor_uploads/2018-10-30-212122-rawpixel_1072884_unsplash.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Justin",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/JustinJDN",
-  "excerpt": "\nData science, machine learning (ML), and AI are no longer just cute buzzwords.  Nearly all organizations, companies and governments now recognize the immense potential of AI-enabled products and services, and many of them have already made the very real investment of hiring...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision.md",
-  "urlPath": "/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision",
-  "path_name": "/posts/2018-09-28-snorkel-rapid-training-data-creation-with-weak-supervision",
-  "publishDate": "2018-09-28T21:10:00.000Z",
-  "title": "Snorkel: Rapid Training Data Creation with Weak Supervision",
-  "preview_image": "/images/editor_uploads/2018-09-05-182818-snorkel_workflow.png",
-  "feature": false,
-  "published": true,
-  "author": "Nisha",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/NishaMuktewar",
-  "excerpt": "\nMachine learning (and more specifically, deep learning) techniques are recognized for their ability to obtain high accuracy for\na variety of classification problems. Deep learning models are more complex than most traditional models and often have\nthousands of parameters and...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-09-28-realistic-video-generation.md",
-  "urlPath": "/posts/2018-09-28-realistic-video-generation",
-  "path_name": "/posts/2018-09-28-realistic-video-generation",
-  "publishDate": "2018-09-28T21:10:00.000Z",
-  "title": "Realistic Video Generation",
-  "preview_image": "/images/2018/09/gan-1536758013486.png",
-  "feature": false,
-  "published": true,
-  "author": "Micha",
-  "post_type": "newsletter",
-  "author_link": "http://micha.codes/",
-  "excerpt": "\nGenerative Adversarial Networks (GANs) wowed the world in 2014 with their\nability to generate what we considered to be realistic images. While these\nimages were quite low resolution, researchers kept working on how to perfect\nthese methods in order to increase the quality of the...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover.md",
-  "urlPath": "/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover",
-  "path_name": "/posts/2018-09-28-apache-spark-gets-a-machine-learning-makeover",
-  "publishDate": "2018-09-28T21:10:00.000Z",
-  "title": "Apache Spark gets a machine learning makeover",
-  "preview_image": "/images/editor_uploads/2018-09-19-194511-XOnSpark.png",
-  "feature": false,
-  "published": true,
-  "author": "Seth",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/shendrickson16",
-  "excerpt": "\nMachine learning on Spark: an abridged history\n\nApache Spark - the cluster computing framework\nthat's been throwing shade at MapReduce since 2011 - has always been a bit\nremarkable, because it bridged the divide between data engineering and data\nscience. One of the great...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning.md",
-  "urlPath": "/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning",
-  "path_name": "/posts/2018-09-17-deep-learning-is-easy-an-introduction-to-transfer-learning",
-  "publishDate": "2018-09-17T16:09:00.000Z",
-  "title": "Deep learning made easier with transfer learning",
-  "preview_image": "/images/editor_uploads/2018-09-18-170232-robot_share_1.png",
-  "feature": true,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nDeep learning has provided extraordinary advances in problem spaces that\nare poorly solved by other approaches. This success is due to several key\ndepartures from traditional machine learning that allow it to excel when\napplied to unstructured data. Today, deep learning models...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-08-29-understanding-a-generative-space.md",
-  "urlPath": "/posts/2018-08-29-understanding-a-generative-space",
-  "path_name": "/posts/2018-08-29-understanding-a-generative-space",
-  "publishDate": "2018-08-29T22:09:00.000Z",
-  "title": "Understanding a generative space",
-  "preview_image": "/images/2018/08/compton_generator-1533226496607.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "Newsletter",
-  "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nKate Compton, maker of many interesting things, recently tweeted a diagram from her work-in-progress dissertation zine. The illustration breaks down how we interact with a procedural generator, which can be anything from a photo filter to a character creation tool.\n\nA diagram...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability.md",
-  "urlPath": "/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability",
-  "path_name": "/posts/2018-08-29-hyperparameter-tuning-and-metainterpretability",
-  "publishDate": "2018-08-29T00:00:00.000Z",
-  "title": "Hyperparameter Tuning and Meta-Interpretability: Track All Your Experiments!",
-  "preview_image": "/images/2018/07/Screen_Shot_2018_07_31_at_11_01_41_AM-1533049344437.png",
-  "feature": false,
-  "published": true,
-  "author": "Friederike",
-  "post_type": "newsletter",
-  "author_link": "https://www.linkedin.com/in/friederikeschueuer/",
-  "excerpt": "\nFrom random forest to neural networks, many modern machine learning algorithms involve a number of parameters that have to be fixed before training the\nalgorithm. These parameters, in contrast to the ones learned by the algorithm\nduring training, are called hyperparameters. The...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp.md",
-  "urlPath": "/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp",
-  "path_name": "/posts/2018-08-29-breakthroughs-in-transfer-learning-for-nlp",
-  "publishDate": "2018-08-29T22:09:00.000Z",
-  "title": "Breakthroughs in transfer learning for natural language processing",
-  "preview_image": "/images/2018/07/task_dict_v-1532535013679.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Seth",
-  "post_type": "Newsletter",
-  "author_link": "https://twitter.com/shendrickson16",
-  "excerpt": "\nOne of the most exciting parts of our jobs at Cloudera Fast Forward Labs is our work on applied machine learning research. Through this research we see and work with some of the most exciting developments in machine learning, deep learning, and AI, but - as with any field that...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-08-29-automated-machine-learning-hype-now-reality-later.md",
-  "urlPath": "/posts/2018-08-29-automated-machine-learning-hype-now-reality-later",
-  "path_name": "/posts/2018-08-29-automated-machine-learning-hype-now-reality-later",
-  "publishDate": "2018-08-29T00:00:00.000Z",
-  "title": "Automated Machine Learning: Hype now, reality later?",
-  "feature": false,
-  "published": true,
-  "author": "Shioulin",
-  "post_type": "Newsletter",
-  "author_link": "https://twitter.com/shioulin_sam",
-  "excerpt": "\nPreviously in our newsletter, we had framed automated machine learning around four notions:\nCitizen Data Science / ML: Automated machine learning will allow everyone to do data science and ML. It requires no special training or skills.\nEfficient Data Science / ML: Automated...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-08-15-multi-task-sci-fi-havurtat.md",
-  "urlPath": "/posts/2018-08-15-multi-task-sci-fi-havurtat",
-  "path_name": "/posts/2018-08-15-multi-task-sci-fi-havurtat",
-  "publishDate": "2018-08-15T12:00:00.000Z",
-  "title": "Multi-Task Sci-Fi: Havurtat",
-  "preview_image": "https://scifi.fastforwardlabs.com/08-01-f34226bd05186095e6feb166414361a5.svg",
-  "feature": false,
-  "published": true,
-  "author": "Umair Kazi",
-  "post_type": "SciFi",
-  "author_link": "https://twitter.com/nightcolander",
-  "excerpt": "\nEach report we do features a science-fiction story inspired by the report topic. For our multi-task learning report, Umair Kazi explores the paradoxes of knowledge in the lost city of Havurtat.\n",
-  "external_url": "https://scifi.fastforwardlabs.com/ff08/havurtat"
-}, {
-  "filePath": "pages/posts/2018-07-31-progress-in-machine-learning-interpretability.md",
-  "urlPath": "/posts/2018-07-31-progress-in-machine-learning-interpretability",
-  "path_name": "/posts/2018-07-31-progress-in-machine-learning-interpretability",
-  "publishDate": "2018-07-31T16:08:00.000Z",
-  "title": "Progress in machine learning interpretability",
-  "preview_image": "/images/2018/07/lime-1530894622923.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nOur goal when we do research is to address capabilities and technologies that\nwe expect to become production-ready in one to two years. That focus on\nfast-moving areas means that new algorithmic ideas sometimes come along that\nallow our clients to extend or improve upon the work...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-07-31-new-dynamics-for-topic-models.md",
-  "urlPath": "/posts/2018-07-31-new-dynamics-for-topic-models",
-  "path_name": "/posts/2018-07-31-new-dynamics-for-topic-models",
-  "publishDate": "2018-07-31T16:08:00.000Z",
-  "title": "New Dynamics for Topic Models",
-  "preview_image": "/images/2018/07/f5-1531838383022.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nTopic models can extract key themes from large collections of documents in an unsupervised manner, which makes them one of the most powerful tools in organizing, searching, and understanding the vast troves of text data produced by humanity. Their power derives, in part, from...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-07-31-neural-reinterpretations-of-movie-trailers.md",
-  "urlPath": "/posts/2018-07-31-neural-reinterpretations-of-movie-trailers",
-  "path_name": "/posts/2018-07-31-neural-reinterpretations-of-movie-trailers",
-  "publishDate": "2018-07-31T16:08:00.000Z",
-  "title": "Neural reinterpretations of movie trailers",
-  "preview_image": "/images/editor_uploads/2018-06-26-144942-Screen_Shot_2018_06_25_at_10_46_42_AM.png",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "Newsletter",
-  "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nIn his latest project, artist and coder Mario Klingemann uses a neural network to match archival movie footage with the content of recent movie trailers. He regularly posts the resulting “neural reinterpretations” on his Twitter. The results are technically impressive. They’re...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-07-24-ff08-launch.md",
-  "urlPath": "/posts/2018-07-24-ff08-launch",
-  "path_name": "/posts/2018-07-24-ff08-launch",
-  "publishDate": "2018-07-24T13:00:00.000Z",
-  "title": "New Research on Multi-Task Learning",
-  "preview_image": "/images/2018/07/ff08-1532375075481.gif",
-  "feature": true,
-  "published": true,
-  "author": "Friederike",
-  "post_type": "post",
-  "author_link": "https://www.linkedin.com/in/friederikeschueuer/",
-  "excerpt": "\nWe are excited to share the latest report and prototype from our machine\nintelligence R&D team: Multi-Task Learning.\n\nFF08 Multi-Task Learning\n\nWax on.. face off!\n\nWhen humans learn new tasks, we take advantage of knowledge we've gained from\nlearning, or having learned, related...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning.md",
-  "urlPath": "/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning",
-  "path_name": "/posts/2018-06-29-sequence-labeling-with-semisupervised-multitask-learning",
-  "publishDate": "2018-06-29T16:08:00.000Z",
-  "title": "Sequence labeling with semi-supervised multi-task learning",
-  "preview_image": "/images/2018/06/Screen_Shot_2018_06_14_at_4_27_13_PM-1529008110241.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nSequence labeling tasks attempt to assign a categorical label to each member in\nthe sequence. In natural language processing, where a sequence generally refers\nto a sentence, examples of sequence labeling include named entity\nrecognition (NER), part-of-speech tagging (POS) and...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems.md",
-  "urlPath": "/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems",
-  "path_name": "/posts/2018-06-29-deep-learning-vendor-update-hyperparameter-tuning-systems",
-  "publishDate": "2018-06-29T16:08:00.000Z",
-  "title": "Deep Learning Vendor Update: Hyperparameter Tuning Systems",
-  "preview_image": "/images/editor_uploads/2018-06-19-231235-Compressorhead___Fingers_on_Gibson_Flying_V_Bones_on_Fender_Precision_Bass___Musikmesse_Frankfurt_2013.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nIn our research reports, we cover \"the recently possible,\" and what makes \"the recently possible\" possible. In addition to a detailed how-to guide of new machine learning capabilities, each of our reports contains a section on open source projects, commercial offerings, and...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning.md",
-  "urlPath": "/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning",
-  "path_name": "/posts/2018-06-26-supercharging-classification-the-value-of-multitask-learning",
-  "publishDate": "2018-06-27T00:00:00.000Z",
-  "title": "Supercharging Classification - The Value of Multi-task Learning",
-  "preview_image": "/images/2018/06/02_03-1530032857031.png",
-  "feature": false,
-  "published": true,
-  "author": "Manny",
-  "post_type": "post",
-  "author_link": "https://twitter.com/mannymoss",
-  "excerpt": "\nToday's machines can identify objects in photographs, predict loan repayments or\ndefaults, write short summaries of long articles, or recommend movies you may\nlike. Up until now, machines have achieved mastery through laser-like focus; most\nmachine learning algorithms today...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-05-31-rules-to-learn-by.md",
-  "urlPath": "/posts/2018-05-31-rules-to-learn-by",
-  "path_name": "/posts/2018-05-31-rules-to-learn-by",
-  "publishDate": "2018-05-31T16:08:00.000Z",
-  "title": "Rules to Learn By",
-  "preview_image": "/images/editor_uploads/2018-05-09-164638-55f9d8d8bd86ef1d008bac98_750_577.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nLongtime readers of this newsletter know that we follow the Fairness, Accountability, and Transparency in Machine Learning conversation closely (see here and here). These conversations address and attempt to mitigate the potential for technical systems to produce unfairness...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-05-31-convolve-all-the-things.md",
-  "urlPath": "/posts/2018-05-31-convolve-all-the-things",
-  "path_name": "/posts/2018-05-31-convolve-all-the-things",
-  "publishDate": "2018-05-31T16:08:00.000Z",
-  "title": "Convolve all the things",
-  "preview_image": "/images/2018/04/CausalConv-1524689210501.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nWhile deep learning can be applied generally, much of the excitement around it has stemmed from significant breakthroughs in two main areas: computer vision and natural language processing. Practitioners have typically applied convolutional neural networks (CNNs) to spatial data...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-05-02-progress-in-text-summarization.md",
-  "urlPath": "/posts/2018-05-02-progress-in-text-summarization",
-  "path_name": "/posts/2018-05-02-progress-in-text-summarization",
-  "publishDate": "2018-05-02T16:10:00.000Z",
-  "title": "Progress in text summarization",
-  "preview_image": "/images/editor_uploads/2018-10-19-160814-pointer_gen.png",
-  "feature": "false",
-  "published": "true",
-  "author": "Mike",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nWe published our report on text summarization in 2016. Since then, we've\nenjoyed helping our clients make use of techniques such as topic modeling,\ndocument embedding, and recurrent neural networks to deal with text that ranges\nin scope from product reviews to insurance...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling.md",
-  "urlPath": "/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling",
-  "path_name": "/posts/2018-04-25-simple-architectures-outperform-complex-ones-in-language-modeling",
-  "publishDate": "2018-04-25T16:08:00.000Z",
-  "title": "Simple Architectures Outperform Complex Ones in Language Modeling",
-  "preview_image": "/images/2018/03/param_importance-1522251173209.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nAre novel, complex, and specialized neural network architectures always better for language modeling? Recent papers have shown otherwise. Language models are used to predict the next token given the preceeding tokens. Most operate at word-level or character-level. Word-level...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition.md",
-  "urlPath": "/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition",
-  "path_name": "/posts/2018-04-25-javascript-eats-the-world-deep-learning-and-notebooks-edition",
-  "publishDate": "2018-04-25T16:08:00.000Z",
-  "title": "JavaScript eats the world: deep learning and notebooks edition",
-  "preview_image": "/images/editor_uploads/2018-03-31-210319-hicat2.gif",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "Newsletter",
-  "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nGoogle recently announced TensorFlow.js, an open-source library for running machine learning in the browser, and a successor to the deeplearn.js library. While the majority of machine learning work is unlikely to shift to JavaScript anytime soon, the examples included on the...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-04-18-introducing-scifi.md",
-  "urlPath": "/posts/2018-04-18-introducing-scifi",
-  "path_name": "/posts/2018-04-18-introducing-scifi",
-  "publishDate": "2018-04-19T18:04:00.000Z",
-  "title": "Introducing SciFi",
-  "preview_image": "/images/editor_uploads/2018-04-19-185324-scifi_crop.png",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "post",
-  "author_link": "https://twiiter.con/GrantCuster",
-  "excerpt": "\nToday we are launching a mini-site featuring our collection of short stories inspired by new developments in machine learning.   Beginning with our fourth report, we started including a science-fiction story along with the technical and strategic overviews that are the bulk of...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-04-10-pytorch-for-recommenders-101.md",
-  "urlPath": "/posts/2018-04-10-pytorch-for-recommenders-101",
-  "path_name": "/posts/2018-04-10-pytorch-for-recommenders-101",
-  "publishDate": "2018-04-10T17:04:00.000Z",
-  "title": "PyTorch for Recommenders 101",
-  "preview_image": "/images/editor_uploads/2018-04-11-175944-02_07.png",
-  "feature": false,
-  "published": true,
-  "author": "Shioulin",
-  "post_type": "post",
-  "author_link": "https://twitter.com/shioulin_sam",
-  "excerpt": "\nRecommenders, generally associated with e-commerce, sift though a huge inventory\nof available items to find and recommend ones that a user will like. Different\nfrom search, recommenders rely on historical data to tease out user\npreference. How does a recommender accomplish this...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-03-28-unemployment-vs-augmentation.md",
-  "urlPath": "/posts/2018-03-28-unemployment-vs-augmentation",
-  "path_name": "/posts/2018-03-28-unemployment-vs-augmentation",
-  "publishDate": "2018-03-28T16:08:00.000Z",
-  "title": "Unemployment vs. Augmentation",
-  "preview_image": "/images/2018/02/1_ruUDqwD4sGZOhIkeK2zUYQ-1519759204276.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nIn the ongoing debates around whether or not robots are going to take our jobs, listening to those who have a real stake in the technology is critical, and often offers important insights for how we build new technologies, as well as how we talk about what we build. Take, for...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-03-28-new-creative-possibilities-with-machine-learning.md",
-  "urlPath": "/posts/2018-03-28-new-creative-possibilities-with-machine-learning",
-  "path_name": "/posts/2018-03-28-new-creative-possibilities-with-machine-learning",
-  "publishDate": "2018-03-28T16:08:00.000Z",
-  "title": "New creative possibilities with machine learning",
-  "preview_image": "/images/editor_uploads/2018-03-09-211736-Screen_Shot_2018_03_08_at_3_52_58_PM.png",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "Newsletter",
-  "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nMachine learning techniques are able to organize large amounts of unstructured data. Combined with dimensionality reduction techniques like t-SNE, this capability opens up new ways for us to interact with creative material including sounds, words, and ideas. In this section we...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-03-21-join-the-machine-learning-team-at-cloudera.md",
-  "urlPath": "/posts/2018-03-21-join-the-machine-learning-team-at-cloudera",
-  "path_name": "/posts/2018-03-21-join-the-machine-learning-team-at-cloudera",
-  "publishDate": "2018-03-21T15:03:00.000Z",
-  "title": "Join the Machine Learning Team at Cloudera!",
-  "preview_image": "http://fastforwardlabs.github.io/report_images/ff04/rnn_encoder.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nAt Cloudera, we believe that with data we can make what is impossible today possible tomorrow. We are building the modern platform for machine learning and analytics to help our customers solve some of the world’s greatest challenges with data.\n\nThe Machine Learning team is a...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-03-06-using-three-js-for-2d-data-visualization.md",
-  "urlPath": "/posts/2018-03-06-using-three-js-for-2d-data-visualization",
-  "path_name": "/posts/2018-03-06-using-three-js-for-2d-data-visualization",
-  "publishDate": "2018-03-06T15:50:00.000Z",
-  "title": "Using three.js for 2D data visualization",
-  "preview_image": "http://blog.fastforwardlabs.com/images/2018/03/Screen_Shot_2018_03_06_at_10_53_16_AM-1520351645421.png",
-  "feature": true,
-  "published": true,
-  "author": "Grant",
-  "post_type": "Demo",
-  "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nA code walkthrough of how to use three.js for large 2D data visualizations. Three.js can smoothly render a large number of points in the browser but there are some tricks to making it work for interactive 2D visualizations. This is the guide that I wish I would have had when I...",
-  "external_url": "https://beta.observablehq.com/@grantcuster/using-three-js-for-2d-data-visualization"
-}, {
-  "filePath": "pages/posts/2018-02-28-multitask-learning.md",
-  "urlPath": "/posts/2018-02-28-multitask-learning",
-  "path_name": "/posts/2018-02-28-multitask-learning",
-  "publishDate": "2018-02-28T17:08:00.000Z",
-  "title": "Multi-Task Learning",
-  "preview_image": "/images/2018/02/MTLNet-1517931635465.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nThe common approach in machine learning is to train and optimize one task at a time. In contrast, multitask learning (MTL) trains related tasks in parallel, using a shared representation. One advantage of MTL is improved generalization - using information regarding related tasks...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-02-28-machine-learning-in-the-browser.md",
-  "urlPath": "/posts/2018-02-28-machine-learning-in-the-browser",
-  "path_name": "/posts/2018-02-28-machine-learning-in-the-browser",
-  "publishDate": "2019-02-28T19:03:00.000Z",
-  "title": "Machine Learning In The Browser",
-  "preview_image": "/images/editor_uploads/2019-02-21-221448-tfjs.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Victor",
-  "post_type": "newsletter",
-  "author_link": "https://twitter.com/vykthur",
-  "excerpt": "\nThe promise of Machine Learning (ML) on edge devices holds potential to enable new capabilities while reaping the benefits associated with on-device computation. As an environment that is frequently the source of data (user interactions, sensors such as cameras, acelerometers...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab.md",
-  "urlPath": "/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab",
-  "path_name": "/posts/2018-02-28-comparing-human-and-agent-performance-deepmind-releases-psychlab",
-  "publishDate": "2018-02-28T16:08:00.000Z",
-  "title": "Comparing human and agent performance: DeepMind releases PsychLab",
-  "preview_image": "/images/2018/02/PsychLabs_DeepMind_figure-1517949199677.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nGoogle’s DeepMind released PsychLab this week, which has been developed internally and released to the public as part of DeepMind’s efforts30509-3) to apply decades of research in cognitive science/neuroscience to advance the state of the art in machine learning and artificial...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-02-14-probabilistic-cookies.md",
-  "urlPath": "/posts/2018-02-14-probabilistic-cookies",
-  "path_name": "/posts/2018-02-14-probabilistic-cookies",
-  "publishDate": "2018-02-14T17:02:00.000Z",
-  "title": "Probabilistic Cookies!",
-  "preview_image": "/images/editor_uploads/2018-02-15-204722-IMG_20180208_091928_1200.jpg",
-  "feature": true,
-  "published": true,
-  "author": "Ryan Micallef",
-  "post_type": "Fast Forward Food Labs",
-  "author_link": "https://www.flickr.com/photos/jqpubliq",
-  "excerpt": "\nIn the spirit of Valentine's Day, we at Fast Forward Labs thought it would be fun to bake cookies for our sweethearts. Being DIY nerds, we thought we'd math it up a bit.\n\nWe used python to generate probability distributions and matplotlib to check our distributions. Then we...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-01-26-serverless-data-science.md",
-  "urlPath": "/posts/2018-01-26-serverless-data-science",
-  "path_name": "/posts/2018-01-26-serverless-data-science",
-  "publishDate": "2018-01-26T17:08:00.000Z",
-  "title": "Serverless data science",
-  "preview_image": "/images/2018/01/serverless_pywren-1515449109658.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nCloud computing has transformed enterprise IT. It makes it possible to rapidly\nscale up and down a complex and global infrastructure, without the overhead of\na datacenter. But living in the cloud can be expensive, and you still need to\nmaintain computers and their operating...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters.md",
-  "urlPath": "/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters",
-  "path_name": "/posts/2018-01-26-google-mapss-competitive-moat-why-better-data-matters",
-  "publishDate": "2018-01-26T17:08:00.000Z",
-  "title": "Google Maps' Competitive Moat - Why Better Data Matters",
-  "preview_image": "/images/2018/01/Smith_Court_Area_of_Interest-1516748269178.JPG",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nJustin O'Beirne recently wrote a blog post surveying the landscape of mapping apps and sites (with particular focus on Google Maps and Apple Maps). This is one of a series of pieces O'Beirne has written comparing Google and Apple Maps. In short, O'Beirne concludes that Google...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2018-01-22-exploring-recommendation-systems.md",
-  "urlPath": "/posts/2018-01-22-exploring-recommendation-systems",
-  "path_name": "/posts/2018-01-22-exploring-recommendation-systems",
-  "publishDate": "2018-01-22T00:00:00.000Z",
-  "title": "Exploring Recommendation Systems",
-  "preview_image": "/images/2018/01/ROC_NMF_tag_loop_1115_nodot.png",
-  "feature": false,
-  "published": true,
-  "author": "Shioulin",
-  "post_type": "post",
-  "author_link": "https://twitter.com/shioulin_sam",
-  "excerpt": "\n\nWhile we commonly associate recommendation systems with e-commerce, their\napplication extends to any decision-making problem which requires pairing two\ntypes of things together. To understand why recommenders don't always work as\nwell as we'd like them to, we set out to build...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-12-20-2017-highlights.md",
-  "urlPath": "/posts/2017-12-20-2017-highlights",
-  "path_name": "/posts/2017-12-20-2017-highlights",
-  "publishDate": "2017-12-20T00:00:00.000Z",
-  "title": "Highlights of 2017",
-  "preview_image": "/images/2017/12/stars.jpg",
-  "feature": false,
-  "published": true,
-  "author": "CFFL",
-  "post_type": "post",
-  "excerpt": "\nWe end 2017 with a round-up of some of the research, talks, sci-fi,\nvisualizations/art, and a grab bag of other stuff we found particularly\ninteresting, enjoyable, or influential this year.\n\nStars from around the world\n\nStars from around the world. Image credit: Kyle McDonald...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-11-30-the-promise-of-automated-machine-learning-automl.md",
-  "urlPath": "/posts/2017-11-30-the-promise-of-automated-machine-learning-automl",
-  "path_name": "/posts/2017-11-30-the-promise-of-automated-machine-learning-automl",
-  "publishDate": "2017-11-30T12:08:00.000Z",
-  "title": "The promise of Automated Machine Learning (AutoML)",
-  "preview_image": "/images/2017/11/Screen_Shot_2017_11_07_at_10_07_43_AM-1510067292745.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nEarlier this month The New York Times published an article on Building A.I. That Can Build A.I.. There is a lot of excitement about AutoML due to the scarcity of machine learning (ML) talent:\n\n> By some estimates, only 10,000 people worldwide have the education, experience and...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-11-22-happy-thanksgiving.md",
-  "urlPath": "/posts/2017-11-22-happy-thanksgiving",
-  "path_name": "/posts/2017-11-22-happy-thanksgiving",
-  "publishDate": "2017-11-22T00:00:00.000Z",
-  "title": "Algorithmic Cookery & Happy Thanksgiving",
-  "preview_image": "/images/2017/11/cute_bot-1511369925891.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Friederike",
-  "post_type": "post",
-  "author_link": "https://twitter.com/FSchueuer",
-  "excerpt": "\nAs you are preparing for your Thanksgiving meal, just know that a robotic arm is holding the spoon at the Institute for Culinary Education (ICE); progress is relentless. \"The Chef Watson cookbook is a revolutionary display of the creative collaboration of man and machine...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-11-02-interpretability-scifi-the-definition-of-success.md",
-  "urlPath": "/posts/2017-11-02-interpretability-scifi-the-definition-of-success",
-  "path_name": "/posts/2017-11-02-interpretability-scifi-the-definition-of-success",
-  "publishDate": "2017-11-02T14:00:00.000Z",
-  "title": "Interpretability Sci-Fi: The Definition of Success",
-  "preview_image": "/images/2017/09/5-07.png",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "post",
-  "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nWe believe in fiction as an important tool for imagining future relationships to technology. In our reports on new technologies we feature short science fiction stories that imagine the possible implications. The following story, influenced by a certain classic Sci-Fi film...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-10-26-neuroscienceinspired-ai.md",
-  "urlPath": "/posts/2017-10-26-neuroscienceinspired-ai",
-  "path_name": "/posts/2017-10-26-neuroscienceinspired-ai",
-  "publishDate": "2017-10-26T18:07:00.000Z",
-  "title": "Neuroscience-inspired AI",
-  "preview_image": "/images/2017/10/Screen_Shot_2017_10_09_at_9-1507556105313.33",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nPioneers in artificial intelligence (AI) have worked across multiple related fields, including computer science, AI, neuroscience, and psychology - but as each of these areas of research have grown in complexity and disciplinary boundaries have solidified, collaboration has...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use.md",
-  "urlPath": "/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use",
-  "path_name": "/posts/2017-10-26-bias-mitigation-using-the-copyright-doctrine-of-fair-use",
-  "publishDate": "2017-10-26T18:07:00.000Z",
-  "title": "Bias Mitigation Using the Copyright Doctrine of Fair Use",
-  "preview_image": "/images/2017/10/Screen_Shot_2017_10_10_at_10-1507644713217.11",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nPirating a copyrighted song, video, or e-book to listen to the song, watch the movie, or read the book is an infringement of copyright (which can be severely fined). So how about pirating a song, video, or e-book to train machine learning models?\n\nNYU Teaching and Research...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-10-26-alphago-zero.md",
-  "urlPath": "/posts/2017-10-26-alphago-zero",
-  "path_name": "/posts/2017-10-26-alphago-zero",
-  "publishDate": "2017-10-25T00:00:00.000Z",
-  "title": "AlphaGo Zero's win, what it means",
-  "preview_image": "/images/2017/10/220px_Go_board_part-1508964914733.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Friederike",
-  "post_type": "post",
-  "author_link": "https://twitter.com/FSchueuer",
-  "excerpt": "\nIn an almost Freudian twist, a play on Vatermord by an artificial intelligence, AlphaGo Zero has dethroned its \"parent,\" AlphaGo.\n\nIn March 2016, AlphaGo defeated 18-time world Go champion Lee Sedol. At the Future of Go Summit in May 2017, AlphaGo prevailed against China's top...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-10-04-using-three-js-for-2d-data-visualization.md",
-  "urlPath": "/posts/2017-10-04-using-three-js-for-2d-data-visualization",
-  "path_name": "/posts/2017-10-04-using-three-js-for-2d-data-visualization",
-  "publishDate": "2017-10-04T14:30:00.000Z",
-  "title": "First Look: Using Three.js for 2D Data Visualization",
-  "preview_image": "http://blog.fastforwardlabs.com/images/2017/10/tsne-final.png",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "post",
-  "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nUpdate: I have a new post on Using three.js for 2D data visualization. It contains all the stuff I learned while working on the project and is the place you should look for updated code. This post may still be interesting if you want to see my thoughts when I first started on...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-10-02-pp-bibliography.md",
-  "urlPath": "/posts/2017-10-02-pp-bibliography",
-  "path_name": "/posts/2017-10-02-pp-bibliography",
-  "publishDate": "2017-10-02T00:00:00.000Z",
-  "title": "Probabilistic programming: an annotated bibliography",
-  "preview_image": "/images/2017/09/ff05.gif",
-  "feature": true,
-  "published": true,
-  "author": "Mike",
-  "post_type": "post",
-  "author_link": "http://twitter.com/mikepqr",
-  "excerpt": "\nEarlier this year we launched a research report on [probabilistic\nprogramming](http://blog.fastforwardlabs.com/2017/01/18/new-research-on-probabilistic-programming.html),\nan emerging programming paradigm that makes it easier to describe and train\nprobabilistic models. The...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples.md",
-  "urlPath": "/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples",
-  "path_name": "/posts/2017-09-29-the-danger-and-promise-of-adversarial-samples",
-  "publishDate": "2017-09-29T18:07:00.000Z",
-  "title": "The Danger and Promise of Adversarial Samples",
-  "preview_image": "/images/2017/09/Screen_Shot_2017_09_13_at_9-1505322932035.59",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nAdversarial samples are inputs designed to fool a model: they are inputs created by applying perturbations to example inputs in the dataset such that the perturbed inputs result in the model outputting an incorrect answer with high confidence. Often, perturbations are so small...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-09-29-futurism-and-artificial-intelligence.md",
-  "urlPath": "/posts/2017-09-29-futurism-and-artificial-intelligence",
-  "path_name": "/posts/2017-09-29-futurism-and-artificial-intelligence",
-  "publishDate": "2017-09-29T18:07:00.000Z",
-  "title": "Futurism and Artificial Intelligence",
-  "preview_image": "/images/2017/09/star_trek_chess-1505156456055.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Newsletter",
-  "excerpt": "\nFor some, Mayweather-McGregor was the prizefight of the summer. For others, it has been Musk-Zuckerberg going toe-to-toe over the risks posed by AI, with Musk voicing his reservations about artificial intelligence while Zuck remains more sanguine. Musk has called AI possibly the...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-09-26-the-product-possibilities-of-interpretability.md",
-  "urlPath": "/posts/2017-09-26-the-product-possibilities-of-interpretability",
-  "path_name": "/posts/2017-09-26-the-product-possibilities-of-interpretability",
-  "publishDate": "2017-09-28T14:30:00.000Z",
-  "title": "The Product Possibilities of Interpretability",
-  "preview_image": "/images/2017/09/refractor-local.gif",
-  "feature": true,
-  "published": true,
-  "author": "Grant",
-  "post_type": "post",
-  "author_link": "https://twitter.com/GrantCuster",
-  "excerpt": "\nThis post is part of a series highlighting the importance of interpretability. Previous posts include a video conversation on interpretability, a guide to using the LIME technique to predict whether couples will stay together, and a look at the business rationale. In our post on...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-09-11-interpretability-webinar.md",
-  "urlPath": "/posts/2017-09-11-interpretability-webinar",
-  "path_name": "/posts/2017-09-11-interpretability-webinar",
-  "publishDate": "2017-09-11T00:00:00.000Z",
-  "title": "Interpretability in conversation with Patrick Hall and Sameer Singh",
-  "preview_image": "/images/2017/08/ff06-logo.png",
-  "feature": true,
-  "published": true,
-  "author": "Mike",
-  "post_type": "post",
-  "author_link": "http://twitter.com/mikepqr",
-  "excerpt": "\n\nWe're pleased to share the recording of our recent webinar on machine learning\ninterpretability and accompanying resources.\n\nWe were joined by guests Patrick Hall (Senior Director for Data Science\nProducts at H2o.ai, co-author of [Ideas on Interpreting Machine\nLearning](https...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-09-07-to-the-future.md",
-  "urlPath": "/posts/2017-09-07-to-the-future",
-  "path_name": "/posts/2017-09-07-to-the-future",
-  "publishDate": "2017-09-07T14:30:00.000Z",
-  "title": "To the Future...",
-  "preview_image": "/images/2017/09/gradient-1504809772766.jpg",
-  "feature": true,
-  "published": true,
-  "author": "Hilary",
-  "post_type": "post",
-  "author_link": "https://twitter.com/hmason",
-  "excerpt": "\nI started Fast Forward Labs more than three years ago with the vision of creating a new mechanism for applied research, helping businesses large and small understand how recently possible machine learning and applied artificial intelligence technologies could be useful for...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-09-01-crowdwork-for-ml.md",
-  "urlPath": "/posts/2017-09-01-crowdwork-for-ml",
-  "path_name": "/posts/2017-09-01-crowdwork-for-ml",
-  "publishDate": "2017-09-26T14:30:00.000Z",
-  "title": "Crowdwork for Machine Learning: An Autoethnography",
-  "preview_image": "/images/2017/09/the_turk.jpg",
-  "feature": true,
-  "published": true,
-  "author": "Manny",
-  "post_type": "post",
-  "author_link": "https://twitter.com/mannymoss",
-  "excerpt": "\nAmazon’s Mechanical Turk is a platform for soliciting work on online tasks that has been used by market researchers, translators, and data scientists to complete surveys, perform work that cannot be easily automated, and create human-labeled data for supervised learning systems...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-09-01-LIME-for-couples.md",
-  "urlPath": "/posts/2017-09-01-LIME-for-couples",
-  "path_name": "/posts/2017-09-01-LIME-for-couples",
-  "publishDate": "2017-09-01T00:00:00.000Z",
-  "title": "Why your relationship is likely to last (or not): using Local Interpretable Model-Agnostic Explanations (LIME)",
-  "preview_image": "/images/2017/09/henry_viii-1504299070584.jpg",
-  "feature": true,
-  "published": true,
-  "author": "Friederike",
-  "post_type": "post",
-  "author_link": "http://www.linkedin.com/in/friederikeschueuer",
-  "excerpt": "\nHenry VIII of England had many relationships. We build a classifier to predict whether relationships are going to last, or not, and used Local Interpretable Model-Agnostic Explanations (LIME) to understand the predicted success or failure of given relationships.\n\nLast month we...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-08-08-encartopedia.md",
-  "urlPath": "/posts/2017-08-08-encartopedia",
-  "path_name": "/posts/2017-08-08-encartopedia",
-  "publishDate": "2017-08-15T14:30:00.000Z",
-  "title": "Encartopedia",
-  "preview_image": "/images/2017/08/enc-tabula.jpg",
-  "feature": true,
-  "published": true,
-  "author": "Sepand",
-  "post_type": "post",
-  "author_link": "https://sepans.com/sp",
-  "excerpt": "\nTabula Rogeriana\n\nThe Tabula Rogeriana, a world map created by Muhammad al-Idrisi through traveler interviews in 1154.\n\nThe Wikipedia corpus is one of the favorite datasets of the machine learning community. It is often used for experimenting, benchmarking and providing how-to...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-08-07-business-interpretability.md",
-  "urlPath": "/posts/2017-08-07-business-interpretability",
-  "path_name": "/posts/2017-08-07-business-interpretability",
-  "publishDate": "2017-08-02T13:00:00.000Z",
-  "title": "The Business Case for Machine Learning Interpretability",
-  "preview_image": "/images/2017/08/actions.png",
-  "feature": false,
-  "published": true,
-  "author": "Manny",
-  "post_type": "post",
-  "author_link": "https://twitter.com/mannymoss",
-  "excerpt": "\nLast week we launched the latest prototype and report from our machine\nintelligence R&D team:\nInterpretability.\n\nOur prototype shows how new ideas in interpretability research can be used to\nextract actionable insights from black-box machine learning models; our report\ndescribes...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-08-02-interpretability.md",
-  "urlPath": "/posts/2017-08-02-interpretability",
-  "path_name": "/posts/2017-08-02-interpretability",
-  "publishDate": "2017-08-02T13:00:00.000Z",
-  "title": "New Research on Interpretability",
-  "preview_image": "/images/2017/08/ff06-animation.gif",
-  "feature": true,
-  "published": true,
-  "author": "Mike",
-  "post_type": "post",
-  "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nWe're excited to release the latest prototype and report from our machine\nintelligence R&D team: Interpretability.\n\nFF06 Interpretability\n\nAn interpretable algorithm is one whose decisions you can explain. You can\nbetter rely on such a model to be safe, accurate and useful.\n\nOur...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do.md",
-  "urlPath": "/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do",
-  "path_name": "/posts/2017-07-25-why-we-talk-about-AI-the-way-we-do",
-  "publishDate": "2017-08-02T16:00:00.000Z",
-  "title": "Why we talk about AI the way we do, and why we have to change it.",
-  "preview_image": "TBA",
-  "feature": true,
-  "published": true,
-  "author": "Friederike",
-  "post_type": "post",
-  "author_link": "https://twitter.com/FSchueuer",
-  "excerpt": "\nThe public conversation about machine learning and AI happens at the extremes. AI is either awesome or scary. It writes movie scripts, wins at poker and Go, and helps Google cool its data centers. Awesome! It will take our jobs and robot investors will incite wars for profits...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-07-05-probabilistic-programming-from-scratch.md",
-  "urlPath": "/posts/2017-07-05-probabilistic-programming-from-scratch",
-  "path_name": "/posts/2017-07-05-probabilistic-programming-from-scratch",
-  "publishDate": "2017-07-06T16:00:00.000Z",
-  "title": "Probabilistic programming from scratch",
-  "preview_image": "/images/2017/07/output_30_0.png",
-  "feature": true,
-  "published": true,
-  "author": "Mike",
-  "post_type": "post",
-  "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nThis article contains highlights from a series of three interactive video tutorials on probabilistic programming from scratch published on O'Reilly Safari (login required).\n\nIf you're interested in the business case for probabilistic programming the Fast Forward Labs report...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-06-25-fingerprinting-documents-with-steganography.md",
-  "urlPath": "/posts/2017-06-25-fingerprinting-documents-with-steganography",
-  "path_name": "/posts/2017-06-25-fingerprinting-documents-with-steganography",
-  "publishDate": "2017-06-23T15:50:00.000Z",
-  "title": "F⁠ingerprinting documents​ with steganography​",
-  "preview_image": "/images/2017/06/confusables.png",
-  "feature": false,
-  "published": true,
-  "author": "Noam",
-  "post_type": "post",
-  "author_link": "https://github.com/n-s-f",
-  "excerpt": "\nSteganography is the​ practice​ of​ hiding messages​ anywhere​ they’re​ not expected‏‎.\nI⁠n a well-executed​ piece of​ steganography, anyone who​ is​ not the intended​\nrecipient can​ look at​ the​ message​ and not​ realize its there at all‏‎. In a recent\nheadline-making\nstory...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000.md",
-  "urlPath": "/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000",
-  "path_name": "/posts/2017-06-06-probabilistic-programming-sci-fi-bayeshead-5000",
-  "publishDate": "2017-06-06T14:30:00.000Z",
-  "title": "Probabilistic Programmming Sci-Fi: BayesHead 5000",
-  "preview_image": "/images/2017/06/mc.png",
-  "feature": false,
-  "published": true,
-  "author": "Liam Sweeney",
-  "post_type": "Fiction",
-  "excerpt": "\nWe believe in fiction as an important tool for imagining future relationships to technology. In our reports on new technologies we feature short science fiction stories that imagine the possible implications. The following story, written by Liam Sweeney (email), appeared in our...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic.md",
-  "urlPath": "/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic",
-  "path_name": "/posts/2017-05-30-Slack-Maestro-Helping-Users-Stay-on-Topic",
-  "publishDate": "2017-05-30T15:00:00.000Z",
-  "title": "Slack Maestro: Helping Users Stay on Topic",
-  "preview_image": "/images/2017/05/threshold.png",
-  "feature": true,
-  "published": true,
-  "author": "Andrej Ficnar",
-  "post_type": "Guest Post",
-  "author_link": "https://github.com/aficnar",
-  "excerpt": "\nThis is a guest post featuring a project by Andrej Ficnar (now a data scientist at Schireson Associates), which he completed as a fellow in the Insight Data Science program. We are partnered with Insight and occasionally advise fellows on month-long projects from idea to...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-05-26-Places-Journal-Mississippi-Basin.md",
-  "urlPath": "/posts/2017-05-26-Places-Journal-Mississippi-Basin",
-  "path_name": "/posts/2017-05-26-Places-Journal-Mississippi-Basin",
-  "publishDate": "2017-06-30T15:19:00.000Z",
-  "title": "Learning from Real-World Models: The Mississippi Basin Model and Machine Learning",
-  "preview_image": "/images/2017/05/dykema-basin-model-1_525.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Manny",
-  "post_type": "post",
-  "author_link": "https://twitter.com/mannymoss",
-  "excerpt": "\nModel-building has a venerable history that long predates parallel processing, python, and perceptrons. Physical, scale models and maps have helped humans think through complex processes and ambitious endeavors, from the rigging of a pharoah's pleasure yacht to the Battle of...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-05-15-reply-retweet-ratio.md",
-  "urlPath": "/posts/2017-05-15-reply-retweet-ratio",
-  "path_name": "/posts/2017-05-15-reply-retweet-ratio",
-  "publishDate": "2017-05-15T20:00:00.000Z",
-  "title": "A Quick Look at the Reply-to-Retweet Ratio",
-  "preview_image": "/images/2017/05/tweetratio.png",
-  "feature": false,
-  "published": true,
-  "author": "Sepand",
-  "post_type": "Demo",
-  "author_link": "https://twitter.com/s3pans",
-  "excerpt": "\nTwitter users can retweet, like or reply to a tweet. If a tweet from a\nprominent account gets more replies than retweets then [that's usually Not\nGood](http://www.esquire.com/news-politics/news/a54440/twitter-ratio-reply/).\n\nTake, for example, this recent tweet from United...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix.md",
-  "urlPath": "/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix",
-  "path_name": "/posts/2017-04-28-eli-bressert-on-data-driven-processes-at-netflix",
-  "publishDate": "2017-04-28T13:44:00.000Z",
-  "title": "Eli Bressert on Data-Driven Processes at Netflix",
-  "preview_image": "/images/2017/04/b1509_w11.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Interview",
-  "excerpt": "\nDespite their best intentions, companies often struggle to develop processes that provide data-driven decisions through partnership across the business. Netflix stands out as a company that excels at deeply integrating its data science teams into all aspects of the company. We...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne.md",
-  "urlPath": "/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne",
-  "path_name": "/posts/2017-04-14-visualizing-the-taste-of-a-community-of-cinephiles-using-t-sne",
-  "publishDate": "2017-04-14T19:30:00.000Z",
-  "title": "Visualizing the Taste of a Community of Cinephiles Using t-SNE",
-  "preview_image": "http://fastforwardlabs.github.io/cinephile_tsne/images/Cover.png",
-  "feature": true,
-  "published": true,
-  "author": "Aditya",
-  "post_type": "Demo",
-  "author_link": "https://twitter.com/whaleandpetunia",
-  "excerpt": "\nIn this post we are going to look at an interactive visualization that clusters movies together based on their ratings by a set of users. This visualization will give us a glimpse into the aesthetic tastes of a community of cinephiles.\n",
-  "external_url": "http://fastforwardlabs.github.io/cinephile_tsne/"
-}, {
-  "filePath": "pages/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists.md",
-  "urlPath": "/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists",
-  "path_name": "/posts/2017-03-31-free-ebook-development-workflows-for-data-scientists",
-  "publishDate": "2017-03-31T19:30:00.000Z",
-  "title": "Free eBook: Development Workflows for Data Scientists",
-  "preview_image": "/images/2017/03/development-workflows-1.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\nCover image from Development Workflows for Data Scientists eBook\n\nWorking with over 30 enterprise clients, in industries like financial services, insurance, publishing, and retail, the Fast Forward Labs team has had ample opportunity to observe the challenges of doing data...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-03-25-five-distractions-in-thinking-about-ai.md",
-  "urlPath": "/posts/2017-03-25-five-distractions-in-thinking-about-ai",
-  "path_name": "/posts/2017-03-25-five-distractions-in-thinking-about-ai",
-  "publishDate": "2017-03-22T19:30:00.000Z",
-  "title": "Five Distractions in Thinking about AI",
-  "preview_image": "https://quamproxime.files.wordpress.com/2017/03/screen-shot-2017-03-25-at-1-28-55-pm.png",
-  "feature": false,
-  "published": true,
-  "author": "Kathryn",
-  "post_type": "post",
-  "author_link": "https://twitter.com/HumeKathryn",
-  "excerpt": "\n\nAn image of a clock drawn in a cappuccino melting over the side of the cup, reminiscent of a Salvador Dali painting.\n\nThis post originally appeared on quamproxime.com, the personal blog of our sales and marketing lead, Kathryn Hume\n\nOne of the main arguments the Israeli...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-03-22-prophet.md",
-  "urlPath": "/posts/2017-03-22-prophet",
-  "path_name": "/posts/2017-03-22-prophet",
-  "publishDate": "2017-03-22T19:30:00.000Z",
-  "title": "Taking Prophet for a Spin",
-  "preview_image": "/images/2017/03/birthforecast.png",
-  "feature": false,
-  "published": true,
-  "author": "Shioulin",
-  "post_type": "post",
-  "author_link": null,
-  "excerpt": "\nFacebook recently released\nProphet, a general purpose time\nseries forecasting package with both Python and R interfaces.\n\nPython and R already have plenty of time series forecasting options, so why is\nProphet interesting? It caught our eye because the backend is implemented in...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming.md",
-  "urlPath": "/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming",
-  "path_name": "/posts/2017-03-15-predicting-nyc-real-estate-prices-with-probabilistic-programming",
-  "publishDate": "2017-03-15T19:49:00.000Z",
-  "title": "Predicting NYC Real Estate Prices with Probabilistic Programming",
-  "preview_image": "/images/2017/05/price_mode.gif",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "post",
-  "author_link": "https://twitter.com/grantcuster",
-  "excerpt": "\nProbabilistic Real Estate is a prototype we built to explore the New York City real estate market. As explained in a previous post, we used probabilistic programming's ability to incorporate hierarchical models to make predictions across neighborhoods with sparse amounts of...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-03-13-practical-deep-learning.md",
-  "urlPath": "/posts/2017-03-13-practical-deep-learning",
-  "path_name": "/posts/2017-03-13-practical-deep-learning",
-  "publishDate": "2017-03-13T15:49:00.000Z",
-  "title": "Practical Deep Learning",
-  "preview_image": "/images/2017/03/doc-full-screen.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Micha",
-  "post_type": "Talk Slides",
-  "author_link": "https://github.com/mynameisfiber",
-  "excerpt": "\nMicha's talk demystifies deep learning. View the slides.\n\nOur research team spent last week in London hosting sessions and workshops about applied machine learning at the QCon conference. Micha Gorelick gave a talk about building a working product with Keras, a high level deep...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes.md",
-  "urlPath": "/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes",
-  "path_name": "/posts/2017-03-10-Trees-Layers-and-Speed-Talking-Optimization-with-Patrick-Hayes",
-  "publishDate": "2017-03-10T18:00:00.000Z",
-  "title": "Trees, Layers, and Speed: Talking Optimization with Patrick Hayes",
-  "preview_image": "/images/2017/04/maze%20image.png",
-  "feature": false,
-  "published": true,
-  "author": "Kathryn",
-  "post_type": "Interview",
-  "author_link": "https://twitter.com/humekathryn",
-  "excerpt": "\nIn a modern twist on Claude Shannon's Theseus, SigOpt explains optimization by teaching a mouse to solve a randomly generated maze\n\nThe learning of machine learning refers to the process of updating and tuning the parameters of a model. For example, if we take the function f(x...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-03-09-fairml-auditing-black-box-predictive-models.md",
-  "urlPath": "/posts/2017-03-09-fairml-auditing-black-box-predictive-models",
-  "path_name": "/posts/2017-03-09-fairml-auditing-black-box-predictive-models",
-  "publishDate": "2017-03-09T14:44:00.000Z",
-  "title": "FairML: Auditing Black-Box Predictive Models",
-  "preview_image": "/images/2017/03/fairness_and_justice_symbol.png",
-  "feature": true,
-  "published": true,
-  "author": "Julius",
-  "post_type": "Whitepaper",
-  "author_link": "https://twitter.com/julius_adebayo",
-  "excerpt": "\nFairness in ML\n\nMachine learning models are used for important decisions\nlike determining who has access to bail.\nThe aim is to increase efficiency and spot patterns in data that humans would otherwise miss.\nBut how do we know if a machine learning model is fair? And what does...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-02-27-mobile-authentication.md",
-  "urlPath": "/posts/2017-02-27-mobile-authentication",
-  "path_name": "/posts/2017-02-27-mobile-authentication",
-  "publishDate": "2017-02-27T00:00:00.000Z",
-  "title": "Mobile Behavioural Authentication",
-  "preview_image": "/images/2017/02/mobileauth.png",
-  "feature": false,
-  "published": true,
-  "author": "Shioulin",
-  "post_type": "post",
-  "author_link": null,
-  "excerpt": "\nAs mobile devices become central to our personal and professional lives, their\nsecurity is more and more important. Passcodes in particular can be lost (or\nforcibly surrendered) to law enforcement. Recent research has focussed on\nbehavioural authentication based on patterns of...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-02-22-upcoming-talks-with-our-team.md",
-  "urlPath": "/posts/2017-02-22-upcoming-talks-with-our-team",
-  "path_name": "/posts/2017-02-22-upcoming-talks-with-our-team",
-  "publishDate": "2017-02-22T18:15:00.000Z",
-  "title": "Upcoming Talks with our Team",
-  "preview_image": "https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_630,w_1200/v1/83772/WATF_DataFest_2017-TRANSPARENT_unzk9h.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\n\nThe Fast Forward Labs team will be traveling the world to give talks in March and April! Please join us and let us know if you'd like to meet one-on-one to discuss all things data science and machine learning at these events. You can reach us at contact@fastforwardlabs.com to...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming.md",
-  "urlPath": "/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming",
-  "path_name": "/posts/2017-02-09-online-talk-introduction-to-probabilistic-programming",
-  "publishDate": "2017-02-09T14:44:00.000Z",
-  "title": "Online Talk: Introduction to Probabilistic Programming",
-  "preview_image": "http://fastforwardlabs.github.io/report_images/ff05/2-08.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\n\nOn Tuesday, we hosted an online talk with the Stan Group discussing why probabilistic programming is generating so much excitement in the fields of machine learning and statistics. In essence, probabilistic programming is a powerful tool to help organizations make rational...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-02-08-summer-internships.md",
-  "urlPath": "/posts/2017-02-08-summer-internships",
-  "path_name": "/posts/2017-02-08-summer-internships",
-  "publishDate": "2017-02-08T16:34:00.000Z",
-  "title": "Summer Internships: Data Science, Applied Data Science Writing, Prototyping & Data Viz.",
-  "preview_image": "http://fastforwardlabs.github.io/resources/images/logos/ff-logo-white-bg.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\nWe’re excited to announce three summer internship opportunities, which are open to current undergraduate and graduate students, as well as recent graduates and career changers seeking an internship position.\n\nThe internship positions are:\n\n  Data Science Intern\n  Applied Data...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-01-30-the-algorithms-behind-probabilistic-programming.md",
-  "urlPath": "/posts/2017-01-30-the-algorithms-behind-probabilistic-programming",
-  "path_name": "/posts/2017-01-30-the-algorithms-behind-probabilistic-programming",
-  "publishDate": "2017-01-30T18:52:00.000Z",
-  "title": "The Algorithms Behind Probabilistic Programming",
-  "preview_image": "http://fastforwardlabs.github.io/report_images/ff05/3-08.png",
-  "feature": false,
-  "published": true,
-  "author": "Mike",
-  "post_type": "post",
-  "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nWe recently [introduced our report on probabilistic\nprogramming](http://blog.fastforwardlabs.com/2017/01/18/new-research-on-probabilistic-programming.html). The accompanying prototype allows you to explore the [past and\nfuture of the New York residential real estate\nmarket](http...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer.md",
-  "urlPath": "/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer",
-  "path_name": "/posts/2017-01-25-privacy-and-encryption-above-the-data-interview-with-dave-archer",
-  "publishDate": "2017-01-25T23:15:00.000Z",
-  "title": "Privacy and Encryption Above the Data: Interview with Dave Archer",
-  "preview_image": "/images/2017/01/chart.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Interview",
-  "excerpt": "\nOur mission at Fast Forward Labs is to commercialize artificial intelligence research, to clearly explain how new technologies work and help enterprises apply them in practical products. As our business model is rare, we're always keen to connect with and learn from...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-01-18-new-research-on-probabilistic-programming.md",
-  "urlPath": "/posts/2017-01-18-new-research-on-probabilistic-programming",
-  "path_name": "/posts/2017-01-18-new-research-on-probabilistic-programming",
-  "publishDate": "2017-01-18T15:00:00.000Z",
-  "title": "New Research on Probabilistic Programming",
-  "preview_image": "https://68.media.tumblr.com/cbe0007d3ac0cdaaf70d6c4d25978e83/tumblr_inline_ojzf3jTBUF1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nimage\n\nWe're excited to release the latest research from our machine intelligence R&amp;D team!\nThis report and prototype explore probabilistic programming, an emerging programming paradigm that makes it easier to construct and fit Bayesian inference models in code. It's...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with.md",
-  "urlPath": "/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with",
-  "path_name": "/posts/2017-01-11-thomas-wiecki-on-probabilistic-programming-with",
-  "publishDate": "2017-01-11T14:23:11.000Z",
-  "title": "Thomas Wiecki on Probabilistic Programming with PyMC3",
-  "preview_image": "https://68.media.tumblr.com/b1cc21602fec1b350032b5b79db93552/tumblr_inline_ojmc1prF0t1ta78fg_540.png",
-  "feature": true,
-  "published": true,
-  "post_type": "Interview",
-  "excerpt": "\nA rolling regression with PyMC3: instead of the regression coefficients being constant over time (the points are daily stock prices of 2 stocks), this model assumes they follow a random-walk and can thus slowly adapt them over time to fit the data best.\n\nProbabilistic...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017.md",
-  "urlPath": "/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017",
-  "path_name": "/posts/2017-01-10-five-trends-we-expect-to-come-to-fruition-in-2017",
-  "publishDate": "2017-01-10T15:00:00.000Z",
-  "title": "Five 2016 Trends We Expect to Come to Fruition in 2017",
-  "preview_image": "https://68.media.tumblr.com/14005dd5347c443d8716cd09c855a599/tumblr_inline_ojkq92ckuZ1qcg73w_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Friederike",
-  "post_type": "post",
-  "excerpt": "\nThe start of a new year is an excellent occasion for audacious extrapolation. Based on 2016  developments, what do we expect for 2017?\n\nThis blog post covers five prominent trends: Deep Learning Beyond Cats, Chat Bots - Take Two, All the News In The World - Turning Text Into...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2017-01-03-learning-to-use-react.md",
-  "urlPath": "/posts/2017-01-03-learning-to-use-react",
-  "path_name": "/posts/2017-01-03-learning-to-use-react",
-  "publishDate": "2017-01-03T15:00:00.000Z",
-  "title": "Learning to Use React",
-  "preview_image": "https://68.media.tumblr.com/3eefb9d8c2e3d798ca6dcead23017de9/tumblr_inline_oj7sj2BjWG1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "post",
-  "author_link": "https://twitter.com/grantcuster",
-  "excerpt": "\nReact and Redux helped us keep application state manageable in our probabilistic programming prototypes\n\nFor every topic we research at Fast Forward Labs, we create prototypes to show how the technology can be applied to make great products. Finite, stand-alone projects, our...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-12-13-hilary-mason-at-data-driven-nyc.md",
-  "urlPath": "/posts/2016-12-13-hilary-mason-at-data-driven-nyc",
-  "path_name": "/posts/2016-12-13-hilary-mason-at-data-driven-nyc",
-  "publishDate": "2016-12-13T18:02:12.000Z",
-  "title": "Hilary Mason at Data Driven NYC",
-  "preview_image": "http://68.media.tumblr.com/706a85da781f730b2aa59f0dc0e965c4/tumblr_inline_oi4x9i4yhD1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\nHilary Mason, Fast Forward Labs Founder &amp; CEO, gave a talk at November’s Data Driven NYC Meetup. Check it out to hear our thoughts on:\n\nHow innovation works in academia, startups, and large enterpriseWhy it often makes sense to build, not buy, AI productsHow to predict that...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-12-12-machines-in-conversation.md",
-  "urlPath": "/posts/2016-12-12-machines-in-conversation",
-  "path_name": "/posts/2016-12-12-machines-in-conversation",
-  "publishDate": "2016-12-12T17:47:22.000Z",
-  "title": "Machines in Conversation",
-  "preview_image": "http://68.media.tumblr.com/692d44e33b12223b1e7fb77bb122ec99/tumblr_inline_oi327sddi71ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "author": "Gridspace",
-  "post_type": "Guest Post",
-  "author_link": "https://www.gridspace.com/",
-  "excerpt": "\nWe at Fast Forward Labs have long been interested in speech recognition technologies. This year’s chatbot craze has seen growing interest in machines that interface with users in friendly, accessible language. Bots, however, only rarely understand the complexity of colloquial...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-12-08-dimensionality-reduction-and-intuition.md",
-  "urlPath": "/posts/2016-12-08-dimensionality-reduction-and-intuition",
-  "path_name": "/posts/2016-12-08-dimensionality-reduction-and-intuition",
-  "publishDate": "2016-12-08T17:22:58.000Z",
-  "title": "Dimensionality Reduction and Intuition",
-  "preview_image": "http://68.media.tumblr.com/a97d30b7577d5fb32955853cb2ec7b17/tumblr_inline_ohvie7chq81ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "author": "Kathryn",
-  "post_type": "post",
-  "author_link": "https://twitter.com/HumeKathryn",
-  "excerpt": "“I call our world Flatland, not because we call it so, but to make its nature clearer to you, my happy readers, who are privileged to live in Space.\"\n\nSo reads the first sentence of Edwin Abbott Abbott’s 1884 work of science fiction and social satire, Flatland: A Romance of Many...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo.md",
-  "urlPath": "/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo",
-  "path_name": "/posts/2016-11-23-probabilistic-data-structure-showdown-cuckoo",
-  "publishDate": "2016-11-23T18:36:58.000Z",
-  "title": "Probabilistic Data Structure Showdown: Cuckoo Filters vs. Bloom Filters",
-  "preview_image": "/tumblr_files/pmrs-test.png",
-  "feature": true,
-  "published": true,
-  "author": "Julius",
-  "post_type": "Whitepaper",
-  "author_link": "https://twitter.com/julius_adebayo",
-  "excerpt": "\n\nProbabilistic data structures store data compactly with low memory and provide approximate answers to queries about stored data. They are designed to answer queries in a space-efficient manner, which can mean sacrificing accuracy. However, they typically provide guarantees and...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-09-19-job-opportunities-at-signal.md",
-  "urlPath": "/posts/2016-09-19-job-opportunities-at-signal",
-  "path_name": "/posts/2016-09-19-job-opportunities-at-signal",
-  "publishDate": "2016-09-19T17:30:04.000Z",
-  "title": "Job Opportunities at Signal",
-  "preview_image": "https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\nWe’re excited to partner with Prehype and an international news media organization to develop Signal, a new way to understand and structure large volumes of streaming news and media content. Signal will combine novel data with emerging algorithms. We're looking for a couple of...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-08-26-exploring-deep-learning-on-satellite-data.md",
-  "urlPath": "/posts/2016-08-26-exploring-deep-learning-on-satellite-data",
-  "path_name": "/posts/2016-08-26-exploring-deep-learning-on-satellite-data",
-  "publishDate": "2016-08-26T17:43:24.000Z",
-  "title": "Exploring Deep Learning on Satellite Data",
-  "preview_image": "http://fastforwardlabs.github.io/blog-images/geo/empty_satellite_image.png",
-  "feature": false,
-  "published": true,
-  "author": "Patrick Doupe",
-  "post_type": "Guest Post",
-  "excerpt": "\nThis is a guest post featuring a project Patrick Doupe, now a Senior Data Analyst at Icahn School of Medicine at Mount Sinai, completed as a fellow in the Insight Data Science program. In our partnership with Insight, we occassionally advise fellows on month-long projects and...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-08-25-new-tensorflow-code-for-text-summarization.md",
-  "urlPath": "/posts/2016-08-25-new-tensorflow-code-for-text-summarization",
-  "path_name": "/posts/2016-08-25-new-tensorflow-code-for-text-summarization",
-  "publishDate": "2016-08-25T17:24:14.000Z",
-  "title": "New TensorFlow Code for Text Summarization",
-  "preview_image": "http://68.media.tumblr.com/ecc5db59efcfa474331c6a1d2ec84824/tumblr_inline_och5k95kSe1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nYesterday, Google released new TensorFlow model code for text summarization, specifically for generating news headlines on the Annotated English Gigaword dataset. We’re excited to see others working on summarization, as we did in our last report: our ability to “digest large...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-08-24-next-economics-interview-with-jimi-crawford.md",
-  "urlPath": "/posts/2016-08-24-next-economics-interview-with-jimi-crawford",
-  "path_name": "/posts/2016-08-24-next-economics-interview-with-jimi-crawford",
-  "publishDate": "2016-08-24T16:18:12.000Z",
-  "title": "Next Economics: Interview with Jimi Crawford",
-  "preview_image": "http://68.media.tumblr.com/de9fc93bc4bda585c1bb51a785fc7801/tumblr_inline_ocf6npUoHK1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "interview",
-  "excerpt": "\nBuilding shadows as proxies for construction rates in Shanghai. Photos courtesy of Orbital Insight/Digital Globe.\n\nIt’s no small feat to commercialize new technologies that arise from scientific and academic research. The useful is a small subset of the possible, and the...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in.md",
-  "urlPath": "/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in",
-  "path_name": "/posts/2016-08-22-under-the-hood-of-the-variational-autoencoder-in",
-  "publishDate": "2016-08-22T18:02:08.000Z",
-  "title": "Under the Hood of the Variational Autoencoder (in Prose and Code)",
-  "preview_image": "http://fastforwardlabs.github.io/blog-images/miriam/imgs_code/160816_1754_reloaded_latent_784_500_500_50_round_65536_morph_4730816952.gif",
-  "feature": true,
-  "published": true,
-  "author": "Miriam",
-  "post_type": "Whitepaper",
-  "author_link": "https://twitter.com/meereve",
-  "excerpt": "\nThe Variational Autoencoder (VAE) neatly synthesizes unsupervised deep learning and variational Bayesian methods into one sleek package. In Part I of this series, we introduced the theory and intuition behind the VAE, an exciting development in machine learning for combined...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-08-18-giving-speech-a-voice-in-the-home.md",
-  "urlPath": "/posts/2016-08-18-giving-speech-a-voice-in-the-home",
-  "path_name": "/posts/2016-08-18-giving-speech-a-voice-in-the-home",
-  "publishDate": "2016-08-18T20:09:29.000Z",
-  "title": "Giving Speech a Voice in the Home",
-  "preview_image": "http://68.media.tumblr.com/24baab55961a73824bb7c218d3fb3d52/tumblr_inline_oc4fofyCUx1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "author": "Sean Lorenz, SENTER",
-  "post_type": "Guest Post",
-  "author_link": "http://senter.io/",
-  "excerpt": "\nThis is a guest post by Sean Lorenz, the Founder &amp; CEO of SENTER, a Boston-based startup using sensors and data science to support healthcare in the home. Sean explains how techniques from computational neuroscience can help make the smart home smarter and describes the...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and.md",
-  "urlPath": "/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and",
-  "path_name": "/posts/2016-08-12-introducing-variational-autoencoders-in-prose-and",
-  "publishDate": "2016-08-12T17:09:50.000Z",
-  "title": "Introducing Variational Autoencoders (in Prose and Code)",
-  "preview_image": "http://fastforwardlabs.github.io/blog-images/miriam/160727_1340_explore.gray_del11_492x490.slower40.gif",
-  "feature": true,
-  "published": true,
-  "author": "Miriam",
-  "post_type": "whitepaper",
-  "author_link": "https://twitter.com/meereve",
-  "excerpt": "\n\nEffective machine learning means building expressive models that sift out signal from noise—that simplify the complexity of real-world data, yet accurately intuit and capture its subtle underlying patterns.\n\nWhatever the downstream application, a primary challenge often boils...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-07-27-late-summer-reading-list.md",
-  "urlPath": "/posts/2016-07-27-late-summer-reading-list",
-  "path_name": "/posts/2016-07-27-late-summer-reading-list",
-  "publishDate": "2016-07-27T16:45:52.000Z",
-  "title": "Late Summer Reading List",
-  "preview_image": "/tumblr_files/pexels-photo-57808.jpeg",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nIt’s July 27. 89 degrees with high humidity on the sweltering New York City streets. We’re hard at work on our probabilistic programming report and prototype and looking forward to some good reads on the beach.\n\nHere are our recommendations for the dog days of summer!\n\nHomage to...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-07-25-fall-internships-research-engineering-and.md",
-  "urlPath": "/posts/2016-07-25-fall-internships-research-engineering-and",
-  "path_name": "/posts/2016-07-25-fall-internships-research-engineering-and",
-  "publishDate": "2016-07-25T17:30:43.000Z",
-  "title": "Fall Internships: Research Engineering and Prototype + Data Visualization [Filled]",
-  "preview_image": "https://images.pexels.com/photos/187041/pexels-photo-187041.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\nThese positions have been filled. We are not accepting further applications. For announcements of future opportunities, please subscribe to our mailing list.\n\nWe’re excited to announce two fall internship opportunities, which are open to current undergraduate and graduate...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-07-11-two-talks-in-nyc-this-saturday.md",
-  "urlPath": "/posts/2016-07-11-two-talks-in-nyc-this-saturday",
-  "path_name": "/posts/2016-07-11-two-talks-in-nyc-this-saturday",
-  "publishDate": "2016-07-11T16:46:23.000Z",
-  "title": "Two Talks in NYC this Saturday",
-  "preview_image": "http://68.media.tumblr.com/6d185b6ef69e9fa29f78e724fdf7415e/tumblr_inline_oa5seyqhEJ1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\nIf you’re a New Yorker looking for something interesting to do Saturday afternoon, Fast Forward Labs will be speaking at two events.\nPyGotham | July 16 | 2:15 pm\n\nMike Williams on Text Summarization\n\nPyGotham is a conference for the Python developer community. Mike’s talk...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-07-08-what-we-liked-at-ainow.md",
-  "urlPath": "/posts/2016-07-08-what-we-liked-at-ainow",
-  "path_name": "/posts/2016-07-08-what-we-liked-at-ainow",
-  "publishDate": "2016-07-08T17:29:52.000Z",
-  "title": "What We Liked at AINow",
-  "preview_image": "http://68.media.tumblr.com/bbb5c0978c75c9e2e36e04e770b6ccd5/tumblr_inline_oa065reL0V1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nOver the past two months, the White House ran a series of workshops geared to “prepare for the future of artificial intelligence.” At each session, technologists, academics, policy makers, and social scientists discussed social and economic issues stemming from data...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello.md",
-  "urlPath": "/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello",
-  "path_name": "/posts/2016-06-10-machine-listening-interview-with-juan-pablo-bello",
-  "publishDate": "2016-06-10T14:23:11.000Z",
-  "title": "Machine Listening: Interview with Juan Pablo Bello",
-  "preview_image": "http://68.media.tumblr.com/5cfcc6b830aa09f63bf9e9b2333524a1/tumblr_inline_o8k7rqJDmA1ta78fg_540.png",
-  "feature": true,
-  "published": true,
-  "post_type": "Interview",
-  "excerpt": "\nA probabilistic latent component analysis of a pitch class sequence for The Beatles’ Good Day Sunshine. The top layer shows the original representation (time vs pitch class). Subsequent layers show latent components.\n\nWhat is music? Or rather, what differentiates music from...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-06-02-welcome-friederike.md",
-  "urlPath": "/posts/2016-06-02-welcome-friederike",
-  "path_name": "/posts/2016-06-02-welcome-friederike",
-  "publishDate": "2016-06-02T13:53:20.000Z",
-  "title": "Welcome, Friederike!",
-  "preview_image": "http://68.media.tumblr.com/48ec558f89fc83dbf3e1770639cf6404/tumblr_inline_o85byoZHrx1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\n\nAlongside our research on emerging machine learning techniques, Fast Forward Labs advises organizations on data science issues like technical architecture, new product development, models and algorithms, and even hiring the right talent. Our client base is growing fast, and we...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-05-27-online-talk-summarization-algorithms.md",
-  "urlPath": "/posts/2016-05-27-online-talk-summarization-algorithms",
-  "path_name": "/posts/2016-05-27-online-talk-summarization-algorithms",
-  "publishDate": "2016-05-27T17:16:23.000Z",
-  "title": "Online Talk: Summarization Algorithms",
-  "preview_image": "https://images.pexels.com/photos/159621/open-book-library-education-read-159621.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\n\nThis week, we had the pleasure of hosting an online talk with the team from Agolo, an NYC-based startup with a great product that automatically summarizes articles (and can even generate new titles for a group of summarized articles). During the event, we discussed:why...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-05-25-human-machine-algorithms-interview-with-eric.md",
-  "urlPath": "/posts/2016-05-25-human-machine-algorithms-interview-with-eric",
-  "path_name": "/posts/2016-05-25-human-machine-algorithms-interview-with-eric",
-  "publishDate": "2016-05-25T12:37:15.000Z",
-  "title": "Human-Machine Algorithms: Interview with Eric Colson",
-  "preview_image": "http://68.media.tumblr.com/dd7cacb29c66b0d8ac385f37fde89d2d/tumblr_inline_o7qmpkkMD11qcg73w_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "interview",
-  "excerpt": "\n\nTherefore render unto Caesar the things that are Caesar&rsquo;s, and unto God the things that are God&rsquo;s.\n\n&ndash; Matthew, 22:21\n\nWe tend to think that recommender systems are old hat. ECommerce platforms like Amazon have been using techniques like collaborative filtering...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-05-23-evaluating-summarization-systems.md",
-  "urlPath": "/posts/2016-05-23-evaluating-summarization-systems",
-  "path_name": "/posts/2016-05-23-evaluating-summarization-systems",
-  "publishDate": "2016-05-23T17:09:13.000Z",
-  "title": "Evaluating Summarization Systems",
-  "preview_image": "http://68.media.tumblr.com/d879f22c1b7be3467b606c8aa8f7cfb6/tumblr_inline_o7n3a6bf5R1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Mohamed AlTantawy, Agolo",
-  "post_type": "Guest Post",
-  "author_link": "http://www.agolo.com/",
-  "excerpt": "\nWe’re excited for tomorrow’s online discussion about automatic text summarization! You can register here.\n\nDuring the event, Mohamed AlTantawy, CTO of Agolo, will explain the tech behind their summarization tool. In this blog post, he describes how his team evaluates the quality...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-05-12-may-24-online-event-text-summarization.md",
-  "urlPath": "/posts/2016-05-12-may-24-online-event-text-summarization",
-  "path_name": "/posts/2016-05-12-may-24-online-event-text-summarization",
-  "publishDate": "2016-05-12T11:36:14.000Z",
-  "title": "May 24 Online Event: Text Summarization",
-  "preview_image": "http://68.media.tumblr.com/9fea484f8c262c1b0b289a64348027c7/tumblr_inline_o7142hZoGX1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nPlease join us May 24 at 1:00 pm EST/10:00 am PST for an online discussion about how recent breakthroughs in deep learning allow us to extract and process meaning from text. This opens up a vast range of applications: summarization, instant translation, semantic search...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-05-03-probabilistic-programming-for-anomaly-detection.md",
-  "urlPath": "/posts/2016-05-03-probabilistic-programming-for-anomaly-detection",
-  "path_name": "/posts/2016-05-03-probabilistic-programming-for-anomaly-detection",
-  "publishDate": "2016-05-03T14:51:14.000Z",
-  "title": "Probabilistic Programming for Anomaly Detection",
-  "preview_image": "http://68.media.tumblr.com/1d842739c4ecb115ce586049dd552f48/tumblr_inline_o6kjvaPgBs1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Noam",
-  "post_type": "post",
-  "author_link": "https://twitter.com/noamsf",
-  "excerpt": "\n\nThe Fast Forward Labs research team is developing our next prototype, which will demonstrate an application of probabilistic programming. Probabilistic programming languages are a set of high-level languages that lower the barrier to entry for Bayesian data analysis.Bayesian...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-04-26-making-a-case-for-machine-learning-to-legal.md",
-  "urlPath": "/posts/2016-04-26-making-a-case-for-machine-learning-to-legal",
-  "path_name": "/posts/2016-04-26-making-a-case-for-machine-learning-to-legal",
-  "publishDate": "2016-04-26T18:41:17.000Z",
-  "title": "Making a Case for Machine Learning to Legal Departments",
-  "preview_image": "http://68.media.tumblr.com/ebfd0ddb6284c50fde7a72b87f40462d/tumblr_inline_o69786Qw561ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Dean Gonsowski",
-  "post_type": "Guest Post",
-  "author_link": "https://twitter.com/dean_gonsowski",
-  "excerpt": "\nSince we released our text summarization resources, the legal technology community has shown interest in leveraging summarization technology to support litigation document review, deposition digests, and contract analysis. Data scientist interest to use machine learning to mine...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-04-25-active-learning-in-the-law.md",
-  "urlPath": "/posts/2016-04-25-active-learning-in-the-law",
-  "path_name": "/posts/2016-04-25-active-learning-in-the-law",
-  "publishDate": "2016-04-25T17:41:02.000Z",
-  "title": "Active Learning in the Law",
-  "preview_image": "http://68.media.tumblr.com/5419ce3290efb6634bdefc85748cbe2e/tumblr_inline_o67a1hhHOk1ta78fg_540.gif",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nThe NIST Text Retrieval Conference (TREC) Logo\n\nWe recently released research on neural network methods to summarize text. Systems like Brief, our summarization prototype, are poised to modify how we consume text. Content systems were historically designed to help humans find...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-04-21-summarization-as-a-gateway-to-computable-language.md",
-  "urlPath": "/posts/2016-04-21-summarization-as-a-gateway-to-computable-language",
-  "path_name": "/posts/2016-04-21-summarization-as-a-gateway-to-computable-language",
-  "publishDate": "2016-04-21T19:38:37.000Z",
-  "title": "Summarization as a Gateway to Computable Language",
-  "preview_image": "http://68.media.tumblr.com/981136c87557be0df4c1d09c3b4ed8b2/tumblr_inline_o600ygq2OG1qcg73w_540.png",
-  "feature": true,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nAnalyzing unstructured text data such as news, emails, chats, narrative prose, legal documents, or transcribed speech is an extremely tough problem. Thanks to massive leaps in data engineering, we can just about store and retrieve this torrent of information. But we can&rsquo;t...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-04-15-assessing-data-science-maturity.md",
-  "urlPath": "/posts/2016-04-15-assessing-data-science-maturity",
-  "path_name": "/posts/2016-04-15-assessing-data-science-maturity",
-  "publishDate": "2016-04-15T18:07:33.000Z",
-  "title": "Assessing Data Science Maturity",
-  "preview_image": "http://68.media.tumblr.com/f80852671283007961d228f73499ecc3/tumblr_inline_o5ornqRft01ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nWe’re getting excited for our Data Leadership Conference, which is set for April 28 in New York City! The conference will feature an expert panel where Haile Owusu (Mashable), Claudia Perlich (Dstillery), and Kirk Borne (Booz Allen Hamilton) will share practical insights on how...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-04-11-new-tools-to-summarize-text.md",
-  "urlPath": "/posts/2016-04-11-new-tools-to-summarize-text",
-  "path_name": "/posts/2016-04-11-new-tools-to-summarize-text",
-  "publishDate": "2016-04-11T15:25:26.000Z",
-  "title": "New Tools to Summarize Text",
-  "preview_image": "http://68.media.tumblr.com/bc9e86d90ab7e2dbe8e2b1edf7293166/tumblr_inline_o58ah2oAIz1qcg73w_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\n\nWe’re excited to introduce the latest report and prototype from our machine intelligence R&amp;D group! In this iteration, we explore summarization, or neural network techniques for making unstructured text data computable.Making language computable has been a goal of computer...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-04-06-where-do-you-put-your-data-scientists.md",
-  "urlPath": "/posts/2016-04-06-where-do-you-put-your-data-scientists",
-  "path_name": "/posts/2016-04-06-where-do-you-put-your-data-scientists",
-  "publishDate": "2016-04-06T15:41:33.000Z",
-  "title": "Where Do You Put Your Data Scientists?",
-  "preview_image": "http://68.media.tumblr.com/84ee6a02c04f8869d9b14bc31170c5d8/tumblr_inline_o57xvwb9QO1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "author": "Daniel Tunkelang",
-  "post_type": "Guest Post",
-  "author_link": "https://www.linkedin.com/in/dtunkelang",
-  "excerpt": "\nThis is a guest post by Daniel Tunkelang, a data scientist and engineering executive, to preview the keynote he’ll deliver at our April 28 Data Leadership Conference in New York City!\n\nIn 2012, Harvard Business Review proclaimed that &ldquo;data scientist&rdquo; was the sexiest...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape.md",
-  "urlPath": "/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape",
-  "path_name": "/posts/2016-03-30-shivon-zilis-on-the-machine-intelligence-landscape",
-  "publishDate": "2016-03-30T15:00:03.000Z",
-  "title": "Shivon Zilis on the Machine Intelligence Landscape",
-  "preview_image": "http://68.media.tumblr.com/74ea2d9c04837d672993d887788dcd76/tumblr_inline_o4tb0bi8wF1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "author": "Kathryn",
-  "post_type": "Interview",
-  "author_link": "http://www.twitter.com/HumeKathryn",
-  "excerpt": "\n\n2016 is shaping up to be a big year for machine intelligence. Achievements like DeepMind’s AlphaGo are making headlines in the popular press, large tech companies have started a “platform war” to become the go-to company for A.I., and entrepreneurs are increasingly building...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-03-28-fast-forward-labs-data-leadership-conference.md",
-  "urlPath": "/posts/2016-03-28-fast-forward-labs-data-leadership-conference",
-  "path_name": "/posts/2016-03-28-fast-forward-labs-data-leadership-conference",
-  "publishDate": "2016-03-28T20:26:11.000Z",
-  "title": "Fast Forward Labs Data Leadership Conference",
-  "preview_image": "http://68.media.tumblr.com/d453330d60fd9dffb72ac2e76c816b5d/tumblr_inline_o4rm2iqk5a1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "announcement",
-  "excerpt": "\n\nWe’re excited to announce the first Fast Forward Labs Data Leadership Conference! Join us April 28 in New York City as we discuss how to build strong data teams in complex organizations. You can register here. In a recent Computerworld article, our CEO &amp; Founder Hilary...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity.md",
-  "urlPath": "/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity",
-  "path_name": "/posts/2016-03-25-hp-luhn-and-the-heuristic-value-of-simplicity",
-  "publishDate": "2016-03-25T16:25:43.000Z",
-  "title": "H.P. Luhn and the Heuristic Value of Simplicity",
-  "preview_image": "http://68.media.tumblr.com/8ad092dc44ae1ad68bad697a55274b30/tumblr_inline_o4lon7By6N1ta78fg_540.gif",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nThe Fast Forward Labs team is putting final touches on our Summarization research, which explains approaches to making text quantifiable and computable. Stay tuned for a series of resources on the topic, including an online talk May 24 where we’ll cover technical details and...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus.md",
-  "urlPath": "/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus",
-  "path_name": "/posts/2016-02-24-hello-world-in-keras-or-scikit-learn-versus",
-  "publishDate": "2016-02-24T18:58:10.000Z",
-  "title": "\"Hello world\" in Keras (or, Scikit-learn versus Keras)",
-  "preview_image": "http://68.media.tumblr.com/a4cf05aa664f57b54fe5021ce966f5d6/tumblr_inline_o30qnzlyxi1qcg73w_540.png",
-  "feature": true,
-  "published": true,
-  "author": "Mike",
-  "post_type": "post",
-  "author_link": "https://twitter.com/mikepqr",
-  "excerpt": "\nThis article is available as a\nnotebook on Github. Please refer to that notebook for a more detailed\ndiscussion and code fixes and updates.\n\nDespite all the recent excitement around deep learning, neural networks have a reputation among non-specialists as complicated to build...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-02-18-neuraltalk-with-kyle-mcdonald.md",
-  "urlPath": "/posts/2016-02-18-neuraltalk-with-kyle-mcdonald",
-  "path_name": "/posts/2016-02-18-neuraltalk-with-kyle-mcdonald",
-  "publishDate": "2016-02-18T15:09:51.000Z",
-  "title": "NeuralTalk with Kyle McDonald",
-  "preview_image": "http://68.media.tumblr.com/806e99a04e9f647a198d0d887942562b/tumblr_inline_o2pgqgwhP01ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Kathryn",
-  "post_type": "Interview",
-  "author_link": "https://twitter.com/HumeKathryn",
-  "excerpt": "\nImage from Social Soul, an immersive experience of being inside a social media stream, by Lauren McCarthy and Kyle McDonald\n\nA few weeks ago, theCUBE stopped by the Fast Forward Labs offices to interview us about our approach to innovation. In the interview, we highlighted that...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-02-16-machines-and-metaphors.md",
-  "urlPath": "/posts/2016-02-16-machines-and-metaphors",
-  "path_name": "/posts/2016-02-16-machines-and-metaphors",
-  "publishDate": "2016-02-16T16:35:11.000Z",
-  "title": "Machines and Metaphors",
-  "preview_image": "http://68.media.tumblr.com/2cf1b0924a1bfc66737d96f4797ef6f7/tumblr_inline_o2neravFOu1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "author": "Gene Kogan",
-  "post_type": "Guest Post",
-  "author_link": "http://www.genekogan.com/",
-  "excerpt": "\nThis is a guest post by Gene Kogan, an artist and programmer who applies emerging technology into artistic and expressive contexts, and teaches courses and workshops on topics related to code and art.\n\nRecent advances in deep learning research have renewed popular interest in...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-02-03-what-history-teaches-us-about-data-science.md",
-  "urlPath": "/posts/2016-02-03-what-history-teaches-us-about-data-science",
-  "path_name": "/posts/2016-02-03-what-history-teaches-us-about-data-science",
-  "publishDate": "2016-02-03T22:05:44.000Z",
-  "title": "What History Teaches Us About Data Science",
-  "preview_image": "http://68.media.tumblr.com/45c6f3016da356bf6dc765883e601b93/tumblr_inline_o1zrwfo9mf1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Kathryn",
-  "post_type": "post",
-  "author_link": "https://twitter.com/HumeKathryn",
-  "excerpt": "\nThe FFL team at the New York Historical Society's Silicon City exhibit\n\n> Study the past if you would define the future. — Confucius\n\nUntil April 17, 2016, the New York Historical Society is featuring an exhibition called Silicon City: Computer History Made in New York. The Fast...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-01-27-discussing-nlg-with-automated-insights.md",
-  "urlPath": "/posts/2016-01-27-discussing-nlg-with-automated-insights",
-  "path_name": "/posts/2016-01-27-discussing-nlg-with-automated-insights",
-  "publishDate": "2016-01-27T16:36:33.000Z",
-  "title": "Discussing NLG with Automated Insights",
-  "preview_image": "http://imgur.com/PihF0QE.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nOn January 26, we co-hosted an online discussion with Robbie Allen, the founder and CEO of natural language generation software provider Automated Insights. You may know them as the company behind Yahoo! fantasy football reports and the Associated Press’s automated company...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering.md",
-  "urlPath": "/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering",
-  "path_name": "/posts/2016-01-22-eli-pariser-on-the-ethics-of-algorithmic-filtering",
-  "publishDate": "2016-01-22T14:06:46.000Z",
-  "title": "Eli Pariser on the Ethics of Algorithmic Filtering",
-  "preview_image": "http://68.media.tumblr.com/3172e6d87c1d99d12058845989f9041f/tumblr_inline_o1bgwg1jOS1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Kathryn",
-  "post_type": "interview",
-  "author_link": "https://twitter.com/HumeKathryn",
-  "excerpt": "Chiefly his reflection, of which the portrait / Is the reflection, of which the portrait / Is the reflection once removed. / The glass chose to reflect only what he saw / Which was enough for his purpose: his image / Glazed, embalmed, projected at a 180-degree angle...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-01-15-demystifying-machine-intelligence.md",
-  "urlPath": "/posts/2016-01-15-demystifying-machine-intelligence",
-  "path_name": "/posts/2016-01-15-demystifying-machine-intelligence",
-  "publishDate": "2016-01-15T16:07:07.000Z",
-  "title": "Demystifying Machine Intelligence",
-  "preview_image": "http://imgur.com/fkb8Q7u.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nWe recently co-hosted an event at 1871 in Chicago with Kris Hammond, Chief Scientist at Narrative Science. Called “Technology Explained,” the event helped attendees understand why machine intelligence is succeeding today and how businesses can leverage new technologies to make...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar.md",
-  "urlPath": "/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar",
-  "path_name": "/posts/2016-01-12-new-nlg-resources-sale-and-january-26-webinar",
-  "publishDate": "2016-01-12T18:11:44.000Z",
-  "title": "New NLG Resources: Sale and January 26 Webinar",
-  "preview_image": "http://68.media.tumblr.com/657a6b3cb24f5c2dc89aa2554daff67a/tumblr_inline_o0ukqsL5Tq1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\nWe’re excited to start 2016 by putting our Natural Language Generation (NLG) report and prototype on sale! We’re offering multiple packages, including a short report focused on business value for C-level executives.\nNLG is a technology that allows software systems to write...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-12-21-five-good-books-of-2015.md",
-  "urlPath": "/posts/2015-12-21-five-good-books-of-2015",
-  "path_name": "/posts/2015-12-21-five-good-books-of-2015",
-  "publishDate": "2015-12-21T17:13:49.000Z",
-  "title": "Five Good Books* of 2015",
-  "preview_image": "https://images-na.ssl-images-amazon.com/images/I/51Cf7c2AlpL._SX379_BO1,204,203,200_.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n* Plus a few papers, videos, and other fun things.\n\nWe love books, and it feels fitting to end 2015 with a round-up of a few that we thought were particularly excellent this year. Our favorite book for data science beginners: Data Science from Scratch: First Principles with...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-12-15-nextview-ventures-podcast.md",
-  "urlPath": "/posts/2015-12-15-nextview-ventures-podcast",
-  "path_name": "/posts/2015-12-15-nextview-ventures-podcast",
-  "publishDate": "2015-12-15T21:15:34.000Z",
-  "title": "NextView Ventures Podcast",
-  "preview_image": "http://68.media.tumblr.com/2a7557828a723a63971bd2f90412bbf0/tumblr_inline_nzf49uMo1i1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nBoston-based NextView Ventures runs a podcast series called Traction that features interviews with exciting new startups. Their latest podcast features an interview with our own Hilary Mason. Some highlights:\n\n> In its essence, data science is the practice of learning insights...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-12-10-summer-internship-research-engineer.md",
-  "urlPath": "/posts/2015-12-10-summer-internship-research-engineer",
-  "path_name": "/posts/2015-12-10-summer-internship-research-engineer",
-  "publishDate": "2015-12-10T16:58:36.000Z",
-  "title": "Summer Internship: Research Engineer",
-  "preview_image": "http://fastforwardlabs.github.io/report_images/ff02/18.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nWe’re excited to announce a summer internship opportunity, which is open to current undergraduate and graduate students. To apply, send your resume and cover letter to jobs@fastforwardlabs.com. Keep reading for details on responsibilities, qualifications, and perks.\nResearch...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst.md",
-  "urlPath": "/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst",
-  "path_name": "/posts/2015-12-09-fashion-goes-deep-data-science-at-lyst",
-  "publishDate": "2015-12-09T17:44:00.000Z",
-  "title": "Fashion Goes Deep: Data Science at Lyst",
-  "preview_image": "http://68.media.tumblr.com/993f6c53159f5715d9c127b790bb4bf5/tumblr_inline_nz3b9rPB5w1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "interview",
-  "excerpt": "\n\nOn November 16, 2015, Lyst, an online fashion marketplace based in the United Kingdom, launched its first advertising campaign. Featuring a series of ironic headlines (one simply says “Rip-off”) etched over beautiful images, the campaign emphasizes the company’s identity as a...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve.md",
-  "urlPath": "/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve",
-  "path_name": "/posts/2015-11-17-when-dog-is-enough-using-hypernyms-to-improve",
-  "publishDate": "2015-11-17T16:35:14.000Z",
-  "title": "When Dog Is Enough: Using Hypernyms To Improve Neural Network Predictions",
-  "preview_image": "http://68.media.tumblr.com/7df25fbff433a17f0a2d414666eff600/tumblr_inline_nxxgbxBEMd1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nPossibly true statement: the Fast Forward Labs dog is the cutest dog in the world.\nOur General Counsel Ryan picked up the puppy a month ago and we’ve yet to name him. Ryan likes Renfield, which, as Bram Stoker fans know, evokes slightly different thoughts than “super cute...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc.md",
-  "urlPath": "/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc",
-  "path_name": "/posts/2015-11-03-ffl-in-the-bay-area-chicago-and-dc",
-  "publishDate": "2015-11-03T19:00:20.000Z",
-  "title": "FFL in the Bay Area, Chicago, and DC",
-  "preview_image": "http://68.media.tumblr.com/c9c72b3fe440442ba7cf9e27cfea2f9e/tumblr_inline_nx954t5Jfv1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\nWe’ve got three events on the horizon. Join us, or contact us with questions if you’d like to learn more but are unable to attend!\n\nWednesday, November 11 | Mountain View, CA\n\nHilary Mason will give a keynote at H2O World, where participants discuss how to use machine learning...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-10-29-interview-with-pedro-domingos.md",
-  "urlPath": "/posts/2015-10-29-interview-with-pedro-domingos",
-  "path_name": "/posts/2015-10-29-interview-with-pedro-domingos",
-  "publishDate": "2015-10-29T13:13:00.000Z",
-  "title": "Interview with Pedro Domingos",
-  "preview_image": "http://68.media.tumblr.com/4886047f032d47b832630a0ad0a72841/tumblr_inline_nwzgbcEPkQ1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Interview",
-  "excerpt": "\n\nMachine learning technologies increasingly shape our sense of reality and the choices we make in our daily lives. They power Amazon’s product recommendations. They classify documents relevant for a lawsuit. They enable computers to play chess like the masters.As machine...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-10-26-hello-deep-learning.md",
-  "urlPath": "/posts/2015-10-26-hello-deep-learning",
-  "path_name": "/posts/2015-10-26-hello-deep-learning",
-  "publishDate": "2015-10-26T16:20:07.000Z",
-  "title": "Hello Deep Learning",
-  "preview_image": "http://fastforwardlabs.github.io/report_images/ff03/neural_net_overview.png",
-  "feature": true,
-  "published": true,
-  "author": "Micha",
-  "post_type": "post",
-  "author_link": "https://github.com/mynameisfiber",
-  "excerpt": "\n\nDeep learning is a hot and fascinating research area, particularly when applied to classifying images. While researching the Fast Forward Labs Deep Learning: Image Analysis report, we played with a lot of very cool technology. In this blog post, we offer a guide to getting...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-10-20-flip-the-paradigm.md",
-  "urlPath": "/posts/2015-10-20-flip-the-paradigm",
-  "path_name": "/posts/2015-10-20-flip-the-paradigm",
-  "publishDate": "2015-10-20T19:14:08.000Z",
-  "title": "Flip the Paradigm",
-  "preview_image": "http://68.media.tumblr.com/d935756482197fabc55dcfb430e1b6e4/tumblr_inline_nwkldwjnwC1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nLast week, Hilary, Fast Forward Labs founder and CEO, gave the opening keynote at the Grace Hopper Celebration of Women in Computing in Houston, TX. Her talk inspired an audience of over 12,000 women to embrace the unimaginable possibilities that will shape the careers of...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-10-13-grace-hopper-opening-keynote.md",
-  "urlPath": "/posts/2015-10-13-grace-hopper-opening-keynote",
-  "path_name": "/posts/2015-10-13-grace-hopper-opening-keynote",
-  "publishDate": "2015-10-13T20:23:46.000Z",
-  "title": "Grace Hopper Opening Keynote",
-  "preview_image": "http://68.media.tumblr.com/bb7189932710038cbde1e04da9b51eeb/tumblr_inline_nw6da4Gppo1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nWe’re super excited that our CEO &amp; Founder, Hilary Mason, will deliver the opening keynote tomorrow at the Grace Hopper conference in Houston, TX. You can catch the keynote live at 9:30 EDT / 8:30 CDT on the conference livestream website. As a brief preview, Hilary’s talk...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-10-06-breaking-down-memes.md",
-  "urlPath": "/posts/2015-10-06-breaking-down-memes",
-  "path_name": "/posts/2015-10-06-breaking-down-memes",
-  "publishDate": "2015-10-06T21:12:57.000Z",
-  "title": "Breaking Down Memes",
-  "preview_image": "http://68.media.tumblr.com/ee5c34209ef754284caac01cfd8e0374/tumblr_inline_nvtfasBYBg1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nLast week, Hilary spoke about opportunities for mid-sized companies to use data at Accelerating America’s Middle Market, hosted by the Wall Street Journal. This morning, I spoke about opportunities for large, established companies to use data at a Corporate Longevity Leadership...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-09-29-machine-learning-in-retail-consumer-privacy.md",
-  "urlPath": "/posts/2015-09-29-machine-learning-in-retail-consumer-privacy",
-  "path_name": "/posts/2015-09-29-machine-learning-in-retail-consumer-privacy",
-  "publishDate": "2015-09-29T18:13:00.000Z",
-  "title": "Machine Learning in Retail: Consumer Privacy Implications",
-  "preview_image": "http://68.media.tumblr.com/7404e8cb508c2bc469e5a9887f5ac5e4/tumblr_inline_nvgbviEbKS1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Jessica",
-  "post_type": "post",
-  "author_link": "https://twitter.com/sefleuria",
-  "excerpt": "\n\nIn our last retail post, we explained how emerging sensor technologies are changing data science for brick and mortar. Many companies are working to retro-fit physical stores with capabilities originally developed for ecommerce. Without adding any new sensors or tags, image...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-09-24-how-do-neural-networks-learn.md",
-  "urlPath": "/posts/2015-09-24-how-do-neural-networks-learn",
-  "path_name": "/posts/2015-09-24-how-do-neural-networks-learn",
-  "publishDate": "2015-09-24T18:56:09.000Z",
-  "title": "How do neural networks learn?",
-  "preview_image": "http://68.media.tumblr.com/402a5e41ab09be86b8c43ce7f1e147a0/tumblr_inline_nv72twppMF1ta78fg_540.png",
-  "feature": false,
-  "published": true,
-  "author": "Mike S.",
-  "post_type": "post",
-  "author_link": "http://mwskirpan.com/",
-  "excerpt": "\nNeural networks are generating a lot of excitement, as they are quickly proving to be a promising and practical form of machine intelligence. At Fast Forward Labs, we just finished a project researching and building systems that use neural networks for image analysis, as shown...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep.md",
-  "urlPath": "/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep",
-  "path_name": "/posts/2015-09-22-fast-forward-labs-interviews-clarifai-about-deep",
-  "publishDate": "2015-09-22T18:58:45.000Z",
-  "title": "Fast Forward Labs Interviews Clarifai about Deep Learning",
-  "preview_image": "http://fastforwardlabs.github.io/report_images/ff03/pictograph-dogs.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Interview",
-  "excerpt": "\n\nLast Thursday Hilary and I headed to Clarifai’s offices in the Flatiron District to ask CEO Matt Zeiler about using deep learning for image analysis. A few highlights from the interview:1) The success of a deep learning project depends on the quality of the initial training...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-09-15-pictograph-unlock-your-images.md",
-  "urlPath": "/posts/2015-09-15-pictograph-unlock-your-images",
-  "path_name": "/posts/2015-09-15-pictograph-unlock-your-images",
-  "publishDate": "2015-09-15T19:16:19.000Z",
-  "title": "Pictograph: Unlock Your Images",
-  "preview_image": "http://fastforwardlabs.github.io/report_images/ff03/pictograph.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nHave you ever wondered what your photos say about how you look at the world and who you are? Your images won’t say much about what types of things you tend to post unless you routinely tag them.  Our new toy application, Pictograph, catalogs the objects that make up your...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear.md",
-  "urlPath": "/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear",
-  "path_name": "/posts/2015-09-02-dalemberts-deep-dream-bees-and-nonlinear",
-  "publishDate": "2015-09-02T14:08:33.000Z",
-  "title": "D’Alembert’s Deep Dream: Bees and Nonlinear Transformations",
-  "preview_image": "http://68.media.tumblr.com/5e441cb1ef3adcd99999f7b29da5ee5e/tumblr_inline_nu1ujeo4cc1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Kathryn",
-  "post_type": "post",
-  "author_link": "https://twitter.com/HumeKathryn",
-  "excerpt": "\n\nHold your hats! In the next couple of weeks we’re launching an arsenal of deep learning resources, including a feature report, a public prototype that will classify your Instagram identity and a webinar exploring the past, present and future of deep learning. Sign up here!As a...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-08-19-machine-learning-applications-in-fashion-retail.md",
-  "urlPath": "/posts/2015-08-19-machine-learning-applications-in-fashion-retail",
-  "path_name": "/posts/2015-08-19-machine-learning-applications-in-fashion-retail",
-  "publishDate": "2015-08-19T18:08:14.000Z",
-  "title": "Machine Learning Applications in Fashion Retail",
-  "preview_image": "http://68.media.tumblr.com/1ea7d218b3ec206decfb85436ead953d/tumblr_inline_ntcf1hms2i1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Jessica",
-  "post_type": "post",
-  "author_link": "http://68.media.tumblr.com/1ea7d218b3ec206decfb85436ead953d/tumblr_inline_ntcf1hms2i1ta78fg_540.jpg",
-  "excerpt": "\nThis is the first of two articles about recent developments in fashion technology. Part two will focus on implications for consumer privacy.\n\nThe next frontier for recommender systems is the retail store. We’re used to associating machine learning with ecommerce giants like Gilt...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-08-14-why-now-some-preconditions-for-technology.md",
-  "urlPath": "/posts/2015-08-14-why-now-some-preconditions-for-technology",
-  "path_name": "/posts/2015-08-14-why-now-some-preconditions-for-technology",
-  "publishDate": "2015-08-14T18:57:31.000Z",
-  "title": "Why Now? Some Preconditions for Technology Innovations",
-  "preview_image": "http://68.media.tumblr.com/aedff218136a4dbddc112c09618503ae/tumblr_inline_nt365m6VoK1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nWe like to hold fast to the myth of the individual creative genius as the source of the world’s most impactful scientific revolutions or disruptive innovations. But it’s consoling to recall how Isaac Newton consoled his rival Robert Hooke: “If I’ve seen further than others, it...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep.md",
-  "urlPath": "/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep",
-  "path_name": "/posts/2015-08-07-on-stirling-engines-and-orchids-a-prelude-to-deep",
-  "publishDate": "2015-08-07T19:08:04.000Z",
-  "title": "On Stirling Engines and Orchids: A Prelude to Deep Learning",
-  "preview_image": "http://68.media.tumblr.com/1848a19b440d862d19082e450097910b/tumblr_inline_nsq7opgW3S1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nToday’s post is inspired by a slow-motion recording we captured of a Stirling engine that Ryan, Fast Forward’s General Counsel, just so happened to have lying around our New York City offices. For the non-mechanics among us, a Stirling engine is a heat engine that operates by...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-08-05-a-flying-machine-from-new-york-to-paris.md",
-  "urlPath": "/posts/2015-08-05-a-flying-machine-from-new-york-to-paris",
-  "path_name": "/posts/2015-08-05-a-flying-machine-from-new-york-to-paris",
-  "publishDate": "2015-08-05T20:28:34.000Z",
-  "title": "A Flying Machine from New York to Paris",
-  "preview_image": "http://68.media.tumblr.com/131a376a1e12ca1034f528a2e59eaba8/tumblr_inline_nsml4hM1dM1ta78fg_540.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nOn March 25, 1909, Wilbur Wright (of the Wright brothers) told a reporter at the Cairo, Illinois bulletin that “no airship will ever fly from New York to Paris.” As with most quotes inherited from the past, people often misinterpret Wright’s quote as reactionary because they...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-07-16-fast-forward-labs-at-the-science-fair.md",
-  "urlPath": "/posts/2015-07-16-fast-forward-labs-at-the-science-fair",
-  "path_name": "/posts/2015-07-16-fast-forward-labs-at-the-science-fair",
-  "publishDate": "2015-07-16T19:43:26.000Z",
-  "title": "Fast Forward Labs at the Science Fair",
-  "preview_image": "http://68.media.tumblr.com/bbd3e0495730ede2d37c309aa574112f/tumblr_inline_nrlfopx9PL1ts2crc_540.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nLast night was the New York Times' Open Source Science Fair. It kicked off with a keynote speech by our own Hilary Mason.\n\nPhoto by Chrys Wu: http://t.co/m7G7G3g1ih\n\nAfter a dinner meet-and-greet session, the attendees and exhibitors got down to business, showing off their open...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-06-23-celebrating-our-one-year-anniversary.md",
-  "urlPath": "/posts/2015-06-23-celebrating-our-one-year-anniversary",
-  "path_name": "/posts/2015-06-23-celebrating-our-one-year-anniversary",
-  "publishDate": "2015-06-23T19:24:50.000Z",
-  "title": "Celebrating Our One Year Anniversary",
-  "preview_image": "http://localhost:4000/tumblr_files/tumblr_nqewle0krb1teyfqto1_1280.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nCelebrating our one year anniversary!\n",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote.md",
-  "urlPath": "/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote",
-  "path_name": "/posts/2015-06-19-fast-forward-labs-founder-and-ceo-gave-a-keynote",
-  "publishDate": "2015-06-19T19:42:33.000Z",
-  "title": "MongoDB World Keynote",
-  "preview_image": "/tumblr_files/tumblr_nq7ihwHn5R1teyfqto1_1280.png",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\n\nFast Forward Labs’ founder and CEO gave a keynote speech at MongoDB World in New York earlier this month.  Check out the video here.\n",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science.md",
-  "urlPath": "/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science",
-  "path_name": "/posts/2015-06-16-last-friday-hilary-joined-ira-flatow-on-science",
-  "publishDate": "2015-06-16T14:40:47.000Z",
-  "title": "Hilary on Science Friday",
-  "preview_image": "http://localhost:4000/tumblr_files/tumblr_nq1krz1wI61teyfqto1_1280.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\n\nLast Friday, Hilary joined Ira Flatow on Science Friday in the studio to discuss the question: Will Our Smartphones Know Us Better Than Ourselves?\n\nWe love imagining what our future may look like with the technology we are building.\n",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-06-04-coffee-thermoregulation.md",
-  "urlPath": "/posts/2015-06-04-coffee-thermoregulation",
-  "path_name": "/posts/2015-06-04-coffee-thermoregulation",
-  "publishDate": "2015-06-04T22:59:36.000Z",
-  "title": "Coffee Thermoregulation",
-  "preview_image": "http://68.media.tumblr.com/72224480b881edf2292e6c5145351411/tumblr_inline_npfzn7D0tB1ts2crc_540.jpg",
-  "feature": false,
-  "published": true,
-  "author": "Ryan",
-  "post_type": "post",
-  "author_link": "https://www.flickr.com/photos/jqpubliq/",
-  "excerpt": "\nWe take coffee pretty seriously here at Fast Forward Labs.  In addition to our machine learning research, we have also explored both hot and cold coffee brewing technologies.\n\nResearch reveals that no one wants to drink a mug of hot brew once it settles to room temperature.  As...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-05-19-designing-the-tech-graph.md",
-  "urlPath": "/posts/2015-05-19-designing-the-tech-graph",
-  "path_name": "/posts/2015-05-19-designing-the-tech-graph",
-  "publishDate": "2015-05-19T16:25:01.000Z",
-  "title": "Designing the Tech Graph",
-  "preview_image": "http://i.imgur.com/bJjtxok.png",
-  "feature": false,
-  "published": true,
-  "author": "Grant",
-  "post_type": "post",
-  "author_link": "http://www.twitter.com/grantcuster",
-  "excerpt": "\nWe launched a redesign of the Fast Forward Labs website today. There are lots of parts of the design I’d like to write someday about but for this post I want to focus on the thinking behind the “Tech Graph” force-directed graph display in the Intro section.\n\nDramatizing...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared.md",
-  "urlPath": "/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared",
-  "path_name": "/posts/2015-04-30-our-fearless-leader-hilary-mason-appeared",
-  "publishDate": "2015-04-30T21:33:25.000Z",
-  "title": "Hilary on Bloomberg TV",
-  "preview_image": "/tumblr_files/tumblr_nnn20a7yAI1teyfqto1_r1_1280.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\n\nOur fearless leader Hilary Mason appeared yesterday on Bloomberg TV to discuss Selerity’s early acquisition of Twitter’s earnings data.  The interview video is available here.\n",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-04-23-bytecode-hacking-for-great-justice.md",
-  "urlPath": "/posts/2015-04-23-bytecode-hacking-for-great-justice",
-  "path_name": "/posts/2015-04-23-bytecode-hacking-for-great-justice",
-  "publishDate": "2015-04-23T15:16:56.000Z",
-  "title": "Bytecode Hacking for Great Justice",
-  "preview_image": "http://i.imgur.com/OodCK0c.png",
-  "feature": true,
-  "published": true,
-  "author": "Micha",
-  "post_type": "post",
-  "author_link": "http://github.com/mynameisfiber",
-  "excerpt": "\nDO NOT TRY THIS AT HOME! NO PYTHONS WERE HURT IN THE CREATION OF THIS BLOG POST!\n\nCheck out the code at code at github.com/mynameisfiber/pytailcall\n\nAs an exercise into learning more about python 2.7 bytecode, I wanted to implement the thing that pythonistas love to hate - tail...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for.md",
-  "urlPath": "/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for",
-  "path_name": "/posts/2015-04-01-our-second-rd-report-probabilistic-methods-for",
-  "publishDate": "2015-04-01T20:24:20.000Z",
-  "title": "Probabilistic Methods for Realtime Streams",
-  "preview_image": "/tumblr_files/tumblr_nm5a0kCyu11teyfqto1_1280.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "announcement",
-  "excerpt": "\n\nOur second R&D Report, Probabilistic Methods for Realtime Streams, has gone out! In this report, we explored probabilistic algorithms for machine learning on potentially large realtime streams of data with efficient CPU and memory usage.\n\nOur prototype demonstrated these...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs.md",
-  "urlPath": "/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs",
-  "path_name": "/posts/2015-03-31-the-hoff-stopped-by-fast-forward-labs",
-  "publishDate": "2015-03-31T18:44:43.000Z",
-  "title": "The Hoff",
-  "preview_image": "/tumblr_files/tumblr_nm3aqjqnEp1teyfqto1_1280.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\n\nThe Hoff stopped by Fast Forward Labs!\n",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2014-12-19-announcing-our-next-topic-realtime-stream.md",
-  "urlPath": "/posts/2014-12-19-announcing-our-next-topic-realtime-stream",
-  "path_name": "/posts/2014-12-19-announcing-our-next-topic-realtime-stream",
-  "publishDate": "2014-12-19T21:17:09.000Z",
-  "title": "Our Next Topic: Realtime Stream Analysis",
-  "preview_image": "http://fastforwardlabs.github.io/report_images/ff02/19.png",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\nWe're very pleased to announce our second research report topic will be realtime stream analysis, with a focus on probabilistic data structures.\nUsing these techniques, we're able to build systems that enable extremely fast and memory efficient computation over very large data...",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language.md",
-  "urlPath": "/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language",
-  "path_name": "/posts/2014-10-17-the-fast-forward-labs-report-on-natural-language",
-  "publishDate": "2014-10-17T20:49:48.000Z",
-  "title": "The Natural Language Generation Report is Out",
-  "preview_image": "/tumblr_files/tumblr_ndlwj0JNFG1teyfqto1_1280.jpg",
-  "feature": false,
-  "published": true,
-  "post_type": "Announcement",
-  "excerpt": "\n\nThe Fast Forward Labs report on Natural Language Generation will be arriving soon to a bookshelf near you!\n",
-  "external_url": false
-}, {
-  "filePath": "pages/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the.md",
-  "urlPath": "/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the",
-  "path_name": "/posts/2014-08-21-at-fast-forward-labs-were-thoughtful-about-the",
-  "publishDate": "2014-08-21T19:28:14.000Z",
-  "title": "We Built a Table",
-  "preview_image": "/tumblr_files/tumblr_nao8r2wCGP1teyfqto5_1280.jpg",
+  "filePath": "pages/stories/ff08.md",
+  "urlPath": "/stories/ff08",
+  "path_name": "/stories/ff08",
+  "publishDate": null,
+  "title": "Eyeo 2019 Recap: Creativity, vulnerability, and activism",
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\n\nAt Fast Forward Labs we're thoughtful about the kind of work space we want to spend our time in. We decided that we preferred a shared large table instead of individual desks, to make it easier to collaborate and offer the flexibility to spread out when necessary, and to allow...",
+  "excerpt": "\nexport let nicole = {full: 'Nicole Aptekar', short: 'Nicole', pronouns: ['she', 'her', 'hers']}\nexport let nathan = {full: 'Nathan Yau', short: 'Nathan', pronouns: ['he', 'him', 'his']}\nexport let christina = {full: 'Christina Curlee', short: 'Christina', pronouns: ['she', 'her...",
   "external_url": false
 }, {
-  "filePath": "pages/posts/2014-07-21-hello-fast-forward-labs.md",
-  "urlPath": "/posts/2014-07-21-hello-fast-forward-labs",
-  "path_name": "/posts/2014-07-21-hello-fast-forward-labs",
-  "publishDate": "2014-07-21T16:01:01.000Z",
-  "title": "Hello, Fast Forward Labs!",
-  "preview_image": "http://fastforwardlabs.github.io/resources/images/logos/ff-logo-white-bg.png",
+  "filePath": "pages/stories/ff08_00.md",
+  "urlPath": "/stories/ff08_00",
+  "path_name": "/stories/ff08_00",
+  "publishDate": null,
+  "title": "Eyeo 2019 Recap",
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nI’m very pleased to introduce Fast Forward Labs.\nFast Forward Labs is an independent data technology research lab. We focus on taking technologies that are just becoming possible, and making them useful.\nWe believe that the existing research structures are failing in 2014. We...",
+  "excerpt": "\nFor June 3–June 6, 2019 I attended the Eyeo festival.\n\nTuesday\n\nMohil Bhoite\n\nMohil makes circuits as part of his day job. As an artist/hobby he makes free-standing circuit sculptures. Where the connectors are brass rods bent to look like things like robots. He went through his...",
   "external_url": false
 }]);
 
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Ffastforward%2Fpages%2Findex.js ***!
-  \*******************************************************************************************************************************************/
+/*!***************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Findex.js ***!
+  \***************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Ffastforward%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Ffastforward%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Findex.js!./");
 
 
 /***/ }),
