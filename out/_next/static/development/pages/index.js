@@ -29077,43 +29077,43 @@ function (_React$Component) {
           lineNumber: 49
         },
         __self: this
-      }, "Grant Custer \u2013 Writing"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
+      }, "Grant Custer \u2192 Writing"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
         property: "og:title",
-        content: "Experiments - Cloudera Fast Forward",
+        content: "Grant Custer \u2192 Writing",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 50
         },
         __self: this
-      }), "property=\"description\"", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
-        content: "Machine learning visualizations and code by Cloudera Fast Forward.",
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
+        content: "Writing-in-progress about design, code, and ideas.",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 51
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
         property: "og:description",
-        content: "Machine learning visualizations and code by Cloudera Fast Forward.",
+        content: "Writing-in-progress about design, code, and ideas.",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 52
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
+        property: "og:image",
+        content: "https://writing.grantcuster.com/static/images/gray.png",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 56
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
-        property: "og:image",
-        content: "https://experiments.fastforwardlabs.com/static/images/experiments-share.png",
+        property: "og:url",
+        content: "https://writing.grantcuster.com",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 60
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
-        property: "og:url",
-        content: "https://experiments.fastforwardlabs.com",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 64
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("meta", {
@@ -29121,7 +29121,7 @@ function (_React$Component) {
         content: "summary_large_image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 61
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -29130,7 +29130,7 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 64
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -29141,13 +29141,13 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 65
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 72
         },
         __self: this
       }, "Writing")), post_groups.map(function (g, i) {
@@ -29158,7 +29158,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 83
+            lineNumber: 76
           },
           __self: this
         }, g.map(function (post, i) {
@@ -29170,6 +29170,12 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
+              lineNumber: 78
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+            __source: {
+              fileName: _jsxFileName,
               lineNumber: 85
             },
             __self: this
@@ -29178,17 +29184,23 @@ function (_React$Component) {
             as: post.urlPath,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 92
+              lineNumber: 86
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
             key: post.urlPath,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 93
+              lineNumber: 87
             },
             __self: this
-          }, post.title)));
+          }, post.title))), post.summary ? react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 90
+            },
+            __self: this
+          }, post.summary) : null);
         }));
       })));
     }
@@ -29600,26 +29612,17 @@ function track(size) {
 __webpack_require__.r(__webpack_exports__);
 // automatically generated by build_post_index.js
 /* harmony default export */ __webpack_exports__["default"] = ([{
-  "filePath": "pages/stories/ff08.md",
-  "urlPath": "/stories/ff08",
-  "path_name": "/stories/ff08",
-  "publishDate": null,
-  "title": "Eyeo 2019 Recap: Creativity, vulnerability, and activism",
+  "filePath": "pages/posts/2019-06-14-eyeo-2019-recap-creativity-vulnerability-and-activism.md",
+  "urlPath": "/posts/2019-06-14-eyeo-2019-recap-creativity-vulnerability-and-activism",
+  "path_name": "/posts/2019-06-14-eyeo-2019-recap-creativity-vulnerability-and-activism",
+  "publishDate": "2019-06-14T00:00:00.000Z",
+  "title": "Eyeo 2019 recap: creativity, vulnerability, and activism",
+  "summary": "I'm thinking about when to retreat and when to engage.",
+  "date": "2019-06-14",
   "feature": false,
   "published": true,
   "post_type": "post",
-  "excerpt": "\nexport let nicole = {full: 'Nicole Aptekar', short: 'Nicole', pronouns: ['she', 'her', 'hers']}\nexport let nathan = {full: 'Nathan Yau', short: 'Nathan', pronouns: ['he', 'him', 'his']}\nexport let christina = {full: 'Christina Curlee', short: 'Christina', pronouns: ['she', 'her...",
-  "external_url": false
-}, {
-  "filePath": "pages/stories/ff08_00.md",
-  "urlPath": "/stories/ff08_00",
-  "path_name": "/stories/ff08_00",
-  "publishDate": null,
-  "title": "Eyeo 2019 Recap",
-  "feature": false,
-  "published": true,
-  "post_type": "post",
-  "excerpt": "\nFor June 3–June 6, 2019 I attended the Eyeo festival.\n\nTuesday\n\nMohil Bhoite\n\nMohil makes circuits as part of his day job. As an artist/hobby he makes free-standing circuit sculptures. Where the connectors are brass rods bent to look like things like robots. He went through his...",
+  "excerpt": "\nexport let nicole = {full: 'Nicole Aptekar', short: 'Nicole', link: 'https://nicolation.net/', pronouns: ['she', 'her','her', 'hers']}\nexport let nathan = {full: 'Nathan Yau', short: 'Nathan', link: 'https://flowingdata.com/', pronouns: ['he', 'him','his', 'his']}\nexport let...",
   "external_url": false
 }]);
 
