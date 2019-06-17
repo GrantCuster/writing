@@ -84,8 +84,9 @@ class Index extends React.Component {
                   }}
                 >
                   <div>
-                    <Link href={post.path_name} as={post.urlPath}>
-                      <a key={post.urlPath}>{post.title}</a>
+                    <div style={{ textIndent: grem }}>{post.date}</div>
+                    <Link href={post.path_name}>
+                      <a key={post.path_name}>{post.title}</a>
                     </Link>
                   </div>
                   {post.summary ? <p>{post.summary}</p> : null}
