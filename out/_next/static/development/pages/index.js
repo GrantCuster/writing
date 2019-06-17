@@ -29150,7 +29150,13 @@ function (_React$Component) {
           lineNumber: 72
         },
         __self: this
-      }, "Writing")), post_groups.map(function (g, i) {
+      }, "Writing"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        },
+        __self: this
+      }, "Writing-in-progress on design, code, and ideas.")), post_groups.map(function (g, i) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
           key: 'group_' + i,
           style: {
@@ -29158,7 +29164,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 76
+            lineNumber: 77
           },
           __self: this
         }, g.map(function (post, i) {
@@ -29170,13 +29176,13 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 78
+              lineNumber: 79
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 85
+              lineNumber: 86
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_16___default.a, {
@@ -29184,20 +29190,20 @@ function (_React$Component) {
             as: post.urlPath,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 86
+              lineNumber: 87
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
             key: post.urlPath,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 87
+              lineNumber: 88
             },
             __self: this
           }, post.title))), post.summary ? react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 90
+              lineNumber: 91
             },
             __self: this
           }, post.summary) : null);
