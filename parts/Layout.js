@@ -134,7 +134,7 @@ export class PostLayout extends React.Component {
         <div
           style={{
             maxWidth: c * 4,
-            padding: p(grem / 2, grem / 2, grem * 2, grem / 2),
+            padding: p(grem / 2, grem / 2, grem / 2, grem / 2),
             margin: `0 auto`,
           }}
         >

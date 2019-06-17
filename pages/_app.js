@@ -6,6 +6,7 @@ import { font_size, line_height, font_min, sm } from '../parts/Static'
 import { debounce } from 'lodash'
 import Header from '../parts/Header'
 import Head from 'next/head'
+import * as Bowser from 'bowser'
 
 // Override the App class to put layout component around the page contents
 // https://github.com/zeit/next.js#custom-app
@@ -18,9 +19,16 @@ export default class MyApp extends App {
       wh: 480,
       optimal: 600,
       loaded: false,
+      render_info: null,
+      origin: null,
     }
     this.setSize = this.setSize.bind(this)
     this.setSize = debounce(this.setSize, 100)
+    this.link = this.link.bind(this)
+  }
+
+  link(href) {
+    return <a href={href}>{href}</a>
   }
 
   setSize() {
@@ -34,10 +42,13 @@ export default class MyApp extends App {
   componentDidMount() {
     window.addEventListener('resize', this.setSize)
     this.setSize()
+    let render_info = Bowser.getParser(window.navigator.userAgent).parse()
+      .parsedResult
+    this.setState({ render_info, origin: window.location.href })
   }
 
   render() {
-    let { ww, wh, loaded, optimal } = this.state
+    let { ww, wh, loaded, optimal, render_info, origin } = this.state
     const { Component, pageProps } = this.props
     const { pathname } = this.props.router
 
@@ -155,6 +166,25 @@ export default class MyApp extends App {
             <Component {...pageProps} grem={grem} c={c} />
           )}
         </div>
+        {is_post ? (
+          <div
+            style={{
+              textIndent: grem,
+              padding: grem / 2,
+            }}
+          >
+            Generated
+            {origin !== null ? (
+              <span> from {this.link(origin)}</span>
+            ) : null} on {new Date().toLocaleString()}
+            {render_info !== null
+              ? ` with ${render_info.browser.name} ${
+                  render_info.browser.version
+                } on ${render_info.os.name} ${render_info.os.version}`
+              : null}
+            .
+          </div>
+        ) : null}
       </Container>
     )
   }
