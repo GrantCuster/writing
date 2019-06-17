@@ -135,7 +135,7 @@ export default class MyApp extends App {
             <div style={{ display: 'flex', paddingLeft: grem / 2 }}>
               <div style={{ marginRight: grem / 2 }}>
                 {is_post ? (
-                  <Link to="/">
+                  <Link href="/">
                     <a>Writing</a>
                   </Link>
                 ) : (

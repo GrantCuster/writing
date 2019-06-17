@@ -70,6 +70,7 @@ class Index extends React.Component {
             }}
           >
             <div>Writing</div>
+            <p>Writing-in-progress on design, code, and ideas.</p>
           </div>
 
           {post_groups.map((g, i) => (

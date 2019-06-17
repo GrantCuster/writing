@@ -105,8 +105,10 @@ export class PostLayout extends React.Component {
          ol,
           ul {
             margin: 0 0 0 0;
-            padding-left: ${grem}px;
-            list-style-position: outside;
+            // padding-left: ${grem}px;
+            list-style-position: inside;
+            padding-left: 0;
+            text-indent: ${grem}px;
           }
           ol li,
           ul li {
@@ -136,11 +138,6 @@ export class PostLayout extends React.Component {
             margin: `0 auto`,
           }}
         >
-          <div style={{ marginBottom: grem }}>
-            <Link href="/">
-              <a>Writing</a>
-            </Link>
-          </div>
           <div style={{ marginBottom: grem }}>{post.title}</div>
           <MDXProvider components={components}>{children}</MDXProvider>
         </div>
