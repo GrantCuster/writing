@@ -29194,24 +29194,24 @@ function (_React$Component) {
               lineNumber: 87
             },
             __self: this
-          }, post.date), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_16___default.a, {
+          }, post.date.replace(/-/g, '/')), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_16___default.a, {
             href: post.path_name,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 88
+              lineNumber: 90
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
             key: post.path_name,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 89
+              lineNumber: 91
             },
             __self: this
           }, post.title))), post.summary ? react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 92
+              lineNumber: 94
             },
             __self: this
           }, post.summary) : null);
