@@ -29135,7 +29135,7 @@ function (_React$Component) {
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         style: {
-          width: c * 4,
+          maxWidth: c * 4,
           padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(0, grem / 2),
           margin: "0 auto ".concat(grem, "px")
         },
@@ -29170,7 +29170,7 @@ function (_React$Component) {
         }, g.map(function (post, i) {
           return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
             style: {
-              width: c * 4,
+              maxWidth: c * 4,
               padding: Object(_parts_Utils__WEBPACK_IMPORTED_MODULE_11__["p"])(0, grem / 2),
               margin: '0 auto'
             },
