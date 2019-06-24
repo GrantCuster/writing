@@ -64,7 +64,7 @@ class Index extends React.Component {
         <div style={{ padding: p(grem / 2, 0) }}>
           <div
             style={{
-              width: c * 4,
+              maxWidth: c * 4,
               padding: p(0, grem / 2),
               margin: `0 auto ${grem}px`,
             }}
@@ -78,13 +78,15 @@ class Index extends React.Component {
               {g.map((post, i) => (
                 <div
                   style={{
-                    width: c * 4,
+                    maxWidth: c * 4,
                     padding: p(0, grem / 2),
                     margin: '0 auto',
                   }}
                 >
                   <div>
-                    <div style={{ textIndent: grem }}>{post.date}</div>
+                    <div style={{ textIndent: grem }}>
+                      {post.date.replace(/-/g, '/')}
+                    </div>
                     <Link href={post.path_name}>
                       <a key={post.path_name}>{post.title}</a>
                     </Link>

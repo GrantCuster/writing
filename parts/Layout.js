@@ -138,7 +138,7 @@ export class PostLayout extends React.Component {
             margin: `0 auto`,
           }}
         >
-          <div style={{ textIndent: grem }}>{post.date}</div>
+          <div style={{ textIndent: grem }}>{post.date.replace(/-/g, '/')}</div>
           <div style={{ marginBottom: grem }}>{post.title}</div>
           <MDXProvider components={components}>{children}</MDXProvider>
         </div>
