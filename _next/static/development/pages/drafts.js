@@ -1,4 +1,4 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/drafts.js"],{
 
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/array/from.js":
 /*!*******************************************************************!*\
@@ -23297,21 +23297,21 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Findex.js!./":
-/*!***********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Findex.js ***!
-  \***********************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdrafts&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Fdrafts.js!./":
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdrafts&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Fdrafts.js ***!
+  \******************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
-      var page = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/drafts", function() {
+      var page = __webpack_require__(/*! ./pages/drafts.js */ "./pages/drafts.js")
       if(true) {
-        module.hot.accept(/*! ./pages/index.js */ "./pages/index.js", function() {
-          if(!next.router.components["/"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js")
-          next.router.update("/", updatedPage.default || updatedPage)
+        module.hot.accept(/*! ./pages/drafts.js */ "./pages/drafts.js", function() {
+          if(!next.router.components["/drafts"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/drafts.js */ "./pages/drafts.js")
+          next.router.update("/drafts", updatedPage.default || updatedPage)
         })
       }
       return { page: page.default || page }
@@ -28960,10 +28960,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
+/***/ "./pages/drafts.js":
+/*!*************************!*\
+  !*** ./pages/drafts.js ***!
+  \*************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -28997,7 +28997,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/writing/pages/index.js";
+var _jsxFileName = "/Users/grant.custer/Sites/ffgrids/writing/pages/drafts.js";
 
 
 
@@ -29039,7 +29039,7 @@ function (_React$Component) {
       var page_number = params.get('pages') || 1;
       var post_groups = [];
       var published = _posts__WEBPACK_IMPORTED_MODULE_13__["default"].filter(function (p) {
-        return !p.draft;
+        return p.draft;
       });
 
       for (var i = 0; i < page_number; i++) {
@@ -29150,13 +29150,7 @@ function (_React$Component) {
           lineNumber: 72
         },
         __self: this
-      }, "Writing"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73
-        },
-        __self: this
-      }, "Writing-in-progress on design, code, and ideas.")), post_groups.map(function (g, i) {
+      }, "Drafts")), post_groups.map(function (g, i) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
           key: 'group_' + i,
           style: {
@@ -29164,7 +29158,7 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 77
+            lineNumber: 76
           },
           __self: this
         }, g.map(function (post, i) {
@@ -29176,13 +29170,13 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 79
+              lineNumber: 78
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 86
+              lineNumber: 85
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
@@ -29191,27 +29185,27 @@ function (_React$Component) {
             },
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 87
+              lineNumber: 86
             },
             __self: this
           }, post.date.replace(/-/g, '/')), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_16___default.a, {
             href: post.path_name,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 90
+              lineNumber: 89
             },
             __self: this
           }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
             key: post.path_name,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 91
+              lineNumber: 90
             },
             __self: this
           }, post.title))), post.summary ? react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 94
+              lineNumber: 93
             },
             __self: this
           }, post.summary) : null);
@@ -29657,14 +29651,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 0:
-/*!***************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Findex.js ***!
-  \***************************************************************************************************************************************/
+/***/ 2:
+/*!**********************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fdrafts&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Fdrafts.js ***!
+  \**********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Findex.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Findex.js!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fdrafts&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Fdrafts.js! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdrafts&absolutePagePath=%2FUsers%2Fgrant.custer%2FSites%2Fffgrids%2Fwriting%2Fpages%2Fdrafts.js!./");
 
 
 /***/ }),
@@ -29680,5 +29674,5 @@ module.exports = dll_829b10deddf10e1653a8;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]));;
-//# sourceMappingURL=index.js.map
+},[[2,"static/runtime/webpack.js"]]]));;
+//# sourceMappingURL=drafts.js.map
