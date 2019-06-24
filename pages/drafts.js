@@ -27,7 +27,7 @@ class Index extends React.Component {
 
     let page_number = params.get('pages') || 1
     let post_groups = []
-    let published = posts.filter(p => !p.draft)
+    let published = posts.filter(p => p.draft)
     for (let i = 0; i < page_number; i++) {
       if (i * posts_per_page < published.length) {
         let _posts = published.slice(
@@ -69,8 +69,7 @@ class Index extends React.Component {
               margin: `0 auto ${grem}px`,
             }}
           >
-            <div>Writing</div>
-            <p>Writing-in-progress on design, code, and ideas.</p>
+            <div>Drafts</div>
           </div>
 
           {post_groups.map((g, i) => (

@@ -99,6 +99,7 @@ function readPostMetadata(postPath) {
     filePath: postPath,
     urlPath: url_path,
     path_name: path_name,
+    draft: meta.draft || false,
     publishDate: new Date(meta.date),
     title: meta.title || path.basename(postPath),
     summary: meta.summary || null,
