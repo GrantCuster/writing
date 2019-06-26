@@ -135,12 +135,12 @@ export default class MyApp extends App {
         `}</style>
         <div
           className="js-no-flash"
-          style={{ display: loaded ? 'block' : null }}
+          style={{ display: loaded ? 'block' : 'block' }}
         >
           <div style={{ padding: grem / 2 }}>
             <div>Grant Custer</div>
             <div>Design–Code</div>
-            <div>
+            <div style={{ display: 'none' }}>
               {ww}x{wh}
             </div>
             <div style={{ display: 'flex', paddingLeft: grem / 2 }}>
@@ -180,7 +180,9 @@ export default class MyApp extends App {
             {render_info !== null
               ? ` with ${render_info.browser.name} ${
                   render_info.browser.version
-                } on ${render_info.os.name} ${render_info.os.version}`
+                } on ${render_info.os.name} ${
+                  render_info.os.version ? render_info.os.version : ''
+                }`
               : null}
             .
           </div>
