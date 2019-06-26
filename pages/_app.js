@@ -109,11 +109,11 @@ export default class MyApp extends App {
             font-size: ${font_size}px;
             line-height: ${font_size * line_height}px;
             text-rendering: optimizelegibility;
-            font-feature-settings: 'kern';
-            font-kerning: normal;
+            // font-feature-settings: 'kern';
+            // font-kerning: normal;
             font-feature-settings: 'ss02' 1;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            // -webkit-font-smoothing: antialiased;
+            // -moz-osx-font-smoothing: grayscale;
           }
           pre {
             -webkit-font-smoothing: auto;
