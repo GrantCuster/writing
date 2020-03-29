@@ -18,6 +18,7 @@ let filenames = fs.readdirSync('posts').reverse()
 let files = filenames.map(filename => {
   let content = fs.readFileSync('posts/' + filename, 'utf-8')
   let item = {
+    id: null,
     title: null,
     description: null,
     image: null,
@@ -34,6 +35,7 @@ let files = filenames.map(filename => {
         } else if (a.property === 'og:image') {
           item.image = a.content
         } else if (a.property === 'og:url') {
+          item.id = a.content
           item.url = a.content
         } else if (a.property === 'og:date_published') {
           item.date_published = a.content
